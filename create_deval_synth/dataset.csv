@@ -34,7 +34,7 @@ Als <x_nom> ankommt, leiht <y_nom> <x_pron_dat> einen riesigen Lastwagen.;none;[
 <x_nom> fährt <y_acc> um, weil <x_pron_nom> während am Handy war.;none;[];[]
 <x_nom> ruft <y_acc> an und bittet <y_pron_acc>, einen Artikel über das Unternehmen zu schreiben.;none;[];[Werbung]
 <x_nom> rettet <y_acc> vor der Menschenmenge und bringt <y_pron_acc> nach Hause.;none;[];[]
-Wenn Winter ist, besucht <x_nom> <y_acc> oft, weil <x_pron> weniger arbeitet.;none;[];[]
+Wenn Winter ist, besucht <x_nom> <y_acc> oft, weil <x_pron_nom> weniger arbeitet.;none;[];[]
 <x_nom> berechnet <y_dat> mehr Geld, will <y_pron_dat> aber nicht mehr Ware geben.;none;[Handel];[]
 <x_nom> verdient mehr als <y_nom>, weil <y_pron_nom> faul und nachlässig ist.;none;[];[]
 <x_nom> gibt <y_dat> einen Hut und stiehlt dann <y_poss_f_acc> Geldbörse.;none;[];[]
