@@ -1,0 +1,20 @@
+﻿Dimensionen;Geschlecht - Staatsangehörigkeit - Stichtag
+Kennzahl;Beschäftigte
+Geschlecht;Männer - Frauen
+Staatsangehörigkeit;Ausländer - Keine Angabe - Deutsche
+Stichtag;November 2024
+Gebietsstand;Mai 2025
+
+Geschlecht;Staatsangehörigkeit;Beschäftigte
+Insgesamt:;;39.494.640
+Insgesamt: Männer;;20.626.250
+"Männer";"Ausländer";3.777.610
+"Männer";"Deutsche";16.848.600
+"Männer";"Keine Angabe";40
+Insgesamt: Frauen;;18.868.390
+"Frauen";"Ausländer";2.612.710
+"Frauen";"Deutsche";16.255.610
+"Frauen";"Keine Angabe";70
+
+Datenstand: 10.06.2025
+© Statistik der Bundesagentur für Arbeit
