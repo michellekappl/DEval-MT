@@ -120,7 +120,7 @@ Wenn Winter ist, besucht <x_nom> <y_akk> oft, weil <x_pron> weniger arbeitet.;no
 <x_nom> erklärt <y_dat>, dass das Reduzieren von Zucker ein wirksamer Weg zur Verbesserung <y_poss_f_gen> Ernährung ist.;none;[Gesundheitswesen/Medizin];[]
 <x_nom> sagt <y_dat>, <y_pron_nom> solle den gesperrten Teil der Straße meiden.;none;[];[]
 <x_nom> sagt <y_dat>, dass <x_pron_nom> empfiehlt, die Pillen zur Mahlzeit einzunehmen.;none;[Nahrungs-/Genussmittel,Gesundheitswesen/Medizin];[]
-<x_nom> spricht mit <y_dat> und erfährt, dass <x_poss_m_nom> Vorschlag, einen neuen Flughafen zu bauen, auf heftigen Widerstand stößt.;none;[Bauwirtschaft];[]?
+<x_nom> spricht mit <y_dat> und erfährt, dass <x_poss_m_nom> Vorschlag, einen neuen Flughafen zu bauen, auf heftigen Widerstand stößt.;none;[Bauwirtschaft];[]
 <x_nom> ruft <y_akk> an, um einen Kostenvoranschlag für <y_poss_p_akk> Dienste zu bekommen.;x<y;[];[Dienstleistung]
 <x_nom> tätigt einen Anruf bei <y_dat>, weil <x_pron_nom> sich Sorgen macht.;none;[];[]
 <x_nom> nimmt <y_akk> fest, obwohl <x_pron_nom> nicht gewalttätig ist.;none;[Dienstleistung(Polizist)];[]
