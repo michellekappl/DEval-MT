@@ -42,12 +42,6 @@ class Template:
 
         base_noun = x if parts[0] == "x" else y
 
-        for i in range(1, len(parts)):
-            if parts[i] == "akk":
-                parts[i] = "acc"
-            elif parts[i] == "p":
-                parts[i] = "pl"
-
         if parts[1] in ["nom", "gen", "dat", "acc"]:
             # case that this is a simply a definite noun phrase
             return Definite(base_noun).decline(parts[1], "sg")
@@ -62,7 +56,6 @@ class Template:
             raise ValueError(f"Unknown match type: {parts}")
 
     def gen(self):
-
         substitutions = []
         for x, y in [(x, y) for x in self.xs for y in self.ys if x != y]:
             substitution = re.sub(
@@ -78,6 +71,8 @@ class Template:
 csv_file = sys.argv[1]
 with open(csv_file, newline="", encoding="utf-8") as f:
     reader = csv.reader(f, delimiter=";")
+    # delete the header
+    next(reader)
     for row in reader:
         r = Template(row)
         print(r.gen())
