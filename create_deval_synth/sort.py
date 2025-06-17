@@ -7,14 +7,16 @@ with open(csv_file, newline="", encoding="utf-8") as f:
     # delete the header
     next(reader)
     # sort by column 3 and 4
-    sorted_rows = sorted(reader, key=lambda row: (row[2], row[3]))
+    sorted_rows = sorted(
+        reader, key=lambda row: (row[2].strip("[]"), row[3].strip("[]"))
+    )
     # count the number of rows in each group
     # print(sorted_rows)
     group_counts = {}
     for row in sorted_rows:
         group_x = row[2].strip("[]").split(",")
         group_y = row[3].strip("[]").split(",")
-        for group in group_x + group_y:
+        for group in set(group_x + group_y):
             if group not in group_counts:
                 group_counts[group] = 0
             group_counts[group] += 1
