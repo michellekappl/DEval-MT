@@ -26,10 +26,11 @@ df_branchen_with_jobs = (
           .agg(Berufe=("Bezeichnung", list))
           .reset_index()
 )
-df_branchen_with_jobs.to_csv("branchen_with_jobs.csv", sep=';', index=False)
+df_branchen_with_jobs['Berufe'] = df_branchen_with_jobs['Berufe'].apply(lambda x: list(set(x)))
+df_branchen_with_jobs.to_csv("../branchen_with_jobs.csv", sep=';', index=False)
 
 # === load branchen with jobs ===
-df_branchen_with_jobs = pd.read_csv("branchen_with_jobs.csv", sep=';', converters={'3_digit_code': str})
+df_branchen_with_jobs = pd.read_csv("../branchen_with_jobs.csv", sep=';', converters={'3_digit_code': str})
 
 # === create lookup table for main categories ===
 df_main_categories = (df_decoder[df_decoder['Code'].astype(str).str.len() == 1]).reset_index(drop=True).drop(columns=['Niveau', 'Misc'])
@@ -37,4 +38,5 @@ df_branchen_with_jobs["1_digit_code"] = df_branchen_with_jobs["3_digit_code"].st
 df_copy = df_branchen_with_jobs[['3_digit_code', '1_digit_code']].copy().rename(columns={"1_digit_code": "Code"}).drop_duplicates().reset_index(drop=True)
 df_main_categories = df_main_categories.merge(df_copy, on="Code", how="left").rename(columns={"Bezeichnung": "main_branche"})
 df_main_categories = df_main_categories.groupby(["Code", "main_branche"]).agg(corresponding_jobs=("3_digit_code", list))
-df_main_categories.to_csv("main_branchen.csv", sep=';')
+print()
+df_main_categories.to_csv("../main_branchen.csv", sep=';')
