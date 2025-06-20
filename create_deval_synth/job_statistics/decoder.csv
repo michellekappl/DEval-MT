@@ -1,0 +1,2194 @@
+Code;Bezeichnung;Niveau;Misc
+1;Land-, Forst-, Tierwirtschaft, Gartenbau;;
+11;Land-, Tier-, Forstwirtschaftsberufe;;
+111;Landwirtschaft;;
+1110;Berufe in der Landwirtschaft (o.S.);;
+11101;Landwirtschaft (o.S.) - Helfer;Helfer;
+11102;Landwirtschaft (o.S.) - Fachkraft;Fachkräfte;
+11103;Landwirtschaft (o.S.) - Spezialist;Spezialisten;
+11104;Landwirtschaft (o.S.) - Experte;Experten;
+1111;Berufe in der Landtechnik;;
+11113;Landtechnik - Spezialist;Spezialisten;
+11114;Landtechnik - Experte;Experten;
+1112;Landwirtschaftliche Sachverständige;;
+11123;Landwirtsch.Sachverständige - Spezialist;Spezialisten;
+11124;Landwirtschaftl. Sachverständige-Experte;Experten;
+1113;Berufe landwirtsch.-techn. Laboratorium;;
+11132;Landwirtsch.-tech.Laboratorium-Fachkraft;Fachkräfte;
+11133;Landwirtsch.-tech.Laborat.-Spezialist;Spezialisten;
+1118;Berufe in der Landwirtschaft (s.s.T.);;
+11182;Landwirtschaft (s.s.T.) - Fachkraft;Fachkräfte;
+11183;Landwirtschaft (s.s.T.) - Spezialist;Spezialisten;
+11184;Landwirtschaft (s.s.T.) - Experte;Experten;
+1119;Aufsicht und Führung - Landwirtschaft;;Aufsicht
+11193;Aufsicht - Landwirtschaft;;Aufsicht
+11194;Führung - Landwirtschaft;;Führung
+112;Tierwirtschaft;;
+1121;Berufe in der Nutztierhaltung;;
+11211;Nutztierhaltung - Helfer;Helfer;
+11212;Nutztierhaltung - Fachkraft;Fachkräfte;
+11213;Nutztierhaltung - Spezialist;Spezialisten;
+11214;Nutztierhaltung - Experte;Experten;
+1122;Berufe in der Geflügelhaltung;;
+11222;Geflügelhaltung - Fachkraft;Fachkräfte;
+11223;Geflügelhaltung - Spezialist;Spezialisten;
+1123;Berufe in der Imkerei;;
+11232;Imkerei - Fachkraft;Fachkräfte;
+11233;Imkerei - Spezialist;Spezialisten;
+1128;Berufe in der Tierwirtschaft (s.s.T.);;
+11282;Tierwirtschaft (s.s.T.) - Fachkraft;Fachkräfte;
+11283;Tierwirtschaft (s.s.T.) - Spezialist;Spezialisten;
+1129;Aufsicht und Führung - Tierwirtschaft;;Aufsicht
+11293;Aufsicht - Tierwirtschaft;;Aufsicht
+11294;Führung - Tierwirtschaft;;Führung
+113;Pferdewirtschaft;;
+1130;Berufe in der Pferdewirtschaft (o.S.);;
+11302;Pferdewirtschaft (o.S.) - Fachkraft;Fachkräfte;
+1131;Berufe i.d. Pferdewirtschaft-Pferdezucht;;
+11312;Pferdewirtschaft-Pferdezucht - Fachkraft;Fachkräfte;
+1132;Berufe in der Pferdewirtschaft - Reiten;;
+11322;Pferdewirtschaft-Reiten - Fachkraft;Fachkräfte;
+1133;Hufbeschlagschmiede/-schmiedinnen;;
+11333;Hufbeschlagschmiede/innen - Spezialist;Spezialisten;
+1134;Kutscher/innen;;
+11342;Kutscher/innen - Fachkraft;Fachkräfte;
+1139;Aufsicht und Führung - Pferdewirtschaft;;Aufsicht
+11393;Aufsicht - Pferdewirtschaft;;Aufsicht
+11394;Führung - Pferdewirtschaft;;Führung
+114;Fischwirtschaft;;
+1140;Berufe in der Fischwirtschaft (o.S.);;
+11401;Fischwirtschaft (o.S.) - Helfer;Helfer;
+11402;Fischwirtschaft (o.S.) - Fachkraft;Fachkräfte;
+1141;Berufe in der Fischzucht;;
+11412;Fischzucht - Fachkraft;Fachkräfte;
+1142;Berufe in der Fischerei;;
+11422;Fischerei - Fachkraft;Fachkräfte;
+11423;Fischerei - Spezialist;Spezialisten;
+11424;Fischerei - Experte;Experten;
+1149;Aufsicht und Führung - Fischwirtschaft;;Aufsicht
+11493;Aufsicht - Fischwirtschaft;;Aufsicht
+11494;Führung - Fischwirtschaft;;Führung
+115;Tierpflege;;
+1150;Berufe in der Tierpflege (o.S.);;
+11501;Tierpflege (o.S.) - Helfer;Helfer;
+11502;Tierpflege (o.S.) - Fachkraft;Fachkräfte;
+1151;Berufe in der Nutztierpflege;;
+11512;Nutztierpflege - Fachkraft;Fachkräfte;
+1152;Berufe in der Haus-, Zootierpflege;;
+11522;Haus-, Zootierpflege - Fachkraft;Fachkräfte;
+1158;Berufe in der Tierpflege (s.s.T.);;
+11582;Tierpflege (s.s.T.) - Fachkraft;Fachkräfte;
+1159;Aufsicht und Führung - Tierpflege;;Aufsicht
+11593;Aufsicht - Tierpflege;;Aufsicht
+11594;Führung - Tierpflege;;Führung
+116;Weinbau;;
+1160;Berufe im Weinbau;;
+11602;Weinbau - Fachkraft;Fachkräfte;
+11603;Weinbau - Spezialist;Spezialisten;
+11604;Weinbau - Experte;Experten;
+1169;Aufsicht und Führung - Weinbau;;Aufsicht
+11693;Aufsicht - Weinbau;;Aufsicht
+11694;Führung - Weinbau;;Führung
+117;Forst-,Jagdwirtschaft, Landschaftspflege;;
+1171;Berufe in der Forstwirtschaft;;
+11711;Forstwirtschaft - Helfer;Helfer;
+11712;Forstwirtschaft - Fachkraft;Fachkräfte;
+11713;Forstwirtschaft - Spezialist;Spezialisten;
+11714;Forstwirtschaft - Experte;Experten;
+1172;Berufe in der Natur-, Landschaftspflege;;
+11722;Natur-, Landschaftspflege - Fachkraft;Fachkräfte;
+11723;Natur-, Landschaftspflege - Spezialist;Spezialisten;
+11724;Natur-, Landschaftspflege - Experte;Experten;
+1173;Berufe in der Jagdwirtschaft, Wildhege;;
+11732;Jagdwirtschaft, Wildhege - Fachkraft;Fachkräfte;
+1174;Sammeln von Pflanzen, Naturprodukten;;
+11742;Sammeln von Naturprodukten - Fachkraft;Fachkräfte;
+1179;Aufsicht,Führung-Forst,Landschaftspflege;;Aufsicht
+11793;Aufsicht - Forst,Jagd, Landschaftspflege;;Aufsicht
+11794;Führung - Forst,Jagd, Landschaftspflege;;Führung
+12;Gartenbauberufe, Floristik;;
+121;Gartenbau;;
+1210;Berufe im Gartenbau (o.S.);;
+12101;Gartenbau (o.S.) - Helfer;Helfer;
+12102;Berufe im Gartenbau (o.S.) - Fachkraft;Fachkräfte;
+12103;Berufe im Gartenbau (o.S.) - Spezialist;Spezialisten;
+12104;Berufe im Gartenbau (o.S.) - Experte;Experten;
+1211;Berufe im Obst-, Gemüsebau;;
+12112;Berufe im Obst-, Gemüsebau - Fachkraft;Fachkräfte;
+12113;Berufe im Obst-, Gemüsebau - Spezialist;Spezialisten;
+1212;Berufe BaumschuleStauden,Zierpflanzenbau;;
+12122;BaumschuleStauden,Zierpflanzen-Fachkraft;Fachkräfte;
+12123;BaumschuleStaudenZierpflanzen-Spezialist;Spezialisten;
+1213;Berufe in der Friedhofsgärtnerei;;
+12132;Friedhofsgärtnerei - Fachkraft;Fachkräfte;
+12133;Friedhofsgärtnerei - Spezialist;Spezialisten;
+1214;Berufe Garten-,Landschafts,Sportplatzbau;;
+12142;GartenLandschaftsSportplatzb.-Fachkraft;Fachkräfte;
+12143;GartenLandschaftsSportplatzb.-Spezialist;Spezialisten;
+12144;Garten-Landschafts,Sportplatzbau-Experte;Experten;
+1219;Aufsicht und Führung - Gartenbau;;Aufsicht
+12193;Aufsicht - Gartenbau;;Aufsicht
+12194;Führung - Gartenbau;;Führung
+122;Floristik;;
+1220;Berufe in der Floristik;;
+12202;Floristik - Fachkraft;Fachkräfte;
+12203;Floristik - Spezialist;Spezialisten;
+1229;Aufsicht und Führung - Floristik;;Aufsicht
+12293;Aufsicht - Floristik;;Aufsicht
+12294;Führung - Floristik;;Führung
+2;Rohstoffgewinnung, Produktion, Fertigung;;
+21;Rohstoffgewinn,Glas-,Keramikverarbeitung;;
+211;Berg-, Tagebau und Sprengtechnik;;
+2111;Berufe im Berg- und Tagebau;;
+21111;Berg- und Tagebau - Helfer;Helfer;
+21112;Berg- und Tagebau - Fachkraft;Fachkräfte;
+21113;Berg- und Tagebau - Spezialist;Spezialisten;
+21114;Berg- und Tagebau - Experte;Experten;
+2112;Berufe in der Sprengtechnik;;
+21122;Sprengtechnik - Fachkraft;Fachkräfte;
+21123;Sprengtechnik - Spezialist;Spezialisten;
+21124;Sprengtechnik - Experte;Experten;
+2119;Aufsicht,Führung-Bergbau,Sprengtechn.;;Aufsicht
+21193;Aufsicht -Berg-,Tagebau, Sprengtechnik;;Aufsicht
+21194;Führung -Berg-,Tagebau, Sprengtechnik;;Führung
+212;Naturstein-,Mineral-,Baustoffherstell.;;
+2120;Naturstein,Mineral,Baustoffherstell(o.S);;
+21201;Naturstein,Baustoffherstell (o.S)-Helfer;Helfer;
+2121;Berufe Naturstein-,Mineralaufbereitung;;
+21212;Naturstein-,Mineralaufbereit.-Fachkraft;Fachkräfte;
+21213;Naturstein-,Mineralaufbereit.-Spezialist;Spezialisten;
+2122;Berufe in der Baustoffherstellung;;
+21222;Baustoffherstellung - Fachkraft;Fachkräfte;
+21223;Baustoffherstellung - Spezialist;Spezialisten;
+2123;Berufe in der Steinmetztechnik;;
+21232;Steinmetztechnik - Fachkraft;Fachkräfte;
+21233;Steinmetztechnik - Spezialist;Spezialisten;
+2129;Aufsicht-Naturstein,Mineral,Baustoffher.;;Aufsicht
+21293;Aufsicht-Naturstein,Mineral,Baustoffher.;;Aufsicht
+213;Industrielle Glasherstell.,-verarbeitung;;
+2131;Berufe in der Glasherstellung;;
+21311;Glasherstellung - Helfer;Helfer;
+21312;Glasherstellung - Fachkraft;Fachkräfte;
+21313;Glasherstellung - Spezialist;Spezialisten;
+2132;Berufe im Glasapparatebau;;
+21322;Glasapparatebau - Fachkraft;Fachkräfte;
+21323;Glasapparatebau - Spezialist;Spezialisten;
+2133;Berufe in der industriellen Glasbläserei;;
+21332;Industrielle Glasbläserei - Fachkraft;Fachkräfte;
+2134;Berufe in der Glasveredelung;;
+21342;Glasveredelung - Fachkraft;Fachkräfte;
+2135;Berufe in der Glasapparatejustierung;;
+21352;Glasapparatejustierung - Fachkraft;Fachkräfte;
+2136;Berufe in der Feinoptik;;
+21362;Feinoptik - Fachkraft;Fachkräfte;
+21363;Feinoptik - Spezialist;Spezialisten;
+2139;Aufsicht-Industri.Glasherst.,-verarbeit.;;Aufsicht
+21393;Aufsicht-Industri.Glasherst.,-verarbeit.;;Aufsicht
+214;Industrielle Keramikherstell.,-verarbeit;;
+2141;Industriekeramik (Verfahren,Anlagentech);;
+21411;Industriekeramik (Verfahren)-Helfer;Helfer;
+21412;Industriekeramik (Verfahren)-Fachkraft;Fachkräfte;
+21413;Industriekeramik(Verfahren)-Spezialist;Spezialisten;
+2142;Industriekeramik (Modelltechnik);;
+21422;Industriekeramik(Modelltechn.)-Fachkraft;Fachkräfte;
+21423;Industriekeramik(Modelltechn)-Spezialist;Spezialisten;
+2149;Aufsicht-Industrielle Keramikherstellung;;Aufsicht
+21493;Aufsicht-Industrielle Keramikherstellung;;Aufsicht
+22;Kunststoff- u. Holzherst.,-verarbeitung;;
+221;Kunststoff,Kautschukherstell.,verarbeit;;
+2210;Kunststoff-,Kautschukherstellung (o.S.);;
+22101;Kunststoff-,Kautschukherst. (oS.)-Helfer;Helfer;
+22102;Kunststoff-,Kautschukherst(oS)-Fachkraft;Fachkräfte;
+22103;Kunststoff-,Kautschukhers(oS)-Spezialist;Spezialisten;
+22104;Kunststoff-,Kautschukherst. (oS)-Experte;Experten;
+2211;Berufe i.d.Reifen-,Vulkanisationstechnik;;
+22112;Reifen-, Vulkanisationstechnik-Fachkraft;Fachkräfte;
+2218;Kunststoff,Kautschukherst.,-verarb.(ssT);;
+22182;Kunststoff,Kautschukverar(ssT)-Fachkraft;Fachkräfte;
+22183;Kunststoff,Kautschukver.(ssT)-Spezialist;Spezialisten;
+22184;Kunststoff,Kautschukverarb.(ssT)-Experte;Experten;
+2219;Aufsicht-Kunststoff,Kautschukher,verarb.;;Aufsicht
+22193;Aufsicht-Kunststoff,Kautschukher,verarb.;;Aufsicht
+222;Farb- und Lacktechnik;;
+2220;Berufe in der Farb-, Lacktechnik (o.S.);;
+22201;Farb-, Lacktechnik (o.S.) - Helfer;Helfer;
+22202;Farb-, Lacktechnik (o.S.) - Fachkraft;Fachkräfte;
+22203;Farb-, Lacktechnik (o.S.) - Spezialist;Spezialisten;
+22204;Farb-, Lacktechnik (o.S.) - Experte;Experten;
+2221;Berufe in der Fahrzeuglackierung;;
+22212;Fahrzeuglackierung - Fachkraft;Fachkräfte;
+2222;Berufe im Lacklaboratorium;;
+22222;Lacklaboratorium - Fachkraft;Fachkräfte;
+2229;Aufsicht - Farb-, Lacktechnik;;Aufsicht
+22293;Aufsicht - Farb-, Lacktechnik;;Aufsicht
+223;Holzbe- und -verarbeitung;;
+2230;Berufe i.d. Holzbe-,-verarbeitung (o.S.);;
+22301;Holzbe-, -verarbeitung (o.S.) - Helfer;Helfer;
+22302;Holzbe-,-verarbeitung (o.S.) - Fachkraft;Fachkräfte;
+22303;Holzbe-,-verarbeitung(o.S.) - Spezialist;Spezialisten;
+22304;Holzbe-, -verarbeitung (o.S.) - Experte;Experten;
+2231;Berufe Holztrocknung,-konservierung;;
+22312;Holztrocknung,-konservierung - Fachkraft;Fachkräfte;
+2232;Produktion v. Holzwerkstoffen,-bauteilen;;
+22322;Prod. Holzwerkstoffe,-bauteile-Fachkraft;Fachkräfte;
+2233;Produktion v. Fertigprodukten aus Holz;;
+22332;Prod. Fertigprodukte aus Holz -Fachkraft;Fachkräfte;
+22333;Prod. Fertigprodukte aus Holz-Spezialist;Spezialisten;
+2234;Berufe im Holz-, Möbel-, Innenausbau;;
+22342;Holz-, Möbel-, Innenausbau - Fachkraft;Fachkräfte;
+22343;Holz-, Möbel-, Innenausbau - Spezialist;Spezialisten;
+2235;FlechtwerkgestalterBürsten-,Pinselmacher;;
+22352;Flechtwerk,Bürste,Pinselmacher-Fachkraft;Fachkräfte;
+2238;Berufe i.d. Holzbe-,-verarbeitung (ssT);;
+22382;Holzbe-, -verarbeitung (ssT) - Fachkraft;Fachkräfte;
+2239;Aufsicht,Führung - Holzbe-,-verarbeitung;;Aufsicht
+22393;Aufsicht - Holzbe-, -verarbeitung;;Aufsicht
+22394;Führung - Holzbe-, -verarbeitung;;Führung
+23;Papier-,Druckberufe, tech.Mediengestalt.;;
+231;Papier- und Verpackungstechnik;;
+2310;Berufe Papier-,Verpackungstechnik (o.S.);;
+23101;Papier-,Verpackungstechnik (oS) - Helfer;Helfer;
+2311;Berufe in der Papierherstellung;;
+23112;Papierherstellung - Fachkraft;Fachkräfte;
+23113;Papierherstellung - Spezialist;Spezialisten;
+23114;Papierherstellung - Experte;Experten;
+2312;Berufe Papierverarb., Verpackungstechnik;;
+23122;Papierverarb,Verpackungstechn.-Fachkraft;Fachkräfte;
+23123;Papierverarb,Verpackungstechn-Spezialist;Spezialisten;
+23124;Papierverarb.,Verpackungstechn.-Experte;Experten;
+2319;Aufsicht - Papier-, Verpackungstechnik;;Aufsicht
+23193;Aufsicht - Papier-, Verpackungstechnik;;Aufsicht
+232;Technische Mediengestaltung;;
+2321;Berufe Digital-, Printmediengestaltung;;
+23212;Digital-,Printmediengestaltung-Fachkraft;Fachkräfte;
+23213;Digital,Printmediengestaltung-Spezialist;Spezialisten;
+2322;Berufe Grafik-Kommunikations-,Fotodesign;;
+23222;Grafik-Kommunikat.,Fotodesign-Fachkraft;Fachkräfte;
+23223;Grafik-Kommunikat.,Fotodesign-Spezialist;Spezialisten;
+23224;Grafik-Kommunikat.,Fotodesign-Experte;Experten;
+2328;Berufe technische Mediengestaltung (ssT);;
+23282;Techn.Mediengestaltung (ssT) - Fachkraft;Fachkräfte;
+2329;Aufsicht,Führung-Techn. Mediengestaltung;;Aufsicht
+23293;Aufsicht - Technische Mediengestaltung;;Aufsicht
+23294;Führung - Technische Mediengestaltung;;Führung
+233;Fototechnik und Fotografie;;
+2331;Berufe in der Fototechnik;;
+23312;Fototechnik - Fachkraft;Fachkräfte;
+23313;Fototechnik - Spezialist;Spezialisten;
+23314;Fototechnik - Experte;Experten;
+2332;Berufe in der Fotografie;;
+23322;Fotografie - Fachkraft;Fachkräfte;
+23323;Fotografie - Spezialist;Spezialisten;
+2339;Aufsicht - Fototechnik und Fotografie;;Aufsicht
+23393;Aufsicht - Fototechnik und Fotografie;;Aufsicht
+234;Drucktechnik,-weiterverarb.,Buchbinderei;;
+2341;Berufe in der Drucktechnik;;
+23411;Drucktechnik - Helfer;Helfer;
+23412;Drucktechnik - Fachkraft;Fachkräfte;
+23413;Drucktechnik - Spezialist;Spezialisten;
+23414;Drucktechnik - Experte;Experten;
+2342;Berufe Buchbinderei, Druckweiterverarb.;;
+23422;Buchbinderei,Druckweiterverarb-Fachkraft;Fachkräfte;
+23423;Buchbinderei,Druckweiterver.-Spezialist;Spezialisten;
+2349;Aufsicht-Drucktechnik,Buchbinderei;;Aufsicht
+23493;Aufsicht-Drucktechnik,Buchbinderei;;Aufsicht
+24;Metallerzeugung,-bearbeitung, Metallbau;;
+241;Metallerzeugung;;
+2410;Berufe in der Metallerzeugung (o.S.);;
+24101;Metallerzeugung (o.S.) - Helfer;Helfer;
+2411;Berufe in der Hüttentechnik;;
+24112;Hüttentechnik - Fachkraft;Fachkräfte;
+24113;Hüttentechnik - Spezialist;Spezialisten;
+24114;Hüttentechnik - Experte;Experten;
+2412;Berufe in der Metallumformung;;
+24122;Metallumformung - Fachkraft;Fachkräfte;
+24123;Metallumformung - Spezialist;Spezialisten;
+24124;Metallumformung - Experte;Experten;
+2413;Berufe in der industriellen Gießerei;;
+24132;Industrielle Gießerei - Fachkraft;Fachkräfte;
+24133;Industrielle Gießerei - Spezialist;Spezialisten;
+24134;Industrielle Gießerei - Experte;Experten;
+2414;Berufe handwerkl.Metall-,Glockengießerei;;
+24142;Handw.Metall-,Glockengießerei-Fachkraft;Fachkräfte;
+2419;Aufsicht - Metallerzeugung;;Aufsicht
+24193;Aufsicht - Metallerzeugung;;Aufsicht
+242;Metallbearbeitung;;
+2420;Berufe in der Metallbearbeitung (o.S.);;
+24201;Metallbearbeitung (o.S.) - Helfer;Helfer;
+24202;Metallbearbeitung (o.S.) - Fachkraft;Fachkräfte;
+24203;Metallbearbeitung (o.S.) - Spezialist;Spezialisten;
+2421;Berufe i.d. spanlosen Metallbearbeitung;;
+24212;Spanlose Metallbearbeitung - Fachkraft;Fachkräfte;
+2422;Berufe i.d. schleifenden Metallbearbeit.;;
+24222;Schleifende Metallbearbeitung-Fachkraft;Fachkräfte;
+2423;Berufe i.d. spanenden Metallbearbeitung;;
+24232;Spanende Metallbearbeitung - Fachkraft;Fachkräfte;
+24233;Spanende Metallbearbeitung - Spezialist;Spezialisten;
+2424;Berufe Metallbearbeitung d. Laserstrahl;;
+24243;Metallbearbeitung Laserstrahl-Spezialist;Spezialisten;
+24244;Metallbearbeitung Laserstrahl-Experte;Experten;
+2429;Aufsicht - Metallbearbeitung;;Aufsicht
+24293;Aufsicht - Metallbearbeitung;;Aufsicht
+243;Metalloberflächenbehandlung;;
+2430;Berufe Metalloberflächenbehandlung (o.S);;
+24301;Metalloberflächenbehandl. (oS) - Helfer;Helfer;
+24302;Metalloberflächenbehandl.(oS)-Fachkraft;Fachkräfte;
+24303;Metalloberflächenbehandl.(oS)-Spezialist;Spezialisten;
+24304;Metalloberflächenbehandl. (oS)-Experte;Experten;
+2438;Berufe Metalloberflächenbehandlung (ssT);;
+24382;Metalloberflächenbehandl.(ssT)-Fachkraft;Fachkräfte;
+2439;Aufsicht - Metalloberflächenbehandlung;;Aufsicht
+24393;Aufsicht - Metalloberflächenbehandlung;;Aufsicht
+244;Metallbau und Schweißtechnik;;
+2441;Berufe im Metallbau;;
+24411;Metallbau - Helfer;Helfer;
+24412;Metallbau - Fachkraft;Fachkräfte;
+24413;Metallbau - Spezialist;Spezialisten;
+24414;Metallbau - Experte;Experten;
+2442;Berufe i.d. Schweiß-, Verbindungstechnik;;
+24422;Schweiß-, Verbindungstechnik - Fachkraft;Fachkräfte;
+24423;Schweiß-,Verbindungstechnik - Spezialist;Spezialisten;
+24424;Schweiß-, Verbindungstechnik - Experte;Experten;
+2443;Industrietaucher/innen u.a.Taucherberufe;;
+24432;Industrietaucher/innen u.a. - Fachkraft;Fachkräfte;
+2449;Aufsicht - Metallbau und Schweißtechnik;;Aufsicht
+24493;Aufsicht - Metallbau und Schweißtechnik;;Aufsicht
+245;Feinwerk- und Werkzeugtechnik;;
+2451;Berufe in der Feinwerktechnik;;
+24511;Feinwerktechnik - Helfer;Helfer;
+24512;Feinwerktechnik - Fachkraft;Fachkräfte;
+24513;Feinwerktechnik - Spezialist;Spezialisten;
+24514;Feinwerktechnik - Experte;Experten;
+2452;Berufe in der Werkzeugtechnik;;
+24522;Werkzeugtechnik - Fachkraft;Fachkräfte;
+24523;Werkzeugtechnik - Spezialist;Spezialisten;
+24524;Werkzeugtechnik - Experte;Experten;
+2453;Berufe im Uhrmacherhandwerk;;
+24532;Uhrmacherhandwerk - Fachkraft;Fachkräfte;
+24533;Uhrmacherhandwerk - Spezialist;Spezialisten;
+2459;Aufsicht - Feinwerk- u. Werkzeugtechnik;;Aufsicht
+24593;Aufsicht - Feinwerk- u. Werkzeugtechnik;;Aufsicht
+25;Maschinen- und Fahrzeugtechnikberufe;;
+251;Maschinenbau- und Betriebstechnik;;
+2510;Berufe Maschinenbau-, Betriebstechn.(oS);;
+25101;Maschinenbau-,Betriebstechnik(oS)-Helfer;Helfer;
+25102;Maschinenbau-,Betriebstech(oS)-Fachkraft;Fachkräfte;
+25103;Maschinenbau,Betriebstech(oS)-Spezialist;Spezialisten;
+25104;Maschinenbau-,Betriebstechn.(oS)-Experte;Experten;
+2511;Maschinen-, Gerätezusammensetzer/innen;;
+25112;Maschinen,Gerätezusammensetzer-Fachkraft;Fachkräfte;
+2512;Maschinen- und Anlagenführer/innen;;
+25122;Maschinen-, Anlagenführer - Fachkraft;Fachkräfte;
+2513;Tech.ServicekräfteWartung,Instandhaltung;;
+25131;Tech.Servicekr. Wartung,Instand.-Helfer;Helfer;
+25132;Tech.Servicekr.Wartung,Instand-Fachkraft;Fachkräfte;
+25133;TechServicekr.Wartung,Instand-Spezialist;Spezialisten;
+25134;Tech.Servicekr.Wartung,Instand.-Experte;Experten;
+2518;Berufe Maschinenbau,Betriebstechn.(ssT);;
+25182;Maschinenbau,Betriebstech(ssT)-Fachkraft;Fachkräfte;
+25183;Maschinenbau,Betriebstec(ssT)-Spezialist;Spezialisten;
+25184;Maschinenbau,Betriebstechn.(ssT)-Experte;Experten;
+2519;Aufsicht,Führung-Maschinenbau,Betriebst.;;Aufsicht
+25193;Aufsicht - Maschinenbau-,Betriebstechnik;;Aufsicht
+25194;Führung - Maschinenbau-, Betriebstechnik;;Führung
+252;Fahrzeug-Luft-Raumfahrt-,Schiffbautechn.;;
+2520;Berufe in der Fahrzeugtechnik (o.S.);;
+25201;Fahrzeugtechnik (o.S.) - Helfer;Helfer;
+2521;Berufe in der Kraftfahrzeugtechnik;;
+25212;Kraftfahrzeugtechnik - Fachkraft;Fachkräfte;
+25213;Kraftfahrzeugtechnik - Spezialist;Spezialisten;
+25214;Kraftfahrzeugtechnik - Experte;Experten;
+2522;Berufe i.d. Land-, Baumaschinentechnik;;
+25222;Land-, Baumaschinentechnik - Fachkraft;Fachkräfte;
+25223;Land-, Baumaschinentechnik - Spezialist;Spezialisten;
+25224;Land-, Baumaschinentechnik - Experte;Experten;
+2523;Berufe in der Luft- und Raumfahrttechnik;;
+25232;Luft- und Raumfahrttechnik - Fachkraft;Fachkräfte;
+25233;Luft- und Raumfahrttechnik - Spezialist;Spezialisten;
+25234;Luft- und Raumfahrttechnik - Experte;Experten;
+2524;Berufe in der Schiffbautechnik;;
+25242;Schiffbautechnik - Fachkraft;Fachkräfte;
+25243;Schiffbautechnik - Spezialist;Spezialisten;
+25244;Schiffbautechnik - Experte;Experten;
+2525;Berufe in der Zweiradtechnik;;
+25252;Zweiradtechnik - Fachkraft;Fachkräfte;
+25253;Zweiradtechnik - Spezialist;Spezialisten;
+25254;Zweiradtechnik - Experte;Experten;
+2529;Aufsicht,Führung-Fahr.LuftRaum.Schiffbau;;Aufsicht
+25293;Aufsicht-FahrzeugLuftRaumf.Schiffbautech;;Aufsicht
+25294;Führung-FahrzeugLuftRaumf.Schiffbautech;;Führung
+26;Mechatronik-, Energie- u. Elektroberufe;;
+261;Mechatronik und Automatisierungstechnik;;
+2610;Berufe Mechatr.,Automatisierungst.(o.S.);;
+26102;Mechatr,Automatisierungs(o.S.) - Fachkraft;Fachkräfte;
+2611;Berufe in der Mechatronik;;
+26112;Mechatronik - Fachkraft;Fachkräfte;
+26113;Mechatronik - Spezialist;Spezialisten;
+26114;Mechatronik - Experte;Experten;
+2612;Berufe in der Automatisierungstechnik;;
+26122;Automatisierungstechnik - Fachkraft;Fachkräfte;
+26123;Automatisierungstechnik - Spezialist;Spezialisten;
+26124;Automatisierungstechnik - Experte;Experten;
+2619;Aufsicht-Mechatronik,Automatisierungst.;;Aufsicht
+26193;Aufsicht-Mechatronik,Automatisierungst.;;Aufsicht
+262;Energietechnik;;
+2621;Berufe in der Bauelektrik;;
+26212;Bauelektrik - Fachkraft;Fachkräfte;
+26213;Bauelektrik - Spezialist;Spezialisten;
+2622;Berufe in der Elektromaschinentechnik;;
+26222;Elektromaschinentechnik - Fachkraft;Fachkräfte;
+26223;Elektromaschinentechnik - Spezialist;Spezialisten;
+2623;Berufe i.d. Energie-, Kraftwerkstechnik;;
+26232;Energie-, Kraftwerkstechnik - Fachkraft;Fachkräfte;
+26233;Energie-, Kraftwerkstechnik - Spezialist;Spezialisten;
+26234;Energie-, Kraftwerkstechnik - Experte;Experten;
+2624;Berufe i.d. regenerativen Energietechnik;;
+26242;Regenerative Energietechnik - Fachkraft;Fachkräfte;
+26243;Regenerative Energietechnik - Spezialist;Spezialisten;
+26244;Regenerative Energietechnik - Experte;Experten;
+2625;Berufe i.d. elektrischen Betriebstechnik;;
+26252;Elektrische Betriebstechnik - Fachkraft;Fachkräfte;
+26253;Elektrische Betriebstechnik - Spezialist;Spezialisten;
+2626;Berufe Leitungsinstallation,-wartung;;
+26262;Leitungsinstallation,-wartung -Fachkraft;Fachkräfte;
+26263;Leitungsinstallation,-wartung-Spezialist;Spezialisten;
+26264;Leitungsinstallation,-wartung - Experte;Experten;
+2629;Aufsicht - Energietechnik;;Aufsicht
+26293;Aufsicht - Energietechnik;;Aufsicht
+263;Elektrotechnik;;
+2630;Berufe in der Elektrotechnik (o.S.);;
+26301;Elektrotechnik (o.S.) - Helfer;Helfer;
+26302;Elektrotechnik (o.S.) - Fachkraft;Fachkräfte;
+26303;Elektrotechnik (o.S.) - Spezialist;Spezialisten;
+26304;Elektrotechnik (o.S.) - Experte;Experten;
+2631;Berufe Informations,Telekommunikationst.;;
+26312;Inform-,Telekommunikationst.-Fachkraft;Fachkräfte;
+26313;Inform-,Telekommunikationst.-Spezialist;Spezialisten;
+26314;Inform-,Telekommunikationst.-Experte;Experten;
+2632;Berufe in der Mikrosystemtechnik;;
+26322;Mikrosystemtechnik - Fachkraft;Fachkräfte;
+26323;Mikrosystemtechnik - Spezialist;Spezialisten;
+26324;Mikrosystemtechnik - Experte;Experten;
+2633;Berufe Luftver.,Schiff,Fahrzeugelektron.;;
+26332;Luftv.Schiff,Fahrzeugelektron.-Fachkraft;Fachkräfte;
+26333;Luftv.Schiff,Fahrzeugelektron-Spezialist;Spezialisten;
+26334;Luftv.Schiff,Fahrzeugelektronik-Experte;Experten;
+2638;Berufe in der Elektrotechnik (s.s.T.);;
+26382;Elektrotechnik (s.s.T.) - Fachkraft;Fachkräfte;
+26383;Elektrotechnik (s.s.T.) - Spezialist;Spezialisten;
+26384;Elektrotechnik (s.s.T.) - Experte;Experten;
+2639;Aufsicht - Elektrotechnik;;Aufsicht
+26393;Aufsicht - Elektrotechnik;;Aufsicht
+27;Techn.Entwickl.Konstr.Produktionssteuer.;;
+271;Technische Forschung und Entwicklung;;
+2710;Berufe tech. Forschung, Entwicklung (oS);;
+27103;Techn.Forschung,Entwickl.(oS)-Spezialist;Spezialisten;
+27104;Techn.Forschung,Entwickl.(oS)-Experte;Experten;
+2718;Berufe tech.Forschung, Entwicklung (ssT);;
+27182;Tech.Forschung,Entwickl.(ssT)-Fachkraft;Fachkräfte;
+27183;Tech.Forschung,Entwickl.(ssT)-Spezialist;Spezialisten;
+27184;Tech.Forschung,Entwickl.(ssT)-Experte;Experten;
+2719;Führung - Techn. Forschung, Entwicklung;;Führung
+27194;Führung - Techn. Forschung, Entwicklung;;Führung
+272;Techn. Zeichnen, Konstruktion, Modellbau;;
+2721;Technische Zeichner/innen;;
+27212;Technische Zeichner/innen - Fachkraft;Fachkräfte;
+2722;Berufe i.d. Konstruktion u. im Gerätebau;;
+27223;Konstruktion und Gerätebau - Spezialist;Spezialisten;
+27224;Konstruktion und Gerätebau - Experte;Experten;
+2723;Berufe im Modellbau;;
+27232;Modellbau - Fachkraft;Fachkräfte;
+2728;Techn.Zeichnen, Konstrukt.,Modellb.(ssT);;
+27282;TechZeich,Konstr,Modellb.(ssT)-Fachkraft;Fachkräfte;
+27283;TechZeich,Konstr,Modellb(ssT)-Spezialist;Spezialisten;
+27284;TechZeich.,Konstr.,Modellb.(ssT)-Experte;Experten;
+2729;Aufsicht,Führung-TechZeich.Konstr.Modell;;Aufsicht
+27293;Aufsicht-TechZeichnen,Konstrukt.Modellb.;;Aufsicht
+27294;Führung-TechZeichnen,Konstrukt.Modellb.;;Führung
+273;Technische Produktionsplanung,-steuerung;;
+2730;Berufe tech. Produktionsplan.,-steuerung;;
+27302;Tech.Produktionspl.,-steuerung-Fachkraft;Fachkräfte;
+27303;Tech.Produktionspl.,steuerung-Spezialist;Spezialisten;
+27304;Tech.Produktionspl.,-steuerung-Experte;Experten;
+2731;Berufe technische Qualitätssicherung;;
+27312;Technische Qualitätssicherung-Fachkraft;Fachkräfte;
+27313;Technische Qualitätssicherung-Spezialist;Spezialisten;
+27314;Technische Qualitätssicherung - Experte;Experten;
+2739;Aufsicht,Führung-Produktionsplan,steuer.;;Aufsicht
+27393;Aufsicht-Techn.Produktionsplan.,-steuer.;;Aufsicht
+27394;Führung- Techn.Produktionsplan.,-steuer.;;Führung
+28;Textil- und Lederberufe;;
+281;Textiltechnik und -produktion;;
+2810;Berufe in der Textiltechnik (o.S.);;
+28101;Textiltechnik (o.S.) - Helfer;Helfer;
+28102;Textiltechnik (o.S.) - Fachkraft;Fachkräfte;
+28103;Textiltechnik (o.S.) - Spezialist;Spezialisten;
+28104;Textiltechnik (o.S.) - Experte;Experten;
+2811;Berufe in der Textilgestaltung;;
+28112;Textilgestaltung - Fachkraft;Fachkräfte;
+28113;Textilgestaltung - Spezialist;Spezialisten;
+28114;Textilgestaltung - Experte;Experten;
+2812;Berufe in der Textilherstellung;;
+28122;Textilherstellung - Fachkraft;Fachkräfte;
+28123;Textilherstellung - Spezialist;Spezialisten;
+2813;Berufe in der Garn- und Seilherstellung;;
+28132;Garn- und Seilherstellung - Fachkraft;Fachkräfte;
+28133;Garn- und Seilherstellung - Spezialist;Spezialisten;
+2814;Berufe in der Textilveredlung;;
+28142;Textilveredlung - Fachkraft;Fachkräfte;
+28143;Textilveredlung - Spezialist;Spezialisten;
+2819;Aufsicht,Führung-Textiltechn.,-produkt.;;Aufsicht
+28193;Aufsicht - Textiltechnik, -produktion;;Aufsicht
+28194;Führung - Textiltechnik, -produktion;;Führung
+282;Textilverarbeitung;;
+2821;Berufe im Modedesign;;
+28212;Modedesign - Fachkraft;Fachkräfte;
+28213;Modedesign - Spezialist;Spezialisten;
+28214;Modedesign - Experte;Experten;
+2822;Berufe i.d. Bekleidungsherstellung;;
+28221;Bekleidungsherstellung - Helfer;Helfer;
+28222;Bekleidungsherstellung - Fachkraft;Fachkräfte;
+28223;Bekleidungsherstellung - Spezialist;Spezialisten;
+28224;Bekleidungsherstellung - Experte;Experten;
+2823;Technische Konfektionäre, Segelmacher;;
+28232;Tech.Konfektionäre,Segelmacher-Fachkraft;Fachkräfte;
+2824;Berufe Polsterei, Fahrzeuginnenausstat.;;
+28242;Polsterei,Fahrzeuginnenausstat-Fachkraft;Fachkräfte;
+2829;Aufsicht,Führung - Textilverarbeitung;;Aufsicht
+28293;Aufsicht - Textilverarbeitung;;Aufsicht
+28294;Führung - Textilverarbeitung;;Führung
+283;Leder-, Pelzherstellung u. -verarbeitung;;
+2830;Berufe Leder-,Pelzherstell.,-verarb.(oS);;
+28301;Leder-,Pelzherstell.,-verarb.(oS)-Helfer;Helfer;
+2831;Berufe in der Lederherstellung;;
+28312;Lederherstellung - Fachkraft;Fachkräfte;
+28313;Lederherstellung - Spezialist;Spezialisten;
+28314;Lederherstellung - Experte;Experten;
+2832;Berufe Sattlerei, Herst. Lederutensilien;;
+28322;Sattlerei,Herst. Lederutensil.-Fachkraft;Fachkräfte;
+2833;Berufe in der Schuhherstellung;;
+28332;Schuhherstellung - Fachkraft;Fachkräfte;
+28333;Schuhherstellung - Spezialist;Spezialisten;
+2834;Berufe in der Pelzbe- und -verarbeitung;;
+28342;Pelzbe- und -verarbeitung - Fachkraft;Fachkräfte;
+28343;Pelzbe- und -verarbeitung - Spezialist;Spezialisten;
+2839;Aufsicht,Führung-Leder-,Pelzher.,verarb.;;Aufsicht
+28393;Aufsicht - Leder-,Pelzherstell.,-verarb.;;Aufsicht
+28394;Führung - Leder-,Pelzherstell.,-verarb.;;Führung
+29;Lebensmittelherstellung u. -verarbeitung;;
+291;Getränkeherstellung;;
+2910;Berufe in der Getränkeherstellung (o.S.);;
+29102;Getränkeherstellung (o.S.) - Fachkraft;Fachkräfte;
+29103;Getränkeherstellung (o.S.) - Spezialist;Spezialisten;
+29104;Getränkeherstellung (o.S.) - Experte;Experten;
+2911;Brauer/innen und Mälzer/innen;;
+29112;Brauer/innen, Mälzer/innen - Fachkraft;Fachkräfte;
+29113;Brauer/innen, Mälzer/innen - Spezialist;Spezialisten;
+29114;Brauer/innen, Mälzer/innen - Experte;Experten;
+2912;Weinküfer/innen;;
+29122;Weinküfer/innen - Fachkraft;Fachkräfte;
+29123;Weinküfer/innen - Spezialist;Spezialisten;
+2913;Brenner/innen, Destillateure/innen;;
+29132;Brenner, Destillateure - Fachkraft;Fachkräfte;
+29133;Brenner, Destillateure - Spezialist;Spezialisten;
+29134;Brenner, Destillateure - Experte;Experten;
+2914;Berufe in der Fruchtsafttechnik;;
+29142;Fruchtsafttechnik - Fachkraft;Fachkräfte;
+29143;Fruchtsafttechnik - Spezialist;Spezialisten;
+2915;Nahrungsmittel- u. Getränkekoster/innen;;
+29152;Nahrungsmittel-,Getränkekoster-Fachkraft;Fachkräfte;
+2919;Aufsicht,Führung - Getränkeherstellung;;Aufsicht
+29193;Aufsicht - Getränkeherstellung;;Aufsicht
+29194;Führung - Getränkeherstellung;;Führung
+292;Lebensmittel- u. Genussmittelherstellung;;
+2920;Berufe i.d. Lebensmittelherstellung (oS);;
+29201;Lebensmittelherstellung (o.S.) - Helfer;Helfer;
+29202;Lebensmittelherstellung (oS) - Fachkraft;Fachkräfte;
+29203;Lebensmittelherstellung (oS) -Spezialist;Spezialisten;
+29204;Lebensmittelherstellung (o.S.) - Experte;Experten;
+2921;Berufe Mühlenprodukt-,Futtermittelherst.;;
+29212;Mühlenprod.-,Futtermittelher.-Fachkraft;Fachkräfte;
+29213;Mühlenprod.-,Futtermittelher.-Spezialist;Spezialisten;
+2922;Berufe Back-, Konditoreiwarenherstell.;;
+29222;Back-, Konditoreiwarenherst.-Fachkraft;Fachkräfte;
+29223;Back-, Konditoreiwarenherst.-Spezialist;Spezialisten;
+2923;Berufe in der Fleischverarbeitung;;
+29232;Fleischverarbeitung - Fachkraft;Fachkräfte;
+29233;Fleischverarbeitung - Spezialist;Spezialisten;
+2924;Berufe in der Fischverarbeitung;;
+29242;Fischverarbeitung - Fachkraft;Fachkräfte;
+29243;Fischverarbeitung - Spezialist;Spezialisten;
+2925;Berufe in der Milchproduktherstellung;;
+29252;Milchproduktherstellung - Fachkraft;Fachkräfte;
+29253;Milchproduktherstellung - Spezialist;Spezialisten;
+2926;Berufe in der Süßwarenherstellung;;
+29262;Süßwarenherstellung - Fachkraft;Fachkräfte;
+29263;Süßwarenherstellung - Spezialist;Spezialisten;
+2927;Berufe in der Tabakwarenherstellung;;
+29272;Tabakwarenherstellung - Fachkraft;Fachkräfte;
+29273;Tabakwarenherstellung - Spezialist;Spezialisten;
+2928;Berufe i.d.Lebensmittelherstellung (ssT);;
+29282;Lebensmittelherstellung(ssT) - Fachkraft;Fachkräfte;
+29283;Lebensmittelherstellung(ssT) -Spezialist;Spezialisten;
+29284;Lebensmittelherstellung (ssT) - Experte;Experten;
+2929;Aufsicht,Führung-Lebens-,Genussmittelher;;Aufsicht
+29293;Aufsicht-Lebens-,Genussmittelherstellung;;Aufsicht
+29294;Führung-Lebens-,Genussmittelherstellung;;Führung
+293;Speisenzubereitung;;
+2930;Köche/Köchinnen (o.S.);;
+29301;Köche/Köchinnen (o.S.) - Helfer;Helfer;
+29302;Köche/Köchinnen (o.S.) - Fachkraft;Fachkräfte;
+2931;Vor-, Kalt- und Süßspeisenköche/innen;;
+29312;Vor-, Kalt-, Süßspeisenköche - Fachkraft;Fachkräfte;
+2932;Grill-, Braten- u. Fischköche/-köchinnen;;
+29322;Grill-, Braten-, Fischköche - Fachkraft;Fachkräfte;
+2938;Köche/Köchinnen (s.s.T.);;
+29382;Köche/Köchinnen (s.s.T.) - Fachkraft;Fachkräfte;
+2939;Aufsicht, Führung - Speisenzubereitung;;Aufsicht
+29393;Aufsicht - Speisenzubereitung;;Aufsicht
+29394;Führung - Speisenzubereitung;;Führung
+3;Bau,Architektur,Vermessung,Gebäudetechn.;;
+31;Bauplanung,Architektur,Vermessungsberufe;;
+311;Bauplanung u. -überwachung, Architektur;;
+3110;Berufe Bauplanung u. -überwachung (o.S.);;
+31102;Bauplanung,-überwachung (oS)-Fachkraft;Fachkräfte;
+31103;Bauplanung,-überwachung (oS)-Spezialist;Spezialisten;
+31104;Bauplanung, -überwachung (oS) - Experte;Experten;
+3111;Berufe in der Architektur;;
+31114;Architektur - Experte;Experten;
+3112;Berufe in der Stadt- und Raumplanung;;
+31124;Stadt- und Raumplanung - Experte;Experten;
+3113;Berufe Bauplanung Verkehrswege, -anlagen;;
+31132;Bauplan. Verkehrswege,-anlagen-Fachkraft;Fachkräfte;
+31133;Bauplan Verkehrswege,-anlagen-Spezialist;Spezialisten;
+31134;Bauplan. Verkehrswege,-anlagen - Experte;Experten;
+3114;Berufe in der Wasserwirtschaft;;
+31142;Wasserwirtschaft - Fachkraft;Fachkräfte;
+31143;Wasserwirtschaft - Spezialist;Spezialisten;
+31144;Wasserwirtschaft - Experte;Experten;
+3115;Berufe Bauwerkserhaltung und -erneuerung;;
+31152;Bauwerkserhaltung,-erneuerung-Fachkraft;Fachkräfte;
+31153;Bauwerkserhaltung,-erneuerung-Spezialist;Spezialisten;
+31154;Bauwerkserhaltung,-erneuerung-Experte;Experten;
+3116;Bausachverständige und Baukontrolleure;;
+31163;Bausachverständ,-kontrolleure-Spezialist;Spezialisten;
+31164;Bausachverständige,-kontrolleure-Experte;Experten;
+3117;Berufe i.d. Bauabrechnung, -kalkulation;;
+31173;Bauabrechnung,-kalkulation - Spezialist;Spezialisten;
+31174;Bauabrechnung, -kalkulation - Experte;Experten;
+3119;Aufsicht,Führung-Bauplan,-überw,Archit.;;Aufsicht
+31193;Aufsicht-Bauplan.,-überwach.,Architektur;;Aufsicht
+31194;Führung-Bauplan.,-überwach., Architektur;;Führung
+312;Vermessung und Kartografie;;
+3121;Berufe in der Vermessungstechnik;;
+31212;Vermessungstechnik - Fachkraft;Fachkräfte;
+31213;Vermessungstechnik - Spezialist;Spezialisten;
+31214;Vermessungstechnik - Experte;Experten;
+3122;Berufe in der Kartografie;;
+31222;Kartografie - Fachkraft;Fachkräfte;
+31223;Kartografie - Spezialist;Spezialisten;
+31224;Kartografie - Experte;Experten;
+32;Hoch- und Tiefbauberufe;;
+321;Hochbau;;
+3210;Berufe im Hochbau (o.S.);;
+32101;Hochbau (o.S.) - Helfer;Helfer;
+32102;Hochbau (o.S.) - Fachkraft;Fachkräfte;
+32103;Hochbau (o.S.) - Spezialist;Spezialisten;
+32104;Hochbau (o.S.) - Experte;Experten;
+3211;Berufe im Beton- und Stahlbetonbau;;
+32112;Beton- und Stahlbetonbau - Fachkraft;Fachkräfte;
+32113;Beton- und Stahlbetonbau - Spezialist;Spezialisten;
+3212;Berufe im Maurerhandwerk;;
+32122;Maurerhandwerk - Fachkraft;Fachkräfte;
+32123;Maurerhandwerk - Spezialist;Spezialisten;
+3213;Berufe im Schornsteinbau;;
+32132;Schornsteinbau - Fachkraft;Fachkräfte;
+3214;Berufe in der Dachdeckerei;;
+32142;Dachdeckerei - Fachkraft;Fachkräfte;
+3215;Berufe im Fassadenbau;;
+32152;Fassadenbau - Fachkraft;Fachkräfte;
+3216;Berufe im Gerüstbau;;
+32162;Gerüstbau - Fachkraft;Fachkräfte;
+3217;Berufe im Bauwerksabbruch;;
+32172;Bauwerksabbruch - Fachkraft;Fachkräfte;
+3219;Aufsicht - Hochbau;;Aufsicht
+32193;Aufsicht - Hochbau;;Aufsicht
+322;Tiefbau;;
+3220;Berufe im Tiefbau (o.S.);;
+32201;Tiefbau (o.S.) - Helfer;Helfer;
+32202;Tiefbau (o.S.) - Fachkraft;Fachkräfte;
+32203;Tiefbau (o.S.) - Spezialist;Spezialisten;
+32204;Tiefbau (o.S.) - Experte;Experten;
+3221;Pflasterer/innen, Steinsetzer/innen;;
+32212;Pflasterer, Steinsetzer - Fachkraft;Fachkräfte;
+3222;Berufe im Straßen- und Asphaltbau;;
+32222;Straßen- und Asphaltbau - Fachkraft;Fachkräfte;
+32223;Straßen- und Asphaltbau - Spezialist;Spezialisten;
+32224;Straßen- und Asphaltbau - Experte;Experten;
+3223;Berufe im Gleisbau;;
+32232;Gleisbau - Fachkraft;Fachkräfte;
+32233;Gleisbau - Spezialist;Spezialisten;
+3224;Berufe im Brunnenbau;;
+32242;Brunnenbau - Fachkraft;Fachkräfte;
+32243;Brunnenbau - Spezialist;Spezialisten;
+3225;Berufe im Kanal- und Tunnelbau;;
+32252;Kanal- und Tunnelbau - Fachkraft;Fachkräfte;
+32253;Kanal- und Tunnelbau - Spezialist;Spezialisten;
+3226;Berufe im Kultur- und Wasserbau;;
+32262;Kultur- und Wasserbau - Fachkraft;Fachkräfte;
+32263;Kultur- und Wasserbau - Spezialist;Spezialisten;
+32264;Kultur- und Wasserbau - Experte;Experten;
+3229;Aufsicht - Tiefbau;;Aufsicht
+32293;Aufsicht - Tiefbau;;Aufsicht
+33;(Innen-)Ausbauberufe;;
+331;Bodenverlegung;;
+3310;Berufe in der Bodenverlegung (o.S.);;
+33101;Bodenverlegung (o.S.) - Helfer;Helfer;
+33102;Bodenverlegung (o.S.) - Fachkraft;Fachkräfte;
+3311;Berufe Fliesen-,Platten-,Mosaikverlegung;;
+33112;Fliesen-Platten-,Mosaikverleg.-Fachkraft;Fachkräfte;
+3312;Berufe Estrich- und Terrazzoverlegung;;
+33122;Estrich-, Terrazzoverlegung - Fachkraft;Fachkräfte;
+3313;Berufe in der Parkettverlegung;;
+33132;Parkettverlegung - Fachkraft;Fachkräfte;
+33133;Parkettverlegung - Spezialist;Spezialisten;
+3319;Aufsicht - Bodenverlegung;;Aufsicht
+33193;Aufsicht - Bodenverlegung;;Aufsicht
+332;Maler.,Stuckat.,Bauwerksabd,Bautenschutz;;
+3321;Berufe für Maler- und Lackiererarbeiten;;
+33211;Maler-, Lackiererarbeiten - Helfer;Helfer;
+33212;Maler-, Lackiererarbeiten - Fachkraft;Fachkräfte;
+33213;Maler-, Lackiererarbeiten - Spezialist;Spezialisten;
+3322;Berufe für Stuckateurarbeiten;;
+33222;Stuckateurarbeiten - Fachkraft;Fachkräfte;
+33223;Stuckateurarbeiten - Spezialist;Spezialisten;
+3323;Berufe in der Bauwerksabdichtung;;
+33232;Bauwerksabdichtung - Fachkraft;Fachkräfte;
+33233;Bauwerksabdichtung - Spezialist;Spezialisten;
+3324;Berufe im Holz- und Bautenschutz;;
+33242;Holz- und Bautenschutz - Fachkraft;Fachkräfte;
+33243;Holz- und Bautenschutz - Spezialist;Spezialisten;
+3329;Aufsicht-MalerStuckBauwerksabdBautensch.;;Aufsicht
+33293;Aufsicht-MalerStuckBauwerksabdBautensch.;;Aufsicht
+333;Aus-,Trockenbau.Iso.Zimmer.Glas.Roll.bau;;
+3330;Berufe im Aus- und Trockenbau (o.S.);;
+33301;Aus- und Trockenbau (o.S.) - Helfer;Helfer;
+33302;Aus- und Trockenbau (o.S.) - Fachkraft;Fachkräfte;
+33303;Aus- und Trockenbau (o.S.) - Spezialist;Spezialisten;
+3331;Berufe in der Isolierung;;
+33312;Isolierung - Fachkraft;Fachkräfte;
+3332;Berufe in der Zimmerei;;
+33322;Zimmerei - Fachkraft;Fachkräfte;
+33323;Zimmerei - Spezialist;Spezialisten;
+3333;Berufe in der Bautischlerei;;
+33332;Bautischlerei - Fachkraft;Fachkräfte;
+3334;Berufe in der Glaserei;;
+33342;Glaserei - Fachkraft;Fachkräfte;
+3335;Berufe im Rollladen- und Jalousiebau;;
+33352;Rollladen- und Jalousiebau - Fachkraft;Fachkräfte;
+3339;Aufsicht-Aus-,Trockenbau.Iso.Zimm.Glas.;;Aufsicht
+33393;Aufsicht-Aus-,Trockenbau.Iso.Zimm.Glas.;;Aufsicht
+34;Gebäude- u. versorgungstechnische Berufe;;
+341;Gebäudetechnik;;
+3410;Berufe in der Gebäudetechnik (o.S.);;
+34102;Gebäudetechnik (o.S.) - Fachkraft;Fachkräfte;
+34103;Gebäudetechnik (o.S.) - Spezialist;Spezialisten;
+34104;Gebäudetechnik (o.S.) - Experte;Experten;
+3411;Platz-, Gerätewarte/innen;;
+34112;Platz-, Gerätewarte/innen - Fachkraft;Fachkräfte;
+3419;Aufsicht - Gebäudetechnik;;Aufsicht
+34193;Aufsicht - Gebäudetechnik;;Aufsicht
+342;Klempnerei,Sanitär,Heizung,Klimatechnik;;
+3420;Berufe in der Klempnerei (o.S.);;
+34201;Klempnerei (o.S.) - Helfer;Helfer;
+34202;Klempnerei (o.S.) - Fachkraft;Fachkräfte;
+34203;Klempnerei (o.S.) - Spezialist;Spezialisten;
+3421;Berufe Sanitär-, Heizungs-, Klimatechnik;;
+34212;Sanitär,Heizung,Klimatechnik - Fachkraft;Fachkräfte;
+34213;Sanitär,Heizung,Klimatechnik -Spezialist;Spezialisten;
+34214;Sanitär,Heizung,Klimatechnik - Experte;Experten;
+3422;Berufe im Ofen- und Luftheizungsbau;;
+34222;Ofen- und Luftheizungsbau - Fachkraft;Fachkräfte;
+3423;Berufe in der Kältetechnik;;
+34232;Kältetechnik - Fachkraft;Fachkräfte;
+34233;Kältetechnik - Spezialist;Spezialisten;
+34234;Kältetechnik - Experte;Experten;
+3429;Aufsicht-Klemp.Sanitär,Heizung,Klimatech;;Aufsicht
+34293;Aufsicht-Klemp.Sanitär,Heizung,Klimatech;;Aufsicht
+343;Ver- und Entsorgung;;
+3430;Berufe in der Ver- und Entsorgung (o.S.);;
+34301;Ver- und Entsorgung (o.S.) - Helfer;Helfer;
+34302;Ver- und Entsorgung (o.S.) - Fachkraft;Fachkräfte;
+34303;Ver- und Entsorgung (o.S.) - Spezialist;Spezialisten;
+34304;Ver- und Entsorgung (o.S.) - Experte;Experten;
+3431;Berufe Wasserversorgung,Abwassertechnik;;
+34312;Wasserversorg.,Abwassertechn.-Fachkraft;Fachkräfte;
+34313;Wasserversorg.,Abwassertechn.-Spezialist;Spezialisten;
+34314;Wasserversorg.,Abwassertechn.-Experte;Experten;
+3432;Berufe im Rohrleitungsbau;;
+34322;Rohrleitungsbau - Fachkraft;Fachkräfte;
+34323;Rohrleitungsbau - Spezialist;Spezialisten;
+34324;Rohrleitungsbau - Experte;Experten;
+3433;Berufe in der Abfallwirtschaft;;
+34332;Abfallwirtschaft - Fachkraft;Fachkräfte;
+34333;Abfallwirtschaft - Spezialist;Spezialisten;
+34334;Abfallwirtschaft - Experte;Experten;
+3434;Berufe Anlagen-, Behälter-, Apparatebau;;
+34342;Anlagen-,Behälter-,Apparatebau-Fachkraft;Fachkräfte;
+34343;Anlage-,Behälter-,Apparatebau-Spezialist;Spezialisten;
+34344;Anlagen-,Behälter-,Apparatebau-Experte;Experten;
+3439;Aufsicht - Ver- und Entsorgung;;Aufsicht
+34393;Aufsicht - Ver- und Entsorgung;;Aufsicht
+4;Naturwissenschaft, Geografie, Informatik;;
+41;Mathematik-Biologie-Chemie-,Physikberufe;;
+411;Mathematik und Statistik;;
+4110;Berufe in der Mathematik (o.S.);;
+41103;Mathematik (o.S.) - Spezialist;Spezialisten;
+41104;Mathematik (o.S.) - Experte;Experten;
+4111;Berufe in der Statistik;;
+41114;Statistik - Experte;Experten;
+4118;Berufe in der Mathematik (s.s.T.);;
+41184;Mathematik (s.s.T.) - Experte;Experten;
+4119;Führung - Mathematik und Statistik;;Führung
+41194;Führung - Mathematik und Statistik;;Führung
+412;Biologie;;
+4120;Berufe in der Biologie (o.S.);;
+41203;Biologie (o.S.) - Spezialist;Spezialisten;
+41204;Biologie (o.S.) - Experte;Experten;
+4121;Berufe im biologisch-techn. Laboratorium;;
+41212;Biologisch-techn. Laboratorium-Fachkraft;Fachkräfte;
+41213;Biologisch-techn.Laboratorium-Spezialist;Spezialisten;
+41214;Biologisch-techn.Laboratorium-Experte;Experten;
+4122;Berufe in der biologischen Präparation;;
+41222;Biologische Präparation - Fachkraft;Fachkräfte;
+4123;Berufe in der Biologie (Ökologie);;
+41234;Biologie (Ökologie) - Experte;Experten;
+4124;Berufe in der Biologie (Botanik);;
+41244;Biologie (Botanik) - Experte;Experten;
+4125;Berufe in der Biologie (Zoologie);;
+41254;Biologie (Zoologie) - Experte;Experten;
+4126;Berufe in der Biologie (Mikrobiologie);;
+41264;Biologie (Mikrobiologie) - Experte;Experten;
+4127;Berufe in der Biologie (Humanbiologie);;
+41274;Biologie (Humanbiologie) - Experte;Experten;
+4128;Berufe in der Biologie (s.s.T.);;
+41283;Biologie (s.s.T.) - Spezialist;Spezialisten;
+41284;Biologie (s.s.T.) - Experte;Experten;
+4129;Aufsicht und Führung - Biologie;;Aufsicht
+41293;Aufsicht - Biologie;;Aufsicht
+41294;Führung - Biologie;;Führung
+413;Chemie;;
+4130;Berufe in der Chemie (o.S.);;
+41303;Chemie (o.S.) - Spezialist;Spezialisten;
+41304;Chemie (o.S.) - Experte;Experten;
+4131;Berufe in der Chemie- und Pharmatechnik;;
+41311;Chemie- und Pharmatechnik - Helfer;Helfer;
+41312;Chemie- und Pharmatechnik - Fachkraft;Fachkräfte;
+41313;Chemie- und Pharmatechnik - Spezialist;Spezialisten;
+41314;Chemie- und Pharmatechnik - Experte;Experten;
+4132;Berufe im chemisch-techn. Laboratorium;;
+41322;Chemisch-techn. Laboratorium - Fachkraft;Fachkräfte;
+41323;Chemisch-techn.Laboratorium - Spezialist;Spezialisten;
+41324;Chemisch-techn.Laboratorium - Experte;Experten;
+4133;Steuerer chemische Verfahrensanlagen;;
+41333;Steuerer chem. Verfahrensanl.-Spezialist;Spezialisten;
+4134;Steuerer Erdöl-,Erdgasraffinationsanlag.;;
+41343;Steuerer Erdöl,Erdgasraf.anl.-Spezialist;Spezialisten;
+4138;Berufe in der Chemie (s.s.T.);;
+41383;Chemie (s.s.T.) - Spezialist;Spezialisten;
+41384;Chemie (s.s.T.) - Experte;Experten;
+4139;Aufsicht und Führung - Chemie;;Aufsicht
+41393;Aufsicht - Chemie;;Aufsicht
+41394;Führung - Chemie;;Führung
+414;Physik;;
+4140;Berufe in der Physik (o.S.);;
+41403;Physik (o.S.) - Spezialist;Spezialisten;
+41404;Physik (o.S.) - Experte;Experten;
+4141;Berufe physikalisch-techn. Laboratorium;;
+41412;Physikalisch-tech.Laboratorium-Fachkraft;Fachkräfte;
+41413;Physikal.-techn. Laboratorium-Spezialist;Spezialisten;
+41414;Physikalisch-techn. Laboratorium-Experte;Experten;
+4142;Berufe in der Werkstofftechnik;;
+41422;Werkstofftechnik - Fachkraft;Fachkräfte;
+41423;Werkstofftechnik - Spezialist;Spezialisten;
+41424;Werkstofftechnik - Experte;Experten;
+4143;Berufe in der Baustoffprüfung;;
+41432;Baustoffprüfung - Fachkraft;Fachkräfte;
+41433;Baustoffprüfung - Spezialist;Spezialisten;
+41434;Baustoffprüfung - Experte;Experten;
+4148;Berufe in der Physik (s.s.T.);;
+41482;Physik (s.s.T.) - Fachkraft;Fachkräfte;
+41483;Physik (s.s.T.) - Spezialist;Spezialisten;
+41484;Physik (s.s.T.) - Experte;Experten;
+4149;Aufsicht und Führung - Physik;;Aufsicht
+41493;Aufsicht - Physik;;Aufsicht
+41494;Führung - Physik;;Führung
+42;Geologie-,Geografie-,Umweltschutzberufe;;
+421;Geologie, Geografie und Meteorologie;;
+4211;Berufe in der Geotechnik;;
+42112;Geotechnik - Fachkraft;Fachkräfte;
+42113;Geotechnik - Spezialist;Spezialisten;
+42114;Geotechnik - Experte;Experten;
+4212;Berufe in der Geologie;;
+42124;Geologie - Experte;Experten;
+4213;Berufe in der Geografie;;
+42134;Geografie - Experte;Experten;
+4214;Berufe in der Meteorologie;;
+42142;Meteorologie - Fachkraft;Fachkräfte;
+42143;Meteorologie - Spezialist;Spezialisten;
+42144;Meteorologie - Experte;Experten;
+422;Umweltschutztechnik;;
+4220;Berufe in der Umweltschutztechnik (o.S.);;
+42202;Umweltschutztechnik (o.S.) - Fachkraft;Fachkräfte;
+42203;Umweltschutztechnik (o.S.) - Spezialist;Spezialisten;
+42204;Umweltschutztechnik (o.S.) - Experte;Experten;
+4221;Schornsteinfeger/innen;;
+42212;Schornsteinfeger/innen - Fachkraft;Fachkräfte;
+4228;Berufe i.d. Umweltschutztechnik (s.s.T.);;
+42283;Umweltschutztechnik(s.s.T.) - Spezialist;Spezialisten;
+4229;Aufsicht - Umweltschutztechnik;;Aufsicht
+42293;Aufsicht - Umweltschutztechnik;;Aufsicht
+423;Umweltmanagement und -beratung;;
+4231;Berufe Umweltschutzverwaltung, -beratung;;
+42312;Umweltschutzverwalt.,-beratung-Fachkraft;Fachkräfte;
+42313;Umweltschutzverwalt,-beratung-Spezialist;Spezialisten;
+42314;Umweltschutzverwaltung,-beratung-Experte;Experten;
+4232;Gewässer-Immissionsschutz,Abfallbeauftr.;;
+42323;Gewäs.Immissions,Abfallbeauf.-Spezialist;Spezialisten;
+42324;Gewäs.Immissions,Abfallbeauf.-Experte;Experten;
+4233;Strahlenschutzbeauftragte;;
+42333;Strahlenschutzbeauftragte - Spezialist;Spezialisten;
+42334;Strahlenschutzbeauftragte - Experte;Experten;
+4239;Führung - Umweltmanagement und -beratung;;Führung
+42394;Führung - Umweltmanagement und -beratung;;Führung
+43;Informatik- und andere IKT-Berufe;;
+431;Informatik;;
+4310;Berufe in der Informatik (o.S.);;
+43102;Informatik (o.S.) - Fachkraft;Fachkräfte;
+43103;Informatik (o.S.) - Spezialist;Spezialisten;
+43104;Informatik (o.S.) - Experte;Experten;
+4311;Berufe in der Wirtschaftsinformatik;;
+43112;Wirtschaftsinformatik - Fachkraft;Fachkräfte;
+43113;Wirtschaftsinformatik - Spezialist;Spezialisten;
+43114;Wirtschaftsinformatik - Experte;Experten;
+4312;Berufe in der technischen Informatik;;
+43122;Technische Informatik - Fachkraft;Fachkräfte;
+43123;Technische Informatik - Spezialist;Spezialisten;
+43124;Technische Informatik - Experte;Experten;
+4313;Berufe in der Bio- und Medizininformatik;;
+43134;Bio-, Medizininformatik - Experte;Experten;
+4314;Berufe in der Geoinformatik;;
+43144;Geoinformatik - Experte;Experten;
+4315;Berufe in der Medieninformatik;;
+43152;Medieninformatik - Fachkraft;Fachkräfte;
+43153;Medieninformatik - Spezialist;Spezialisten;
+43154;Medieninformatik - Experte;Experten;
+4319;Führung - Informatik;;Führung
+43194;Führung - Informatik;;Führung
+432;IT-Systemanalyse,Anwenderber,IT-Vertrieb;;
+4321;Berufe in der IT-Systemanalyse;;
+43214;IT-Systemanalyse - Experte;Experten;
+4322;Berufe in der IT-Anwendungsberatung;;
+43223;IT-Anwendungsberatung - Spezialist;Spezialisten;
+43224;IT-Anwendungsberatung - Experte;Experten;
+4323;Berufe im IT-Vertrieb;;
+43232;IT-Vertrieb - Fachkraft;Fachkräfte;
+43233;IT-Vertrieb - Spezialist;Spezialisten;
+4329;Führung-IT-System,-Anwendung,-Vertrieb;;Führung
+43294;Führung-IT-System,-Anwendung,-Vertrieb;;Führung
+433;IT-Netzwerkt.,-Koord.,-Administr.,-Orga.;;
+4331;Berufe in der IT-Netzwerktechnik;;
+43312;IT-Netzwerktechnik - Fachkraft;Fachkräfte;
+43313;IT-Netzwerktechnik - Spezialist;Spezialisten;
+43314;IT-Netzwerktechnik - Experte;Experten;
+4332;Berufe in der IT-Koordination;;
+43323;IT-Koordination - Spezialist;Spezialisten;
+4333;Berufe in der IT-Organisation;;
+43333;IT-Organisation - Spezialist;Spezialisten;
+4334;Berufe in der IT-Systemadministration;;
+43343;IT-Systemadministration - Spezialist;Spezialisten;
+4335;Berufe Datenbankentwickl., -administr.;;
+43353;Datenbankentwick.,-administr.-Spezialist;Spezialisten;
+4336;Berufe in der Webadministration;;
+43363;Webadministration - Spezialist;Spezialisten;
+4338;IT-Netzwerkt.,-Koord.,-Admin.,-Org.(ssT);;
+43383;IT-Netzw,Koord,Admin,Org(ssT)-Spezialist;Spezialisten;
+43384;IT-Netzw.,Koord.,Admin,Orga(ssT)-Experte;Experten;
+4339;Führung-IT-Netzw.,-Koord.,-Admin.,-Orga.;;Führung
+43394;Führung-IT-Netzw.,-Koord.,-Admin.,-Orga.;;Führung
+434;Softwareentwicklung und Programmierung;;
+4341;Berufe in der Softwareentwicklung;;
+43412;Softwareentwicklung - Fachkraft;Fachkräfte;
+43413;Softwareentwicklung - Spezialist;Spezialisten;
+43414;Softwareentwicklung - Experte;Experten;
+4342;Berufe in der Programmierung;;
+43423;Programmierung - Spezialist;Spezialisten;
+4349;Führung-Softwareentwickl.,Programmierung;;Führung
+43494;Führung-Softwareentwickl.,Programmierung;;Führung
+5;Verkehr, Logistik, Schutz und Sicherheit;;
+51;Verkehr, Logistik (außer Fahrzeugführ.);;
+511;Tech.Betrieb Eisenb.,Luft,Schiffsverkehr;;
+5111;Berufe im technischen Eisenbahnbetrieb;;
+51112;Technischer Eisenbahnbetrieb - Fachkraft;Fachkräfte;
+51113;Technischer Eisenbahnbetrieb -Spezialist;Spezialisten;
+5112;Berufe technischer Luftverkehrsbetrieb;;
+51122;Techn. Luftverkehrsbetrieb - Fachkraft;Fachkräfte;
+51123;Techn. Luftverkehrsbetrieb - Spezialist;Spezialisten;
+5113;Berufe technisch. Schiffsverkehrsbetrieb;;
+51132;Techn. Schiffsverkehrsbetrieb-Fachkraft;Fachkräfte;
+51133;Techn. Schiffsverkehrsbetrieb-Spezialist;Spezialisten;
+51134;Techn. Schiffsverkehrsbetrieb - Experte;Experten;
+5118;TechBetriebEisenb.Luft,Schiffsverk.(ssT);;
+51182;TechBetEisenbLuftSchiffsv(ssT)-Fachkraft;Fachkräfte;
+51183;TechBetEisenbLuftSchiffv(ssT)-Spezialist;Spezialisten;
+5119;Aufsicht-TechBetr.Eisenb.LuftSchiffsverk;;Aufsicht
+51193;Aufsicht-TechBetr.Eisenb.LuftSchiffsverk;;Aufsicht
+512;Überwachung,WartungVerkehrsinfrastruktur;;
+5121;Straßen- und Tunnelwärter/innen;;
+51212;Straßen-, Tunnelwärter/innen - Fachkraft;Fachkräfte;
+5122;Überwach.,Wartung Eisenbahninfrastruktur;;
+51222;Wart. Eisenbahninfrastruktur - Fachkraft;Fachkräfte;
+51223;Wart. Eisenbahninfrastruktur -Spezialist;Spezialisten;
+51224;Wart. Eisenbahninfrastruktur - Experte;Experten;
+5123;Berufe in der Flugsicherungstechnik;;
+51233;Flugsicherungstechnik - Spezialist;Spezialisten;
+51234;Flugsicherungstechnik - Experte;Experten;
+5124;Wasserstraßen- und Brückenwärter/innen;;
+51242;Wasserstraßen-,Brückenwärter - Fachkraft;Fachkräfte;
+51243;Wasserstraßen-, Brückenwärter-Spezialist;Spezialisten;
+5129;Aufsicht - Überw.,Wart.Verkehrsinfraktur;;Aufsicht
+51293;Aufsicht - Überw.,Wart.Verkehrsinfraktur;;Aufsicht
+513;Lagerwirt.,Post,Zustellung,Güterumschlag;;
+5131;Berufe in der Lagerwirtschaft;;
+51311;Lagerwirtschaft - Helfer;Helfer;
+51312;Lagerwirtschaft - Fachkraft;Fachkräfte;
+5132;Berufe für Post- und Zustelldienste;;
+51321;Post- und Zustelldienste - Helfer;Helfer;
+51322;Post- und Zustelldienste - Fachkraft;Fachkräfte;
+5133;Berufe im Güter- und Warenumschlag;;
+51332;Güter- und Warenumschlag - Fachkraft;Fachkräfte;
+5139;Aufsicht,Führung-Lagerw.Zustell.Güterum.;;Aufsicht
+51393;Aufsicht-Lagerw.,Post,Zustell.,Güterum.;;Aufsicht
+51394;Führung-Lagerw.,Post,Zustell.,Güterum.;;Führung
+514;Servicekräfte im Personenverkehr;;
+5140;Servicekräfte Personenverkehr (o.S.);;
+51401;Servicekräfte Personenverk.(o.S.)-Helfer;Helfer;
+5141;Servicefachkräfte Straßen-,Schienenverk.;;
+51412;Servicefachk.StraßenSchienenv.-Fachkraft;Fachkräfte;
+5142;Servicefachkräfte im Luftverkehr;;
+51422;Servicefachkräfte Luftverkehr-Fachkraft;Fachkräfte;
+5143;Servicefachkräfte im Schiffsverkehr;;
+51432;Servicefachkräfte Schiffsverk.-Fachkraft;Fachkräfte;
+5149;Aufsicht-Personenverkehr(Servicebereich);;Aufsicht
+51493;Aufsicht-Personenverkehr(Servicebereich);;Aufsicht
+515;Überwachung u. Steuerung Verkehrsbetrieb;;
+5150;Berufe Überwachung Verkehrsbetrieb (oS);;
+51503;Überwach. Verkehrsbetrieb(oS)-Spezialist;Spezialisten;
+51504;Überwach. Verkehrsbetrieb (oS) - Experte;Experten;
+5151;Berufe Überwachung Straßenverkehrsbetr.;;
+51511;Überwach. Straßenverkehrsbetr. - Helfer;Helfer;
+51512;Überwach. Straßenverkehrsbetr.-Fachkraft;Fachkräfte;
+51513;Überwach. Straßenverkehrsbetr-Spezialist;Spezialisten;
+5152;Berufe Überwachung Eisenbahnverkehrsbetr;;
+51522;Überwach.Eisenbahnverkehrsbetr-Fachkraft;Fachkräfte;
+51523;Überwach.Eisenbahnverkehrsbet-Spezialist;Spezialisten;
+5153;Berufe Überwachung Luftverkehrsbetrieb;;
+51532;Überwachung Luftverkehrsbetr.-Fachkraft;Fachkräfte;
+51533;Überwachung Luftverkehrsbetr.-Spezialist;Spezialisten;
+51534;Überwachung Luftverkehrsbetr. -Experte;Experten;
+5154;Berufe Überwachung Schiffsverkehrsbetr.;;
+51543;Überwach.Schiffsverkehrsbetr.-Spezialist;Spezialisten;
+5158;Berufe Überwachung Verkehrsbetrieb (ssT);;
+51583;Überwach.Verkehrsbetrieb(ssT)-Spezialist;Spezialisten;
+5159;Aufsicht,Führung-Überwach. Verkehrsbetr.;;Aufsicht
+51593;Aufsicht - Überwachung Verkehrsbetrieb;;Aufsicht
+51594;Führung - Überwachung Verkehrsbetrieb;;Führung
+516;Kaufleute - Verkehr und Logistik;;
+5161;Verkehrskaufleute;;
+51613;Verkehrskaufleute - Spezialist;Spezialisten;
+51614;Verkehrskaufleute - Experte;Experten;
+5162;Speditions- und Logistikkaufleute;;
+51622;Speditions-,Logistikkaufleute-Fachkraft;Fachkräfte;
+51623;Speditions-,Logistikkaufleute-Spezialist;Spezialisten;
+51624;Speditions-, Logistikkaufleute - Experte;Experten;
+5163;Straßen- und Schienenverkehrskaufleute;;
+51632;Straßen,Schienenverkehrskaufl.-Fachkraft;Fachkräfte;
+51633;Straße,Schienenverkehrskaufl.-Spezialist;Spezialisten;
+5164;Luftverkehrskaufleute;;
+51642;Luftverkehrskaufleute - Fachkraft;Fachkräfte;
+51643;Luftverkehrskaufleute - Spezialist;Spezialisten;
+5165;Schifffahrtskaufleute;;
+51652;Schifffahrtskaufleute - Fachkraft;Fachkräfte;
+51653;Schifffahrtskaufleute - Spezialist;Spezialisten;
+5166;Kurier-Express-Postdienstleistungskaufl.;;
+51662;KurierExpressPostdienstl.kaufl-Fachkraft;Fachkräfte;
+51663;KurierExpressPostdienst.kaufl-Spezialist;Spezialisten;
+5169;Führung-Verkehr,Logistik (kaufm.Bereich);;Führung
+51694;Führung-Verkehr,Logistik (kaufm.Bereich);;Führung
+52;Führer von Fahrzeug- u. Transportgeräten;;
+521;Fahrzeugführung im Straßenverkehr;;
+5211;Berufskraftfahrer(Personentransport/PKW);;
+52112;Berufskraftfahrer(Pers./PKW.)-Fachkraft;Fachkräfte;
+5212;Berufskraftfahrer (Güterverkehr/LKW);;
+52122;Berufskraftfahrer(Güterv./LKW)-Fachkraft;Fachkräfte;
+5213;Bus-, Straßenbahnfahrer/innen;;
+52132;Bus-, Straßenbahnfahrer/innen-Fachkraft;Fachkräfte;
+5218;Fahrzeugführer im Straßenverkehr(s.s.T.);;
+52182;FahrzeugführerStraßenverk(ssT)-Fachkraft;Fachkräfte;
+522;Fahrzeugführung im Eisenbahnverkehr;;
+5220;Triebfahrzeugführer Eisenbahnverkehr(oS);;
+52202;TriebfahrzeugführEisenbahn(oS)-Fachkraft;Fachkräfte;
+523;Fahrzeugführung im Flugverkehr;;
+5231;Piloten und Verkehrsflugzeugführer;;
+52313;PilotenVerkehrsflugzeugführer-Spezialist;Spezialisten;
+52314;Piloten,Verkehrsflugzeugführer - Experte;Experten;
+5238;Fahrzeugführer im Flugverkehr (s.s.T.);;
+52383;Fahrzeugführer Flugverk.(ssT)-Spezialist;Spezialisten;
+52384;Fahrzeugführer Flugverkehr (ssT)-Experte;Experten;
+524;Fahrzeugführung im Schiffsverkehr;;
+5241;Nautische Schiffsoffiziere und Kapitäne;;
+52413;NautSchiffsoffiziere,Kapitäne-Spezialist;Spezialisten;
+52414;Naut.Schiffsoffiziere, Kapitäne-Experte;Experten;
+5242;Schiffsführer Binnen-,Hafenverkehr;;
+52422;Schiffsführ.Binnen-,Hafenverk.-Fachkraft;Fachkräfte;
+52423;Schiffsführ.Binnen,Hafenverk.-Spezialist;Spezialisten;
+525;Bau- und Transportgeräteführung;;
+5251;Führer land-,forstwirtschaftl. Maschinen;;
+52512;Führer land-,forstw. Maschinen-Fachkraft;Fachkräfte;
+5252;Führer Erdbewegungs-,verwandte Maschinen;;
+52522;Führer Erdbeweg,verw.Maschinen-Fachkraft;Fachkräfte;
+5253;Kranführer, Bediener Hebeeinrichtungen;;
+52531;Kranführ., Bediener Hebeeinricht.-Helfer;Helfer;
+52532;Kranführ.BedienerHebeeinricht.-Fachkraft;Fachkräfte;
+5259;Aufsicht - Bau-, Transportgeräteführung;;Aufsicht
+52593;Aufsicht - Bau-, Transportgeräteführung;;Aufsicht
+53;Schutz-,Sicherheits-, Überwachungsberufe;;
+531;Obj.-,Pers.-,Brandschutz,Arbeitssicherh.;;
+5311;Berufe im Objekt-,Werte-, Personenschutz;;
+53111;Objekt-, Werte-, Personenschutz - Helfer;Helfer;
+53112;Objekt-,Werte-, Personenschutz-Fachkraft;Fachkräfte;
+5312;Berufe Arbeitssicherh. Sicherheitstech.;;
+53122;Arbeitssicherh.,Sich.-technik-Fachkraft;Fachkräfte;
+53123;Arbeitssicherh.,Sich.-technik-Spezialist;Spezialisten;
+53124;Arbeitssicherh.,Sich.-technik-Experte;Experten;
+5313;Berufe im Brandschutz;;
+53132;Brandschutz - Fachkraft;Fachkräfte;
+53133;Brandschutz - Spezialist;Spezialisten;
+53134;Brandschutz - Experte;Experten;
+5314;Berufe in der Badeaufsicht;;
+53142;Badeaufsicht - Fachkraft;Fachkräfte;
+5315;Detektive/Detektivinnen;;
+53152;Detektive/Detektivinnen - Fachkraft;Fachkräfte;
+5316;Inkassobeauftragte;;
+53162;Inkassobeauftragte - Fachkraft;Fachkräfte;
+5318;Obj.Pers.Brandschutz,Arbeitssicherh(ssT);;
+53182;Obj.Pers.Brandschutz (ssT)-Fachkraft;Fachkräfte;
+53183;Obj.Pers.Brandschutz (ssT)-Spezialist;Spezialisten;
+53184;Obj.Pers.Brandschutz (ssT)-Experte;Experten;
+5319;Aufsicht,Führung-Objekt-,Brandschutz;;Aufsicht
+53193;Aufsicht-Objekt,Brandschutz,Arbeitssich.;;Aufsicht
+53194;Führung-Objekt-,Brandschutz,Arbeitssich.;;Führung
+532;Polizei,Kriminald.,Gerichts,Justizvollz.;;
+5321;Berufe im Polizeivollzugsdienst;;
+53212;Polizeivollzugsdienst - Fachkraft;Fachkräfte;
+53213;Polizeivollzugsdienst - Spezialist;Spezialisten;
+53214;Polizeivollzugsdienst - Experte;Experten;
+5322;Berufe im Kriminaldienst;;
+53222;Kriminaldienst - Fachkraft;Fachkräfte;
+53223;Kriminaldienst - Spezialist;Spezialisten;
+53224;Kriminaldienst - Experte;Experten;
+5323;Berufe im Gerichtsvollzug;;
+53232;Gerichtsvollzug - Fachkraft;Fachkräfte;
+53233;Gerichtsvollzug - Spezialist;Spezialisten;
+5324;Berufe im Justizvollzugsdienst;;
+53241;Justizvollzugsdienst - Helfer;Helfer;
+53242;Justizvollzugsdienst - Fachkraft;Fachkräfte;
+53243;Justizvollzugsdienst - Spezialist;Spezialisten;
+53244;Justizvollzugsdienst - Experte;Experten;
+533;Gewerbe,Gesundheitsaufsicht,Desinfektion;;
+5331;Berufe in der Gewerbeaufsicht;;
+53312;Gewerbeaufsicht - Fachkraft;Fachkräfte;
+53313;Gewerbeaufsicht - Spezialist;Spezialisten;
+53314;Gewerbeaufsicht - Experte;Experten;
+5332;Gesundheitsaufsicht, Hygieneüberwachung;;
+53322;Gesundheitsaufs.,Hygieneüberw.-Fachkraft;Fachkräfte;
+53323;Gesundheitsaufs.Hygieneüberw.-Spezialist;Spezialisten;
+5333;Berufe in der Lebensmittelkontrolle;;
+53332;Lebensmittelkontrolle - Fachkraft;Fachkräfte;
+53333;Lebensmittelkontrolle - Spezialist;Spezialisten;
+5334;Berufe Desinfektion,Schädlingsbekämpfung;;
+53342;Desinfekt., Schädlingsbekämpf.-Fachkraft;Fachkräfte;
+5339;Aufsicht,Führung-Gewerbe,Gesundheitsauf.;;Aufsicht
+53393;Aufsicht-Gewerbe-, Gesundheitsaufsicht;;Aufsicht
+53394;Führung-Gewerbe-, Gesundheitsaufsicht;;Führung
+54;Reinigungsberufe;;
+541;Reinigung;;
+5410;Berufe in der Reinigung (o.S.);;
+54101;Reinigung (o.S.) - Helfer;Helfer;
+5411;Berufe in der Gebäudereinigung;;
+54112;Gebäudereinigung - Fachkraft;Fachkräfte;
+54113;Gebäudereinigung - Spezialist;Spezialisten;
+5412;Berufe in der Glas-, Fensterreinigung;;
+54122;Glas-, Fensterreinigung - Fachkraft;Fachkräfte;
+5413;Berufe in der Textilreinigung;;
+54132;Textilreinigung - Fachkraft;Fachkräfte;
+5414;Berufe i.d. Maschinen-, Anlagenreinigung;;
+54142;Maschinen-, Anlagenreinigung - Fachkraft;Fachkräfte;
+5415;Berufe in der Fahrzeugreinigung;;
+54152;Fahrzeugreinigung - Fachkraft;Fachkräfte;
+5418;Berufe in der Reinigung (s.s.T.);;
+54182;Reinigung (s.s.T.) - Fachkraft;Fachkräfte;
+5419;Aufsicht - Reinigung;;Aufsicht
+54193;Aufsicht - Reinigung;;Aufsicht
+6;Kaufm.Dienstl.,Handel,Vertrieb,Tourismus;;
+61;Einkaufs-, Vertriebs- und Handelsberufe;;
+611;Einkauf und Vertrieb;;
+6111;Berufe im Einkauf;;
+61112;Einkauf - Fachkraft;Fachkräfte;
+61113;Einkauf - Spezialist;Spezialisten;
+6112;Berufe im Vertrieb (außer IKT);;
+61122;Vertrieb (außer IKT) - Fachkraft;Fachkräfte;
+61123;Vertrieb (außer IKT) - Spezialist;Spezialisten;
+61124;Vertrieb (außer IKT) - Experte;Experten;
+6113;Handelsmakler/innen u. Auktionator/innen;;
+61132;Handelsmakler,Auktionatoren - Fachkraft;Fachkräfte;
+61133;Handelsmakler,Auktionatoren - Spezialist;Spezialisten;
+6114;Kaufleute im Automatenservice;;
+61142;Kaufleute Automatenservice - Fachkraft;Fachkräfte;
+6115;Berufe im Geld- und Pfandverleih;;
+61152;Geld- und Pfandverleih - Fachkraft;Fachkräfte;
+6116;Berufe im Verleih (außer Geld u. Pfand);;
+61162;Verleih (außer Geld u. Pfand) -Fachkraft;Fachkräfte;
+6119;Führung - Einkauf und Vertrieb;;Führung
+61194;Führung - Einkauf  und Vertrieb;;Führung
+612;Handel;;
+6120;Kaufleute im Handel (o.S.);;
+61203;Kaufleute im Handel (o.S.) - Spezialist;Spezialisten;
+61204;Kaufleute im Handel (o.S.) - Experte;Experten;
+6121;Kaufleute im Groß- und Außenhandel;;
+61212;Kaufleute Groß-, Außenhandel - Fachkraft;Fachkräfte;
+61213;Kaufleute Groß-, Außenhandel -Spezialist;Spezialisten;
+61214;Kaufleute Groß-, Außenhandel - Experte;Experten;
+6128;Kaufleute im Handel (s.s.T.);;
+61282;Kaufleute im Handel (s.s.T) - Fachkraft;Fachkräfte;
+61283;Kaufleute im Handel (s.s.T) - Spezialist;Spezialisten;
+61284;Kaufleute im Handel (s.s.T.) - Experte;Experten;
+6129;Führung - Handel;;Führung
+61294;Führung - Handel;;Führung
+613;Immobilienwirtschaft,Facility-Management;;
+6131;Berufe Immobilienvermarktung,-verwaltung;;
+61312;Immobilienvermarktung,-verwal.-Fachkraft;Fachkräfte;
+61313;Immobilienvermarktung,verwal.-Spezialist;Spezialisten;
+61314;Immobilienvermarktung,-verwal.-Experte;Experten;
+6132;Berufe im Facility-Management;;
+61323;Facility-Management - Spezialist;Spezialisten;
+6139;Führung-Immobilienwirt., Facility-Manag.;;Führung
+61394;Führung-Immobilienwirt., Facility-Manag.;;Führung
+62;Verkaufsberufe;;
+621;Verkauf (ohne Produktspezialisierung);;
+6210;Berufe im Verkauf (ohne Produktspezial.);;
+62101;Verkauf (ohne Produktspezialis.)-Helfer;Helfer;
+62102;Verkauf (ohne Produktspezial.)-Fachkraft;Fachkräfte;
+62103;Verkauf (ohne Produktspez.) - Spezialist;Spezialisten;
+6211;Kassierer/innen, Kartenverkäufer/innen;;
+62112;Kassierer, Kartenverkäufer - Fachkraft;Fachkräfte;
+6212;Verkaufsstand-, Marktverkäufer/innen;;
+62122;Verkaufsstand-,Marktverkäufer -Fachkraft;Fachkräfte;
+6218;Berufe im Verkauf (o. Produktspez.)(ssT);;
+62182;Verkauf (o. Produktspez) (ssT)-Fachkraft;Fachkräfte;
+62183;Verkauf (o. Produktspez)(ssT)-Spezialist;Spezialisten;
+6219;Aufsicht und Führung - Verkauf;;Aufsicht
+62193;Aufsicht - Verkauf;;Aufsicht
+62194;Führung - Verkauf;;Führung
+622;Verkauf Bekleid.,Elektro,KFZ,Hartwaren;;
+6221;Berufe im Verkauf (Bekleid.,Leder,Sport);;
+62212;Verkauf (Bekleid.,Leder,Sport)-Fachkraft;Fachkräfte;
+6222;Berufe im Verkauf (Schmuck, Uhren);;
+62222;Verkauf (Schmuck, Uhren) - Fachkraft;Fachkräfte;
+6223;Berufe im Verkauf (Büro, Geschenk,Spiel);;
+62232;Verkauf (Büro,Geschenk,Spiel)-Fachkraft;Fachkräfte;
+6224;Berufe im Verkauf (Elektro,Haushaltsw.);;
+62242;Verkauf (Elektro-,Hauswaltsw.)-Fachkraft;Fachkräfte;
+6225;Berufe im Verkauf (Möbel, Einrichtung);;
+62252;Verkauf (Möbel, Einrichtung)-Fachkraft;Fachkräfte;
+6226;Berufe im Verkauf (Garten, Heimwerk.);;
+62262;Verkauf (Garten,Heimwerk,Tier)-Fachkraft;Fachkräfte;
+6227;Berufe im Verkauf (KFZ, Zweirad,Zubehör);;
+62272;Verkauf (KFZ, Zweirad,Zubehör)-Fachkraft;Fachkräfte;
+6228;Berufe im Verkauf (ssT);;
+62282;Verkauf (ssT) - Fachkraft;Fachkräfte;
+623;Verkauf von Lebensmitteln;;
+6230;Berufe im Verkauf von Lebensmitteln (oS);;
+62301;Verkauf Lebensmittel (o.S.) - Helfer;Helfer;
+62302;Verkauf Lebensmittel (o.S.) - Fachkraft;Fachkräfte;
+6231;Berufe Verkauf Back-, Konditoreiwaren;;
+62312;Verkauf Back-,Konditoreiwaren-Fachkraft;Fachkräfte;
+6232;Berufe im Verkauf von Fleischwaren;;
+62322;Verkauf von Fleischwaren - Fachkraft;Fachkräfte;
+6238;Berufe Verkauf von Lebensmitteln (s.s.T);;
+62382;Verkauf Lebensmittel (s.s.T.)-Fachkraft;Fachkräfte;
+624;Verkauf drog.apotheken.Waren,Medizinbed.;;
+6241;Verkauf drogerie-,apothekenübliche Waren;;
+62412;Verkauf drog.apotheken.Waren-Fachkraft;Fachkräfte;
+6242;Berufe Verkauf Sanitäts-, Medizinbedarf;;
+62422;Verkauf Sanitäts,Medizinbedarf-Fachkraft;Fachkräfte;
+625;Buch-Kunst-Antiquitäten-,Musikfachhandel;;
+6251;Berufe im Buchhandel;;
+62512;Buchhandel - Fachkraft;Fachkräfte;
+62513;Buchhandel - Spezialist;Spezialisten;
+62514;Buchhandel - Experte;Experten;
+6252;Berufe im Kunst- und Antiquitätenhandel;;
+62522;Kunst-, Antiquitätenhandel - Fachkraft;Fachkräfte;
+6253;Berufe im Musikfachhandel;;
+62532;Musikfachhandel - Fachkraft;Fachkräfte;
+63;Tourismus-, Hotel- und Gaststättenberufe;;
+631;Tourismus und Sport;;
+6311;Tourismuskaufleute;;
+63112;Tourismuskaufleute - Fachkraft;Fachkräfte;
+63113;Tourismuskaufleute - Spezialist;Spezialisten;
+63114;Tourismuskaufleute - Experte;Experten;
+6312;Sport-, Fitnesskaufleute, Sportmanager;;
+63122;Sport-,Fitnesskaufl.Sportmanag-Fachkraft;Fachkräfte;
+63123;Sport,Fitnesskaufl.Sportmanag-Spezialist;Spezialisten;
+63124;Sport-,Fitnesskaufl.Sportmanag-Experte;Experten;
+6313;Animateur/innen, Gästebetreuer/innen;;
+63132;Animateure und Gästebetreuer - Fachkraft;Fachkräfte;
+6314;Reiseleiter/innen, Fremdenführer/innen;;
+63142;Reiseleiter, Fremdenführer - Fachkraft;Fachkräfte;
+63143;Reiseleiter, Fremdenführer - Spezialist;Spezialisten;
+6319;Führung - Tourismus und Sport;;Führung
+63194;Führung - Tourismus und Sport;;Führung
+632;Hotellerie;;
+6321;Hotelkaufleute;;
+63212;Hotelkaufleute - Fachkraft;Fachkräfte;
+63213;Hotelkaufleute - Spezialist;Spezialisten;
+6322;Berufe im Hotelservice;;
+63221;Hotelservice - Helfer;Helfer;
+63222;Hotelservice - Fachkraft;Fachkräfte;
+6329;Aufsicht und Führung - Hotellerie;;Aufsicht
+63293;Aufsicht - Hotellerie;;Aufsicht
+63294;Führung - Hotellerie;;Führung
+633;Gastronomie;;
+6330;Berufe im Gastronomieservice (o.S.);;
+63301;Gastronomieservice (o.S.) - Helfer;Helfer;
+63302;Gastronomieservice (o.S.) - Fachkraft;Fachkräfte;
+63303;Gastronomieservice (o.S.) - Spezialist;Spezialisten;
+6331;Berufe in der Systemgastronomie;;
+63312;Systemgastronomie - Fachkraft;Fachkräfte;
+63313;Systemgastronomie - Spezialist;Spezialisten;
+6332;Barkeeper/innen;;
+63322;Barkeeper/innen - Fachkraft;Fachkräfte;
+6338;Berufe in der Gastronomie (s.s.T.);;
+63382;Gastronomie (s.s.T.) - Fachkraft;Fachkräfte;
+63383;Gastronomie (s.s.T.) - Spezialist;Spezialisten;
+6339;Aufsicht und Führung - Gastronomie;;Aufsicht
+63393;Aufsicht - Gastronomie;;Aufsicht
+63394;Führung - Gastronomie;;Führung
+634;Veranstaltungsservice, -management;;
+6340;Berufe im Veranstaltungsservice,-manag.;;
+63401;Veranstaltungsservice,-manag. - Helfer;Helfer;
+63402;Veranstaltungsservice,-manag. -Fachkraft;Fachkräfte;
+63403;Veranstaltungsservice,-manag.-Spezialist;Spezialisten;
+63404;Veranstaltungsservice,-manag. - Experte;Experten;
+7;Unternehmensorga,Buchhalt,Recht,Verwalt.;;
+71;Berufe Unternehmensführung,-organisation;;
+711;Geschäftsführung und Vorstand;;
+7110;Geschäftsführer/innen und Vorstände;;
+71104;Geschäftsführer und Vorstände - Experte;Experten;
+712;Angeh. gesetzgeb. Körp., Interessenorg.;;
+7121;Angehörige gesetzgebender Körperschaften;;
+71214;Angeh. gesetzgeb. Körperschaften-Experte;Experten;
+7122;Leit. Bedienstete Interessenorganisation;;
+71224;Leit. Bedienstete Interessenorga-Experte;Experten;
+7123;Betriebsinterne Wahlämter;;
+71234;Betriebsinterne Wahlämter - Experte;Experten;
+713;Unternehmensorganisation und -strategie;;
+7130;Berufe kaufm.,techn.Betriebswirtsch.(oS);;
+71302;Kaufm.,techn.Betriebswirt.(oS)-Fachkraft;Fachkräfte;
+71303;Kaufm.,tech.Betriebswirt.(oS)-Spezialist;Spezialisten;
+71304;Kaufm.,tech.Betriebswirtsch.(oS)-Experte;Experten;
+7131;Berufe Unternehmensorganisation,-planung;;
+71314;Unternehmensorganisation,planung-Experte;Experten;
+7132;Berufe in der Unternehmensberatung;;
+71324;Unternehmensberatung - Experte;Experten;
+7133;Berufe in der Wirtschaftsförderung;;
+71333;Wirtschaftsförderung - Spezialist;Spezialisten;
+7138;Berufe Unternehmensorga.,strategie (ssT);;
+71382;Unternehmensorg.,strateg.(ssT)-Fachkraft;Fachkräfte;
+71383;Unternehmensorg,strateg.(ssT)-Spezialist;Spezialisten;
+71384;Unternehmensorg.,-strategie(ssT)-Experte;Experten;
+7139;Aufsicht,Führung-Unternehmensorg,strateg;;Aufsicht
+71393;Aufsicht - Unternehmensorg.,-strategie;;Aufsicht
+71394;Führung - Unternehmensorg., -strategie;;Führung
+714;Büro und Sekretariat;;
+7140;Büro- und Sekretariatskräfte (o.S.);;
+71401;Büro-, Sekretariatskräfte(o.S.) - Helfer;Helfer;
+71402;Büro-,Sekretariatskräfte(o.S.)-Fachkraft;Fachkräfte;
+71403;Büro-,Sekretariatskräfte(oS) -Spezialist;Spezialisten;
+7141;Fremdsprachensekretäre,-korrespondenten;;
+71412;Fremdsprachensekr.,korrespond.-Fachkraft;Fachkräfte;
+71413;Fremdsprachensek.,korrespond.-Spezialist;Spezialisten;
+7142;Dolmetscher/innen und Übersetzer/innen;;
+71423;Dolmetscher, Übersetzer - Spezialist;Spezialisten;
+71424;Dolmetscher, Übersetzer - Experte;Experten;
+7143;Steno-, Phonotypisten/-typistinnen;;
+71432;Steno-, Phonotypisten - Fachkraft;Fachkräfte;
+71433;Steno-, Phonotypisten - Spezialist;Spezialisten;
+7144;Kodierer,Korrekturleser,verw.Bürokräfte;;
+71442;Kodierer, Korrekturleser - Fachkraft;Fachkräfte;
+7145;Berufe i.d. Auskunft, Kundeninformation;;
+71452;Auskunft, Kundeninformation - Fachkraft;Fachkräfte;
+7149;Aufsicht - Büro und Sekretariat;;Aufsicht
+71493;Aufsicht - Büro und Sekretariat;;Aufsicht
+715;Personalwesen und -dienstleistung;;
+7151;Berufe Personalentwickl.,-sachbearbeit.;;
+71512;Personalentwick.,sachbearbeit.-Fachkraft;Fachkräfte;
+71513;Personalentwick.,sachbearbeit-Spezialist;Spezialisten;
+71514;Personalentwickl.,-sachbearbeit.-Experte;Experten;
+7152;Berufe in der Personaldienstleistung;;
+71522;Personaldienstleistung - Fachkraft;Fachkräfte;
+71523;Personaldienstleistung - Spezialist;Spezialisten;
+71524;Personaldienstleistung - Experte;Experten;
+7159;Führung - Personalwesen, -dienstleistung;;Führung
+71594;Führung - Personalwesen, -dienstleistung;;Führung
+72;Finanzdienstl.Rechnungsw.,Steuerberatung;;
+721;Versicherungs- u. Finanzdienstleistungen;;
+7211;Bankkaufleute;;
+72112;Bankkaufleute - Fachkraft;Fachkräfte;
+72113;Bankkaufleute - Spezialist;Spezialisten;
+7212;Anlageberater u. sonst. Finanzdienstl.;;
+72122;Anlageberater, Finanzdienstl.-Fachkraft;Fachkräfte;
+72123;Anlageberater, Finanzdienstl.-Spezialist;Spezialisten;
+72124;Anlageberater, Finanzdienstl.-Experte;Experten;
+7213;Versicherungskaufleute;;
+72132;Versicherungskaufleute - Fachkraft;Fachkräfte;
+72133;Versicherungskaufleute - Spezialist;Spezialisten;
+72134;Versicherungskaufleute - Experte;Experten;
+7214;Finanzanalysten/innen;;
+72144;Finanzanalysten/innen - Experte;Experten;
+7218;Berufe Versicherungs,Finanzdienstl.(ssT);;
+72182;Versicher-,Finanzdienstl.(ssT)-Fachkraft;Fachkräfte;
+72183;Versicher,Finanzdienstl.(ssT)-Spezialist;Spezialisten;
+72184;Versicher-,Finanzdienstl.(ssT)-Experte;Experten;
+7219;Führung-Versicherung-,Finanzdienstleist.;;Führung
+72194;Führung-Versicherung-,Finanzdienstleist.;;Führung
+722;Rechnungswesen, Controlling und Revision;;
+7221;Berufe in der Buchhaltung;;
+72212;Buchhaltung - Fachkraft;Fachkräfte;
+72213;Buchhaltung - Spezialist;Spezialisten;
+72214;Buchhaltung - Experte;Experten;
+7222;Berufe in Kostenrechnung und Kalkulation;;
+72223;Kostenrechnung, Kalkulation - Spezialist;Spezialisten;
+72224;Kostenrechnung, Kalkulation - Experte;Experten;
+7223;Berufe im Controlling;;
+72233;Controlling - Spezialist;Spezialisten;
+72234;Controlling - Experte;Experten;
+7224;Berufe in Wirtschaftsprüfung;;
+72243;Wirtschaftsprüfung - Spezialist;Spezialisten;
+72244;Wirtschaftsprüfung - Experte;Experten;
+7229;Führung-Rechnungsw.,Controlling,Revision;;Führung
+72294;Führung-Rechnungsw.,Controlling,Revision;;Führung
+723;Steuerberatung;;
+7230;Berufe in der Steuerberatung;;
+72302;Steuerberatung - Fachkraft;Fachkräfte;
+72303;Steuerberatung - Spezialist;Spezialisten;
+72304;Steuerberatung - Experte;Experten;
+73;Berufe in Recht und Verwaltung;;
+731;Rechtsberatung, -sprechung und -ordnung;;
+7310;Rechtsberatung, -sprechung,-ordnung(oS);;
+73104;Rechtsberatung,-sprechung (oS) - Experte;Experten;
+7311;Assistenz Rechtsanwaltskanzlei,Notariat;;
+73112;Assistenz Rechtsanwalt.,Notar.-Fachkraft;Fachkräfte;
+73113;Assistenz Rechtsanwalt.,Notar-Spezialist;Spezialisten;
+7312;Notare/Notarinnen;;
+73124;Notare/Notarinnen - Experte;Experten;
+7313;Rechtsanwälte/-anwältinnen;;
+73134;Rechtsanwälte/-anwältinnen - Experte;Experten;
+7314;Staatsanwälte/-anwältinnen;;
+73144;Staatsanwälte/-anwältinnen - Experte;Experten;
+7315;Richter/innen;;
+73154;Richter/innen - Experte;Experten;
+7316;Berufe im Verfassungsschutz;;
+73162;Verfassungsschutz - Fachkraft;Fachkräfte;
+73163;Verfassungsschutz - Spezialist;Spezialisten;
+73164;Verfassungsschutz - Experte;Experten;
+7318;Rechtsberatung,-sprechung,-ordnung (ssT);;
+73183;Rechtsber.,sprech.,ordn.(ssT)-Spezialist;Spezialisten;
+73184;Rechtsberat.,sprech.,ordn.(ssT)-Experte;Experten;
+7319;Führung-Rechtsberatung,sprechung,ordnung;;Führung
+73194;Führung-Rechtsberatung,sprechung,ordnung;;Führung
+732;Verwaltung;;
+7320;Berufe i.d. öffentlichen Verwaltung (oS);;
+73201;Öffentliche Verwaltung (o.S.) - Helfer;Helfer;
+73202;Öffentliche Verwaltung(o.S.) - Fachkraft;Fachkräfte;
+73203;Öffentliche Verwaltung (o.S.)-Spezialist;Spezialisten;
+73204;Öffentliche Verwaltung (o.S.) - Experte;Experten;
+7321;Berufe Sozialverwaltung, versicherung;;
+73212;Sozialverwaltung,-versicherung-Fachkraft;Fachkräfte;
+73213;Sozialverwaltung,versicherung-Spezialist;Spezialisten;
+73214;Sozialverwaltung, -versicherung-Experte;Experten;
+7322;Verwalt. Berufe Sozial-,Gesundheitswesen;;
+73222;Verw. Sozial-,Gesundheitswes. -Fachkraft;Fachkräfte;
+73223;Verw. Sozial-,Gesundheitswes.-Spezialist;Spezialisten;
+73224;Verw. Sozial-,Gesundheitswes. - Experte;Experten;
+7323;Berufe in der Steuerverwaltung;;
+73231;Steuerverwaltung - Helfer;Helfer;
+73232;Steuerverwaltung - Fachkraft;Fachkräfte;
+73233;Steuerverwaltung - Spezialist;Spezialisten;
+73234;Steuerverwaltung - Experte;Experten;
+7324;Berufe im Zolldienst;;
+73241;Zolldienst - Helfer;Helfer;
+73242;Zolldienst - Fachkraft;Fachkräfte;
+73243;Zolldienst - Spezialist;Spezialisten;
+73244;Zolldienst - Experte;Experten;
+7325;Berufe in der Justizverwaltung;;
+73252;Justizverwaltung - Fachkraft;Fachkräfte;
+73253;Justizverwaltung - Spezialist;Spezialisten;
+73254;Justizverwaltung - Experte;Experten;
+7328;Berufe öffentliche Verwaltung (s.s.T.);;
+73282;Öffentliche Verwaltung (ssT) - Fachkraft;Fachkräfte;
+73283;Öffentliche Verwaltung (ssT) -Spezialist;Spezialisten;
+73284;Öffentliche Verwaltung (ssT) - Experte;Experten;
+7329;Aufsicht und Führung - Verwaltung;;Aufsicht
+73293;Aufsicht - Verwaltung;;Aufsicht
+73294;Führung - Verwaltung;;Führung
+733;Medien-Dokumentations-Informationsdienst;;
+7331;Berufe im Archivwesen;;
+73312;Archivwesen - Fachkraft;Fachkräfte;
+73313;Archivwesen - Spezialist;Spezialisten;
+73314;Archivwesen - Experte;Experten;
+7332;Berufe im Bibliothekswesen;;
+73322;Bibliothekswesen - Fachkraft;Fachkräfte;
+73323;Bibliothekswesen - Spezialist;Spezialisten;
+73324;Bibliothekswesen - Experte;Experten;
+7333;Berufe Dokumentations,Informationsdienst;;
+73332;Dokument.-,Informationsdienst-Fachkraft;Fachkräfte;
+73333;Dokument.-,Informationsdienst-Spezialist;Spezialisten;
+73334;Dokumentat.-, Informationsdienst-Experte;Experten;
+7334;Berufe i.d. medizinischen Dokumentation;;
+73342;Medizinische Dokumentation - Fachkraft;Fachkräfte;
+7339;Führung-Medien-Dokument.-,Informationsd.;;Führung
+73394;Führung-Medien-Dokument.-,Informationsd.;;Führung
+8;Gesundheit, Soziales, Lehre u. Erziehung;;
+81;Medizinische Gesundheitsberufe;;
+811;Arzt- und Praxishilfe;;
+8110;Medizinische Fachangestellte (o.S.);;
+81102;Medizin. Fachangestellte (oS)-Fachkraft;Fachkräfte;
+81103;Medizin. Fachangestellte (oS)-Spezialist;Spezialisten;
+8111;Zahnmedizinische Fachangestellte;;
+81112;Zahnmedizin. Fachangestellte - Fachkraft;Fachkräfte;
+81113;Zahnmedizin.Fachangestellte - Spezialist;Spezialisten;
+8113;Orthoptisten/Orthoptistinnen;;
+81132;Orthoptisten/Orthoptistinnen - Fachkraft;Fachkräfte;
+8114;Tiermedizinische Fachangestellte;;
+81142;Tiermedizin. Fachangestellte - Fachkraft;Fachkräfte;
+81143;Tiermedizin.Fachangestellte - Spezialist;Spezialisten;
+8118;Medizinische Fachangestellte (s.s.T.);;
+81182;Medizin. Fachangestellte (ssT)-Fachkraft;Fachkräfte;
+81183;Medizin.Fachangestellte (ssT)-Spezialist;Spezialisten;
+812;Medizinisches Laboratorium;;
+8121;Medizinisch-techn.Berufe im Laboratorium;;
+81212;Med.-techn. Berufe Laborat. - Fachkraft;Fachkräfte;
+81213;Med.-techn. Berufe Laborat. - Spezialist;Spezialisten;
+81214;Med.-techn. Berufe Laborat. - Experte;Experten;
+8122;Medizin-tech. Berufe Funktionsdiagnostik;;
+81222;Med.-tech.Berufe Funktionsdiag-Fachkraft;Fachkräfte;
+81223;Med-tech.Berufe Funktionsdiag-Spezialist;Spezialisten;
+81224;Med.-tech. Berufe Funktionsdiag-Experte;Experten;
+8123;Medizinisch-technische Berufe Radiologie;;
+81232;Med.-tech.Berufe Radiologie - Fachkraft;Fachkräfte;
+81233;Med.-tech. Berufe Radiologie -Spezialist;Spezialisten;
+81234;Med.-techn. Berufe Radiologie - Experte;Experten;
+8124;Medizin.-techn. Berufe Veterinärmedizin;;
+81242;Med.-tech.Berufe Veterinärmed.-Fachkraft;Fachkräfte;
+81243;Med.-tech.BerufeVeterinärmed.-Spezialist;Spezialisten;
+8129;Führung - Medizinisches Laboratorium;;Führung
+81294;Führung - Medizinisches Laboratorium;;Führung
+813;Gesundh.,Krankenpfl.,Rettungsd.Geburtsh.;;
+8130;Berufe Gesundheits-, Krankenpflege (o.S);;
+81301;Gesundheits-, Krankenpflege (oS)-Helfer;Helfer;
+81302;Gesundheits-,Krankenpflege(oS)-Fachkraft;Fachkräfte;
+8131;Berufe in der Fachkrankenpflege;;
+81313;Fachkrankenpflege - Spezialist;Spezialisten;
+8132;Berufe in der Fachkinderkrankenpflege;;
+81323;Fachkinderkrankenpflege - Spezialist;Spezialisten;
+8133;Berufe operations-/med.-techn. Assistenz;;
+81332;Operationstechn. Assistenz - Fachkraft;Fachkräfte;
+81333;Operationstechn. Assistenz - Spezialist;Spezialisten;
+8134;Berufe im Rettungsdienst;;
+81341;Rettungsdienst - Helfer;Helfer;
+81342;Rettungsdienst - Fachkraft;Fachkräfte;
+81343;Rettungsdienst - Spezialist;Spezialisten;
+8135;Berufe Geburtshilfe, Entbindungspflege;;
+81352;Geburtshilfe,Entbindungspflege-Fachkraft;Fachkräfte;
+81353;GeburtshilfeEntbindungspflege-Spezialist;Spezialisten;
+8138;Berufe Gesundheits-, Krankenpflege (ssT);;
+81382;Gesundheits,Krankenpflege(ssT)-Fachkraft;Fachkräfte;
+81383;Gesundheits-,Krankenpfl.(ssT)-Spezialist;Spezialisten;
+8139;Aufsicht,Führung-Krankenpfl.,Rettungsd.;;Aufsicht
+81393;Aufsicht-Krankenpfl.,Rettungsd.,Geburtsh;;Aufsicht
+81394;Führung-Krankenpfl.,Rettungsd.,Geburtsh.;;Führung
+814;Human- und Zahnmedizin;;
+8140;Ärzte/Ärztinnen (o. S.);;
+81404;Ärzte/Ärztinnen (o.S.) - Experte;Experten;
+8141;Fachärzte i.d. Kinder- u. Jugendmedizin;;
+81414;Fachärzte Kinder-,Jugendmedizin -Experte;Experten;
+8142;Fachärzte/innen in der Inneren Medizin;;
+81424;Fachärzte Innere Medizin - Experte;Experten;
+8143;Fachärzte/innen in der Chirurgie;;
+81434;Fachärzte in der Chirurgie - Experte;Experten;
+8144;Fachärzte Hautkr.,Sinnes-Geschlechtsorg.;;
+81444;Fachärzte Sinnes,Geschlechtsorg.-Experte;Experten;
+8145;Fachärzte/-ärztinnen Anästhesiologie;;
+81454;Fachärzte Anästhesiologie - Experte;Experten;
+8146;Fachärzte Neurol.,Psychiatr.,Psychother.;;
+81464;Fachärzte Psychiatr.,Psychother.-Experte;Experten;
+8147;Zahnärzte/innen, Kieferorthopäden/innen;;
+81474;Zahnärzte, Kieferorthopäden - Experte;Experten;
+8148;Ärzte/Ärztinnen (s.s.T.);;
+81484;Ärzte/Ärztinnen (s.s.T.) - Experte;Experten;
+8149;Führung - Human- und Zahnmedizin;;Führung
+81494;Führung - Human- und Zahnmedizin;;Führung
+815;Tiermedizin und Tierheilkunde;;
+8150;Tierärzte/-ärztinnen (o.S.);;
+81504;Tierärzte/-ärztinnen (o.S.) - Experte;Experten;
+8151;Tierärzte/-ärztinnen f. Groß-, Nutztiere;;
+81514;Tierärzte für Groß-, Nutztiere - Experte;Experten;
+8152;Tierärzte/ärztinnen für Haus-, Heimtiere;;
+81524;Tierärzte für Haus-, Heimtiere - Experte;Experten;
+8153;Tierheilpraktiker/innen;;
+81532;Tierheilpraktiker/innen - Fachkraft;Fachkräfte;
+8158;Berufe Tiermedizin, Tierheilkunde (ssT);;
+81584;Tiermedizin, Tierheilkunde (ssT)-Experte;Experten;
+8159;Führung - Tiermedizin und Tierheilkunde;;Führung
+81594;Führung - Tiermedizin und Tierheilkunde;;Führung
+816;Psychologie, nichtärztl. Psychotherapie;;
+8161;Berufe i.d. nicht klinischen Psychologie;;
+81614;Nicht klinische Psychologie - Experte;Experten;
+8162;Berufe in der klinischen Psychologie;;
+81623;Klinische Psychologie - Spezialist;Spezialisten;
+81624;Klinische Psychologie - Experte;Experten;
+8163;Berufe nicht ärztliche Psychotherapie;;
+81634;Nicht ärztliche Psychotherapie - Experte;Experten;
+817;Nicht ärztliche Therapie und Heilkunde;;
+8171;Berufe in der Physiotherapie;;
+81712;Physiotherapie - Fachkraft;Fachkräfte;
+81713;Physiotherapie - Spezialist;Spezialisten;
+81714;Physiotherapie - Experte;Experten;
+8172;Berufe in der Ergotherapie;;
+81722;Ergotherapie - Fachkraft;Fachkräfte;
+81723;Ergotherapie - Spezialist;Spezialisten;
+81724;Ergotherapie - Experte;Experten;
+8173;Berufe in der Sprachtherapie;;
+81733;Sprachtherapie - Spezialist;Spezialisten;
+81734;Sprachtherapie - Experte;Experten;
+8174;Berufe in der Musik-, Kunsttherapie;;
+81743;Musik- und Kunsttherapie - Spezialist;Spezialisten;
+81744;Musik- und Kunsttherapie - Experte;Experten;
+8175;Berufe in der Heilkunde und Homöopathie;;
+81752;Heilkunde und Homöopathie - Fachkraft;Fachkräfte;
+81753;Heilkunde und Homöopathie - Spezialist;Spezialisten;
+8176;Berufe i.d. Diät- und Ernährungstherapie;;
+81762;Diät-, Ernährungstherapie - Fachkraft;Fachkräfte;
+81763;Diät-, Ernährungstherapie - Spezialist;Spezialisten;
+81764;Diät-, Ernährungstherapie - Experte;Experten;
+8177;Podologen/innen;;
+81772;Podologen/innen - Fachkraft;Fachkräfte;
+8178;Berufe nichtärztl. Therapie,Heilk.(ssT);;
+81782;Nichtärzt.Therapie,Heilk.(ssT)-Fachkraft;Fachkräfte;
+81783;Nichtärzt.Therapie,Heilk(ssT)-Spezialist;Spezialisten;
+81784;Nichtärztl.Therapie,Heilk.(ssT)-Experte;Experten;
+8179;Führung - Nichtärztl. Therapie,Heilkunde;;Führung
+81794;Führung - Nichtärztl. Therapie,Heilkunde;;Führung
+818;Pharmazie;;
+8180;Apotheker, Pharmazeuten;;
+81804;Apotheker, Pharmazeuten - Experte;Experten;
+8181;Fachärzte/innen in der Pharmakologie;;
+81814;Fachärzte in der Pharmakologie - Experte;Experten;
+8182;Berufe pharmazeutisch-techn. Assistenz;;
+81822;Pharmazeut.-techn. Assistenz - Fachkraft;Fachkräfte;
+8188;Berufe in der Pharmazie (s.s.T.);;
+81883;Pharmazie (s.s.T.) - Spezialist;Spezialisten;
+81884;Pharmazie (s.s.T.) - Experte;Experten;
+8189;Führung - Pharmazie;;Führung
+81894;Führung - Pharmazie;;Führung
+82;Nichtmed.Gesundheit,Körperpfl.,Medizint.;;
+821;Altenpflege;;
+8210;Berufe in der Altenpflege (o.S.);;
+82101;Altenpflege (o.S.) - Helfer;Helfer;
+82102;Altenpflege (o.S.) - Fachkraft;Fachkräfte;
+82103;Altenpflege (o.S.) - Spezialist;Spezialisten;
+8218;Berufe in der Altenpflege (s.s.T.);;
+82182;Altenpflege (s.s.T.) - Fachkraft;Fachkräfte;
+82183;Altenpflege (s.s.T.) - Spezialist;Spezialisten;
+8219;Führung - Altenpflege;;Führung
+82194;Führung - Altenpflege;;Führung
+822;Ernährungs-,Gesundheitsberatung,Wellness;;
+8221;Berufe in der Gesundheitsberatung;;
+82212;Gesundheitsberatung - Fachkraft;Fachkräfte;
+82213;Gesundheitsberatung - Spezialist;Spezialisten;
+82214;Gesundheitsberatung - Experte;Experten;
+8222;Wellnessberufe;;
+82222;Wellness - Fachkraft;Fachkräfte;
+82223;Wellness - Spezialist;Spezialisten;
+8223;Berufe in der Ernährungsberatung;;
+82232;Ernährungsberatung - Fachkraft;Fachkräfte;
+82233;Ernährungsberatung - Spezialist;Spezialisten;
+8224;Qualitätsbeauftragte im Gesundheitswesen;;
+82243;Qualitätsbeauft.Gesundheitsw.-Spezialist;Spezialisten;
+8228;Ernährungs,Gesundheitsber.,Wellness(ssT);;
+82283;Ernähr.,Gesundheitsber.(ssT)-Spezialist;Spezialisten;
+82284;Ernähr., Gesundheitsberat.(ssT)-Experte;Experten;
+823;Körperpflege;;
+8231;Berufe im Friseurgewerbe;;
+82311;Friseurgewerbe - Helfer;Helfer;
+82312;Friseurgewerbe - Fachkraft;Fachkräfte;
+8232;Berufe in der Kosmetik;;
+82322;Kosmetik - Fachkraft;Fachkräfte;
+8233;Tätowierer/innen und Piercer/innen;;
+82332;Tätowierer, Piercer - Fachkraft;Fachkräfte;
+8234;Berufe in der Maskenbildnerei;;
+82342;Maskenbildnerei - Fachkraft;Fachkräfte;
+82343;Maskenbildnerei - Spezialist;Spezialisten;
+8239;Aufsicht - Körperpflege;;Aufsicht
+82393;Aufsicht - Körperpflege;;Aufsicht
+824;Bestattungswesen;;
+8240;Berufe im Bestattungswesen;;
+82401;Bestattungswesen - Helfer;Helfer;
+82402;Bestattungswesen - Fachkraft;Fachkräfte;
+82403;Bestattungswesen - Spezialist;Spezialisten;
+8249;Aufsicht und Führung - Bestattungswesen;;Aufsicht
+82493;Aufsicht - Bestattungswesen;;Aufsicht
+82494;Führung - Bestattungswesen;;Führung
+825;Medizin-, Orthopädie- und Rehatechnik;;
+8250;Medizintechnik (o.S.);;
+82502;Medizintechnik (o.S.) - Fachkraft;Fachkräfte;
+82503;Medizintechnik (o.S.) - Spezialist;Spezialisten;
+82504;Medizintechnik (o.S.) - Experte;Experten;
+8251;Berufe in der Orthopädie-, Rehatechnik;;
+82512;Orthopädie-, Rehatechnik - Fachkraft;Fachkräfte;
+82513;Orthopädie-, Rehatechnik - Spezialist;Spezialisten;
+82514;Orthopädie-, Rehatechnik - Experte;Experten;
+8252;Berufe in der Augenoptik;;
+82522;Augenoptik - Fachkraft;Fachkräfte;
+82523;Augenoptik - Spezialist;Spezialisten;
+82524;Augenoptik - Experte;Experten;
+8253;Berufe in der Hörgeräteakustik;;
+82532;Hörgeräteakustik - Fachkraft;Fachkräfte;
+82533;Hörgeräteakustik - Spezialist;Spezialisten;
+82534;Hörgeräteakustik - Experte;Experten;
+8254;Berufe in der Zahntechnik;;
+82542;Zahntechnik - Fachkraft;Fachkräfte;
+8259;Aufsicht,Führung-Med-Orthopäd,Rehatechn.;;Aufsicht
+82593;Aufsicht-Medizin-Orthopädie-,Rehatechnik;;Aufsicht
+82594;Führung-Medizin-Orthopädie-,Rehatechnik;;Führung
+83;Erziehung,soz.,hauswirt.Berufe,Theologie;;
+831;Erziehung,Sozialarb.,Heilerziehungspfl.;;
+8311;Berufe i.d. Kinderbetreuung, -erziehung;;
+83111;Kinderbetreuung, -erziehung - Helfer;Helfer;
+83112;Kinderbetreuung, -erziehung - Fachkraft;Fachkräfte;
+83113;Kinderbetreuung, -erziehung  -  Spezialist;Spezialisten;
+8312;Berufe i.d. Sozialarbeit,Sozialpädagogik;;
+83122;Sozialarbeit, Sozialpädagogik -Fachkraft;Fachkräfte;
+83123;Sozialarbeit, Sozialpädagogik-Spezialist;Spezialisten;
+83124;Sozialarbeit, Sozialpädagogik - Experte;Experten;
+8313;Berufe Heilerziehungspflege, Sonderpäd.;;
+83131;Heilerziehungspflege, Sonderpäd. -Helfer;Helfer;
+83132;Heilerziehungspflege,Sonderpäd-Fachkraft;Fachkräfte;
+83133;Heilerziehungspfl.,Sonderpäd.-Spezialist;Spezialisten;
+83134;Heilerziehungspflege,Sonderpäd.-Experte;Experten;
+8314;Berufe in der Haus- und Familienpflege;;
+83141;Haus- und Familienpflege  -  Helfer;Helfer;
+83142;Haus- und Familienpflege - Fachkraft;Fachkräfte;
+83143;Haus- und Familienpflege - Spezialist;Spezialisten;
+8315;Berufe Sozial-,Erziehungs-,Suchtberatung;;
+83154;Sozial-,Erziehungs-, Suchtberat.-Experte;Experten;
+8319;Aufsicht,Führung-Erziehung,Sozialarbeit;;Aufsicht
+83193;Aufsicht-Erziehung,Sozialarbeit,Heilerz.;;Aufsicht
+83194;Führung-Erziehung,Sozialarbeit,Heilerz.;;Führung
+832;Hauswirtschaft und Verbraucherberatung;;
+8321;Berufe in der Hauswirtschaft;;
+83211;Hauswirtschaft - Helfer;Helfer;
+83212;Hauswirtschaft - Fachkraft;Fachkräfte;
+83213;Hauswirtschaft - Spezialist;Spezialisten;
+8322;Berufe in der Verbraucherberatung;;
+83223;Verbraucherberatung - Spezialist;Spezialisten;
+8329;Aufsicht-Hauswirtschaft,Verbraucherber.;;Aufsicht
+83293;Aufsicht-Hauswirtschaft,Verbraucherber.;;Aufsicht
+833;Theologie und Gemeindearbeit;;
+8331;Berufe in der Theologie;;
+83314;Theologie - Experte;Experten;
+8332;Berufe in der Gemeindearbeit;;
+83322;Gemeindearbeit - Fachkraft;Fachkräfte;
+83323;Gemeindearbeit - Spezialist;Spezialisten;
+8333;Angehörige geistl. Orden, Mutterhäuser;;
+83332;Angeh.geistl.Orden,Mutterhäus.-Fachkraft;Fachkräfte;
+83333;Angeh.geistl.Orden, Mutterh.-Spezialist;Spezialisten;
+8338;Berufe in Theologie,Gemeindearbeit (ssT);;
+83382;Theologie,Gemeindearbeit (ssT)-Fachkraft;Fachkräfte;
+83383;Theologie,Gemeindearbeit(ssT)-Spezialist;Spezialisten;
+83384;Theologie, Gemeindearbeit (ssT)-Experte;Experten;
+8339;Führung - Theologie und Gemeindearbeit;;Führung
+83394;Führung - Theologie und Gemeindearbeit;;Führung
+84;Lehrende und ausbildende Berufe;;
+841;Lehrtätigkeit an allgemeinbild. Schulen;;
+8411;Lehrkräfte in der Primarstufe;;
+84114;Lehrkräfte in der Primarstufe - Experte;Experten;
+8412;Lehrkräfte in der Sekundarstufe;;
+84124;Lehrkräfte in d. Sekundarstufe - Experte;Experten;
+8413;Lehrkräfte an Förderschulen;;
+84134;Lehrkräfte an Förderschulen - Experte;Experten;
+8414;Berufe in der Lehrerausbildung;;
+84144;Lehrerausbildung - Experte;Experten;
+8418;Lehrkräfte allgemeinbild. Schulen (ssT);;
+84183;Lehrkräfte allg. Schule (ssT)-Spezialist;Spezialisten;
+84184;Lehrkräfte allg. Schule (ssT)-Experte;Experten;
+8419;Führung - Allgemeinbildende Schulen;;Führung
+84194;Führung - Allgemeinbildende Schulen;;Führung
+842;Lehrt.berufsb.Fächer,betr.Ausb.,Betr.päd;;
+8421;Lehrkräfte für berufsbildende Fächer;;
+84213;Lehrkräfte berufsbild. Fächer-Spezialist;Spezialisten;
+84214;Lehrkräfte berufsbildende Fächer-Experte;Experten;
+8422;Berufe betriebl. Ausbildung, Berufspäd.;;
+84223;Betriebl.Ausbild., Berufspäd.-Spezialist;Spezialisten;
+84224;Betriebl. Ausbild., Berufspäd.-Experte;Experten;
+8429;Führung - BBS, betriebl.Ausb., Betr.päd.;;Führung
+84294;Führung - BBS, betriebl.Ausb., Betr.päd.;;Führung
+843;Lehr-,Forschungstätigkeit an Hochschulen;;
+8430;Berufe i. d. Hochschullehre, -forschung;;
+84304;Hochschullehre und -forschung - Experte;Experten;
+8439;Führung - Hochschullehre und -forschung;;Führung
+84394;Führung - Hochschullehre und -forschung;;Führung
+844;Lehrtätigk. außerschul.Bildungseinricht.;;
+8440;Berufe in der Erwachsenenbildung (o.S.);;
+84404;Erwachsenenbildung (o.S.) - Experte;Experten;
+8441;Berufe in der Musikpädagogik;;
+84412;Musikpädagogik - Fachkraft;Fachkräfte;
+84413;Musikpädagogik - Spezialist;Spezialisten;
+84414;Musikpädagogik - Experte;Experten;
+8442;Berufe in der Religionspädagogik;;
+84424;Religionspädagogik - Experte;Experten;
+8443;Berufe in der Kunst-, Theaterpädagogik;;
+84434;Kunst-, Theaterpädagogik - Experte;Experten;
+8444;Berufe im IT-Anwendungstraining;;
+84444;IT-Anwendungstraining - Experte;Experten;
+8445;(Fremd-)Sprachenlehrer/innen;;
+84454;(Fremd-)Sprachenlehrer/innen - Experte;Experten;
+8448;Lehrkräfte außerschul.Bild.einrich.(ssT);;
+84483;Lehrkr.außerschul.Bild.(ssT)-Spezialist;Spezialisten;
+84484;Lehrkr. außerschul.Bild.(ssT)-Experte;Experten;
+8449;Führung-Außerschul.Bildungseinrichtungen;;Führung
+84494;Führung-Außerschul.Bildungseinrichtungen;;Führung
+845;Fahr-,Sportunterricht außerschul. Bild.;;
+8450;Sportlehrer/innen (o.S.);;
+84503;Sportlehrer/innen (o.S.) - Spezialist;Spezialisten;
+84504;Sportlehrer/innen (o.S.) - Experte;Experten;
+8451;Fahrlehrer/innen;;
+84513;Fahrlehrer/innen - Spezialist;Spezialisten;
+8452;Fluglehrer/innen;;
+84523;Fluglehrer/innen - Spezialist;Spezialisten;
+8453;Tanzlehrer/innen;;
+84533;Tanzlehrer/innen - Spezialist;Spezialisten;
+8454;Trainer/innen - Ballsportarten;;
+84543;Trainer - Ballsportarten - Spezialist;Spezialisten;
+8455;Trainer/innen - Fitness und Gymnastik;;
+84553;Trainer - Fitness,Gymnastik - Spezialist;Spezialisten;
+8458;Sportlehrer/innen (s.s.T.);;
+84583;Sportlehrer/innen (s.s.T.) - Spezialist;Spezialisten;
+9;Geisteswissenschaften, Kultur,Gestaltung;;
+91;Geistes-Gesellschafts-Wirtschaftswissen.;;
+911;Sprach-, Literaturwissenschaften;;
+9110;Berufe in Sprach-, Literaturwissen.(oS);;
+91104;Sprach-, Literaturwissen.(oS) - Experte;Experten;
+9111;Berufe in der Germanistik;;
+91114;Germanistik - Experte;Experten;
+9112;Berufe in der Anglistik, Amerikanistik;;
+91124;Anglistik, Amerikanistik - Experte;Experten;
+9113;Berufe in der Romanistik;;
+91134;Romanistik - Experte;Experten;
+9114;Berufe i.d. Slawistik, verw. Bereichen;;
+91144;Slawistik, verwandte Bereiche - Experte;Experten;
+9115;Berufe in der Arabistik, Orientalistik;;
+91154;Arabistik, Orientalistik - Experte;Experten;
+9116;Berufe Sprach-, Literaturwis. asiat.Raum;;
+91164;Sprach-,Literaturwis. asiat.Raum-Experte;Experten;
+9117;Berufe in der Altphilologie;;
+91174;Altphilologie - Experte;Experten;
+9118;Berufe Sprach-,Literaturwissensch. (ssT);;
+91184;Sprach-,Literaturwissensch.(ssT)-Experte;Experten;
+912;Geisteswissenschaften;;
+9121;Berufe in Philosophie, Religion, Ethik;;
+91214;Philosophie, Religion, Ethik - Experte;Experten;
+9122;Berufe in Geschichtswissenschaften;;
+91224;Geschichtswissenschaften - Experte;Experten;
+9123;Berufe in der Archäologie;;
+91233;Archäologie - Spezialist;Spezialisten;
+91234;Archäologie - Experte;Experten;
+9124;Berufe in Medien-, Theaterwissenschaft;;
+91244;Medien-, Theaterwissenschaft - Experte;Experten;
+9125;Berufe in der Regionalwissenschaft;;
+91254;Regionalwissenschaft - Experte;Experten;
+9126;Berufe in der Anthropologie, Ethnologie;;
+91264;Anthropologie, Ethnologie - Experte;Experten;
+913;Gesellschaftswissenschaften;;
+9131;Berufe in der Politologie;;
+91314;Politologie - Experte;Experten;
+9132;Berufe in der Soziologie;;
+91324;Soziologie - Experte;Experten;
+9133;Berufe in der Erziehungswissenschaft;;
+91334;Erziehungswissenschaft - Experte;Experten;
+9134;Berufe in der Markt-, Meinungsforschung;;
+91341;Markt-, Meinungsforschung - Helfer;Helfer;
+91342;Markt-, Meinungsforschung - Fachkraft;Fachkräfte;
+91343;Markt-, Meinungsforschung - Spezialist;Spezialisten;
+91344;Markt-, Meinungsforschung - Experte;Experten;
+9135;Berufe in der Demografie;;
+91354;Demografie - Experte;Experten;
+9138;Berufe Gesellschaftswissenschaften (ssT);;
+91384;Gesellschaftswissenschaften(ssT)-Experte;Experten;
+914;Wirtschaftswissenschaften;;
+9140;Berufe in Wirtschaftswissenschaften (oS);;
+91404;Wirtschaftswissenschaften (oS) - Experte;Experten;
+9148;Berufe in Wirtschaftswissenschaften(ssT);;
+91484;Wirtschaftswissenschaften(ssT) - Experte;Experten;
+92;Werbung,Marketing,kaufm,red.Medienberufe;;
+921;Werbung und Marketing;;
+9211;Berufe in Werbung und Marketing;;
+92112;Werbung und Marketing - Fachkraft;Fachkräfte;
+92113;Werbung und Marketing - Spezialist;Spezialisten;
+92114;Werbung und Marketing - Experte;Experten;
+9212;Berufe im Dialogmarketing;;
+92122;Dialogmarketing - Fachkraft;Fachkräfte;
+92123;Dialogmarketing - Spezialist;Spezialisten;
+9213;Berufe im Kundenmanagement;;
+92133;Kundenmanagement - Spezialist;Spezialisten;
+9219;Aufsicht, Führung  -  Werbung u. Marketing;;Aufsicht
+92193;Aufsicht  -  Werbung und Marketing;;Aufsicht
+92194;Führung - Werbung und Marketing;;Führung
+922;Öffentlichkeitsarbeit;;
+9220;Berufe in der Öffentlichkeitsarbeit;;
+92203;Öffentlichkeitsarbeit - Spezialist;Spezialisten;
+92204;Öffentlichkeitsarbeit - Experte;Experten;
+9229;Führung - Öffentlichkeitsarbeit;;Führung
+92294;Führung - Öffentlichkeitsarbeit;;Führung
+923;Verlags- und Medienwirtschaft;;
+9230;Verlags- und Medienkaufleute (o.S.);;
+92302;Verlags-,Medienkaufleute(oS) - Fachkraft;Fachkräfte;
+92303;Verlags-,Medienkaufleute(oS) -Spezialist;Spezialisten;
+92304;Verlags-, Medienkaufleute (oS) - Experte;Experten;
+9238;Verlags- und Medienkaufleute (s.s.T.);;
+92382;Verlags-, Medienkaufleute(ssT)-Fachkraft;Fachkräfte;
+92383;Verlags-,Medienkaufleute(ssT)-Spezialist;Spezialisten;
+92384;Verlags-, Medienkaufleute (ssT) -Experte;Experten;
+9239;Führung - Verlags- und Medienwirtschaft;;Führung
+92394;Führung - Verlags- und Medienwirtschaft;;Führung
+924;Redaktion und Journalismus;;
+9241;Redakteure/innen, Journalisten/innen;;
+92412;Redakteure, Journalisten - Fachkraft;Fachkräfte;
+92413;Redakteure, Journalisten - Spezialist;Spezialisten;
+92414;Redakteure, Journalisten - Experte;Experten;
+9242;Lektoren/innen;;
+92424;Lektoren/innen - Experte;Experten;
+9243;Autoren/Autorinnen, Schriftsteller/innen;;
+92434;Autoren, Schriftsteller - Experte;Experten;
+9249;Führung - Redaktion und Journalismus;;Führung
+92494;Führung - Redaktion und Journalismus;;Führung
+93;Produktdesign, Kunsthandwerk;;
+931;Produkt- und Industriedesign;;
+9310;Berufe im Produkt- und Industriedesign;;
+93102;Produkt-, Industriedesign - Fachkraft;Fachkräfte;
+93103;Produkt-, Industriedesign - Spezialist;Spezialisten;
+93104;Produkt-, Industriedesign - Experte;Experten;
+932;Innenarchitektur, Raumausstattung;;
+9321;Berufe in der Innenarchitektur;;
+93212;Innenarchitektur - Fachkraft;Fachkräfte;
+93213;Innenarchitektur - Spezialist;Spezialisten;
+93214;Innenarchitektur - Experte;Experten;
+9322;Berufe im visuellen Marketing;;
+93222;Visuelles Marketing - Fachkraft;Fachkräfte;
+93223;Visuelles Marketing - Spezialist;Spezialisten;
+9323;Berufe in der Raumausstattung;;
+93232;Raumausstattung - Fachkraft;Fachkräfte;
+93233;Raumausstattung - Spezialist;Spezialisten;
+9329;Aufsicht-Innenarchitektur,Raumausstatt.;;Aufsicht
+93293;Aufsicht-Innenarchitektur,Raumausstatt.;;Aufsicht
+933;Kunsthandwerk und bildende Kunst;;
+9330;Berufe Kunsthandwerk, bildend.Kunst (oS);;
+93302;Kunsthandw., bild.Kunst (oS) - Fachkraft;Fachkräfte;
+93303;Kunsthandwerk,bild.Kunst (oS)-Spezialist;Spezialisten;
+93304;Kunsthandwerk, bild. Kunst (oS)-Experte;Experten;
+9331;Berufe in der Bildhauerei;;
+93312;Bildhauerei - Fachkraft;Fachkräfte;
+93313;Bildhauerei - Spezialist;Spezialisten;
+9332;Kunstmaler/innen, Zeichner/innen;;
+93323;Kunstmaler, Zeichner - Spezialist;Spezialisten;
+9333;Berufe Drechslerei, Spielzeugherstellung;;
+93332;Drechslerei,Spielzeugherstell.-Fachkraft;Fachkräfte;
+93333;Drechslerei, Spielzeugherst.-Spezialist;Spezialisten;
+9334;Berufe im Vergolderhandwerk;;
+93342;Vergolderhandwerk - Fachkraft;Fachkräfte;
+93343;Vergolderhandwerk - Spezialist;Spezialisten;
+9335;Berufe in der Wachszieherei;;
+93352;Wachszieherei - Fachkraft;Fachkräfte;
+9338;Berufe Kunsthandwerk, bild. Kunst (ssT);;
+93382;Kunsthandwerk, bild.Kunst(ssT)-Fachkraft;Fachkräfte;
+93383;Kunsthandwerk,bild.Kunst(ssT)-Spezialist;Spezialisten;
+9339;Aufsicht - Kunsthandwerk,bildende Kunst;;Aufsicht
+93393;Aufsicht - Kunsthandwerk,bildende Kunst;;Aufsicht
+934;Kunsthandwerkl. Keramik-, Glasgestaltung;;
+9341;Berufe kunsthandwerkl. Keramikgestaltung;;
+93412;Kunsthandw. Keramikgestaltung-Fachkraft;Fachkräfte;
+93413;Kunsthandw. Keramikgestaltung-Spezialist;Spezialisten;
+9342;Berufe kunsthand.GlasKeram,Porzellanmal.;;
+93422;KunsthandGlasKeramPorzellanmal-Fachkraft;Fachkräfte;
+9343;Berufe kunsthandwerkliche Glasbläserei;;
+93432;Kunsthandwerkl. Glasbläserei - Fachkraft;Fachkräfte;
+93433;Kunsthandwerkl. Glasbläserei-Spezialist;Spezialisten;
+9349;Aufsicht-Kunsthandw.Keramik,Glasgestalt.;;Aufsicht
+93493;Aufsicht-Kunsthandw.Keramik,Glasgestalt.;;Aufsicht
+935;Kunsthandwerkliche Metallgestaltung;;
+9351;Berufe kunsthandwerkl. Metallgestaltung;;
+93512;Kunsthandw. Metallgestaltung - Fachkraft;Fachkräfte;
+93513;Kunsthandw. Metallgestaltung-Spezialist;Spezialisten;
+9352;Kunsthandw.Schmuckherst.,Edelsteinbearb.;;
+93522;Kunsth.Schmuckher.Edelsteinbe.-Fachkraft;Fachkräfte;
+93523;Kunsth.SchmuckherEdelsteinbe.-Spezialist;Spezialisten;
+93524;Kunsth.Schmuckher.Edelsteinbear.-Experte;Experten;
+9353;Berufe in der Gravur;;
+93532;Gravur - Fachkraft;Fachkräfte;
+93533;Gravur - Spezialist;Spezialisten;
+9354;Berufe Schilder-,Lichtreklameherstellung;;
+93542;Schilder-,Lichtreklameherst. - Fachkraft;Fachkräfte;
+9359;Aufsicht-Kunsthandwerkl.Metallgestaltung;;Aufsicht
+93593;Aufsicht-Kunsthandwerkl.Metallgestaltung;;Aufsicht
+936;Musikinstrumentenbau;;
+9360;Berufe im Musikinstrumentenbau (o.S.);;
+93602;Musikinstrumentenbau (o.S.) - Fachkraft;Fachkräfte;
+93603;Musikinstrumentenbau (o.S.) - Spezialist;Spezialisten;
+93604;Musikinstrumentenbau (o.S.) - Experte;Experten;
+9361;Berufe im Streich-, Zupfinstrumentenbau;;
+93612;Streich-,Zupfinstrumentenbau - Fachkraft;Fachkräfte;
+93613;Streich-,Zupfinstrumentenbau-Spezialist;Spezialisten;
+9362;Berufe im Holzblasinstrumentenbau;;
+93622;Holzblasinstrumentenbau - Fachkraft;Fachkräfte;
+93623;Holzblasinstrumentenbau - Spezialist;Spezialisten;
+9363;Berufe im Metallblasinstrumentenbau;;
+93632;Metallblasinstrumentenbau - Fachkraft;Fachkräfte;
+93633;Metallblasinstrumentenbau - Spezialist;Spezialisten;
+9364;Berufe im Klavier- und Cembalobau;;
+93642;Klavier- und Cembalobau - Fachkraft;Fachkräfte;
+93643;Klavier- und Cembalobau - Spezialist;Spezialisten;
+9365;Berufe im Orgel- und Harmoniumbau;;
+93652;Orgel- und Harmoniumbau - Fachkraft;Fachkräfte;
+93653;Orgel- und Harmoniumbau - Spezialist;Spezialisten;
+9368;Berufe im Musikinstrumentenbau (s.s.T.);;
+93682;Musikinstrumentenbau (s.s.T.)-Fachkraft;Fachkräfte;
+93683;Musikinstrumentenbau (s.s.T.)-Spezialist;Spezialisten;
+9369;Aufsicht - Musikinstrumentenbau;;Aufsicht
+93693;Aufsicht - Musikinstrumentenbau;;Aufsicht
+94;Darstellende, unterhaltende Berufe;;
+941;Musik-, Gesang-, Dirigententätigkeiten;;
+9411;Musiker/innen;;
+94114;Musiker/innen - Experte;Experten;
+9412;Sänger/innen;;
+94124;Sänger/innen - Experte;Experten;
+9413;Dirigenten/Dirigentinnen;;
+94134;Dirigenten/Dirigentinnen - Experte;Experten;
+9414;Komponisten/Komponistinnen;;
+94144;Komponisten/Komponistinnen - Experte;Experten;
+9418;Musik-,Gesangs-, Dirigententätigk. (ssT);;
+94183;MusikGesangDirigententät(ssT)-Spezialist;Spezialisten;
+94184;MusikGesangs,Dirigententät.(ssT)-Experte;Experten;
+942;Schauspiel, Tanz und Bewegungskunst;;
+9421;Schauspieler/innen;;
+94214;Schauspieler/innen - Experte;Experten;
+9422;Tänzer/innen, Choreografen/innen;;
+94224;Tänzer, Choreografen - Experte;Experten;
+9423;Mannequins, Dressmen, sonstige Models;;
+94232;MannequinDressmen,sonst.Models-Fachkraft;Fachkräfte;
+9424;Athleten, Berufssportler;;
+94243;Athleten, Berufssportler - Spezialist;Spezialisten;
+9425;Berufe personenbezog. Dienstleistungen;;
+94252;Personenbezog.Dienstleistungen-Fachkraft;Fachkräfte;
+9428;BerufeSchauspielTanz,Bewegungskunst(ssT);;
+94283;SchauspielTanzBewegungsk(ssT)-Spezialist;Spezialisten;
+943;Moderation und Unterhaltung;;
+9430;Berufe in Moderation, Unterhaltung (oS);;
+94303;Moderation,Unterhaltung (oS) -Spezialist;Spezialisten;
+9431;Komiker/innen, Kabarettisten/innen;;
+94313;Komiker, Kabarettisten - Spezialist;Spezialisten;
+9432;Zauberer/innen, Illusionisten/innen;;
+94323;Zauberer, Illusionisten - Spezialist;Spezialisten;
+9433;Hörfunk-, Fernsehmoderatoren/innen;;
+94334;Hörfunk-, Fernsehmoderatoren - Experte;Experten;
+9434;Berufe im Bereich Glücks- und Wettspiel;;
+94342;Glücks- und Wettspiel - Fachkraft;Fachkräfte;
+9438;Berufe in Moderation, Unterhaltung (ssT);;
+94382;Moderation,Unterhaltung(ssT)  -  Fachkraft;Fachkräfte;
+94383;Moderation,Unterhaltung(ssT) -Spezialist;Spezialisten;
+944;Theater-, Film- und Fernsehproduktion;;
+9440;Berufe Theater-,Film-,Fernsehproduk.(oS);;
+94402;Theater-Film-,Fernsehprod.(oS)-Fachkraft;Fachkräfte;
+94403;Theater-Film,Fernsehprod.(oS)-Spezialist;Spezialisten;
+94404;Theater-,Film-, Fernsehprod.(oS)-Experte;Experten;
+9441;Berufe in der Regie;;
+94413;Regie - Spezialist;Spezialisten;
+94414;Regie - Experte;Experten;
+9448;Berufe Theater-,Film-, Fernsehprod.(ssT);;
+94482;Theater-Film,Fernsehprod.(ssT)-Fachkraft;Fachkräfte;
+94483;TheaterFilm,Fernsehprod.(ssT)-Spezialist;Spezialisten;
+94484;Theater-Film-,Fernsehprod.(ssT)-Experte;Experten;
+9449;Aufsicht,Führung-TheaterFilm,Fernsehprod;;Aufsicht
+94493;Aufsicht-Theater-Film-,Fernsehproduktion;;Aufsicht
+94494;Führung-Theater-,Film-,Fernsehproduktion;;Führung
+945;Veranstaltungs-, Kamera-, Tontechnik;;
+9451;Berufe Veranstaltungs- und Bühnentechnik;;
+94512;Veranstaltungs-, Bühnentechnik-Fachkraft;Fachkräfte;
+94513;Veranstaltungs-,Bühnentechnik-Spezialist;Spezialisten;
+94514;Veranstaltungs-, Bühnentechnik - Experte;Experten;
+9452;Berufe in der Kameratechnik;;
+94522;Kameratechnik - Fachkraft;Fachkräfte;
+94523;Kameratechnik - Spezialist;Spezialisten;
+9453;Berufe in der Bild- und Tontechnik;;
+94532;Bild- und Tontechnik - Fachkraft;Fachkräfte;
+94533;Bild- und Tontechnik - Spezialist;Spezialisten;
+94534;Bild- und Tontechnik - Experte;Experten;
+9458;Berufe Veranstalt.-Kamera-,Tontech.(ssT);;
+94582;Veranstalt.-Kamera-,Tont.(ssT)-Fachkraft;Fachkräfte;
+9459;Aufsicht-Veranstaltungs-Kamera-,Tontech.;;Aufsicht
+94593;Aufsicht-Veranstaltungs-Kamera-,Tontech.;;Aufsicht
+946;Bühnen- und Kostümbildnerei, Requisite;;
+9461;Berufe i.d. Bühnen- und Kostümbildnerei;;
+94612;Bühnen- und Kostümbildnerei - Fachkraft;Fachkräfte;
+94613;Bühnen- und Kostümbildnerei - Spezialist;Spezialisten;
+94614;Bühnen- und Kostümbildnerei - Experte;Experten;
+9462;Berufe in der Requisite;;
+94622;Requisite - Fachkraft;Fachkräfte;
+94623;Requisite - Spezialist;Spezialisten;
+9469;Aufsicht-Bühnen-,Kostümbildn.,Requisite;;Aufsicht
+94693;Aufsicht-Bühnen-,Kostümbildn.,Requisite;;Aufsicht
+947;Museumstechnik und -management;;
+9470;Museumsberufe (o.S.);;
+94704;Museum (o.S.) - Experte;Experten;
+9471;Berufe Museums- und Ausstellungstechnik;;
+94712;Museums-,Ausstellungstechnik - Fachkraft;Fachkräfte;
+94713;Museums-,Ausstellungstechnik-Spezialist;Spezialisten;
+94714;Museums-, Ausstellungstechnik - Experte;Experten;
+9472;Kunstsachverständige;;
+94724;Kunstsachverständige - Experte;Experten;
+9479;Führung - Museum;;Führung
+94794;Führung - Museum;;Führung
+0;Militär;;
+01;Angehörige der regulären Streitkräfte;;
+011;Offiziere;;
+0110;Offiziere;;
+01104;Offiziere;;
+012;Unteroffiziere mit Portepee;;
+0120;Unteroffiziere mit Portepee;;
+01203;Unteroffiziere mit Portepee;;
+013;Unteroffiziere ohne Portepee;;
+0130;Unteroffiziere ohne Portepee;;
+01302;Unteroffiziere ohne Portepee;;
+014;Angeh. reguläre Streitkräfte sonst.Ränge;;
+0140;Angeh. reguläre Streitkräfte sonst.Ränge;;
+01402;Angeh. reguläre Streitkräfte sonst.Ränge;;
