@@ -21,6 +21,7 @@ class Noun(Declinable):
         dat_pl=None,
         acc_pl=None,
         neopronouns=False,
+        status=None,
     ):
         self.gender = gender
         self.nom_sg = nom_sg
@@ -32,6 +33,7 @@ class Noun(Declinable):
         self.dat_pl = dat_pl or nom_pl
         self.acc_pl = acc_pl or nom_pl
         self.neopronouns = neopronouns
+        self.status = status
 
 
 class Definite(Declinable):
