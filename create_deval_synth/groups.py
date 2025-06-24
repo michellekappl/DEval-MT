@@ -1885,5 +1885,5 @@ groups = {
             nom_pl="Denkmalrestauratorinnen",
             status="Spezialist",
         ),
-   
+    ],
 }
