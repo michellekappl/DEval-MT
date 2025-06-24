@@ -21,7 +21,7 @@ Als <x_nom> ankommt, leiht <y_nom> <x_pron_dat> einen riesigen Lastwagen.;none;[
 <x_nom> wird von <y_dat> eingestellt und bekommt das Gehalt von <y_pron_dat>.;y>x;[];[]
 <x_nom> isst mehr als <y_nom>, weil <x_pron_nom> sich mehr bewegt.;none;[];[]
 <x_nom> vertraut <y_dat> nicht und bittet <y_pron_acc>, zu gehen.;none;[];[]
-<x_nom> sagt <y_acc>, dass <y_pron_nom> sich früh zum Dienst melden muss.;x>y;[];[]
+<x_nom> sagt <y_dat>, dass <y_pron_nom> sich früh zum Dienst melden muss.;x>y;[];[]
 <x_nom> macht <y_dat> einen Gefallen, hasst <y_pron_acc> aber insgeheim.;none;[];[]
 <x_nom> mag <y_acc> und verkauft <y_pron_dat> Ware mit Rabatt.;none;[Handel, ];[]
 <x_nom> trifft <y_acc> und erklärt <y_pron_dat> das Design.;none;[];[]
