@@ -11,7 +11,7 @@ class Declinable:
 class Noun(Declinable):
     def __init__(
         self,
-        gender,
+        grammatical_gender,
         nom_sg,
         gen_sg=None,
         dat_sg=None,
@@ -20,10 +20,10 @@ class Noun(Declinable):
         gen_pl=None,
         dat_pl=None,
         acc_pl=None,
-        neopronouns=False,
+        pronouns=None,  # "er" "sie" "dey"
         status=None,
     ):
-        self.gender = gender
+        self.grammatical_gender = grammatical_gender
         self.nom_sg = nom_sg
         self.gen_sg = gen_sg or nom_sg
         self.dat_sg = dat_sg or nom_sg
@@ -32,8 +32,17 @@ class Noun(Declinable):
         self.gen_pl = gen_pl or nom_pl
         self.dat_pl = dat_pl or nom_pl
         self.acc_pl = acc_pl or nom_pl
-        self.neopronouns = neopronouns
+        self.pronouns = pronouns
         self.status = status
+
+    @property
+    def gender(self):
+        if self.pronouns:
+            lookup = {"er": "m", "sie": "f", "dey": "d"}
+            return lookup[self.pronouns]
+        else:
+            # return grammatical gender if pronouns are not otherwise specified
+            return self.grammatical_gender
 
 
 class Definite(Declinable):
@@ -48,7 +57,7 @@ class Definite(Declinable):
             "acc": {"m": "den", "f": "die", "n": "das", "pl": "die"},
         }
         if number == "sg":
-            return dict[case][self.noun.gender]
+            return dict[case][self.noun.grammatical_gender]
         elif number == "pl":
             return dict[case]["pl"]
 
@@ -58,7 +67,7 @@ class Definite(Declinable):
 
 class Relative(Declinable):
     def __init__(self, noun: Noun):
-        self.gender = noun.gender
+        self.gender = noun.grammatical_gender
 
     def decline(self, case, number):
         dict = {
@@ -76,7 +85,6 @@ class Relative(Declinable):
 class Pronoun(Declinable):
     def __init__(self, noun: Noun):
         self.gender = noun.gender
-        self.neopronouns = noun.neopronouns
 
     def decline(self, case, number):
         dict = {
@@ -85,17 +93,14 @@ class Pronoun(Declinable):
                 "m": "seiner",
                 "f": "ihrer",
                 "n": "seiner",
-                "neo": "deren",
+                "d": "deren",
                 "pl": "ihrer",
             },
             "dat": {"m": "ihm", "f": "ihr", "n": "ihm", "neo": "denen", "pl": "ihnen"},
             "acc": {"m": "ihn", "f": "sie", "n": "es", "neo": "dey", "pl": "sie"},
         }
         if number == "sg":
-            if self.neopronouns:
-                return dict[case]["neo"]
-            else:
-                return dict[case][self.gender]
+            return dict[case][self.gender]
         elif number == "pl":
             return dict[case]["pl"]
 
@@ -115,7 +120,7 @@ class Possessive(Declinable):
         }
 
         if number == "sg":
-            if self.possessor.neopronouns:
+            if self.possessor.gender == "d":
                 return "deren"
             else:
                 return base[self.possessor.gender] + endings[case][self.possessed]
@@ -124,7 +129,7 @@ class Possessive(Declinable):
 
 
 # Example usage
-mann = Noun("m", "Mann", "Mannes", nom_pl="Männer", dat_pl="Männern", neopronouns=True)
+mann = Noun("m", "Mann", "Mannes", nom_pl="Männer", dat_pl="Männern")
 definite_mann = Definite(mann)
 possessive_mann = Possessive(mann, "pl")
 pronoun_mann = Pronoun(mann)
