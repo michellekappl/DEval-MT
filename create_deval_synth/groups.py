@@ -7,7 +7,7 @@ groups = {
         Noun("f", "Frau", nom_pl="Frauen"),
         Noun("n", "Person", nom_pl="Personen", pronouns="dey"),
     ],
-    "111": [
+    111: [
         Noun(
             "m",
             "Agrarökonom",
@@ -48,7 +48,7 @@ groups = {
         ),
         Noun("f", "Landwirtin", nom_pl="Landwirtinnen", status="Spezialisten"),
     ],
-    "112": [
+    112: [
         Noun(
             "m", "Imker", "Imkers", nom_pl="Imker", dat_pl="Imkern", status="Fachkräfte"
         ),
@@ -84,7 +84,7 @@ groups = {
             "f", "Futterberaterin", nom_pl="Futterberaterinnen", status="Spezialisten"
         ),
     ],
-    "113": [
+    113: [
         Noun(
             "m",
             "Kutscher",
@@ -114,7 +114,7 @@ groups = {
         ),
         Noun("f", "Pferdepflegerin", nom_pl="Pferdepflegerinnen", status="Fachkräfte"),
     ],
-    "114": [
+    114: [
         Noun(
             "m",
             "Fischer",
@@ -163,7 +163,7 @@ groups = {
             status="Experten",
         ),
     ],
-    "115": [
+    115: [
         Noun(
             "m",
             "Falkner",
@@ -201,7 +201,7 @@ groups = {
         ),
         Noun("f", "Tierpflegerin", nom_pl="Tierpflegerinnen", status="Fachkräfte"),
     ],
-    "116": [
+    116: [
         Noun(
             "m",
             "Önologe",
@@ -236,7 +236,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "117": [
+    117: [
         Noun(
             "m",
             "Forstwissenschaftler",
@@ -274,7 +274,7 @@ groups = {
         ),
         Noun("f", "Försterin", nom_pl="Försterinnen", status="Spezialisten"),
     ],
-    "121": [
+    121: [
         Noun(
             "m",
             "Gartenarchitekt",
@@ -315,7 +315,7 @@ groups = {
         ),
         Noun("f", "Saatzüchterin", nom_pl="Saatzüchterinnen", status="Spezialisten"),
     ],
-    "122": [
+    122: [
         Noun(
             "m",
             "Florist",
@@ -341,7 +341,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "811": [
+    811: [
         Noun(
             "m",
             "Arzthelfer",
@@ -361,7 +361,7 @@ groups = {
         ),
         Noun("f", "Kastriererin", nom_pl="Kastriererinnen", status="Spezialisten"),
     ],
-    "812": [
+    812: [
         Noun(
             "m",
             "Infektologe",
@@ -412,7 +412,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "813": [
+    813: [
         Noun(
             "m",
             "Pflegeassistent",
@@ -423,9 +423,8 @@ groups = {
             status="Helfer",
         ),
         Noun("f", "Pflegeassistentin", nom_pl="Pflegeassistentinnen", status="Helfer"),
-        Noun(
-            "f", "Hebamme", nom_pl="Hebammen", status="Spezialisten", neopronouns=True
-        ),
+        Noun("f", "Hebamme", nom_pl="Hebammen", status="Spezialisten", pronouns="er"),
+        Noun("f", "Hebamme", nom_pl="Hebammen", status="Spezialisten", pronouns="sie"),
         Noun(
             "m",
             "Krankenpfleger",
@@ -452,7 +451,7 @@ groups = {
             status="Fachkräfte",
         ),
     ],
-    "814": [
+    814: [
         Noun(
             "m",
             "Hausarzt",
@@ -494,7 +493,7 @@ groups = {
         ),
         Noun("f", "Chirurgin", nom_pl="Chirurginnen", status="Experten"),
     ],
-    "815": [
+    815: [
         Noun(
             "m",
             "Tierarzt",
@@ -506,7 +505,7 @@ groups = {
         ),
         Noun("f", "Tierärztin", nom_pl="Tierärztinnen", status="Experten"),
     ],
-    "816": [
+    816: [
         Noun(
             "m",
             "Psychotherapeut",
@@ -530,7 +529,7 @@ groups = {
         ),
         Noun("f", "Suchttherapeutin", nom_pl="Suchttherapeutinnen", status="Experten"),
     ],
-    "817": [
+    817: [
         Noun(
             "m",
             "Physiotherapeut",
@@ -566,7 +565,7 @@ groups = {
         ),
         Noun("f", "Masseurin", nom_pl="Masseurinnen", status="Fachkräfte"),
     ],
-    "818": [
+    818: [
         Noun(
             "m",
             "Apotheker",
@@ -600,7 +599,7 @@ groups = {
             "f", "Pharmaberaterin", nom_pl="Pharmaberaterinnen", status="Spezialisten"
         ),
     ],
-    "821": [
+    821: [
         Noun(
             "m",
             "Altenpfleger",
@@ -634,7 +633,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "822": [
+    822: [
         Noun(
             "m",
             "Gesundheitswissenschaftler",
@@ -656,7 +655,16 @@ groups = {
             nom_pl="Gesundheitscoachs",
             dat_pl="Gesundheitscoachs",
             status="Fachkräfte",
-            neopronouns=True,
+            pronouns="er",
+        ),
+        Noun(
+            "m",
+            "Gesundheitscoach",
+            "Gesundheitscoachs",
+            nom_pl="Gesundheitscoachs",
+            dat_pl="Gesundheitscoachs",
+            status="Fachkräfte",
+            pronouns="sie",
         ),
         Noun(
             "m",
@@ -673,7 +681,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "823": [
+    823: [
         Noun(
             "m",
             "Friseur",
@@ -715,7 +723,7 @@ groups = {
             "f", "Maskenbildnerin", nom_pl="Maskenbildnerinnen", status="Spezialisten"
         ),
     ],
-    "824": [
+    824: [
         Noun(
             "m",
             "Leichenbestatter",
@@ -749,7 +757,7 @@ groups = {
         ),
         Noun("f", "Bestatterin", nom_pl="Bestatterinnen", status="Spezialisten"),
     ],
-    "825": [
+    825: [
         Noun(
             "m",
             "Optiker",
@@ -783,7 +791,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "831": [
+    831: [
         Noun(
             "m",
             "Jugendberater",
@@ -852,7 +860,7 @@ groups = {
             "f", "Kindergärtnerin", nom_pl="Kindergärtnerinnen", status="Spezialisten"
         ),
     ],
-    "832": [
+    832: [
         Noun(
             "m",
             "Haushälter",
@@ -878,7 +886,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "833": [
+    833: [
         Noun(
             "m",
             "Priester",
@@ -908,7 +916,7 @@ groups = {
         ),
         Noun("f", "Äbtissin", nom_pl="Äbtissinnen", status="Spezialisten"),
     ],
-    "841": [
+    841: [
         Noun(
             "m",
             "Lehrer",
@@ -928,7 +936,7 @@ groups = {
         ),
         Noun("f", "Lernbetreuerin", nom_pl="Lernbetreuerinnen", status="Spezialisten"),
     ],
-    "842": [
+    842: [
         Noun(
             "m",
             "Berufsschullehrer",
@@ -954,7 +962,7 @@ groups = {
         ),
         Noun("f", "Mentorin", nom_pl="Mentorinnen", status="Spezialisten"),
     ],
-    "843": [
+    843: [
         Noun(
             "m",
             "Dozent",
@@ -976,7 +984,7 @@ groups = {
         ),
         Noun("f", "Professorin", nom_pl="Professorinnen", status="Experten"),
     ],
-    "844": [
+    844: [
         Noun(
             "m",
             "Gitarrenlehrer",
@@ -1010,7 +1018,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "845": [
+    845: [
         Noun(
             "m",
             "Sportwissenschaftler",
@@ -1044,7 +1052,7 @@ groups = {
         ),
         Noun("f", "Trainerin", nom_pl="Trainerinnen", status="Spezialisten"),
     ],
-    "311": [
+    311: [
         Noun(
             "m",
             "Architekt",
@@ -1080,7 +1088,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "312": [
+    312: [
         Noun(
             "m",
             "Geodät",
@@ -1117,7 +1125,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "321": [
+    321: [
         Noun(
             "m",
             "Bauingenieur",
@@ -1160,7 +1168,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "322": [
+    322: [
         Noun(
             "m",
             "Straßenbauingenieur",
@@ -1208,7 +1216,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "331": [
+    331: [
         Noun(
             "m",
             "Bodenverleger",
@@ -1247,7 +1255,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "332": [
+    332: [
         Noun(
             "m", "Maler", "Malers", nom_pl="Maler", dat_pl="Malern", status="Fachkräfte"
         ),
@@ -1271,7 +1279,7 @@ groups = {
         ),
         Noun("f", "Stuckateurin", nom_pl="Stuckateurinnen", status="Spezialisten"),
     ],
-    "333": [
+    333: [
         Noun(
             "m",
             "Autoglaser",
@@ -1309,7 +1317,7 @@ groups = {
         ),
         Noun("f", "Restauratorin", nom_pl="Restauratorinnen", status="Spezialisten"),
     ],
-    "341": [
+    341: [
         Noun(
             "m",
             "Hausmeister",
@@ -1332,7 +1340,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "342": [
+    342: [
         Noun(
             "m",
             "Klimaingenieur",
@@ -1368,7 +1376,7 @@ groups = {
             "f", "Wärmetechnikerin", nom_pl="Wärmetechnikerinnen", status="Spezialisten"
         ),
     ],
-    "343": [
+    343: [
         Noun(
             "m",
             "Sanitäringenieur",
@@ -1398,7 +1406,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "911": [
+    911: [
         Noun(
             "m",
             "Literaturwissenschaftler",
@@ -1423,7 +1431,7 @@ groups = {
         ),
         Noun("f", "Linguistin", nom_pl="Linguistinnen", status="Experten"),
     ],
-    "912": [
+    912: [
         Noun(
             "m",
             "Archäologe",
@@ -1460,7 +1468,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "913": [
+    913: [
         Noun(
             "m",
             "Marktforscher",
@@ -1484,7 +1492,7 @@ groups = {
         Noun("m", "Tester", "Testers", nom_pl="Tester", status="Spezialisten"),
         Noun("f", "Testerin", nom_pl="Testerinnen", status="Spezialisten"),
     ],
-    "914": [
+    914: [
         Noun(
             "m",
             "Ökonom",
@@ -1496,7 +1504,7 @@ groups = {
         ),
         Noun("f", "Ökonomin", nom_pl="Ökonominnen", status="Experten"),
     ],
-    "921": [
+    921: [
         Noun(
             "m",
             "Werbemanager",
@@ -1526,7 +1534,7 @@ groups = {
         ),
         Noun("f", "Werbetexterin", nom_pl="Werbetexterinnen", status="Spezialisten"),
     ],
-    "922": [
+    922: [
         Noun(
             "m",
             "Pressesprecher",
@@ -1546,7 +1554,7 @@ groups = {
         ),
         Noun("f", "Lobbyistin", nom_pl="Lobbyistinnen", status="Spezialisten"),
     ],
-    "923": [
+    923: [
         Noun(
             "m",
             "Literaturagent",
@@ -1579,7 +1587,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "924": [
+    924: [
         Noun("m", "Reporter", "Reporters", nom_pl="Reporter", status="Experten"),
         Noun("f", "Reporterin", nom_pl="Reporterinnen", status="Experten"),
         Noun("m", "Dichter", "Dichters", nom_pl="Dichter", status="Experten"),
@@ -1614,7 +1622,7 @@ groups = {
         ),
         Noun("f", "Redakteurin", nom_pl="Redakteurinnen", status="Spezialisten"),
     ],
-    "931": [
+    931: [
         Noun(
             "m",
             "Möbeldesigner",
@@ -1650,7 +1658,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "932": [
+    932: [
         Noun(
             "m",
             "Innenarchitekt",
@@ -1703,7 +1711,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "933": [
+    933: [
         Noun(
             "m",
             "Restaurator",
@@ -1773,7 +1781,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "934": [
+    934: [
         Noun(
             "m",
             "Töpfer",
@@ -1809,7 +1817,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "935": [
+    935: [
         Noun(
             "m",
             "Schmuckdesigner",
@@ -1831,7 +1839,7 @@ groups = {
         ),
         Noun("f", "Goldschmiedin", nom_pl="Goldschmiedinnen", status="Spezialisten"),
     ],
-    "936": [
+    936: [
         Noun(
             "m",
             "Musikinstrumentenbauer",
@@ -1867,7 +1875,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "941": [
+    941: [
         Noun("m", "Sänger", "Sängers", nom_pl="Sänger", status="Experten"),
         Noun("f", "Sängerin", nom_pl="Sängerinnen", status="Experten"),
         Noun(
@@ -1889,7 +1897,7 @@ groups = {
             "f", "Sounddesignerin", nom_pl="Sounddesignerinnen", status="Spezialisten"
         ),
     ],
-    "942": [
+    942: [
         Noun(
             "m",
             "Schauspieler",
@@ -1924,10 +1932,18 @@ groups = {
             "Models",
             nom_pl="Models",
             status="Fachkräfte",
-            neopronouns=True,
+            pronouns="er",
+        ),
+        Noun(
+            "n",
+            "Model",
+            "Models",
+            nom_pl="Models",
+            status="Fachkräfte",
+            pronouns="sie",
         ),
     ],
-    "943": [
+    943: [
         Noun(
             "m",
             "Radiomoderator",
@@ -1943,7 +1959,7 @@ groups = {
         Noun("m", "Clown", "Clowns", nom_pl="Clowns", status="Spezialisten"),
         Noun("f", "Clownin", nom_pl="Clowninnen", status="Spezialisten"),
     ],
-    "944": [
+    944: [
         Noun("m", "Producer", "Producers", nom_pl="Producers", status="Experten"),
         Noun("f", "Producerin", nom_pl="Producerinnen", status="Experten"),
         Noun("m", "Souffleur", "Souffleurs", nom_pl="Souffleure", status="Fachkräfte"),
@@ -1961,7 +1977,7 @@ groups = {
             "f", "Regieassistentin", nom_pl="Regieassistentinnen", status="Spezialisten"
         ),
     ],
-    "945": [
+    945: [
         Noun("m", "Tonmeister", "Tonmeisters", nom_pl="Tonmeister", status="Experten"),
         Noun("f", "Tonmeisterin", nom_pl="Tonmeisterinnen", status="Experten"),
         Noun(
@@ -1981,7 +1997,7 @@ groups = {
         ),
         Noun("f", "Kamerafrau", nom_pl="Kamerafrauen", status="Spezialisten"),
     ],
-    "946": [
+    946: [
         Noun(
             "m",
             "Kostümbildner",
@@ -2001,7 +2017,7 @@ groups = {
         ),
         Noun("f", "Requisiteurin", nom_pl="Requisiteurinnen", status="Spezialisten"),
     ],
-    "947": [
+    947: [
         Noun("m", "Kurator", "Kurators", nom_pl="Kuratoren", status="Experten"),
         Noun("f", "Kuratorin", nom_pl="Kuratorinnen", status="Experten"),
         Noun(
@@ -2018,7 +2034,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "411": [
+    411: [
         Noun(
             "m",
             "Mathematiker",
@@ -2032,7 +2048,7 @@ groups = {
         ),
         Noun("f", "Statistikerin", nom_pl="Statistikerinnen", status="Experten"),
     ],
-    "412": [
+    412: [
         Noun(
             "m",
             "Biologe",
@@ -2067,7 +2083,7 @@ groups = {
         ),
         Noun("f", "Biotechnikerin", nom_pl="Biotechnikerinnen", status="Spezialisten"),
     ],
-    "413": [
+    413: [
         Noun("m", "Chemiker", "Chemikers", nom_pl="Chemiker", status="Experten"),
         Noun("f", "Chemikerin", nom_pl="Chemikerinnen", status="Experten"),
         Noun(
@@ -2104,7 +2120,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "414": [
+    414: [
         Noun("m", "Physiker", "Physikers", nom_pl="Physiker", status="Experten"),
         Noun("f", "Physikerin", nom_pl="Physikerinnen", status="Experten"),
         Noun(
@@ -2136,7 +2152,7 @@ groups = {
         ),
         Noun("f", "Gastechnikerin", nom_pl="Gastechnikerinnen", status="Spezialisten"),
     ],
-    "421": [
+    421: [
         Noun(
             "m",
             "Geograf",
@@ -2181,7 +2197,7 @@ groups = {
         ),
         Noun("f", "Geotechnikerin", nom_pl="Geotechnikerinnen", status="Spezialisten"),
     ],
-    "422": [
+    422: [
         Noun(
             "m",
             "Geologe",
@@ -2219,7 +2235,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "423": [
+    423: [
         Noun(
             "m",
             "Umweltbeauftragter",
@@ -2255,7 +2271,7 @@ groups = {
             status="Fachkräfte",
         ),
     ],
-    "431": [
+    431: [
         Noun(
             "m",
             "Informatiker",
@@ -2288,7 +2304,7 @@ groups = {
             "f", "Webentwicklerin", nom_pl="Webentwicklerinnen", status="Spezialisten"
         ),
     ],
-    "432": [
+    432: [
         Noun(
             "m",
             "Systemanalytiker",
@@ -2317,7 +2333,7 @@ groups = {
         ),
         Noun("f", "IT-Beraterin", nom_pl="IT-Beraterinnen", status="Spezialisten"),
     ],
-    "433": [
+    433: [
         Noun("m", "Netzplaner", "Netzplaners", nom_pl="Netzplaner", status="Experten"),
         Noun("f", "Netzplanerin", nom_pl="Netzplanerinnen", status="Experten"),
         Noun(
@@ -2341,7 +2357,7 @@ groups = {
         ),
         Noun("f", "Data-Analystin", nom_pl="Data-Analystinnen", status="Spezialisten"),
     ],
-    "434": [
+    434: [
         Noun(
             "m",
             "Softwareentwickler",
@@ -2382,7 +2398,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "611": [
+    611: [
         Noun(
             "m",
             "Salesmanager",
@@ -2407,7 +2423,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "612": [
+    612: [
         Noun(
             "m",
             "Exportmanager",
@@ -2443,7 +2459,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "613": [
+    613: [
         Noun(
             "m",
             "Imobilienanalyst",
@@ -2477,7 +2493,7 @@ groups = {
             "f", "Hausverwalterin", nom_pl="Hausverwalterinnen", status="Spezialisten"
         ),
     ],
-    "621": [
+    621: [
         Noun("m", "Verkäufer", "Verkäufers", nom_pl="Verkäufer", status="Fachkräfte"),
         Noun("f", "Verkäuferin", nom_pl="Verkäuferinnen", status="Fachkräfte"),
         Noun("m", "Kassierer", "Kassierers", nom_pl="Kassierer", status="Fachkräfte"),
@@ -2504,7 +2520,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "622": [
+    622: [
         Noun(
             "m",
             "Modeberater",
@@ -2522,7 +2538,7 @@ groups = {
         ),
         Noun("f", "Autohändlerin", nom_pl="Autohändlerinnen", status="Fachkräfte"),
     ],
-    "623": [
+    623: [
         Noun(
             "m",
             "Gemüsehändler",
@@ -2546,7 +2562,7 @@ groups = {
         ),
         Noun("f", "Eisverkäuferin", nom_pl="Eisverkäuferinnen", status="Helfer"),
     ],
-    "624": [
+    624: [
         Noun(
             "m",
             "Drogist",
@@ -2568,7 +2584,7 @@ groups = {
             "f", "Kosmetikberaterin", nom_pl="Kosmetikberaterinnen", status="Fachkräfte"
         ),
     ],
-    "625": [
+    625: [
         Noun(
             "m",
             "Buchhändler",
@@ -2588,7 +2604,7 @@ groups = {
         ),
         Noun("f", "Galeristin", nom_pl="Galeristinnen", status="Fachkräfte"),
     ],
-    "631": [
+    631: [
         Noun(
             "m",
             "Sportvereinsmanager",
@@ -2619,7 +2635,7 @@ groups = {
         ),
         Noun("f", "Fremdenführerin", nom_pl="Fremdenführinnen", status="Spezialisten"),
     ],
-    "632": [
+    632: [
         Noun(
             "m",
             "Rezeptionist",
@@ -2652,7 +2668,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "633": [
+    633: [
         Noun("m", "Kellner", "Kellners", nom_pl="Kellner", status="Fachkräfte"),
         Noun("f", "Kellnerin", nom_pl="Kellnerinnen", status="Fachkräfte"),
         Noun("m", "Barkeeper", "Barkeepers", nom_pl="Barkeeper", status="Fachkräfte"),
@@ -2674,7 +2690,7 @@ groups = {
         ),
         Noun("f", "Weinkellnerin", nom_pl="Weinkellnerinnen", status="Spezialisten"),
     ],
-    "634": [
+    634: [
         Noun(
             "m",
             "Kulturmanager",
@@ -2707,7 +2723,7 @@ groups = {
         ),
         Noun("f", "Eventmanagerin", nom_pl="Eventmanagerinnen", status="Spezialisten"),
     ],
-    "711": [
+    711: [
         Noun("m", "Vorstand", "Vorstands", nom_pl="Vorstände", status="Experten"),
         Noun("f", "Vorständin", nom_pl="Vorständinnen", status="Experten"),
         Noun(
@@ -2721,7 +2737,7 @@ groups = {
             "f", "Geschäftsführerin", nom_pl="Geschäftsführerinnen", status="Experten"
         ),
     ],
-    "712": [
+    712: [
         Noun(
             "m",
             "Abgeordneter",
@@ -2757,7 +2773,7 @@ groups = {
         ),
         Noun("f", "Betriebsrätin", nom_pl="Betriebsrätinnen", status="Spezialisten"),
     ],
-    "713": [
+    713: [
         Noun("m", "Supervisor", "Supervisors", nom_pl="Supervisors", status="Experten"),
         Noun("f", "Supervisorin", nom_pl="Supervisorinnen", status="Experten"),
         Noun(
@@ -2796,7 +2812,7 @@ groups = {
         ),
         Noun("f", "Betriebswirtin", nom_pl="Betriebswirtinnen", status="Spezialisten"),
     ],
-    "714": [
+    714: [
         Noun(
             "m", "Dolmetscher", "Dolmetschers", nom_pl="Dolmetscher", status="Experten"
         ),
@@ -2832,7 +2848,7 @@ groups = {
         ),
         Noun("f", "Chefsekretärin", nom_pl="Chefsekretärinnen", status="Spezialisten"),
     ],
-    "715": [
+    715: [
         Noun(
             "m",
             "Personalmanager",
@@ -2863,7 +2879,7 @@ groups = {
         Noun("m", "Recruiter", "Recruiters", nom_pl="Recruiter", status="Spezialisten"),
         Noun("f", "Recruiterin", nom_pl="Recruiterinnen", status="Spezialisten"),
     ],
-    "721": [
+    721: [
         Noun(
             "m",
             "Vermögensberater",
@@ -2899,7 +2915,7 @@ groups = {
         ),
         Noun("f", "Börsenmaklerin", nom_pl="Börsenmaklerinnen", status="Spezialisten"),
     ],
-    "722": [
+    722: [
         Noun(
             "m",
             "Wirtschaftsprüfer",
@@ -2931,7 +2947,7 @@ groups = {
         ),
         Noun("f", "Buchhalterin", nom_pl="Buchhalterinnen", status="Fachkräfte"),
     ],
-    "723": [
+    723: [
         Noun(
             "m",
             "Steuerberater",
@@ -2964,7 +2980,7 @@ groups = {
         ),
         Noun("f", "Steuerfachfrau", nom_pl="Steuerfachfrauen", status="Spezialisten"),
     ],
-    "731": [
+    731: [
         Noun("m", "Richter", "Richters", nom_pl="Richter", status="Experten"),
         Noun("f", "Richterin", nom_pl="Richterinnen", status="Experten"),
         Noun(
@@ -3011,7 +3027,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "732": [
+    732: [
         Noun(
             "m",
             "Zollbeamter",
@@ -3052,7 +3068,7 @@ groups = {
         ),
         Noun("f", "Zollfahnderin", nom_pl="Zollfahnderinnen", status="Spezialisten"),
     ],
-    "733": [
+    733: [
         Noun(
             "m",
             "Bibliothekar",
@@ -3086,7 +3102,7 @@ groups = {
         ),
         Noun("f", "Archivarin", nom_pl="Archivarinnen", status="Spezialisten"),
     ],
-    "211": [
+    211: [
         Noun(
             "m",
             "Bergbauingenieur",
@@ -3129,7 +3145,7 @@ groups = {
         ),
         Noun("f", "Bergbauhelferin", nom_pl="Bergbauhelferinnen", status="Helfer"),
     ],
-    "212": [
+    212: [
         Noun(
             "m",
             "Baustoffingenieur",
@@ -3178,7 +3194,7 @@ groups = {
         ),
         Noun("f", "Steinmetzhelferin", nom_pl="Steinmetzhelferinnen", status="Helfer"),
     ],
-    "213": [
+    213: [
         Noun(
             "m",
             "Fensterbautechniker",
@@ -3224,7 +3240,7 @@ groups = {
         ),
         Noun("f", "Glasmalerhelferin", nom_pl="Glasmalerhelferinnen", status="Helfer"),
     ],
-    "214": [
+    214: [
         Noun(
             "m",
             "Baukeramiker",
@@ -3257,7 +3273,7 @@ groups = {
         Noun("m", "Zahnformer", "Zahnformers", nom_pl="Zahnformer", status="Helfer"),
         Noun("f", "Zahnformerin", nom_pl="Zahnformerinnen", status="Helfer"),
     ],
-    "221": [
+    221: [
         Noun(
             "m",
             "Gummiarbeiter",
@@ -3298,7 +3314,7 @@ groups = {
             "f", "Klebetechnikerin", nom_pl="Klebetechnikerinnen", status="Spezialisten"
         ),
     ],
-    "222": [
+    222: [
         Noun("m", "Holzmaler", "Holzmales", nom_pl="Holzmaler", status="Fachkräfte"),
         Noun("f", "Holzmalerin", nom_pl="Holzmalerinnen", status="Fachkräfte"),
         Noun(
@@ -3325,7 +3341,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "223": [
+    223: [
         Noun(
             "m",
             "Holzingenieur",
@@ -3354,7 +3370,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "231": [
+    231: [
         Noun(
             "m",
             "Verpackungsentwickler",
@@ -3398,7 +3414,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "232": [
+    232: [
         Noun(
             "m",
             "Grafikdesigner",
@@ -3437,7 +3453,7 @@ groups = {
         ),
         Noun("f", "Modezeichnerin", nom_pl="Modezeichnerinnen", status="Spezialisten"),
     ],
-    "233": [
+    233: [
         Noun(
             "m",
             "Fotoingenieur",
@@ -3480,7 +3496,7 @@ groups = {
         ),
         Noun("f", "Fotoreporterin", nom_pl="Fotoreporterinnen", status="Spezialisten"),
     ],
-    "234": [
+    234: [
         Noun(
             "m",
             "Medieningenieur",
@@ -3523,7 +3539,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "241": [
+    241: [
         Noun(
             "m",
             "Lehmaufbereiter",
@@ -3561,7 +3577,7 @@ groups = {
             "f", "Gusstechnikerin", nom_pl="Gusstechnikerinnen", status="Spezialisten"
         ),
     ],
-    "242": [
+    242: [
         Noun(
             "m",
             "Laseringenieur",
@@ -3600,7 +3616,7 @@ groups = {
         ),
         Noun("f", "Metallarbeiterin", nom_pl="Metallarbeiterinnen", status="Helfer"),
     ],
-    "243": [
+    243: [
         Noun(
             "m",
             "Korrosionsschutztechniker",
@@ -3633,7 +3649,7 @@ groups = {
         Noun("m", "Brennhobler", "Brennhoblers", nom_pl="Brennhobler", status="Helfer"),
         Noun("f", "Brennhoblerin", nom_pl="Brennhoblerinnen", status="Helfer"),
     ],
-    "244": [
+    244: [
         Noun(
             "m",
             "Stahlbauingenieur",
@@ -3662,7 +3678,7 @@ groups = {
         ),
         Noun("f", "Schweißfachfrau", nom_pl="Schweißfachfrauen", status="Spezialisten"),
     ],
-    "245": [
+    245: [
         Noun(
             "m",
             "Waffeningenieur",
@@ -3713,7 +3729,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "251": [
+    251: [
         Noun(
             "m",
             "Serviceingenieur",
@@ -3755,7 +3771,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "252": [
+    252: [
         Noun(
             "m",
             "Luftfahrtingenieur",
@@ -3804,7 +3820,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "261": [
+    261: [
         Noun(
             "m",
             "Messingenieur",
@@ -3848,7 +3864,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "262": [
+    262: [
         Noun(
             "m",
             "Windparkmanager",
@@ -3887,7 +3903,7 @@ groups = {
             "f", "Solartechnikerin", nom_pl="Solartechnikerinnen", status="Spezialisten"
         ),
     ],
-    "263": [
+    263: [
         Noun(
             "m",
             "IT-Geräteentwickler",
@@ -3933,7 +3949,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "271": [
+    271: [
         Noun(
             "m",
             "Forschungsgruppenleiter",
@@ -3973,7 +3989,7 @@ groups = {
         ),
         Noun("f", "Entwicklerin", nom_pl="Entwicklerinnen", status="Spezialisten"),
     ],
-    "272": [
+    272: [
         Noun(
             "m",
             "Sportingenieur",
@@ -4009,7 +4025,7 @@ groups = {
             "f", "Anlagenplanerin", nom_pl="Anlagenplanerinnen", status="Spezialisten"
         ),
     ],
-    "273": [
+    273: [
         Noun(
             "m",
             "Wirtschaftsingenieur",
@@ -4050,7 +4066,7 @@ groups = {
             "f", "Planungsökonomin", nom_pl="Planungsökonominnen", status="Spezialisten"
         ),
     ],
-    "281": [
+    281: [
         Noun(
             "m",
             "Textildesigner",
@@ -4087,7 +4103,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "282": [
+    282: [
         Noun(
             "m",
             "Fashiondesigner",
@@ -4121,7 +4137,7 @@ groups = {
         ),
         Noun("f", "Stylistin", nom_pl="Stylistinnen", status="Spezialisten"),
     ],
-    "283": [
+    283: [
         Noun(
             "m",
             "Lederdesigner",
@@ -4151,7 +4167,7 @@ groups = {
         Noun("m", "Gerber", "Gerbers", nom_pl="Gerber", status="Spezialisten"),
         Noun("f", "Gerberin", nom_pl="Gerberinnen", status="Spezialisten"),
     ],
-    "291": [
+    291: [
         Noun(
             "m", "Braumeister", "Braumeisters", nom_pl="Braumeister", status="Experten"
         ),
@@ -4182,7 +4198,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "292": [
+    292: [
         Noun(
             "m",
             "Lebensmitteltechnologe",
@@ -4226,15 +4242,16 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "293": [
+    293: [
         Noun("m", "Koch", "Kochs", nom_pl="Köche", status="Fachkräfte"),
         Noun("f", "Köchin", nom_pl="Köchinnen", status="Fachkräfte"),
         Noun(
             "m", "Poissonier", "Poissoniers", nom_pl="Poissoniers", status="Fachkräfte"
         ),
         Noun("f", "Poissonierin", nom_pl="Poissonierinnen", status="Fachkräfte"),
+        Noun("f", "Küchenhilfe", nom_pl="Küchenhilfen", pronouns="er", status="Helfer"),
         Noun(
-            "f", "Küchenhilfe", nom_pl="Küchenhilfen", neopronouns=True, status="Helfer"
+            "f", "Küchenhilfe", nom_pl="Küchenhilfen", pronouns="sie", status="Helfer"
         ),
         Noun(
             "m",
@@ -4245,7 +4262,7 @@ groups = {
         ),
         Noun("f", "Pizzabäckerin", nom_pl="Pizzabäckerinnen", status="Fachkräfte"),
     ],
-    "511": [
+    511: [
         Noun(
             "m",
             "Schiffsoffizier",
@@ -4277,7 +4294,7 @@ groups = {
         ),
         Noun("f", "Funkmeisterin", nom_pl="Funkmeisterinnen", status="Spezialisten"),
     ],
-    "512": [
+    512: [
         Noun(
             "m",
             "Streckenwärter",
@@ -4292,7 +4309,14 @@ groups = {
             "m",
             "Sicherungsposten",
             nom_pl="Sicherungsposten",
-            neopronouns=True,
+            pronouns="er",
+            status="Fachkräfte",
+        ),
+        Noun(
+            "m",
+            "Sicherungsposten",
+            nom_pl="Sicherungsposten",
+            pronouns="sie",
             status="Fachkräfte",
         ),
         Noun(
@@ -4306,7 +4330,7 @@ groups = {
             "f", "Hafenaufseherin", nom_pl="Hafenaufseherinnen", status="Spezialisten"
         ),
     ],
-    "513": [
+    513: [
         Noun(
             "m",
             "Postbote",
@@ -4336,7 +4360,7 @@ groups = {
         ),
         Noun("f", "Plakatkleberin", nom_pl="Plakatkleberinnen", status="Spezialisten"),
     ],
-    "514": [
+    514: [
         Noun("m", "Schaffner", "Schaffners", nom_pl="Schaffner", status="Fachkräfte"),
         Noun("f", "Schaffnerin", nom_pl="Schaffnerinnen", status="Fachkräfte"),
         Noun("m", "Steward", "Stewards", nom_pl="Stewards", status="Fachkräfte"),
@@ -4350,7 +4374,7 @@ groups = {
         ),
         Noun("f", "Flugbegleiterin", nom_pl="Flugbegleiterinnen", status="Helfer"),
     ],
-    "515": [
+    515: [
         Noun(
             "m",
             "Verkehrsplaner",
@@ -4382,7 +4406,7 @@ groups = {
         ),
         Noun("f", "Lotsin", nom_pl="Lotsinnen", status="Spezialisten"),
     ],
-    "516": [
+    516: [
         Noun("m", "Logistiker", "Logistikers", nom_pl="Logistiker", status="Experten"),
         Noun("f", "Logistikerin", nom_pl="Logistikerinnen", status="Experten"),
         Noun(
@@ -4416,7 +4440,7 @@ groups = {
         ),
         Noun("f", "Spediteurin", nom_pl="Spediteurinnen", status="Spezialisten"),
     ],
-    "521": [
+    521: [
         Noun("m", "Chauffeur", "Chauffeurs", nom_pl="Chauffeure", status="Fachkräfte"),
         Noun("f", "Chauffeurin", nom_pl="Chauffeurinnen", status="Fachkräfte"),
         Noun("m", "Busfahrer", "Busfahrers", nom_pl="Busfahrer", status="Fachkräfte"),
@@ -4434,11 +4458,11 @@ groups = {
         ),
         Noun("f", "Fahrradkurierin", nom_pl="Fahrradkurierinnen", status="Fachkräfte"),
     ],
-    "522": [
+    522: [
         Noun("m", "Lokführer", "Lokführers", nom_pl="Lokführer", status="Fachkräfte"),
         Noun("f", "Lokführerin", nom_pl="Lokführerinnen", status="Fachkräfte"),
     ],
-    "523": [
+    523: [
         Noun(
             "m",
             "Pilot",
@@ -4458,7 +4482,7 @@ groups = {
         ),
         Noun("f", "Ballonfahrerin", nom_pl="Ballonfahrerinnen", status="Spezialisten"),
     ],
-    "524": [
+    524: [
         Noun("m", "Kapitän", "Kapitäns", nom_pl="Kapitäne", status="Experten"),
         Noun("f", "Kapitänin", nom_pl="Kapitäninnen", status="Experten"),
         Noun("m", "Bootsmann", "Bootsmannes", nom_pl="Bootsleute", status="Fachkräfte"),
@@ -4474,7 +4498,7 @@ groups = {
         ),
         Noun("f", "Bootsführerin", nom_pl="Bootsführerinnen", status="Spezialisten"),
     ],
-    "525": [
+    525: [
         Noun(
             "m",
             "Baggerführer",
@@ -4501,7 +4525,7 @@ groups = {
             status="Helfer",
         ),
     ],
-    "531": [
+    531: [
         Noun("m", "Fahrprüfer", "Fahrprüfers", nom_pl="Fahrprüfer", status="Experten"),
         Noun("f", "Fahrprüferin", nom_pl="Fahrprüferinnen", status="Experten"),
         Noun("m", "Detektiv", "Detektivs", nom_pl="Detektive", status="Fachkräfte"),
@@ -4532,7 +4556,15 @@ groups = {
             "Body Guard",
             "Body Guards",
             nom_pl="Body Guards",
-            neopronouns=True,
+            pronouns="er",
+            status="Helfer",
+        ),
+        Noun(
+            "m",
+            "Body Guard",
+            "Body Guards",
+            nom_pl="Body Guards",
+            pronouns="sie",
             status="Helfer",
         ),
         Noun("m", "Pförtner", "Pförtners", nom_pl="Pförtner", status="Helfer"),
@@ -4561,7 +4593,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "532": [
+    532: [
         Noun(
             "m",
             "Kriminalpolizist",
@@ -4616,7 +4648,7 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "533": [
+    533: [
         Noun(
             "m",
             "Kammerjäger",
@@ -4652,12 +4684,19 @@ groups = {
             status="Spezialisten",
         ),
     ],
-    "541": [
+    541: [
         Noun(
             "f",
             "Reinigungsfachkraft",
             nom_pl="Reinigungsfachkräfte",
-            neopronouns=True,
+            pronouns="er",
+            status="Fachkräfte",
+        ),
+        Noun(
+            "f",
+            "Reinigungsfachkraft",
+            nom_pl="Reinigungsfachkräfte",
+            pronouns="sie",
             status="Fachkräfte",
         ),
         Noun(
@@ -4668,12 +4707,20 @@ groups = {
             status="Fachkräfte",
         ),
         Noun("f", "Glasreinigerin", nom_pl="Glasreinigerinnen", status="Fachkräfte"),
-        Noun("f", "Putzhilfe", nom_pl="Putzhilfen", neopronouns=True, status="Helfer"),
+        Noun("f", "Putzhilfe", nom_pl="Putzhilfen", pronouns="er", status="Helfer"),
+        Noun("f", "Putzhilfe", nom_pl="Putzhilfen", pronouns="sie", status="Helfer"),
         Noun(
             "f",
             "Reinungskraft",
             nom_pl="Reinungskräfte",
-            neopronouns=True,
+            pronouns="er",
+            status="Helfer",
+        ),
+        Noun(
+            "f",
+            "Reinungskraft",
+            nom_pl="Reinungskräfte",
+            pronouns="sie",
             status="Helfer",
         ),
         Noun("m", "Autowäscher", "Autowäschers", nom_pl="Autowäscher", status="Helfer"),
