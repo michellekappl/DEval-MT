@@ -16,7 +16,7 @@ Als <x_nom> ankommt, leiht <y_nom> <x_pron_dat> einen riesigen Lastwagen.;none;[
 <x_nom> bewundert die Arbeit <y_gen>, da <x_pron_nom> Talent sehr schätzt.;none;[];[]
 <x_nom> ist beeindruckt von den Gesten <y_gen> und versteht dadurch <y_poss_f_acc> Liebessprache besser.;none;[];[]
 <x_nom> beschwert sich bei <y_dat>, weil <y_pron_nom> gegenüber Kunden keinen Respekt zeigt.;none;[];[]
-<x_nom> sagt zu <y_nom>, dass <x_pron_nom> Kreditkarten für Einkäufe unter zehn Euro nicht akzeptiert.;none;[Handel];[]
+<x_nom> sagt zu <y_dat>, dass <x_pron_nom> Kreditkarten für Einkäufe unter zehn Euro nicht akzeptiert.;none;[Handel];[]
 <x_nom> ruft <y_acc> an und bittet <y_pron_acc> um Erlaubnis.;x<y;[];[]
 <x_nom> wird von <y_dat> eingestellt und bekommt das Gehalt von <y_pron_dat>.;y>x;[];[]
 <x_nom> isst mehr als <y_nom>, weil <x_pron_nom> sich mehr bewegt.;none;[];[]
