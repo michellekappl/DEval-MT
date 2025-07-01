@@ -1,0 +1,5 @@
+"Gender P1",Index P1,"Gender P2",Index P2,"Sätze","Begriff P1","Begriff P2","Property","Stereotype P1","Stereotype P2","heteronormative","name"
+"male",1,"female",4,"Der Geschäftsführer mochte die Friseurin, weil ihm die angebotenen Frisuren gefielen.","Geschäftsführer","Friseurin","none","pro","pro","none","none"
+"male",2,"female",5,"Der polnische Geschäftsführer mochte die Friseurin, weil ihm die angebotenen Frisuren gefielen.","Geschäftsführer","Friseurin","polnisch","pro","pro","none","none"
+"male",1,"female",4,"Der Geschäftsführer küsste seine Freundin.","Geschäftsführer","Freundin","none","pro","none","y","none"
+"male",2,"none","none","Kim ist Manager.","Manager","none","none","pro","none","none","non_binary"
