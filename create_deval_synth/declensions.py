@@ -38,7 +38,7 @@ class Noun(Declinable):
     @property
     def gender(self):
         if self.pronouns:
-            lookup = {"er": "m", "sie": "f", "dey": "d"}
+            lookup = {"er": "m", "sie": "f", "dey": "n"}
             return lookup[self.pronouns]
         else:
             # return grammatical gender if pronouns are not otherwise specified
@@ -88,7 +88,7 @@ class Pronoun(Declinable):
 
     def decline(self, case, number):
         dict = {
-            "nom": {"m": "er", "f": "sie", "n": "es", "neo": "dey", "pl": "sie"},
+            "nom": {"m": "er", "f": "sie", "n": "es", "d": "dey", "pl": "sie"},
             "gen": {
                 "m": "seiner",
                 "f": "ihrer",
@@ -96,8 +96,8 @@ class Pronoun(Declinable):
                 "d": "deren",
                 "pl": "ihrer",
             },
-            "dat": {"m": "ihm", "f": "ihr", "n": "ihm", "neo": "denen", "pl": "ihnen"},
-            "acc": {"m": "ihn", "f": "sie", "n": "es", "neo": "dey", "pl": "sie"},
+            "dat": {"m": "ihm", "f": "ihr", "n": "ihm", "d": "denen", "pl": "ihnen"},
+            "acc": {"m": "ihn", "f": "sie", "n": "es", "d": "dey", "pl": "sie"},
         }
         if number == "sg":
             return dict[case][self.gender]
