@@ -3,6 +3,23 @@ import csv
 import re
 from declensions import *
 from groups import groups
+from adjectives import adjectives
+from itertools import islice, cycle
+
+
+# copied from itertools documentation
+# https://docs.python.org/3/library/itertools.html#recipes
+def roundrobin(*iterables):
+    "Visit input iterables in a cycle until each is exhausted."
+    # roundrobin('ABC', 'D', 'EF') → A D E B F C
+    # Algorithm credited to George Sakkis
+    iterators = map(iter, iterables)
+    for num_active in range(len(iterables), 0, -1):
+        iterators = cycle(islice(iterators, num_active))
+        yield from map(next, iterators)
+
+
+GEN_LIMIT = 1000  # limit the number of generated instances per template
 
 # open a csv file from argument and read it
 if len(sys.argv) < 2:
@@ -11,6 +28,16 @@ if len(sys.argv) < 2:
 
 statistics_file = open("job_statistics/utilities/branchen_statistics.csv", "r")
 statistics_csv = csv.reader(statistics_file, delimiter=";")
+
+
+# helper method to limit the number of items in a generator
+def limit(l):
+    def limiter(gen):
+        for _, item in zip(range(l), gen):
+            yield item
+
+    return limiter
+
 
 statistics = {}
 # read the statistics file and create a dictionary with the groups
@@ -30,15 +57,17 @@ for row in statistics_csv:
 
 
 class Instance:
-    def __init__(self, x, x_group, y, y_group, text):
+    def __init__(self, x, x_group, y, y_group, adjective, modified, text):
         self.x = x
         self.y = y
         self.x_group = x_group
         self.y_group = y_group
         self.text = text
+        self.adjective = adjective
+        self.modified = modified  # "x" or "y", which one was modified
 
     def __str__(self):
-        return f"{self.x.nom_sg}, {self.y.nom_sg} ({self.x_group}, {self.y_group}): {self.text}, x_stereotypical: {self.x_stereotypical()}, y_stereotypical: {self.y_stereotypical()}"
+        return f"{self.x.nom_sg}, {self.y.nom_sg} ({self.x_group}, {self.y_group}): {self.text}, x_stereotypical: {self.x_stereotypical()}, y_stereotypical: {self.y_stereotypical()}, adjective: {self.adjective}, modified: {self.modified}"
 
     def x_stereotypical(self):
         num_m, num_f = statistics[self.x_group][self.x.status]
@@ -60,9 +89,10 @@ class Instance:
 
 
 class Template:
-    def __init__(self, row):
+    def __init__(self, row, adjectives=None):
         self.sentence = row[0].strip()
         hierarchy = row[1].strip()
+        self.adjectives = adjectives
         self.higher = None
         # parse hierarchy
         if hierarchy != "none":
@@ -104,7 +134,7 @@ class Template:
             else:
                 raise ValueError(f"Unknown group: {group}")
 
-    def resolve(self, x, y, match):
+    def resolve(self, x, y, adjective, modified, match):
         # split match by underscores
         parts = match.group(1).split("_")
 
@@ -112,7 +142,11 @@ class Template:
 
         if parts[1] in ["nom", "gen", "dat", "acc"]:
             # case that this is a simply a definite noun phrase
-            return Definite(base_noun).decline(parts[1], "sg")
+            if adjective and parts[0] == modified:
+                # if we have an adjective and the noun is the modified one, use it
+                return Definite(base_noun, adjective).decline(parts[1], "sg")
+            else:
+                return Definite(base_noun).decline(parts[1], "sg")
         elif parts[1] == "rel":
             return Relative(base_noun).decline(parts[2], "sg")
         elif parts[1] == "pron":
@@ -145,16 +179,41 @@ class Template:
 
     def gen(self):
         instances = []
-        for (x_group, x), (y_group, y) in [
-            (x, y)
+
+        base_generator = (
+            (x, y, None, None)
             for x in self.xs
             for y in self.ys
             if x != y and self.satisfies_hierarchy(x[1], y[1])
-        ]:
-            text = re.sub(r"<([a-zA-Z_]*)>", lambda m: self.resolve(x, y, m), self.sentence)
+        )
+
+        adjectives_generator = ()
+        if self.adjectives != None:
+            adjectives_generator = (
+                (
+                    x,  # (x_group, value),
+                    y,  # (y_group, value),
+                    adjective,
+                    modified,
+                )
+                for x in self.xs
+                for y in self.ys
+                if x != y and self.satisfies_hierarchy(x[1], y[1])
+                for adjective in self.adjectives
+                for modified in ["x", "y"]
+            )
+
+        for (x_group, x), (y_group, y), adjective, modified in limit(GEN_LIMIT)(
+            roundrobin(base_generator, adjectives_generator)
+        ):
+            text = re.sub(
+                r"<([a-zA-Z_]*)>",
+                lambda m: self.resolve(x, y, adjective, modified, m),
+                self.sentence,
+            )
             # capitalize the first letter of the substitution
             text = text[0].upper() + text[1:]
-            instance = Instance(x, x_group, y, y_group, text)
+            instance = Instance(x, x_group, y, y_group, adjective, modified, text)
             instances.append(instance)
 
         return instances
@@ -167,11 +226,18 @@ with open(csv_file, newline="", encoding="utf-8") as f:
     # delete the header
     next(reader)
     for row in reader:
-        r = Template(row)
+        r = Template(row, adjectives=adjectives)
         gen = r.gen()
         instances.extend(r.gen())
+        # give some progress indication
+        print(f"Generated {len(gen)} instances for template: {r.sentence}")
+        # delete the progress indication for every iteration
+        sys.stdout.write("\033[F\033[K")
 with open("output.txt", "w", encoding="utf-8") as f:
-    for instance in instances:
+    n = len(instances)
+    for i, instance in enumerate(instances):
         f.write(str(instance) + "\n")
-        print(str(instance))  # also print to console
+        print(f"Generating statistics for {n} instances... ({i} / {n})")
+        sys.stdout.write("\033[F\033[K")
+
 print(f"Generated {len(instances)} instances.")

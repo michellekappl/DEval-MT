@@ -46,8 +46,9 @@ class Noun(Declinable):
 
 
 class Definite(Declinable):
-    def __init__(self, noun: Noun):
+    def __init__(self, noun: Noun, adjective=None):
         self.noun = noun
+        self.adjective = adjective
 
     def declineArticle(self, case, number):
         dict = {
@@ -62,7 +63,26 @@ class Definite(Declinable):
             return dict[case]["pl"]
 
     def decline(self, case, number):
-        return self.declineArticle(case, number) + " " + self.noun.decline(case, number)
+        if self.adjective:
+            return (
+                self.declineArticle(case, number)
+                + " "
+                + (
+                    self.adjective.decline(
+                        case, self.noun.grammatical_gender, definite=True
+                    )
+                    if number == "sg"
+                    else self.adjective.decline(case, number, definite=True)
+                )
+                + " "
+                + self.noun.decline(case, number)
+            )
+        else:
+            return (
+                self.declineArticle(case, number)
+                + " "
+                + self.noun.decline(case, number)
+            )
 
 
 class Relative(Declinable):
@@ -106,9 +126,9 @@ class Pronoun(Declinable):
 
 
 class Possessive(Declinable):
-    def __init__(self, possessor: Noun, possessed):
+    def __init__(self, possessor: Noun, possessed_gender):
         self.possessor = possessor
-        self.possessed = possessed
+        self.possessed_gender = possessed_gender
 
     def decline(self, case, number):
         base = {"m": "sein", "f": "ihr", "n": "sein", "pl": "ihr"}
@@ -123,14 +143,41 @@ class Possessive(Declinable):
             if self.possessor.gender == "d":
                 return "deren"
             else:
-                return base[self.possessor.gender] + endings[case][self.possessed]
+                return (
+                    base[self.possessor.gender] + endings[case][self.possessed_gender]
+                )
         elif number == "pl":
-            return base["pl"] + endings[case][self.possessed]
+            return base["pl"] + endings[case][self.possessed_gender]
+
+
+class Adjective(Declinable):
+    def __init__(self, adjective, undeclinable=False):
+        self.adjective = adjective
+        self.undeclinable = undeclinable
+
+    def decline(self, case, gender_or_number, definite=False):
+        if definite:
+            if self.undeclinable:
+                return self.adjective
+            else:
+                endings = {
+                    "nom": {"m": "e", "f": "e", "n": "e", "pl": "en"},
+                    "gen": {"m": "en", "f": "en", "n": "en", "pl": "en"},
+                    "dat": {"m": "en", "f": "en", "n": "en", "pl": "en"},
+                    "acc": {"m": "en", "f": "e", "n": "e", "pl": "en"},
+                }
+                return self.adjective + endings[case][gender_or_number]
+        else:
+            raise ValueError("Adjectives without definite article are unimplemented.")
 
 
 # Example usage
 mann = Noun("m", "Mann", "Mannes", nom_pl="Männer", dat_pl="Männern")
+schoen = Adjective("schön")
+trans = Adjective("trans", undeclinable=True)  # Example of an undeclinable adjective
 definite_mann = Definite(mann)
+definite_schoen_mann = Definite(mann, schoen)
+definite_trans_mann = Definite(mann, trans)
 possessive_mann = Possessive(mann, "pl")
 pronoun_mann = Pronoun(mann)
 relative_mann = Relative(mann)
