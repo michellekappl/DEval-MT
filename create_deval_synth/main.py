@@ -67,7 +67,7 @@ class Instance:
         self.modified = modified  # "x" or "y", which one was modified
 
     def __str__(self):
-        return f"{self.x.nom_sg}, {self.y.nom_sg} ({self.x_group}, {self.y_group}): {self.text}, x_stereotypical: {self.x_stereotypical()}, y_stereotypical: {self.y_stereotypical()}, adjective: {self.adjective}, modified: {self.modified}"
+        return f"{self.x.nom_sg}, {self.y.nom_sg} ({self.x_group}, {self.y_group}): {self.text}, x_stereotypical: {self.x_stereotypical()}, y_stereotypical: {self.y_stereotypical()}, adjective: {self.adjective.text if self.adjective else "none"}, modified: {self.modified or "none"}"
 
     def x_stereotypical(self):
         num_m, num_f = statistics[self.x_group][self.x.status]
@@ -181,29 +181,31 @@ class Template:
         instances = []
 
         base_generator = (
-            (x, y, None, None)
-            for x in self.xs
-            for y in self.ys
-            if x != y and self.satisfies_hierarchy(x[1], y[1])
+            (x_group, x, y_group, y, None, None)
+            for x_group, x in self.xs
+            for y_group, y in self.ys
+            if x != y and self.satisfies_hierarchy(x, y) and x.gender != y.gender
         )
 
         adjectives_generator = ()
         if self.adjectives != None:
             adjectives_generator = (
                 (
+                    x_group,
                     x,  # (x_group, value),
+                    y_group,
                     y,  # (y_group, value),
                     adjective,
                     modified,
                 )
-                for x in self.xs
-                for y in self.ys
-                if x != y and self.satisfies_hierarchy(x[1], y[1])
+                for x_group, x in self.xs
+                for y_group, y in self.ys
+                if x != y and self.satisfies_hierarchy(x, y) and x.gender != y.gender
                 for adjective in self.adjectives
                 for modified in ["x", "y"]
             )
 
-        for (x_group, x), (y_group, y), adjective, modified in limit(GEN_LIMIT)(
+        for x_group, x, y_group, y, adjective, modified in limit(GEN_LIMIT)(
             roundrobin(base_generator, adjectives_generator)
         ):
             text = re.sub(

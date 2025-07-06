@@ -151,14 +151,14 @@ class Possessive(Declinable):
 
 
 class Adjective(Declinable):
-    def __init__(self, adjective, undeclinable=False):
-        self.adjective = adjective
+    def __init__(self, text, undeclinable=False):
+        self.text = text
         self.undeclinable = undeclinable
 
     def decline(self, case, gender_or_number, definite=False):
         if definite:
             if self.undeclinable:
-                return self.adjective
+                return self.text
             else:
                 endings = {
                     "nom": {"m": "e", "f": "e", "n": "e", "pl": "en"},
@@ -166,7 +166,7 @@ class Adjective(Declinable):
                     "dat": {"m": "en", "f": "en", "n": "en", "pl": "en"},
                     "acc": {"m": "en", "f": "e", "n": "e", "pl": "en"},
                 }
-                return self.adjective + endings[case][gender_or_number]
+                return self.text + endings[case][gender_or_number]
         else:
             raise ValueError("Adjectives without definite article are unimplemented.")
 
