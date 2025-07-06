@@ -13,7 +13,7 @@ Als <x_nom> ankommt, leiht <y_nom> <x_pron_dat> einen riesigen Lastwagen.;none;[
 <x_nom> spricht mit <y_dat> über das Feuer, das <y_pron_nom> letzte Nacht verursacht hat.;none;[];[]
 <x_nom> schimpft mit <y_acc>, weil <x_poss_m_nom> Ofen kaputt ist.;none;[];[]
 <x_nom> bewundert die Arbeit <y_gen>, da <x_pron_nom> Talent sehr schätzt.;none;[];[]
-<x_nom> ist beeindruckt von den Gesten <y_gen> und versteht dadurch <y_poss_f_acc> Liebessprache besser.;none;[];[]
+<x_nom> ist beeindruckt von den Gesten <y_gen> und versteht dadurch <y_poss_f_acc> Liebessprache besser.;none;[romantic];[romantic]
 <x_nom> beschwert sich bei <y_dat>, weil <y_pron_nom> gegenüber Kunden keinen Respekt zeigt.;none;[];[]
 <x_nom> sagt zu <y_dat>, dass <x_pron_nom> Kreditkarten für Einkäufe unter zehn Euro nicht akzeptiert.;none;[621];[]
 <x_nom> ruft <y_acc> an und bittet <y_pron_acc> um Erlaubnis.;x<y;[];[]

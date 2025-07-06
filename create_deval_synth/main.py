@@ -67,25 +67,65 @@ class Instance:
         self.modified = modified  # "x" or "y", which one was modified
 
     def __str__(self):
-        return f"{self.x.nom_sg}, {self.y.nom_sg} ({self.x_group}, {self.y_group}): {self.text}, x_stereotypical: {self.x_stereotypical()}, y_stereotypical: {self.y_stereotypical()}, adjective: {self.adjective.text if self.adjective else "none"}, modified: {self.modified or "none"}"
+        return (
+            f"{self.x.nom_sg}, {self.y.nom_sg} ({self.x_group}, {self.y_group}):"
+            f"{self.text}, x_stereotypical: {self.x_stereotypical}, y_stereotypical:{self.y_stereotypical}, "
+            f"adjective: {self.adjective.text if self.adjective else "none"},"
+            f"modified: {self.modified or "none"}, "
+            f"heterosexual: {self.heterosexual},"
+            f"sentence_style: {self.sentence_style}"
+        )
 
+    @property
+    def sentence_style(self):
+        if self.x_group == "romantic" or self.y_group == "romantic":
+            return 3
+        elif self.adjective:
+            return 2
+        else:
+            return 1
+
+    @property
+    def heterosexual(self):
+        if self.x_group == "romantic" or self.y_group == "romantic":
+            if self.x.gender == "m" and self.y.gender == "f":
+                return True
+            elif self.x.gender == "f" and self.y.gender == "m":
+                return True
+            else:
+                return False
+        else:
+            return "n/a"
+
+    @property
     def x_stereotypical(self):
-        num_m, num_f = statistics[self.x_group][self.x.status]
-        if self.x.gender == "m":
-            return num_m > 0.7 * (num_m + num_f)
-        elif self.x.gender == "f":
-            return num_f > 0.7 * (num_m + num_f)
+        if self.x_group == "romantic":
+            return "romantic"
         else:
-            return False
+            num_m, num_f = statistics[self.x_group][self.x.status]
+            if num_m == 0 and num_f == 0:
+                return "no data"
+            if self.x.gender == "m":
+                return num_m / (num_m + num_f)
+            elif self.x.gender == "f":
+                return num_f / (num_m + num_f)
+            else:
+                return "no data"
 
+    @property
     def y_stereotypical(self):
-        num_m, num_f = statistics[self.y_group][self.y.status]
-        if self.y.gender == "m":
-            return num_m > 0.7 * (num_m + num_f)
-        elif self.y.gender == "f":
-            return num_f > 0.7 * (num_m + num_f)
+        if self.y_group == "romantic":
+            return "romantic"
         else:
-            return False
+            num_m, num_f = statistics[self.y_group][self.y.status]
+            if num_m == 0 and num_f == 0:
+                return "no data"
+            if self.y.gender == "m":
+                return num_m / (num_m + num_f)
+            elif self.y.gender == "f":
+                return num_f / (num_m + num_f)
+            else:
+                return "no data"
 
 
 class Template:
@@ -116,7 +156,10 @@ class Template:
             if group == "":
                 # if group is empty, add all groups
                 for g in groups:
-                    self.xs.extend(map(lambda x: (g, x), groups[g]))
+                    if g != "romantic":
+                        self.xs.extend(map(lambda x: (g, x), groups[g]))
+            elif group == "romantic":
+                self.xs.extend(map(lambda x: ("romantic", x), groups["romantic"]))
             elif int(group) in groups:
                 self.xs.extend(map(lambda x: (int(group), x), groups[int(group)]))
             else:
@@ -128,7 +171,10 @@ class Template:
             if group == "":
                 # if group is empty, add all groups
                 for g in groups:
-                    self.ys.extend(map(lambda x: (g, x), groups[g]))
+                    if g != "romantic":
+                        self.ys.extend(map(lambda x: (g, x), groups[g]))
+            elif group == "romantic":
+                self.ys.extend(map(lambda x: ("romantic", x), groups["romantic"]))
             elif int(group) in groups:
                 self.ys.extend(map(lambda x: (int(group), x), groups[int(group)]))
             else:
@@ -184,6 +230,7 @@ class Template:
             (x_group, x, y_group, y, None, None)
             for x_group, x in self.xs
             for y_group, y in self.ys
+            if x_group != "romantic" and y_group != "romantic"
             if x != y and self.satisfies_hierarchy(x, y) and x.gender != y.gender
         )
 
@@ -192,21 +239,29 @@ class Template:
             adjectives_generator = (
                 (
                     x_group,
-                    x,  # (x_group, value),
+                    x,
                     y_group,
-                    y,  # (y_group, value),
+                    y,
                     adjective,
                     modified,
                 )
                 for x_group, x in self.xs
                 for y_group, y in self.ys
+                if x_group != "romantic" and y_group != "romantic"
                 if x != y and self.satisfies_hierarchy(x, y) and x.gender != y.gender
                 for adjective in self.adjectives
                 for modified in ["x", "y"]
             )
 
+        romantic_generator = (
+            (x_group, x, y_group, y, None, None)
+            for x_group, x in self.xs
+            for y_group, y in self.ys
+            if x_group == "romantic" or y_group == "romantic"
+        )
+
         for x_group, x, y_group, y, adjective, modified in limit(GEN_LIMIT)(
-            roundrobin(base_generator, adjectives_generator)
+            roundrobin(base_generator, adjectives_generator, romantic_generator)
         ):
             text = re.sub(
                 r"<([a-zA-Z_]*)>",
