@@ -63,6 +63,7 @@ class Template:
     def __init__(self, row):
         self.sentence = row[0].strip()
         hierarchy = row[1].strip()
+        self.higher = None
         # parse hierarchy
         if hierarchy != "none":
             if hierarchy.find(">"):
@@ -71,21 +72,14 @@ class Template:
                     self.higher = "x"
                 elif hierarchy[0] == "y":
                     self.higher = "y"
-                else:
-                    raise ValueError(f"Unknown hierarchy: {hierarchy[0]}")
             elif hierarchy.find("<"):
                 hierarchy = hierarchy.split("<")
                 if hierarchy[0] == "x":
                     self.higher = "x"
                 elif hierarchy[0] == "y":
                     self.higher = "y"
-                else:
-                    raise ValueError(f"Unknown hierarchy: {hierarchy[0]}")
             else:
                 raise ValueError(f"Unknown hierarchy format: {hierarchy}")
-        else:
-            self.higher = None
-
         self.xs = []
         x_groups = row[2].strip("[]").split(",")
         for group in x_groups:
@@ -157,9 +151,7 @@ class Template:
             for y in self.ys
             if x != y and self.satisfies_hierarchy(x[1], y[1])
         ]:
-            text = re.sub(
-                r"<([a-zA-Z_]*)>", lambda m: self.resolve(x, y, m), self.sentence
-            )
+            text = re.sub(r"<([a-zA-Z_]*)>", lambda m: self.resolve(x, y, m), self.sentence)
             # capitalize the first letter of the substitution
             text = text[0].upper() + text[1:]
             instance = Instance(x, x_group, y, y_group, text)
@@ -176,4 +168,10 @@ with open(csv_file, newline="", encoding="utf-8") as f:
     next(reader)
     for row in reader:
         r = Template(row)
+        gen = r.gen()
         instances.extend(r.gen())
+with open("output.txt", "w", encoding="utf-8") as f:
+    for instance in instances:
+        f.write(str(instance) + "\n")
+        print(str(instance))  # also print to console
+print(f"Generated {len(instances)} instances.")
