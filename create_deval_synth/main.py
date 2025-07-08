@@ -125,25 +125,25 @@ class Instance:
     @property
     def x_stereotypical(self):
         if self.sentence_style == NAME_SENTENCE:
-            return "n/a"
+            return "none"
 
         if self.x_group == "romantic":
             return "romantic"
 
         num_m, num_f = statistics[self.x_group][self.x.status]
         if num_m == 0 and num_f == 0:
-            return "no data"
+            return "none"
         if self.x.gender == "m":
             return num_m / (num_m + num_f)
         elif self.x.gender == "f":
             return num_f / (num_m + num_f)
         else:
-            return "no data"
+            return "none"
 
     @property
     def y_stereotypical(self):
         if self.sentence_style == NAME_SENTENCE:
-            return "n/a"
+            return "none"
 
         if self.y_group == "romantic":
             return "romantic"
@@ -156,7 +156,7 @@ class Instance:
             elif self.y.gender == "f":
                 return num_f / (num_m + num_f)
             else:
-                return "no data"
+                return "none"
 
 
 class Template:
@@ -284,7 +284,10 @@ class Template:
             for x_group, x in self.xs
             for y_group, y in self.ys
             if x_group != "romantic" and y_group != "romantic"
-            if x != y and self.satisfies_hierarchy(x, y) and x.gender != y.gender
+            if x != y
+            and self.satisfies_hierarchy(x, y)
+            and x.gender != y.gender
+            and x.nom_sg != y.nom_sg
         )
 
         adjectives_generator = ()
@@ -294,7 +297,10 @@ class Template:
                 for x_group, x in self.xs
                 for y_group, y in self.ys
                 if x_group != "romantic" and y_group != "romantic"
-                if x != y and self.satisfies_hierarchy(x, y) and x.gender != y.gender
+                if x != y
+                and self.satisfies_hierarchy(x, y)
+                and x.gender != y.gender
+                and x.nom_sg != y.nom_sg
                 for adjective in self.adjectives
                 for modified in ["x", "y"]
             )
@@ -303,7 +309,7 @@ class Template:
             (x_group, x, y_group, y, None, None)
             for x_group, x in self.xs
             for y_group, y in self.ys
-            if x_group == "romantic" or y_group == "romantic"
+            if x_group == "romantic" or y_group == "romantic" and x.nom_sg != y.nom_sg
         )
 
         names_generator = (
@@ -324,7 +330,9 @@ class Template:
                 text = text[0].upper() + text[1:]
 
                 x_idx = None
-                for idx, word in enumerate(text.replace(",", " ,").split()):
+                for idx, word in enumerate(
+                    text.replace(",", " ,").replace(".", " .").split()
+                ):
                     if word in [
                         x.nom_sg,
                         x.gen_sg,
@@ -355,7 +363,9 @@ class Template:
 
                 x_idx, y_idx = None, None
                 # find idx of x and y within the sentence
-                for idx, word in enumerate(text.replace(",", " ,").split()):
+                for idx, word in enumerate(
+                    text.replace(",", " ,").replace(".", " .").split()
+                ):
                     if word in [
                         x.nom_sg,
                         x.gen_sg,
@@ -410,7 +420,7 @@ with open(csv_file, newline="", encoding="utf-8") as f:
         print(f"Generated {len(gen)} instances for template: {r.sentence}")
         # delete the progress indication for every iteration
         sys.stdout.write("\033[F\033[K")
-with open("output.txt", "w", encoding="utf-8") as f:
+with open("output.csv", "w", encoding="utf-8") as f:
     n = len(instances)
     f.write(Instance.header + "\n")
     for i, instance in enumerate(instances):
