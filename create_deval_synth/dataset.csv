@@ -82,7 +82,7 @@ Wenn Winter ist, besucht <x_nom> <y_acc> oft, weil <x_pron_nom> weniger arbeitet
 <y_nom> vereinbart mit <x_dat> ein Meeting, um sich <x_poss_pl_acc> Ideen zur Inspiration anzusehen.;none;[];[]
 <y_nom> lässt <x_dat> ein großes Trinkgeld da, weil <x_pron_nom> das Getränk richtig gut gemixt hat.;none;[633];[]
 <x_nom> ruft <y_acc> an, weil <x_pron_nom> neue Geheimtipps hat.;none;[];[]
-<x_nom> ruft die 110 an, spricht mit <y_dat> und <x_pron_dat> wird gesagt, dass <x_pron_nom> an einem sicheren Ort auf Hilfe warten soll.;none;[];[]
+<x_nom> ruft die 110 an, spricht mit <y_dat> und <x_pron_dat> wird gesagt, dass <x_pron_nom> an einem sicheren Ort auf Hilfe warten soll.;none;[];[532]
 <x_nom> entschuldigt sich bei <y_dat>, weil <y_rel_nom> mit <x_poss_m_dat> Art zu kochen nicht zufrieden ist.;none;[];[]
 <x_nom> sagt <y_dat>, dass <x_pron_nom> gerne eine Führung durch das Büro geben würde.;none;[];[]
 <y_nom> hilft <x_dat>, ein Buch auszusuchen, weil <x_pron_nom> nicht weiß, was <x_pron_nom> lesen soll.;none;[];[]
