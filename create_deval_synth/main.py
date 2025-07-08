@@ -420,7 +420,7 @@ with open(csv_file, newline="", encoding="utf-8") as f:
         print(f"Generated {len(gen)} instances for template: {r.sentence}")
         # delete the progress indication for every iteration
         sys.stdout.write("\033[F\033[K")
-with open("output.txt", "w", encoding="utf-8") as f:
+with open("output.csv", "w", encoding="utf-8") as f:
     n = len(instances)
     f.write(Instance.header + "\n")
     for i, instance in enumerate(instances):
