@@ -4,6 +4,9 @@ import re
 from declensions import *
 from groups import groups
 from adjectives import adjectives
+from names import names
+
+
 from itertools import islice, cycle
 
 
@@ -19,7 +22,7 @@ def roundrobin(*iterables):
         yield from map(next, iterators)
 
 
-GEN_LIMIT = 1000  # limit the number of generated instances per template
+GEN_LIMIT = 100  # limit the number of generated instances per template
 
 # open a csv file from argument and read it
 if len(sys.argv) < 2:
@@ -56,6 +59,13 @@ for row in statistics_csv:
         statistics[code][status] = (num_m, num_f)
 
 
+# define constants for sentence styles
+NORMAL_SENTENCE = 1
+ADJECTIVE_SENTENCE = 2
+ROMANTIC_SENTENCE = 3
+NAME_SENTENCE = 4
+
+
 class Instance:
     def __init__(self, x, x_group, y, y_group, adjective, modified, text):
         self.x = x
@@ -68,7 +78,9 @@ class Instance:
 
     def __str__(self):
         return (
-            f"{self.x.nom_sg}, {self.y.nom_sg} ({self.x_group}, {self.y_group}):"
+            f"{self.x.nom_sg},"
+            f"{self.y.nom_sg if self.y is not None else None},"
+            f"({self.x_group}, {self.y_group}):"
             f"{self.text}, x_stereotypical: {self.x_stereotypical}, y_stereotypical:{self.y_stereotypical}, "
             f"adjective: {self.adjective.text if self.adjective else "none"},"
             f"modified: {self.modified or "none"}, "
@@ -78,15 +90,20 @@ class Instance:
 
     @property
     def sentence_style(self):
-        if self.x_group == "romantic" or self.y_group == "romantic":
-            return 3
+        if self.y is None:
+            return NAME_SENTENCE
+        elif self.x_group == "romantic" or self.y_group == "romantic":
+            return ROMANTIC_SENTENCE
         elif self.adjective:
-            return 2
+            return ADJECTIVE_SENTENCE
         else:
-            return 1
+            return NORMAL_SENTENCE
 
     @property
     def heterosexual(self):
+        if self.sentence_style == NAME_SENTENCE:
+            return "n/a"
+
         if self.x_group == "romantic" or self.y_group == "romantic":
             if self.x.gender == "m" and self.y.gender == "f":
                 return True
@@ -99,21 +116,27 @@ class Instance:
 
     @property
     def x_stereotypical(self):
+        if self.sentence_style == NAME_SENTENCE:
+            return "n/a"
+
         if self.x_group == "romantic":
             return "romantic"
+
+        num_m, num_f = statistics[self.x_group][self.x.status]
+        if num_m == 0 and num_f == 0:
+            return "no data"
+        if self.x.gender == "m":
+            return num_m / (num_m + num_f)
+        elif self.x.gender == "f":
+            return num_f / (num_m + num_f)
         else:
-            num_m, num_f = statistics[self.x_group][self.x.status]
-            if num_m == 0 and num_f == 0:
-                return "no data"
-            if self.x.gender == "m":
-                return num_m / (num_m + num_f)
-            elif self.x.gender == "f":
-                return num_f / (num_m + num_f)
-            else:
-                return "no data"
+            return "no data"
 
     @property
     def y_stereotypical(self):
+        if self.sentence_style == NAME_SENTENCE:
+            return "n/a"
+
         if self.y_group == "romantic":
             return "romantic"
         else:
@@ -134,6 +157,9 @@ class Template:
         hierarchy = row[1].strip()
         self.adjectives = adjectives
         self.higher = None
+
+        self.type = "name_sentences" if self.sentence.find("<y") == -1 else "other"
+
         # parse hierarchy
         if hierarchy != "none":
             if hierarchy.find(">"):
@@ -165,20 +191,30 @@ class Template:
             else:
                 raise ValueError(f"Unknown group: {group}")
 
-        self.ys = []
-        y_groups = row[3].strip("[]").split(",")
-        for group in y_groups:
-            if group == "":
-                # if group is empty, add all groups
-                for g in groups:
-                    if g != "romantic":
-                        self.ys.extend(map(lambda x: (g, x), groups[g]))
-            elif group == "romantic":
-                self.ys.extend(map(lambda x: ("romantic", x), groups["romantic"]))
-            elif int(group) in groups:
-                self.ys.extend(map(lambda x: (int(group), x), groups[int(group)]))
-            else:
-                raise ValueError(f"Unknown group: {group}")
+        if self.type != "name_sentences":
+            self.ys = []
+            y_groups = row[3].strip("[]").split(",")
+            for group in y_groups:
+                if group == "":
+                    # if group is empty, add all groups
+                    for g in groups:
+                        if g != "romantic":
+                            self.ys.extend(map(lambda x: (g, x), groups[g]))
+                elif group == "romantic":
+                    self.ys.extend(map(lambda x: ("romantic", x), groups["romantic"]))
+                elif int(group) in groups:
+                    self.ys.extend(map(lambda x: (int(group), x), groups[int(group)]))
+                else:
+                    raise ValueError(f"Unknown group: {group}")
+
+    def resolve_name(self, x, name, match):
+        parts = match.group(1).split("_")
+
+        if parts[0] == "x":
+            return x.decline(parts[1], "sg")
+        elif parts[0] == "name":
+            # we only have nominative case in our dataset for names
+            return name.decline("nom", "sg")
 
     def resolve(self, x, y, adjective, modified, match):
         # split match by underscores
@@ -198,7 +234,16 @@ class Template:
         elif parts[1] == "pron":
             return Pronoun(base_noun).decline(parts[2], "sg")
         elif parts[1] == "poss":
-            return Possessive(base_noun, parts[2]).decline(parts[3], "sg")
+            if len(parts) == 4:
+                # this is the case where we know the gender of the possessed noun (i.e. it doesn't change)
+                return Possessive(base_noun, parts[2]).decline(parts[3], "sg")
+            else:
+                other_noun = y if parts[0] == "x" else x
+                return Possessive(base_noun, other_noun.grammatical_gender).decline(
+                    parts[2], "sg"
+                )
+        elif parts[1] == "indef":
+            return base_noun.decline(parts[2], "sg")
         else:
             # throw error
             raise ValueError(f"Unknown match type: {parts}")
@@ -237,14 +282,7 @@ class Template:
         adjectives_generator = ()
         if self.adjectives != None:
             adjectives_generator = (
-                (
-                    x_group,
-                    x,
-                    y_group,
-                    y,
-                    adjective,
-                    modified,
-                )
+                (x_group, x, y_group, y, adjective, modified)
                 for x_group, x in self.xs
                 for y_group, y in self.ys
                 if x_group != "romantic" and y_group != "romantic"
@@ -260,18 +298,37 @@ class Template:
             if x_group == "romantic" or y_group == "romantic"
         )
 
-        for x_group, x, y_group, y, adjective, modified in limit(GEN_LIMIT)(
-            roundrobin(base_generator, adjectives_generator, romantic_generator)
-        ):
-            text = re.sub(
-                r"<([a-zA-Z_]*)>",
-                lambda m: self.resolve(x, y, adjective, modified, m),
-                self.sentence,
-            )
-            # capitalize the first letter of the substitution
-            text = text[0].upper() + text[1:]
-            instance = Instance(x, x_group, y, y_group, adjective, modified, text)
-            instances.append(instance)
+        names_generator = (
+            (x_group, x, name)
+            for x_group, x in self.xs
+            for name in names
+            if name.gender == x.gender
+        )
+
+        if self.type == "name_sentences":
+            for x_group, x, name in limit(GEN_LIMIT)(names_generator):
+                text = re.sub(
+                    r"<([a-zA-Z_]*)>",
+                    lambda m: self.resolve_name(x, name, m),
+                    self.sentence,
+                )
+                # capitalize the first letter of the substitution
+                text = text[0].upper() + text[1:]
+                instance = Instance(x, x_group, None, None, None, None, text)
+                instances.append(instance)
+        else:
+            for x_group, x, y_group, y, adjective, modified in limit(GEN_LIMIT)(
+                roundrobin(base_generator, adjectives_generator, romantic_generator)
+            ):
+                text = re.sub(
+                    r"<([a-zA-Z_]*)>",
+                    lambda m: self.resolve(x, y, adjective, modified, m),
+                    self.sentence,
+                )
+                # capitalize the first letter of the substitution
+                text = text[0].upper() + text[1:]
+                instance = Instance(x, x_group, y, y_group, adjective, modified, text)
+                instances.append(instance)
 
         return instances
 
