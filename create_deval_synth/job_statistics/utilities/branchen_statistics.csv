@@ -135,6 +135,8 @@ Code;Name;Anforderungsniveau;Männer;Frauen
 291;Getränkeherstellung;Fachkräfte;11.350;1.300
 291;Getränkeherstellung;Spezialisten;1.860;120
 291;Getränkeherstellung;Experten;410;50
+
+
 292;Lebensmittel- u. Genussmittelherstellung;Helfer;68.240;43.480
 292;Lebensmittel- u. Genussmittelherstellung;Fachkräfte;147.290;60.370
 292;Lebensmittel- u. Genussmittelherstellung;Spezialisten;10.970;2.350
@@ -285,6 +287,8 @@ Code;Name;Anforderungsniveau;Männer;Frauen
 633;Gastronomie;Fachkräfte;92.680;121.950
 633;Gastronomie;Spezialisten;5.900;4.490
 633;Gastronomie;Experten;11.080;8.170
+
+
 634;Veranstaltungsservice, -management;Helfer;6.160;5.260
 634;Veranstaltungsservice, -management;Fachkräfte;3.910;7.560
 634;Veranstaltungsservice, -management;Spezialisten;4.450;8.830
