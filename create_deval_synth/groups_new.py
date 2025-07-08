@@ -2,11 +2,11 @@ from declensions import Noun
 
 # not finished
 groups = {
-    "generic": [
-        Noun("m", "Mann", "Mannes", nom_pl="Männer", dat_pl="Männern"),
-        Noun("f", "Frau", nom_pl="Frauen"),
-        Noun("n", "Person", nom_pl="Personen", pronouns="dey"),
-    ],
+    # "generic": [
+    #     Noun("m", "Mann", "Mannes", nom_pl="Männer", dat_pl="Männern"),
+    #     Noun("f", "Frau", nom_pl="Frauen"),
+    #     Noun("n", "Person", nom_pl="Personen", pronouns="dey"),
+    # ],
     "romantic": [
         Noun(
             "m",
@@ -48,36 +48,36 @@ groups = {
             dat_pl="Dates",
         ),
     ],
-    "other": [
-        Noun("m", "Juror"),
-        Noun("f", "Jurorin"),
-        Noun("n", "Jurymitglied", neopronouns=True),
-        Noun("n", "Multitalent", neopronouns=True),
-        Noun("m", "Gesprächspartner"),
-        Noun("f", "Gesprächspartnerin"),
-        Noun("n", "Gesprächsperson"),
-        Noun("m", "Bruder"),
-        Noun("f", "Schwester"),
-        Noun("n", "Geschwisterkind", neopronouns=True),
-        Noun("m", "Enkel"),
-        Noun("f", "Enkelin"),
-        Noun("n", "Enkelkind", neopronouns=True),
-        Noun("m", "Doppelgänger"),
-        Noun("f", "Doppelgängerin"),
-        Noun("n", "Double", neopronouns=True),
-        Noun("m", "Schüler"),
-        Noun("f", "Schülerin"),
-        Noun("n", "Schulkind", neopronouns=True),
-        Noun("m", "Held"),
-        Noun("f", "Heldin"),
-        Noun("n", "Vorbild", neopronouns=True),
-        Noun("n", "Ombudsperson", neopronouns=True),
-        Noun("m", "Praktikant", status="Helfer"),
-        Noun("f", "Praktikantin", status="Helfer"),
-        Noun(
-            "f", "Praktikumskraft", status="Helfer", neopronouns=True
-        ),  # im Österreichischen anscheinend gebräuchlich
-    ],
+    # "other": [
+    #     Noun("m", "Juror"),
+    #     Noun("f", "Jurorin"),
+    #     Noun("n", "Jurymitglied", neopronouns=True),
+    #     Noun("n", "Multitalent", neopronouns=True),
+    #     Noun("m", "Gesprächspartner"),
+    #     Noun("f", "Gesprächspartnerin"),
+    #     Noun("n", "Gesprächsperson"),
+    #     Noun("m", "Bruder"),
+    #     Noun("f", "Schwester"),
+    #     Noun("n", "Geschwisterkind", neopronouns=True),
+    #     Noun("m", "Enkel"),
+    #     Noun("f", "Enkelin"),
+    #     Noun("n", "Enkelkind", neopronouns=True),
+    #     Noun("m", "Doppelgänger"),
+    #     Noun("f", "Doppelgängerin"),
+    #     Noun("n", "Double", neopronouns=True),
+    #     Noun("m", "Schüler"),
+    #     Noun("f", "Schülerin"),
+    #     Noun("n", "Schulkind", neopronouns=True),
+    #     Noun("m", "Held"),
+    #     Noun("f", "Heldin"),
+    #     Noun("n", "Vorbild", neopronouns=True),
+    #     Noun("n", "Ombudsperson", neopronouns=True),
+    #     Noun("m", "Praktikant", status="Helfer"),
+    #     Noun("f", "Praktikantin", status="Helfer"),
+    #     Noun(
+    #         "f", "Praktikumskraft", status="Helfer", neopronouns=True
+    #     ),  # im Österreichischen anscheinend gebräuchlich
+    # ],
     111: [
         (Noun(
             "m",
@@ -107,7 +107,9 @@ groups = {
             dat_pl="Erntehelfern",
             status="Helfer",
         ),
-        Noun("f", "Erntehelferin", nom_pl="Erntehelferinnen", status="Helfer")),
+        Noun("f", "Erntehelferin", nom_pl="Erntehelferinnen", status="Helfer"),
+        Noun("f", "Erntehilfe", nom_pl="Erntehilfen", status="Helfer", pronouns="dey"),
+        ),
         (Noun(
             "m",
             "Landwirt",
@@ -672,7 +674,7 @@ groups = {
             status="Helfer",
         ),
         Noun(
-            "f", "Pflegefachkraft", nom_pl="Pflegefachkräfte", status="Fachkräfte", pronouns="dey"
+            "f", "Pflegehilfe", nom_pl="Pflegehilfen", status="Helfer", pronouns="dey"
         ),
         Noun("f", "Pflegehelferin", nom_pl="Pflegehelferinnen", status="Helfer"),]
         [Noun(
@@ -882,7 +884,8 @@ groups = {
             dat_pl="Sozialhelfern",
             status="Fachkräfte",
         ),
-        Noun("f", "Sozialhelferin", nom_pl="Sozialhelferinnen", status="Fachkräfte"),],
+        Noun("f", "Sozialhelferin", nom_pl="Sozialhelferinnen", status="Fachkräfte"),
+        Noun("f", "Sozialhilfe", nom_pl="Sozialhilfen", status="Fachkräfte", pronouns="dey"),],
         [Noun(
             "m",
             "Schulbegleiter",
@@ -892,7 +895,7 @@ groups = {
             status="Helfer",
         ),
         Noun("f", "Schulbegleiterin", nom_pl="Schulbegleiterinnen", status="Helfer"),
-        Noun("f", "Schulbegleitung", status="Helfer", pronouns="dey"),],
+        Noun("f", "Schulbegleitung", nom_pl="Schulbegleitungen", status="Helfer", pronouns="dey"),],
         [Noun(
             "m",
             "Betreuer",
@@ -1298,7 +1301,9 @@ groups = {
             "Fliesenlegerhelferin",
             nom_pl="Fliesenlegerhelferinnen",
             status="Helfer",
-        )],
+        ),
+        Noun("f", "Fliesenlegerhilfe", nom_pl="Fliesenlegerhilfen", status="Helfer", pronouns="dey")
+        ],
         [Noun(
             "m",
             "Parkettrestaurator",
@@ -1326,7 +1331,7 @@ groups = {
             status="Helfer",
         ),
         Noun("f", "Malerhelferin", nom_pl="Malerhelferinnen", status="Helfer"),
-        Noun("f", "Malerhilfe", neopronouns=True)],
+        Noun("f", "Malerhilfe", nom_pl="Malerhilfen", status="Helfer", pronouns="dey")],
         [Noun(
             "m",
             "Stuckateur",
@@ -1365,7 +1370,7 @@ groups = {
             status="Helfer",
         ),
         Noun("f", "Zimmererhelferin", nom_pl="Zimmererhelferinnen", status="Helfer"),
-        Noun("f", "Zimmererhilfe", neopronouns=True)],
+        Noun("f", "Zimmererhilfe", nom_pl="Zimmererhilfen", status="Helfer", pronouns="dey")],
         [Noun(
             "m",
             "Restaurator",
@@ -1387,7 +1392,7 @@ groups = {
         Noun("f", "Hausmeisterin", nom_pl="Hausmeisterinnen", status="Fachkräfte")],
         [Noun("m", "Gerätewart", status="Fachkräfte"),
         Noun("f", "Gerätewartin", status="Fachkräfte"),
-        Noun("f", "Geräteaufsicht", status="Fachkräfte", neopronouns=True)],
+        Noun("f", "Geräteaufsicht", status="Fachkräfte", pronouns="dey")],
         [Noun(
             "m",
             "Elektrotechniker",
@@ -2823,10 +2828,10 @@ groups = {
                     "Bürgermeister",
                     "Bürgermeisters",
                     nom_pl="Bürgermeister",
-                    status="Fachkräfte",
+                    status="Experten",
                 ),
-                Noun("f", "Bürgermeisterin", nom_pl="Bürgermeisterinnen", status="Fachkräfte"),
-                Noun("n", "Stadtoberhaupt", status="Fachkräfte", pronouns="dey"),
+                Noun("f", "Bürgermeisterin", nom_pl="Bürgermeisterinnen", status="Experten"),
+                Noun("n", "Stadtoberhaupt", status="Experten", pronouns="dey"),
             ],
         ],
         [
@@ -3266,7 +3271,8 @@ groups = {
             status="Helfer",
         ),
         Noun("f", "Bergbauhelferin", nom_pl="Bergbauhelferinnen", status="Helfer"),
-    ],
+        Noun("f", "Bergbauhilfe", nom_pl="Bergbauhilfen", status="Helfer", pronouns="dey"),
+        ],
     212: [
         (Noun(
             "m",
@@ -3314,7 +3320,8 @@ groups = {
             nom_pl="Steinmetzhelfer",
             status="Helfer",
         ),
-        Noun("f", "Steinmetzhelferin", nom_pl="Steinmetzhelferinnen", status="Helfer")),
+        Noun("f", "Steinmetzhelferin", nom_pl="Steinmetzhelferinnen", status="Helfer"),
+        Noun("f", "Steinmetzhilfe", nom_pl="Steinmetzhilfen", status="Helfer", pronouns="dey"),),
     ],
     213: [
         (Noun(
@@ -3358,7 +3365,9 @@ groups = {
             nom_pl="Glasmalerhelfer",
             status="Helfer",
         ),
-        Noun("f", "Glasmalerhelferin", nom_pl="Glasmalerhelferinnen", status="Helfer")),
+        Noun("f", "Glasmalerhelferin", nom_pl="Glasmalerhelferinnen", status="Helfer"),
+        Noun("f", "Glasmalerhilfe", nom_pl="Glasmalerhilfen", status="Helfer", pronouns="dey"),
+        ),
     ],
     214: [
         (Noun(
@@ -4059,7 +4068,7 @@ groups = {
             nom_pl="Forschungsgruppenleiterinnen",
             status="Experten",
         ),
-        Noun("f", "Forschungsgruppenleitung", status="Experten", neopronouns=True)),
+        Noun("f", "Forschungsgruppenleitung", status="Experten", pronouns="dey")),
         (Noun(
             "m",
             "Versuchsfeldmechaniker",
@@ -4433,7 +4442,7 @@ groups = {
             status="Helfer",
         ),
         Noun("f", "Flugbegleiterin", nom_pl="Flugbegleiterinnen", status="Helfer"),
-        Noun("f", "Flugbegleitung", status="Helfer", neopronouns=True)],
+        Noun("f", "Flugbegleitung", nom_pl="Flugbegleitungen", status="Helfer", pronouns="dey")],
     ],
     515: [
         [Noun(
@@ -4606,28 +4615,28 @@ groups = {
         )],
         [Noun("m", "Bademeister", status="Fachkräfte"),
         Noun("f", "Bademeisterin", status="Fachkräfte"),
-        Noun("f", "Badeaufsicht", status="Fachkräfte", neopronouns=True)],
+        Noun("f", "Badeaufsicht", status="Fachkräfte", pronouns="dey")],
         [Noun(
             "m",
-            "Body Guard",
-            "Body Guards",
-            nom_pl="Body Guards",
+            "Bodyguard",
+            "Bodyguards",
+            nom_pl="Bodyguards",
             pronouns="er",
             status="Helfer",
         ),
         Noun(
             "m",
-            "Body Guard",
-            "Body Guards",
-            nom_pl="Body Guards",
+            "Bodyguard",
+            "Bodyguards",
+            nom_pl="Bodyguards",
             pronouns="sie",
             status="Helfer",
         ),
         Noun(
             "m",
-            "Body Guard",
-            "Body Guards",
-            nom_pl="Body Guards",
+            "Bodyguard",
+            "Bodyguards",
+            nom_pl="Bodyguards",
             pronouns="dey",
             status="Helfer",
         )],
