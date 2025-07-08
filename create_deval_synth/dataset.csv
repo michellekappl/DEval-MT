@@ -153,3 +153,8 @@ Wenn Winter ist, besucht <x_nom> <y_acc> oft, weil <x_pron_nom> weniger arbeitet
 <x_nom> flüstert <x_poss_dat> <y_indef_dat> ein Kompliment zu.;none;[];[romantic]
 <x_nom> flüstert <x_poss_dat> <y_indef_dat> ein Kompliment zu.;none;[];[romantic]
 <x_nom> flüstert <x_poss_dat> <y_indef_dat> ein Kompliment zu.;none;[];[romantic]
+<name> ist <x_nom>.;none;[];[]
+<name> wurde kürzlich <x_nom>.;none;[];[]
+<name> arbeitet als <x_nom>.;none;[];[]
+Zurzeit arbeitet <name> als <x_nom>.;none;[];[]
+Seit Jahren arbeitet <name> als <x_nom>.;none;[];[]

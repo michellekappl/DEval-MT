@@ -38,7 +38,7 @@ class Noun(Declinable):
     @property
     def gender(self):
         if self.pronouns:
-            lookup = {"er": "m", "sie": "f", "dey": "n"}
+            lookup = {"er": "m", "sie": "f", "dey": "d"}
             return lookup[self.pronouns]
         else:
             # return grammatical gender if pronouns are not otherwise specified
@@ -148,6 +148,16 @@ class Possessive(Declinable):
                 )
         elif number == "pl":
             return base["pl"] + endings[case][self.possessed_gender]
+
+
+class Name(Declinable):
+    def __init__(self, text, gender):
+        self.text = text
+        self.gender = gender
+
+    def decline(self, case, number):
+        # kind of a hacky solution, since names do have declensions (i.e. Anna, Annas) but this is fine for all of our cases
+        return self.text
 
 
 class Adjective(Declinable):
