@@ -94,14 +94,14 @@ class Instance:
         self.y_idx = y_idx  # index of y in the sentence
         self.name = name
 
-    header = "sentence_style;x_nom_sg;x_group;x_gender;x_idx;x_stereotypical;y_nom_sg;y_group;y_gender;y_idx;y_stereotypical;adjective;modified;name;name.gender;text"
+    header = "sentence_style;x_nom_sg;x_group;x_gender;x_idx;x_stereotypical;x_level;y_nom_sg;y_group;y_gender;y_idx;y_stereotypical;y_level;adjective;modified;name;name.gender;text"
 
     def __str__(self):
         return (
             f"{self.sentence_style};"
-            + f"{self.x.nom_sg};{self.x.gender};{self.x_group};{self.x_idx};{self.x_stereotypical};"
+            + f"{self.x.nom_sg};{self.x_group};{self.x.gender};{self.x_idx};{self.x_stereotypical};{self.x.status or "none"};"
             + (
-                f"{self.y.nom_sg};{self.y_group};{self.y.gender};{self.y_idx};{self.y_stereotypical};"
+                f"{self.y.nom_sg};{self.y_group};{self.y.gender};{self.y_idx};{self.y_stereotypical};{self.y.status or "none"};"
                 if self.y
                 else "none;none;none;"
             )
