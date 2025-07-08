@@ -25,7 +25,7 @@ def roundrobin(*iterables):
         yield from map(next, iterators)
 
 
-GEN_LIMIT = 1000  # limit the number of generated instances per template
+GEN_LIMIT = 100  # limit the number of generated instances per template
 
 # open a csv file from argument and read it
 if len(sys.argv) < 2:
