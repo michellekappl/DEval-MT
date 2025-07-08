@@ -9,6 +9,9 @@ from names import names
 
 from itertools import islice, cycle
 
+del groups["other"]
+del groups["generic"]
+
 
 # copied from itertools documentation
 # https://docs.python.org/3/library/itertools.html#recipes
@@ -67,7 +70,19 @@ NAME_SENTENCE = 4
 
 
 class Instance:
-    def __init__(self, x, x_group, y, y_group, adjective, modified, text):
+    def __init__(
+        self,
+        x,
+        x_group,
+        x_idx,
+        y,
+        y_group,
+        y_idx,
+        adjective,
+        modified,
+        text,
+        name,
+    ):
         self.x = x
         self.y = y
         self.x_group = x_group
@@ -75,17 +90,25 @@ class Instance:
         self.text = text
         self.adjective = adjective
         self.modified = modified  # "x" or "y", which one was modified
+        self.x_idx = x_idx  # index of x in the sentence
+        self.y_idx = y_idx  # index of y in the sentence
+        self.name = name
+
+    header = "sentence_style;x_nom_sg;x_group;x_gender;x_idx;x_stereotypical;y_nom_sg;y_group;y_gender;y_idx;y_stereotypical;adjective;modified;name;name.gender;text"
 
     def __str__(self):
         return (
-            f"{self.x.nom_sg},"
-            f"{self.y.nom_sg if self.y is not None else None},"
-            f"({self.x_group}, {self.y_group}):"
-            f"{self.text}, x_stereotypical: {self.x_stereotypical}, y_stereotypical:{self.y_stereotypical}, "
-            f"adjective: {self.adjective.text if self.adjective else "none"},"
-            f"modified: {self.modified or "none"}, "
-            f"heterosexual: {self.heterosexual},"
-            f"sentence_style: {self.sentence_style}"
+            f"{self.sentence_style};"
+            + f"{self.x.nom_sg};{self.x.gender};{self.x_group};{self.x_idx};{self.x_stereotypical};"
+            + (
+                f"{self.y.nom_sg};{self.y_group};{self.y.gender};{self.y_idx};{self.y_stereotypical};"
+                if self.y
+                else "none;none;none;"
+            )
+            + f"{self.adjective.text if self.adjective else 'none'};"
+            + f"{self.modified or 'none'};"
+            + (f"{self.name.text};{self.name.gender};" if self.name else "none;none;")
+            + f"{self.text}"
         )
 
     @property
@@ -98,21 +121,6 @@ class Instance:
             return ADJECTIVE_SENTENCE
         else:
             return NORMAL_SENTENCE
-
-    @property
-    def heterosexual(self):
-        if self.sentence_style == NAME_SENTENCE:
-            return "n/a"
-
-        if self.x_group == "romantic" or self.y_group == "romantic":
-            if self.x.gender == "m" and self.y.gender == "f":
-                return True
-            elif self.x.gender == "f" and self.y.gender == "m":
-                return True
-            else:
-                return False
-        else:
-            return "n/a"
 
     @property
     def x_stereotypical(self):
@@ -302,7 +310,7 @@ class Template:
             (x_group, x, name)
             for x_group, x in self.xs
             for name in names
-            if name.gender == x.gender
+            if name.gender == x.gender or name.gender == "n"
         )
 
         if self.type == "name_sentences":
@@ -314,7 +322,24 @@ class Template:
                 )
                 # capitalize the first letter of the substitution
                 text = text[0].upper() + text[1:]
-                instance = Instance(x, x_group, None, None, None, None, text)
+
+                x_idx = None
+                for idx, word in enumerate(text.replace(",", " ,").split()):
+                    if word in [
+                        x.nom_sg,
+                        x.gen_sg,
+                        x.dat_sg,
+                        x.acc_sg,
+                        # x.nom_pl,
+                        # x.gen_pl,
+                        # x.dat_pl,
+                        # x.acc_pl,
+                    ]:
+                        x_idx = idx
+
+                instance = Instance(
+                    x, x_group, x_idx, None, None, None, None, None, text, name
+                )
                 instances.append(instance)
         else:
             for x_group, x, y_group, y, adjective, modified in limit(GEN_LIMIT)(
@@ -327,7 +352,45 @@ class Template:
                 )
                 # capitalize the first letter of the substitution
                 text = text[0].upper() + text[1:]
-                instance = Instance(x, x_group, y, y_group, adjective, modified, text)
+
+                x_idx, y_idx = None, None
+                # find idx of x and y within the sentence
+                for idx, word in enumerate(text.replace(",", " ,").split()):
+                    if word in [
+                        x.nom_sg,
+                        x.gen_sg,
+                        x.dat_sg,
+                        x.acc_sg,
+                        # x.nom_pl,
+                        # x.gen_pl,
+                        # x.dat_pl,
+                        # x.acc_pl,
+                    ]:
+                        x_idx = idx
+                    elif y and word in [
+                        y.nom_sg,
+                        y.gen_sg,
+                        y.dat_sg,
+                        y.acc_sg,
+                        # y.nom_pl,
+                        # y.gen_pl,
+                        # y.dat_pl,
+                        # y.acc_pl,
+                    ]:
+                        y_idx = idx
+
+                instance = Instance(
+                    x,
+                    x_group,
+                    x_idx,
+                    y,
+                    y_group,
+                    y_idx,
+                    adjective,
+                    modified,
+                    text,
+                    None,
+                )
                 instances.append(instance)
 
         return instances
@@ -349,6 +412,7 @@ with open(csv_file, newline="", encoding="utf-8") as f:
         sys.stdout.write("\033[F\033[K")
 with open("output.txt", "w", encoding="utf-8") as f:
     n = len(instances)
+    f.write(Instance.header + "\n")
     for i, instance in enumerate(instances):
         f.write(str(instance) + "\n")
         print(f"Generating statistics for {n} instances... ({i} / {n})")
