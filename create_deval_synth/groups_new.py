@@ -4118,7 +4118,7 @@ groups = {
         ),
     ],
     292: [
-        Noun(
+        [Noun(
             "m",
             "Lebensmitteltechnologe",
             "Lebensmitteltechnologen",
@@ -4132,18 +4132,18 @@ groups = {
             "Lebensmitteltechnologin",
             nom_pl="Lebensmitteltechnologinnen",
             status="Experten",
-        ),
-        Noun("m", "Schlachter", "Schlachters", nom_pl="Schlachter", status="Fachkräfte"),
-        Noun("f", "Schlachterin", nom_pl="Schlachterinnen", status="Fachkräfte"),
-        Noun(
+        )],
+        [Noun("m", "Schlachter", "Schlachters", nom_pl="Schlachter", status="Fachkräfte"),
+        Noun("f", "Schlachterin", nom_pl="Schlachterinnen", status="Fachkräfte")],
+        [Noun(
             "m",
             "Molkereiarbeiter",
             "Molkereiarbeiters",
             nom_pl="Molkereiarbeiter",
             status="Helfer",
         ),
-        Noun("f", "Molkereiarbeiterin", nom_pl="Molkereiarbeiterinnen", status="Helfer"),
-        Noun(
+        Noun("f", "Molkereiarbeiterin", nom_pl="Molkereiarbeiterinnen", status="Helfer")],
+        [Noun(
             "m",
             "Süßwarentechniker",
             "Süßwarentechnikers",
@@ -4155,33 +4155,33 @@ groups = {
             "Süßwarentechnikerin",
             nom_pl="Süßwarentechnikerinnen",
             status="Spezialisten",
-        ),
+        )],
     ],
     293: [
-        Noun("m", "Koch", "Kochs", nom_pl="Köche", status="Fachkräfte"),
-        Noun("f", "Köchin", nom_pl="Köchinnen", status="Fachkräfte"),
-        Noun("f", "Küchenhilfe", nom_pl="Küchenhilfen", pronouns="er", status="Helfer"),
+        [Noun("m", "Koch", "Kochs", nom_pl="Köche", status="Fachkräfte"),
+        Noun("f", "Köchin", nom_pl="Köchinnen", status="Fachkräfte")],
+        [Noun("f", "Küchenhilfe", nom_pl="Küchenhilfen", pronouns="er", status="Helfer"),
         Noun("f", "Küchenhilfe", nom_pl="Küchenhilfen", pronouns="sie", status="Helfer"),
-        Noun("f", "Küchenhilfe", nom_pl="Küchenhilfen", pronouns="dey", status="Helfer"),
-        Noun(
+        Noun("f", "Küchenhilfe", nom_pl="Küchenhilfen", pronouns="dey", status="Helfer")],
+        [Noun(
             "m",
             "Pizzabäcker",
             "Pizzabäckers",
             nom_pl="Pizzabäcker",
             status="Fachkräfte",
         ),
-        Noun("f", "Pizzabäckerin", nom_pl="Pizzabäckerinnen", status="Fachkräfte"),
+        Noun("f", "Pizzabäckerin", nom_pl="Pizzabäckerinnen", status="Fachkräfte")],
     ],
     511: [
-        Noun(
+        [Noun(
             "m",
             "Schiffsoffizier",
             "Schiffsoffiziers",
             nom_pl="Schiffsoffiziere",
             status="Experten",
         ),
-        Noun("f", "Schiffsoffizierin", nom_pl="Schiffsoffizierinnen", status="Experten"),
-        Noun(
+        Noun("f", "Schiffsoffizierin", nom_pl="Schiffsoffizierinnen", status="Experten")],
+        [Noun(
             "m",
             "Matrose",
             "Matrosen",
@@ -4190,28 +4190,28 @@ groups = {
             nom_pl="Matrosen",
             status="Fachkräfte",
         ),
-        Noun("f", "Matrosin", nom_pl="Matrosinnen", status="Fachkräfte"),
-        Noun("m", "Funker", "Funkers", nom_pl="Funker", status="Fachkräfte"),
-        Noun("f", "Funkerin", nom_pl="Funkerinnen", status="Fachkräfte"),
-        Noun(
+        Noun("f", "Matrosin", nom_pl="Matrosinnen", status="Fachkräfte")],
+        [Noun("m", "Funker", "Funkers", nom_pl="Funker", status="Fachkräfte"),
+        Noun("f", "Funkerin", nom_pl="Funkerinnen", status="Fachkräfte")],
+        [Noun(
             "m",
             "Funkmeister",
             "Funkmeisters",
             nom_pl="Funkmeister",
             status="Spezialisten",
         ),
-        Noun("f", "Funkmeisterin", nom_pl="Funkmeisterinnen", status="Spezialisten"),
+        Noun("f", "Funkmeisterin", nom_pl="Funkmeisterinnen", status="Spezialisten")],
     ],
     512: [
-        Noun(
+        [Noun(
             "m",
             "Streckenwärter",
             "Streckenwärters",
             nom_pl="Streckenwärter",
             status="Fachkräfte",
         ),
-        Noun("f", "Streckenwärterin", nom_pl="Streckenwärterinnen", status="Fachkräfte"),
-        Noun(
+        Noun("f", "Streckenwärterin", nom_pl="Streckenwärterinnen", status="Fachkräfte")],
+        [Noun(
             "m",
             "Sicherungsposten",
             nom_pl="Sicherungsposten",
@@ -4231,18 +4231,18 @@ groups = {
             nom_pl="Sicherungsposten",
             pronouns="dey",
             status="Fachkräfte",
-        ),
-        Noun(
+        )],
+        [Noun(
             "m",
             "Hafenaufseher",
             "Hafenaufsehers",
             nom_pl="Hafenaufseher",
             status="Spezialisten",
         ),
-        Noun("f", "Hafenaufseherin", nom_pl="Hafenaufseherinnen", status="Spezialisten"),
+        Noun("f", "Hafenaufseherin", nom_pl="Hafenaufseherinnen", status="Spezialisten")],
     ],
     513: [
-        Noun(
+        [Noun(
             "m",
             "Postbote",
             "Postboten",
@@ -4251,25 +4251,25 @@ groups = {
             nom_pl="Postboten",
             status="Fachkräfte",
         ),
-        Noun("f", "Postbotin", nom_pl="Postbotinnen", status="Fachkräfte"),
-        Noun(
+        Noun("f", "Postbotin", nom_pl="Postbotinnen", status="Fachkräfte")],
+        [Noun(
             "m",
             "Briefträger",
             "Briefträgers",
             nom_pl="Briefträger",
             status="Fachkräfte",
         ),
-        Noun("f", "Briefträgerin", nom_pl="Briefträgerinnen", status="Fachkräfte"),
-        Noun("m", "Möbelpacker", "Möbelpackers", nom_pl="Möbelpacker", status="Helfer"),
-        Noun("f", "Möbelpackerin", nom_pl="Möbelpackerinnen", status="Helfer"),
-        Noun(
+        Noun("f", "Briefträgerin", nom_pl="Briefträgerinnen", status="Fachkräfte")],
+        [Noun("m", "Möbelpacker", "Möbelpackers", nom_pl="Möbelpacker", status="Helfer"),
+        Noun("f", "Möbelpackerin", nom_pl="Möbelpackerinnen", status="Helfer")],
+        [Noun(
             "m",
             "Plakatkleber",
             "Plakatklebers",
             nom_pl="Plakatkleber",
             status="Spezialisten",
         ),
-        Noun("f", "Plakatkleberin", nom_pl="Plakatkleberinnen", status="Spezialisten"),
+        Noun("f", "Plakatkleberin", nom_pl="Plakatkleberinnen", status="Spezialisten")],
     ],
     514: [
         Noun("m", "Schaffner", "Schaffners", nom_pl="Schaffner", status="Fachkräfte"),
