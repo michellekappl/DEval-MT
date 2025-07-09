@@ -1,0 +1,7 @@
+colorama
+tqdm
+pandas
+numpy
+simalign
+rich
+spacy
