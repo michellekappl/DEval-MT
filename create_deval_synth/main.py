@@ -18,7 +18,7 @@ del groups["generic"]
 
 # copied from itertools documentation
 # https://docs.python.org/3/library/itertools.html#recipes
-def roundrobin(*iterables: Generator[Any]) -> Generator[Any]:
+def roundrobin(*iterables):
     "Visit input iterables in a cycle until each is exhausted."
     # roundrobin('ABC', 'D', 'EF') → A D E B F C
     # Algorithm credited to George Sakkis
@@ -39,7 +39,7 @@ statistics_csv = csv.reader(statistics_file, delimiter=";")
 
 # helper method to limit the number of items in a generator
 def limit(l: int):
-    def limiter(gen: Generator[Any]) -> Generator[Any]:
+    def limiter(gen):
         for _, item in zip(range(l), gen):
             yield item
 
