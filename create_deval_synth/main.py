@@ -333,6 +333,7 @@ class Template:
         Resolve a replacement within a template sentence, i.e. given two selected nouns x and y
         and an optional adjective, return the correct word form of the matched expression
         (something like <x_nom_sg> or <y_gen_pl>).
+
         Parameters
         ----------
         x : Noun
@@ -394,7 +395,7 @@ class Template:
     def satisfies_hierarchy(self, x: Noun, y: Noun) -> bool:
         """
         Checks whether the two selected nouns satisfy the hierarchy defined in the template.
-        If the hierarchy is None, returns True.
+        If the hierarchy is `None`, returns `True`.
         """
         if self.higher is None:
             return True
