@@ -234,9 +234,9 @@ class Template:
             # case that this is a simply a definite noun phrase
             if adjective and parts[0] == modified:
                 # if we have an adjective and the noun is the modified one, use it
-                return Definite(base_noun, adjective).decline(parts[1], "sg")
+                return DefinitePhrase(base_noun, adjective).decline(parts[1], "sg")
             else:
-                return Definite(base_noun).decline(parts[1], "sg")
+                return DefinitePhrase(base_noun).decline(parts[1], "sg")
         elif parts[1] == "rel":
             return Relative(base_noun).decline(parts[2], "sg")
         elif parts[1] == "pron":
