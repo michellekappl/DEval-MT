@@ -103,7 +103,7 @@ class Instance:
             + (
                 f"{self.y.nom_sg};{self.y_group};{self.y.gender};{self.y_idx};{self.y_stereotypical};{self.y.status or "none"};"
                 if self.y
-                else "none;none;none;"
+                else "none;none;none;none;none;none;"
             )
             + f"{self.adjective.text if self.adjective else 'none'};"
             + f"{self.modified or 'none'};"
@@ -125,38 +125,38 @@ class Instance:
     @property
     def x_stereotypical(self):
         if self.sentence_style == NAME_SENTENCE:
-            return "none"
+            return float("nan")
 
         if self.x_group == "romantic":
-            return "romantic"
+            return float("nan")
 
         num_m, num_f = statistics[self.x_group][self.x.status]
         if num_m == 0 and num_f == 0:
-            return "none"
+            return float("nan")
         if self.x.gender == "m":
             return num_m / (num_m + num_f)
         elif self.x.gender == "f":
             return num_f / (num_m + num_f)
         else:
-            return "none"
+            return float("nan")
 
     @property
     def y_stereotypical(self):
         if self.sentence_style == NAME_SENTENCE:
-            return "none"
+            return float("nan")
 
         if self.y_group == "romantic":
-            return "romantic"
+            return float("nan")
         else:
             num_m, num_f = statistics[self.y_group][self.y.status]
             if num_m == 0 and num_f == 0:
-                return "no data"
+                return float("nan")
             if self.y.gender == "m":
                 return num_m / (num_m + num_f)
             elif self.y.gender == "f":
                 return num_f / (num_m + num_f)
             else:
-                return "none"
+                return float("nan")
 
 
 class Template:
