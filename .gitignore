@@ -2,3 +2,4 @@ create_deval_synth/sorted_dataset.csv
 create_deval_synth/__pycache__/*
 create_deval_synth/__pycache__/*.pyc
 .DS_Store
+.vscode/

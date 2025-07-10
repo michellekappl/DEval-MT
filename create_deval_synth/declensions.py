@@ -25,13 +25,6 @@ class Declinable:
 class Noun(Declinable):
     """
     Represents a noun.
-
-    Attributes
-    ----------
-    gender : str
-        Gender of the noun based on its pronouns, _not_ its grammatical gender.
-        "m" (masculine), "f" (feminine), "d" (dey pronouns)
-
     """
 
     def __init__(
@@ -81,7 +74,11 @@ class Noun(Declinable):
         self.status = status
 
     @property
-    def gender(self):
+    def gender(self) -> str:
+        """
+        Gender of the noun based on its pronouns, _not_ its grammatical gender.
+        "m" (masculine), "f" (feminine), "d" (dey pronouns)
+        """
         if self.pronouns:
             lookup = {"er": "m", "sie": "f", "dey": "d"}
             return lookup[self.pronouns]
