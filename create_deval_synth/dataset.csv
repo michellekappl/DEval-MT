@@ -30,7 +30,7 @@ Als <x_nom> ankommt, leiht <y_nom> <x_pron_dat> einen riesigen Lastwagen.;none;[
 <y_nom> hilft <x_acc> und fordert <x_pron_acc> auf, sich keine Sorgen zu machen.;none;[];[]
 <x_nom> kann <y_acc> nicht verstehen, weil <x_pron_nom> nur Deutsch spricht.;none;[];[]
 <y_nom> schreit <x_acc> an und nennt <x_pron_acc> einen Dummkopf.;none;[];[]
-<x_nom> fährt <y_acc> um, weil <x_pron_nom> während am Handy war.;none;[];[]
+<x_nom> fährt <y_acc> um, weil <x_pron_nom> am Handy war.;none;[];[]
 <y_nom> ruft <x_acc> an und bittet <x_pron_acc>, einen Artikel über das Unternehmen zu schreiben.;none;[921, 922, 924];[]
 <y_nom> rettet <x_acc> vor der Menschenmenge und bringt <x_pron_acc> nach Hause.;none;[];[]
 Wenn Winter ist, besucht <x_nom> <y_acc> oft, weil <x_pron_nom> weniger arbeitet.;none;[];[]
