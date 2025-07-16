@@ -1,6 +1,6 @@
 from declensions import Name
 
-names = {
+names = [
     # Names
     Name("Toni Kroos", "m"),
     Name("Mesut Özil", "m"),
@@ -40,4 +40,4 @@ names = {
     Name("Kayra", "n"),
     Name("Lou", "n"),
     Name("Sascha", "n"),
-}
+]

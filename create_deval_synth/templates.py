@@ -1,15 +1,16 @@
-from itertools import chain
 import random
 import re
-from typing import Literal
+from itertools import chain
+from typing import Literal, TypeVar
+
 from declensions import (
-    Noun,
-    DefinitePhrase,
-    Relative,
-    Pronoun,
-    Possessive,
     Adjective,
+    DefinitePhrase,
     Name,
+    Noun,
+    Possessive,
+    Pronoun,
+    Relative,
 )
 
 # define constants for sentence styles
@@ -17,6 +18,18 @@ NORMAL_SENTENCE = 1
 ADJECTIVE_SENTENCE = 2
 ROMANTIC_SENTENCE = 3
 NAME_SENTENCE = 4
+
+
+T = TypeVar("T")
+
+
+def from_none(arg: T | None) -> T:
+    """
+    Only here for type checking and error reporting purposes. Returns an argument unchanged if it is not None.
+    """
+    if not arg:
+        raise ValueError("Argument cannot be None")
+    return arg
 
 
 class Instance:
@@ -27,13 +40,13 @@ class Instance:
 
     x: Noun
     """The first noun in the sentence."""
-    x_group: str
+    x_group: str | int
     """The group of the first noun (either "romantic" or a number corresponding to some job group)."""
     x_idx: int
     """The index of the first noun in the sentence (where "," is counted as a separate token)."""
     y: Noun | None
     """The second noun in the sentence, or None if this is a name sentence."""
-    y_group: str | None
+    y_group: str | int | None
     """The group of the second noun (either "romantic" or a number corresponding to some job group), or None if this is a name (style 4) sentence."""
     y_idx: int | None
     """The index of the second noun in the sentence (where "," is counted as a separate token), or None if this is a name sentence."""
@@ -51,11 +64,11 @@ class Instance:
     def __init__(
         self,
         x: Noun,
-        x_group: str,
+        x_group: str | int,
         x_idx: int,
-        y: Noun,
-        y_group: str,
-        y_idx: int,
+        y: Noun | None,
+        y_group: str | int | None,
+        y_idx: int | None,
         adjective: Adjective | None,
         modified: str | None,
         text: str,
@@ -85,9 +98,9 @@ class Instance:
     def __str__(self):
         return (
             f"{self.sentence_style};"
-            + f"{self.x.nom_sg};{self.x_group};{self.x.gender};{self.x_idx};{self.x_stereotypical};{self.x.status or "none"};"
+            + f"{self.x.nom_sg};{self.x_group};{self.x.gender};{self.x_idx};{self.x_stereotypical};{self.x.status or 'none'};"
             + (
-                f"{self.y.nom_sg};{self.y_group};{self.y.gender};{self.y_idx};{self.y_stereotypical};{self.y.status or "none"};"
+                f"{self.y.nom_sg};{self.y_group};{self.y.gender};{self.y_idx};{self.y_stereotypical};{self.y.status or 'none'};"
                 if self.y
                 else "none;none;none;none;none;none;"
             )
@@ -98,7 +111,9 @@ class Instance:
         )
 
     @property
-    def sentence_style(self) -> Literal[4, 3, 2, 1]:
+    def sentence_style(
+        self,
+    ) -> Literal[4, 3, 2, 1]:
         """The style of the sentence, one of the constants defined above.
         - NAME_SENTENCE (4) if this is a name sentence (i.e. y is None),
         - ROMANTIC_SENTENCE (3) if either x or y is in the romantic group,
@@ -140,13 +155,11 @@ class Instance:
         """The stereotypicality of the second noun: if y has gender g (m or f), then this is `num_g / (num_m + num_f)`,
         where `num_m` and `num_f` are the number of male and female instances, respectively.
         NaN if unapplicable."""
-        if (
-            self.sentence_style == NAME_SENTENCE
-            or self.sentence_style == ROMANTIC_SENTENCE
-        ):
+        if not self.y or self.sentence_style == ROMANTIC_SENTENCE:
             return float("nan")
         else:
             num_m, num_f = self.statistics[self.y_group][self.y.status]
+
             if num_m == 0 and num_f == 0:
                 return float("nan")
             if self.y.gender == "m":
@@ -172,7 +185,7 @@ class Template:
         self,
         row: list[str],
         statistics: dict,
-        groups: dict[str | int, list[Noun]],
+        groups: dict[str | int, list[list[Noun]]],
         adjectives: list[Adjective],
         names: list[Name],
     ):
@@ -185,11 +198,16 @@ class Template:
             A list containing the sentence template, hierarchy, and groups of nouns.
         statistics : dict
             A dictionary containing statistics for the job groups, used to calculate stereotypicality of the nouns.
-        groups : dict[str | int, list[Noun]], optional
+        groups : dict[str | int, list[list[Noun]]]
             A dictionary mapping group names or numbers to lists of nouns.
-        adjectives : list[Adjective], optional
+        adjectives : list[Adjective]
             A list of adjectives to use in the template.
+        names : list[Name]
+            A list of names to use in the template.
         """
+        groups_list = [
+            (x_group, x) for x_group, xs in groups.items() for job in xs for x in job
+        ]
 
         self.sentence = row[0].strip()  # the actual sentence template
         self.statistics = statistics
@@ -205,7 +223,10 @@ class Template:
         if hierarchy != "none":
             if ">" in hierarchy or "<" in hierarchy:
                 # check that the hierarchy variable is x or y
-                if hierarchy[0] in ("x", "y"):
+                if hierarchy[0] in (
+                    "x",
+                    "y",
+                ):
                     self.higher = hierarchy[0]
                 else:
                     raise ValueError(f"Invalid hierarchy: {hierarchy}")
@@ -220,24 +241,18 @@ class Template:
 
         # parse x groups from the row (this is a string of the form '[111, "romantic", 333]')
         x_groups = row[2].strip("[]").split(",")
-        for group in x_groups:
-            if group == "":
-                # if the group array is empty, add all groups except "romantic"
-                self.generic = True
-                for g in groups:
-                    if g != "romantic":
-                        self.xs.extend(map(lambda x: (g, x), groups[g]))
-            elif group == "romantic":
-                # find the romantic group and add it
-                # note that the mapping is necessary to keep track of the group name
-                self.xs.extend(map(lambda x: ("romantic", x), groups["romantic"]))
-                self.matching_x_groups.append("romantic")
-            elif int(group) in groups:
-                # see above
-                self.xs.extend(map(lambda x: (int(group), x), groups[int(group)]))
-                self.matching_x_groups.append(int(group))
-            else:
-                raise ValueError(f"Unknown group: {group}")
+
+        if x_groups[0] == "":
+            self.generic = True
+            self.xs = groups_list
+        else:
+            matching_groups = [
+                int(group) if group != "romantic" else group for group in x_groups
+            ]
+            self.xs = [
+                (x_group, x) for x_group, x in groups_list if x_group in matching_groups
+            ]
+            self.matching_x_groups = matching_groups
 
         # check if there is a <y> value in the sentence
         # if not, then this is a name (style 4) sentence
@@ -246,23 +261,46 @@ class Template:
 
         # otherwise, do exactly the same for ys
         if self.sentence_style != NAME_SENTENCE:
+            self.matching_y_groups = []
             self.ys = []
+            self.ys_by_gender: list[
+                tuple[
+                    int | str,
+                    list[Noun],
+                ]
+            ] = []
             y_groups = row[3].strip("[]").split(",")
-            for group in y_groups:
-                if group == "":
-                    # if group is empty, add all groups
-                    for g in groups:
-                        if g != "romantic":
-                            self.ys.extend(map(lambda x: (g, x), groups[g]))
-                elif group == "romantic":
-                    self.sentence_style = ROMANTIC_SENTENCE
-                    self.ys.extend(map(lambda x: ("romantic", x), groups["romantic"]))
-                elif int(group) in groups:
-                    self.ys.extend(map(lambda x: (int(group), x), groups[int(group)]))
-                else:
-                    raise ValueError(f"Unknown group: {group}")
+            if y_groups[0] == "":
+                self.ys = groups_list
+                self.ys_by_gender = [
+                    (y_group, y_genders)
+                    for y_group, y_list in groups.items()
+                    for y_genders in y_list
+                ]
+            else:
+                matching_groups = [
+                    int(group) if group != "romantic" else group for group in y_groups
+                ]
+                self.ys = [
+                    (y_group, y)
+                    for y_group, y in groups_list
+                    if y_group in matching_groups
+                ]
+                # necessary as we need to make sure that in the function gen_for_x,
+                # we can always
+                self.ys_by_gender = [
+                    (y_group, y_genders)
+                    for y_group, y_list in groups.items()
+                    for y_genders in y_list
+                    if y_group in matching_groups
+                ]
 
-    def resolve_name(self, x: Noun, name: Noun, match: re.Match) -> str:
+    def resolve_name(
+        self,
+        x: Noun,
+        name: Name,
+        match: re.Match,
+    ) -> str:
         """
         Resolve a replacement within a name sentence, i.e. given a selected noun x and a name for this sentence,
         return the correct word form of the matched expression (something like <name> or <x_nom_sg>).
@@ -321,7 +359,12 @@ class Template:
         # find the base noun
         base_noun = x if parts[0] == "x" else y
 
-        if parts[1] in ["nom", "gen", "dat", "acc"]:
+        if parts[1] in [
+            "nom",
+            "gen",
+            "dat",
+            "acc",
+        ]:
             # case that this is a simply a definite noun phrase like <x_nom_sg>
             if adjective and parts[0] == modified:
                 # if we have an adjective and the noun is the modified one, use it
@@ -349,9 +392,10 @@ class Template:
                 # something like <x_poss_acc>
                 other_noun = y if parts[0] == "x" else x  # complement to base_noun
                 case = parts[2]
-                return Possessive(base_noun, other_noun.grammatical_gender).decline(
-                    case, "sg"
-                )
+                return Possessive(
+                    base_noun,
+                    other_noun.grammatical_gender,
+                ).decline(case, "sg")
         elif parts[1] == "indef":
             # case that this is an indefinite noun phrase like <x_indef_nom>
             case = parts[2]
@@ -379,14 +423,24 @@ class Template:
         }
 
         if self.higher == "x":
-            return STATUS_HIERARCHY[x.status] > STATUS_HIERARCHY[y.status]
+            return (
+                STATUS_HIERARCHY[from_none(x.status)]
+                > STATUS_HIERARCHY[from_none(y.status)]
+            )
         elif self.higher == "y":
-            return STATUS_HIERARCHY[x.status] < STATUS_HIERARCHY[y.status]
+            return (
+                STATUS_HIERARCHY[from_none(x.status)]
+                < STATUS_HIERARCHY[from_none(y.status)]
+            )
         else:
             raise ValueError(f"Invalid hierarchy: {self.higher}")
 
     @staticmethod
-    def find_indices(text: str, x: Noun, y: Noun | None) -> tuple[int, int | None]:
+    def find_indices(
+        text: str,
+        x: Noun,
+        y: Noun | None,
+    ) -> tuple[int | None, int | None]:
         """
         Finds the indices of the first occurrences of x and y in the text.
         If y is None, returns None for the second index.
@@ -420,7 +474,9 @@ class Template:
         return x_idx, y_idx
 
     def gen_name(
-        self, xs: list[tuple[str, Noun]] = [], matching_names: list[Name] = []
+        self,
+        xs: list[tuple[str | int, Noun]] = [],
+        matching_names: list[Name] = [],
     ) -> list[Name]:
         """
         Generates instances of the template sentence by replacing placeholders with actual names.
@@ -464,7 +520,7 @@ class Template:
             instance = Instance(
                 x,
                 x_group,
-                x_idx,
+                from_none(x_idx),
                 None,
                 None,
                 None,
@@ -481,18 +537,18 @@ class Template:
 
     def gen_romantic(
         self,
-        xs: list[tuple[str, Noun]] = [],
-        ys: list[tuple[str, Noun]] = [],
+        xs: list[tuple[str | int, Noun]] = [],
+        ys: list[tuple[str | int, Noun]] = [],
     ):
         """
         Generates instances of the template sentence by replacing placeholders with actual nouns.
         This method generates instances for the romantic sentence style (3), where either x or y is in the romantic group.
         Parameters
         ----------
-        xs : list[tuple[str, Noun]], optional
+        xs : list[tuple[str | int, Noun]], optional
             A list of tuples containing the group name and the noun for the first placeholder (x).
             If empty, the default nouns from the template will be used.
-        ys : list[tuple[str, Noun]], optional
+        ys : list[tuple[str | int, Noun]], optional
             A list of tuples containing the group name and the noun for the second placeholder (y).
             If empty, the default nouns from the template will be used.
         """
@@ -527,10 +583,10 @@ class Template:
             instance = Instance(
                 x,
                 x_group,
-                x_idx,
+                from_none(x_idx),
                 y,
                 y_group,
-                y_idx,
+                from_none(y_idx),
                 None,
                 None,
                 text,
@@ -543,8 +599,8 @@ class Template:
 
     def gen_normal(
         self,
-        xs: list[tuple[str, Noun]] = [],
-        ys: list[tuple[str, Noun]] = [],
+        xs: list[tuple[str | int, Noun]] = [],
+        ys: list[tuple[str | int, Noun]] = [],
     ) -> list[Instance]:
         """
         Generates instances of the template sentence by replacing placeholders with actual nouns and adjectives.
@@ -553,10 +609,10 @@ class Template:
 
         Parameters
         ----------
-        xs : list[tuple[str, Noun]], optional
+        xs : list[tuple[str | int, Noun]], optional
             A list of tuples containing the group name and the noun for the first placeholder (x).
             If empty, the default nouns from the template will be used.
-        ys : list[tuple[str, Noun]], optional
+        ys : list[tuple[str | int, Noun]], optional
             A list of tuples containing the group name and the noun for the second placeholder (y).
             If empty, the default nouns from the template will be used.
         """
@@ -576,7 +632,14 @@ class Template:
         # yields tuples of the form (x_group, x, y_group, y, adjective, modified)
         # the latter two are unused
         base_generator = (
-            (x_group, x, y_group, y, None, None)
+            (
+                x_group,
+                x,
+                y_group,
+                y,
+                None,
+                None,
+            )
             for x_group, x in xs
             for y_group, y in ys
             if x_group != "romantic" and y_group != "romantic"
@@ -594,7 +657,14 @@ class Template:
         adjectives_generator = ()
         if self.adjectives:
             adjectives_generator = (
-                (x_group, x, y_group, y, adjective, modified)
+                (
+                    x_group,
+                    x,
+                    y_group,
+                    y,
+                    adjective,
+                    modified,
+                )
                 for x_group, x in xs
                 for y_group, y in ys
                 # the same logic as in base_generator, but with adjectives
@@ -604,16 +674,33 @@ class Template:
                 and x.gender != y.gender
                 and x.nom_sg != y.nom_sg
                 for adjective in self.adjectives
-                for modified in ["x", "y"]
+                for modified in [
+                    "x",
+                    "y",
+                ]
             )
 
-        for x_group, x, y_group, y, adjective, modified in chain(
-            base_generator, adjectives_generator
+        for (
+            x_group,
+            x,
+            y_group,
+            y,
+            adjective,
+            modified,
+        ) in chain(
+            base_generator,
+            adjectives_generator,
         ):
             # use regex to perform substitutions
             text = re.sub(
                 r"<([a-zA-Z_]*)>",
-                lambda m: self.resolve(x, y, adjective, modified, m),
+                lambda m: self.resolve(
+                    x,
+                    y,
+                    adjective,
+                    modified,
+                    m,
+                ),
                 self.sentence,
             )
             # capitalize the first letter of the substitution
@@ -623,10 +710,10 @@ class Template:
             instance = Instance(
                 x,
                 x_group,
-                x_idx,
+                from_none(x_idx),
                 y,
                 y_group,
-                y_idx,
+                from_none(y_idx),
                 adjective,
                 modified,
                 text,
@@ -637,7 +724,11 @@ class Template:
 
         return instances
 
-    def gen_for_x(self, x_group: int | str, x: Noun) -> list[Instance]:
+    def gen_for_xs(
+        self,
+        x_group: int | str,
+        x_list: list[Noun],
+    ) -> list[Instance]:
         """
         Generates instances of the template sentence for a specific noun x.
         This is useful for generating instances for a specific noun without having to generate all instances.
@@ -646,24 +737,46 @@ class Template:
         ----------
         x_group: int | str
             The group of the noun x.
-        x : Noun
+        x : list[Noun]
             The noun to generate instances for.
         """
-
-        xs = [(x_group, x)]
+        xs: list[tuple[int | str, Noun]] = list(
+            map(
+                lambda x: (x_group, x),
+                x_list,
+            )
+        )
 
         matching_names = []
         if self.sentence_style == NAME_SENTENCE:
+            name_sentences = []
             # get names that match gender of x
-            matching_names = [
-                name
-                for name in self.names
-                if name.gender == x.gender or name.gender == "n"
-            ]
-            matching_names = [random.choice(matching_names)]
-            return self.gen_name(xs, matching_names)
+            for _, x in xs:
+                if x.gender == "m":
+                    matching_names = [
+                        name
+                        for name in self.names
+                        if name.gender == x.gender or name.gender == "n"
+                    ]
+                elif x.gender == "f":
+                    matching_names = [
+                        name
+                        for name in self.names
+                        if name.gender == "f" or name.gender == "n"
+                    ]
+                else:
+                    matching_names = self.names
+                matching_names = [random.choice(matching_names)]
+                name_sentences.extend(
+                    self.gen_name(
+                        xs,
+                        matching_names,
+                    )
+                )
+            return name_sentences
         else:
-            ys = [random.choice(self.ys)]
+            y_group, y_jobs = random.choice(self.ys_by_gender)
+            ys = [(y_group, y) for y in y_jobs]
 
             if self.sentence_style == ROMANTIC_SENTENCE:
                 return self.gen_romantic(xs, ys)
