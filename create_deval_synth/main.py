@@ -3,7 +3,7 @@ import random
 import sys
 
 from adjectives import adjectives
-from groups_new import groups
+from groups import groups
 from names import names
 from templates import (
     NAME_SENTENCE,
