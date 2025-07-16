@@ -737,21 +737,16 @@ class Template:
         ----------
         x_group: int | str
             The group of the noun x.
-        x : list[Noun]
+        x_list : list[Noun]
             The noun to generate instances for.
         """
-        xs: list[tuple[int | str, Noun]] = list(
-            map(
-                lambda x: (x_group, x),
-                x_list,
-            )
-        )
+        xs = [(x_group, x) for x in x_list]
 
         matching_names = []
         if self.sentence_style == NAME_SENTENCE:
             name_sentences = []
             # get names that match gender of x
-            for _, x in xs:
+            for x in x_list:
                 if x.gender == "m":
                     matching_names = [
                         name
