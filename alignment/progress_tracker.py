@@ -4,7 +4,6 @@ from rich.progress import (
     TimeRemainingColumn, TimeElapsedColumn
 )
 
-
 class ProgressTracker:
     """
     Manages progress tracking for multiple processes

@@ -9,10 +9,12 @@ try:
     # Try relative imports first (when used as a package)
     from .live_dashboard import LiveDashboard
     from .output_capture import capture_all_output
+    from .word_alignment import WordAlignment
 except ImportError:
     # Fall back to absolute imports (when run directly)
     from live_dashboard import LiveDashboard
     from output_capture import capture_all_output
+    from word_alignment import WordAlignment
 
 class AlignmentProcessor:
     """
@@ -24,7 +26,7 @@ class AlignmentProcessor:
         self.token_type = token_type    # How to split words (e.g., "bpe")
         self.matching_method = matching_method  # Algorithm for matching (e.g., "itermax")
 
-    def __align_single__(self, original: str, translation: str, aligner: SentenceAligner) -> List[Tuple[int, int]]:
+    def __align_single__(self, original: str, translation: str, aligner: SentenceAligner) -> WordAlignment:
         """Align a single pair of sentences (find which words match)"""
         # Split sentences into individual words
         src_split = original.split()
@@ -33,26 +35,11 @@ class AlignmentProcessor:
         # Use the AI model to find alignments
         alignments = aligner.get_word_aligns(src_split, trg_split)
         
-        # Return the alignments using our chosen method
-        return alignments[self.matching_method]
+        # Return the alignments using our chosen method as a WordAlignment object
+        alignment_tuples = alignments[self.matching_method]
+        return WordAlignment(original, translation, alignment_tuples)
 
-    def __align_multiple__(self, originals: List[str], translations: List[str], queue: Queue, task_id: int = -1) -> List[List[Tuple[int, int]]]:
-        """Align multiple sentence pairs (this runs on each CPU core)"""
-        # Create the AI model (each process needs its own copy)
-        aligner = SentenceAligner(model=self.model, token_type=self.token_type, matching_methods="mai")
-        results = []
-        
-        # Process each sentence pair
-        for i, (src, trg) in enumerate(zip(originals, translations)):
-            aligned = self.__align_single__(src, trg, aligner)
-            results.append(aligned)
-
-            # Tell the main process: "I finished sentence number i+1"
-            queue.put(("progress", task_id, i + 1))
-
-        return results
-
-    def process_multiple(self, sources: List[List[str]], targets: List[List[str]]) -> None:
+    def process_multiple(self, sources: List[List[str]], targets: List[List[str]]) -> List[List[WordAlignment]]:
         """
         Main method that processes multiple translation sets using parallel processing
     
@@ -60,10 +47,17 @@ class AlignmentProcessor:
         - For each supertask, we divide the pages among multiple workers (CPU cores)
         - Each worker processes their pages and reports progress
         - We show everything in a live dashboard
+        
+        Returns:
+            List of results for each supertask, where each supertask contains
+            WordAlignment objects for all sentence pairs in that set
         """
         # Combine sources and targets into supertasks
         # Example: [(german_sentences, english_sentences), (german_sentences, spanish_sentences)]
         supertasks = list(zip(sources, targets))
+        
+        # Store results for all supertasks
+        all_results = []
 
         # Start the live dashboard
         with LiveDashboard(len(supertasks)) as live_dashboard:
@@ -93,7 +87,7 @@ class AlignmentProcessor:
                 # Create worker processes (like hiring multiple translators)
                 processes = [
                     Process(
-                        target=process_batch_worker,  # The function each worker will run
+                        target=alignment_worker,  # The function each worker will run
                         args=(self.model, self.token_type, self.matching_method,
                             batch[0], batch[1], queue, i)  # Arguments for the worker
                     )
@@ -104,8 +98,9 @@ class AlignmentProcessor:
                 for p in processes:
                     p.start()
 
-                # Keep track of which workers have finished
+                # Keep track of which workers have finished and their results
                 completed = set()
+                batch_results = {}  # Store results from each batch by task_id
 
                 # Main loop: listen for messages from workers until all are done
                 while len(completed) < len(processes):
@@ -123,6 +118,11 @@ class AlignmentProcessor:
                             _, task_id, content = msg
                             live_dashboard.add_log(task_id, content)
                             
+                        elif msg[0] == "results":
+                            # Worker says: "Here are my alignment results"
+                            _, task_id, results = msg
+                            batch_results[task_id] = results
+                            
                         elif msg[0] == "done":
                             # Worker says: "I'm completely finished"
                             completed.add(msg[1])
@@ -135,78 +135,65 @@ class AlignmentProcessor:
                 for p in processes:
                     p.join()
 
+                # Combine results from all batches in order
+                supertask_results = []
+                for i in range(len(batches)):
+                    if i in batch_results:
+                        supertask_results.extend(batch_results[i])
+                
+                # Add this supertask's results to the overall results
+                all_results.append(supertask_results)
+
                 # Update dashboard to show this translation set is complete
                 live_dashboard.finalize_supertask()
+        
+        # Return the results of the alignment
+        return all_results
 
 
-def align_sentences_batch(model, token_type, matching_method, originals, translations, queue, task_id):
+def alignment_worker(model: str, token_type: str, matching_method: str, originals: List[str], translations: List[str], queue: Queue, task_id: int):
     """
-    Helper function that creates an AlignmentProcessor and processes a batch of sentences
-    
-    This is what each worker process actually runs. It's separate from the main class
-    because of how Python multiprocessing works - each process needs its own copy of everything.
+    This is what each worker process runs:
+    1. Create the minimal AI model needed for alignment
+    2. Process each sentence pair 
+    3. Report progress back to main process
+    4. Send results back when done
     """
-    processor = AlignmentProcessor(model, token_type, matching_method)
-    return processor.__align_multiple__(originals, translations, queue, task_id)
+    def do_alignment():
+        # Create the AI model (each process needs its own copy)
+        aligner = SentenceAligner(model=model, token_type=token_type, matching_methods="mai")
+        results = []
+        
+        # Process each sentence pair
+        for i, (src, trg) in enumerate(zip(originals, translations)):
+            # Split sentences into individual words
+            src_split = src.split()
+            trg_split = trg.split()
+            
+            # Use the AI model to find alignments
+            alignments = aligner.get_word_aligns(src_split, trg_split)
+            
+            # Get the alignments using the specified method and create WordAlignment object
+            alignment_tuples = alignments[matching_method]
+            word_alignment = WordAlignment(src, trg, alignment_tuples)
+            results.append(word_alignment)
 
+            # Report progress: "I finished sentence number i+1"
+            queue.put(("progress", task_id, i + 1))
 
-def process_batch_worker(model, token_type, matching_method, originals, translations, queue: Queue, task_id: int):
-    """
-    The main function that each worker process runs
-    
-    This is like the job description for each worker:
-    1. Process your batch of sentences
-    2. Capture any output/messages you produce
-    3. Send those messages back to the main process
-    4. Report when you're done
-    """
-    def do_align():
-        """Wrapper function to do the actual alignment work"""
-        return align_sentences_batch(model, token_type, matching_method, originals, translations, queue, task_id)
+        return results
 
     # Run the alignment work and capture any output it produces
-    _, captured = capture_all_output(do_align)
+    results, captured = capture_all_output(do_alignment)
+
+    # Send the results back to the main process
+    queue.put(("results", task_id, results))
 
     # If the worker produced any output, send it back to main process
     if captured.strip():
         # Split output into lines and send each line separately
-        # (This prevents overwhelming the log display with huge messages)
         for line in captured.strip().splitlines():
             queue.put(("log", task_id, line))
 
     # Tell the main process: "I'm completely finished"
     queue.put(("done", task_id))
-
-
-if __name__ == "__main__":
-    # This prevents issues with multiprocessing on Windows
-    freeze_support()
-
-    # Example usage with dummy data
-    # In real usage, you would replace this with your actual sentence data
-    
-    # Each list represents one "translation set" (like one experiment or language pair)
-    fake_sources = [
-        # German sentences (100 copies of the same sentence for demonstration)
-        ["Der Geschäftsführer mochte die Friseurin, weil ihm die angebotenen Frisuren gefielen."] * 1000,
-        ["Der Geschäftsführer küsste seine Freundin."] * 2000,
-        ["Kim ist Manager."] * 1200
-    ]
-    fake_targets = [
-        # Corresponding translations
-        ["The manager liked the hairdresser because he liked the offered hairstyles."] * 1000,  # English
-        ["El gerente besó a su novia."] * 2000,  # Spanish
-        ["Kim est le manager."] * 1200  # French
-    ]
-
-    # Create the processor with specific settings
-    # - "bert": Use BERT model for word alignment
-    # - "bpe": Use Byte-Pair Encoding for tokenization
-    # - "itermax": Use iterative maximum matching algorithm
-    processor = AlignmentProcessor("bert", "bpe", "itermax")
-    
-    # Start processing! This will:
-    # 1. Show a live dashboard
-    # 2. Process each translation set using multiple CPU cores
-    # 3. Display progress and logs in real-time
-    processor.process_multiple(fake_sources, fake_targets)
