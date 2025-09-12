@@ -245,6 +245,12 @@ class Template:
         if x_groups[0] == "":
             self.generic = True
             self.xs = groups_list
+        elif x_groups[0] == "romantic":
+            self.sentence_style = ROMANTIC_SENTENCE
+            self.xs = [
+                (x_group, x) for x_group, x in groups_list if x_group == "romantic"
+            ]
+            self.matching_x_groups = ["romantic"]
         else:
             matching_groups = [
                 int(group) if group != "romantic" else group for group in x_groups
@@ -261,7 +267,7 @@ class Template:
 
         # otherwise, do exactly the same for ys
         if self.sentence_style != NAME_SENTENCE:
-            self.matching_y_groups = []
+            matching_y_groups = []
             self.ys = []
             self.ys_by_gender: list[
                 tuple[
@@ -272,28 +278,28 @@ class Template:
             y_groups = row[3].strip("[]").split(",")
             if y_groups[0] == "":
                 self.ys = groups_list
-                self.ys_by_gender = [
-                    (y_group, y_genders)
-                    for y_group, y_list in groups.items()
-                    for y_genders in y_list
-                ]
+                matching_y_groups = list(groups.keys())
+            elif y_groups[0] == "romantic":
+                self.sentence_style = ROMANTIC_SENTENCE
+                matching_y_groups = ["romantic"]
             else:
-                matching_groups = [
+                matching_y_groups = [
                     int(group) if group != "romantic" else group for group in y_groups
                 ]
-                self.ys = [
-                    (y_group, y)
-                    for y_group, y in groups_list
-                    if y_group in matching_groups
-                ]
-                # necessary as we need to make sure that in the function gen_for_x,
-                # we can always
-                self.ys_by_gender = [
-                    (y_group, y_genders)
-                    for y_group, y_list in groups.items()
-                    for y_genders in y_list
-                    if y_group in matching_groups
-                ]
+
+            self.ys = [
+                (y_group, y)
+                for y_group, y in groups_list
+                if y_group in matching_y_groups
+            ]
+            # necessary as we need to make sure that in the function gen_for_x,
+            # we can always find an argument of another gender
+            self.ys_by_gender = [
+                (y_group, y_genders)
+                for y_group, y_list in groups.items()
+                for y_genders in y_list
+                if y_group in matching_y_groups
+            ]
 
     def resolve_name(
         self,
