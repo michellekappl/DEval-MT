@@ -105,8 +105,6 @@ for template in filter(
 ):
     # make sure we have generate sentences with names and romantic groups
     xs = random.sample(template.xs, GEN_PER_TEMPLATE)
-    if template.sentence_style == ROMANTIC_SENTENCE:
-        print("Got romantic sentence")
     for x_group, x in xs:
         instances.extend(template.gen_for_xs(x_group, [x]))
 
