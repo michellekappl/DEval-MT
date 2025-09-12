@@ -91,7 +91,7 @@ class Instance:
         "sentence_style;"
         "x_nom_sg;x_group;x_gender;x_idx;x_stereotypical;x_level;"
         "y_nom_sg;y_group;y_gender;y_idx;y_stereotypical;y_level;"
-        "adjective;modified;name;name.gender;text"
+        "adjective;modified;name;name_gender;text"
     )
     """The header for the CSV file, describing the fields in the same order as they are in the string representation."""
 
