@@ -1,30 +1,22 @@
 import os
-from multiprocessing import Process, Queue, freeze_support
-from typing import List, Tuple
+from multiprocessing import Process, Queue
+from typing import List
+import pandas as pd
+from simalign import SentenceAligner
 
-from simalign import SentenceAligner  # Make sure simalign is installed
-
-# Import our custom classes - handle both relative and absolute imports
-try:
-    # Try relative imports first (when used as a package)
-    from .live_dashboard import LiveDashboard
-    from .output_capture import capture_all_output
-    from .word_alignment import WordAlignment
-except ImportError:
-    # Fall back to absolute imports (when run directly)
-    from live_dashboard import LiveDashboard
-    from output_capture import capture_all_output
-    from word_alignment import WordAlignment
+from Dataset import DEvalDataset  # Note: Make sure simalign is installed
+from alignment.live_dashboard import LiveDashboard
+from alignment.output_capture import capture_all_output
+from alignment.word_alignment import WordAlignment
 
 class AlignmentProcessor:
-    """
-    Main class that handles word alignment between source and target sentences
-    """
-    def __init__(self, model: str, token_type: str, matching_method: str):
-        # For more information about these parameters, see the simalign documentation (https://github.com/cisnlp/simalign)
-        self.model = model              # AI model to use (e.g., "bert")
-        self.token_type = token_type    # How to split words (e.g., "bpe")
-        self.matching_method = matching_method  # Algorithm for matching (e.g., "itermax")
+    """Handles word alignment between source and target sentences."""
+    def __init__(self, model: str, token_type: str, matching_method: str, *, use_multiprocessing: bool = True, max_workers: int | None = None):
+        self.model = model
+        self.token_type = token_type
+        self.matching_method = matching_method
+        self.use_multiprocessing = use_multiprocessing
+        self.max_workers = max_workers
 
     def __align_single__(self, original: str, translation: str, aligner: SentenceAligner) -> WordAlignment:
         """Align a single pair of sentences (find which words match)"""
@@ -39,115 +31,139 @@ class AlignmentProcessor:
         alignment_tuples = alignments[self.matching_method]
         return WordAlignment(original, translation, alignment_tuples)
 
-    def process_multiple(self, sources: List[List[str]], targets: List[List[str]]) -> List[List[WordAlignment]]:
-        """
-        Main method that processes multiple translation sets using parallel processing
-    
-        - Each set of original & translated sentences is a "supertask"
-        - For each supertask, we divide the pages among multiple workers (CPU cores)
-        - Each worker processes their pages and reports progress
-        - We show everything in a live dashboard
-        
-        Returns:
-            List of results for each supertask, where each supertask contains
-            WordAlignment objects for all sentence pairs in that set
-        """
-        # Combine sources and targets into supertasks
-        # Example: [(german_sentences, english_sentences), (german_sentences, spanish_sentences)]
-        supertasks = list(zip(sources, targets))
-        
-        # Store results for all supertasks
-        all_results = []
+    @classmethod
+    def read_from_file(cls, filepath: str) -> List[WordAlignment]:
+        """Read alignments from a file and return a list of WordAlignment objects."""
+        alignments = []
+        raw_alignments: pd.DataFrame = pd.read_csv(filepath)
+        for _, row in raw_alignments.iterrows():
+            source = row['source']
+            target = row['target']
+            alignment_str = row['alignment']
+            alignment_tuples = []
+            for pair in alignment_str.split():
+                src_idx, trg_idx = map(int, pair.split('-'))
+                alignment_tuples.append((src_idx, trg_idx))
+            alignments.append(WordAlignment(source, target, alignment_tuples))
+        return alignments
 
-        # Start the live dashboard
-        with LiveDashboard(len(supertasks)) as live_dashboard:
-            
-            # Process each translation set
+
+    def process_multiple(self, ds: DEvalDataset, original_column: str, translation_columns: List[str] | None = None) -> dict[str, List[WordAlignment]]:
+        """Process translation columns in a dataset and produce word alignments.
+
+        Args:
+            ds: DEvalDataset instance with a source column and translation columns registered.
+            translation_columns: Optional explicit list of dataset column names containing translations.
+                If None, all registered translation columns (ds.translation_columns.values()) are used.
+
+        Returns:
+            Dict[str, List[WordAlignment]] mapping each translation column name to a list of WordAlignment objects.
+        """
+        # Choose source column
+        if original_column in ds.df.columns:
+            source_series = ds.df[original_column]
+        else:
+            raise ValueError(f"Dataset requires a source sentence column that matches the provided column name ('{original_column}').")
+
+        # Determine translation columns
+        if translation_columns is None:
+            translation_columns = list(ds.translation_columns.values())
+            if not translation_columns:
+                raise ValueError("No translation columns registered. Use ds.add_translations or ds.translate first.")
+        else:
+            missing = [c for c in translation_columns if c not in ds.df.columns]
+            if missing:
+                raise ValueError(f"Missing translation columns: {missing}")
+
+        base_source = source_series.tolist()
+        targets = [ds.df[col].tolist() for col in translation_columns]
+        labels = translation_columns
+        supertasks = list(zip([base_source]*len(targets), targets))
+
+        all_results: dict[str, List[WordAlignment]] = {}
+
+        with LiveDashboard(len(supertasks), labels=labels) as live_dashboard:
             for supertask_idx, (original, translation) in enumerate(supertasks):
-                
-                # 1. Decide how many workers (CPU cores) to use
-                #    Don't use more workers than sentences, and don't exceed available CPU cores
-                num_batches = min(len(original), os.cpu_count() or 1)
-                
-                # 2. Calculate how many sentences each worker gets
+                current_label = labels[supertask_idx]
+
+                # Determine parallelism parameters,
+                # i.e. number of batches to split into depending on CPU core count and max_workers parameter
+                cpu_count = os.cpu_count() or 1
+                configured_workers = self.max_workers if (self.max_workers is not None and self.max_workers > 0) else cpu_count
+                num_batches = min(len(original), configured_workers)
                 batch_size = max(1, len(original) // num_batches)
-                
-                # 3. Split sentences into batches (like giving each worker a stack of pages)
                 batches = [
-                    (original[i:i + batch_size], translation[i:i + batch_size])
+                    (original[i:i+batch_size], translation[i:i+batch_size])
                     for i in range(0, len(original), batch_size)
                 ]
 
-                # Setup the dashboard to show progress for this translation set
                 live_dashboard.setup_supertask(supertask_idx, batches)
+                batch_results = {}
 
-                # Create a communication channel between workers and main process
-                queue = Queue()  # Like a mailbox where workers can send messages
-                
-                # Create worker processes (like hiring multiple translators)
-                processes = [
-                    Process(
-                        target=alignment_worker,  # The function each worker will run
-                        args=(self.model, self.token_type, self.matching_method,
-                            batch[0], batch[1], queue, i)  # Arguments for the worker
-                    )
-                    for i, batch in enumerate(batches)
-                ]
+                if self.use_multiprocessing and num_batches > 1 and __name__ == '__main__':
+                    print("Using multiprocessing with {} batches".format(num_batches))
+                    # Multiprocessing path
+                    queue = Queue()
+                    processes = [
+                        Process(
+                            target=alignment_worker,
+                            args=(self.model, self.token_type, self.matching_method, b[0], b[1], queue, i)
+                        ) for i, b in enumerate(batches)
+                    ]
+                    for p in processes:
+                        p.start()
 
-                # Start all worker processes (like telling all translators to start working)
-                for p in processes:
-                    p.start()
+                    completed = set()
+                    while len(completed) < len(processes):
+                        try:
+                            msg = queue.get(timeout=0.1)
+                            kind = msg[0]
+                            if kind == "progress":
+                                _, task_id, step = msg
+                                live_dashboard.update_progress(task_id, step)
+                            elif kind == "log":
+                                _, task_id, content = msg
+                                live_dashboard.add_log(task_id, content)
+                            elif kind == "results":
+                                _, task_id, results = msg
+                                batch_results[task_id] = results
+                            elif kind == "done":
+                                completed.add(msg[1])
+                        except:
+                            pass
 
-                # Keep track of which workers have finished and their results
-                completed = set()
-                batch_results = {}  # Store results from each batch by task_id
+                    for p in processes:
+                        p.join()
+                else:
+                    print("Using single-process mode with {} batches".format(num_batches))
+                    if __name__ != '__main__':
+                        print("⚠️ Warning: Multiprocessing disabled because __name__ != '__main__'. This is expected in notebooks or scripts without a __main__ guard and can be fixed by adding a __main__ guard around the main script.")
+                    # Single-process fallback (spawn-safe; good for notebooks or scripts without __main__ guard)
+                    for i, (orig_batch, trg_batch) in enumerate(batches):
+                        def do_alignment_inline():
+                            aligner = SentenceAligner(model=self.model, token_type=self.token_type, matching_methods="i")
+                            results = []
+                            for step, (src, trg) in enumerate(zip(orig_batch, trg_batch), start=1):
+                                src_split = src.split()
+                                trg_split = trg.split()
+                                aligns = aligner.get_word_aligns(src_split, trg_split)
+                                tuples = aligns[self.matching_method]
+                                results.append(WordAlignment(src, trg, tuples))
+                                live_dashboard.update_progress(i, step)
+                            return results
+                        results, captured = capture_all_output(do_alignment_inline)
+                        if captured.strip():
+                            for line in captured.strip().splitlines():
+                                live_dashboard.add_log(i, line)
+                        batch_results[i] = results
 
-                # Main loop: listen for messages from workers until all are done
-                while len(completed) < len(processes):
-                    try:
-                        # Check if any worker sent a message (with 0.1 second timeout)
-                        msg = queue.get(timeout=0.1)
-                        
-                        if msg[0] == "progress":
-                            # Worker says: "I finished sentence X"
-                            _, task_id, step = msg
-                            live_dashboard.update_progress(task_id, step)
-                            
-                        elif msg[0] == "log":
-                            # Worker says: "Here's what I'm doing..."
-                            _, task_id, content = msg
-                            live_dashboard.add_log(task_id, content)
-                            
-                        elif msg[0] == "results":
-                            # Worker says: "Here are my alignment results"
-                            _, task_id, results = msg
-                            batch_results[task_id] = results
-                            
-                        elif msg[0] == "done":
-                            # Worker says: "I'm completely finished"
-                            completed.add(msg[1])
-                            
-                    except:
-                        # No message received in 0.1 seconds, continue checking
-                        pass
-
-                # Wait for all worker processes to completely finish
-                for p in processes:
-                    p.join()
-
-                # Combine results from all batches in order
-                supertask_results = []
+                supertask_results: List[WordAlignment] = []
                 for i in range(len(batches)):
                     if i in batch_results:
                         supertask_results.extend(batch_results[i])
-                
-                # Add this supertask's results to the overall results
-                all_results.append(supertask_results)
-
-                # Update dashboard to show this translation set is complete
+                all_results[current_label] = supertask_results
                 live_dashboard.finalize_supertask()
-        
-        # Return the results of the alignment
+
         return all_results
 
 
@@ -160,8 +176,8 @@ def alignment_worker(model: str, token_type: str, matching_method: str, original
     4. Send results back when done
     """
     def do_alignment():
-        # Create the AI model (each process needs its own copy)
-        aligner = SentenceAligner(model=model, token_type=token_type, matching_methods="mai")
+        # Create the AI model (each process needs its own copy); only compute itermax ('i') for efficiency
+        aligner = SentenceAligner(model=model, token_type=token_type, matching_methods="i")
         results = []
         
         # Process each sentence pair
@@ -189,7 +205,7 @@ def alignment_worker(model: str, token_type: str, matching_method: str, original
     # Send the results back to the main process
     queue.put(("results", task_id, results))
 
-    # If the worker produced any output, send it back to main process
+    # # If the worker produced any output, send it back to main process
     if captured.strip():
         # Split output into lines and send each line separately
         for line in captured.strip().splitlines():

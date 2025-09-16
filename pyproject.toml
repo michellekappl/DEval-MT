@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deval-mt"
+version = "0.1.0"
+description = "Gender Bias Evaluation for Machine Translation (SDK only)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [ { name = "DEval-MT Team" } ]
+dependencies = [
+   "pandas",
+   "numpy",
+   "simalign",
+   "rich",
+   "spacy",
+]
+
+[project.optional-dependencies]
+arabic = ["qalsadi"]
+
+[tool.setuptools]
+py-modules = ["sdk", "Dataset", "analysis"]
+packages = ["alignment", "morphological_analysis", "deval_mt"]
