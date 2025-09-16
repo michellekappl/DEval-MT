@@ -1,69 +1,68 @@
-evaluator = GenderBiasEvaluator("data_huge.csv")
-sentences = evaluator.get_source_sentences()
-evaluator.export_sentences("sentences.txt")
 # DEval-MT (SDK only)
-
 Python SDK to evaluate gender in MT outputs using alignment + morphological analyzers.
 
 ## Install
-
 ```bash
+# install in editable mode, since this is a dev repo and not yet available in package managers
 pip install -e .
 python -m spacy download es_dep_news_trf
 python -m spacy download fr_dep_news_trf
 ```
 
 ## Minimal usage
-
 ```python
 import pandas as pd
-from deval_mt import (
-  DEvalDataset,
-  run_subject_pipeline,
-  evaluate_processed_dataset,
-  SpaCyMorphAnalyzer,
-)
+from Dataset import DEvalDataset
+from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
+from morphological_analysis.base_analyzer import BaseMorphologicalAnalyzer
+from sdk import run_subject_pipeline, evaluate_processed_dataset
 
-df = pd.read_csv("full_data.csv", sep=";")
-ds = DEvalDataset(df, text_column="text")
+def main():
+   df = pd.read_csv("full_data.csv", sep=";")
+   df = df[df["sentence_style"] == 1][1:25]
+   ds = DEvalDataset(df, text_column="text")
 
-# Attach translations (must align with row order)
-ds.add_translations("es", es_lines, "es")
-ds.add_translations("fr", fr_lines, "fr")
 
-# Build analyzers (loaded by you)
-analyzers = {
-  "es": SpaCyMorphAnalyzer("es_dep_news_trf"),
-  "fr": SpaCyMorphAnalyzer("fr_dep_news_trf"),
-}
-for a in analyzers.values():
-  a.load()
+   # load translations from a file
+   list_of_es_translations = pd.read_csv("translations/es_1.txt", header=None, sep=";")[0].tolist()
+   list_of_fr_translations = pd.read_csv("translations/fr_1.txt", header=None, sep=";")[0].tolist()
 
-# Process for X subject and evaluate
-processed = run_subject_pipeline(
-  ds,
-  analyzers=analyzers,
-  source_column="text",
-  subject_index_column="x_idx",
-  output_prefix="x",
-  languages=["es","fr"],
-  article_offset=0,
-  # If you run this from a notebook or a script without a __main__ guard,
-  # set use_multiprocessing=False to avoid spawn errors.
-  # use_multiprocessing=False,
-)
+   # Add translations (must match row count)
+   ds.add_translations("es", list_of_es_translations, "es")
+   ds.add_translations("fr", list_of_fr_translations, "fr")
 
-metrics, metrics_df = evaluate_processed_dataset(
-  processed,
-  ["es","fr"],
-  gold_gender_column="x_gender",
-  output_prefix="x",
-)
-print(metrics_df)
+   # Build and load analyzers explicitly
+   morph_es = SpaCyMorphAnalyzer("es_dep_news_trf"); morph_es.load()
+   morph_fr = SpaCyMorphAnalyzer("fr_dep_news_trf"); morph_fr.load()
+   analyzers: dict[str, BaseMorphologicalAnalyzer] = {
+      "es": morph_es,
+      "fr": morph_fr,
+   }
+
+   # Run for x subject
+   df_x = run_subject_pipeline(
+      ds,
+   analyzers=analyzers,
+      source_column="text",
+      subject_index_column="x_idx",
+      output_prefix="x",
+      article_offset=-1,
+      use_multiprocessing=False
+   )
+
+   # Persist individual processed variants
+   df_x.to_csv("processed_x.csv", sep=";", index=False)
+
+   metrics_x, df_metrics_x = evaluate_processed_dataset(ds.df, ["es","fr"], gold_gender_column="x_gender", output_prefix="x")
+
+   df_metrics_x.to_csv("metrics_x.csv", sep=";", index=False)
+
+if __name__ == '__main__':
+   main()
+
+
+import pandas as pd
+
+pd.read_csv("metrics_x.csv", sep=";")
+pd.read_csv("processed_x.csv", sep=";").columns
 ```
-
-## Notes
-- SDK does not auto-load analyzers. Call `load()` on spaCy analyzers yourself.
-- Accuracy-only metrics for now; extend in `analysis.py` later as needed.
-- Multiprocessing: On macOS/Windows, ensure your script uses `if __name__ == "__main__":` when running in parallel.
-  Alternatively, pass `use_multiprocessing=False` (and optionally `max_workers=1`) to run single-process safely.
