@@ -13,10 +13,10 @@ from morphological_analysis.base_analyzer import BaseMorphologicalAnalyzer
 from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
 from sdk import run_subject_pipeline
 
-def example_data(style: int) -> DEvalDataset:
+def example_data() -> DEvalDataset:
    # if style_processed file aready exists, load it
-   if os.path.exists(f"style_{style}_processed.csv"):
-      ds = DEvalDataset.from_csv(f"style_{style}_processed.csv", text_column="text", sep=";", translation_columns={
+   if os.path.exists(f"test_data_processed.csv"):
+      ds = DEvalDataset.from_csv(f"test_data_processed.csv", text_column="text", sep=";", translation_columns={
          "es": "es",
          "fr": "fr"
       }, prediction_columns={
@@ -25,15 +25,13 @@ def example_data(style: int) -> DEvalDataset:
       })
       return ds
    else:
-      print(f"style_{style}_processed.csv not found, creating from scratch...")
-      df = pd.read_csv(f"style_{style}.csv", sep=";")
-      # df = df[df["sentence_style"] == 1][1:25]
+      print(f"test_data_processed.csv not found, creating from scratch...")
+      df = pd.read_csv(f"test_data/test_data.csv", sep=";")
       ds = DEvalDataset(df, text_column="text")
 
-
       # load translations from a file
-      list_of_es_translations = pd.read_csv(f"translations/es_{style}.txt", header=None, sep=";")[0].tolist()
-      list_of_fr_translations = pd.read_csv(f"translations/fr_{style}.txt", header=None, sep=";")[0].tolist()
+      list_of_es_translations = pd.read_csv(f"test_data/translations/es.txt", header=None, sep=";")[0].tolist()
+      list_of_fr_translations = pd.read_csv(f"test_data/translations/fr.txt", header=None, sep=";")[0].tolist()
 
       # Add translations (must match row count)
       ds.add_translations("es", list_of_es_translations, "es")
@@ -58,19 +56,15 @@ def example_data(style: int) -> DEvalDataset:
          use_multiprocessing=False
       )
 
-      # Persist individual processed variants
-      df_x.df.to_csv(f"style_{style}_processed.csv", sep=";", index=False)
-
       return ds
-
-
-
+   
 """Run comprehensive examples of all analysis methods."""
 print("=== DEval-MT Analysis Examples ===\n")
 
 # Create sample data
 if __name__ == '__main__':
-   ds1 = example_data(1)
+   ds1 = example_data()
+   ds1.df.to_csv("test_data_processed.csv", sep=";", index=False)
 
 # 1. Error Analysis
 print("1. ERROR ANALYSIS")
