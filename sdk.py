@@ -1,31 +1,14 @@
-"""High-level SDK facade for streamlined pipeline usage.
-
-This wraps the current prototype steps (see test.py) into a minimal, opinionated
-API while still allowing customization (custom analyzers, model names, etc.).
-
-Alignment note: only the 'itermax' matching method is currently supported for
-performance and simplicity. The parameter is still exposed for future‑proofing.
-
-Primary entrypoints:
-   - evaluate_processed_dataset(...): runs metrics on an already processed dataframe
-   - run_full_pipeline(...): convenience = build + evaluate
-
-The functions return pandas DataFrames / dicts so users can further analyze.
-"""
 from __future__ import annotations
 
-from typing import Iterable, List, Optional, Mapping
+from typing import List, Optional, Mapping
 import pandas as pd
 
 from Dataset import DEvalDataset
 from alignment import AlignmentProcessor
 from alignment.word_alignment import WordAlignment
 from morphological_analysis.base_analyzer import BaseMorphologicalAnalyzer
-from analysis import evaluate_dataset, metrics_to_dataframe
 from morphological_analysis.gender import Gender
-
-# NOTE: Analyzers passed to SDK functions must already be fully initialized
-# (e.g., spaCy models loaded). The SDK will not auto-load analyzers.
+from analysis import ErrorAnalysis, ConfusionMatrix, LogisticRegressionAnalysis
 
 def run_subject_pipeline(
    dataset: DEvalDataset,
@@ -46,7 +29,7 @@ def run_subject_pipeline(
    # Parallelism
    use_multiprocessing: bool = True,
    max_workers: Optional[int] = None,
-) -> pd.DataFrame:
+) -> DEvalDataset:
    """Run alignment + phrase extraction + gender detection for ONE subject column.
 
    This function is deliberately generic; to evaluate multiple annotated
@@ -61,8 +44,6 @@ def run_subject_pipeline(
       Name of the source text column.
    subject_index_column : str
       Column containing integer index of the (head) subject token in source.
-   # Note: The gold gender column is not used during processing; it's only
-   # used at evaluation time. See run_full_pipeline/evaluate_processed_dataset.
    output_prefix : str | None
       Prefix for generated columns. If None and subject_index_column ends
       with '_idx', that prefix is derived (e.g. 'x_idx' -> 'x'). Otherwise
@@ -138,90 +119,18 @@ def run_subject_pipeline(
          raise KeyError(f"No analyzer provided for language '{lang}'.")
       analyzer = analyzers[lang]
       tokens = analyzer.tokenize_sentence(phrase)
-      return str(analyzer.get_phrase_gender(tokens)) if tokens else 'unknown'
+      return analyzer.get_phrase_gender(tokens).name if tokens else 'unknown'
 
    for lang in languages:
       dataset.df[f'{output_prefix}_gender_{lang}'] = dataset.df[f'{output_prefix}_phrase_{lang}'].apply(lambda p: predict_gender(lang, p))
+      dataset.prediction_columns[lang] = f'{output_prefix}_gender_{lang}'
 
-   # 6. Return augmented dataframe copy
-   return dataset.df.copy()
-
-def evaluate_processed_dataset(
-   df: pd.DataFrame,
-   languages: Iterable[str],
-   *,
-   gold_gender_column: str,
-   output_prefix: str = 'subject',
-):
-   """Evaluate processed dataframe against an explicit gold gender column."""
-   # Default parsers preserving prior behavior
-   def _parse_gold(v):
-      if pd.isna(v):
-         return Gender.UNKNOWN
-      s = str(v).strip().lower()
-      return {'m': Gender.MASCULINE, 'f': Gender.FEMININE, 'd': getattr(Gender, 'DIVERSE', Gender.UNKNOWN)}.get(s, Gender.UNKNOWN)
-
-   def _parse_pred(v):
-      if v is None or (isinstance(v, float) and pd.isna(v)):
-         return Gender.UNKNOWN
-      s = str(v).strip().lower()
-      if s in {'', 'unknown', 'none'}:
-         return Gender.UNKNOWN
-      if s.startswith('gender.'):
-         tail = s.split('.', 1)[1]
-         return {
-            'masculine': Gender.MASCULINE,
-            'feminine': Gender.FEMININE,
-            'diverse': getattr(Gender, 'DIVERSE', Gender.UNKNOWN),
-            'unknown': Gender.UNKNOWN,
-         }.get(tail, Gender.UNKNOWN)
-      return {'m': Gender.MASCULINE, 'f': Gender.FEMININE, 'd': getattr(Gender, 'DIVERSE', Gender.UNKNOWN)}.get(s, Gender.UNKNOWN)
-
-   metrics = evaluate_dataset(
-      df,
-      languages,
-      gold_columns=(gold_gender_column,),
-      predicted_prefix=f'{output_prefix}_gender_',
-      parse_gold=_parse_gold,
-      parse_pred=_parse_pred,
-   )
-   return metrics, metrics_to_dataframe(metrics)
-
-def run_full_pipeline(
-   dataset: DEvalDataset,
-   analyzers: Mapping[str, BaseMorphologicalAnalyzer],
-   *,
-   source_column: str,
-   subject_index_column: str,
-   subject_gender_column: str,
-   output_prefix: Optional[str] = None,
-   languages: Optional[List[str]] = None,
-   inplace: bool = True,
-   **kwargs,
-):
-   """End-to-end convenience for a single subject annotation set.
-
-   Example (x & y subjects evaluated separately):
-      df_x, metrics_x, metrics_df_x = run_full_pipeline(ds, source_column='text', subject_index_column='x_idx', subject_gender_column='x_gender', output_prefix='x')
-      df_y, metrics_y, metrics_df_y = run_full_pipeline(ds, source_column='text', subject_index_column='y_idx', subject_gender_column='y_gender', output_prefix='y', languages=['es','fr'])
-   """
-   processed_df = run_subject_pipeline(
-      dataset,
-      source_column=source_column,
-      subject_index_column=subject_index_column,
-      output_prefix=output_prefix,
-      languages=languages,
-      analyzers=analyzers,
-   inplace=inplace,
-      **kwargs,
-   )
-   langs = languages or list(dataset.translation_columns.keys())
-   prefix = output_prefix or (subject_index_column[:-4] if subject_index_column.endswith('_idx') else 'subject')
-   metrics, metrics_df = evaluate_processed_dataset(processed_df, langs, gold_gender_column=subject_gender_column, output_prefix=prefix)
-   return processed_df, metrics, metrics_df
+   # 6. Return augmented dataset
+   return dataset
 
 __all__ = [
    'run_subject_pipeline',
-   'evaluate_processed_dataset',
-   'run_full_pipeline',
+   'ErrorAnalysis',
+   'ConfusionMatrix',
+   'LogisticRegressionAnalysis',
 ]

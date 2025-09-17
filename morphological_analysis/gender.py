@@ -8,8 +8,8 @@ class Gender(Enum):
    It can be used for annotation / evaluation so users can explicitly label such cases. 
    If an analyzer cannot determine it, it should fall back to UNKNOWN.
    """
-   MASCULINE = "masculine"
-   FEMININE = "feminine"
-   NEUTER = "neuter"
-   DIVERSE = "diverse"   # non-binary / inclusive forms
-   UNKNOWN = "unknown"
+   MASCULINE = "Gender.MASCULINE"
+   FEMININE = "Gender.FEMININE"
+   NEUTER = "Gender.NEUTER"
+   DIVERSE = "Gender.DIVERSE"   # non-binary / inclusive forms
+   UNKNOWN = "Gender.UNKNOWN"

@@ -10,10 +10,13 @@ class DEvalConfig:
 
 class DEvalDataset:
    def __init__(self, df: pd.DataFrame, text_column: str):
-      self.translation_columns = {}
+      self.translation_columns: dict[str, str] = {}
       self.text_column = text_column
       self.path = None
       self.df = df.copy()
+      self.aligned = False
+      self.morph_analyzed = False
+      self.prediction_columns: dict[str, str] = {}
 
    def clone(self) -> 'DEvalDataset':
       """Return a deep-ish copy of this dataset.
@@ -28,9 +31,17 @@ class DEvalDataset:
       return new
 
    @classmethod
-   def from_csv(cls, path: str, text_column: str, sep: str = ","):
+   def from_csv(cls, 
+               path: str, 
+               text_column: str, 
+               translation_columns: dict[str, str], 
+               prediction_columns: Optional[dict[str, str]] = None,
+               sep: str = ","):
       df = pd.read_csv(path, sep=sep)
       instance = cls(df, text_column)
+      instance.translation_columns = translation_columns
+      if prediction_columns is not None:
+         instance.prediction_columns = prediction_columns
       instance.path = path
       return instance
 
