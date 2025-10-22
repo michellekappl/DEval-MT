@@ -1,0 +1,8 @@
+pandas
+numpy
+simalign
+rich
+spacy
+scipy
+statsmodels
+scikit-learn
