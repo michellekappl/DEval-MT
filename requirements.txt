@@ -6,3 +6,4 @@ spacy
 scipy
 statsmodels
 scikit-learn
+statsmodels
