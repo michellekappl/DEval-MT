@@ -1460,21 +1460,6 @@ groups = {
         [
             Noun(
                 "m",
-                "Altbausanierer",
-                "Altbausanierers",
-                nom_pl="Altbausanierer",
-                status="Fachkräfte",
-            ),
-            Noun(
-                "f",
-                "Altbausaniererin",
-                nom_pl="Altbausaniererinnen",
-                status="Fachkräfte",
-            ),
-        ],
-        [
-            Noun(
-                "m",
                 "Baustellenprüfer",
                 "Baustellenprüfers",
                 nom_pl="Baustellenprüfer",
