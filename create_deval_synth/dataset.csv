@@ -1,24 +1,29 @@
 sentence ;style
-[x_nom] liebt [x_poss_f_nom] Arbeit.;[normal_pron]
-[x_nom] arbeitet gern in [x_poss_n_dat] Team.;[normal_pron]
-[x_nom] freut sich über [x_poss_f_acc] Gehaltserhöhung.;[normal_pron]
-[x_nom] ist stolz auf sich und [x_poss_f_acc] Leistung.;[normal_pron]
-[x_nom] ärgert sich darüber, dass [x_pron_nom] einen Fehler gemacht hat.;[normal_pron]
-[x_nom] gesteht sich ein, dass [x_pron_nom] noch keine Entscheidung getrof.;[normal_pron]
-[x_nom] bittet jemanden [x_pron_dat] zu helfen.;[normal_pron]
-[x_nom] informiert das Team, dass [x_pron_nom] mehr Zeit benötigt.;[normal_pron]
-[x_nom] betont, dass [x_poss_f_nom] Entscheidung final ist.;[normal_pron]
-[x_nom] merkt, dass [x_pron_nom] überfordert ist.;[normal_pron]
-[x_nom] hat schlechte Laune, weil [x_pron_nom] gestresst ist.;[normal_pron]
-[x_nom] isst Abendbrot, weil [x_pron_nom] Hunger hat.;[normal_pron]
-[x_nom] hört Musik, wenn [x_pron_nom] sich entspannen möchte.;[normal_pron]
-[x_nom] liest gern [x_poss_n_acc] Lieblingsbuch.;[normal_pron]
-[x_nom] geht gerne zur Arbeit.;[normal]
-[x_nom] arbeitet gern im Team.;[normal]
-[x_nom] freut sich über eine Gehaltserhöhung.;[normal]
-[x_nom] ist stolz auf sich und die erbrachte Leistung.;[normal]
-[x_nom] ärgert sich über einen gemachten Fehler.;[normal]
-[x_nom] ist noch unentschlossen.;[normal]
-[x_nom] bittet jemanden um Hilfe.;[normal]
-[x_nom] braucht mehr Zeit und teilt es dem Team mit.;[normal]
-Es wird betont, dass die Entscheidung von [x_dat] final ist.;[normal]
+<x_nom> liebt <x_poss_f_nom> Arbeit.;<normal_pron>
+<x_nom> arbeitet gern in <x_poss_n_dat> Team.;<normal_pron>
+<x_nom> freut sich über <x_poss_f_acc> Gehaltserhöhung.;<normal_pron>
+<x_nom> ist stolz auf sich und <x_poss_f_acc> Leistung.;<normal_pron>
+<x_nom> ärgert sich darüber, dass <x_pron_nom> einen Fehler gemacht hat.;<normal_pron>
+<x_nom> gesteht sich ein, dass <x_pron_nom> noch keine Entscheidung getrof.;<normal_pron>
+<x_nom> bittet jemanden <x_pron_dat> zu helfen.;<normal_pron>
+<x_nom> informiert das Team, dass <x_pron_nom> mehr Zeit benötigt.;<normal_pron>
+<x_nom> betont, dass <x_poss_f_nom> Entscheidung final ist.;<normal_pron>
+<x_nom> merkt, dass <x_pron_nom> überfordert ist.;<normal_pron>
+<x_nom> hat schlechte Laune, weil <x_pron_nom> gestresst ist.;<normal_pron>
+<x_nom> isst Abendbrot, weil <x_pron_nom> Hunger hat.;<normal_pron>
+<x_nom> hört Musik, wenn <x_pron_nom> sich entspannen möchte.;<normal_pron>
+<x_nom> liest gern <x_poss_n_acc> Lieblingsbuch.;<normal_pron>
+<x_nom> geht gerne zur Arbeit.;<normal>
+<x_nom> arbeitet gern im Team.;<normal>
+<x_nom> freut sich über eine Gehaltserhöhung.;<normal>
+<x_nom> ist stolz auf sich und die erbrachte Leistung.;<normal>
+<x_nom> ärgert sich über einen gemachten Fehler.;<normal>
+<x_nom> ist noch unentschlossen.;<normal>
+<x_nom> bittet jemanden um Hilfe.;<normal>
+<x_nom> braucht mehr Zeit und teilt es dem Team mit.;<normal>
+Es wird betont, dass die Entscheidung von <x_dat> final ist.;<normal>
+<x_nom> hat schlechte Laune wegen des Stresses.;<normal>
+<x_nom> isst Abendbrot um den Hunger zu stillen.;<normal>
+<x_nom> hört gern Musik zum Entspannen.;<normal>
+<x_nom> liest gerne verschiedene Bücher.;<normal>
+<x_nom> geht gerne mit dem Hund spazieren.;<normal>

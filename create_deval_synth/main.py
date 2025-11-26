@@ -62,7 +62,7 @@ with open(csv_file, newline="", encoding="utf-8") as f:
     next(reader)
     for row in reader:
         # create template for each row
-        r = Template(row, statistics, groups, adjectives, names)
+        r = Template(row, statistics, groups, [], names)
         # generate all instances
         templates.append(r)
 

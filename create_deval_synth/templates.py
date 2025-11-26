@@ -241,9 +241,15 @@ class Template:
         self.xs: list[tuple[str | int, Noun]] = []
 
         self.matching_x_groups: list[str | int] = []
+        sentence_style = row[1].strip("[]")
+
+        if sentence_style == "normal_pron":
+            self.sentence_style = NORMAL_SENTENCE_PRONOUN
+        else:
+            self.sentence_style = NORMAL_SENTENCE
 
         # parse x groups from the row (this is a string of the form '[111, "romantic", 333]')
-        x_groups = row[2].strip("[]").split(",")
+        x_groups = [""]
 
         if x_groups[0] == "":
             self.generic = True
@@ -265,8 +271,8 @@ class Template:
 
         # check if there is a <y> value in the sentence
         # if not, then this is a name (style 4) sentence
-        if "<y" not in self.sentence:
-            self.sentence_style = NAME_SENTENCE
+        # if "<y" not in self.sentence:
+        #     self.sentence_style = NAME_SENTENCE
 
         # otherwise, do exactly the same for ys
         if self.sentence_style != NAME_SENTENCE:
@@ -278,7 +284,7 @@ class Template:
                     list[Noun],
                 ]
             ] = []
-            y_groups = row[3].strip("[]").split(",")
+            y_groups = [""]
             if y_groups[0] == "":
                 self.ys = groups_list
                 matching_y_groups = list(groups.keys())
@@ -325,7 +331,7 @@ class Template:
         """
         # split match by underscores
         parts = match.group(1).split("_")
-
+        print(parts)
         if parts[0] == "x" and parts[1] == "indef":
             # if the match is for x, decline it according to the case
             return x.decline(parts[2], "sg")
@@ -524,6 +530,7 @@ class Template:
             # capitalize the first letter of the substitution
             text = text[0].upper() + text[1:]
             # find index for x
+            print(text)
             x_idx, _ = self.find_indices(text, x, None)
             # create instance with the determined paramters
             instance = Instance(
@@ -722,7 +729,7 @@ class Template:
                 from_none(x_idx),
                 y,
                 y_group,
-                from_none(y_idx),
+                None,
                 adjective,
                 modified,
                 text,
