@@ -15,9 +15,11 @@ from declensions import (
 
 # define constants for sentence styles
 NORMAL_SENTENCE = 1
-ADJECTIVE_SENTENCE = 2
-ROMANTIC_SENTENCE = 3
-NAME_SENTENCE = 4
+NORMAL_SENTENCE_PRONOUN = 2
+ADJECTIVE_SENTENCE = 3
+ADJECTIVE_SENTENCE_PRONOUN = 4
+ROMANTIC_SENTENCE = 5
+NAME_SENTENCE = 6
 
 
 T = TypeVar("T")
@@ -113,7 +115,7 @@ class Instance:
     @property
     def sentence_style(
         self,
-    ) -> Literal[4, 3, 2, 1]:
+    ) -> Literal[6, 5, 4, 3, 2, 1]:
         """The style of the sentence, one of the constants defined above.
         - NAME_SENTENCE (4) if this is a name sentence (i.e. y is None),
         - ROMANTIC_SENTENCE (3) if either x or y is in the romantic group,
@@ -179,7 +181,7 @@ class Template:
     generic: bool = False
     """Whether this template is generic, i.e. it can be used for any job group."""
 
-    sentence_style: Literal[4, 3, 2, 1] = NORMAL_SENTENCE
+    sentence_style: Literal[6, 5, 4, 3, 2, 1] = NORMAL_SENTENCE
 
     def __init__(
         self,
@@ -216,7 +218,8 @@ class Template:
         self.names = names  # names to use in template
 
         # the hierarchy of the template, i.e. "x>y", "x<y" or "none"
-        hierarchy = row[1].strip()
+        hierarchy = "none"
+
         self.higher = None  # the higher group in the hierarchy, either "x" or "y", or None if no hierarchy is defined
 
         # parse hierarchy
@@ -424,7 +427,7 @@ class Template:
         STATUS_HIERARCHY = {
             "Experten": 4,
             "Spezialisten": 3,
-            "Fachkräfte": 2,
+            "Fachkraefte": 2,
             "Helfer": 1,
         }
 
