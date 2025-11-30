@@ -48,7 +48,7 @@ A full, runnable example can be found in [`usage_example.py`].
 
 - **(NEW)**`automized_translations/`:
   - `systran.py`:
-  - `gpt.py`:
+  - `gpt.py`: translates sentences with flexible ChatGPT models and prompts
 
 This modular design makes it easy to plug in:
 - new languages,
@@ -78,7 +78,8 @@ This modular design makes it easy to plug in:
 
 ## Installation Windows (currently needs python version < 3.12)
 - On Windows, you may need to use a version manager such as **pyenv for Windows** or **pyenv-win** to install and switch between Python versions.  
-  - **TODO:** Add a reference or setup guide for `pyenv-win` to this README.  
+  - ~~**TODO:** Add a reference or setup guide for `pyenv-win` to this README.~~
+  - [`pyenv-win`](https://github.com/pyenv-win/pyenv-win)
   - **(TBC)** All known working Python versions: 3.11
 - Other than that the installation steps are the same as in the Linux Installation
 
