@@ -319,7 +319,6 @@ class Template:
         """
         # split match by underscores
         parts = match.group(1).split("_")
-        #print(parts)
         if parts[0] == "x" and parts[1] == "indef":
             # if the match is for x, decline it according to the case
             return x.decline(parts[2], "sg")
@@ -390,11 +389,20 @@ class Template:
                 gender = parts[2]
                 case = parts[3]
                 return Possessive(base_noun, gender).decline(case, "sg")
-            else:
+            elif len(parts) == 3:
                 # case where gender is not known, so we need to use the other noun to determine it
                 # something like <x_poss_acc>
                 other_noun = y if parts[0] == "x" else x  # complement to base_noun
                 case = parts[2]
+                return Possessive(
+                    base_noun,
+                    other_noun.grammatical_gender,
+                ).decline(case, "sg")
+            elif(len(parts) > 0):
+                # case where gender is not known, so we need to use the other noun to determine it
+                # something like <x_poss_acc>
+                other_noun = y if parts[0] == "x" else x  # complement to base_noun
+                case = parts[4]
                 return Possessive(
                     base_noun,
                     other_noun.grammatical_gender,
@@ -456,10 +464,10 @@ class Template:
                 x.dat_sg,
                 x.acc_sg,
                 # plurals are unused so far, so we can skip this
-                # x.nom_pl,
-                # x.gen_pl,
-                # x.dat_pl,
-                # x.acc_pl,
+                x.nom_pl,
+                x.gen_pl,
+                x.dat_pl,
+                x.acc_pl,
             ]:
                 x_idx = idx
             elif y and word in [
@@ -518,7 +526,6 @@ class Template:
             # capitalize the first letter of the substitution
             text = text[0].upper() + text[1:]
             # find index for x
-            #print(text)
             x_idx, _ = self.find_indices(text, x, None)
             # create instance with the determined paramters
             instance = Instance(
@@ -573,7 +580,7 @@ class Template:
             for x_group, x in xs
             for y_group, y in ys
             # only one of the groups has to be of group "romantic"
-            if (x_group == "romantic" or y_group == "romantic") and x.nom_sg != y.nom_sg
+            if (y_group == "romantic") and x.nom_sg != y.nom_sg
         ):
             # use regex to perform substitutions
             text = re.sub(
@@ -600,7 +607,6 @@ class Template:
                 self.statistics,
             )
             instances.append(instance)
-            print(instance.sentence_style)
         return instances
 
     def gen_normal(
@@ -748,7 +754,6 @@ class Template:
             The noun to generate instances for.
         """
         xs = [(x_group, x) for x in x_list]
-
         matching_names = []
         if self.sentence_style == NAME_SENTENCE:
             name_sentences = []

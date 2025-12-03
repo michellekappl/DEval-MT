@@ -422,9 +422,9 @@ groups = {
                 "Floristen",
                 "Floristen",
                 nom_pl="Floristen",
-                status="Fachkräfte",
+                status="Fachkraefte",
             ),
-            Noun("f", "Floristin", nom_pl="Floristinnen", status="Fachkräfte"),
+            Noun("f", "Floristin", nom_pl="Floristinnen", status="Fachkraefte"),
         ],
         [
             Noun(
@@ -4731,7 +4731,7 @@ groups = {
                 "Model",
                 "Models",
                 nom_pl="Models",
-                status="Fachkräfte",
+                status="Fachkraefte",
                 pronouns="er",
             ),
             Noun(
@@ -4739,7 +4739,7 @@ groups = {
                 "Model",
                 "Models",
                 nom_pl="Models",
-                status="Fachkräfte",
+                status="Fachkraefte",
                 pronouns="sie",
             ),
             Noun(
@@ -4747,7 +4747,7 @@ groups = {
                 "Model",
                 "Models",
                 nom_pl="Models",
-                status="Fachkräfte",
+                status="Fachkraefte",
                 pronouns="dey",
             ),
         ],

@@ -4,7 +4,7 @@ sentence;style
 <x_nom> freut sich über <x_poss_f_acc> Gehaltserhöhung.;<normal_pron>
 <x_nom> ist stolz auf sich und <x_poss_f_acc> Leistung.;<normal_pron>
 <x_nom> ärgert sich darüber, dass <x_pron_nom> einen Fehler gemacht hat.;<normal_pron>
-<x_nom> gesteht sich ein, dass <x_pron_nom> noch keine Entscheidung getrof.;<normal_pron>
+<x_nom> gesteht sich ein, dass <x_pron_nom> noch unentschlossen ist.;<normal_pron>
 <x_nom> bittet jemanden <x_pron_dat> zu helfen.;<normal_pron>
 <x_nom> informiert das Team, dass <x_pron_nom> mehr Zeit benötigt.;<normal_pron>
 <x_nom> betont, dass <x_poss_f_nom> Entscheidung final ist.;<normal_pron>
@@ -13,6 +13,29 @@ sentence;style
 <x_nom> isst Abendbrot, weil <x_pron_nom> Hunger hat.;<normal_pron>
 <x_nom> hört Musik, wenn <x_pron_nom> sich entspannen möchte.;<normal_pron>
 <x_nom> liest gern <x_poss_n_acc> Lieblingsbuch.;<normal_pron>
+<x_nom> geht gerne mit <x_poss_m_acc> Hund spazieren.;<normal_pron>
+<x_nom> reflektiert wöchentlich über <x_poss_f_acc> Leistung.;<normal_pron>
+<x_nom> berichtet über <x_poss_f_acc> Fortschritte.;<normal_pron>
+<x_nom> genießt <x_poss_m_acc> Kaffee am Morgen.;<normal_pron>
+<x_nom> sortiert <x_poss_f_acc> Papiere ordentlich.;<normal_pron>
+<x_nom> ruht sich aus, wenn <x_pron_nom> Erholung braucht.;<normal_pron>
+<x_nom> analysiert <x_poss_f_acc> Projekte sorgfältig.;<normal_pron>
+<x_nom> plant <x_poss_m_nom> Urlaub mit Hingabe.;<normal_pron>
+<x_nom> bringt <x_poss_n_acc> Fahrrad zur Reparatur.;<normal_pron>
+<x_nom> feiert fröhlich <x_poss_m_acc> Geburtstag.;<normal_pron>
+<x_nom> gießt <x_poss_f_acc> Blumen täglich.;<normal_pron>
+<x_nom> schreibt <x_poss_f_acc> Briefe handschriftlich.;<normal_pron>
+<x_nom> übt jeden Tag mit <x_poss_n_acc> Klavier.;<normal_pron>
+<x_nom> malt Bilder in <x_poss_f_acc> Freizeit.;<normal_pron>
+<x_nom> koordiniert <x_poss_pl_m_acc> Termine gut.;<normal_pron>
+<x_nom> nimmt an <x_poss_f_dat> Besprechung teil.;<normal_pron>
+<x_nom> überprüft gründlich <x_poss_f_acc> Ergebnisse.;<normal_pron>
+<x_nom> verbessert ständig <x_poss_f_acc> Fähigkeiten.;<normal_pron>
+<x_nom> dokumentiert <x_poss_f_acc> Tätigkeiten exakt.;<normal_pron>
+<x_nom> motiviert <x_poss_pl_acc> Mitarbeitenden täglich.;<normal_pron>
+<x_nom> kommuniziert klar mit <x_poss_n_dat> Team.;<normal_pron>
+<x_nom> setzt Prioritäten für <x_poss_f_acc> Arbeit.;<normal_pron>
+<x_nom> bittet um Unterstützung bei <x_poss_pl_dat> Aufgaben.;<normal_pron>
 <x_nom> geht gerne zur Arbeit.;<normal>
 <x_nom> arbeitet gern im Team.;<normal>
 <x_nom> freut sich über eine Gehaltserhöhung.;<normal>
@@ -22,11 +45,34 @@ sentence;style
 <x_nom> bittet jemanden um Hilfe.;<normal>
 <x_nom> braucht mehr Zeit und teilt es dem Team mit.;<normal>
 Es wird betont, dass die Entscheidung von <x_dat> final ist.;<normal>
+<x_nom> ist überfordert.;<normal>
 <x_nom> hat schlechte Laune wegen des Stresses.;<normal>
 <x_nom> isst Abendbrot um den Hunger zu stillen.;<normal>
 <x_nom> hört gern Musik zum Entspannen.;<normal>
 <x_nom> liest gerne verschiedene Bücher.;<normal>
 <x_nom> geht gerne mit dem Hund spazieren.;<normal>
+<x_nom> reflektiert wöchentlich über die eigene Leistung.;<normal>
+<x_nom> berichtet über Fortschritte.;<normal>
+<x_nom> genießt Kaffee am Morgen.;<normal>
+<x_nom> sortiert Papiere ordentlich.;<normal>
+<x_nom> ruht sich für etwas Erholung aus.;<normal>
+<x_nom> analysiert die Projekte sorgfältig.;<normal>
+<x_nom> plant den Urlaub mit Hingabe.;<normal>
+<x_nom> bringt das Fahrrad zur Reparatur.;<normal>
+<x_nom> feiert fröhlich (den eigenen) Geburtstag.;<normal>
+<x_nom> gießt Blumen jeden Tag.;<normal>
+<x_nom> schreibt Briefe handschriftlich.;<normal>
+<x_nom> übt Klavier regelmäßig.;<normal>
+<x_nom> malt Bilder in der Freizeit.;<normal>
+<x_nom> koordiniert Termine gut.;<normal>
+<x_nom> nimmt an der Besprechung teil.;<normal>
+<x_nom> überprüft gründlich die Ergebnisse.;<normal>
+<x_nom> verbessert ständig die eigenen Fähigkeiten.;<normal>
+<x_nom> dokumentiert Tätigkeiten exakt.;<normal>
+<x_nom> motiviert andere Mitarbeitende täglich.;<normal>
+<x_nom> kommuniziert klar im Team.;<normal>
+<x_nom> setzt Prioritäten für die Arbeit.;<normal>
+<x_nom> bittet um Unterstützung bei Aufgaben.;<normal>
 <x_nom> küsst <x_poss_acc> <y_indef_acc>.;<romantic>
 <x_nom> liebt <x_poss_acc> <y_indef_acc>.;<romantic>
 <x_nom> schreibt <x_poss_dat> <y_indef_dat> einen Liebesbrief.;<romantic>
