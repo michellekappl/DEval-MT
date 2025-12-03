@@ -133,6 +133,7 @@ env.bak/
 venv.bak/
 automized_translations/.env
 automized_translations/xtut-translator-*.json
+xtutvenv
 
 # Spyder project settings
 .spyderproject
