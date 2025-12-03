@@ -2,21 +2,41 @@ from dotenv import load_dotenv
 import os
 from openai import OpenAI
 import pandas as pd
+import requests
 
 load_dotenv()
 openai_api_key=os.getenv('OPENAI_API_KEY')
 client = OpenAI(api_key=openai_api_key)
+URL = "https://api.openai.com/v1/chat/completions"
+headers = {
+    "Authorization": f"Bearer {openai_api_key}",
+    "Content-Type": "application/json"
+}
+languages = ["Spanish", "Italian", "French", "Russian", "Ukrainian", "Arabic", "Hebrew"]
+models=['gpt-4o','gpt-4o-mini']  #TBC
 
 def translate_text(text,target,model_name): 
-    #print(f'testing: translating {text} to {target}')
-    response = client.responses.create( 
-        model=model_name,
-        #TODO: find an optimal prompt
-        input=('You are a translation engine.'
-            f"Translate the following text into {target}: {text}."
-            'Output ONLY the translated sentence.'),
-    )
-    return response.output[0].content[0].text.strip()
+    # #print(f'testing: translating {text} to {target}')
+    # response = client.responses.create( 
+    #     model=model_name,
+    #     input=('You are a translation engine.'
+    #         f"Translate the following text into {target}: {text}."
+    #         'Output ONLY the translated sentence.'),
+    # )
+    # return response.output[0].content[0].text.strip()
+
+    data = {
+        "model": model_name,
+        "messages": [
+            {"role": "system", "content": f"You are a Machine Translation Tool and shall not output any other text than the translated text. Translate the text to {target}."},
+            {"role": "user", "content": text}
+        ],
+        "temperature": 0.3
+    }
+    response = requests.post(URL, headers=headers, json=data)
+    response_json = response.json()
+    translated_text = response_json["choices"][0]["message"]["content"]
+    return translated_text
 
 def translate_dataset(path,target,model_name):
     source_ds=pd.read_csv(path,header=0,sep=';')
@@ -25,20 +45,21 @@ def translate_dataset(path,target,model_name):
     file_name=f'{target}_{model_name}.txt'
     file_path=f"test_data/translations/{file_name}"
     for sentence in sentences_list:
+        sentence=sentence.strip()
+        #print(sentence)
         if not isinstance(sentence,str) or sentence.strip()=='':
             translations_list.append('')
             continue
         translated_sentence=translate_text(sentence,target,model_name)
+        # print(translated_sentence)
         translations_list.append(translated_sentence)
     with open(file_path,'w',encoding='utf-8') as f:
         for tr in translations_list:
-            f.write(tr+'\n')
+            f.write(str(tr)+'\n')
+    translations_list=pd.DataFrame(translations_list)
     return translations_list
 
-# text = "Hello, world!"
-target_language = "es" # Spanish
-models=['gpt-4o']  #TBC
+# Following for test
+#target_language = languages[0] # Spanish
 source_path='test_data/test_data.csv'
-translation=translate_dataset(source_path,target_language,models[0])
-#translation = translate_text(text, target_language,models[0]) 
-#print(translation) # ¡Hola mundo!
+translation=translate_dataset(source_path,languages[0],models[0])
