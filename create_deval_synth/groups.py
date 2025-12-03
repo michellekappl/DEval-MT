@@ -561,29 +561,6 @@ groups = {
             ),
             Noun("f", "Gummiarbeiterin", nom_pl="Gummiarbeiterinnen", status="Helfer"),
         ],
-        [
-            Noun(
-                "f",
-                "Klebefachkraft",
-                nom_pl="Klebefachkraefte",
-                pronouns="er",
-                status="Fachkraefte",
-            ),
-            Noun(
-                "f",
-                "Klebefachkraft",
-                nom_pl="Klebefachkraefte",
-                pronouns="sie",
-                status="Fachkraefte",
-            ),
-            Noun(
-                "f",
-                "Klebefachkraft",
-                nom_pl="Klebefachkraefte",
-                pronouns="dey",
-                status="Fachkraefte",
-            ),
-        ],
     ],
     222: [
         [
@@ -2730,21 +2707,21 @@ groups = {
             Noun(
                 "f",
                 "Reinigungskraft",
-                nom_pl="Reinigungsfachkraefte",
+                nom_pl="Reinigungskräfte",
                 pronouns="er",
                 status="Helfer",
             ),
             Noun(
                 "f",
                 "Reinigungskraft",
-                nom_pl="Reinigungsfachkraefte",
+                nom_pl="Reinigungskräfte",
                 pronouns="sie",
                 status="Helfer",
             ),
             Noun(
                 "f",
                 "Reinigungskraft",
-                nom_pl="Reinigungsfachkraefte",
+                nom_pl="Reinigungskräfte",
                 pronouns="dey",
                 status="Helfer",
             ),
