@@ -42,6 +42,8 @@ class Instance:
 
     x: Noun
     """The first noun in the sentence."""
+    sentence_style: str | int 
+    """The style of se sentence"""
     x_group: str | int
     """The group of the first noun (either "romantic" or a number corresponding to some job group)."""
     x_idx: int
@@ -66,6 +68,7 @@ class Instance:
     def __init__(
         self,
         x: Noun,
+        sentence_style: str | int,
         x_group: str | int,
         x_idx: int,
         y: Noun | None,
@@ -78,6 +81,7 @@ class Instance:
         statistics: dict,
     ):
         self.x = x
+        self.sentence_style = sentence_style
         self.y = y
         self.x_group = x_group
         self.y_group = y_group
@@ -111,25 +115,6 @@ class Instance:
             + (f"{self.name.text};{self.name.gender};" if self.name else "none;none;")
             + f"{self.text}"
         )
-
-    @property
-    def sentence_style(
-        self,
-    ) -> Literal[6, 5, 4, 3, 2, 1]:
-        """The style of the sentence, one of the constants defined above.
-        - NAME_SENTENCE (4) if this is a name sentence (i.e. y is None),
-        - ROMANTIC_SENTENCE (3) if either x or y is in the romantic group,
-        - ADJECTIVE_SENTENCE (2) if there is an adjective inserted into the sentence,
-        - NORMAL_SENTENCE (1) otherwise.
-        """
-        if self.y is None:
-            return NAME_SENTENCE
-        elif self.x_group == "romantic" or self.y_group == "romantic":
-            return ROMANTIC_SENTENCE
-        elif self.adjective:
-            return ADJECTIVE_SENTENCE
-        else:
-            return NORMAL_SENTENCE
 
     @property
     def x_stereotypical(self) -> float:
@@ -181,7 +166,7 @@ class Template:
     generic: bool = False
     """Whether this template is generic, i.e. it can be used for any job group."""
 
-    sentence_style: Literal[6, 5, 4, 3, 2, 1] = NORMAL_SENTENCE
+    sentence_style: Literal[1]
 
     def __init__(
         self,
@@ -241,13 +226,16 @@ class Template:
         self.xs: list[tuple[str | int, Noun]] = []
 
         self.matching_x_groups: list[str | int] = []
-        sentence_style = row[1].strip("[]")
+        sentence_style = row[1].strip("<>") 
 
         if sentence_style == "normal_pron":
             self.sentence_style = NORMAL_SENTENCE_PRONOUN
+        elif sentence_style == "romantic":
+            self.sentence_style = ROMANTIC_SENTENCE
+        elif sentence_style == "name":
+            self.sentence_style = NAME_SENTENCE
         else:
             self.sentence_style = NORMAL_SENTENCE
-
         # parse x groups from the row (this is a string of the form '[111, "romantic", 333]')
         x_groups = [""]
 
@@ -331,7 +319,7 @@ class Template:
         """
         # split match by underscores
         parts = match.group(1).split("_")
-        print(parts)
+        #print(parts)
         if parts[0] == "x" and parts[1] == "indef":
             # if the match is for x, decline it according to the case
             return x.decline(parts[2], "sg")
@@ -530,11 +518,12 @@ class Template:
             # capitalize the first letter of the substitution
             text = text[0].upper() + text[1:]
             # find index for x
-            print(text)
+            #print(text)
             x_idx, _ = self.find_indices(text, x, None)
             # create instance with the determined paramters
             instance = Instance(
                 x,
+                self.sentence_style,
                 x_group,
                 from_none(x_idx),
                 None,
@@ -598,6 +587,7 @@ class Template:
             x_idx, y_idx = self.find_indices(text, x, y)
             instance = Instance(
                 x,
+                self.sentence_style,
                 x_group,
                 from_none(x_idx),
                 y,
@@ -610,7 +600,7 @@ class Template:
                 self.statistics,
             )
             instances.append(instance)
-
+            print(instance.sentence_style)
         return instances
 
     def gen_normal(
@@ -725,6 +715,7 @@ class Template:
             x_idx, y_idx = self.find_indices(text, x, y)
             instance = Instance(
                 x,
+                self.sentence_style,
                 x_group,
                 from_none(x_idx),
                 y,

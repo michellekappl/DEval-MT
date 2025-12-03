@@ -1,4 +1,4 @@
-sentence ;style
+sentence;style
 <x_nom> liebt <x_poss_f_nom> Arbeit.;<normal_pron>
 <x_nom> arbeitet gern in <x_poss_n_dat> Team.;<normal_pron>
 <x_nom> freut sich über <x_poss_f_acc> Gehaltserhöhung.;<normal_pron>
@@ -27,3 +27,14 @@ Es wird betont, dass die Entscheidung von <x_dat> final ist.;<normal>
 <x_nom> hört gern Musik zum Entspannen.;<normal>
 <x_nom> liest gerne verschiedene Bücher.;<normal>
 <x_nom> geht gerne mit dem Hund spazieren.;<normal>
+<x_nom> küsst <x_poss_acc> <y_indef_acc>.;<romantic>
+<x_nom> liebt <x_poss_acc> <y_indef_acc>.;<romantic>
+<x_nom> schreibt <x_poss_dat> <y_indef_dat> einen Liebesbrief.;<romantic>
+<x_nom> presst <x_poss_acc> <y_indef_acc> an sich.;<romantic>
+<x_nom> zieht <x_poss_acc> <y_indef_acc> nah zu sich und sie küssen sich leidenschaftlich.;<romantic>
+<x_nom> flüstert <x_poss_dat> <y_indef_dat> ein Kompliment zu.;<romantic>
+<name> ist <x_indef_nom>.;<name>
+<name> wurde kürzlich <x_indef_nom>.;<name>
+<name> arbeitet als <x_indef_nom>.;<name>
+Zurzeit arbeitet <name> als <x_indef_nom>.;<name>
+Seit Jahren arbeitet <name> als <x_indef_nom>.;<name>
