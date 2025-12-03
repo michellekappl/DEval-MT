@@ -15,7 +15,7 @@ headers = {
     "Authorization": f"Bearer {openai_api_key}",
     "Content-Type": "application/json"
 }
-languages = ["es", "it", "fr", "ru", "uk", "ar", "he"]
+languages = ["es", "it", "fr", "ru", "uk"] # "ar", "he"
 models=['gpt-4o','gpt-4o-mini']  #TBC
 
 def translate_text(text,target,model_name): 

@@ -30,6 +30,11 @@ def example_data() -> DEvalDataset:
       ds = DEvalDataset(df, text_column="text")
 
       # load translations from a file
+      
+      # translation_folder_path=f'test_data/translations'
+      # # languages = ["es", "it", "fr", "ru", "uk"] # "ar", "he"
+      # # models=['gpt-4o','gpt-4o-mini','systran'] # TBC
+      # list_of_es_translations = pd.read_csv(os.path.join(translation_folder_path,'es_gpt-4o.txt'), header=None, sep=";")[0].tolist()
       list_of_es_translations = pd.read_csv(f"test_data/translations/es.txt", header=None, sep=";")[0].tolist()
       list_of_fr_translations = pd.read_csv(f"test_data/translations/fr.txt", header=None, sep=";")[0].tolist()
 
