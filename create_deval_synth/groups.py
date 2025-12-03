@@ -2730,21 +2730,21 @@ groups = {
             Noun(
                 "f",
                 "Reinigungskraft",
-                nom_pl="Reinigungsfachkräfte",
+                nom_pl="Reinigungsfachkraefte",
                 pronouns="er",
                 status="Helfer",
             ),
             Noun(
                 "f",
                 "Reinigungskraft",
-                nom_pl="Reinigungsfachkräfte",
+                nom_pl="Reinigungsfachkraefte",
                 pronouns="sie",
                 status="Helfer",
             ),
             Noun(
                 "f",
                 "Reinigungskraft",
-                nom_pl="Reinigungsfachkräfte",
+                nom_pl="Reinigungsfachkraefte",
                 pronouns="dey",
                 status="Helfer",
             ),
@@ -3166,8 +3166,8 @@ groups = {
             Noun("f", "Dolmetscherin", nom_pl="Dolmetscherinnen", status="Experten"),
         ],
         [
-            Noun("m", "Sekretär", "Sekretärs", nom_pl="Sekretäre", status="Fachkräfte"),
-            Noun("f", "Sekretärin", nom_pl="Sekretärinnen", status="Fachkräfte"),
+            Noun("m", "Sekretär", "Sekretärs", nom_pl="Sekretäre", status="Fachkraefte"),
+            Noun("f", "Sekretärin", nom_pl="Sekretärinnen", status="Fachkraefte"),
         ],
         [
             Noun(
@@ -3777,13 +3777,13 @@ groups = {
                 "Pharmazeuten",
                 "Pharmazeuten",
                 nom_pl="Pharmazeuten",
-                status="Fachkräfte",
+                status="Fachkraefte",
             ),
             Noun(
                 "f",
                 "Pharmazeutin",
                 nom_pl="Pharmazeutinnen",
-                status="Fachkräfte",
+                status="Fachkraefte",
             ),
         ],        
     ],
