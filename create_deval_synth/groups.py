@@ -565,21 +565,21 @@ groups = {
             Noun(
                 "f",
                 "Klebefachkraft",
-                nom_pl="Klebefachkräfte",
+                nom_pl="Klebefachkraefte",
                 pronouns="er",
                 status="Fachkraefte",
             ),
             Noun(
                 "f",
                 "Klebefachkraft",
-                nom_pl="Klebefachkräfte",
+                nom_pl="Klebefachkraefte",
                 pronouns="sie",
                 status="Fachkraefte",
             ),
             Noun(
                 "f",
                 "Klebefachkraft",
-                nom_pl="Klebefachkräfte",
+                nom_pl="Klebefachkraefte",
                 pronouns="dey",
                 status="Fachkraefte",
             ),
@@ -2732,33 +2732,21 @@ groups = {
                 "Reinigungskraft",
                 nom_pl="Reinigungsfachkräfte",
                 pronouns="er",
-<<<<<<< Updated upstream
-                status="Fachkraefte",
-=======
                 status="Helfer",
->>>>>>> Stashed changes
             ),
             Noun(
                 "f",
                 "Reinigungskraft",
                 nom_pl="Reinigungsfachkräfte",
                 pronouns="sie",
-<<<<<<< Updated upstream
-                status="Fachkraefte",
-=======
                 status="Helfer",
->>>>>>> Stashed changes
             ),
             Noun(
                 "f",
                 "Reinigungskraft",
                 nom_pl="Reinigungsfachkräfte",
                 pronouns="dey",
-<<<<<<< Updated upstream
-                status="Fachkraefte",
-=======
                 status="Helfer",
->>>>>>> Stashed changes
             ),
         ],
         [
@@ -2936,25 +2924,6 @@ groups = {
             ),
             Noun("f", "Drogistin", nom_pl="Drogistinnen", status="Fachkraefte"),
         ],
-<<<<<<< Updated upstream
-        [
-            Noun(
-                "m",
-                "Schönheitsberater",
-                "Schönheitsberaters",
-                nom_pl="Schönheitsberater",
-                status="Fachkraefte",
-            ),
-            Noun(
-                "f",
-                "Schönheitsberaterin",
-                nom_pl="Schönheitsberaterinnen",
-                status="Fachkraefte",
-            ),
-            Noun("f", "Schönheitsberatung", pronouns="dey", status="Fachkraefte"),
-        ],
-=======
->>>>>>> Stashed changes
     ],
     625: [
         [
@@ -3197,25 +3166,8 @@ groups = {
             Noun("f", "Dolmetscherin", nom_pl="Dolmetscherinnen", status="Experten"),
         ],
         [
-<<<<<<< Updated upstream
-            Noun(
-                "m",
-                "Stenotypist",
-                "Stenotypisten",
-                "Stenotypisten",
-                "Stenotypisten",
-                nom_pl="Stenotypisten",
-                status="Fachkraefte",
-            ),
-            Noun("f", "Stenotypistin", nom_pl="Stenotypistinnen", status="Fachkraefte"),
-        ],
-        [
-            Noun("m", "Sekretär", "Sekretärs", nom_pl="Sekretäre", status="Fachkraefte"),
-            Noun("f", "Sekretärin", nom_pl="Sekretärinnen", status="Fachkraefte"),
-=======
             Noun("m", "Sekretär", "Sekretärs", nom_pl="Sekretäre", status="Fachkräfte"),
             Noun("f", "Sekretärin", nom_pl="Sekretärinnen", status="Fachkräfte"),
->>>>>>> Stashed changes
         ],
         [
             Noun(
@@ -3261,19 +3213,6 @@ groups = {
         [
             Noun(
                 "m",
-<<<<<<< Updated upstream
-                "Heiratsvermittler",
-                "Heiratsvermittlers",
-                nom_pl="Heiratsvermittler",
-                status="Fachkraefte",
-            ),
-            Noun("f", "Heiratsvermittlerin", nom_pl="Heiratsvermittlerinnen", status="Fachkraefte"),
-        ],
-        [
-            Noun(
-                "m",
-=======
->>>>>>> Stashed changes
                 "Arbeitsvermittler",
                 "Arbeitsvermittlers",
                 nom_pl="Arbeitsvermittler",
@@ -3353,36 +3292,12 @@ groups = {
         [
             Noun(
                 "m",
-<<<<<<< Updated upstream
-                "Rechnungssachbearbeiter",
-                "Rechnungssachbearbeiters",
-                nom_pl="Rechnungssachbearbeiter",
-                status="Fachkraefte",
-            ),
-            Noun(
-                "f",
-                "Rechnungssachbearbeiterin",
-                nom_pl="Rechnungssachbearbeiterinnen",
-                status="Fachkraefte",
-            ),
-        ],
-        [
-            Noun(
-                "m",
-                "Buchhalter",
-                "Buchhalters",
-                nom_pl="Buchhalter",
-                status="Fachkraefte",
-            ),
-            Noun("f", "Buchhalterin", nom_pl="Buchhalterinnen", status="Fachkraefte"),
-=======
                 "Buchhalter",
                 "Buchhalters",
                 nom_pl="Buchhalter",
                 status="Spezialisten",
             ),
             Noun("f", "Buchhalterin", nom_pl="Buchhalterinnen", status="Spezialisten"),
->>>>>>> Stashed changes
         ],
     ],
     723: [
@@ -4441,26 +4356,6 @@ groups = {
         [
             Noun(
                 "m",
-<<<<<<< Updated upstream
-                "Callcenteragent",
-                "Callcenteragenten",
-                "Callcenteragenten",
-                "Callcenteragenten",
-                nom_pl="Callcenteragenten",
-                status="Fachkraefte",
-            ),
-            Noun(
-                "f",
-                "Callcenteragentin",
-                nom_pl="Callcenteragentinnen",
-                status="Fachkraefte",
-            ),
-        ],
-        [
-            Noun(
-                "m",
-=======
->>>>>>> Stashed changes
                 "Werbetexter",
                 "Werbetexters",
                 nom_pl="Werbetexter",
@@ -4700,28 +4595,6 @@ groups = {
         [
             Noun(
                 "m",
-<<<<<<< Updated upstream
-                "Schmuckdesigner",
-                "Schmuckdesigners",
-                nom_pl="Schmuckdesigner",
-                status="Experten",
-            ),
-            Noun(
-                "f",
-                "Schmuckdesignerin",
-                nom_pl="Schmuckdesignerinnen",
-                status="Experten",
-            ),
-        ],
-        [
-            Noun("m", "Juwelier", "Juweliers", nom_pl="Juweliere", status="Fachkraefte"),
-            Noun("f", "Juwelierin", nom_pl="Juwelierinnen", status="Fachkraefte"),
-        ],
-        [
-            Noun(
-                "m",
-=======
->>>>>>> Stashed changes
                 "Goldschmied",
                 "Goldschmieds",
                 nom_pl="Goldschmiede",
@@ -4785,28 +4658,6 @@ groups = {
             ),
             Noun("f", "Akrobatin", nom_pl="Akrobatinnen", status="Spezialisten"),
         ],
-<<<<<<< Updated upstream
-        [
-            Noun(
-                "n",
-                "Model",
-                "Models",
-                nom_pl="Models",
-                status="Fachkraefte",
-                pronouns="er",
-            ),
-            Noun(
-                "n",
-                "Model",
-                "Models",
-                nom_pl="Models",
-                status="Fachkraefte",
-                pronouns="sie",
-            ),
-            Noun("n", "Model", status="Fachkraefte", pronouns="dey"),
-        ],
-=======
->>>>>>> Stashed changes
     ],
     943: [
         [
@@ -4910,15 +4761,6 @@ groups = {
         ],
         [
             Noun(
-<<<<<<< Updated upstream
-                "m", "Ankleider", "Ankleiders", nom_pl="Ankleider", status="Fachkraefte"
-            ),
-            Noun("f", "Ankleiderin", nom_pl="Ankleiderinnen", status="Fachkraefte"),
-        ],
-        [
-            Noun(
-=======
->>>>>>> Stashed changes
                 "m",
                 "Requisiteur",
                 "Requisiteurs",
