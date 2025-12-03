@@ -356,6 +356,17 @@ groups = {
             ),
             Noun("f", "Waldarbeiterin", nom_pl="Waldarbeiterinnen", status="Helfer"),
         ],
+        [
+            Noun(
+                "m",
+                "Förster",
+                "Försters",
+                nom_pl="Förster",
+                dat_pl="Förstern",
+                status="Spezialisten",
+            ),
+            Noun("f", "Försterin", nom_pl="Försterinnen", status="Spezialisten"),
+        ],
     ],
     121: [
         [
@@ -3414,14 +3425,14 @@ groups = {
         [
             Noun(
                 "m",
-                "Kulturreferent",
-                "Kulturreferenten",
-                "Kulturreferenten",
-                "Kulturreferenten",
-                nom_pl="Kulturreferenten",
+                "Zollbeamter",
+                "Zollbeamten",
+                "Zollbeamten",
+                "Zollbeamten",
+                nom_pl="Zollbeamte",
                 status="Experten",
             ),
-            Noun("f", "Kulturreferentin", nom_pl="Kulturreferentinnen", status="Experten"),
+            Noun("f", "Zollbeamtin", nom_pl="Zollbeamtinnen", status="Experten"),
         ],
         [
             Noun(
@@ -3441,14 +3452,12 @@ groups = {
         [
             Noun(
                 "m",
-                "Gemeindediener",
-                "Gemeindedieners",
-                nom_pl="Gemeindediener",
-                status="Helfer",
+                "Zollfahnder",
+                "Zollfahnders",
+                nom_pl="Zollfahnder",
+                status="Spezialisten",
             ),
-            Noun(
-                "f", "Gemeindedienerin", nom_pl="Gemeindedienerinnen", status="Helfer"
-            ),
+            Noun("f", "Zollfahnderin", nom_pl="Zollfahnderinnen", status="Spezialisten"),
         ],
         [
             Noun(
@@ -3467,6 +3476,18 @@ groups = {
         [
             Noun(
                 "m",
+                "Bibliothekar",
+                "Bibliothekars",
+                acc_sg="Bibliothekar",
+                dat_sg="Bibliothekar",
+                nom_pl="Bibliothekare",
+                status="Experten",
+            ),
+            Noun("f", "Bibliothekarin", nom_pl="Bibliothekarinnen", status="Experten"),
+        ],
+        [
+            Noun(
+                "m",
                 "Aktenverwalter",
                 "Aktenverwalters",
                 dat_sg="Aktenverwalter",
@@ -3480,6 +3501,18 @@ groups = {
                 nom_pl="Aktenverwalterinnen",
                 status="Fachkraefte",
             ),
+        ],
+        [
+            Noun(
+                "m",
+                "Archivar",
+                "Archivars",
+                acc_sg="Archivar",
+                dat_sg="Archivar",
+                nom_pl="Archivare",
+                status="Spezialisten",
+            ),
+            Noun("f", "Archivarin", nom_pl="Archivarinnen", status="Spezialisten"),
         ],
     ],
 811: [
