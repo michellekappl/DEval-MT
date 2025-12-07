@@ -18,7 +18,7 @@ headers = {
 languages = ["es", "it", "fr", "ru", "uk"] # "ar", "he"
 models=['gpt-4o','gpt-4o-mini']  #TBC
 
-def translate_text(text,target,model_name): 
+def translate_text_gpt(text,target,model_name): 
     # #print(f'testing: translating {text} to {target}')
     # response = client.responses.create( 
     #     model=model_name,
@@ -41,7 +41,7 @@ def translate_text(text,target,model_name):
     translated_text = response_json["choices"][0]["message"]["content"]
     return translated_text
 
-# not working
+# For testing free model on openrouter
 # def translate_text_openrouter(text,target,model_name):
 #     response = requests.post(
 #         url="https://openrouter.ai/api/v1/chat/completions",
@@ -52,7 +52,7 @@ def translate_text(text,target,model_name):
 #             # "X-Title": "<YOUR_SITE_NAME>", # Optional. Site title for rankings on openrouter.ai.
 #         },
 #         data=json.dumps({
-#             "model": "openai/gpt-4o-mini", # Optional
+#             "model": model_name, #"openai/gpt-4o-mini", # Optional
 #             "messages": [
 #                 #{"role": "system", "content": f"You are a Machine Translation Tool and shall not output any other text than the translated text. Translate the text to {target}."},
 #                 {"role": "user","content": f'You are a Machine Translation Tool and shall not output any other text than the translated text. Translate the text to {target}: {text}'}
@@ -60,9 +60,10 @@ def translate_text(text,target,model_name):
 #         })
 #     )
 #     data = response.json()
+#     # print(data)
 #     print(data['choices'][0]['message']['content'])
 
-def translate_dataset(path,target,model_name):
+def translate_dataset_gpt(path,target,model_name):
     source_ds=pd.read_csv(path,header=0,sep=';')
     sentences_list=list(source_ds['text'])
     translations_list=[]
@@ -74,7 +75,7 @@ def translate_dataset(path,target,model_name):
         if not isinstance(sentence,str) or sentence.strip()=='':
             translations_list.append('')
             continue
-        translated_sentence=translate_text(sentence,target,model_name)
+        translated_sentence=translate_text_gpt(sentence,target,model_name)
         # translated_sentence=translate_text_openrouter(sentence,target,model_name)
         # print(translated_sentence)
         translations_list.append(translated_sentence)
@@ -86,9 +87,9 @@ def translate_dataset(path,target,model_name):
 
 # Following for test
 #target_language = languages[0] # Spanish
-source_path='test_data/test_data.csv'
-translation=translate_dataset(source_path,languages[0],models[0])
-# test=translate_text_openrouter('Der Chirurg versichert der Försterin, dass ihre Vorschläge bereits berücksichtigt wurden.',
-#                                               'es',
-#                                               models[0])
+
+# source_path='test_data/test_data.csv'
+# translation=translate_dataset_gpt(source_path,languages[0],models[0])
+
+# test=translate_text_openrouter('Der Chirurg versichert der Försterin, dass ihre Vorschläge bereits berücksichtigt wurden.','es',models[0])
 #print(test)
