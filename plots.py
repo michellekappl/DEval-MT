@@ -77,7 +77,7 @@ def plot_error_analysis(df: pd.DataFrame, filename: str = "error_analysis.png"):
     plt.savefig(filepath)
     #plt.show()
     plt.close()
-    print(f"Plot saved to {filepath}")
+    print("Saved:", filepath)
 
 
 def plot_logistic_regression(df: pd.DataFrame, folder="outputs"):
@@ -109,6 +109,7 @@ def plot_logistic_regression(df: pd.DataFrame, folder="outputs"):
     os.makedirs(folder, exist_ok=True)
     plt.savefig(filepath)
     #plt.show()
+    print("Saved:", filepath)
 
 
 def save_dataframes(*dfs, filenames='', folder="outputs"):

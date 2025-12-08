@@ -71,7 +71,6 @@ if __name__ == '__main__':
    error_analyzer = ErrorAnalysis(ds1, 'x_gender')
    error_df = error_analyzer.analyze().T
    print(error_df)
-   plot_error_analysis(error_df.T)
 
    # 2. Confusion Matrix
    print("2. CONFUSION MATRIX")
@@ -79,8 +78,7 @@ if __name__ == '__main__':
    cm_analyzer = ConfusionMatrix(ds1, 'x_gender')
    cm_df = cm_analyzer.analyze().T
    print(cm_df)
-   plot_confusion_matrix(cm_df.T)
-
+   
    # 3. Logistic Regression Analysis
    print("3. LOGISTIC REGRESSION ANALYSIS")
    print("-" * 50)
@@ -95,5 +93,7 @@ if __name__ == '__main__':
    lr_results.attrs["filename"] = "logistic_regression"
 
    save_dataframes(error_df, cm_df, lr_results)
-
+   
+   plot_error_analysis(error_df.T)
+   plot_confusion_matrix(cm_df.T)
    plot_logistic_regression(lr_results)
