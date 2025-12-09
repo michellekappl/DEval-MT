@@ -15,12 +15,12 @@ as internal APIs.
 from morphological_analysis.base_analyzer import BaseMorphologicalAnalyzer, MorphologicalToken
 from morphological_analysis.gender import Gender
 from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
-from morphological_analysis.qalsadi_morph_analyzer import QalsadiMorphAnalyzer
+# from morphological_analysis.qalsadi_morph_analyzer import QalsadiMorphAnalyzer
 
 __all__ = [
    'BaseMorphologicalAnalyzer',
    'MorphologicalToken',
    'Gender',
    'SpaCyMorphAnalyzer',
-   'QalsadiMorphAnalyzer',
+   #'QalsadiMorphAnalyzer',
 ]
