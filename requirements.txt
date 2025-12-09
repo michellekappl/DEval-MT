@@ -6,3 +6,6 @@ spacy
 scipy
 statsmodels
 scikit-learn
+statsmodels
+openai
+hf_xet
