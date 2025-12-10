@@ -11,6 +11,8 @@ from analysis import (
 )
 from morphological_analysis.base_analyzer import BaseMorphologicalAnalyzer
 from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
+from morphological_analysis.hebrew_morph_analyzer import HebrewMorphAnalyzer
+from morphological_analysis.qalsadi_morph_analyzer import QalsadiMorphAnalyzer
 from sdk import run_subject_pipeline
 
 def example_data() -> DEvalDataset:
@@ -18,10 +20,14 @@ def example_data() -> DEvalDataset:
    if os.path.exists(f"test_data_processed.csv"):
       ds = DEvalDataset.from_csv(f"test_data_processed.csv", text_column="text", sep=";", translation_columns={
          "es": "es",
-         "fr": "fr"
+         "fr": "fr",
+         "ar": "ar",
+         "he": "he"
       }, prediction_columns={
          "es": "x_gender_es",
-         "fr": "x_gender_fr"
+         "fr": "x_gender_fr",
+         "ar": "x_gender_ar",
+         "he": "x_gender_he"
       })
       return ds
    else:
@@ -32,17 +38,26 @@ def example_data() -> DEvalDataset:
       # load translations from a file
       list_of_es_translations = pd.read_csv(f"test_data/translations/es.txt", header=None, sep=";")[0].tolist()
       list_of_fr_translations = pd.read_csv(f"test_data/translations/fr.txt", header=None, sep=";")[0].tolist()
+      list_of_ar_translations = pd.read_csv(f"test_data/translations/ar.txt", header=None, sep=";")[0].tolist()
+      list_of_he_translations = pd.read_csv(f"test_data/translations/he.txt", header=None, sep=";")[0].tolist()
 
       # Add translations (must match row count)
       ds.add_translations("es", list_of_es_translations, "es")
       ds.add_translations("fr", list_of_fr_translations, "fr")
+      ds.add_translations("ar", list_of_ar_translations, "ar")
+      ds.add_translations("he", list_of_he_translations, "he")
 
       # Build and load analyzers explicitly
       morph_es = SpaCyMorphAnalyzer("es_dep_news_trf"); morph_es.load()
       morph_fr = SpaCyMorphAnalyzer("fr_dep_news_trf"); morph_fr.load()
+      morph_ar = QalsadiMorphAnalyzer()
+      morph_he = HebrewMorphAnalyzer()
+
       analyzers: dict[str, BaseMorphologicalAnalyzer] = {
          "es": morph_es,
          "fr": morph_fr,
+         "ar": morph_ar,
+         "he": morph_he,
       }
 
       # Run for x subject
