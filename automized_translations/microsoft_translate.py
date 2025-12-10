@@ -3,11 +3,11 @@
 # also includes function for reading a dataset.csv and extracting and translating the 
 # sentences from the text column 
 
-
 import os
 import requests
 from typing import List, Union
 from dotenv import load_dotenv
+import uuid
 
 load_dotenv()
 
@@ -16,48 +16,47 @@ MICROSOFT_API_KEY = os.getenv("MICROSOFT_TRANSLATOR_KEY")
 MICROSOFT_ENDPOINT = os.getenv("MICROSOFT_TRANSLATOR_ENDPOINT", "https://api.cognitive.microsofttranslator.com")
 MICROSOFT_REGION = os.getenv("MICROSOFT_TRANSLATOR_REGION", "")
 
-def translate_text_microsoft(text: str, target: Union[str, List[str]], source: str = "de") -> Union[str, dict]:
+
+
+def translate_text_microsoft(text: str, target: str) -> str:
     """
-    Translates text using Microsoft Translator API.
-    Max 50,000 characters per request.
-    
+    Translate text using Microsoft Translator API.
+    Source language is automatically detected.
+
+    Args:
+        text: Text to translate.
+        target: Target language code (e.g., "en", "fr", "ja").
+
     Returns:
-        - Single string if target is a string
-        - Dict of {language: translation} if target is a list
+        Translated text as a string.
     """
-    if isinstance(target, str):
-        target_list = [target]
-        return_single = True
-    else:
-        target_list = target
-        return_single = False
-    
     url = f"{MICROSOFT_ENDPOINT}/translate"
+    
     headers = {
         "Ocp-Apim-Subscription-Key": MICROSOFT_API_KEY,
         "Content-Type": "application/json",
+        "X-ClientTraceId": str(uuid.uuid4()),
     }
     if MICROSOFT_REGION:
         headers["Ocp-Apim-Subscription-Region"] = MICROSOFT_REGION
-    
+
     params = {
         "api-version": "3.0",
-        "from": source,
-        "to": target_list,
+        "to": [target.lower()],  # single target language
+        # omit 'from' to let Microsoft detect the source language automatically
     }
+
     body = [{"text": text}]
     
     response = requests.post(url, headers=headers, params=params, json=body)
     response.raise_for_status()
     data = response.json()
-    
-    # Response format: [{"translations": [{"text": "...", "to": "en"}, ...]}]
-    translations = data[0]["translations"]
-    
-    if return_single:
-        return translations[0]["text"]
-    else:
-        return {t["to"]: t["text"] for t in translations}
+
+    # Response format: [{"translations": [{"text": "...", "to": "en"}]}]
+    return data[0]["translations"][0]["text"]
+
+
+
 
 def batch_translate_and_write_microsoft(texts: List[str], target: Union[str, List[str]], source: str, output_files: dict):
     """

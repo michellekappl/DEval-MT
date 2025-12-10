@@ -1,19 +1,17 @@
 from systran_translate import translate_text_systran
 from google_translate import translate_text_google
+import csv
 
 def translate_dataset(path_to_dataset, target: str, provider: str):
     """
-    Dataset is a .csv file with the last col containing the full sentence
+    Dataset is a .csv file with a column header "text" containing the sentences to translate
     """
     sentences = []
 
     with open(path_to_dataset, 'r') as file:
-        rows = file.readlines()
-        for i, row in enumerate(rows):
-            if i == 0:  # first row only contains the table headers
-                continue
-
-            sentence = row.rstrip('\n').split(';')[-1]
+        reader = csv.DictReader(file, delimiter=';')
+        for row in reader:
+            sentence = row['text']
             sentences.append(sentence)
 
     translations = []
