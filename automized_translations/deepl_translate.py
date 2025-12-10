@@ -7,6 +7,7 @@ import os
 import requests
 from typing import List, Union
 from dotenv import load_dotenv
+import deepl 
 
 load_dotenv()
 
@@ -14,51 +15,47 @@ load_dotenv()
 DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
 DEEPL_BASE_URL = os.getenv("DEEPL_API_URL", "https://api-free.deepl.com/v2")  # or api.deepl.com for pro
 
-def translate_text_deepl(text: str, target: Union[str, List[str]], source: str = "DE") -> Union[str, dict]:
+import os
+from typing import List, Dict
+from dotenv import load_dotenv
+import deepl
+
+load_dotenv()
+
+DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
+
+# Initialize DeepL client
+deepl_client = deepl.DeepLClient(DEEPL_API_KEY)
+
+
+def translate_text_deepl(text: str, target: str) -> str:
     """
-    Translates text using DeepL API.
-    Max 128 KiB per request (~131,072 characters).
-    
-    Note: DeepL uses uppercase language codes (e.g., "EN", "DE")
-    For English, you can specify "EN-US" or "EN-GB"
-    
+    Translate a single text using DeepL.
+
+    Args:
+        text: Text to translate.
+        target: Target language code (e.g., "EN", "FR", "JA").
+
     Returns:
-        - Single string if target is a string
-        - Dict of {language: translation} if target is a list
+        Translated text as a string. Source language is auto-detected.
     """
-    if isinstance(target, str):
-        target_list = [target.upper()]
-        return_single = True
-    else:
-        target_list = [t.upper() for t in target]
-        return_single = False
-    
-    url = f"{DEEPL_BASE_URL}/translate"
-    headers = {
-        "Authorization": f"DeepL-Auth-Key {DEEPL_API_KEY}",
-        "Content-Type": "application/json",
-    }
-    
-    results = {}
-    for tgt in target_list:
-        body = {
-            "text": [text],
-            "source_lang": source.upper(),
-            "target_lang": tgt,
-        }
-        
-        response = requests.post(url, headers=headers, json=body)
-        response.raise_for_status()
-        data = response.json()
-        
-        # Response format: {"translations": [{"detected_source_language": "DE", "text": "..."}]}
-        translated_text = data["translations"][0]["text"]
-        results[tgt.lower()] = translated_text
-    
-    if return_single:
-        return list(results.values())[0]
-    else:
-        return results
+   # result = deepl_client.translate_text(text, target_lang=target.upper())
+    #return result.text
+    try:
+        # Ensure target is uppercase
+        result = deepl_client.translate_text(text, target_lang=target.upper(), source_lang="DE")
+        # Warn if returned text is identical to input (possible silent failure)
+        if result.text.strip() == text.strip():
+            print(f"Warning: DeepL returned the same text. Check target language '{target}' or input language.")
+        return result.text
+    except deepl.DeepLException as e:
+        # Catch DeepL API errors and print the full message
+        print(f"DeepL API error: {e}")
+        raise
+
+
+
+
 
 
 def batch_translate_and_write_deepl(texts: List[str], target: Union[str, List[str]], source: str, output_files: dict):
