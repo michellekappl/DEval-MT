@@ -12,7 +12,7 @@ from analysis import (
 from morphological_analysis.base_analyzer import BaseMorphologicalAnalyzer
 from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
 from sdk import run_subject_pipeline
-from translator import translate_dataset
+from automized_translations.translator import translate_dataset
 
 def example_data() -> DEvalDataset:
    # if style_processed file aready exists, load it
