@@ -98,6 +98,7 @@ for key, jobs in groups.items():
                     GEN_TEMPLATES_PER_JOB - len(specific_templates),
                 )
             )
+            # get the coresponding Pronoun sentences 
             generic_pronoun_templates_to_use = []
             for t in generic_templates_to_use:
                 for p in generic_pronoun_templates:
@@ -110,8 +111,6 @@ for key, jobs in groups.items():
             templates_to_use = list(specific_templates) + generic_templates_to_use
             templates_to_use = sorted(templates_to_use, key=lambda template: template.sentence_id)
             for template in templates_to_use:
-                # print(template.sentence)
-                # print(template.sentence_id)
                 instances.extend(template.gen_for_xs(key, gender_group))
 
 for template in filter(

@@ -2487,7 +2487,8 @@ groups = {
                 nom_pl="Salesmanagerinnen",
                 status="Experten",
             ),
-        ][
+        ],
+        [
             Noun("m", "Pfandleiher", "Pfandleihers", nom_pl="Pfandleiher", status="Fachkraefte"),
             Noun("f", "Pfandleiherin", nom_pl="Pfandleiherinnen", status="Fachkraefte"),
         ],

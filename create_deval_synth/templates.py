@@ -96,6 +96,7 @@ class Instance:
         self.y_idx = y_idx  # index of y in the sentence
         self.name = name
         self.statistics = statistics
+        # id adjectives shift sentence_style to adjective 
         if(adjective):
             self.sentence_style += 2
 
