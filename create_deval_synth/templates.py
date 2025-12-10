@@ -43,7 +43,9 @@ class Instance:
     x: Noun
     """The first noun in the sentence."""
     sentence_style: str | int 
-    """The style of se sentence"""
+    """The style of the sentence"""
+    sentence_id: int | None
+    """The id of the sentence"""
     x_group: str | int
     """The group of the first noun (either "romantic" or a number corresponding to some job group)."""
     x_idx: int
@@ -69,6 +71,7 @@ class Instance:
         self,
         x: Noun,
         sentence_style: str | int,
+        sentence_id: int | None,
         x_group: str | int,
         x_idx: int,
         y: Noun | None,
@@ -82,6 +85,7 @@ class Instance:
     ):
         self.x = x
         self.sentence_style = sentence_style
+        self.sentence_id = sentence_id
         self.y = y
         self.x_group = x_group
         self.y_group = y_group
@@ -92,9 +96,12 @@ class Instance:
         self.y_idx = y_idx  # index of y in the sentence
         self.name = name
         self.statistics = statistics
+        if(adjective):
+            self.sentence_style += 2
 
     header = (
         "sentence_style;"
+        "sentence_id;"
         "x_nom_sg;x_group;x_gender;x_idx;x_stereotypical;x_level;"
         "y_nom_sg;y_group;y_gender;y_idx;y_stereotypical;y_level;"
         "adjective;modified;name;name_gender;text"
@@ -104,6 +111,7 @@ class Instance:
     def __str__(self):
         return (
             f"{self.sentence_style};"
+            + f"{self.sentence_id};"
             + f"{self.x.nom_sg};{self.x_group};{self.x.gender};{self.x_idx};{self.x_stereotypical};{self.x.status or 'none'};"
             + (
                 f"{self.y.nom_sg};{self.y_group};{self.y.gender};{self.y_idx};{self.y_stereotypical};{self.y.status or 'none'};"
@@ -197,6 +205,7 @@ class Template:
         ]
 
         self.sentence = row[0].strip()  # the actual sentence template
+        self.sentence_id = row[2].strip()
         self.statistics = statistics
         self.adjectives = adjectives  # adjectives to use in template
         self.groups = groups  # groups to use in template
@@ -531,6 +540,7 @@ class Template:
             instance = Instance(
                 x,
                 self.sentence_style,
+                None,
                 x_group,
                 from_none(x_idx),
                 None,
@@ -595,6 +605,7 @@ class Template:
             instance = Instance(
                 x,
                 self.sentence_style,
+                self.sentence_id,
                 x_group,
                 from_none(x_idx),
                 y,
@@ -688,7 +699,6 @@ class Template:
                 for adjective in self.adjectives
                 for modified in [
                     "x",
-                    "y",
                 ]
             )
 
@@ -722,6 +732,7 @@ class Template:
             instance = Instance(
                 x,
                 self.sentence_style,
+                self.sentence_id,
                 x_group,
                 from_none(x_idx),
                 y,
