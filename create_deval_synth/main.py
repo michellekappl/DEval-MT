@@ -70,7 +70,7 @@ print(f"Loaded {len(templates)} templates from {csv_file}.")
 
 # templates that work for any job
 generic_templates = [
-    t for t in templates if t.generic and t.sentence_style == NORMAL_SENTENCE
+    t for t in templates if t.generic 
 ]
 
 assert len(templates) >= GEN_TEMPLATES_PER_JOB, (
