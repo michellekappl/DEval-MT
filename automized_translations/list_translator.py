@@ -12,7 +12,9 @@ from typing import List, Union
 
 def translate_dataset(csv_path: str, target: Union[str, List[str]], provider: Union[str, List[str]], 
                       output_dir: str = "../test_data/translations", 
-                      overwrite_translation: bool = False, gpt_model: str = "gpt-4o-mini"):
+                      overwrite_translation: bool = False,
+                      #gpt_model: str = "gpt-4o-mini"
+                      ):
     """
     Translates a CSV dataset using specified translation provider(s) and target language(s).
     Writes translations directly to files. (default folder /test_data/translations)
@@ -94,11 +96,13 @@ def translate_dataset(csv_path: str, target: Union[str, List[str]], provider: Un
                             translated_sentence = translate_text_deepl(sentence, lang)
                         elif prov == "microsoft":
                             translated_sentence = translate_text_microsoft(sentence, lang)
-                        elif prov == "gpt":
-                            translated_sentence = translate_text_gpt(sentence, lang, gpt_model)
-                            
+                        elif prov == "gpt-4o":
+                            translated_sentence = translate_text_gpt(sentence, lang, prov)
+                        elif prov == "gpt-4o-mini":
+                            translated_sentence = translate_text_gpt(sentence, lang, prov)
+
                         else:
-                            raise ValueError(f"Unknown provider: {prov}. Available: systran, google, deepl, microsoft, gpt")
+                            raise ValueError(f"Unknown provider: {prov}. Available: systran, google, deepl, microsoft, gpt-4o, gpt-4o-mini")
                         
                         file.write(translated_sentence + "\n")
                         

@@ -47,7 +47,7 @@ The pipeline automatically:
 
 - **(NEW)**`automized_translations/`:
   - `systran_translate.py`, `gpt_translate.py`, `deepl_translate.py`, `google_translate.py`, `microsoft_translate.py`: translates sentences with multiple models.
-  - `translator.py`, `ms_dl_translator.py`: integrates different translation models and translates the whole dataset.
+  - `list_translator.py`: integrates different translation models and translates the whole dataset.
 
 This modular design makes it easy to plug in:
 - new languages,
@@ -84,7 +84,7 @@ This modular design makes it easy to plug in:
 - Other than that the installation steps are the same as in the Linux Installation
 
 ## Usage
-A full, runnable example can be found in [`usage_example.py`].
+A full, runnable example can be found in [`usage_example.py`, `usage_example_2.py`].
 
 ## Apis/methods/packages/platforms used
 - Word alignment: [Simalign](https://github.com/cisnlp/simalign)

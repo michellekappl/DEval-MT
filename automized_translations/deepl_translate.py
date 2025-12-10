@@ -15,14 +15,14 @@ load_dotenv()
 DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
 DEEPL_BASE_URL = os.getenv("DEEPL_API_URL", "https://api-free.deepl.com/v2")  # or api.deepl.com for pro
 
-import os
-from typing import List, Dict
-from dotenv import load_dotenv
-import deepl
+# import os
+# from typing import List, Dict
+# from dotenv import load_dotenv
+# import deepl
 
-load_dotenv()
+# load_dotenv()
 
-DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
+# DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
 
 # Initialize DeepL client
 deepl_client = deepl.DeepLClient(DEEPL_API_KEY)

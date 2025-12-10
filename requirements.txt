@@ -12,3 +12,4 @@ hf_xet
 google-cloud
 google-cloud-translate
 google-cloud-storage
+deepl
