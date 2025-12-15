@@ -119,7 +119,10 @@ for template in filter(
     # make sure we have generate sentences with names and romantic groups
     xs = random.sample(template.xs, GEN_PER_TEMPLATE)
     for x_group, x in xs:
-        instances.extend(template.gen_for_xs(x_group, [x]))
+        if template.sentence_style == NAME_SENTENCE and x_group == "romantic":
+            continue
+        else:
+            instances.extend(template.gen_for_xs(x_group, [x]))
 
 print(f"Generated {len(instances)} instances from {len(templates)} templates.")
 with open("output.csv", "w", encoding="utf-8") as f:

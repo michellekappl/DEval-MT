@@ -2021,7 +2021,8 @@ groups = {
                 status="Fachkraefte",
             ),
             Noun("f", "Büroassistenz", status="Fachkraefte", pronouns="dey"),
-        ][
+        ],
+        [
             Noun(
                 "m",
                 "Telefonist",
@@ -2854,7 +2855,8 @@ groups = {
                 status="Spezialisten",
             ),
             Noun("f", "Werklehrerin", nom_pl="Werklehrerinnen", status="Spezialisten"),
-        ][
+        ],
+        [
             Noun(
                 "m",
                 "Berufsschullehrer",
