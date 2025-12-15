@@ -62,7 +62,7 @@ with open(csv_file, newline="", encoding="utf-8") as f:
     next(reader)
     for row in reader:
         # create template for each row
-        r = Template(row, statistics, groups, [], names)
+        r = Template(row, statistics, groups, adjectives, names)
         # generate all instances
         templates.append(r)
 
@@ -70,7 +70,11 @@ print(f"Loaded {len(templates)} templates from {csv_file}.")
 
 # templates that work for any job
 generic_templates = [
-    t for t in templates if t.generic 
+    t for t in templates if t.sentence_style == 1
+]
+
+generic_pronoun_templates = [
+    t for t in templates if t.sentence_style == 2
 ]
 
 assert len(templates) >= GEN_TEMPLATES_PER_JOB, (
@@ -94,9 +98,18 @@ for key, jobs in groups.items():
                     GEN_TEMPLATES_PER_JOB - len(specific_templates),
                 )
             )
+            # get the coresponding Pronoun sentences 
+            generic_pronoun_templates_to_use = []
+            for t in generic_templates_to_use:
+                for p in generic_pronoun_templates:
+                    if t.sentence_id == p.sentence_id:
+                        generic_pronoun_templates_to_use.append(p)
+            
+            generic_templates_to_use = generic_templates_to_use + generic_pronoun_templates_to_use
+
             # use all generic templates
             templates_to_use = list(specific_templates) + generic_templates_to_use
-
+            templates_to_use = sorted(templates_to_use, key=lambda template: template.sentence_id)
             for template in templates_to_use:
                 instances.extend(template.gen_for_xs(key, gender_group))
 
