@@ -1,8 +1,0 @@
-	1. Changed the csv parsing to taking the "text" column instead of just the last column (stable against dataset.csv modifications)
-	2. Did the deepl and microsoft text translator functions, simplified to just take target language and text as input 
-	3. For deepl source language "DE" had to be hardcoded bc of some weird behaviour else
-	4. Changed the translate_dataset function (inside the list_translator.py) to accept a list of providors and languages (to loop inside and not outside of the function) 
-	5. Added an overwrite = FALSE parameter to check if the translation already exists and skip it to save resources (set to TRUE if want to rerun translations) 
-	6. Added terminal output logging of translation progress in 25% steps 
-    7. Included gpt model too (but manually, watch out while merging) 
-    8. Added a test py (test_list_translator.py) to run everything (adjust models according to your available API keys)

@@ -47,7 +47,9 @@ The pipeline automatically:
 
 - **(NEW)**`automized_translations/`:
   - `systran_translate.py`, `gpt_translate.py`, `deepl_translate.py`, `google_translate.py`, `microsoft_translate.py`: translates sentences with multiple models.
-  - `list_translator.py`: integrates different translation models and translates the whole dataset.
+  - `list_translator.py`: integrates different translation models and languages, multiple inputs possible 
+  - use `test_list_translator.py` to test/try the translation functions
+  - use `dataset_translation.py` to translate a proper dataset
 
 This modular design makes it easy to plug in:
 - new languages,

@@ -1,5 +1,11 @@
 from list_translator import translate_dataset
 
+
+# Multiple languages, multiple providers with custom output directory
+#!!!!
+# TBD ! input correct dataset file path in all functions-> then the file can be run as is
+# and the entire dataset will be fully translated (all lang + all prov)
+
 # Beware of langauge codes supported by each provider!
 # uppercase codes for Deepl are handled within the code 
 """
@@ -21,20 +27,49 @@ from list_translator import translate_dataset
 """
 
 
-
-# Single language, single provider
-#translate_dataset("../test_data/test_data_mini.csv", "fr", "deepl")
-
-# Multiple languages, single provider
-#translate_dataset("../test_data/test_data_mini.csv", ["pt", "fr"], "microsoft")
-
-# Single language, multiple providers
-#translate_dataset("../test_data/test_data_mini.csv", "it", ["deepl", "microsoft"])
-
-# Multiple languages, multiple providers with custom output directory
+#translation for unified languages
 translate_dataset(
-    "../test_data/test_data_mini.csv", 
-    ["es", "fr"], 
+    "../test_data/test_data_mini.csv", # set dataset path
+    ["ru", "uk", "es", "fr", "it", "pt", "ro", "sv", "pl", "sl", "ar"], 
     ["deepl", "microsoft", "google", "gpt-4o", "gpt-4o-mini", "systran"],
+    overwrite_translation=False
+)
+
+
+#translation for alternate language codes 
+
+translate_dataset(
+    "../test_data/test_data_mini.csv", # set dataset path
+    ["nb"], 
+    ["deepl", "microsoft"],
+    overwrite_translation=False
+)
+
+
+translate_dataset(
+    "../test_data/test_data_mini.csv", # set dataset path
+    ["no"], 
+    ["google", "gpt-4o", "gpt-4o-mini", "systran"],
+    overwrite_translation=True
+)
+
+translate_dataset(
+    "../test_data/test_data_mini.csv", # set dataset path
+    ["iw"], 
+    ["google"],
+    overwrite_translation=False
+)
+
+translate_dataset(
+    "../test_data/test_data_mini.csv", # set dataset path
+    ["he"], 
+    ["deepl", "microsoft", "gpt-4o", "gpt-4o-mini", "systran"],
+    overwrite_translation=False
+)
+
+translate_dataset(
+    "../test_data/test_data_mini.csv", # set dataset path
+    ["pt-pt"], 
+    ["deepl"],
     overwrite_translation=True
 )
