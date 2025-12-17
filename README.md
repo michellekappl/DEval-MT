@@ -14,8 +14,8 @@ The pipeline automatically:
 2. extracts the target-side phrase corresponding to the annotated source subject,
 3. predicts the grammatical gender of that target phrase using pluggable morphological analyzers,
 4. compares predictions against gold labels and provides analysis utilities.
-
-A full, runnable example can be found in [`usage_example.py`].
+5. **(NEW)** generates plots for analysis results mentioned above.
+6. **(NEW)** automatically translates the source sentences in dataset with multiple MT models: DeepL, ChatGPT, SYSTRAN, Google, Microsoft. (for chatgpt now it is gpt-4o/gpt-4o-mini)
 
 ## Core components
 
@@ -45,10 +45,15 @@ A full, runnable example can be found in [`usage_example.py`].
   - `ConfusionMatrix`: confusion matrices & precision/recall/F1 per gender.
   - `LogisticRegressionAnalysis`: relates predictors (e.g. stereotypicality) to correctness.
 
+- **(NEW)**`automized_translations/`:
+  - `systran_translate.py`, `gpt_translate.py`, `deepl_translate.py`, `google_translate.py`, `microsoft_translate.py`: translates sentences with multiple models.
+  - `list_translator.py`: integrates different translation models and translates the whole dataset.
+
 This modular design makes it easy to plug in:
 - new languages,
 - different morphological analyzers,
-- additional analysis modules.
+- additional analysis modules,
+- different translation models.
 
 ## Installation Linux
 
@@ -73,10 +78,15 @@ This modular design makes it easy to plug in:
 
 ## Installation Windows (currently needs python version < 3.12)
 - On Windows, you may need to use a version manager such as **pyenv for Windows** or **pyenv-win** to install and switch between Python versions.  
-  - **TODO:** Add a reference or setup guide for `pyenv-win` to this README.  
-  - **TODO:** Document all known working Python versions.
+  - ~~**TODO:** Add a reference or setup guide for `pyenv-win` to this README.~~
+  - [`pyenv-win`](https://github.com/pyenv-win/pyenv-win)
+  - **(TBC)** All known working Python versions: 3.11
 - Other than that the installation steps are the same as in the Linux Installation
 
-
 ## Usage
-A full usage example can be found in `usage_example.py`.
+A full, runnable example can be found in [`usage_example.py`, `usage_example_2.py`].
+
+## Apis/methods/packages/platforms used
+- Word alignment: [Simalign](https://github.com/cisnlp/simalign)
+- A platform hosting models: [Huggingface](https://huggingface.co/)
+- Morphological analysis model: [spaCy](https://spacy.io/)
