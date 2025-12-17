@@ -20,7 +20,7 @@ sentence;style;id
 <x_nom> sortiert <x_poss_f_acc> Papiere ordentlich.;<normal_pron>;19
 <x_nom> ruht sich aus, wenn <x_pron_nom> Erholung braucht.;<normal_pron>;20
 <x_nom> analysiert <x_poss_f_acc> Projekte sorgfältig.;<normal_pron>;21
-<x_nom> plant <x_poss_m_dat> Urlaub mit Hingabe.;<normal_pron>;22
+<x_nom> plant <x_poss_m_acc> Urlaub mit Hingabe.;<normal_pron>;22
 <x_nom> bringt <x_poss_n_acc> Fahrrad zur Reparatur.;<normal_pron>;23
 <x_nom> feiert fröhlich <x_poss_m_acc> Geburtstag.;<normal_pron>;24
 <x_nom> gießt <x_poss_f_acc> Blumen täglich.;<normal_pron>;25
