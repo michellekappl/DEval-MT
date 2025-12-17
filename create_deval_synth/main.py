@@ -69,17 +69,13 @@ with open(csv_file, newline="", encoding="utf-8") as f:
 print(f"Loaded {len(templates)} templates from {csv_file}.")
 
 # templates that work for any job
-generic_templates = [
-    t for t in templates if t.sentence_style == 1
-]
+generic_templates = [t for t in templates if t.sentence_style == 1]
 
-generic_pronoun_templates = [
-    t for t in templates if t.sentence_style == 2
-]
+generic_pronoun_templates = [t for t in templates if t.sentence_style == 2]
 
-assert len(templates) >= GEN_TEMPLATES_PER_JOB, (
-    "Not enough templates available. Please check the input file."
-)
+assert (
+    len(templates) >= GEN_TEMPLATES_PER_JOB
+), "Not enough templates available. Please check the input file."
 
 for key, jobs in groups.items():
     # select templates based on the group key
@@ -98,13 +94,13 @@ for key, jobs in groups.items():
                     GEN_TEMPLATES_PER_JOB - len(specific_templates),
                 )
             )
-            # get the coresponding Pronoun sentences 
+            # get the coresponding Pronoun sentences
             generic_pronoun_templates_to_use = []
             for t in generic_templates_to_use:
                 for p in generic_pronoun_templates:
                     if t.sentence_id == p.sentence_id:
                         generic_pronoun_templates_to_use.append(p)
-            
+
             generic_templates_to_use = generic_templates_to_use + generic_pronoun_templates_to_use
 
             # use all generic templates
@@ -113,16 +109,16 @@ for key, jobs in groups.items():
             for template in templates_to_use:
                 instances.extend(template.gen_for_xs(key, gender_group))
 
-for template in filter(
-    lambda t: t.sentence_style in [NAME_SENTENCE, ROMANTIC_SENTENCE], templates
-):
-    # make sure we have generate sentences with names and romantic groups
-    xs = random.sample(template.xs, GEN_PER_TEMPLATE)
-    for x_group, x in xs:
-        if template.sentence_style == NAME_SENTENCE and x_group == "romantic":
-            continue
-        else:
-            instances.extend(template.gen_for_xs(x_group, [x]))
+# for template in filter(
+#     lambda t: t.sentence_style in [NAME_SENTENCE, ROMANTIC_SENTENCE], templates
+# ):
+#     # make sure we have generate sentences with names and romantic groups
+#     xs = random.sample(template.xs, GEN_PER_TEMPLATE)
+#     for x_group, x in xs:
+#         if template.sentence_style == NAME_SENTENCE and x_group == "romantic":
+#             continue
+#         else:
+#             instances.extend(template.gen_for_xs(x_group, [x]))
 
 print(f"Generated {len(instances)} instances from {len(templates)} templates.")
 with open("output.csv", "w", encoding="utf-8") as f:

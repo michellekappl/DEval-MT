@@ -48,7 +48,7 @@ def example_data() -> DEvalDataset:
       # Run for x subject
       df_x = run_subject_pipeline(
          ds,
-      analyzers=analyzers,
+         analyzers=analyzers,
          source_column="text",
          subject_index_column="x_idx",
          output_prefix="x",
