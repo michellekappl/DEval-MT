@@ -136,10 +136,7 @@ def save_dataframes(*dfs, filenames='', folder="outputs"):
     print(f"Saved {len(dfs)} CSV files to '{folder}/'")
 
 
-def plot_confusion_matrix(df: pd.DataFrame, filename="confusion_metrics.png"):
-    import os
-    import numpy as np
-    import matplotlib.pyplot as plt
+def plot_confusion_metrics(df: pd.DataFrame, filename="confusion_metrics.png"):
 
     os.makedirs("outputs", exist_ok=True)
 
@@ -197,3 +194,12 @@ def plot_confusion_matrix(df: pd.DataFrame, filename="confusion_metrics.png"):
     plt.close()
 
     print("Saved:", save_path)
+
+def plot_model_comparison(df_accuracy: pd.DataFrame, df_precision: pd.DataFrame, filename="model_comparison.png"):
+    
+    os.makedirs("outputs", exist_ok=True)
+
+    languages = df_precision["language"].tolist()
+    metric_df = df_precision.set_index("language")
+
+    delta_g = 0

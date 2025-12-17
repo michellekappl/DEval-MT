@@ -16,7 +16,7 @@ from sdk import run_subject_pipeline
 # Import plotting functions from your modular package
 from plots import (
    plot_error_analysis,
-   plot_confusion_matrix,
+   plot_confusion_metrics,
    plot_logistic_regression,
    save_dataframes
 )
@@ -95,5 +95,5 @@ if __name__ == '__main__':
    save_dataframes(error_df, cm_df, lr_results)
    
    plot_error_analysis(error_df.T)
-   plot_confusion_matrix(cm_df.T)
+   plot_confusion_metrics(cm_df.T)
    plot_logistic_regression(lr_results)
