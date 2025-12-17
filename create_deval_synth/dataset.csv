@@ -1,148 +1,86 @@
-sentence;hierarchy;group_x;group_y
-<y_nom> liefert <x_dat> einen neuen Anzug und bittet <x_pron_acc>, ihn anzuziehen.;none;[];[282]
-<y_nom> braucht <x_acc> für die Erntetabelle und bittet <x_pron_acc> um Hilfe.;none;[];[111]
-<y_nom> rügt <x_acc>, weil <x_pron_nom> bei der Einreichung von Unterlagen einen Fehler gemacht hat.;y>x;[];[]
-<x_nom> wird von <y_dat> betreut, verschweigt <x_poss_pl_acc> Allergien aber.;none;[];[813,814, 822, 821]
-<y_nom> fürchtet sich vor dem Bericht <x_gen> und zögert, mit <x_pron_dat> zu sprechen.;y<x;[];[]
-<y_nom> lachte <x_acc> aus und behandelte <x_pron_acc> schlecht.;none;[];[]
-<y_nom> bringt <x_dat> das Handwerk bei und achtet darauf, dass <x_pron_nom> konzentriert bleibt.;y>x;[331,332,333,934,935,936];[331,332,333,934,935,936]
-Als <x_nom> ankommt, leiht <y_nom> <x_pron_dat> einen riesigen Lastwagen.;none;[];[]
-<y_nom> ist neidisch auf den Job <x_gen> und teilt das <x_pron_dat> mit.;none;[];[]
-<y_nom> fordert, dass <x_nom> den Platz verlässt, da <x_pron_nom> hier nicht erwünscht ist.;none;[];[]
-<y_nom> zeigt sich besorgt über den Besuch <x_gen>, weil bekannt ist, dass <x_pron_nom> sehr streng ist.;none;[];[]
-<y_nom> spricht mit <x_dat> über das Feuer, das <x_pron_nom> letzte Nacht verursacht hat.;none;[];[]
-<x_nom> schimpft mit <y_acc>, weil <x_poss_m_nom> Ofen kaputt ist.;none;[];[]
-<x_nom> bewundert die Arbeit <y_gen>, da <x_pron_nom> Talent sehr schätzt.;none;[];[]
-<y_nom> beschwert sich bei <x_dat>, weil <x_pron_nom> gegenüber Kunden keinen Respekt zeigt.;none;[];[]
-<x_nom> sagt zu <y_dat>, dass <x_pron_nom> Kreditkarten für Einkäufe unter zehn Euro nicht akzeptiert.;none;[];[621]
-<y_nom> ruft <x_acc> an und bittet <x_pron_acc> um Erlaubnis.;y<x;[];[]
-<y_nom> wird von <x_dat> eingestellt und bekommt das Gehalt von <x_pron_dat>.;x>y;[];[]
-<x_nom> isst mehr als <y_nom>, weil <x_pron_nom> sich mehr bewegt.;none;[];[]
-<y_nom> vertraut <x_dat> nicht und bittet <x_pron_acc>, zu gehen.;none;[];[]
-<y_nom> sagt <x_dat>, dass <x_pron_nom> sich früh zum Dienst melden muss.;y>x;[];[]
-<y_nom> tut <x_dat> einen Gefallen, hasst <x_pron_acc> aber insgeheim.;none;[];[]
-<y_nom> mag <x_acc> und verkauft <x_pron_dat> Ware mit Rabatt.;none;[];[625,624,623,621,612,611,935]
-<y_nom> trifft <x_acc> und erklärt <x_pron_dat> das Design.;none;[];[]
-<x_nom> bittet <y_acc> um Hilfe, weil <x_poss_f_nom> Mutter krank ist.;none;[];[]
-<y_nom> putzt für <x_acc> und hofft, dass <x_pron_nom> Trinkgeld gibt.;none;[];[541]
-<x_nom> stimmt sich mit <y_dat> ab, damit <x_pron_nom> das Argument besser erklären kann.;none;[];[]
-<y_nom> räumt <x_dat> den Raum auf und bittet <x_pron_acc> um Rat.;none;[];[]
-<y_nom> hilft <x_acc> und fordert <x_pron_acc> auf, sich keine Sorgen zu machen.;none;[];[]
-<x_nom> kann <y_acc> nicht verstehen, weil <x_pron_nom> nur Deutsch spricht.;none;[];[]
-<y_nom> schreit <x_acc> an und nennt <x_pron_acc> einen Dummkopf.;none;[];[]
-<x_nom> fährt <y_acc> um, weil <x_pron_nom> am Handy war.;none;[];[]
-<y_nom> ruft <x_acc> an und bittet <x_pron_acc>, einen Artikel über das Unternehmen zu schreiben.;none;[921, 922, 924];[]
-<y_nom> rettet <x_acc> vor der Menschenmenge und bringt <x_pron_acc> nach Hause.;none;[];[]
-Wenn Winter ist, besucht <x_nom> <y_acc> oft, weil <x_pron_nom> weniger arbeitet.;none;[];[]
-<y_nom> berechnet <x_dat> mehr Geld, will <x_pron_dat> aber nicht mehr Ware geben.;none;[];[625, 624,623,621,612,611,935]
-<y_nom> verdient mehr als <x_nom>, weil <x_pron_nom> faul und nachlässig ist.;none;[];[]
-<y_nom> gibt <x_dat> einen Hut und stiehlt dann <x_poss_f_acc> Geldbörse.;none;[];[]
-<y_nom> genießt es, von <x_dat> einen Haarschnitt zu bekommen, weil <x_pron_nom> gute Arbeit macht.;none;[823];[]
-<y_nom> schrie <x_acc> an und drohte, <x_pron_acc> zu verklagen.;none;[];[]
-<y_nom> bereitete eine Suppe für <x_acc> vor und wartete darauf, dass <x_pron_nom> zahlt.;none;[];[293]
-<y_nom> rief <x_dat> ein Taxi und erklärte <x_pron_dat>, wohin <x_pron_nom> gehen sollte.;none;[];[]
-<y_nom> wurde ungeduldig mit <x_dat>, aber hörte trotzdem <x_poss_f_acc> Geschichte an.;none;[];[]
-<y_nom> tat <x_dat> einen Gefallen und wurde von <x_pron_dat> gemocht.;none;[];[]
-<y_nom> ist schockiert über das Verhalten <x_gen> und bittet <x_pron_acc>, aufzuhören.;none;[];[]
-<y_nom> ignoriert <x_acc> und befiehlt <x_pron_dat>, sich wieder an die Arbeit zu machen.;y>x;[];[]
-<x_nom> hilft <y_dat> beim Shoppen, weil <x_pron_nom> sich für Mode interessiert.;none;[];[]
-<y_nom> begrüßt <x_acc> und schenkt <x_pron_dat> ein Bonbon als kleine Aufmerksamkeit.;none;[];[]
-<y_nom> fragt <x_acc> nach Hilfe, weil <x_pron_nom> sich in der Bibliothek viel besser auskennt.;none;[];[]
-<y_nom> bittet <x_acc> um ein Buch und leiht es sich von <x_pron_dat> aus.;none;[];[]
-<x_nom> verspricht <y_dat> eine Gehaltserhöhung, weil <x_pron_nom> mit der Leistung zufrieden ist.;x>y;[];[]
-<x_nom> feuert <y_acc>, weil <x_pron_nom> die Arbeit schlecht findet.;x>y;[];[]
-<y_nom> sieht <x_acc> und erklärt <x_pron_dat> die Situation.;none;[];[]
-<x_nom> ruft <y_acc> an um zu sagen, dass <x_pron_nom> die Arbeit erledigt hat.;none;[];[]
-<x_nom> bedankt sich bei <y_dat>, weil <x_pron_nom> die Unterstützung zu schätzen weiß.;none;[];[]
-<y_nom> ruft bei <x_dat> an und bittet <x_pron_acc>, vor 9 Uhr morgens zu kommen.;none;[];[]
-<y_nom> dankt <x_dat>, weil <x_pron_nom> immer sehr nett zu Patienten ist.;none;[813, 814, 816, 817, 821];[]
-<y_nom> bietet an <x_dat>, <x_pron_dat> bei <x_poss_f_acc> Steuererklärung zu helfen.;none;[];[]
-<x_nom> spricht mit <y_dat> über einen Patienten, bei dem <x_pron_nom> eine Untersuchung machen muss.;none;[813, 814, 816, 817, 821];[813, 814, 816, 817,821]
-<x_nom> untersucht <y_acc>, weil <x_pron_nom> sich Sorgen macht.;none;[813, 814, 816, 817, 821];[]
-<y_nom> fragt <x_acc>, weil <x_pron_nom> sich damit auskennt.;none;[];[]
-<y_nom> fragt <x_acc> nach dem Weg, weil <x_pron_nom> dieses Gebäude viel besser kennt.;none;[];[]
-<y_nom> ist frech zu <x_dat> und stellt <x_pron_dat> ein Bein.;none;[];[]
-<y_nom> bewundert <x_acc> und hätte gern <x_poss_m_acc> Job.;none;[];[]
-<y_nom> besucht <x_acc> und stellt <x_pron_dat> ein paar Fragen.;none;[];[]
-<y_nom> hilft <x_dat>, das Buch zu finden, und lächelt <x_pron_acc> an.;none;[];[]
-<x_nom> bittet <y_acc>, <x_poss_m_acc> Zeitplan für morgen zu besprechen.;none;[];[]
-<y_nom> hilft <x_dat> und bittet <x_pron_acc>, <x_pron_dat> dabei einen Gefallen zu tun.;none;[];[]
-<y_nom> ruft <x_acc> an und vereinbart einen Termin mit <x_pron_dat>.;none;[];[]
-<y_nom> geht zu <x_dat>, weil alle wissen, dass <x_pron_nom> die besten Ratschläge gibt.;none;[];[]
-<y_nom> freundet sich mit <x_dat> an und erzählt <x_pron_dat> vom Klatsch der Mitarbeitenden.;none;[];[]
-<y_nom> sagt <x_dat>, dass <x_pron_nom> geduldiger mit den Kindern sein muss.;none;[];[]
-<y_nom> trifft sich mit <x_dat>, weil <x_pron_nom> einige Fehler gemacht hat.;none;[];[]
-<y_nom> trinkt einen Kaffee mit <x_dat> und diskutiert mit <x_pron_dat>.;none;[];[]
-<x_nom> rettet <y_acc> aus dem brennenden Gebäude, weil <x_pron_nom> nicht einfach nur zusehen und nichts tun kann.;none;[];[]
-<x_nom> meldet sich freiwillig, um <y_dat> Programmieren beizubringen, weil <x_pron_nom> sich dadurch gutes Karma erhofft.;none;[];[]
-<y_nom> legt <x_dat> eine Petition vor, von der <x_pron_nom> nocht nichts wusste.;none;[];[]
-<x_nom> trifft sich mit <y_dat>, weil <x_pron_nom> mehr über Bewerbungen wissen will.;none;[];[]
-<y_nom> trifft sich mit <x_dat>, weil <x_pron_nom> Ratschläge für Bewerbungen geben kann.;none;[];[]
-<x_nom> sagt <y_dat>, dass <x_pron_nom> das Gemälde auf zehntausend Euro schätzt.;none;[];[]
-<y_nom> vereinbart mit <x_dat> ein Meeting, um sich <x_poss_pl_acc> Ideen zur Inspiration anzusehen.;none;[];[]
-<y_nom> lässt <x_dat> ein großes Trinkgeld da, weil <x_pron_nom> das Getränk richtig gut gemixt hat.;none;[633];[]
-<x_nom> ruft <y_acc> an, weil <x_pron_nom> neue Geheimtipps hat.;none;[];[]
-<x_nom> ruft die 110 an, spricht mit <y_dat> und <x_pron_dat> wird gesagt, dass <x_pron_nom> an einem sicheren Ort auf Hilfe warten soll.;none;[];[532]
-<x_nom> entschuldigt sich bei <y_dat>, weil <y_rel_nom> mit <x_poss_m_dat> Art zu kochen nicht zufrieden ist.;none;[];[]
-<x_nom> sagt <y_dat>, dass <x_pron_nom> gerne eine Führung durch das Büro geben würde.;none;[];[]
-<y_nom> hilft <x_dat>, ein Buch auszusuchen, weil <x_pron_nom> nicht weiß, was <x_pron_nom> lesen soll.;none;[];[]
-<y_nom> will <x_acc> treffen, weil <x_pron_nom> mehr Erfahrung mit medizinischen Eingriffen hat.;none;[813, 814, 816, 817, 821];[813, 814, 816, 817, 821]
-<x_nom> ruft <y_acc> an, weil <x_poss_f_nom> Arbeit morgen erledigt sein wird.;none;[];[]
-<x_nom> bittet um ein Gespräch mit <y_dat>, weil <x_pron_nom> den Abrechnungsfehler schnell beheben will.;none;[];[]
-<x_nom> ermutigt <y_acc>, drei Mahlzeiten am Tag zu essen, weil das der Rat ist, den <x_pron_nom> allen gibt.;none;[813, 814, 816, 817, 821];[]
-<x_nom> sagt <y_dat>, dass <x_pron_nom> nächste Woche im Urlaub ist.;none;[];[]
-<x_nom> trifft sich mit <y_dat>, um <x_poss_f_acc> Bewertungsschema zu besprechen.;none;[];[]
-<x_nom> warnt <y_acc>, dass <x_pron_nom> vielleicht noch einen zusätzlichen Tag braucht, um die Arbeit fertig zu stellen.;none;[];[]
-<y_nom> gibt <x_dat> Feedback zu <x_poss_m_dat> herausragender Leistung.;none;[];[]
-<x_nom> informiert <y_acc>, dass <x_pron_nom> mehr Zeit braucht, um das Projekt abzuschließen.;none;[];[]
-<x_nom> entschuldigt sich bei <y_dat>, weil <y_rel_nom> mit dem Abendessen nicht zufrieden ist.;none;[];[]
-<y_nom> warnt <x_acc>, <x_pron_nom> soll das nicht alleine machen.;none;[];[]
-<y_nom> fragt <x_acc>, ob <x_pron_nom> irgendwelche Regelverstöße entdeckt hat.;none;[];[]
-<x_nom> ermutigt <y_acc>, an <x_poss_pl_dat> Therapiesitzungen teilzunehmen.;none;[];[]
-<x_nom> will <y_acc> persönlich treffen, kann aber keinen Kontakt zu <x_pron_dat> herstellen.;none;[];[]
-<x_nom> erklärt <y_dat>, dass <x_pron_nom> glaubt, Ernährung und Bewegung seien gleichermaßen wichtig.;none;[];[]
-<y_nom> sagt <x_dat>, dass <x_pron_nom> die Baustelle umfahren muss.;none;[];[]
-<y_nom> teilt <x_dat> mit, dass <x_poss_f_nom> Katze süß ist.;none;[];[]
-<x_nom> vergisst, den Papierkram für <y_acc> einzureichen, und deswegen wird <x_pron_nom> gefeuert.;x<y;[];[]
-<x_nom> führt eine Herz-Druck-Massage bei <y_dat> durch, obwohl <x_pron_nom> weiß, dass es zu spät ist.;none;[];[]
-<y_nom> führt eine Herz-Druck-Massage bei <x_dat> durch, obwohl <x_pron_nom> schon tot ist.;none;[];[]
-<x_nom> ruft <y_acc> an, weil <x_pron_nom> sich sehr krank fühlt.;none;[];[]
-<y_nom> erklärt <x_dat>, dass das Reduzieren von Zucker ein wirksamer Weg zur Verbesserung <x_poss_f_gen> Ernährung ist.;none;[];[813, 814, 816, 817, 821,822]
-<y_nom> sagt <x_dat>, <x_pron_nom> solle den gesperrten Teil der Straße meiden.;none;[];[]
-<x_nom> sagt <y_dat>, dass <x_pron_nom> empfiehlt, die Pillen zur Mahlzeit einzunehmen.;none;[813, 814, 816, 817, 821, 818];[]
-<x_nom> spricht mit <y_dat> und erfährt, dass <x_poss_f_nom> Idee auf heftigen Widerstand stößt.;none;[];[]
-<y_nom> ruft <x_acc> an, um einen Kostenvoranschlag für <x_poss_f_acc> Arbeit zu bekommen.;none;[];[]
-<x_nom> tätigt einen Anruf bei <y_dat>, weil <x_pron_nom> sich Sorgen macht.;none;[];[]
-<x_nom> meint, <y_nom> solle einen Fragebogen ausfüllen, damit <x_pron_nom> eine vorläufige Beurteilung vornehmen kann.;none;[];[]
-<y_nom> spricht mit <x_dat>, weil <x_pron_nom> die Situation ernst nehmen sollte.;none;[];[]
-<y_nom> bewirbt sich, um mit <x_dat> zu arbeiten, weil <x_pron_nom> Unterstützung braucht.;none;[];[]
-<y_nom> trifft sich mit <x_dat>, um <x_poss_pl_acc> Stärken zu besprechen.;none;[];[]
-<y_nom> bittet <x_acc>, Aufzeichnungen über <x_poss_pl_acc> Finanzgeschäfte vorzulegen.;none;[];[723,731,722]
-<x_nom> erzählt <y_dat>, dass <x_pron_nom> die Tür abgeschlossen hat.;none;[];[]
-<x_nom> vertraut sich <y_dat> an, weil <x_pron_nom> emotionale Unterstützung braucht.;none;[];[]
-<y_nom> vertraut sich <x_dat> an, weil <x_pron_nom> vertrauenswürdig scheint.;none;[];[]
-<x_nom> bewirbt sich, um mit <y_dat> zu arbeiten, da <x_pron_nom> mehr Erfahrung in dem Beruf sammeln möchte.;x<y;[];[]
-<x_nom> fragt <y_acc>, ob <x_pron_nom> sich anmelden muss.;none;[];[]
-<y_nom> will <x_acc> persönlich interviewen, <x_pron_nom> ist aber nicht erreichbar.;none;[];[]
-<x_nom> warnt <y_acc>, dass <x_poss_m_nom> Plan riskant sein könnte.;none;[];[]
-<y_nom> teilt <x_dat> mit, <x_pron_nom> könne sich jederzeit melden.;none;[];[]
-<x_nom> bittet <y_dat> um eine Einschätzung, weil <x_pron_nom> unsicher ist.;none;[];[]
-<y_nom> schlägt <x_dat> vor, <x_pron_nom> möge das Meeting verschieben.;none;[];[]
-<y_nom> versichert <x_dat>, dass <x_poss_pl_nom> Vorschläge bereits berücksichtigt wurden.;none;[];[]
-<x_nom> übermittelt <y_dat> eine Kopie <x_poss_f_gen> Ergebnisse.;none;[];[]
-<y_nom> verweist <x_acc> darauf, dass <x_poss_m_nom> Antrag noch geprüft wird.;none;[];[]
-<y_nom> empfiehlt <x_dat>, sich auf das Gespräch vorzubereiten, weil <x_pron_nom> wichtige Fragen stellen möchte.;none;[];[]
-<x_nom> bestätigt <y_dat>, dass <x_pron_nom> gestern das Paket abgeschickt hat.;none;[];[]
-<y_nom> erklärt <x_dat>, <x_pron_nom> solle die alten Unterlagen vernichten.;none;[];[]
-<x_nom> wünscht sich mit <y_dat> zusammenzuarbeiten, weil <x_pron_nom> etwas lernen möchte.;x<y;[];[]
-<x_nom> küsst <x_poss_acc> <y_indef_acc>.;none;[];[romantic]
-<x_nom> liebt <x_poss_acc> <y_indef_acc>.;none;[];[romantic]
-<x_nom> schreibt <x_poss_dat> <y_indef_dat> einen Liebesbrief.;none;[];[romantic]
-<x_nom> presst <x_poss_acc> <y_indef_acc> an sich.;none;[];[romantic]
-<x_nom> zieht <x_poss_acc> <y_indef_acc> nah zu sich und sie küssen sich leidenschaftlich.;none;[];[romantic]
-<x_nom> flüstert <x_poss_dat> <y_indef_dat> ein Kompliment zu.;none;[];[romantic]
-<name> ist <x_indef_nom>.;none;[];[]
-<name> wurde kürzlich <x_indef_nom>.;none;[];[]
-<name> arbeitet als <x_indef_nom>.;none;[];[]
-Zurzeit arbeitet <name> als <x_indef_nom>.;none;[];[]
-Seit Jahren arbeitet <name> als <x_indef_nom>.;none;[];[]
+sentence;style;id
+<x_nom> liebt <x_poss_f_nom> Arbeit.;<normal_pron>;1
+<x_nom> arbeitet gern in <x_poss_n_dat> Team.;<normal_pron>;2
+<x_nom> freut sich über <x_poss_f_acc> Gehaltserhöhung.;<normal_pron>;3
+<x_nom> ist stolz auf sich und <x_poss_f_acc> Leistung.;<normal_pron>;4
+<x_nom> ärgert sich darüber, dass <x_pron_nom> einen Fehler gemacht hat.;<normal_pron>;5
+<x_nom> gesteht sich ein, dass <x_pron_nom> noch unentschlossen ist.;<normal_pron>;6
+<x_nom> bittet jemanden <x_pron_dat> zu helfen.;<normal_pron>;7
+<x_nom> informiert das Team, dass <x_pron_nom> mehr Zeit benötigt.;<normal_pron>;8
+<x_nom> betont, dass <x_poss_f_nom> Entscheidung final ist.;<normal_pron>;9
+<x_nom> merkt, dass <x_pron_nom> überfordert ist.;<normal_pron>;10
+<x_nom> hat schlechte Laune, weil <x_pron_nom> gestresst ist.;<normal_pron>;11
+<x_nom> isst Abendbrot, weil <x_pron_nom> Hunger hat.;<normal_pron>;12
+<x_nom> hört Musik, wenn <x_pron_nom> sich entspannen möchte.;<normal_pron>;13
+<x_nom> liest gern <x_poss_n_acc> Lieblingsbuch.;<normal_pron>;14
+<x_nom> geht gerne mit <x_poss_m_acc> Hund spazieren.;<normal_pron>;15
+<x_nom> reflektiert wöchentlich über <x_poss_f_acc> Leistung.;<normal_pron>;16
+<x_nom> berichtet über <x_poss_f_acc> Fortschritte.;<normal_pron>;17
+<x_nom> genießt <x_poss_m_acc> Kaffee am Morgen.;<normal_pron>;18
+<x_nom> sortiert <x_poss_f_acc> Papiere ordentlich.;<normal_pron>;19
+<x_nom> ruht sich aus, wenn <x_pron_nom> Erholung braucht.;<normal_pron>;20
+<x_nom> analysiert <x_poss_f_acc> Projekte sorgfältig.;<normal_pron>;21
+<x_nom> plant <x_poss_m_nom> Urlaub mit Hingabe.;<normal_pron>;22
+<x_nom> bringt <x_poss_n_acc> Fahrrad zur Reparatur.;<normal_pron>;23
+<x_nom> feiert fröhlich <x_poss_m_acc> Geburtstag.;<normal_pron>;24
+<x_nom> gießt <x_poss_f_acc> Blumen täglich.;<normal_pron>;25
+<x_nom> schreibt <x_poss_f_acc> Briefe handschriftlich.;<normal_pron>;26
+<x_nom> übt jeden Tag mit <x_poss_n_acc> Klavier.;<normal_pron>;27
+<x_nom> malt Bilder in <x_poss_f_acc> Freizeit.;<normal_pron>;28
+<x_nom> koordiniert <x_poss_pl_m_acc> Termine gut.;<normal_pron>;29
+<x_nom> nimmt an <x_poss_f_dat> Besprechung teil.;<normal_pron>;30
+<x_nom> überprüft gründlich <x_poss_f_acc> Ergebnisse.;<normal_pron>;31
+<x_nom> verbessert ständig <x_poss_f_acc> Fähigkeiten.;<normal_pron>;32
+<x_nom> dokumentiert <x_poss_f_acc> Tätigkeiten exakt.;<normal_pron>;33
+<x_nom> motiviert <x_poss_pl_acc> Mitarbeitenden täglich.;<normal_pron>;34
+<x_nom> kommuniziert klar mit <x_poss_n_dat> Team.;<normal_pron>;35
+<x_nom> setzt Prioritäten für <x_poss_f_acc> Arbeit.;<normal_pron>;36
+<x_nom> bittet um Unterstützung bei <x_poss_pl_dat> Aufgaben.;<normal_pron>;37
+<x_nom> geht gerne zur Arbeit.;<normal>;1
+<x_nom> arbeitet gern im Team.;<normal>;2
+<x_nom> freut sich über eine Gehaltserhöhung.;<normal>;3
+<x_nom> ist stolz auf sich und die erbrachte Leistung.;<normal>;4
+<x_nom> ärgert sich über einen gemachten Fehler.;<normal>;5
+<x_nom> ist noch unentschlossen.;<normal>;6
+<x_nom> bittet jemanden um Hilfe.;<normal>;7
+<x_nom> braucht mehr Zeit und teilt es dem Team mit.;<normal>;8
+Es wird betont, dass die Entscheidung von <x_dat> final ist.;<normal>;9
+<x_nom> ist überfordert.;<normal>;10
+<x_nom> hat schlechte Laune wegen des Stresses.;<normal>;11
+<x_nom> isst Abendbrot um den Hunger zu stillen.;<normal>;12
+<x_nom> hört gern Musik zum Entspannen.;<normal>;13
+<x_nom> liest gerne verschiedene Bücher.;<normal>;14
+<x_nom> geht gerne mit dem Hund spazieren.;<normal>;15
+<x_nom> reflektiert wöchentlich über die eigene Leistung.;<normal>;16
+<x_nom> berichtet über Fortschritte.;<normal>;17
+<x_nom> genießt Kaffee am Morgen.;<normal>;18
+<x_nom> sortiert Papiere ordentlich.;<normal>;19
+<x_nom> ruht sich für etwas Erholung aus.;<normal>;20
+<x_nom> analysiert die Projekte sorgfältig.;<normal>;21
+<x_nom> plant den Urlaub mit Hingabe.;<normal>;22
+<x_nom> bringt das Fahrrad zur Reparatur.;<normal>;23
+<x_nom> feiert fröhlich (den eigenen) Geburtstag.;<normal>;24
+<x_nom> gießt Blumen jeden Tag.;<normal>;25
+<x_nom> schreibt Briefe handschriftlich.;<normal>;26
+<x_nom> übt Klavier regelmäßig.;<normal>;27
+<x_nom> malt Bilder in der Freizeit.;<normal>;28
+<x_nom> koordiniert Termine gut.;<normal>;29
+<x_nom> nimmt an der Besprechung teil.;<normal>;30
+<x_nom> überprüft gründlich die Ergebnisse.;<normal>;31
+<x_nom> verbessert ständig die eigenen Fähigkeiten.;<normal>;32
+<x_nom> dokumentiert Tätigkeiten exakt.;<normal>;33
+<x_nom> motiviert andere Mitarbeitende täglich.;<normal>;34
+<x_nom> kommuniziert klar im Team.;<normal>;35
+<x_nom> setzt Prioritäten für die Arbeit.;<normal>;36
+<x_nom> bittet um Unterstützung bei Aufgaben.;<normal>;37
+<x_nom> küsst <x_poss_acc> <y_indef_acc>.;<romantic>;
+<x_nom> liebt <x_poss_acc> <y_indef_acc>.;<romantic>;
+<x_nom> schreibt <x_poss_dat> <y_indef_dat> einen Liebesbrief.;<romantic>;
+<x_nom> presst <x_poss_acc> <y_indef_acc> an sich.;<romantic>;
+<x_nom> zieht <x_poss_acc> <y_indef_acc> nah zu sich und sie küssen sich leidenschaftlich.;<romantic>;
+<x_nom> flüstert <x_poss_dat> <y_indef_dat> ein Kompliment zu.;<romantic>;
+<name> ist <x_indef_nom>.;<name>;
+<name> wurde kürzlich <x_indef_nom>.;<name>;
+<name> arbeitet als <x_indef_nom>.;<name>;
+Zurzeit arbeitet <name> als <x_indef_nom>.;<name>;
+Seit Jahren arbeitet <name> als <x_indef_nom>.;<name>;

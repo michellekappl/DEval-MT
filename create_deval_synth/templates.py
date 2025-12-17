@@ -15,9 +15,11 @@ from declensions import (
 
 # define constants for sentence styles
 NORMAL_SENTENCE = 1
-ADJECTIVE_SENTENCE = 2
-ROMANTIC_SENTENCE = 3
-NAME_SENTENCE = 4
+NORMAL_SENTENCE_PRONOUN = 2
+ADJECTIVE_SENTENCE = 3
+ADJECTIVE_SENTENCE_PRONOUN = 4
+ROMANTIC_SENTENCE = 5
+NAME_SENTENCE = 6
 
 
 T = TypeVar("T")
@@ -40,6 +42,10 @@ class Instance:
 
     x: Noun
     """The first noun in the sentence."""
+    sentence_style: str | int 
+    """The style of the sentence"""
+    sentence_id: int | None
+    """The id of the sentence"""
     x_group: str | int
     """The group of the first noun (either "romantic" or a number corresponding to some job group)."""
     x_idx: int
@@ -64,6 +70,8 @@ class Instance:
     def __init__(
         self,
         x: Noun,
+        sentence_style: str | int,
+        sentence_id: int | None,
         x_group: str | int,
         x_idx: int,
         y: Noun | None,
@@ -76,6 +84,8 @@ class Instance:
         statistics: dict,
     ):
         self.x = x
+        self.sentence_style = sentence_style
+        self.sentence_id = sentence_id
         self.y = y
         self.x_group = x_group
         self.y_group = y_group
@@ -86,9 +96,13 @@ class Instance:
         self.y_idx = y_idx  # index of y in the sentence
         self.name = name
         self.statistics = statistics
+        # id adjectives shift sentence_style to adjective 
+        if(adjective):
+            self.sentence_style += 2
 
     header = (
         "sentence_style;"
+        "sentence_id;"
         "x_nom_sg;x_group;x_gender;x_idx;x_stereotypical;x_level;"
         "y_nom_sg;y_group;y_gender;y_idx;y_stereotypical;y_level;"
         "adjective;modified;name;name_gender;text"
@@ -98,6 +112,7 @@ class Instance:
     def __str__(self):
         return (
             f"{self.sentence_style};"
+            + f"{self.sentence_id};"
             + f"{self.x.nom_sg};{self.x_group};{self.x.gender};{self.x_idx};{self.x_stereotypical};{self.x.status or 'none'};"
             + (
                 f"{self.y.nom_sg};{self.y_group};{self.y.gender};{self.y_idx};{self.y_stereotypical};{self.y.status or 'none'};"
@@ -109,25 +124,6 @@ class Instance:
             + (f"{self.name.text};{self.name.gender};" if self.name else "none;none;")
             + f"{self.text}"
         )
-
-    @property
-    def sentence_style(
-        self,
-    ) -> Literal[4, 3, 2, 1]:
-        """The style of the sentence, one of the constants defined above.
-        - NAME_SENTENCE (4) if this is a name sentence (i.e. y is None),
-        - ROMANTIC_SENTENCE (3) if either x or y is in the romantic group,
-        - ADJECTIVE_SENTENCE (2) if there is an adjective inserted into the sentence,
-        - NORMAL_SENTENCE (1) otherwise.
-        """
-        if self.y is None:
-            return NAME_SENTENCE
-        elif self.x_group == "romantic" or self.y_group == "romantic":
-            return ROMANTIC_SENTENCE
-        elif self.adjective:
-            return ADJECTIVE_SENTENCE
-        else:
-            return NORMAL_SENTENCE
 
     @property
     def x_stereotypical(self) -> float:
@@ -179,7 +175,7 @@ class Template:
     generic: bool = False
     """Whether this template is generic, i.e. it can be used for any job group."""
 
-    sentence_style: Literal[4, 3, 2, 1] = NORMAL_SENTENCE
+    sentence_style: Literal[1]
 
     def __init__(
         self,
@@ -210,13 +206,15 @@ class Template:
         ]
 
         self.sentence = row[0].strip()  # the actual sentence template
+        self.sentence_id = row[2].strip()
         self.statistics = statistics
         self.adjectives = adjectives  # adjectives to use in template
         self.groups = groups  # groups to use in template
         self.names = names  # names to use in template
 
         # the hierarchy of the template, i.e. "x>y", "x<y" or "none"
-        hierarchy = row[1].strip()
+        hierarchy = "none"
+
         self.higher = None  # the higher group in the hierarchy, either "x" or "y", or None if no hierarchy is defined
 
         # parse hierarchy
@@ -238,9 +236,18 @@ class Template:
         self.xs: list[tuple[str | int, Noun]] = []
 
         self.matching_x_groups: list[str | int] = []
+        sentence_style = row[1].strip("<>") 
 
+        if sentence_style == "normal_pron":
+            self.sentence_style = NORMAL_SENTENCE_PRONOUN
+        elif sentence_style == "romantic":
+            self.sentence_style = ROMANTIC_SENTENCE
+        elif sentence_style == "name":
+            self.sentence_style = NAME_SENTENCE
+        else:
+            self.sentence_style = NORMAL_SENTENCE
         # parse x groups from the row (this is a string of the form '[111, "romantic", 333]')
-        x_groups = row[2].strip("[]").split(",")
+        x_groups = [""]
 
         if x_groups[0] == "":
             self.generic = True
@@ -262,8 +269,8 @@ class Template:
 
         # check if there is a <y> value in the sentence
         # if not, then this is a name (style 4) sentence
-        if "<y" not in self.sentence:
-            self.sentence_style = NAME_SENTENCE
+        # if "<y" not in self.sentence:
+        #     self.sentence_style = NAME_SENTENCE
 
         # otherwise, do exactly the same for ys
         if self.sentence_style != NAME_SENTENCE:
@@ -275,7 +282,7 @@ class Template:
                     list[Noun],
                 ]
             ] = []
-            y_groups = row[3].strip("[]").split(",")
+            y_groups = [""]
             if y_groups[0] == "":
                 self.ys = groups_list
                 matching_y_groups = list(groups.keys())
@@ -322,7 +329,6 @@ class Template:
         """
         # split match by underscores
         parts = match.group(1).split("_")
-
         if parts[0] == "x" and parts[1] == "indef":
             # if the match is for x, decline it according to the case
             return x.decline(parts[2], "sg")
@@ -393,11 +399,20 @@ class Template:
                 gender = parts[2]
                 case = parts[3]
                 return Possessive(base_noun, gender).decline(case, "sg")
-            else:
+            elif len(parts) == 3:
                 # case where gender is not known, so we need to use the other noun to determine it
                 # something like <x_poss_acc>
                 other_noun = y if parts[0] == "x" else x  # complement to base_noun
                 case = parts[2]
+                return Possessive(
+                    base_noun,
+                    other_noun.grammatical_gender,
+                ).decline(case, "sg")
+            elif(len(parts) > 0):
+                # case where gender is not known, so we need to use the other noun to determine it
+                # something like <x_poss_acc>
+                other_noun = y if parts[0] == "x" else x  # complement to base_noun
+                case = parts[4]
                 return Possessive(
                     base_noun,
                     other_noun.grammatical_gender,
@@ -424,7 +439,7 @@ class Template:
         STATUS_HIERARCHY = {
             "Experten": 4,
             "Spezialisten": 3,
-            "Fachkräfte": 2,
+            "Fachkraefte": 2,
             "Helfer": 1,
         }
 
@@ -459,10 +474,10 @@ class Template:
                 x.dat_sg,
                 x.acc_sg,
                 # plurals are unused so far, so we can skip this
-                # x.nom_pl,
-                # x.gen_pl,
-                # x.dat_pl,
-                # x.acc_pl,
+                x.nom_pl,
+                x.gen_pl,
+                x.dat_pl,
+                x.acc_pl,
             ]:
                 x_idx = idx
             elif y and word in [
@@ -525,6 +540,8 @@ class Template:
             # create instance with the determined paramters
             instance = Instance(
                 x,
+                self.sentence_style,
+                None,
                 x_group,
                 from_none(x_idx),
                 None,
@@ -574,7 +591,7 @@ class Template:
             for x_group, x in xs
             for y_group, y in ys
             # only one of the groups has to be of group "romantic"
-            if (x_group == "romantic" or y_group == "romantic") and x.nom_sg != y.nom_sg
+            if (y_group == "romantic") and x.nom_sg != y.nom_sg
         ):
             # use regex to perform substitutions
             text = re.sub(
@@ -588,6 +605,8 @@ class Template:
             x_idx, y_idx = self.find_indices(text, x, y)
             instance = Instance(
                 x,
+                self.sentence_style,
+                self.sentence_id,
                 x_group,
                 from_none(x_idx),
                 y,
@@ -600,7 +619,6 @@ class Template:
                 self.statistics,
             )
             instances.append(instance)
-
         return instances
 
     def gen_normal(
@@ -682,7 +700,6 @@ class Template:
                 for adjective in self.adjectives
                 for modified in [
                     "x",
-                    "y",
                 ]
             )
 
@@ -715,11 +732,13 @@ class Template:
             x_idx, y_idx = self.find_indices(text, x, y)
             instance = Instance(
                 x,
+                self.sentence_style,
+                self.sentence_id,
                 x_group,
                 from_none(x_idx),
                 y,
                 y_group,
-                from_none(y_idx),
+                None,
                 adjective,
                 modified,
                 text,
@@ -747,7 +766,6 @@ class Template:
             The noun to generate instances for.
         """
         xs = [(x_group, x) for x in x_list]
-
         matching_names = []
         if self.sentence_style == NAME_SENTENCE:
             name_sentences = []
