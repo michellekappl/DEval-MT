@@ -25,7 +25,7 @@ sentence;style;id
 <x_nom> feiert fröhlich <x_poss_m_acc> Geburtstag.;<normal_pron>;24
 <x_nom> gießt <x_poss_f_acc> Blumen täglich.;<normal_pron>;25
 <x_nom> schreibt <x_poss_f_acc> Briefe handschriftlich.;<normal_pron>;26
-<x_nom> übt jeden Tag mit <x_poss_n_acc> Klavier.;<normal_pron>;27
+<x_nom> übt jeden Tag mit <x_poss_n_dat> Klavier.;<normal_pron>;27
 <x_nom> malt Bilder in <x_poss_f_gen> Freizeit.;<normal_pron>;28
 <x_nom> koordiniert <x_poss_pl_m_acc> Termine gut.;<normal_pron>;29
 <x_nom> nimmt an <x_poss_f_gen> Besprechung teil.;<normal_pron>;30
