@@ -42,7 +42,7 @@ class Instance:
 
     x: Noun
     """The first noun in the sentence."""
-    sentence_style: str | int 
+    sentence_style: str | int
     """The style of the sentence"""
     sentence_id: int | None
     """The id of the sentence"""
@@ -96,8 +96,8 @@ class Instance:
         self.y_idx = y_idx  # index of y in the sentence
         self.name = name
         self.statistics = statistics
-        # id adjectives shift sentence_style to adjective 
-        if(adjective):
+        # id adjectives shift sentence_style to adjective
+        if adjective:
             self.sentence_style += 2
 
     header = (
@@ -130,10 +130,7 @@ class Instance:
         """The stereotypicality of the first noun: if x has gender g (m or f), then this is `num_g / (num_m + num_f)`,
         where `num_m` and `num_f` are the number of male and female instances, respectively.
         NaN if unapplicable."""
-        if (
-            self.sentence_style == NAME_SENTENCE
-            or self.sentence_style == ROMANTIC_SENTENCE
-        ):
+        if self.sentence_style == NAME_SENTENCE or self.sentence_style == ROMANTIC_SENTENCE:
             return float("nan")
         else:
             num_m, num_f = self.statistics[self.x_group][self.x.status]
@@ -201,9 +198,7 @@ class Template:
         names : list[Name]
             A list of names to use in the template.
         """
-        groups_list = [
-            (x_group, x) for x_group, xs in groups.items() for job in xs for x in job
-        ]
+        groups_list = [(x_group, x) for x_group, xs in groups.items() for job in xs for x in job]
 
         self.sentence = row[0].strip()  # the actual sentence template
         self.sentence_id = row[2].strip()
@@ -236,7 +231,7 @@ class Template:
         self.xs: list[tuple[str | int, Noun]] = []
 
         self.matching_x_groups: list[str | int] = []
-        sentence_style = row[1].strip("<>") 
+        sentence_style = row[1].strip("<>")
 
         if sentence_style == "normal_pron":
             self.sentence_style = NORMAL_SENTENCE_PRONOUN
@@ -254,26 +249,20 @@ class Template:
             self.xs = groups_list
         elif x_groups[0] == "romantic":
             self.sentence_style = ROMANTIC_SENTENCE
-            self.xs = [
-                (x_group, x) for x_group, x in groups_list if x_group == "romantic"
-            ]
+            self.xs = [(x_group, x) for x_group, x in groups_list if x_group == "romantic"]
             self.matching_x_groups = ["romantic"]
         else:
-            matching_groups = [
-                int(group) if group != "romantic" else group for group in x_groups
-            ]
-            self.xs = [
-                (x_group, x) for x_group, x in groups_list if x_group in matching_groups
-            ]
+            matching_groups = [int(group) if group != "romantic" else group for group in x_groups]
+            self.xs = [(x_group, x) for x_group, x in groups_list if x_group in matching_groups]
             self.matching_x_groups = matching_groups
 
         # check if there is a <y> value in the sentence
         # if not, then this is a name (style 4) sentence
-        # if "<y" not in self.sentence:
-        #     self.sentence_style = NAME_SENTENCE
+        # Check if the sentence has a <y...> placeholder
+        has_y_placeholder = "<y" in self.sentence
 
         # otherwise, do exactly the same for ys
-        if self.sentence_style != NAME_SENTENCE:
+        if self.sentence_style != NAME_SENTENCE and has_y_placeholder:
             matching_y_groups = []
             self.ys = []
             self.ys_by_gender: list[
@@ -294,11 +283,7 @@ class Template:
                     int(group) if group != "romantic" else group for group in y_groups
                 ]
 
-            self.ys = [
-                (y_group, y)
-                for y_group, y in groups_list
-                if y_group in matching_y_groups
-            ]
+            self.ys = [(y_group, y) for y_group, y in groups_list if y_group in matching_y_groups]
             # necessary as we need to make sure that in the function gen_for_x,
             # we can always find an argument of another gender
             self.ys_by_gender = [
@@ -307,6 +292,10 @@ class Template:
                 for y_genders in y_list
                 if y_group in matching_y_groups
             ]
+        else:
+            # Sentences without a <y...> placeholder don't have a second noun
+            self.ys = []
+            self.ys_by_gender = []
 
     def resolve_name(
         self,
@@ -404,18 +393,26 @@ class Template:
                 # something like <x_poss_acc>
                 other_noun = y if parts[0] == "x" else x  # complement to base_noun
                 case = parts[2]
+                # If other_noun is None (no y placeholder), default to base noun's gender
+                gender = (
+                    other_noun.grammatical_gender if other_noun else base_noun.grammatical_gender
+                )
                 return Possessive(
                     base_noun,
-                    other_noun.grammatical_gender,
+                    gender,
                 ).decline(case, "sg")
-            elif(len(parts) > 0):
+            elif len(parts) > 0:
                 # case where gender is not known, so we need to use the other noun to determine it
                 # something like <x_poss_acc>
                 other_noun = y if parts[0] == "x" else x  # complement to base_noun
                 case = parts[4]
+                # If other_noun is None (no y placeholder), default to base noun's gender
+                gender = (
+                    other_noun.grammatical_gender if other_noun else base_noun.grammatical_gender
+                )
                 return Possessive(
                     base_noun,
-                    other_noun.grammatical_gender,
+                    gender,
                 ).decline(case, "sg")
         elif parts[1] == "indef":
             # case that this is an indefinite noun phrase like <x_indef_nom>
@@ -444,15 +441,9 @@ class Template:
         }
 
         if self.higher == "x":
-            return (
-                STATUS_HIERARCHY[from_none(x.status)]
-                > STATUS_HIERARCHY[from_none(y.status)]
-            )
+            return STATUS_HIERARCHY[from_none(x.status)] > STATUS_HIERARCHY[from_none(y.status)]
         elif self.higher == "y":
-            return (
-                STATUS_HIERARCHY[from_none(x.status)]
-                < STATUS_HIERARCHY[from_none(y.status)]
-            )
+            return STATUS_HIERARCHY[from_none(x.status)] < STATUS_HIERARCHY[from_none(y.status)]
         else:
             raise ValueError(f"Invalid hierarchy: {self.higher}")
 
@@ -646,6 +637,10 @@ class Template:
         if self.sentence_style != NAME_SENTENCE and not ys:
             ys = self.ys
 
+        # If sentence has no <y...> placeholder, create a dummy y for iteration
+        if not ys:
+            ys = [(None, None)]
+
         # Initialize an empty list to store the generated instances
         instances = []
 
@@ -666,15 +661,16 @@ class Template:
             )
             for x_group, x in xs
             for y_group, y in ys
-            if x_group != "romantic" and y_group != "romantic"
-            if x != y  # make sure we never have the same noun in both x and y
-            and self.satisfies_hierarchy(x, y)  # make sure hierarchy is satisfied
-            # only consider different gender pairs
-            and x.gender != y.gender
-            # make sure we never have the same noun in both x and y
-            # this is necessary (and different from x != y) because we have nouns like
-            # "die Fachkraft" which can be used with multiple genders
-            and x.nom_sg != y.nom_sg
+            if (
+                y_group is None or (x_group != "romantic" and y_group != "romantic")
+            )  # Skip romance filter if y is None
+            and (
+                y is None or (x != y and self.satisfies_hierarchy(x, y))
+            )  # Skip comparison if y is None
+            and (
+                y is None or (x.gender != y.gender and y.gender != "d")
+            )  # Skip gender check if y is None
+            and (y is None or x.nom_sg != y.nom_sg)  # Skip name check if y is None
         )
 
         # yields tuples of the form (x_group, x, y_group, y, adjective, modified)
@@ -692,11 +688,10 @@ class Template:
                 for x_group, x in xs
                 for y_group, y in ys
                 # the same logic as in base_generator, but with adjectives
-                if x_group != "romantic" and y_group != "romantic"
-                if x != y
-                and self.satisfies_hierarchy(x, y)
-                and x.gender != y.gender
-                and x.nom_sg != y.nom_sg
+                if (y_group is None or (x_group != "romantic" and y_group != "romantic"))
+                and (y is None or (x != y and self.satisfies_hierarchy(x, y)))
+                and (y is None or (x.gender != y.gender and y.gender != "d"))
+                and (y is None or x.nom_sg != y.nom_sg)
                 for adjective in self.adjectives
                 for modified in [
                     "x",
@@ -773,15 +768,11 @@ class Template:
             for x in x_list:
                 if x.gender == "m":
                     matching_names = [
-                        name
-                        for name in self.names
-                        if name.gender == x.gender or name.gender == "n"
+                        name for name in self.names if name.gender == x.gender or name.gender == "n"
                     ]
                 elif x.gender == "f":
                     matching_names = [
-                        name
-                        for name in self.names
-                        if name.gender == "f" or name.gender == "n"
+                        name for name in self.names if name.gender == "f" or name.gender == "n"
                     ]
                 else:
                     matching_names = self.names
@@ -794,8 +785,13 @@ class Template:
                 )
             return name_sentences
         else:
-            y_group, y_jobs = random.choice(self.ys_by_gender)
-            ys = [(y_group, y) for y in y_jobs]
+            # Handle sentences without <y...> placeholders
+            if self.ys_by_gender:
+                y_group, y_jobs = random.choice(self.ys_by_gender)
+                ys = [(y_group, y) for y in y_jobs]
+            else:
+                # No y placeholder - generate with y=None
+                ys = [(None, None)]
 
             if self.sentence_style == ROMANTIC_SENTENCE:
                 return self.gen_romantic(xs, ys)
