@@ -7,7 +7,7 @@ from list_translator import translate_dataset
 # and the entire dataset will be fully translated (all lang + all prov)
 
 # Beware of langauge codes supported by each provider!
-# uppercase codes for Deepl are handled within the code 
+# uppercase codes for Deepl are handled within the code
 """
 | Language       | DeepL         | Microsoft | Google | ChatGPT / OpenAI | SYSTRAN |
 | -------------- | -----         | --------- | ------ | ---------------- | ------- |
@@ -27,49 +27,49 @@ from list_translator import translate_dataset
 """
 
 
-#translation for unified languages
+# translation for unified languages
 translate_dataset(
-    "../test_data/test_data_mini.csv", # set dataset path
-    ["ru", "uk", "es", "fr", "it", "pt", "ro", "sv", "pl", "sl", "ar"], 
+    "../test_data/test_data_mini.csv",  # set dataset path
+    ["ru", "uk", "es", "fr", "it", "pt", "ro", "sv", "pl", "sl", "ar"],
     ["deepl", "microsoft", "google", "gpt-4o", "gpt-4o-mini", "systran"],
-    overwrite_translation=False
+    overwrite_translation=False,
 )
 
 
-#translation for alternate language codes 
+# translation for alternate language codes
 
 translate_dataset(
-    "../test_data/test_data_mini.csv", # set dataset path
-    ["nb"], 
+    "../test_data/test_data_mini.csv",  # set dataset path
+    ["nb"],
     ["deepl", "microsoft"],
-    overwrite_translation=False
+    overwrite_translation=False,
 )
 
 
 translate_dataset(
-    "../test_data/test_data_mini.csv", # set dataset path
-    ["no"], 
+    "../test_data/test_data_mini.csv",  # set dataset path
+    ["no"],
     ["google", "gpt-4o", "gpt-4o-mini", "systran"],
-    overwrite_translation=True
+    overwrite_translation=True,
 )
 
 translate_dataset(
-    "../test_data/test_data_mini.csv", # set dataset path
-    ["iw"], 
+    "../test_data/test_data_mini.csv",  # set dataset path
+    ["iw"],
     ["google"],
-    overwrite_translation=False
+    overwrite_translation=False,
 )
 
 translate_dataset(
-    "../test_data/test_data_mini.csv", # set dataset path
-    ["he"], 
+    "../test_data/test_data_mini.csv",  # set dataset path
+    ["he"],
     ["deepl", "microsoft", "gpt-4o", "gpt-4o-mini", "systran"],
-    overwrite_translation=False
+    overwrite_translation=False,
 )
 
 translate_dataset(
-    "../test_data/test_data_mini.csv", # set dataset path
-    ["pt-pt"], 
+    "../test_data/test_data_mini.csv",  # set dataset path
+    ["pt-pt"],
     ["deepl"],
-    overwrite_translation=True
+    overwrite_translation=True,
 )

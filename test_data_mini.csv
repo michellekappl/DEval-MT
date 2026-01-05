@@ -1,0 +1,3 @@
+sentence_style;x_nom_sg;x_group;x_gender;x_idx;x_stereotypical;x_level;y_nom_sg;y_group;y_gender;y_idx;y_stereotypical;y_level;adjective;modified;name;name.gender;text
+1;Agrarökonom;111;MASCULINE;1;0.6624758220502901;Experten;Fachaltenpflegerin;821;FEMININE;4;0.8252212389380531;Spezialisten;none;none;none;none;Der Agrarökonom bestätigt der Fachaltenpflegerin, dass er gestern das Paket abgeschickt hat.
+1;Agrarökonomin;111;FEMININE;1;0.3375241779497098;Experten;Fachaltenpfleger;821;MASCULINE;4;0.1747787610619469;Spezialisten;none;none;none;none;Die Agrarökonomin bestätigt dem Fachaltenpfleger, dass sie gestern das Paket abgeschickt hat.

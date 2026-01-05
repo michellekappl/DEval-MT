@@ -1,7 +1,7 @@
 from list_translator import translate_dataset
 
 # Beware of langauge codes supported by each provider!
-# uppercase codes for Deepl are handled within the code 
+# uppercase codes for Deepl are handled within the code
 """
 | Language       | DeepL         | Microsoft | Google | ChatGPT / OpenAI | SYSTRAN |
 | -------------- | -----         | --------- | ------ | ---------------- | ------- |
@@ -21,20 +21,20 @@ from list_translator import translate_dataset
 """
 
 
-
 # Single language, single provider
-#translate_dataset("../test_data/test_data_mini.csv", "fr", "deepl")
+# translate_dataset("../test_data/test_data_mini.csv", "fr", "deepl")
 
 # Multiple languages, single provider
-#translate_dataset("../test_data/test_data_mini.csv", ["pt", "fr"], "microsoft")
+# translate_dataset("../test_data/test_data_mini.csv", ["pt", "fr"], "microsoft")
 
 # Single language, multiple providers
-#translate_dataset("../test_data/test_data_mini.csv", "it", ["deepl", "microsoft"])
+# translate_dataset("../test_data/test_data_mini.csv", "it", ["deepl", "microsoft"])
 
 # Multiple languages, multiple providers with custom output directory
 translate_dataset(
-    "../test_data/test_data_mini.csv", 
-    ["es", "fr"], 
-    ["deepl", "microsoft", "google", "gpt-4o", "gpt-4o-mini", "systran"],
-    overwrite_translation=True
+    "../DEval_dataset.csv",
+    ["es"],
+    "google",
+    overwrite_translation=True,
+    output_dir="../translations",
 )
