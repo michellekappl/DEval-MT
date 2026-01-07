@@ -1,42 +1,37 @@
-#this module has the functions to plot the output and save them into csv files.
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import os
 
-def plot_error_analysis(df: pd.DataFrame, filename: str = "error_analysis.png"):
+# -------------------------------
+# Error Analysis Plot
+# -------------------------------
+def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename: str = "error_analysis.png"):
     """
     Plots a table of key metrics per language and error counts from a DataFrame
-    returned by the analyze() method. Saves the figure to outputs folder.
+    returned by the analyze() method. Saves the figure to the specified output folder.
 
     Parameters:
     df (pd.DataFrame): DataFrame with columns 'language', 'accuracy', 'total', 'correct', 'error_count', and 'error_*'.
+    output_dir (str): Folder to save the plot.
     filename (str): Name of the saved plot file.
     """
-    # Set language as index if needed
     if 'language' in df.columns:
         df = df.set_index('language')
 
-    # Select all error columns where the column name is a string
     error_cols = [col for col in df.columns if isinstance(col, str) and col.startswith('error_')]
-
-    # Convert error columns to numeric
     df[error_cols] = df[error_cols].apply(pd.to_numeric, errors='coerce').fillna(0)
 
-    # Create outputs folder if it does not exist
-    os.makedirs('outputs', exist_ok=True)
-    filepath = os.path.join('outputs', filename)
+    os.makedirs(output_dir, exist_ok=True)
+    filepath = os.path.join(output_dir, filename)
 
-    # Prepare error counts data
-    error_data = df[error_cols].T.values  # rows = error types, columns = languages
+    error_data = df[error_cols].T.values
     languages = df.index.tolist()
     error_types = [col.replace('error_', '') for col in error_cols]
 
-    # Create figure with two subplots (top: table, bottom: error counts)
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), gridspec_kw={'height_ratios': [1, 2]})
 
-    # Top: Table of key metrics
+    # Table
     table_data = df[['total', 'correct', 'accuracy', 'error_count']].round(3)
     ax1.axis('off')
     table = ax1.table(cellText=table_data.values,
@@ -50,13 +45,10 @@ def plot_error_analysis(df: pd.DataFrame, filename: str = "error_analysis.png"):
     table.scale(1, 2)
     ax1.set_title('Language Metrics Table')
 
-    # Bottom: Error counts
-    # Use normalized colormap to reduce dominance of high values
+    # Error counts
     max_val = np.max(error_data)
-
     im = ax2.imshow(error_data, cmap='Reds', aspect='auto', vmin=0, vmax=max_val)
 
-    # Annotate cells with values
     for i in range(error_data.shape[0]):
         for j in range(error_data.shape[1]):
             ax2.text(j, i, int(error_data[i, j]), ha='center', va='center', color='black')
@@ -69,23 +61,26 @@ def plot_error_analysis(df: pd.DataFrame, filename: str = "error_analysis.png"):
     ax2.set_ylabel('Error Type')
     ax2.set_title('Error Counts')
 
-    # Add colorbar
     cbar = fig.colorbar(im, ax=ax2)
     cbar.set_label('Error Count')
 
     plt.tight_layout()
     plt.savefig(filepath)
-    #plt.show()
     plt.close()
     print("Saved:", filepath)
 
 
-def plot_logistic_regression(df: pd.DataFrame, folder="outputs"):
+# -------------------------------
+# Logistic Regression Plot
+# -------------------------------
+def plot_logistic_regression(df: pd.DataFrame, output_dir: str = "outputs", filename: str = "logistic_regression_plot.jpg"):
     """
     Plots bar charts comparing logistic regression metrics for each language.
 
     Parameters:
     - df: DataFrame with columns ['language', 'coefficient', 'odds_ratio', 'p_value', 'ci_lower', 'ci_upper']
+    - output_dir: folder to save plot
+    - filename: plot filename
     """
     metrics = ['coefficient', 'odds_ratio', 'p_value', 'ci_lower', 'ci_upper']
     colors = ['skyblue', 'salmon']
@@ -104,45 +99,26 @@ def plot_logistic_regression(df: pd.DataFrame, folder="outputs"):
 
     plt.suptitle('Logistic Regression Metrics by Language')
     plt.tight_layout()
-    filename = "logistic_regression_plot"
-    filepath = f"{folder}/{filename}.jpg"
-    os.makedirs(folder, exist_ok=True)
+
+    os.makedirs(output_dir, exist_ok=True)
+    filepath = os.path.join(output_dir, filename)
     plt.savefig(filepath)
-    #plt.show()
+    plt.close()
     print("Saved:", filepath)
 
 
-def save_dataframes(*dfs, filenames='', folder="outputs"):
+# -------------------------------
+# Confusion Metrics Plot
+# -------------------------------
+def plot_confusion_metrics(df: pd.DataFrame, output_dir: str = "outputs", filename: str = "confusion_metrics.png"):
     """
-    Save any number of pandas DataFrames to CSV files in the given folder.
-    Files will be named df_1.csv, df_2.csv, df_3.csv, ...
+    Plots confusion metrics (precision, recall, f1) for each language.
     """
-    # Create folder if it doesn't exist
-    os.makedirs(folder, exist_ok=True)
-
-    for i, df in enumerate(dfs, start=1):
-        if not isinstance(df, pd.DataFrame):
-            raise TypeError(f"Argument {i} is not a pandas DataFrame")
-        
-        if not df.attrs.get("filename"):
-            filename = f"{folder}/df_{i}.csv"
-            df.to_csv(filename, index=True)
-        else:
-            filename = df.attrs.get("filename")
-            filepath = f"{folder}/{filename}.csv"
-            df.to_csv(filepath, index=True)
-        #print(filepath)
-
-    print(f"Saved {len(dfs)} CSV files to '{folder}/'")
-
-
-def plot_confusion_metrics(df: pd.DataFrame, filename="confusion_metrics.png"):
-
-    os.makedirs("outputs", exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
+    filepath = os.path.join(output_dir, filename)
 
     languages = df["language"].tolist()
     metric_df = df.set_index("language")
-
     genders = sorted(set(col.split("_")[0] for col in metric_df.columns if "_precision" in col))
     metrics = ["precision", "recall", "f1_score"]
 
@@ -153,53 +129,187 @@ def plot_confusion_metrics(df: pd.DataFrame, filename="confusion_metrics.png"):
         bar_width = 0.8 / len(languages)
 
         for i, lang in enumerate(languages):
-            values = [
-                metric_df.loc[lang, f"{gender}_{metric}"]
-                if f"{gender}_{metric}" in metric_df.columns else 0
-                for gender in genders
-            ]
-
-            bars = ax.bar(
-                x + i * bar_width,
-                values,
-                width=bar_width,
-                label=lang
-            )
-
-            # Add numeric value on top of each bar
+            values = [metric_df.loc[lang, f"{gender}_{metric}"]
+                      if f"{gender}_{metric}" in metric_df.columns else 0
+                      for gender in genders]
+            bars = ax.bar(x + i * bar_width, values, width=bar_width, label=lang)
             for bar, val in zip(bars, values):
-                ax.text(
-                    bar.get_x() + bar.get_width() / 2,
-                    val + 0.01,
-                    f"{val:.2f}",
-                    ha="center",
-                    va="bottom",
-                    fontsize=9
-                )
+                ax.text(bar.get_x() + bar.get_width()/2, val + 0.01, f"{val:.2f}",
+                        ha="center", va="bottom", fontsize=9)
 
         ax.set_title(metric.title())
-        ax.set_xticks(x + bar_width * (len(languages) - 1) / 2)
+        ax.set_xticks(x + bar_width * (len(languages)-1)/2)
         ax.set_xticklabels(genders)
         ax.set_ylim(0, 1.1)
 
     axes[0].set_ylabel("Score")
-
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(handles, labels, loc="lower center", ncol=len(languages), bbox_to_anchor=(0.5, -0.07))
 
     plt.tight_layout(rect=[0, 0.05, 1, 1])
-
-    save_path = os.path.join("outputs", filename)
-    plt.savefig(save_path)
+    plt.savefig(filepath)
     plt.close()
+    print("Saved:", filepath)
 
-    print("Saved:", save_path)
 
-def plot_model_comparison(df_accuracy: pd.DataFrame, df_precision: pd.DataFrame, filename="model_comparison.png"):
+# -------------------------------
+# Save multiple DataFrames
+# -------------------------------
+def save_dataframes(*dfs, output_dir="outputs"):
+    """
+    Save any number of pandas DataFrames to CSV files in the given folder.
+    Files will be named by their 'filename' attribute if present.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+
+    for i, df in enumerate(dfs, start=1):
+        if not isinstance(df, pd.DataFrame):
+            raise TypeError(f"Argument {i} is not a pandas DataFrame")
+        
+        filename = df.attrs.get("filename", f"df_{i}")
+        filepath = os.path.join(output_dir, f"{filename}.csv")
+        df.to_csv(filepath, index=True)
+
+    print(f"Saved {len(dfs)} CSV files to '{output_dir}/'")
+
+def plot_combined_model_results(results_root="test_data/results", output_dir=None):
+    """
+    Automatically combines error analysis, confusion metrics, and logistic regression
+    plots for all models in results_root folder.
     
-    os.makedirs("outputs", exist_ok=True)
-
-    languages = df_precision["language"].tolist()
-    metric_df = df_precision.set_index("language")
-
-    delta_g = 0
+    Saves combined plots into a `combined` folder inside results_root by default.
+    
+    Parameters:
+    - results_root: folder containing per-model subfolders
+    - output_dir: optional folder to save combined plots (default: results_root/combined)
+    """
+    if output_dir is None:
+        output_dir = os.path.join(results_root, "combined")
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Helper to gather model CSVs
+    def gather_csvs(prefix):
+        model_files = {}
+        for model_name in os.listdir(results_root):
+            model_path = os.path.join(results_root, model_name)
+            if os.path.isdir(model_path):
+                for fname in os.listdir(model_path):
+                    if fname.startswith(prefix) and fname.endswith(".csv"):
+                        model_files[model_name] = os.path.join(model_path, fname)
+        return model_files
+    
+    # Helper to load CSVs into dict
+    def load_dfs(file_dict):
+        dfs = {}
+        for model_name, path in file_dict.items():
+            dfs[model_name] = pd.read_csv(path, sep=";")
+        return dfs
+    
+    # ---------------------
+    # 1. Error Analysis
+    # ---------------------
+    error_files = gather_csvs("error_analysis")
+    if error_files:
+        error_dfs = load_dfs(error_files)
+        num_models = len(error_dfs)
+        fig, axes = plt.subplots(num_models, 1, figsize=(14, 6*num_models))
+        if num_models == 1:
+            axes = [axes]
+        
+        for ax, (model_name, df) in zip(axes, error_dfs.items()):
+            if 'language' in df.columns:
+                df = df.set_index('language')
+            error_cols = [c for c in df.columns if c.startswith('error_')]
+            error_data = df[error_cols].T.values
+            languages = df.index.tolist()
+            error_types = [c.replace('error_', '') for c in error_cols]
+            
+            im = ax.imshow(error_data, cmap='Reds', aspect='auto')
+            for i in range(error_data.shape[0]):
+                for j in range(error_data.shape[1]):
+                    ax.text(j, i, int(error_data[i, j]), ha='center', va='center', color='black')
+            
+            ax.set_xticks(np.arange(len(languages)))
+            ax.set_xticklabels(languages)
+            ax.set_yticks(np.arange(len(error_types)))
+            ax.set_yticklabels(error_types)
+            ax.set_title(f"{model_name} Error Counts")
+            ax.set_xlabel("Language")
+            ax.set_ylabel("Error Type")
+            fig.colorbar(im, ax=ax)
+        
+        plt.tight_layout()
+        error_out = os.path.join(output_dir, "combined_error_analysis.png")
+        plt.savefig(error_out)
+        plt.close()
+        print("Saved combined error analysis:", error_out)
+    
+    # ---------------------
+    # 2. Confusion Metrics
+    # ---------------------
+    cm_files = gather_csvs("confusion_matrix")
+    if cm_files:
+        cm_dfs = load_dfs(cm_files)
+        num_models = len(cm_dfs)
+        fig, axes = plt.subplots(num_models, 1, figsize=(21, 6*num_models), sharey=True)
+        if num_models == 1:
+            axes = [axes]
+        
+        for ax, (model_name, df) in zip(axes, cm_dfs.items()):
+            languages = df["language"].tolist()
+            metric_df = df.set_index("language")
+            genders = sorted(set(col.split("_")[0] for col in metric_df.columns if "_precision" in col))
+            metrics = ["precision", "recall", "f1_score"]
+            
+            for i, metric in enumerate(metrics):
+                x = np.arange(len(genders))
+                bar_width = 0.8 / len(languages)
+                for j, lang in enumerate(languages):
+                    values = [
+                        metric_df.loc[lang, f"{gender}_{metric}"]
+                        if f"{gender}_{metric}" in metric_df.columns else 0
+                        for gender in genders
+                    ]
+                    bars = ax.bar(x + j*bar_width, values, width=bar_width, label=lang)
+                    for bar, val in zip(bars, values):
+                        ax.text(bar.get_x() + bar.get_width()/2, val+0.01, f"{val:.2f}",
+                                ha="center", va="bottom", fontsize=9)
+            ax.set_xticks(x + bar_width*(len(languages)-1)/2)
+            ax.set_xticklabels(genders)
+            ax.set_ylim(0, 1.1)
+            ax.set_title(f"{model_name} Confusion Metrics")
+        
+        plt.tight_layout()
+        cm_out = os.path.join(output_dir, "combined_confusion_metrics.png")
+        plt.savefig(cm_out)
+        plt.close()
+        print("Saved combined confusion metrics:", cm_out)
+    
+    # ---------------------
+    # 3. Logistic Regression
+    # ---------------------
+    lr_files = gather_csvs("logistic_regression")
+    if lr_files:
+        lr_dfs = load_dfs(lr_files)
+        num_models = len(lr_dfs)
+        metrics = ['coefficient', 'odds_ratio', 'p_value', 'ci_lower', 'ci_upper']
+        fig, axes = plt.subplots(num_models, len(metrics), figsize=(4*len(metrics), 4*num_models))
+        if num_models == 1:
+            axes = [axes]
+        
+        for row_idx, (model_name, df) in enumerate(lr_dfs.items()):
+            for col_idx, metric in enumerate(metrics):
+                ax = axes[row_idx][col_idx] if num_models>1 else axes[col_idx]
+                languages = df['language'].tolist()
+                values = df[metric].tolist()
+                ax.bar(languages, values, color='skyblue')
+                ax.set_title(f"{model_name} {metric}")
+                ax.set_ylabel(metric)
+                ax.set_xticks(range(len(languages)))
+                ax.set_xticklabels(languages)
+        
+        plt.tight_layout()
+        lr_out = os.path.join(output_dir, "combined_logistic_regression.png")
+        plt.savefig(lr_out)
+        plt.close()
+        print("Saved combined logistic regression:", lr_out)
