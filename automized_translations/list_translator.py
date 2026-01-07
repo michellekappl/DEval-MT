@@ -105,12 +105,13 @@ def translate_dataset(
                             translated_sentence = translate_text_gpt(sentence, lang, prov)
                         elif prov == "gpt-4o-mini":
                             translated_sentence = translate_text_gpt(sentence, lang, prov)
+                        elif prov == "gpt-5-mini":
+                            translated_sentence = translate_text_gpt(sentence, lang, prov)
 
                         else:
                             raise ValueError(
                                 f"Unknown provider: {prov}. Available: systran, google, deepl, microsoft, gpt-4o, gpt-4o-mini"
                             )
-
                         file.write(translated_sentence + "\n")
 
                         if (i + 1) % progress_interval == 0:

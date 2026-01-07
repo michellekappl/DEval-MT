@@ -31,7 +31,7 @@ from list_translator import translate_dataset
 translate_dataset(
     "../test_data/test_data_mini.csv",  # set dataset path
     ["ru", "uk", "es", "fr", "it", "pt", "ro", "sv", "pl", "sl", "ar"],
-    ["deepl", "microsoft", "google", "gpt-4o", "gpt-4o-mini", "systran"],
+    ["deepl", "microsoft", "google", "gpt-4o", "gpt-4o-mini", "gpt-5-mini", "systran"],
     overwrite_translation=False,
 )
 
