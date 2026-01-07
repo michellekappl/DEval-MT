@@ -16,7 +16,7 @@ from morphological_analysis.qalsadi_morph_analyzer import QalsadiMorphAnalyzer
 from sdk import run_subject_pipeline
 
 def example_data() -> DEvalDataset:
-   # if style_processed file aready exists, load it
+   # if style_processed file already exists, load it
    if os.path.exists(f"test_data_processed.csv"):
       ds = DEvalDataset.from_csv(f"test_data_processed.csv", text_column="text", sep=";", translation_columns={
          "es": "es",
