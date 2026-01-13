@@ -12,6 +12,7 @@ from analysis import (
 from morphological_analysis.base_analyzer import BaseMorphologicalAnalyzer
 from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
 from sdk import run_subject_pipeline
+from automized_translations.translator import translate_dataset
 
 def example_data() -> DEvalDataset:
    # if style_processed file aready exists, load it
@@ -26,10 +27,25 @@ def example_data() -> DEvalDataset:
       return ds
    else:
       print(f"test_data_processed.csv not found, creating from scratch...")
-      df = pd.read_csv(f"test_data/test_data.csv", sep=";")
+      path_to_ds='test_data/test_data.csv"'
+      df = pd.read_csv(path_to_ds, sep=";")
       ds = DEvalDataset(df, text_column="text")
 
       # load translations from a file
+      
+      # # try to integrate translation together
+      # translation_folder_path=f'test_data/translations'
+      # languages=["es", "fr"] # "ar", "he", "it", "ru", "uk"
+      # models=['gpt-4o','gpt-4o-mini','systran','google'] # 'microsoft','deepl'
+      # translations_dict={}
+      # for lang in languages:
+      #    for model in models:
+      #       translations=translate_dataset(path_to_ds,lang,model)
+      #       tr_name=f'{lang}_{model}.txt'
+      #       translations = pd.read_csv(os.path.join(translation_folder_path,tr_name), header=None, sep=";")[0].tolist()
+      #       translations_dict[f'{lang}_{model}']=translations
+      #       ds.add_translations(lang,translations,f'{lang}_{model}')
+
       list_of_es_translations = pd.read_csv(f"test_data/translations/es.txt", header=None, sep=";")[0].tolist()
       list_of_fr_translations = pd.read_csv(f"test_data/translations/fr.txt", header=None, sep=";")[0].tolist()
 
@@ -48,7 +64,7 @@ def example_data() -> DEvalDataset:
       # Run for x subject
       df_x = run_subject_pipeline(
          ds,
-      analyzers=analyzers,
+         analyzers=analyzers,
          source_column="text",
          subject_index_column="x_idx",
          output_prefix="x",

@@ -131,6 +131,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+automized_translations/.env
+automized_translations/xtut-translator-*.json
+xtutvenv/
 
 # Spyder project settings
 .spyderproject
@@ -175,7 +178,8 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python
 
-*.csv
+# *.csv
+
 .DS_Store
 .github/
 
