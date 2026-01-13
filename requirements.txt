@@ -7,3 +7,10 @@ scipy
 statsmodels
 scikit-learn
 qalsadi
+statsmodels
+openai
+hf_xet
+google-cloud
+google-cloud-translate
+google-cloud-storage
+deepl
