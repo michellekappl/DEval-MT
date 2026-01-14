@@ -1,19 +1,20 @@
-# Automated translation for DeepL API 
-# has functions for each for single sentence translation and batch translation 
-# also includes function for reading a dataset.csv and extracting and translating the 
-# sentences from the text column 
+# Automated translation for DeepL API
+# has functions for each for single sentence translation and batch translation
+# also includes function for reading a dataset.csv and extracting and translating the
+# sentences from the text column
 
 import os
 import requests
 from typing import List, Union
 from dotenv import load_dotenv
-import deepl 
+import deepl
+import time
 
 load_dotenv()
 
 # Environment variables
 DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
-DEEPL_BASE_URL = os.getenv("DEEPL_API_URL", "https://api-free.deepl.com/v2")  # or api.deepl.com for pro
+DEEPL_BASE_URL = os.getenv("DEEPL_API_URL", "https://api.deepl.com")  # or api.deepl.com for pro
 
 # import os
 # from typing import List, Dict
@@ -39,14 +40,17 @@ def translate_text_deepl(text: str, target: str) -> str:
     Returns:
         Translated text as a string. Source language is auto-detected.
     """
-   # result = deepl_client.translate_text(text, target_lang=target.upper())
-    #return result.text
+    # result = deepl_client.translate_text(text, target_lang=target.upper())
+    # return result.text
     try:
         # Ensure target is uppercase
         result = deepl_client.translate_text(text, target_lang=target.upper(), source_lang="DE")
         # Warn if returned text is identical to input (possible silent failure)
         if result.text.strip() == text.strip():
-            print(f"Warning: DeepL returned the same text. Check target language '{target}' or input language.")
+            print(
+                f"Warning: DeepL returned the same text. Check target language '{target}' or input language."
+            )
+        time.sleep(0.1)  # Small delay to avoid rate limiting
         return result.text
     except deepl.DeepLException as e:
         # Catch DeepL API errors and print the full message
@@ -54,11 +58,9 @@ def translate_text_deepl(text: str, target: str) -> str:
         raise
 
 
-
-
-
-
-def batch_translate_and_write_deepl(texts: List[str], target: Union[str, List[str]], source: str, output_files: dict):
+def batch_translate_and_write_deepl(
+    texts: List[str], target: Union[str, List[str]], source: str, output_files: dict
+):
     """
     Batch translate texts using DeepL API and write directly to files.
     Respects 128 KiB limit per request (~131,072 characters).
@@ -67,28 +69,30 @@ def batch_translate_and_write_deepl(texts: List[str], target: Union[str, List[st
         target_list = [target.upper()]
     else:
         target_list = [t.upper() for t in target]
-    
+
     url = f"{DEEPL_BASE_URL}/translate"
     headers = {
         "Authorization": f"DeepL-Auth-Key {DEEPL_API_KEY}",
         "Content-Type": "application/json",
     }
-    
+
     total_texts = len(texts)
-    
+
     for tgt in target_list:
         print(f"[DeepL] Translating to {tgt}")
         batch = []
         batch_char_count = 0
         MAX_CHARS = 131072  # 128 KiB
         processed_texts = 0
-        
+
         for i, text in enumerate(texts):
             text_len = len(text)
-            
+
             # If adding this text exceeds limit, process current batch
             if batch and (batch_char_count + text_len > MAX_CHARS):
-                print(f"[DeepL] Processing batch of {len(batch)} sentences ({batch_char_count:,} chars)")
+                print(
+                    f"[DeepL] Processing batch of {len(batch)} sentences ({batch_char_count:,} chars)"
+                )
                 body = {
                     "text": batch,
                     "source_lang": source.upper(),
@@ -97,24 +101,29 @@ def batch_translate_and_write_deepl(texts: List[str], target: Union[str, List[st
                 response = requests.post(url, headers=headers, json=body)
                 response.raise_for_status()
                 data = response.json()
-                
+
                 # Write translations immediately
                 for translation in data["translations"]:
                     output_files[tgt.lower()].write(translation["text"] + "\n")
-                
+
                 processed_texts += len(batch)
                 progress = (processed_texts / total_texts) * 100
-                print(f"[DeepL] Progress: {processed_texts}/{total_texts} sentences translated ({progress:.1f}%)")
-                
+                print(
+                    f"[DeepL] Progress: {processed_texts}/{total_texts} sentences translated ({progress:.1f}%)"
+                )
+
                 batch = []
                 batch_char_count = 0
-            
+                time.sleep(0.5)  # Delay between batches to avoid rate limiting
+
             batch.append(text)
             batch_char_count += text_len
-        
+
         # Process remaining batch
         if batch:
-            print(f"[DeepL] Processing final batch of {len(batch)} sentences ({batch_char_count:,} chars)")
+            print(
+                f"[DeepL] Processing final batch of {len(batch)} sentences ({batch_char_count:,} chars)"
+            )
             body = {
                 "text": batch,
                 "source_lang": source.upper(),
@@ -123,9 +132,12 @@ def batch_translate_and_write_deepl(texts: List[str], target: Union[str, List[st
             response = requests.post(url, headers=headers, json=body)
             response.raise_for_status()
             data = response.json()
-            
+
             for translation in data["translations"]:
                 output_files[tgt.lower()].write(translation["text"] + "\n")
-            
+
             processed_texts += len(batch)
-            print(f"[DeepL] Progress: {processed_texts}/{total_texts} sentences translated (100.0%)")
+            print(
+                f"[DeepL] Progress: {processed_texts}/{total_texts} sentences translated (100.0%)"
+            )
+            time.sleep(0.5)  # Delay after final batch
