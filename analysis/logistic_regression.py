@@ -14,19 +14,19 @@ class LogisticRegressionAnalysis:
         self.ds = ds
         self.gold_col = gold_col
 
-    def __prepare_data(self, language: str, predictor_col: str) -> tuple[pd.DataFrame, pd.Series]:
+    def __prepare_data(self, language: str, predictor_col: str,df:pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         """Prepare data for logistic regression analysis."""
         pred_col = self.ds.prediction_columns.get(language)
 
         if pred_col is None:
             raise ValueError(f"No prediction column found for language: {language}")
 
-        if predictor_col not in self.ds.df.columns:
+        if predictor_col not in df.columns:
             raise ValueError(f"Predictor column '{predictor_col}' not found in dataset")
 
         # Create accuracy outcome variable (1 = correct, 0 = incorrect)
-        accuracy = (self.ds.df[self.gold_col] == self.ds.df[pred_col]).astype(int)
-        predictor = self.ds.df[predictor_col]
+        accuracy = (df[self.gold_col] == df[pred_col]).astype(int)
+        predictor = df[predictor_col]
 
         analysis_df = pd.DataFrame({
             'accuracy': accuracy,
@@ -83,24 +83,28 @@ class LogisticRegressionAnalysis:
             'n_observations': len(y),
         }
 
-    def analyze(self, predictor_col: str, languages: List[str] | None = None) -> pd.DataFrame:
+    def analyze(self, predictor_col: str, languages: List[str] | None = None,filter_col:str|None=None,filter_value:Any=None) -> pd.DataFrame:
         """Analyze predictor-accuracy relationships for multiple languages and return as DataFrame."""
+        df=self.ds.df
+        if filter_col is not None:
+            df=df[df[filter_col]==filter_value]
         if languages is None:
             languages = list(self.ds.translation_columns.keys())
 
         if any(lang not in self.ds.translation_columns for lang in languages):
             raise ValueError(f"Some languages are not available in the dataset (unknown languages: {[lang for lang in languages if lang not in self.ds.translation_columns]})")
 
-        if predictor_col not in self.ds.df.columns:
+        if predictor_col not in df.columns:
             raise ValueError(f"Predictor column '{predictor_col}' not found in dataset")
 
         results_data = []
 
         for lang in languages:
-            X, y = self.__prepare_data(lang, predictor_col)
+            X, y = self.__prepare_data(lang, predictor_col,df)
             result = self.__fit_logistic_regression(X, y)
             row_data: Dict[str, Any] = {
                 'language': lang,
+                f'{filter_col}':filter_value,
                 'coefficient': result['coefficient'],
                 'odds_ratio': result['odds_ratio'],
                 'p_value': result['p_value'],

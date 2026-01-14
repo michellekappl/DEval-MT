@@ -14,7 +14,6 @@ from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
 from morphological_analysis.hebrew_morph_analyzer import HebrewMorphAnalyzer
 from morphological_analysis.qalsadi_morph_analyzer import QalsadiMorphAnalyzer
 from sdk import run_subject_pipeline
-from automized_translations.translator import translate_dataset
 
 def example_data() -> DEvalDataset:
    # if style_processed file already exists, load it
@@ -101,7 +100,14 @@ if __name__ == '__main__':
 print("1. ERROR ANALYSIS")
 print("-" * 50)
 error_analyzer = ErrorAnalysis(ds1, 'x_gender')
-print(error_analyzer.analyze().T)
+# example: for sentence_style==1:
+print(error_analyzer.analyze(filter_col='sentence_style',filter_value=1).T)
+# example: checking all sentence_styles:
+# for style in ds1.df['sentence_style'].unique():
+#    print('---')
+#    print(ErrorAnalysis(ds1, "x_gender").analyze(filter_col='sentence_style',filter_value=style).T)
+
+# print(error_analyzer.analyze().T)
 
 
 # 2. Confusion Matrix
