@@ -7,7 +7,6 @@ import json
 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
-openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
 
 client = OpenAI()
 URL = "https://api.openai.com/v1/chat/completions"
@@ -27,14 +26,6 @@ languages = {
 
 
 def translate_text_gpt(text, target, model_name):
-    # #print(f'testing: translating {text} to {target}')
-    # response = client.responses.create(
-    #     model=model_name,
-    #     input=('You are a translation engine.'
-    #         f"Translate the following text into {target}: {text}."
-    #         'Output ONLY the translated sentence.'),
-    # )
-    # return response.output[0].content[0].text.strip()
     target_lang = languages.get(target)
     prompt = f"Übersetze nach {target_lang}. Gib nur die Übersetzung aus:\n{text}"
 
@@ -44,30 +35,6 @@ def translate_text_gpt(text, target, model_name):
     )
     translated_text = response.output_text
     return translated_text
-
-
-# For testing free model on openrouter
-# def translate_text_openrouter(text,target,model_name):
-#     response = requests.post(
-#         url="https://openrouter.ai/api/v1/chat/completions",
-#         headers={
-#             "Authorization": f"Bearer {openrouter_api_key}",
-#             "Content-Type": "application/json",
-#             # "HTTP-Referer": "<YOUR_SITE_URL>", # Optional. Site URL for rankings on openrouter.ai.
-#             # "X-Title": "<YOUR_SITE_NAME>", # Optional. Site title for rankings on openrouter.ai.
-#         },
-#         data=json.dumps({
-#             "model": model_name, #"openai/gpt-4o-mini", # Optional
-#             "messages": [
-#                 #{"role": "system", "content": f"You are a Machine Translation Tool and shall not output any other text than the translated text. Translate the text to {target}."},
-#                 {"role": "user","content": f'You are a Machine Translation Tool and shall not output any other text than the translated text. Translate the text to {target}: {text}'}
-#             ]
-#         })
-#     )
-#     data = response.json()
-#     # print(data)
-#     print(data['choices'][0]['message']['content'])
-
 
 def translate_dataset_gpt(path, target, model_name):
     source_ds = pd.read_csv(path, header=0, sep=";")
@@ -91,13 +58,3 @@ def translate_dataset_gpt(path, target, model_name):
 
     translations_list = pd.DataFrame(translations_list)
     return translations_list
-
-
-# Following for test
-# target_language = languages[0] # Spanish
-
-# source_path='test_data/test_data.csv'
-# translation=translate_dataset_gpt(source_path,languages[0],models[0])
-
-# test=translate_text_openrouter('Der Chirurg versichert der Försterin, dass ihre Vorschläge bereits berücksichtigt wurden.','es',models[0])
-# print(test)

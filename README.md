@@ -47,9 +47,8 @@ The pipeline automatically:
 
 - **(NEW)**`automized_translations/`:
   - `systran_translate.py`, `gpt_translate.py`, `deepl_translate.py`, `google_translate.py`, `microsoft_translate.py`: translates sentences with multiple models.
-  - `list_translator.py`: integrates different translation models and languages, multiple inputs possible 
-  - use `test_list_translator.py` to test/try the translation functions
-  - use `dataset_translation.py` to translate a proper dataset
+  - `list_translator.py`: integrates different translation models and languages, multiple inputs possible.
+  - use `dataset_translation.py` to translate a proper dataset.
 
 This modular design makes it easy to plug in:
 - new languages,
@@ -57,32 +56,29 @@ This modular design makes it easy to plug in:
 - additional analysis modules,
 - different translation models.
 
-## Installation Linux
+## Installation with Linux
 
-### 0. create virtual environment: (not necessary, but recommendet)
-    ``` bash
-	Linux: 
-		sudo apt install python3-venv
-		python3 -m venv <name of venv>
-		source <name of venv>/bin/activate
-    ```
+### 0. create virtual environment (not necessary, but recommended)
+```bash
+  sudo apt install python3-venv
+  python3 -m venv <name of venv>
+  source <name of venv>/bin/activate
+```
 ### 1. install all dependencies
-    ``` bash
-	Linux:
-		pip install -e .
-    ```
+``` bash
+  pip install -e .
+```
 	
 ### 2. If you want to use the usage_example.py download the SpaCy analyzers
-    ``` bash
-	Linux: python -m spacy download es_dep_news_trf
-	       python -m spacy download fr_dep_news_trf
-    ```
+``` bash
+  python -m spacy download es_dep_news_trf
+  python -m spacy download fr_dep_news_trf
+```
 
-## Installation Windows (currently needs python version < 3.12)
+## Installation with Windows
 - On Windows, you may need to use a version manager such as **pyenv for Windows** or **pyenv-win** to install and switch between Python versions.  
-  - ~~**TODO:** Add a reference or setup guide for `pyenv-win` to this README.~~
   - [`pyenv-win`](https://github.com/pyenv-win/pyenv-win)
-  - **(TBC)** All known working Python versions: 3.11
+- **(TBC)** All known working Python versions: 3.11
 - Other than that the installation steps are the same as in the Linux Installation
 
 ## Usage
