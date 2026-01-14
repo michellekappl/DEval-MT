@@ -112,6 +112,7 @@ class ErrorAnalysis:
             }
 
             error_types = {et: 0 for et in ErrorType}
+            all_transition_types = {et: 0 for et in ErrorType}
 
             for _, row in self.ds.df.iterrows():
                 gold = row.get(self.gold_col)
@@ -122,6 +123,11 @@ class ErrorAnalysis:
 
                 outcome = evaluate_gender_pair(gold_enum, pred_enum)
                 outcome_counts[outcome] += 1
+
+                # Track all transitions
+                all_transition_types[
+                    ErrorType.from_genders(gold_enum, pred_enum)
+                ] += 1
 
                 if outcome == OutcomeType.ERROR:
                     error_types[
@@ -155,6 +161,9 @@ class ErrorAnalysis:
 
             for error_type, count in error_types.items():
                 row_data[f"error_{error_type.name.lower()}"] = count
+
+            for transition_type, count in all_transition_types.items():
+                row_data[f"transition_{transition_type.name.lower()}"] = count
 
             results_data.append(row_data)
 
