@@ -113,6 +113,7 @@ def plot_logistic_regression(df: pd.DataFrame, output_dir: str = "outputs", file
 def plot_confusion_metrics(df: pd.DataFrame, output_dir: str = "outputs", filename: str = "confusion_metrics.png"):
     """
     Plots confusion metrics (precision, recall, f1) for each language.
+    Handles dynamic legend placement and prevents overlapping numbers on bars.
     """
     os.makedirs(output_dir, exist_ok=True)
     filepath = os.path.join(output_dir, filename)
@@ -126,28 +127,49 @@ def plot_confusion_metrics(df: pd.DataFrame, output_dir: str = "outputs", filena
 
     for ax, metric in zip(axes, metrics):
         x = np.arange(len(genders))
-        bar_width = 0.8 / len(languages)
+        num_bars = len(languages)
+        bar_width = min(0.8 / num_bars, 0.2)  # dynamic width to avoid overlap
 
         for i, lang in enumerate(languages):
             values = [metric_df.loc[lang, f"{gender}_{metric}"]
                       if f"{gender}_{metric}" in metric_df.columns else 0
                       for gender in genders]
             bars = ax.bar(x + i * bar_width, values, width=bar_width, label=lang)
+
             for bar, val in zip(bars, values):
-                ax.text(bar.get_x() + bar.get_width()/2, val + 0.01, f"{val:.2f}",
-                        ha="center", va="bottom", fontsize=9)
+                # Dynamic offset above bar
+                offset = 0.01 + 0.02 * val
+                ax.text(
+                    bar.get_x() + bar.get_width() / 2,
+                    val + offset,
+                    f"{val:.2f}",
+                    ha="center",
+                    va="bottom",
+                    fontsize=9,
+                    rotation=0
+                )
 
         ax.set_title(metric.title())
-        ax.set_xticks(x + bar_width * (len(languages)-1)/2)
-        ax.set_xticklabels(genders)
+        ax.set_xticks(x + bar_width * (num_bars - 1) / 2)
+        ax.set_xticklabels(genders, rotation=20, ha="right")  # prevent x-label overlap
         ax.set_ylim(0, 1.1)
 
     axes[0].set_ylabel("Score")
-    handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="lower center", ncol=len(languages), bbox_to_anchor=(0.5, -0.07))
 
-    plt.tight_layout(rect=[0, 0.05, 1, 1])
-    plt.savefig(filepath)
+    # Dynamic legend inside figure
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(
+        handles,
+        labels,
+        loc="upper center",
+        ncol=min(len(languages), 4),  # max 4 columns for readability
+        frameon=False,
+        fontsize=10,
+        bbox_to_anchor=(0.5, 1.02)
+    )
+
+    plt.tight_layout()
+    plt.savefig(filepath, bbox_inches='tight')  # ensures nothing is cut off
     plt.close()
     print("Saved:", filepath)
 
