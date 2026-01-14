@@ -68,7 +68,7 @@ class ErrorAnalysis:
          pred_col = self.ds.prediction_columns.get(lang)
 
          prediction_correct = self.ds.df[
-            (self.ds.df[self.gold_col] == self.ds.df[pred_col]) |  # Exact matches
+            ((self.ds.df[self.gold_col] == self.ds.df[pred_col]) & (self.ds.df[pred_col] != 'Gender.UNKNOWN')) |  # Exact matches (excluding UNKNOWN preds)
             ((self.ds.df[self.gold_col] == 'Gender.DIVERSE') & (self.ds.df[pred_col] == 'Gender.NEUTER'))  # DIVERSE -> NEUTER is correct
          ]
          total = len(self.ds.df)
@@ -102,13 +102,15 @@ class ErrorAnalysis:
             gold = row.get(self.gold_col)
             pred = row.get(pred_col)
 
-            if gold == Gender.UNKNOWN or pred == Gender.UNKNOWN:
+            # Skip if gold is UNKNOWN (can't evaluate errors without known gold standard)
+            if gold == Gender.UNKNOWN:
                continue
 
             # Skip DIVERSE -> NEUTER as it's considered correct
             if gold == 'Gender.DIVERSE' and pred == 'Gender.NEUTER':
                continue
 
+            # Count any non-exact match as an error, including UNKNOWN predictions
             if gold is not None and pred is not None and gold != pred:
                error_types[ErrorType.from_genders(Gender[gold], Gender[pred])] += 1
 
