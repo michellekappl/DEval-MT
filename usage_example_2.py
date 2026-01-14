@@ -12,6 +12,7 @@ from analysis import (
 from morphological_analysis.base_analyzer import BaseMorphologicalAnalyzer
 from morphological_analysis.qalsadi_morph_analyzer import QalsadiMorphAnalyzer
 from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
+from morphological_analysis.hebrew_morph_analyzer import HebrewMorphAnalyzer
 from sdk import run_subject_pipeline
 
 # Import plotting functions from your modular package
@@ -38,6 +39,7 @@ def example_data(model_name: str) -> DEvalDataset:
                 "ar": "ar",
                 "ru": "ru",
                 "uk": "uk",
+                "he": "he",
             },
             prediction_columns={"es": "x_gender_es", "fr": "x_gender_fr"},
         )
@@ -63,13 +65,15 @@ def example_data(model_name: str) -> DEvalDataset:
             f"translations/sv_{model_name}.txt", header=None, sep=";"
         )[0].tolist()
 
-        with open("translations/ar_google.txt", "r", encoding="utf-8") as f:
+        with open(f"translations/ar_{model_name}.txt", "r", encoding="utf-8") as f:
             list_of_ar_translations = [line.strip() for line in f.readlines()]
         #
-        with open("translations/ru_google.txt", "r", encoding="utf-8") as f:
+        with open(f"translations/ru_{model_name}.txt", "r", encoding="utf-8") as f:
             list_of_ru_translations = [line.strip() for line in f.readlines()]
-        with open("translations/uk_google.txt", "r", encoding="utf-8") as f:
+        with open(f"translations/uk_{model_name}.txt", "r", encoding="utf-8") as f:
             list_of_uk_translations = [line.strip() for line in f.readlines()]
+        with open(f"translations/he_{model_name}.txt", "r", encoding="utf-8") as f:
+            list_of_he_translations = [line.strip() for line in f.readlines()]
 
         ds.add_translations("es", list_of_es_translations, "es")
         ds.add_translations("fr", list_of_fr_translations, "fr")
@@ -79,6 +83,8 @@ def example_data(model_name: str) -> DEvalDataset:
         ds.add_translations("ar", list_of_ar_translations, "ar")
         ds.add_translations("ru", list_of_ru_translations, "ru")
         ds.add_translations("uk", list_of_uk_translations, "uk")
+        ds.add_translations("he", list_of_he_translations, "he")
+
 
         morph_es = SpaCyMorphAnalyzer("es_dep_news_trf")
         morph_es.load()
@@ -95,6 +101,7 @@ def example_data(model_name: str) -> DEvalDataset:
         morph_ru.load()
         morph_uk = SpaCyMorphAnalyzer("uk_core_news_trf")
         morph_uk.load()
+        morph_he = HebrewMorphAnalyzer()
 
         analyzers: dict[str, BaseMorphologicalAnalyzer] = {
             "es": morph_es,
@@ -105,6 +112,7 @@ def example_data(model_name: str) -> DEvalDataset:
             "ar": morph_ar,
             "ru": morph_ru,
             "uk": morph_uk,
+            "he": morph_he,
         }
 
         run_subject_pipeline(
