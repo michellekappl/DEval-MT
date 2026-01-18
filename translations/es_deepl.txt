@@ -71,7 +71,7 @@ La pescadora se da cuenta de que está abrumada.
 El pescador trans se da cuenta de que está fuera de su alcance.
 La pescadora trans se da cuenta de que está abrumada.
 El pescador está abrumado.
-ERROR: Too many requests, DeepL servers are currently experiencing high load
+El pescador está desbordado.
 El pescador trans está abrumado.
 La pescadora trans está abrumada.
 El pescador insiste en que su decisión es definitiva.
@@ -210,7 +210,7 @@ El cantero escribe las cartas a mano.
 El cantero escribe las cartas a mano.
 La trans Steinmetz escribe cartas a mano.
 El cantero trans escribe las cartas a mano.
-ERROR: Too many requests, DeepL servers are currently experiencing high load
+La cantera trans escribe cartas a mano.
 La sopladora de vidrio practica con el piano todos los días.
 El soplador de vidrio trans practica el piano todos los días.
 La sopladora de vidrio trans practica el piano todos los días.
