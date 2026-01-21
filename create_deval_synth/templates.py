@@ -100,7 +100,7 @@ class Template:
         #     self.sentence_style = NAME_SENTENCE
 
         # otherwise, do exactly the same for ys
-        if self.sentence_style != NAME_SENTENCE and has_y_placeholder:
+        if self.sentence_style != NAME_SENTENCE:
             matching_y_groups = []
             self.ys = []
             self.ys_by_gender: list[
