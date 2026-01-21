@@ -34,8 +34,8 @@ def example_data(model_name: str) -> DEvalDataset:
                 "es": "es",
                 "fr": "fr",
                 "it": "it",
-                "no": "no",
-                "sv": "sv",
+                # "no": "no",
+                # "sv": "sv",
                 "ar": "ar",
                 "ru": "ru",
                 "uk": "uk",
@@ -58,13 +58,12 @@ def example_data(model_name: str) -> DEvalDataset:
         list_of_it_translations = pd.read_csv(
             f"translations/it_{model_name}.txt", header=None, sep=";"
         )[0].tolist()
-        list_of_no_translations = pd.read_csv(
-            f"translations/no_{model_name}.txt", header=None, sep=";"
-        )[0].tolist()
-        list_of_sv_translations = pd.read_csv(
-            f"translations/sv_{model_name}.txt", header=None, sep=";"
-        )[0].tolist()
-
+        # list_of_no_translations = pd.read_csv(
+        #     f"translations/no_{model_name}.txt", header=None, sep=";"
+        # )[0].tolist()
+        # list_of_sv_translations = pd.read_csv(
+        #     f"translations/sv_{model_name}.txt", header=None, sep=";"
+        # )[0].tolist()
         with open(f"translations/ar_{model_name}.txt", "r", encoding="utf-8") as f:
             list_of_ar_translations = [line.strip() for line in f.readlines()]
         #
@@ -78,13 +77,12 @@ def example_data(model_name: str) -> DEvalDataset:
         ds.add_translations("es", list_of_es_translations, "es")
         ds.add_translations("fr", list_of_fr_translations, "fr")
         ds.add_translations("it", list_of_it_translations, "it")
-        ds.add_translations("no", list_of_no_translations, "no")
-        ds.add_translations("sv", list_of_sv_translations, "sv")
+        # ds.add_translations("no", list_of_no_translations, "no")
+        # ds.add_translations("sv", list_of_sv_translations, "sv")
         ds.add_translations("ar", list_of_ar_translations, "ar")
         ds.add_translations("ru", list_of_ru_translations, "ru")
         ds.add_translations("uk", list_of_uk_translations, "uk")
         ds.add_translations("he", list_of_he_translations, "he")
-
 
         morph_es = SpaCyMorphAnalyzer("es_dep_news_trf")
         morph_es.load()
@@ -92,10 +90,10 @@ def example_data(model_name: str) -> DEvalDataset:
         morph_fr.load()
         morph_it = SpaCyMorphAnalyzer("it_core_news_lg")
         morph_it.load()
-        morph_no = SpaCyMorphAnalyzer("nb_core_news_lg")
-        morph_no.load()
-        morph_sv = SpaCyMorphAnalyzer("sv_core_news_lg")
-        morph_sv.load()
+        # morph_no = SpaCyMorphAnalyzer("nb_core_news_lg")
+        # morph_no.load()
+        # morph_sv = SpaCyMorphAnalyzer("sv_core_news_lg")
+        # morph_sv.load()
         morph_ar = QalsadiMorphAnalyzer()
         morph_ru = SpaCyMorphAnalyzer("ru_core_news_lg")
         morph_ru.load()
@@ -107,8 +105,8 @@ def example_data(model_name: str) -> DEvalDataset:
             "es": morph_es,
             "fr": morph_fr,
             "it": morph_it,
-            "no": morph_no,
-            "sv": morph_sv,
+            # "no": morph_no,
+            # "sv": morph_sv,
             "ar": morph_ar,
             "ru": morph_ru,
             "uk": morph_uk,
@@ -129,39 +127,6 @@ def example_data(model_name: str) -> DEvalDataset:
 
 
 if __name__ == "__main__":
-    model_name = "gpt-4o"
-    ds1 = example_data(model_name)
-    ds1.df.to_csv(f"{model_name}_processed.csv", sep=";", index=False)
-
-    # 1. Error Analysis
-    print("1. ERROR ANALYSIS")
-    print("-" * 50)
-    error_analyzer = ErrorAnalysis(ds1, "x_gender")
-    error_df = error_analyzer.analyze().T
-    print(error_df)
-
-    # 2. Confusion Matrix
-    print("2. CONFUSION MATRIX")
-    print("-" * 50)
-    cm_analyzer = ConfusionMatrix(ds1, "x_gender")
-    cm_df = cm_analyzer.analyze().T
-    print(cm_df)
-
-    # 3. Logistic Regression Analysis
-    print("3. LOGISTIC REGRESSION ANALYSIS")
-    print("-" * 50)
-    lr_analyzer = LogisticRegressionAnalysis(ds1, "x_gender")
-    lr_results = lr_analyzer.analyze(predictor_col="x_stereotypical")
-    print("Logistic Regression Results:")
-    print(lr_results.to_string(index=False))
-
-    # label the file names on the dataframes, otherwise it will use df_1, df_2 etc.
-    cm_df.attrs["filename"] = "confusion_matrix"
-    error_df.attrs["filename"] = "error_analysis"
-    lr_results.attrs["filename"] = "logistic_regression"
-
-    save_dataframes(error_df, cm_df, lr_results)
-
-    plot_error_analysis(error_df.T)
-    plot_confusion_matrix(cm_df.T)
-    plot_logistic_regression(lr_results)
+    for model_name in ["microsoft"]:
+        ds1 = example_data(model_name)
+        ds1.df.to_csv(f"{model_name}_processed.csv", sep=";", index=False)
