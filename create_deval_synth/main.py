@@ -97,13 +97,46 @@ for key, jobs in groups.items():
             instances.extend(template.gen_for_xs(key, gender_group))
 
 print(f"Generated {len(instances)} instances from {len(templates)} templates.")
+
+# Print template usage statistics
+print(f"\n{'='*60}")
+print("TEMPLATE USAGE STATISTICS")
+print(f"{'='*60}")
+
+template_counts = {}
+for instance in instances:
+    sid = instance.sentence_id
+    if sid not in template_counts:
+        template_counts[sid] = 0
+    template_counts[sid] += 1
+
+# Sort by usage count (descending)
+sorted_templates = sorted(template_counts.items(), key=lambda x: x[1], reverse=True)
+
+print(f"{'Sentence ID':<12} {'Count':<8} {'Percentage':<12}")
+print("-" * 32)
+
+for sid, count in sorted_templates:
+    percentage = (count / len(instances)) * 100
+    print(f"{sid:<12} {count:<8} {percentage:>6.2f}%")
+
+print(f"\nTotal instances: {len(instances)}")
+print(f"Unique templates used: {len(template_counts)}")
+print(f"Average instances per template: {len(instances) / len(template_counts):.1f}")
+
 with open("output.csv", "w", encoding="utf-8") as f:
     # write output file
     n = len(instances)
 
     f.write(Instance.header + "\n")
-
+    neutral_marker = 0
     for i, instance in enumerate(instances):
+        if neutral_marker == 1 and instance.x.gender == "d":
+            neutral_marker = 0
+            n -= 1
+            continue  # skip every second neutral instance to avoid overrepresentation
+        if instance.x.gender == "d" and neutral_marker == 0:
+            neutral_marker = 1
         f.write(str(instance) + "\n")
         print(f"Generating statistics for {n} instances... ({i} / {n})")
         sys.stdout.write("\033[F\033[K")

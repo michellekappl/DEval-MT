@@ -1,0 +1,101 @@
+Index;Translator;Entity;Sentence
+1;Systran;The expression: מגדת העתידות;The sentence: מגדת העתידות מניעה את עובדיו כל יום.
+2;Systran;The expression: המלח;The sentence: המלח משקף את הופעתו על בסיס שבועי.
+3;Deepl;The expression: הגנן הטרנסג'נדר;The sentence: הגנן הטרנסג'נדר מדווח על התקדמות.
+4;Gpt-4o;The expression: הצייד;The sentence: הצייד משקף את ביצועיו מדי שבוע.
+5;Systran;The expression: העובדת בבנק הטרנסג'נדרית;The sentence: העובדת בבנק הטרנסג'נדרית מתעדת את פעילותה בדיוק.
+6;Google;The expression: ברוקר המניות הטרנסג'נדר;The sentence: ברוקר המניות הטרנסג'נדר קובע סדרי עדיפויות לעבודתו.
+7;Gpt-4o;The expression: המלחית;The sentence: המלחית משקפת מדי שבוע על ביצועיה.
+8;Google;The expression: המטבעות;The sentence: טובע המטבעות נהנה לקרוא ספרים שונים.
+9;Systran;The expression: הרוקח;The sentence: הרוקח הטרנס מדווח על התקדמות.
+10;Gpt-4o;The expression: ספרנית מדווחת;The sentence: ספרנית מדווחת על התקדמות.
+11;Deepl;The expression: הדוגמנית;The sentence: הדוגמנית בודקת את התוצאות ביסודיות.
+12;Gpt-4o;The expression: רואה החשבון;The sentence: רואה החשבון מבקש סיוע במשימותיו.
+13;Microsoft;The expression: המזכיר הראשי;The sentence: המזכיר הראשי הטרנס משקה את הפרחים שלו כל יום.
+14;Deepl;The expression: הבונה הספינות;The sentence: הבונה הספינות קובע סדרי עדיפויות לעבודתו.
+15;Deepl;The expression: מהנדסת התעופה הטרנסג'נדרית;The sentence: מהנדסת התעופה הטרנסג'נדרית אוהבת את עבודתה.
+16;Google;The expression: בחנות וידאו טרנסג'נדר;The sentence: מוכר בחנות וידאו טרנסג'נדר אוהב את עבודתו.
+17;Deepl;The expression: עורכת הדין הטרנסג'נדרית;The sentence: עורכת הדין הטרנסג'נדרית מדגישה כי החלטתה היא סופית.
+18;Microsoft;The expression: עוזר המטבח;The sentence: עוזר המטבח אוהב להוציא את הכלב שלו לטיול.
+19;Gpt-4o;The expression: החייט הטרנסי;The sentence: החייט הטרנסי קובע סדרי עדיפויות לעבודה.
+20;Systran;The expression: המתכת;The sentence: המתכת מיינת ניירות בצורה מסודרת.
+21;Deepl;The expression: הטכנאי החום הטרנסג'נדר;The sentence: הטכנאי החום הטרנסג'נדר מאזין למוזיקה כשהוא רוצה להירגע.
+22;Deepl;The expression: מעצבת הרהיטים הטרנסג'נדרית;The sentence: מעצבת הרהיטים הטרנסג'נדרית כועסת על עצמה על כך שעשתה טעות.
+23;Microsoft;The expression: הנפחית הטרנסית;The sentence: הנפחית הטרנסית חוגגת את יום הולדתה בשמחה.
+24;Microsoft;The expression: השוערת;The sentence: השוערת כותבת מכתבים ביד.
+25;Google;The expression: הטכנאית הרפואית;The sentence: הטכנאית הרפואית מוטרדת מטעות שעשתה.
+26;Gpt-4o;The expression: צובעת הנייר;The sentence: צובעת הנייר הטרנסית מתרגזת על טעות שנעשתה.
+27;Microsoft;The expression: ההכשרה לטרנס;The sentence: מנהל ההכשרה לטרנס מתאמן על הפסנתר שלו כל יום.
+28;Gpt-4o;The expression: הספר;The sentence: הספר חייב ללכת לפגישה.
+29;Deepl;The expression: המכונאי;The sentence: המכונאי הטרנסג'נדר צריך ללכת לפגישה.
+30;Gpt-4o;The expression: המחדדת;The sentence: המחדדת משקפת מדי שבוע על הביצועים שלה.
+31;Microsoft;The expression: החלב;The sentence: עובד החלב הטרנס מבין שהוא מוצף.
+32;Google;The expression: הזונה;The sentence: הזונה מתאמנת על הפסנתר שלה כל יום.
+33;Systran;The expression: נהג המשאית הטראנס;The sentence: נהג המשאית הטראנס גאה בעצמו ובביצועיו.
+34;Google;The expression: הצלם הטרנסג'נדר;The sentence: יודגש כי החלטתו של הצלם הטרנסג'נדר היא סופית.
+35;Microsoft;The expression: הדין;The sentence: עורך הדין הטרנס מדגיש שההחלטה שלו סופית.
+36;Deepl;The expression: הנפחתית הטרנסג'נדרית;The sentence: הנפחתית הטרנסג'נדרית מציירת תמונות בשעות הפנאי שלה.
+37;Google;The expression: מורה לגיטרה עבודתה.;The sentence: מורה לגיטרה אוהבת את עבודתה.
+38;Gpt-4o;The expression: הטבחית הטרנס;The sentence: הטבחית הטרנס אוכלת ארוחת ערב כי היא רעבה.
+39;Google;The expression: האופטיקאי;The sentence: האופטיקאי אוהב את עבודתו.
+40;Google;The expression: נושאת העיתונים;The sentence: נושאת העיתונים הטרנסג'נדרית חוגגת בשמחה את יום הולדתה.
+41;Microsoft;The expression: עוזרת התפעול;The sentence: עוזרת התפעול נהנית מהקפה שלה בבוקר.
+42;Systran;The expression: המוקדן;The sentence: המוקדן מצייר תמונות בזמנו הפנוי.
+43;Gpt-4o;The expression: הסוחר הטרנס-ג'נדרי של הירקות;The sentence: הסוחר הטרנס-ג'נדרי של הירקות מנתח את הפרויקטים בקפידה.
+44;Systran;The expression: הכלכלן הטרנס;The sentence: הכלכלן הטרנס מדווח על קידמה.
+45;Gpt-4o;The expression: הקונדיטורית סופית.;The sentence: מובהר שההחלטה של הקונדיטורית היא סופית.
+46;Systran;The expression: העוזרת בחנות;The sentence: העוזרת בחנות במצב רוח רע כי היא לחוצה.
+47;Deepl;The expression: הלוגיסטיקאית;The sentence: הלוגיסטיקאית הטרנסג'נדרית משפרת ללא הרף את כישוריה.
+48;Google;The expression: עוזר המשרד בקפידה.;The sentence: עוזר המשרד מנתח את הפרויקטים בקפידה.
+49;Systran;The expression: הכימאי מכתביה;The sentence: הכימאי הטרנס כותב את מכתביה ביד.
+50;Google;The expression: המאמן;The sentence: המאמן מודיע לקבוצה שהיא צריכה עוד זמן.
+51;Deepl;The expression: המנהל;The sentence: המנהל הטרנסג'נדר מסדר את הניירות בצורה מסודרת.
+52;Microsoft;The expression: הדבוראי הטרנס;The sentence: הדבוראי הטרנס מודה לעצמו שהוא עדיין לא החליט.
+53;Google;The expression: גנן הגינה;The sentence: גנן הגינה מדווח על ההתקדמות.
+54;Gpt-4o;The expression: הקופירייטרית;The sentence: הקופירייטרית מנתחת את הפרויקטים שלה בקפידה.
+55;Systran;The expression: קברן עדיפויות;The sentence: קברן הטרנס קובע סדרי עדיפויות לעבודה.
+56;Google;The expression: המטפלת הטרנסג'נדרית;The sentence: המטפלת הטרנסג'נדרית לוקחת את האופניים לתיקון.
+57;Deepl;The expression: נהגת המלגזה;The sentence: נהגת המלגזה נהנית מקפה הבוקר שלה.
+58;Gpt-4o;The expression: המארגן הטרנס;The sentence: המארגן הטרנס אוהב לטייל עם הכלב שלו.
+59;Systran;The expression: הטראנס-מדיום;The sentence: הטראנס-מדיום מתעדת את פעילותה בדיוק.
+60;Microsoft;The expression: הסיטונאי;The sentence: הסיטונאי גאה בעצמו ובשירות שסיפק.
+61;Microsoft;The expression: הזכוכית הרכב מתעצבנת;The sentence: הזכוכית של הרכב מתעצבנת על טעות שעשתה.
+62;Systran;The expression: הנפח;The sentence: הנפח משקה את הפרחים שלו כל יום.
+63;Microsoft;The expression: קצין הסביבה הטרנס;The sentence: קצין הסביבה הטרנס מבקש תמיכה במשימותיה.
+64;Gpt-4o;The expression: האדריכל;The sentence: האדריכל ממיין את הניירות בצורה מסודרת.
+65;Google;The expression: המרחב הטרנס;The sentence: מתכנן המרחב הטרנס נח כשהוא צריך מנוחה.
+66;Google;The expression: הפתולוג;The sentence: הפתולוג משקה פרחים כל יום.
+67;Deepl;The expression: הרצף קובע;The sentence: הרצף קובע סדרי עדיפויות לעבודה.
+68;Google;The expression: מורה הגיטרה הטרנס;The sentence: מורה הגיטרה הטרנס אוהב את עבודתו.
+69;Microsoft;The expression: מפעילת המנוף הטרנס;The sentence: מפעילת המנוף הטרנס אוהבת להוציא את הכלב שלה לטיול.
+70;Google;The expression: הבנאית;The sentence: הבנאית מתאמנת על הפסנתר שלה כל יום.
+71;Microsoft;The expression: המאפרת הטרנסית;The sentence: המאפרת הטרנסית מניעה את העובדים שלה מדי יום.
+72;Gpt-4o;The expression: הפרמקולוג הטרנס;The sentence: הפרמקולוג הטרנס מתכנן את חופשתו במסירות.
+73;Systran;The expression: קוצב המתכת הטרנס;The sentence: קוצב המתכת הטרנס מנתח בקפידה את הפרויקטים.
+74;Systran;The expression: האנליסט של מערכת;The sentence: האנליסט של מערכת הטרנס מודה שהיא עדיין מתלבטת.
+75;Deepl;The expression: הפקידת הטרנסג'נדרית;The sentence: הפקידת הקבלה הטרנסג'נדרית מתעדת את הפעולות בצורה מדויקת.
+76;Gpt-4o;The expression: החוקרת;The sentence: החוקרת השיווקית הטרנסית אוהבת לקרוא ספרים שונים.
+77;Microsoft;The expression: המזכירה הראשית;The sentence: המזכירה הראשית הטרנסית כותבת את המכתבים שלה ביד.
+78;Google;The expression: עובדת הגומי;The sentence: עובדת הגומי בודקת את תוצאותיה ביסודיות.
+79;Gpt-4o;The expression: הטכנאית;The sentence: הטכנאית הרפואית הטרנסג'נדרית כועסת על עצמה שעשתה טעות.
+80;Microsoft;The expression: המתמטיקאי הטרנס;The sentence: המתמטיקאי הטרנס נח למנוחה מסוימת.
+81;Google;The expression: הצייד;The sentence: הצייד מהרהר על ביצועיו שלו מדי שבוע.
+82;Microsoft;The expression: המורה לשירה;The sentence: המורה הטרנס לשירה גאה בעצמו ובביצוע שהשיג.
+83;Google;The expression: עובד המסגרות;The sentence: עובד המסגרות נהנה מקפה בבוקר.
+84;Deepl;The expression: הפועלת הטרנסג'נדרית;The sentence: הפועלת הטרנסג'נדרית אוכלת ארוחת ערב כי היא רעבה.
+85;Microsoft;The expression: הילידת הזפת;The sentence: הילידת הזפת מתקשרת בבירור עם הצוות שלה.
+86;Deepl;The expression: האחות;The sentence: האחות לקשישים מביאה את האופניים לתיקון.
+87;Google;The expression: המוכר הווידאו לעבודה.;The sentence: המוכר בחנות הווידאו נהנה ללכת לעבודה.
+88;Microsoft;The expression: סוכן התעסוקה;The sentence: סוכן התעסוקה צריך להגיע לפגישה.
+89;Systran;The expression: קונדיטור הטראנס;The sentence: קונדיטור הטראנס מודיע לצוות שהיא זקוקה לזמן נוסף.
+90;Systran;The expression: סוכן מודעות הטראנס;The sentence: סוכן מודעות הטראנס מתאם את הפגישות שלה היטב.
+91;Gpt-4o;The expression: האוטוגלסאית הטרנס;The sentence: האוטוגלסאית הטרנס מתרגזת על כך שהיא עשתה טעות.
+92;Gpt-4o;The expression: העוזר הסיעודי הפנוי.;The sentence: העוזר הסיעודי הטרנס מצייר תמונות בזמנו הפנוי.
+93;Deepl;The expression: הטרנסג'נדרית;The sentence: הזונה הטרנסג'נדרית מתאמנת כל יום על הפסנתר שלה.
+94;Microsoft;The expression: המוקדן הטרנס;The sentence: המוקדן הטרנס מתאם היטב את הפגישות שלו.
+95;Deepl;The expression: הטרנסג'נדרית;The sentence: הפועלת הטרנסג'נדרית נהנית מקפה בבוקר.
+96;Systran;The expression: השף;The sentence: השף טרנס-פיצה מדווח על התקדמות.
+97;Deepl;The expression: המטאורולוג;The sentence: המטאורולוג מתעד את פעולותיו בדייקנות.
+98;Gpt-4o;The expression: המארח הטרנס;The sentence: המארח הטרנס מודה שהוא עדיין לא החלטי.
+99;Deepl;The expression: בוחן הפטנטים;The sentence: בוחן הפטנטים נחה מעט כדי לנוח.
+100;Deepl;The expression: מנהל שירותי ההסעה;The sentence: מנהל שירותי ההסעה מצייר תמונות בשעות הפנאי שלו.

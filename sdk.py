@@ -22,7 +22,7 @@ def run_subject_pipeline(
    token_type: str = 'bpe',
    matching_method: str = 'itermax',
    # Subject window logic
-   article_offset: int = 0,
+   #article_offset: int = 0,
    # Alignment reuse
    skip_alignment_if_present: bool = True,
    inplace: bool = True,
@@ -91,6 +91,13 @@ def run_subject_pipeline(
       if pd.isna(row.get(subject_index_column)):
          return []
       base = int(row[subject_index_column])
+
+      adjectives = row.adjective
+      if adjectives == "none":
+         article_offset = -1
+      else:
+         article_offset = -2
+         
       start = base + article_offset
       if start < 0:
          start = 0
@@ -114,12 +121,12 @@ def run_subject_pipeline(
    # 5. Predict genders per language
    def predict_gender(lang: str, phrase: str):
       if not phrase:
-         return 'unknown'
+         return 'UNKNOWN'
       if lang not in analyzers:
          raise KeyError(f"No analyzer provided for language '{lang}'.")
       analyzer = analyzers[lang]
       tokens = analyzer.tokenize_sentence(phrase)
-      return analyzer.get_phrase_gender(tokens).name if tokens else 'unknown'
+      return analyzer.get_phrase_gender(tokens).name if tokens else 'UNKNOWN'
 
    for lang in languages:
       dataset.df[f'{output_prefix}_gender_{lang}'] = dataset.df[f'{output_prefix}_phrase_{lang}'].apply(lambda p: predict_gender(lang, p))

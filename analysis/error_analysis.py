@@ -55,7 +55,11 @@ class ErrorAnalysis:
       self.ds = ds
       self.gold_col = gold_col
 
-   def analyze(self, languages: List[str] | None = None, *, analyze_error_patterns: bool = True) -> pd.DataFrame:
+   def analyze(self, languages: List[str] | None = None, *, analyze_error_patterns: bool = True,filter_col:str|None=None,filter_value=None) -> pd.DataFrame:
+      df=self.ds.df
+      if filter_col is not None:
+         df=df[df[filter_col]==filter_value]
+      
       if languages is None:
          languages = list(self.ds.translation_columns.keys())
 
@@ -66,36 +70,37 @@ class ErrorAnalysis:
 
       for lang in languages:
          pred_col = self.ds.prediction_columns.get(lang)
-
-         prediction_correct = self.ds.df[self.ds.df[self.gold_col] == self.ds.df[pred_col]]
-         total = len(self.ds.df)
+         total = len(df) #len(self.ds.df)
+         prediction_correct = df[df[self.gold_col] == df[pred_col]]
+         
          correct = len(prediction_correct)
          accuracy = correct / total if total > 0 else 0.0
 
-         error_types = {
-            ErrorType.M_TO_F: 0,
-            ErrorType.M_TO_N: 0,
-            ErrorType.M_TO_U: 0,
-            ErrorType.M_TO_D: 0,
-            ErrorType.F_TO_M: 0,
-            ErrorType.F_TO_N: 0,
-            ErrorType.F_TO_U: 0,
-            ErrorType.F_TO_D: 0,
-            ErrorType.N_TO_M: 0,
-            ErrorType.N_TO_F: 0,
-            ErrorType.N_TO_U: 0,
-            ErrorType.N_TO_D: 0,
-            ErrorType.U_TO_M: 0,
-            ErrorType.U_TO_F: 0,
-            ErrorType.U_TO_N: 0,
-            ErrorType.U_TO_D: 0,
-            ErrorType.D_TO_M: 0,
-            ErrorType.D_TO_F: 0,
-            ErrorType.D_TO_N: 0,
-            ErrorType.D_TO_U: 0,
-         }
+         # error_types = {
+         #    ErrorType.M_TO_F: 0,
+         #    ErrorType.M_TO_N: 0,
+         #    ErrorType.M_TO_U: 0,
+         #    ErrorType.M_TO_D: 0,
+         #    ErrorType.F_TO_M: 0,
+         #    ErrorType.F_TO_N: 0,
+         #    ErrorType.F_TO_U: 0,
+         #    ErrorType.F_TO_D: 0,
+         #    ErrorType.N_TO_M: 0,
+         #    ErrorType.N_TO_F: 0,
+         #    ErrorType.N_TO_U: 0,
+         #    ErrorType.N_TO_D: 0,
+         #    ErrorType.U_TO_M: 0,
+         #    ErrorType.U_TO_F: 0,
+         #    ErrorType.U_TO_N: 0,
+         #    ErrorType.U_TO_D: 0,
+         #    ErrorType.D_TO_M: 0,
+         #    ErrorType.D_TO_F: 0,
+         #    ErrorType.D_TO_N: 0,
+         #    ErrorType.D_TO_U: 0,
+         # }
+         error_types={et:0 for et in ErrorType}
 
-         for _, row in self.ds.df.iterrows():
+         for _, row in df.iterrows():
             gold = row.get(self.gold_col)
             pred = row.get(pred_col)
 
@@ -108,6 +113,7 @@ class ErrorAnalysis:
          # Create a row for this language
          row_data = {
             'language': lang,
+            f'{filter_col}':filter_value,
             'total': total,
             'correct': correct,
             'accuracy': accuracy,
@@ -115,8 +121,11 @@ class ErrorAnalysis:
          }
 
          # Add error type counts
-         for error_type, count in error_types.items():
-            row_data[f'error_{error_type.name.lower()}'] = count
+         # for error_type, count in error_types.items():
+         #    row_data[f'error_{error_type.name.lower()}'] = count
+         
+         # if filter_col is not None:
+         #    row_data[filter_col]=filter_value
 
          results_data.append(row_data)
 

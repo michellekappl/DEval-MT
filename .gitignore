@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
+.idea
+.editorconfig
+install-pyenv-win.ps1
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -131,6 +135,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+automized_translations/.env
+automized_translations/xtut-translator-*.json
 xtutvenv/
 
 # Spyder project settings
@@ -176,7 +182,8 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python
 
-*.csv
+# *.csv
+
 .DS_Store
 .github/
 

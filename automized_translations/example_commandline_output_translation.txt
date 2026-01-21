@@ -1,0 +1,92 @@
+
+============================================================
+Reading CSV from: ../test_data/test_data_mini.csv
+Found 10 sentences to translate
+TARGET LANGUAGES: fr
+PROVIDERS: deepl
+============================================================
+
+
+========================================
+Provider: DEEPL
+========================================
+[deepl] Skipping fr - translation already exists
+
+============================================================
+Reading CSV from: ../test_data/test_data_mini.csv
+Found 10 sentences to translate
+TARGET LANGUAGES: pt, fr
+PROVIDERS: microsoft
+============================================================
+
+
+========================================
+Provider: MICROSOFT
+========================================
+[microsoft] Skipping pt - translation already exists      
+[microsoft] Skipping fr - translation already exists      
+
+============================================================
+Reading CSV from: ../test_data/test_data_mini.csv
+Found 10 sentences to translate
+TARGET LANGUAGES: it
+PROVIDERS: deepl, microsoft
+============================================================
+
+
+========================================
+Provider: DEEPL
+========================================
+[deepl] Skipping it - translation already exists
+
+========================================
+Provider: MICROSOFT
+========================================
+[microsoft] Skipping it - translation already exists      
+
+============================================================
+Reading CSV from: ../test_data/test_data_mini.csv
+Found 10 sentences to translate
+TARGET LANGUAGES: es, fr
+PROVIDERS: deepl, microsoft
+============================================================
+
+
+========================================
+Provider: DEEPL
+========================================
+[deepl] Overwriting existing translation for es
+[deepl] 20% - Translated 2/10 sentences for es
+[deepl] 40% - Translated 4/10 sentences for es
+[deepl] 60% - Translated 6/10 sentences for es
+[deepl] 80% - Translated 8/10 sentences for es
+[deepl] 100% - Translated 10/10 sentences for es
+[deepl] Completed es - saved to ../test_data/translations\es_deepl.txt
+
+[deepl] Overwriting existing translation for fr
+[deepl] 20% - Translated 2/10 sentences for fr
+[deepl] 40% - Translated 4/10 sentences for fr
+[deepl] 60% - Translated 6/10 sentences for fr
+[deepl] 80% - Translated 8/10 sentences for fr
+[deepl] 100% - Translated 10/10 sentences for fr
+[deepl] Completed fr - saved to ../test_data/translations\fr_deepl.txt
+
+
+========================================
+Provider: MICROSOFT
+========================================
+[microsoft] Overwriting existing translation for es       
+[microsoft] 20% - Translated 2/10 sentences for es
+[microsoft] 40% - Translated 4/10 sentences for es
+[microsoft] 60% - Translated 6/10 sentences for es
+[microsoft] 80% - Translated 8/10 sentences for es
+[microsoft] 100% - Translated 10/10 sentences for es
+[microsoft] Completed es - saved to ../test_data/translations\es_microsoft.txt
+
+[microsoft] Overwriting existing translation for fr       
+[microsoft] 20% - Translated 2/10 sentences for fr
+[microsoft] 40% - Translated 4/10 sentences for fr
+[microsoft] 60% - Translated 6/10 sentences for fr
+[microsoft] 80% - Translated 8/10 sentences for fr
+[microsoft] 100% - Translated 10/10 sentences for fr
+[microsoft] Completed fr - saved to ../test_data/translations\fr_microsoft.txt
