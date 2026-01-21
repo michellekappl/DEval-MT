@@ -14,12 +14,11 @@ from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
 from morphological_analysis.hebrew_morph_analyzer import HebrewMorphAnalyzer
 from morphological_analysis.qalsadi_morph_analyzer import QalsadiMorphAnalyzer
 from sdk import run_subject_pipeline
-from automized_translations.translator import translate_dataset
 
 def example_data() -> DEvalDataset:
    # if style_processed file already exists, load it
-   if os.path.exists(f"test_data_processed.csv"):
-      ds = DEvalDataset.from_csv(f"test_data_processed.csv", text_column="text", sep=";", translation_columns={
+   if os.path.exists(f"gpt-4o_processed.csv"):
+      ds = DEvalDataset.from_csv(f"gpt-4o_processed.csv", text_column="text", sep=";", translation_columns={
          "es": "es",
          "fr": "fr",
          "ar": "ar",
@@ -33,7 +32,7 @@ def example_data() -> DEvalDataset:
       return ds
    else:
       print(f"test_data_processed.csv not found, creating from scratch...")
-      path_to_ds='test_data/test_data.csv"'
+      path_to_ds='gpt-4o_processed.csv'
       df = pd.read_csv(path_to_ds, sep=";")
       ds = DEvalDataset(df, text_column="text")
 
@@ -83,7 +82,7 @@ def example_data() -> DEvalDataset:
          source_column="text",
          subject_index_column="x_idx",
          output_prefix="x",
-         article_offset=-1,
+         #article_offset=-1,
          use_multiprocessing=False
       )
 
@@ -95,13 +94,20 @@ print("=== DEval-MT Analysis Examples ===\n")
 # Create sample data
 if __name__ == '__main__':
    ds1 = example_data()
-   ds1.df.to_csv("test_data_processed.csv", sep=";", index=False)
+   ds1.df.to_csv("gpt-4o_processed.csv", sep=";", index=False)
 
 # 1. Error Analysis
 print("1. ERROR ANALYSIS")
 print("-" * 50)
 error_analyzer = ErrorAnalysis(ds1, 'x_gender')
-print(error_analyzer.analyze().T)
+# example: for sentence_style==1:
+# print(error_analyzer.analyze(filter_col='sentence_style',filter_value=1).T)
+# example: checking all sentence_styles:
+for style in ds1.df['sentence_style'].unique():
+   print('---')
+   print(ErrorAnalysis(ds1, "x_gender").analyze(filter_col='sentence_style',filter_value=style).T)
+
+# print(error_analyzer.analyze().T)
 
 
 # 2. Confusion Matrix

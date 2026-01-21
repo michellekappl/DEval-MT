@@ -15,7 +15,7 @@ The pipeline automatically:
 3. predicts the grammatical gender of that target phrase using pluggable morphological analyzers,
 4. compares predictions against gold labels and provides analysis utilities.
 5. **(NEW)** generates plots for analysis results mentioned above.
-6. **(NEW)** automatically translates the source sentences in dataset with multiple MT models: DeepL, ChatGPT, SYSTRAN, Google, Microsoft. (for chatgpt now it is gpt-4o/gpt-4o-mini)
+6. **(NEW)** automatically translates the source sentences in dataset with multiple MT models: DeepL, ChatGPT-4o, SYSTRAN, Google, Microsoft.
 
 ## Core components
 
@@ -36,14 +36,17 @@ The pipeline automatically:
   - `WordAlignment`: helper to query and serialize alignments.
 
 - `morphological_analysis/`:
+  - `Gender`: enum with MASCULINE, FEMININE, NEUTER, DIVERSE, UNKNOWN.
   - `BaseMorphologicalAnalyzer`: abstract interface.
   - `SpaCyMorphAnalyzer`: spaCy-based implementation (uses language-specific models).
-  - `Gender`: enum with MASCULINE, FEMININE, NEUTER, DIVERSE, UNKNOWN.
+  - **(NEW)** `HebrewMorphAnalyzer`: spaCy-based implementation for Hebrew.
+  - **(NEW)** `QalsadiMorphAnalyzer`: qalsadi-based implementation.
 
 - `analysis/`:
   - `ErrorAnalysis`: accuracy + detailed error types.
   - `ConfusionMatrix`: confusion matrices & precision/recall/F1 per gender.
   - `LogisticRegressionAnalysis`: relates predictors (e.g. stereotypicality) to correctness.
+  - **(NEW)** above three support analysis with a filter column to see the influence of it.
 
 - **(NEW)**`automized_translations/`:
   - `systran_translate.py`, `gpt_translate.py`, `deepl_translate.py`, `google_translate.py`, `microsoft_translate.py`: translates sentences with multiple models.
@@ -76,13 +79,14 @@ This modular design makes it easy to plug in:
 ```
 
 ## Installation with Windows
-- On Windows, you may need to use a version manager such as **pyenv for Windows** or **pyenv-win** to install and switch between Python versions.  
-  - [`pyenv-win`](https://github.com/pyenv-win/pyenv-win)
+- On Windows, you may need to use a version manager such as [pyenv-win](https://github.com/pyenv-win/pyenv-win) to install and switch between Python versions.  
 - **(TBC)** All known working Python versions: 3.11
 - Other than that the installation steps are the same as in the Linux Installation
 
 ## Usage
-A full, runnable example can be found in [`usage_example.py`, `usage_example_2.py`].
+A full, runnable example can be found in:
+- `usage_example.py`: processes data and runs all analysis methods.
+- `usage_example_2.py`: generate plots of the analysis.
 
 ## Apis/methods/packages/platforms used
 - Word alignment: [Simalign](https://github.com/cisnlp/simalign)

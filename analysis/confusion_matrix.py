@@ -14,7 +14,7 @@ class ConfusionMatrix:
         self.ds = ds
         self.gold_col = gold_col
 
-    def __generate_matrix(self, language: str) -> pd.DataFrame:
+    def __generate_matrix(self, language: str,df:pd.DataFrame) -> pd.DataFrame:
         """Generate a confusion matrix for gender predictions for a specific language."""
         pred_col = self.ds.prediction_columns.get(language)
 
@@ -25,15 +25,15 @@ class ConfusionMatrix:
             raise ValueError("Specified columns not found in DataFrame")
 
         # Get unique gender values
-        gold_values = self.ds.df[self.gold_col].dropna().unique()
-        pred_values = self.ds.df[pred_col].dropna().unique()
+        gold_values = df[self.gold_col].dropna().unique()
+        pred_values = df[pred_col].dropna().unique()
         all_genders = sorted(set(gold_values) | set(pred_values))
 
         # Initialize matrix
         matrix = pd.DataFrame(0, index=all_genders, columns=all_genders)
 
         # Fill matrix
-        for _, row in self.ds.df.iterrows():
+        for _, row in df.iterrows():
             gold = row.get(self.gold_col)
             pred = row.get(pred_col)
 
@@ -43,9 +43,9 @@ class ConfusionMatrix:
         print(matrix)
         return matrix
 
-    def __calculate_metrics(self, language: str) -> Dict[str, Dict[str, float]]:
+    def __calculate_metrics(self, language: str,df:pd.DataFrame) -> Dict[str, Dict[str, float]]:
         """Calculate precision, recall, and F1-score for each gender class for a specific language."""
-        matrix = self.__generate_matrix(language)
+        matrix = self.__generate_matrix(language,df)
         metrics = {}
 
         for gender in matrix.index:
@@ -67,8 +67,11 @@ class ConfusionMatrix:
 
         return metrics
 
-    def analyze(self, languages: List[str] | None = None) -> pd.DataFrame:
+    def analyze(self, languages: List[str] | None = None,filter_col:str|None=None,filter_value=None) -> pd.DataFrame:
         """Analyze confusion matrix metrics for multiple languages and return as DataFrame."""
+        df=self.ds.df
+        if filter_col is not None:
+            df=df[df[filter_col]==filter_value]
         if languages is None:
             languages = list(self.ds.translation_columns.keys())
 
@@ -79,10 +82,13 @@ class ConfusionMatrix:
 
         for lang in languages:
             try:
-                metrics = self.__calculate_metrics(lang)
+                metrics = self.__calculate_metrics(lang,df)
 
                 # Create a row for this language
                 row_data: Dict[str, Any] = {'language': lang}
+
+                if filter_col is not None:
+                    row_data[filter_col]=filter_value
 
                 # Add metrics for each gender class
                 for gender, gender_metrics in metrics.items():
