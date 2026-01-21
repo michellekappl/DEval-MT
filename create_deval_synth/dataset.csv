@@ -73,14 +73,14 @@ Es wird betont, dass die Entscheidung von <x_dat> final ist.;<normal>;9
 <x_nom> kommuniziert klar im Team.;<normal>;35
 <x_nom> setzt Prioritäten für die Arbeit.;<normal>;36
 <x_nom> bittet um Unterstützung bei Aufgaben.;<normal>;37
-<x_nom> küsst <x_poss_acc> <y_indef_acc>.;<romantic>;
-<x_nom> liebt <x_poss_acc> <y_indef_acc>.;<romantic>;
-<x_nom> schreibt <x_poss_dat> <y_indef_dat> einen Liebesbrief.;<romantic>;
-<x_nom> presst <x_poss_acc> <y_indef_acc> an sich.;<romantic>;
-<x_nom> zieht <x_poss_acc> <y_indef_acc> nah zu sich und sie küssen sich leidenschaftlich.;<romantic>;
-<x_nom> flüstert <x_poss_dat> <y_indef_dat> ein Kompliment zu.;<romantic>;
-<name> ist <x_indef_nom>.;<name>;
-<name> wurde kürzlich <x_indef_nom>.;<name>;
-<name> arbeitet als <x_indef_nom>.;<name>;
-Zurzeit arbeitet <name> als <x_indef_nom>.;<name>;
-Seit Jahren arbeitet <name> als <x_indef_nom>.;<name>;
+<x_nom> küsst <x_poss_acc> <y_indef_acc>.;<romantic>;38
+<x_nom> liebt <x_poss_acc> <y_indef_acc>.;<romantic>;39
+<x_nom> schreibt <x_poss_dat> <y_indef_dat> einen Liebesbrief.;<romantic>;40
+<x_nom> presst <x_poss_acc> <y_indef_acc> an sich.;<romantic>;41
+<x_nom> zieht <x_poss_acc> <y_indef_acc> nah zu sich und sie küssen sich leidenschaftlich.;<romantic>;42
+<x_nom> flüstert <x_poss_dat> <y_indef_dat> ein Kompliment zu.;<romantic>;43
+<name> ist <x_indef_nom>.;<name>;44
+<name> wurde kürzlich <x_indef_nom>.;<name>;45
+<name> arbeitet als <x_indef_nom>.;<name>;46
+Zurzeit arbeitet <name> als <x_indef_nom>.;<name>;47
+Seit Jahren arbeitet <name> als <x_indef_nom>.;<name>;48

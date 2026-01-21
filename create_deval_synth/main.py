@@ -1,6 +1,7 @@
 import csv
 import random
 import sys
+import polars as pl
 
 from adjectives import adjectives
 from groups import groups
@@ -9,9 +10,9 @@ from templates import (
     NAME_SENTENCE,
     NORMAL_SENTENCE,
     ROMANTIC_SENTENCE,
-    Instance,
     Template,
 )
+from Instance import Instance 
 
 # Remove groups that are not needed for the generation
 # del groups["other"]
@@ -21,27 +22,26 @@ from templates import (
 def load_statistics(filepath: str) -> dict[str, dict[str, tuple[int, int]]]:
     """Load job statistics from CSV file."""
     statistics = {}
-    with open(filepath, "r") as statistics_file:
-        statistics_csv = csv.reader(statistics_file, delimiter=";")
-        for row in statistics_csv:
-            if row[0] == "Code":
-                continue  # skip header
-            code = int(row[0])
-            status = row[2]
-            num_m = 0 if row[3] == "x" else (int(row[3].replace(".", "")))
-            num_f = 0 if row[4] == "x" else (int(row[4].replace(".", "")))
+    #read branchen statistic file
+    statistics_csv = pl.read_csv(filepath, separator=";", has_header=True)
+    
+    for row in statistics_csv.iter_rows(named=True):
+        code = row['Code']
+        status = row['Anforderungsniveau']
+        num_m = 0 if row['Männer'] == "x" else (int(row["Männer"]))
+        num_f = 0 if row['Frauen'] == "x" else (int(row['Frauen']))
 
-            statistics.setdefault(code, {})[status] = (num_m, num_f)
+        statistics.setdefault(code, {})[status] = (num_m, num_f)
 
     return statistics
 
 
 # parse command line arguments
-if len(sys.argv) < 2:
-    print("Usage: python main.py <csv_file>")
-    sys.exit(1)
+# if len(sys.argv) < 2:
+#     print("Usage: python main.py <csv_file>")
+#     sys.exit(1)
 
-csv_file = sys.argv[1]
+csv_file = 'dataset.csv'
 
 # these are the adjustable parameters:
 
@@ -56,20 +56,21 @@ instances = []
 templates = []
 
 
-with open(csv_file, newline="", encoding="utf-8") as f:
-    reader = csv.reader(f, delimiter=";")
-    # delete the header
-    next(reader)
-    for row in reader:
-        # create template for each row
-        r = Template(row, statistics, groups, adjectives, names)
-        # generate all instances
-        templates.append(r)
+
+reader = pl.read_csv(csv_file, separator=";", has_header=True)
+
+for row in reader.iter_rows(named=True):
+    # create template for each row
+    r = Template(row, statistics, groups, adjectives, names)
+    # generate all instances
+    templates.append(r)
 
 print(f"Loaded {len(templates)} templates from {csv_file}.")
 
 # templates that work for any job
-generic_templates = [t for t in templates if t.sentence_style == 1]
+generic_templates = [t for t in templates if t.sentence_style == 1 or t.sentence_style == 5]
+
+romantic_templates = [t for t in templates if t.sentence_style == 5]
 
 generic_pronoun_templates = [t for t in templates if t.sentence_style == 2]
 
@@ -78,36 +79,30 @@ assert (
 ), "Not enough templates available. Please check the input file."
 
 for key, jobs in groups.items():
-    # select templates based on the group key
-    specific_templates = [t for t in templates if key in t.matching_x_groups]
-
-    # romantic groups are handled separately
-    if key == "romantic" and len(specific_templates) < GEN_TEMPLATES_PER_JOB:
-        continue
-    else:
-        for gender_group in jobs:
-            generic_templates_to_use = (
-                []
-                if len(specific_templates) >= GEN_TEMPLATES_PER_JOB
-                else random.sample(
+    for gender_group in jobs:
+        generic_templates_to_use = random.sample(
                     list(generic_templates),
-                    GEN_TEMPLATES_PER_JOB - len(specific_templates),
+                    GEN_TEMPLATES_PER_JOB
                 )
-            )
+            
             # get the coresponding Pronoun sentences
-            generic_pronoun_templates_to_use = []
-            for t in generic_templates_to_use:
-                for p in generic_pronoun_templates:
-                    if t.sentence_id == p.sentence_id:
-                        generic_pronoun_templates_to_use.append(p)
+        generic_pronoun_templates_to_use = []
+        for t in generic_templates_to_use:
+            for p in generic_pronoun_templates:
+                if t.sentence_id == p.sentence_id:
+                    generic_pronoun_templates_to_use.append(p)
+        romantic_templates_to_use = random.sample(
+                    list(romantic_templates),
+                    1
+                )
 
-            generic_templates_to_use = generic_templates_to_use + generic_pronoun_templates_to_use
+        generic_templates_to_use = generic_templates_to_use + generic_pronoun_templates_to_use + romantic_templates_to_use
 
             # use all generic templates
-            templates_to_use = list(specific_templates) + generic_templates_to_use
-            templates_to_use = sorted(templates_to_use, key=lambda template: template.sentence_id)
-            for template in templates_to_use:
-                instances.extend(template.gen_for_xs(key, gender_group))
+        templates_to_use = generic_templates_to_use
+        templates_to_use = sorted(templates_to_use, key=lambda template: template.sentence_id)
+        for template in templates_to_use:
+            instances.extend(template.gen_for_xs(key, gender_group))
 
 # for template in filter(
 #     lambda t: t.sentence_style in [NAME_SENTENCE, ROMANTIC_SENTENCE], templates

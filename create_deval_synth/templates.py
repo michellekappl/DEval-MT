@@ -1,5 +1,6 @@
 import random
 import re
+from Instance import Instance
 from itertools import chain
 from typing import Literal, TypeVar
 
@@ -21,9 +22,7 @@ ADJECTIVE_SENTENCE_PRONOUN = 4
 ROMANTIC_SENTENCE = 5
 NAME_SENTENCE = 6
 
-
 T = TypeVar("T")
-
 
 def from_none(arg: T | None) -> T:
     """
@@ -32,139 +31,6 @@ def from_none(arg: T | None) -> T:
     if not arg:
         raise ValueError("Argument cannot be None")
     return arg
-
-
-class Instance:
-    """
-    Represents a single instance of a template sentence.
-    Provides string representation in a specific format for CSV output.
-    """
-
-    x: Noun
-    """The first noun in the sentence."""
-    sentence_style: str | int 
-    """The style of the sentence"""
-    sentence_id: int | None
-    """The id of the sentence"""
-    x_group: str | int
-    """The group of the first noun (either "romantic" or a number corresponding to some job group)."""
-    x_idx: int
-    """The index of the first noun in the sentence (where "," is counted as a separate token)."""
-    y: Noun | None
-    """The second noun in the sentence, or None if this is a name sentence."""
-    y_group: str | int | None
-    """The group of the second noun (either "romantic" or a number corresponding to some job group), or None if this is a name (style 4) sentence."""
-    y_idx: int | None
-    """The index of the second noun in the sentence (where "," is counted as a separate token), or None if this is a name sentence."""
-    adjective: Adjective | None
-    """The adjective in the sentence (only for style 2 sentences)."""
-    modified: str | None
-    """Which noun was modified by the adjective, either "x" or "y" (only for style 2 sentences, None otherwise)."""
-    text: str
-    """The full text of the sentence with the nouns and adjectives replaced by their declensions."""
-    name: Name | None
-    """The name in the sentence (only for style 4 sentences, None otherwise)."""
-    statistics: dict
-    """The statistics for the job groups, used to calculate stereotypicality of the nouns."""
-
-    def __init__(
-        self,
-        x: Noun,
-        sentence_style: str | int,
-        sentence_id: int | None,
-        x_group: str | int,
-        x_idx: int,
-        y: Noun | None,
-        y_group: str | int | None,
-        y_idx: int | None,
-        adjective: Adjective | None,
-        modified: str | None,
-        text: str,
-        name: Name | None,
-        statistics: dict,
-    ):
-        self.x = x
-        self.sentence_style = sentence_style
-        self.sentence_id = sentence_id
-        self.y = y
-        self.x_group = x_group
-        self.y_group = y_group
-        self.text = text
-        self.adjective = adjective
-        self.modified = modified  # "x" or "y", which one was modified
-        self.x_idx = x_idx  # index of x in the sentence
-        self.y_idx = y_idx  # index of y in the sentence
-        self.name = name
-        self.statistics = statistics
-        # id adjectives shift sentence_style to adjective 
-        if(adjective):
-            self.sentence_style += 2
-
-    header = (
-        "sentence_style;"
-        "sentence_id;"
-        "x_nom_sg;x_group;x_gender;x_idx;x_stereotypical;x_level;"
-        "y_nom_sg;y_group;y_gender;y_idx;y_stereotypical;y_level;"
-        "adjective;modified;name;name_gender;text"
-    )
-    """The header for the CSV file, describing the fields in the same order as they are in the string representation."""
-
-    def __str__(self):
-        return (
-            f"{self.sentence_style};"
-            + f"{self.sentence_id};"
-            + f"{self.x.nom_sg};{self.x_group};{self.x.gender};{self.x_idx};{self.x_stereotypical};{self.x.status or 'none'};"
-            + (
-                f"{self.y.nom_sg};{self.y_group};{self.y.gender};{self.y_idx};{self.y_stereotypical};{self.y.status or 'none'};"
-                if self.y
-                else "none;none;none;none;none;none;"
-            )
-            + f"{self.adjective.text if self.adjective else 'none'};"
-            + f"{self.modified or 'none'};"
-            + (f"{self.name.text};{self.name.gender};" if self.name else "none;none;")
-            + f"{self.text}"
-        )
-
-    @property
-    def x_stereotypical(self) -> float:
-        """The stereotypicality of the first noun: if x has gender g (m or f), then this is `num_g / (num_m + num_f)`,
-        where `num_m` and `num_f` are the number of male and female instances, respectively.
-        NaN if unapplicable."""
-        if (
-            self.sentence_style == NAME_SENTENCE
-            or self.sentence_style == ROMANTIC_SENTENCE
-        ):
-            return float("nan")
-        else:
-            num_m, num_f = self.statistics[self.x_group][self.x.status]
-            if num_m == 0 and num_f == 0:
-                return float("nan")
-            if self.x.gender == "m":
-                return num_m / (num_m + num_f)
-            elif self.x.gender == "f":
-                return num_f / (num_m + num_f)
-            else:
-                return float("nan")
-
-    @property
-    def y_stereotypical(self) -> float:
-        """The stereotypicality of the second noun: if y has gender g (m or f), then this is `num_g / (num_m + num_f)`,
-        where `num_m` and `num_f` are the number of male and female instances, respectively.
-        NaN if unapplicable."""
-        if not self.y or self.sentence_style == ROMANTIC_SENTENCE:
-            return float("nan")
-        else:
-            num_m, num_f = self.statistics[self.y_group][self.y.status]
-
-            if num_m == 0 and num_f == 0:
-                return float("nan")
-            if self.y.gender == "m":
-                return num_m / (num_m + num_f)
-            elif self.y.gender == "f":
-                return num_f / (num_m + num_f)
-            else:
-                return float("nan")
-
 
 class Template:
     """
@@ -205,38 +71,19 @@ class Template:
             (x_group, x) for x_group, xs in groups.items() for job in xs for x in job
         ]
 
-        self.sentence = row[0].strip()  # the actual sentence template
-        self.sentence_id = row[2].strip()
+        self.sentence = row['sentence']  # the actual sentence template
+        self.sentence_id = row['id']
         self.statistics = statistics
         self.adjectives = adjectives  # adjectives to use in template
         self.groups = groups  # groups to use in template
         self.names = names  # names to use in template
-
-        # the hierarchy of the template, i.e. "x>y", "x<y" or "none"
-        hierarchy = "none"
-
-        self.higher = None  # the higher group in the hierarchy, either "x" or "y", or None if no hierarchy is defined
-
-        # parse hierarchy
-        if hierarchy != "none":
-            if ">" in hierarchy or "<" in hierarchy:
-                # check that the hierarchy variable is x or y
-                if hierarchy[0] in (
-                    "x",
-                    "y",
-                ):
-                    self.higher = hierarchy[0]
-                else:
-                    raise ValueError(f"Invalid hierarchy: {hierarchy}")
-            else:
-                raise ValueError(f"Invalid hierarchy: {hierarchy}")
 
         # add all the relevant jobs to the xs list
         # the xs list is of the form [(group_id, Noun), ...]
         self.xs: list[tuple[str | int, Noun]] = []
 
         self.matching_x_groups: list[str | int] = []
-        sentence_style = row[1].strip("<>") 
+        sentence_style = row['style'].strip("<>") 
 
         if sentence_style == "normal_pron":
             self.sentence_style = NORMAL_SENTENCE_PRONOUN
@@ -247,25 +94,7 @@ class Template:
         else:
             self.sentence_style = NORMAL_SENTENCE
         # parse x groups from the row (this is a string of the form '[111, "romantic", 333]')
-        x_groups = [""]
-
-        if x_groups[0] == "":
-            self.generic = True
-            self.xs = groups_list
-        elif x_groups[0] == "romantic":
-            self.sentence_style = ROMANTIC_SENTENCE
-            self.xs = [
-                (x_group, x) for x_group, x in groups_list if x_group == "romantic"
-            ]
-            self.matching_x_groups = ["romantic"]
-        else:
-            matching_groups = [
-                int(group) if group != "romantic" else group for group in x_groups
-            ]
-            self.xs = [
-                (x_group, x) for x_group, x in groups_list if x_group in matching_groups
-            ]
-            self.matching_x_groups = matching_groups
+        self.xs = groups_list
 
         # check if there is a <y> value in the sentence
         # if not, then this is a name (style 4) sentence
@@ -425,37 +254,6 @@ class Template:
             # throw error
             raise ValueError(f"Unknown match type: {parts}")
 
-    def satisfies_hierarchy(self, x: Noun, y: Noun) -> bool:
-        """
-        Checks whether the two selected nouns satisfy the hierarchy defined in the template.
-        If the hierarchy is `None`, returns `True`.
-        """
-        if self.higher is None:
-            return True
-        elif not hasattr(x, "status") or not hasattr(y, "status"):
-            # if x or y do not have a status, we cannot compare them
-            return False
-
-        STATUS_HIERARCHY = {
-            "Experten": 4,
-            "Spezialisten": 3,
-            "Fachkraefte": 2,
-            "Helfer": 1,
-        }
-
-        if self.higher == "x":
-            return (
-                STATUS_HIERARCHY[from_none(x.status)]
-                > STATUS_HIERARCHY[from_none(y.status)]
-            )
-        elif self.higher == "y":
-            return (
-                STATUS_HIERARCHY[from_none(x.status)]
-                < STATUS_HIERARCHY[from_none(y.status)]
-            )
-        else:
-            raise ValueError(f"Invalid hierarchy: {self.higher}")
-
     @staticmethod
     def find_indices(
         text: str,
@@ -591,7 +389,7 @@ class Template:
             for x_group, x in xs
             for y_group, y in ys
             # only one of the groups has to be of group "romantic"
-            if (y_group == "romantic") and x.nom_sg != y.nom_sg
+            if (y_group == "romantic") and x_group != "romantic" and x.nom_sg != y.nom_sg
         ):
             # use regex to perform substitutions
             text = re.sub(
@@ -668,7 +466,6 @@ class Template:
             for y_group, y in ys
             if x_group != "romantic" and y_group != "romantic"
             if x != y  # make sure we never have the same noun in both x and y
-            and self.satisfies_hierarchy(x, y)  # make sure hierarchy is satisfied
             # only consider different gender pairs
             and x.gender != y.gender
             # make sure we never have the same noun in both x and y
@@ -694,7 +491,6 @@ class Template:
                 # the same logic as in base_generator, but with adjectives
                 if x_group != "romantic" and y_group != "romantic"
                 if x != y
-                and self.satisfies_hierarchy(x, y)
                 and x.gender != y.gender
                 and x.nom_sg != y.nom_sg
                 for adjective in self.adjectives
@@ -798,6 +594,8 @@ class Template:
             ys = [(y_group, y) for y in y_jobs]
 
             if self.sentence_style == ROMANTIC_SENTENCE:
+                y_group, y_jobs = random.choice(self.ys_by_gender[:5])
+                ys = [(y_group, y) for y in y_jobs]
                 return self.gen_romantic(xs, ys)
             else:
                 return self.gen_normal(xs, ys)
