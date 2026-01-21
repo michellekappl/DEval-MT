@@ -1,435 +1,435 @@
 Code;Name;Anforderungsniveau;Männer;Frauen
 100;Romantisch;Rom_Männer;x;x
 100;Romantisch;Rom_Frauen;x;x
-111;Landwirtschaft;Helfer;53.420;20.120
-111;Landwirtschaft;Fachkraefte;38.610;10.180
-111;Landwirtschaft;Spezialisten;5.800;2.310
-111;Landwirtschaft;Experten;6.850;3.490
-112;Tierwirtschaft;Helfer;3.340;2.130
-112;Tierwirtschaft;Fachkraefte;6.670;5.140
-112;Tierwirtschaft;Spezialisten;1.620;770
+111;Landwirtschaft;Helfer;53420;20120
+111;Landwirtschaft;Fachkraefte;38610;10180
+111;Landwirtschaft;Spezialisten;5800;2310
+111;Landwirtschaft;Experten;6850;3490
+112;Tierwirtschaft;Helfer;3340;2130
+112;Tierwirtschaft;Fachkraefte;6670;5140
+112;Tierwirtschaft;Spezialisten;1620;770
 112;Tierwirtschaft;Experten;400;270
-113;Pferdewirtschaft;Fachkraefte;3.570;7.260
+113;Pferdewirtschaft;Fachkraefte;3570;7260
 113;Pferdewirtschaft;Spezialisten;560;330
 113;Pferdewirtschaft;Experten;x;x
 114;Fischwirtschaft;Helfer;310;120
-114;Fischwirtschaft;Fachkraefte;1.140;120
+114;Fischwirtschaft;Fachkraefte;1140;120
 114;Fischwirtschaft;Spezialisten;90;x
 114;Fischwirtschaft;Experten;50;x
-115;Tierpflege;Helfer;2.140;2.330
-115;Tierpflege;Fachkraefte;6.340;10.720
+115;Tierpflege;Helfer;2140;2330
+115;Tierpflege;Fachkraefte;6340;10720
 115;Tierpflege;Spezialisten;50;x
 115;Tierpflege;Experten;80;200
-116;Weinbau;Fachkraefte;1.970;550
+116;Weinbau;Fachkraefte;1970;550
 116;Weinbau;Spezialisten;500;90
 116;Weinbau;Experten;240;80
-117;Forst-,Jagdwirtschaft, Landschaftspflege;Helfer;10.320;680
-117;Forst-,Jagdwirtschaft, Landschaftspflege;Fachkraefte;12.570;1.230
-117;Forst-,Jagdwirtschaft, Landschaftspflege;Spezialisten;6.130;1.620
-117;Forst-,Jagdwirtschaft, Landschaftspflege;Experten;2.850;1.650
-121;Gartenbau;Helfer;81.560;18.460
-121;Gartenbau;Fachkraefte;100.730;24.410
-121;Gartenbau;Spezialisten;12.090;2.140
-121;Gartenbau;Experten;5.950;6.930
-122;Floristik;Fachkraefte;1.220;25.310
+117;Forst-,Jagdwirtschaft, Landschaftspflege;Helfer;10320;680
+117;Forst-,Jagdwirtschaft, Landschaftspflege;Fachkraefte;12570;1230
+117;Forst-,Jagdwirtschaft, Landschaftspflege;Spezialisten;6130;1620
+117;Forst-,Jagdwirtschaft, Landschaftspflege;Experten;2850;1650
+121;Gartenbau;Helfer;81560;18460
+121;Gartenbau;Fachkraefte;100730;24410
+121;Gartenbau;Spezialisten;12090;2140
+121;Gartenbau;Experten;5950;6930
+122;Floristik;Fachkraefte;1220;25310
 122;Floristik;Spezialisten;60;490
 122;Floristik;Experten;x;70
-211;Berg-, Tagebau und Sprengtechnik;Helfer;1.360;150
-211;Berg-, Tagebau und Sprengtechnik;Fachkraefte;8.220;480
-211;Berg-, Tagebau und Sprengtechnik;Spezialisten;4.630;220
-211;Berg-, Tagebau und Sprengtechnik;Experten;2.660;420
-212;Naturstein-,Mineral-,Baustoffherstell.;Helfer;9.480;550
-212;Naturstein-,Mineral-,Baustoffherstell.;Fachkraefte;33.860;1.220
-212;Naturstein-,Mineral-,Baustoffherstell.;Spezialisten;1.710;180
-213;Industrielle Glasherstell.,-verarbeitung;Helfer;6.430;2.210
-213;Industrielle Glasherstell.,-verarbeitung;Fachkraefte;18.840;5.330
-213;Industrielle Glasherstell.,-verarbeitung;Spezialisten;1.410;130
-214;Industrielle Keramikherstell.,-verarbeit;Helfer;5.330;2.080
-214;Industrielle Keramikherstell.,-verarbeit;Fachkraefte;3.790;750
+211;Berg-, Tagebau und Sprengtechnik;Helfer;1360;150
+211;Berg-, Tagebau und Sprengtechnik;Fachkraefte;8220;480
+211;Berg-, Tagebau und Sprengtechnik;Spezialisten;4630;220
+211;Berg-, Tagebau und Sprengtechnik;Experten;2660;420
+212;Naturstein-,Mineral-,Baustoffherstell.;Helfer;9480;550
+212;Naturstein-,Mineral-,Baustoffherstell.;Fachkraefte;33860;1220
+212;Naturstein-,Mineral-,Baustoffherstell.;Spezialisten;1710;180
+213;Industrielle Glasherstell.,-verarbeitung;Helfer;6430;2210
+213;Industrielle Glasherstell.,-verarbeitung;Fachkraefte;18840;5330
+213;Industrielle Glasherstell.,-verarbeitung;Spezialisten;1410;130
+214;Industrielle Keramikherstell.,-verarbeit;Helfer;5330;2080
+214;Industrielle Keramikherstell.,-verarbeit;Fachkraefte;3790;750
 214;Industrielle Keramikherstell.,-verarbeit;Spezialisten;420;50
-221;Kunststoff,Kautschukherstell.,verarbeit;Helfer;63.780;34.520
-221;Kunststoff,Kautschukherstell.,verarbeit;Fachkraefte;89.870;15.390
-221;Kunststoff,Kautschukherstell.,verarbeit;Spezialisten;4.720;350
-221;Kunststoff,Kautschukherstell.,verarbeit;Experten;1.260;250
-222;Farb- und Lacktechnik;Helfer;4.730;770
-222;Farb- und Lacktechnik;Fachkraefte;47.640;5.380
-222;Farb- und Lacktechnik;Spezialisten;2.040;240
+221;Kunststoff,Kautschukherstell.,verarbeit;Helfer;63780;34520
+221;Kunststoff,Kautschukherstell.,verarbeit;Fachkraefte;89870;15390
+221;Kunststoff,Kautschukherstell.,verarbeit;Spezialisten;4720;350
+221;Kunststoff,Kautschukherstell.,verarbeit;Experten;1260;250
+222;Farb- und Lacktechnik;Helfer;4730;770
+222;Farb- und Lacktechnik;Fachkraefte;47640;5380
+222;Farb- und Lacktechnik;Spezialisten;2040;240
 222;Farb- und Lacktechnik;Experten;60;40
-223;Holzbe- und -verarbeitung;Helfer;32.000;5.470
-223;Holzbe- und -verarbeitung;Fachkraefte;156.380;11.890
-223;Holzbe- und -verarbeitung;Spezialisten;12.590;790
-223;Holzbe- und -verarbeitung;Experten;1.020;150
-231;Papier- und Verpackungstechnik;Helfer;15.150;7.920
-231;Papier- und Verpackungstechnik;Fachkraefte;32.940;3.910
-231;Papier- und Verpackungstechnik;Spezialisten;2.500;630
-231;Papier- und Verpackungstechnik;Experten;1.040;490
-232;Technische Mediengestaltung;Fachkraefte;13.930;20.040
-232;Technische Mediengestaltung;Spezialisten;26.510;27.140
-232;Technische Mediengestaltung;Experten;13.670;17.110
-233;Fototechnik und Fotografie;Fachkraefte;3.850;4.800
+223;Holzbe- und -verarbeitung;Helfer;32000;5470
+223;Holzbe- und -verarbeitung;Fachkraefte;156380;11890
+223;Holzbe- und -verarbeitung;Spezialisten;12590;790
+223;Holzbe- und -verarbeitung;Experten;1020;150
+231;Papier- und Verpackungstechnik;Helfer;15150;7920
+231;Papier- und Verpackungstechnik;Fachkraefte;32940;3910
+231;Papier- und Verpackungstechnik;Spezialisten;2500;630
+231;Papier- und Verpackungstechnik;Experten;1040;490
+232;Technische Mediengestaltung;Fachkraefte;13930;20040
+232;Technische Mediengestaltung;Spezialisten;26510;27140
+232;Technische Mediengestaltung;Experten;13670;17110
+233;Fototechnik und Fotografie;Fachkraefte;3850;4800
 233;Fototechnik und Fotografie;Spezialisten;270;140
 233;Fototechnik und Fotografie;Experten;50;x
-234;Drucktechnik,-weiterverarb.,Buchbinderei;Helfer;12.430;7.230
-234;Drucktechnik,-weiterverarb.,Buchbinderei;Fachkraefte;27.370;6.970
-234;Drucktechnik,-weiterverarb.,Buchbinderei;Spezialisten;2.010;830
+234;Drucktechnik,-weiterverarb.,Buchbinderei;Helfer;12430;7230
+234;Drucktechnik,-weiterverarb.,Buchbinderei;Fachkraefte;27370;6970
+234;Drucktechnik,-weiterverarb.,Buchbinderei;Spezialisten;2010;830
 234;Drucktechnik,-weiterverarb.,Buchbinderei;Experten;280;70
-241;Metallerzeugung;Helfer;9.630;1.150
-241;Metallerzeugung;Fachkraefte;69.810;5.470
-241;Metallerzeugung;Spezialisten;2.090;60
-241;Metallerzeugung;Experten;1.240;130
-242;Metallbearbeitung;Helfer;172.920;50.030
-242;Metallbearbeitung;Fachkraefte;308.920;19.770
-242;Metallbearbeitung;Spezialisten;25.450;1.030
+241;Metallerzeugung;Helfer;9630;1150
+241;Metallerzeugung;Fachkraefte;69810;5470
+241;Metallerzeugung;Spezialisten;2090;60
+241;Metallerzeugung;Experten;1240;130
+242;Metallbearbeitung;Helfer;172920;50030
+242;Metallbearbeitung;Fachkraefte;308920;19770
+242;Metallbearbeitung;Spezialisten;25450;1030
 242;Metallbearbeitung;Experten;490;80
-243;Metalloberflächenbehandlung;Helfer;7.720;2.310
-243;Metalloberflächenbehandlung;Fachkraefte;25.570;2.020
-243;Metalloberflächenbehandlung;Spezialisten;1.320;120
+243;Metalloberflächenbehandlung;Helfer;7720;2310
+243;Metalloberflächenbehandlung;Fachkraefte;25570;2020
+243;Metalloberflächenbehandlung;Spezialisten;1320;120
 243;Metalloberflächenbehandlung;Experten;70;x
-244;Metallbau und Schweißtechnik;Helfer;41.170;3.480
-244;Metallbau und Schweißtechnik;Fachkraefte;236.990;5.630
-244;Metallbau und Schweißtechnik;Spezialisten;13.460;410
-244;Metallbau und Schweißtechnik;Experten;2.350;350
-245;Feinwerk- und Werkzeugtechnik;Helfer;2.600;1.950
-245;Feinwerk- und Werkzeugtechnik;Fachkraefte;91.950;7.280
-245;Feinwerk- und Werkzeugtechnik;Spezialisten;9.640;1.040
-245;Feinwerk- und Werkzeugtechnik;Experten;1.430;200
-251;Maschinenbau- und Betriebstechnik;Helfer;127.660;53.480
-251;Maschinenbau- und Betriebstechnik;Fachkraefte;809.990;78.460
-251;Maschinenbau- und Betriebstechnik;Spezialisten;104.190;7.600
-251;Maschinenbau- und Betriebstechnik;Experten;78.360;10.000
-252;Fahrzeug-Luft-Raumfahrt-,Schiffbautechn.;Helfer;24.110;2.300
-252;Fahrzeug-Luft-Raumfahrt-,Schiffbautechn.;Fachkraefte;423.930;25.610
-252;Fahrzeug-Luft-Raumfahrt-,Schiffbautechn.;Spezialisten;44.180;1.620
-252;Fahrzeug-Luft-Raumfahrt-,Schiffbautechn.;Experten;51.940;8.970
-261;Mechatronik und Automatisierungstechnik;Fachkraefte;95.140;9.560
-261;Mechatronik und Automatisierungstechnik;Spezialisten;17.540;1.060
-261;Mechatronik und Automatisierungstechnik;Experten;10.880;1.010
-262;Energietechnik;Fachkraefte;380.880;15.210
-262;Energietechnik;Spezialisten;39.280;2.150
-262;Energietechnik;Experten;12.010;2.060
-263;Elektrotechnik;Helfer;81.760;43.770
-263;Elektrotechnik;Fachkraefte;180.320;25.400
-263;Elektrotechnik;Spezialisten;102.650;10.840
-263;Elektrotechnik;Experten;61.570;6.900
-271;Technische Forschung und Entwicklung;Fachkraefte;2.900;1.010
-271;Technische Forschung und Entwicklung;Spezialisten;44.920;7.930
-271;Technische Forschung und Entwicklung;Experten;214.140;41.350
-272;Techn. Zeichnen, Konstruktion, Modellbau;Fachkraefte;59.490;58.210
-272;Techn. Zeichnen, Konstruktion, Modellbau;Spezialisten;72.840;12.280
-272;Techn. Zeichnen, Konstruktion, Modellbau;Experten;14.850;1.340
-273;Technische Produktionsplanung,-steuerung;Fachkraefte;127.380;43.900
-273;Technische Produktionsplanung,-steuerung;Spezialisten;201.440;52.670
-273;Technische Produktionsplanung,-steuerung;Experten;149.210;31.160
-281;Textiltechnik und -produktion;Helfer;5.720;5.410
-281;Textiltechnik und -produktion;Fachkraefte;14.560;8.110
-281;Textiltechnik und -produktion;Spezialisten;1.410;510
+244;Metallbau und Schweißtechnik;Helfer;41170;3480
+244;Metallbau und Schweißtechnik;Fachkraefte;236990;5630
+244;Metallbau und Schweißtechnik;Spezialisten;13460;410
+244;Metallbau und Schweißtechnik;Experten;2350;350
+245;Feinwerk- und Werkzeugtechnik;Helfer;2600;1950
+245;Feinwerk- und Werkzeugtechnik;Fachkraefte;91950;7280
+245;Feinwerk- und Werkzeugtechnik;Spezialisten;9640;1040
+245;Feinwerk- und Werkzeugtechnik;Experten;1430;200
+251;Maschinenbau- und Betriebstechnik;Helfer;127660;53480
+251;Maschinenbau- und Betriebstechnik;Fachkraefte;809990;78460
+251;Maschinenbau- und Betriebstechnik;Spezialisten;104190;7600
+251;Maschinenbau- und Betriebstechnik;Experten;78360;10000
+252;Fahrzeug-Luft-Raumfahrt-,Schiffbautechn.;Helfer;24110;2300
+252;Fahrzeug-Luft-Raumfahrt-,Schiffbautechn.;Fachkraefte;423930;25610
+252;Fahrzeug-Luft-Raumfahrt-,Schiffbautechn.;Spezialisten;44180;1620
+252;Fahrzeug-Luft-Raumfahrt-,Schiffbautechn.;Experten;51940;8970
+261;Mechatronik und Automatisierungstechnik;Fachkraefte;95140;9560
+261;Mechatronik und Automatisierungstechnik;Spezialisten;17540;1060
+261;Mechatronik und Automatisierungstechnik;Experten;10880;1010
+262;Energietechnik;Fachkraefte;380880;15210
+262;Energietechnik;Spezialisten;39280;2150
+262;Energietechnik;Experten;12010;2060
+263;Elektrotechnik;Helfer;81760;43770
+263;Elektrotechnik;Fachkraefte;180320;25400
+263;Elektrotechnik;Spezialisten;102650;10840
+263;Elektrotechnik;Experten;61570;6900
+271;Technische Forschung und Entwicklung;Fachkraefte;2900;1010
+271;Technische Forschung und Entwicklung;Spezialisten;44920;7930
+271;Technische Forschung und Entwicklung;Experten;214140;41350
+272;Techn. Zeichnen, Konstruktion, Modellbau;Fachkraefte;59490;58210
+272;Techn. Zeichnen, Konstruktion, Modellbau;Spezialisten;72840;12280
+272;Techn. Zeichnen, Konstruktion, Modellbau;Experten;14850;1340
+273;Technische Produktionsplanung,-steuerung;Fachkraefte;127380;43900
+273;Technische Produktionsplanung,-steuerung;Spezialisten;201440;52670
+273;Technische Produktionsplanung,-steuerung;Experten;149210;31160
+281;Textiltechnik und -produktion;Helfer;5720;5410
+281;Textiltechnik und -produktion;Fachkraefte;14560;8110
+281;Textiltechnik und -produktion;Spezialisten;1410;510
 281;Textiltechnik und -produktion;Experten;480;910
-282;Textilverarbeitung;Helfer;1.760;3.200
-282;Textilverarbeitung;Fachkraefte;11.760;25.350
-282;Textilverarbeitung;Spezialisten;1.730;4.470
+282;Textilverarbeitung;Helfer;1760;3200
+282;Textilverarbeitung;Fachkraefte;11760;25350
+282;Textilverarbeitung;Spezialisten;1730;4470
 282;Textilverarbeitung;Experten;170;660
-283;Leder-, Pelzherstellung u. -verarbeitung;Helfer;2.730;2.370
-283;Leder-, Pelzherstellung u. -verarbeitung;Fachkraefte;7.400;5.880
-283;Leder-, Pelzherstellung u. -verarbeitung;Spezialisten;1.410;400
+283;Leder-, Pelzherstellung u. -verarbeitung;Helfer;2730;2370
+283;Leder-, Pelzherstellung u. -verarbeitung;Fachkraefte;7400;5880
+283;Leder-, Pelzherstellung u. -verarbeitung;Spezialisten;1410;400
 283;Leder-, Pelzherstellung u. -verarbeitung;Experten;x;x
-291;Getränkeherstellung;Fachkraefte;11.350;1.300
-291;Getränkeherstellung;Spezialisten;1.860;120
+291;Getränkeherstellung;Fachkraefte;11350;1300
+291;Getränkeherstellung;Spezialisten;1860;120
 291;Getränkeherstellung;Experten;410;50
-292;Lebensmittel- u. Genussmittelherstellung;Helfer;68.240;43.480
-292;Lebensmittel- u. Genussmittelherstellung;Fachkraefte;147.290;60.370
-292;Lebensmittel- u. Genussmittelherstellung;Spezialisten;10.970;2.350
-292;Lebensmittel- u. Genussmittelherstellung;Experten;1.480;880
-293;Speisenzubereitung;Helfer;99.480;172.380
-293;Speisenzubereitung;Fachkraefte;152.220;67.030
-293;Speisenzubereitung;Spezialisten;13.340;2.780
-293;Speisenzubereitung;Experten;4.540;1.270
-311;Bauplanung u. -überwachung, Architektur;Fachkraefte;9.450;3.490
-311;Bauplanung u. -überwachung, Architektur;Spezialisten;37.610;9.970
-311;Bauplanung u. -überwachung, Architektur;Experten;144.470;72.560
-312;Vermessung und Kartografie;Fachkraefte;14.910;6.270
-312;Vermessung und Kartografie;Spezialisten;4.440;1.840
-312;Vermessung und Kartografie;Experten;5.400;2.060
-321;Hochbau;Helfer;165.490;1.910
-321;Hochbau;Fachkraefte;224.300;1.600
-321;Hochbau;Spezialisten;27.880;1.770
-321;Hochbau;Experten;8.150;3.800
-322;Tiefbau;Helfer;41.800;690
-322;Tiefbau;Fachkraefte;101.110;710
-322;Tiefbau;Spezialisten;16.230;1.060
-322;Tiefbau;Experten;6.400;2.170
-331;Bodenverlegung;Helfer;7.470;120
-331;Bodenverlegung;Fachkraefte;43.070;480
-331;Bodenverlegung;Spezialisten;1.070;x
-332;Maler.,Stuckat.,Bauwerksabd,Bautenschutz;Helfer;25.420;1.750
-332;Maler.,Stuckat.,Bauwerksabd,Bautenschutz;Fachkraefte;114.720;8.530
-332;Maler.,Stuckat.,Bauwerksabd,Bautenschutz;Spezialisten;7.360;690
-333;Aus-,Trockenbau.Iso.Zimmer.Glas.Roll.bau;Helfer;47.810;1.130
-333;Aus-,Trockenbau.Iso.Zimmer.Glas.Roll.bau;Fachkraefte;118.090;3.310
-333;Aus-,Trockenbau.Iso.Zimmer.Glas.Roll.bau;Spezialisten;9.050;330
-341;Gebäudetechnik;Fachkraefte;292.740;22.240
-341;Gebäudetechnik;Spezialisten;23.120;1.640
-341;Gebäudetechnik;Experten;2.650;600
-342;Klempnerei,Sanitär,Heizung,Klimatechnik;Helfer;13.620;230
-342;Klempnerei,Sanitär,Heizung,Klimatechnik;Fachkraefte;212.000;2.220
-342;Klempnerei,Sanitär,Heizung,Klimatechnik;Spezialisten;22.040;480
-342;Klempnerei,Sanitär,Heizung,Klimatechnik;Experten;1.590;280
-343;Ver- und Entsorgung;Helfer;48.520;3.190
-343;Ver- und Entsorgung;Fachkraefte;111.890;3.710
-343;Ver- und Entsorgung;Spezialisten;25.680;1.650
-343;Ver- und Entsorgung;Experten;7.870;1.380
+292;Lebensmittel- u. Genussmittelherstellung;Helfer;68240;43480
+292;Lebensmittel- u. Genussmittelherstellung;Fachkraefte;147290;60370
+292;Lebensmittel- u. Genussmittelherstellung;Spezialisten;10970;2350
+292;Lebensmittel- u. Genussmittelherstellung;Experten;1480;880
+293;Speisenzubereitung;Helfer;99480;172380
+293;Speisenzubereitung;Fachkraefte;152220;67030
+293;Speisenzubereitung;Spezialisten;13340;2780
+293;Speisenzubereitung;Experten;4540;1270
+311;Bauplanung u. -überwachung, Architektur;Fachkraefte;9450;3490
+311;Bauplanung u. -überwachung, Architektur;Spezialisten;37610;9970
+311;Bauplanung u. -überwachung, Architektur;Experten;144470;72560
+312;Vermessung und Kartografie;Fachkraefte;14910;6270
+312;Vermessung und Kartografie;Spezialisten;4440;1840
+312;Vermessung und Kartografie;Experten;5400;2060
+321;Hochbau;Helfer;165490;1910
+321;Hochbau;Fachkraefte;224300;1600
+321;Hochbau;Spezialisten;27880;1770
+321;Hochbau;Experten;8150;3800
+322;Tiefbau;Helfer;41800;690
+322;Tiefbau;Fachkraefte;101110;710
+322;Tiefbau;Spezialisten;16230;1060
+322;Tiefbau;Experten;6400;2170
+331;Bodenverlegung;Helfer;7470;120
+331;Bodenverlegung;Fachkraefte;43070;480
+331;Bodenverlegung;Spezialisten;1070;x
+332;Maler.,Stuckat.,Bauwerksabd,Bautenschutz;Helfer;25420;1750
+332;Maler.,Stuckat.,Bauwerksabd,Bautenschutz;Fachkraefte;114720;8530
+332;Maler.,Stuckat.,Bauwerksabd,Bautenschutz;Spezialisten;7360;690
+333;Aus-,Trockenbau.Iso.Zimmer.Glas.Roll.bau;Helfer;47810;1130
+333;Aus-,Trockenbau.Iso.Zimmer.Glas.Roll.bau;Fachkraefte;118090;3310
+333;Aus-,Trockenbau.Iso.Zimmer.Glas.Roll.bau;Spezialisten;9050;330
+341;Gebäudetechnik;Fachkraefte;292740;22240
+341;Gebäudetechnik;Spezialisten;23120;1640
+341;Gebäudetechnik;Experten;2650;600
+342;Klempnerei,Sanitär,Heizung,Klimatechnik;Helfer;13620;230
+342;Klempnerei,Sanitär,Heizung,Klimatechnik;Fachkraefte;212000;2220
+342;Klempnerei,Sanitär,Heizung,Klimatechnik;Spezialisten;22040;480
+342;Klempnerei,Sanitär,Heizung,Klimatechnik;Experten;1590;280
+343;Ver- und Entsorgung;Helfer;48520;3190
+343;Ver- und Entsorgung;Fachkraefte;111890;3710
+343;Ver- und Entsorgung;Spezialisten;25680;1650
+343;Ver- und Entsorgung;Experten;7870;1380
 411;Mathematik und Statistik;Spezialisten;340;240
-411;Mathematik und Statistik;Experten;5.660;4.320
-412;Biologie;Fachkraefte;8.280;22.900
-412;Biologie;Spezialisten;1.980;2.580
-412;Biologie;Experten;10.200;14.720
-413;Chemie;Helfer;44.950;23.190
-413;Chemie;Fachkraefte;118.320;63.810
-413;Chemie;Spezialisten;19.000;6.240
-413;Chemie;Experten;21.980;14.300
-414;Physik;Fachkraefte;14.640;5.140
-414;Physik;Spezialisten;4.790;830
-414;Physik;Experten;14.620;4.590
+411;Mathematik und Statistik;Experten;5660;4320
+412;Biologie;Fachkraefte;8280;22900
+412;Biologie;Spezialisten;1980;2580
+412;Biologie;Experten;10200;14720
+413;Chemie;Helfer;44950;23190
+413;Chemie;Fachkraefte;118320;63810
+413;Chemie;Spezialisten;19000;6240
+413;Chemie;Experten;21980;14300
+414;Physik;Fachkraefte;14640;5140
+414;Physik;Spezialisten;4790;830
+414;Physik;Experten;14620;4590
 421;Geologie, Geografie und Meteorologie;Fachkraefte;250;210
 421;Geologie, Geografie und Meteorologie;Spezialisten;800;200
-421;Geologie, Geografie und Meteorologie;Experten;7.500;4.680
-422;Umweltschutztechnik;Fachkraefte;8.900;1.630
-422;Umweltschutztechnik;Spezialisten;3.360;980
-422;Umweltschutztechnik;Experten;2.840;1.890
-423;Umweltmanagement und -beratung;Fachkraefte;890;1.220
-423;Umweltmanagement und -beratung;Spezialisten;6.910;3.310
-423;Umweltmanagement und -beratung;Experten;5.780;4.700
-431;Informatik;Fachkraefte;126.480;24.240
-431;Informatik;Spezialisten;87.730;26.570
-431;Informatik;Experten;39.900;11.530
-432;IT-Systemanalyse,Anwenderber,IT-Vertrieb;Fachkraefte;5.480;1.590
-432;IT-Systemanalyse,Anwenderber,IT-Vertrieb;Spezialisten;62.280;21.010
-432;IT-Systemanalyse,Anwenderber,IT-Vertrieb;Experten;115.660;36.170
+421;Geologie, Geografie und Meteorologie;Experten;7500;4680
+422;Umweltschutztechnik;Fachkraefte;8900;1630
+422;Umweltschutztechnik;Spezialisten;3360;980
+422;Umweltschutztechnik;Experten;2840;1890
+423;Umweltmanagement und -beratung;Fachkraefte;890;1220
+423;Umweltmanagement und -beratung;Spezialisten;6910;3310
+423;Umweltmanagement und -beratung;Experten;5780;4700
+431;Informatik;Fachkraefte;126480;24240
+431;Informatik;Spezialisten;87730;26570
+431;Informatik;Experten;39900;11530
+432;IT-Systemanalyse,Anwenderber,IT-Vertrieb;Fachkraefte;5480;1590
+432;IT-Systemanalyse,Anwenderber,IT-Vertrieb;Spezialisten;62280;21010
+432;IT-Systemanalyse,Anwenderber,IT-Vertrieb;Experten;115660;36170
 433;IT-Netzwerkt.,-Koord.,-Administr.,-Orga.;Fachkraefte;780;120
-433;IT-Netzwerkt.,-Koord.,-Administr.,-Orga.;Spezialisten;168.260;35.970
-433;IT-Netzwerkt.,-Koord.,-Administr.,-Orga.;Experten;31.390;6.090
-434;Softwareentwicklung und Programmierung;Fachkraefte;30.620;5.360
-434;Softwareentwicklung und Programmierung;Spezialisten;62.680;12.280
-434;Softwareentwicklung und Programmierung;Experten;204.360;32.330
-511;Tech.Betrieb Eisenb.,Luft,Schiffsverkehr;Fachkraefte;12.680;1.150
-511;Tech.Betrieb Eisenb.,Luft,Schiffsverkehr;Spezialisten;4.930;270
-511;Tech.Betrieb Eisenb.,Luft,Schiffsverkehr;Experten;1.230;80
-512;Überwachung,WartungVerkehrsinfrastruktur;Fachkraefte;53.640;1.780
-512;Überwachung,WartungVerkehrsinfrastruktur;Spezialisten;2.030;160
+433;IT-Netzwerkt.,-Koord.,-Administr.,-Orga.;Spezialisten;168260;35970
+433;IT-Netzwerkt.,-Koord.,-Administr.,-Orga.;Experten;31390;6090
+434;Softwareentwicklung und Programmierung;Fachkraefte;30620;5360
+434;Softwareentwicklung und Programmierung;Spezialisten;62680;12280
+434;Softwareentwicklung und Programmierung;Experten;204360;32330
+511;Tech.Betrieb Eisenb.,Luft,Schiffsverkehr;Fachkraefte;12680;1150
+511;Tech.Betrieb Eisenb.,Luft,Schiffsverkehr;Spezialisten;4930;270
+511;Tech.Betrieb Eisenb.,Luft,Schiffsverkehr;Experten;1230;80
+512;Überwachung,WartungVerkehrsinfrastruktur;Fachkraefte;53640;1780
+512;Überwachung,WartungVerkehrsinfrastruktur;Spezialisten;2030;160
 512;Überwachung,WartungVerkehrsinfrastruktur;Experten;850;170
-513;Lagerwirt.,Post,Zustellung,Güterumschlag;Helfer;762.110;303.450
-513;Lagerwirt.,Post,Zustellung,Güterumschlag;Fachkraefte;529.600;149.000
-513;Lagerwirt.,Post,Zustellung,Güterumschlag;Spezialisten;14.310;1.810
-513;Lagerwirt.,Post,Zustellung,Güterumschlag;Experten;11.330;1.850
-514;Servicekräfte im Personenverkehr;Helfer;1.320;2.270
-514;Servicekräfte im Personenverkehr;Fachkraefte;18.000;36.380
-514;Servicekräfte im Personenverkehr;Spezialisten;1.770;1.100
+513;Lagerwirt.,Post,Zustellung,Güterumschlag;Helfer;762110;303450
+513;Lagerwirt.,Post,Zustellung,Güterumschlag;Fachkraefte;529600;149000
+513;Lagerwirt.,Post,Zustellung,Güterumschlag;Spezialisten;14310;1810
+513;Lagerwirt.,Post,Zustellung,Güterumschlag;Experten;11330;1850
+514;Servicekräfte im Personenverkehr;Helfer;1320;2270
+514;Servicekräfte im Personenverkehr;Fachkraefte;18000;36380
+514;Servicekräfte im Personenverkehr;Spezialisten;1770;1100
 515;Überwachung u. Steuerung Verkehrsbetrieb;Helfer;60;80
-515;Überwachung u. Steuerung Verkehrsbetrieb;Fachkraefte;22.960;4.000
-515;Überwachung u. Steuerung Verkehrsbetrieb;Spezialisten;27.170;6.670
-515;Überwachung u. Steuerung Verkehrsbetrieb;Experten;5.770;2.040
-516;Kaufleute - Verkehr und Logistik;Fachkraefte;87.960;51.310
-516;Kaufleute - Verkehr und Logistik;Spezialisten;17.620;13.270
-516;Kaufleute - Verkehr und Logistik;Experten;48.310;14.440
-521;Fahrzeugführung im Straßenverkehr;Fachkraefte;911.490;67.410
-522;Fahrzeugführung im Eisenbahnverkehr;Fachkraefte;39.010;2.380
-523;Fahrzeugführung im Flugverkehr;Spezialisten;7.090;620
-523;Fahrzeugführung im Flugverkehr;Experten;4.340;240
-524;Fahrzeugführung im Schiffsverkehr;Fachkraefte;1.990;170
-524;Fahrzeugführung im Schiffsverkehr;Spezialisten;3.880;270
-524;Fahrzeugführung im Schiffsverkehr;Experten;1.050;x
-525;Bau- und Transportgeräteführung;Helfer;66.000;2.390
-525;Bau- und Transportgeräteführung;Fachkraefte;82.020;1.030
-525;Bau- und Transportgeräteführung;Spezialisten;2.390;80
-531;Obj.-,Pers.-,Brandschutz,Arbeitssicherh.;Helfer;84.400;38.470
-531;Obj.-,Pers.-,Brandschutz,Arbeitssicherh.;Fachkraefte;131.460;38.080
-531;Obj.-,Pers.-,Brandschutz,Arbeitssicherh.;Spezialisten;28.510;5.350
-531;Obj.-,Pers.-,Brandschutz,Arbeitssicherh.;Experten;25.130;3.910
-532;Polizei,Kriminald.,Gerichts,Justizvollz.;Helfer;1.060;570
-532;Polizei,Kriminald.,Gerichts,Justizvollz.;Fachkraefte;2.560;1.510
+515;Überwachung u. Steuerung Verkehrsbetrieb;Fachkraefte;22960;4000
+515;Überwachung u. Steuerung Verkehrsbetrieb;Spezialisten;27170;6670
+515;Überwachung u. Steuerung Verkehrsbetrieb;Experten;5770;2040
+516;Kaufleute - Verkehr und Logistik;Fachkraefte;87960;51310
+516;Kaufleute - Verkehr und Logistik;Spezialisten;17620;13270
+516;Kaufleute - Verkehr und Logistik;Experten;48310;14440
+521;Fahrzeugführung im Straßenverkehr;Fachkraefte;911490;67410
+522;Fahrzeugführung im Eisenbahnverkehr;Fachkraefte;39010;2380
+523;Fahrzeugführung im Flugverkehr;Spezialisten;7090;620
+523;Fahrzeugführung im Flugverkehr;Experten;4340;240
+524;Fahrzeugführung im Schiffsverkehr;Fachkraefte;1990;170
+524;Fahrzeugführung im Schiffsverkehr;Spezialisten;3880;270
+524;Fahrzeugführung im Schiffsverkehr;Experten;1050;x
+525;Bau- und Transportgeräteführung;Helfer;66000;2390
+525;Bau- und Transportgeräteführung;Fachkraefte;82020;1030
+525;Bau- und Transportgeräteführung;Spezialisten;2390;80
+531;Obj.-,Pers.-,Brandschutz,Arbeitssicherh.;Helfer;84400;38470
+531;Obj.-,Pers.-,Brandschutz,Arbeitssicherh.;Fachkraefte;131460;38080
+531;Obj.-,Pers.-,Brandschutz,Arbeitssicherh.;Spezialisten;28510;5350
+531;Obj.-,Pers.-,Brandschutz,Arbeitssicherh.;Experten;25130;3910
+532;Polizei,Kriminald.,Gerichts,Justizvollz.;Helfer;1060;570
+532;Polizei,Kriminald.,Gerichts,Justizvollz.;Fachkraefte;2560;1510
 532;Polizei,Kriminald.,Gerichts,Justizvollz.;Spezialisten;320;200
 532;Polizei,Kriminald.,Gerichts,Justizvollz.;Experten;180;250
-533;Gewerbe,Gesundheitsaufsicht,Desinfektion;Fachkraefte;5.500;4.080
-533;Gewerbe,Gesundheitsaufsicht,Desinfektion;Spezialisten;2.420;3.040
+533;Gewerbe,Gesundheitsaufsicht,Desinfektion;Fachkraefte;5500;4080
+533;Gewerbe,Gesundheitsaufsicht,Desinfektion;Spezialisten;2420;3040
 533;Gewerbe,Gesundheitsaufsicht,Desinfektion;Experten;60;x
-541;Reinigung;Helfer;157.290;551.210
-541;Reinigung;Fachkraefte;82.870;82.170
-541;Reinigung;Spezialisten;6.810;7.060
-611;Einkauf und Vertrieb;Fachkraefte;131.830;147.110
-611;Einkauf und Vertrieb;Spezialisten;260.050;130.060
-611;Einkauf und Vertrieb;Experten;148.160;42.100
-612;Handel;Fachkraefte;81.650;56.940
-612;Handel;Spezialisten;12.950;9.470
-612;Handel;Experten;2.680;1.270
-613;Immobilienwirtschaft,Facility-Management;Fachkraefte;16.920;27.950
-613;Immobilienwirtschaft,Facility-Management;Spezialisten;31.770;22.570
-613;Immobilienwirtschaft,Facility-Management;Experten;3.000;1.650
-621;Verkauf (ohne Produktspezialisierung);Helfer;39.680;77.660
-621;Verkauf (ohne Produktspezialisierung);Fachkraefte;298.100;736.790
-621;Verkauf (ohne Produktspezialisierung);Spezialisten;17.580;20.320
-621;Verkauf (ohne Produktspezialisierung);Experten;47.810;45.350
-622;Verkauf Bekleid.,Elektro,KFZ,Hartwaren;Fachkraefte;166.610;197.070
-623;Verkauf von Lebensmitteln;Helfer;11.890;10.690
-623;Verkauf von Lebensmitteln;Fachkraefte;49.390;244.510
-624;Verkauf drog.apotheken.Waren,Medizinbed.;Fachkraefte;7.730;104.510
-625;Buch-Kunst-Antiquitäten-,Musikfachhandel;Fachkraefte;2.100;8.530
+541;Reinigung;Helfer;157290;551210
+541;Reinigung;Fachkraefte;82870;82170
+541;Reinigung;Spezialisten;6810;7060
+611;Einkauf und Vertrieb;Fachkraefte;131830;147110
+611;Einkauf und Vertrieb;Spezialisten;260050;130060
+611;Einkauf und Vertrieb;Experten;148160;42100
+612;Handel;Fachkraefte;81650;56940
+612;Handel;Spezialisten;12950;9470
+612;Handel;Experten;2680;1270
+613;Immobilienwirtschaft,Facility-Management;Fachkraefte;16920;27950
+613;Immobilienwirtschaft,Facility-Management;Spezialisten;31770;22570
+613;Immobilienwirtschaft,Facility-Management;Experten;3000;1650
+621;Verkauf (ohne Produktspezialisierung);Helfer;39680;77660
+621;Verkauf (ohne Produktspezialisierung);Fachkraefte;298100;736790
+621;Verkauf (ohne Produktspezialisierung);Spezialisten;17580;20320
+621;Verkauf (ohne Produktspezialisierung);Experten;47810;45350
+622;Verkauf Bekleid.,Elektro,KFZ,Hartwaren;Fachkraefte;166610;197070
+623;Verkauf von Lebensmitteln;Helfer;11890;10690
+623;Verkauf von Lebensmitteln;Fachkraefte;49390;244510
+624;Verkauf drog.apotheken.Waren,Medizinbed.;Fachkraefte;7730;104510
+625;Buch-Kunst-Antiquitäten-,Musikfachhandel;Fachkraefte;2100;8530
 625;Buch-Kunst-Antiquitäten-,Musikfachhandel;Spezialisten;x;50
 625;Buch-Kunst-Antiquitäten-,Musikfachhandel;Experten;x;x
-631;Tourismus und Sport;Fachkraefte;16.340;40.940
-631;Tourismus und Sport;Spezialisten;1.200;1.810
-631;Tourismus und Sport;Experten;4.910;3.880
-632;Hotellerie;Helfer;14.270;60.780
-632;Hotellerie;Fachkraefte;26.890;62.400
-632;Hotellerie;Spezialisten;3.120;15.430
-632;Hotellerie;Experten;5.700;3.570
-633;Gastronomie;Helfer;110.000;157.780
-633;Gastronomie;Fachkraefte;92.680;121.950
-633;Gastronomie;Spezialisten;5.900;4.490
-633;Gastronomie;Experten;11.080;8.170
-634;Veranstaltungsservice, -management;Helfer;6.160;5.260
-634;Veranstaltungsservice, -management;Fachkraefte;3.910;7.560
-634;Veranstaltungsservice, -management;Spezialisten;4.450;8.830
-634;Veranstaltungsservice, -management;Experten;1.230;2.570
-711;Geschäftsführung und Vorstand;Experten;184.660;51.980
-712;Angeh. gesetzgeb. Körp., Interessenorg.;Experten;12.350;6.160
-713;Unternehmensorganisation und -strategie;Fachkraefte;333.770;520.480
-713;Unternehmensorganisation und -strategie;Spezialisten;281.770;137.530
-713;Unternehmensorganisation und -strategie;Experten;309.760;150.840
-714;Büro und Sekretariat;Helfer;90.210;211.620
-714;Büro und Sekretariat;Fachkraefte;364.310;1.384.110
-714;Büro und Sekretariat;Spezialisten;31.030;100.660
-714;Büro und Sekretariat;Experten;2.160;4.850
-715;Personalwesen und -dienstleistung;Fachkraefte;21.600;77.900
-715;Personalwesen und -dienstleistung;Spezialisten;23.080;63.240
-715;Personalwesen und -dienstleistung;Experten;33.590;80.340
-721;Versicherungs- u. Finanzdienstleistungen;Fachkraefte;235.740;336.240
-721;Versicherungs- u. Finanzdienstleistungen;Spezialisten;48.130;42.180
-721;Versicherungs- u. Finanzdienstleistungen;Experten;57.300;32.010
-722;Rechnungswesen, Controlling und Revision;Fachkraefte;9.410;41.810
-722;Rechnungswesen, Controlling und Revision;Spezialisten;82.600;226.130
-722;Rechnungswesen, Controlling und Revision;Experten;87.650;69.870
-723;Steuerberatung;Fachkraefte;31.600;106.360
-723;Steuerberatung;Spezialisten;11.410;23.740
-723;Steuerberatung;Experten;11.750;14.660
-731;Rechtsberatung, -sprechung und -ordnung;Fachkraefte;6.080;76.930
-731;Rechtsberatung, -sprechung und -ordnung;Spezialisten;6.490;12.660
-731;Rechtsberatung, -sprechung und -ordnung;Experten;42.740;47.630
-732;Verwaltung;Helfer;8.530;18.800
-732;Verwaltung;Fachkraefte;170.600;631.480
-732;Verwaltung;Spezialisten;42.760;89.510
-732;Verwaltung;Experten;23.900;26.980
-733;Medien-Dokumentations-Informationsdienst;Fachkraefte;8.860;29.850
-733;Medien-Dokumentations-Informationsdienst;Spezialisten;600;1.110
-733;Medien-Dokumentations-Informationsdienst;Experten;4.460;12.810
-811;Arzt- und Praxishilfe;Fachkraefte;18.210;659.590
-811;Arzt- und Praxishilfe;Spezialisten;1.830;29.670
-812;Medizinisches Laboratorium;Fachkraefte;12.510;79.570
-812;Medizinisches Laboratorium;Spezialisten;1.060;3.850
-812;Medizinisches Laboratorium;Experten;4.900;5.040
-813;Gesundh.,Krankenpfl.,Rettungsd.Geburtsh.;Helfer;51.000;172.340
-813;Gesundh.,Krankenpfl.,Rettungsd.Geburtsh.;Fachkraefte;200.300;703.740
-813;Gesundh.,Krankenpfl.,Rettungsd.Geburtsh.;Spezialisten;17.920;86.390
-813;Gesundh.,Krankenpfl.,Rettungsd.Geburtsh.;Experten;6.120;21.010
-814;Human- und Zahnmedizin;Experten;150.930;181.700
+631;Tourismus und Sport;Fachkraefte;16340;40940
+631;Tourismus und Sport;Spezialisten;1200;1810
+631;Tourismus und Sport;Experten;4910;3880
+632;Hotellerie;Helfer;14270;60780
+632;Hotellerie;Fachkraefte;26890;62400
+632;Hotellerie;Spezialisten;3120;15430
+632;Hotellerie;Experten;5700;3570
+633;Gastronomie;Helfer;110000;157780
+633;Gastronomie;Fachkraefte;92680;121950
+633;Gastronomie;Spezialisten;5900;4490
+633;Gastronomie;Experten;11080;8170
+634;Veranstaltungsservice, -management;Helfer;6160;5260
+634;Veranstaltungsservice, -management;Fachkraefte;3910;7560
+634;Veranstaltungsservice, -management;Spezialisten;4450;8830
+634;Veranstaltungsservice, -management;Experten;1230;2570
+711;Geschäftsführung und Vorstand;Experten;184660;51980
+712;Angeh. gesetzgeb. Körp., Interessenorg.;Experten;12350;6160
+713;Unternehmensorganisation und -strategie;Fachkraefte;333770;520480
+713;Unternehmensorganisation und -strategie;Spezialisten;281770;137530
+713;Unternehmensorganisation und -strategie;Experten;309760;150840
+714;Büro und Sekretariat;Helfer;90210;211620
+714;Büro und Sekretariat;Fachkraefte;364310;1384110
+714;Büro und Sekretariat;Spezialisten;31030;100660
+714;Büro und Sekretariat;Experten;2160;4850
+715;Personalwesen und -dienstleistung;Fachkraefte;21600;77900
+715;Personalwesen und -dienstleistung;Spezialisten;23080;63240
+715;Personalwesen und -dienstleistung;Experten;33590;80340
+721;Versicherungs- u. Finanzdienstleistungen;Fachkraefte;235740;336240
+721;Versicherungs- u. Finanzdienstleistungen;Spezialisten;48130;42180
+721;Versicherungs- u. Finanzdienstleistungen;Experten;57300;32010
+722;Rechnungswesen, Controlling und Revision;Fachkraefte;9410;41810
+722;Rechnungswesen, Controlling und Revision;Spezialisten;82600;226130
+722;Rechnungswesen, Controlling und Revision;Experten;87650;69870
+723;Steuerberatung;Fachkraefte;31600;106360
+723;Steuerberatung;Spezialisten;11410;23740
+723;Steuerberatung;Experten;11750;14660
+731;Rechtsberatung, -sprechung und -ordnung;Fachkraefte;6080;76930
+731;Rechtsberatung, -sprechung und -ordnung;Spezialisten;6490;12660
+731;Rechtsberatung, -sprechung und -ordnung;Experten;42740;47630
+732;Verwaltung;Helfer;8530;18800
+732;Verwaltung;Fachkraefte;170600;631480
+732;Verwaltung;Spezialisten;42760;89510
+732;Verwaltung;Experten;23900;26980
+733;Medien-Dokumentations-Informationsdienst;Fachkraefte;8860;29850
+733;Medien-Dokumentations-Informationsdienst;Spezialisten;600;1110
+733;Medien-Dokumentations-Informationsdienst;Experten;4460;12810
+811;Arzt- und Praxishilfe;Fachkraefte;18210;659590
+811;Arzt- und Praxishilfe;Spezialisten;1830;29670
+812;Medizinisches Laboratorium;Fachkraefte;12510;79570
+812;Medizinisches Laboratorium;Spezialisten;1060;3850
+812;Medizinisches Laboratorium;Experten;4900;5040
+813;Gesundh.,Krankenpfl.,Rettungsd.Geburtsh.;Helfer;51000;172340
+813;Gesundh.,Krankenpfl.,Rettungsd.Geburtsh.;Fachkraefte;200300;703740
+813;Gesundh.,Krankenpfl.,Rettungsd.Geburtsh.;Spezialisten;17920;86390
+813;Gesundh.,Krankenpfl.,Rettungsd.Geburtsh.;Experten;6120;21010
+814;Human- und Zahnmedizin;Experten;150930;181700
 815;Tiermedizin und Tierheilkunde;Fachkraefte;x;120
-815;Tiermedizin und Tierheilkunde;Experten;3.640;13.490
+815;Tiermedizin und Tierheilkunde;Experten;3640;13490
 816;Psychologie, nichtärztl. Psychotherapie;Spezialisten;130;690
-816;Psychologie, nichtärztl. Psychotherapie;Experten;10.770;48.810
-817;Nicht ärztliche Therapie und Heilkunde;Fachkraefte;7.460;29.940
-817;Nicht ärztliche Therapie und Heilkunde;Spezialisten;50.320;193.990
-817;Nicht ärztliche Therapie und Heilkunde;Experten;980;3.930
-818;Pharmazie;Fachkraefte;3.700;72.370
-818;Pharmazie;Spezialisten;10.800;14.820
-818;Pharmazie;Experten;14.170;47.110
-821;Altenpflege;Helfer;59.510;276.490
-821;Altenpflege;Fachkraefte;59.990;240.100
-821;Altenpflege;Spezialisten;790;3.730
-821;Altenpflege;Experten;2.390;4.340
-822;Ernährungs-,Gesundheitsberatung,Wellness;Fachkraefte;1.190;2.380
-822;Ernährungs-,Gesundheitsberatung,Wellness;Spezialisten;3.150;12.320
-822;Ernährungs-,Gesundheitsberatung,Wellness;Experten;1.710;5.570
-823;Körperpflege;Helfer;5.000;3.400
-823;Körperpflege;Fachkraefte;24.030;115.120
-823;Körperpflege;Spezialisten;1.830;8.860
-824;Bestattungswesen;Helfer;2.790;1.030
-824;Bestattungswesen;Fachkraefte;4.710;2.760
+816;Psychologie, nichtärztl. Psychotherapie;Experten;10770;48810
+817;Nicht ärztliche Therapie und Heilkunde;Fachkraefte;7460;29940
+817;Nicht ärztliche Therapie und Heilkunde;Spezialisten;50320;193990
+817;Nicht ärztliche Therapie und Heilkunde;Experten;980;3930
+818;Pharmazie;Fachkraefte;3700;72370
+818;Pharmazie;Spezialisten;10800;14820
+818;Pharmazie;Experten;14170;47110
+821;Altenpflege;Helfer;59510;276490
+821;Altenpflege;Fachkraefte;59990;240100
+821;Altenpflege;Spezialisten;790;3730
+821;Altenpflege;Experten;2390;4340
+822;Ernährungs-,Gesundheitsberatung,Wellness;Fachkraefte;1190;2380
+822;Ernährungs-,Gesundheitsberatung,Wellness;Spezialisten;3150;12320
+822;Ernährungs-,Gesundheitsberatung,Wellness;Experten;1710;5570
+823;Körperpflege;Helfer;5000;3400
+823;Körperpflege;Fachkraefte;24030;115120
+823;Körperpflege;Spezialisten;1830;8860
+824;Bestattungswesen;Helfer;2790;1030
+824;Bestattungswesen;Fachkraefte;4710;2760
 824;Bestattungswesen;Spezialisten;510;920
 824;Bestattungswesen;Experten;60;x
-825;Medizin-, Orthopädie- und Rehatechnik;Fachkraefte;34.660;68.640
-825;Medizin-, Orthopädie- und Rehatechnik;Spezialisten;16.830;11.190
-825;Medizin-, Orthopädie- und Rehatechnik;Experten;2.720;1.750
-831;Erziehung,Sozialarb.,Heilerziehungspfl.;Helfer;60.980;258.970
-831;Erziehung,Sozialarb.,Heilerziehungspfl.;Fachkraefte;92.710;592.360
-831;Erziehung,Sozialarb.,Heilerziehungspfl.;Spezialisten;80.990;443.030
-831;Erziehung,Sozialarb.,Heilerziehungspfl.;Experten;83.850;279.740
-832;Hauswirtschaft und Verbraucherberatung;Helfer;9.350;100.810
-832;Hauswirtschaft und Verbraucherberatung;Fachkraefte;8.380;134.850
-832;Hauswirtschaft und Verbraucherberatung;Spezialisten;1.530;12.180
-833;Theologie und Gemeindearbeit;Fachkraefte;4.390;7.300
-833;Theologie und Gemeindearbeit;Spezialisten;2.290;3.440
-833;Theologie und Gemeindearbeit;Experten;10.710;5.310
-841;Lehrtätigkeit an allgemeinbild. Schulen;Spezialisten;4.870;18.410
-841;Lehrtätigkeit an allgemeinbild. Schulen;Experten;60.830;150.750
-842;Lehrt.berufsb.Fächer,betr.Ausb.,Betr.päd;Spezialisten;26.870;22.630
-842;Lehrt.berufsb.Fächer,betr.Ausb.,Betr.päd;Experten;16.890;27.540
-843;Lehr-,Forschungstätigkeit an Hochschulen;Experten;139.640;120.800
-844;Lehrtätigk. außerschul.Bildungseinricht.;Fachkraefte;1.030;1.170
-844;Lehrtätigk. außerschul.Bildungseinricht.;Spezialisten;1.750;1.920
-844;Lehrtätigk. außerschul.Bildungseinricht.;Experten;36.450;53.300
-845;Fahr-,Sportunterricht außerschul. Bild.;Spezialisten;44.810;23.960
-845;Fahr-,Sportunterricht außerschul. Bild.;Experten;1.940;1.710
-911;Sprach-, Literaturwissenschaften;Experten;510;1.110
+825;Medizin-, Orthopädie- und Rehatechnik;Fachkraefte;34660;68640
+825;Medizin-, Orthopädie- und Rehatechnik;Spezialisten;16830;11190
+825;Medizin-, Orthopädie- und Rehatechnik;Experten;2720;1750
+831;Erziehung,Sozialarb.,Heilerziehungspfl.;Helfer;60980;258970
+831;Erziehung,Sozialarb.,Heilerziehungspfl.;Fachkraefte;92710;592360
+831;Erziehung,Sozialarb.,Heilerziehungspfl.;Spezialisten;80990;443030
+831;Erziehung,Sozialarb.,Heilerziehungspfl.;Experten;83850;279740
+832;Hauswirtschaft und Verbraucherberatung;Helfer;9350;100810
+832;Hauswirtschaft und Verbraucherberatung;Fachkraefte;8380;134850
+832;Hauswirtschaft und Verbraucherberatung;Spezialisten;1530;12180
+833;Theologie und Gemeindearbeit;Fachkraefte;4390;7300
+833;Theologie und Gemeindearbeit;Spezialisten;2290;3440
+833;Theologie und Gemeindearbeit;Experten;10710;5310
+841;Lehrtätigkeit an allgemeinbild. Schulen;Spezialisten;4870;18410
+841;Lehrtätigkeit an allgemeinbild. Schulen;Experten;60830;150750
+842;Lehrt.berufsb.Fächer,betr.Ausb.,Betr.päd;Spezialisten;26870;22630
+842;Lehrt.berufsb.Fächer,betr.Ausb.,Betr.päd;Experten;16890;27540
+843;Lehr-,Forschungstätigkeit an Hochschulen;Experten;139640;120800
+844;Lehrtätigk. außerschul.Bildungseinricht.;Fachkraefte;1030;1170
+844;Lehrtätigk. außerschul.Bildungseinricht.;Spezialisten;1750;1920
+844;Lehrtätigk. außerschul.Bildungseinricht.;Experten;36450;53300
+845;Fahr-,Sportunterricht außerschul. Bild.;Spezialisten;44810;23960
+845;Fahr-,Sportunterricht außerschul. Bild.;Experten;1940;1710
+911;Sprach-, Literaturwissenschaften;Experten;510;1110
 912;Geisteswissenschaften;Spezialisten;360;220
-912;Geisteswissenschaften;Experten;3.320;3.890
-913;Gesellschaftswissenschaften;Helfer;2.480;1.340
+912;Geisteswissenschaften;Experten;3320;3890
+913;Gesellschaftswissenschaften;Helfer;2480;1340
 913;Gesellschaftswissenschaften;Fachkraefte;220;410
 913;Gesellschaftswissenschaften;Spezialisten;940;900
-913;Gesellschaftswissenschaften;Experten;26.120;67.640
-914;Wirtschaftswissenschaften;Experten;4.010;3.760
-921;Werbung und Marketing;Fachkraefte;71.250;117.060
-921;Werbung und Marketing;Spezialisten;141.010;135.390
-921;Werbung und Marketing;Experten;15.570;16.810
-922;Öffentlichkeitsarbeit;Spezialisten;11.170;24.250
-922;Öffentlichkeitsarbeit;Experten;2.620;3.410
-923;Verlags- und Medienwirtschaft;Fachkraefte;7.300;14.430
-923;Verlags- und Medienwirtschaft;Spezialisten;1.110;1.500
-923;Verlags- und Medienwirtschaft;Experten;2.950;2.980
-924;Redaktion und Journalismus;Fachkraefte;3.410;7.060
-924;Redaktion und Journalismus;Spezialisten;28.470;33.670
-924;Redaktion und Journalismus;Experten;9.320;10.910
-931;Produkt- und Industriedesign;Fachkraefte;970;1.080
+913;Gesellschaftswissenschaften;Experten;26120;67640
+914;Wirtschaftswissenschaften;Experten;4010;3760
+921;Werbung und Marketing;Fachkraefte;71250;117060
+921;Werbung und Marketing;Spezialisten;141010;135390
+921;Werbung und Marketing;Experten;15570;16810
+922;Öffentlichkeitsarbeit;Spezialisten;11170;24250
+922;Öffentlichkeitsarbeit;Experten;2620;3410
+923;Verlags- und Medienwirtschaft;Fachkraefte;7300;14430
+923;Verlags- und Medienwirtschaft;Spezialisten;1110;1500
+923;Verlags- und Medienwirtschaft;Experten;2950;2980
+924;Redaktion und Journalismus;Fachkraefte;3410;7060
+924;Redaktion und Journalismus;Spezialisten;28470;33670
+924;Redaktion und Journalismus;Experten;9320;10910
+931;Produkt- und Industriedesign;Fachkraefte;970;1080
 931;Produkt- und Industriedesign;Spezialisten;790;430
-931;Produkt- und Industriedesign;Experten;6.180;3.330
-932;Innenarchitektur, Raumausstattung;Fachkraefte;5.560;9.340
-932;Innenarchitektur, Raumausstattung;Spezialisten;1.570;2.690
-932;Innenarchitektur, Raumausstattung;Experten;1.170;4.450
-933;Kunsthandwerk und bildende Kunst;Fachkraefte;880;1.260
+931;Produkt- und Industriedesign;Experten;6180;3330
+932;Innenarchitektur, Raumausstattung;Fachkraefte;5560;9340
+932;Innenarchitektur, Raumausstattung;Spezialisten;1570;2690
+932;Innenarchitektur, Raumausstattung;Experten;1170;4450
+933;Kunsthandwerk und bildende Kunst;Fachkraefte;880;1260
 933;Kunsthandwerk und bildende Kunst;Spezialisten;730;920
-933;Kunsthandwerk und bildende Kunst;Experten;1.300;1.730
-934;Kunsthandwerkl. Keramik-, Glasgestaltung;Fachkraefte;1.280;1.080
+933;Kunsthandwerk und bildende Kunst;Experten;1300;1730
+934;Kunsthandwerkl. Keramik-, Glasgestaltung;Fachkraefte;1280;1080
 934;Kunsthandwerkl. Keramik-, Glasgestaltung;Spezialisten;410;150
-935;Kunsthandwerkliche Metallgestaltung;Fachkraefte;5.920;5.070
+935;Kunsthandwerkliche Metallgestaltung;Fachkraefte;5920;5070
 935;Kunsthandwerkliche Metallgestaltung;Spezialisten;510;360
 935;Kunsthandwerkliche Metallgestaltung;Experten;x;90
-936;Musikinstrumentenbau;Fachkraefte;2.330;820
+936;Musikinstrumentenbau;Fachkraefte;2330;820
 936;Musikinstrumentenbau;Spezialisten;180;70
 936;Musikinstrumentenbau;Experten;x;x
 941;Musik-, Gesang-, Dirigententätigkeiten;Spezialisten;280;70
-941;Musik-, Gesang-, Dirigententätigkeiten;Experten;13.690;10.260
+941;Musik-, Gesang-, Dirigententätigkeiten;Experten;13690;10260
 942;Schauspiel, Tanz und Bewegungskunst;Fachkraefte;50;110
-942;Schauspiel, Tanz und Bewegungskunst;Spezialisten;8.090;1.320
-942;Schauspiel, Tanz und Bewegungskunst;Experten;3.860;4.030
-943;Moderation und Unterhaltung;Fachkraefte;4.580;1.580
+942;Schauspiel, Tanz und Bewegungskunst;Spezialisten;8090;1320
+942;Schauspiel, Tanz und Bewegungskunst;Experten;3860;4030
+943;Moderation und Unterhaltung;Fachkraefte;4580;1580
 943;Moderation und Unterhaltung;Spezialisten;320;210
 943;Moderation und Unterhaltung;Experten;600;580
-944;Theater-, Film- und Fernsehproduktion;Fachkraefte;2.350;3.100
-944;Theater-, Film- und Fernsehproduktion;Spezialisten;2.900;3.160
-944;Theater-, Film- und Fernsehproduktion;Experten;3.830;3.390
-945;Veranstaltungs-, Kamera-, Tontechnik;Fachkraefte;19.020;5.960
-945;Veranstaltungs-, Kamera-, Tontechnik;Spezialisten;18.000;3.830
-945;Veranstaltungs-, Kamera-, Tontechnik;Experten;1.660;270
-946;Bühnen- und Kostümbildnerei, Requisite;Fachkraefte;760;2.710
-946;Bühnen- und Kostümbildnerei, Requisite;Spezialisten;870;1.620
+944;Theater-, Film- und Fernsehproduktion;Fachkraefte;2350;3100
+944;Theater-, Film- und Fernsehproduktion;Spezialisten;2900;3160
+944;Theater-, Film- und Fernsehproduktion;Experten;3830;3390
+945;Veranstaltungs-, Kamera-, Tontechnik;Fachkraefte;19020;5960
+945;Veranstaltungs-, Kamera-, Tontechnik;Spezialisten;18000;3830
+945;Veranstaltungs-, Kamera-, Tontechnik;Experten;1660;270
+946;Bühnen- und Kostümbildnerei, Requisite;Fachkraefte;760;2710
+946;Bühnen- und Kostümbildnerei, Requisite;Spezialisten;870;1620
 946;Bühnen- und Kostümbildnerei, Requisite;Experten;190;350
 947;Museumstechnik und -management;Fachkraefte;460;940
 947;Museumstechnik und -management;Spezialisten;620;490
-947;Museumstechnik und -management;Experten;3.650;4.520
+947;Museumstechnik und -management;Experten;3650;4520
