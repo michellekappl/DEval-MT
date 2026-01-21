@@ -31,30 +31,16 @@ def example_data() -> DEvalDataset:
       })
       return ds
    else:
-      print(f"test_data_processed.csv not found, creating from scratch...")
-      path_to_ds='gpt-4o_processed.csv'
+      print(f"processed file not found, creating from scratch...")
+      path_to_ds='DEval_dataset.csv'
       df = pd.read_csv(path_to_ds, sep=";")
       ds = DEvalDataset(df, text_column="text")
 
       # load translations from a file
-      
-      # # try to integrate translation together
-      # translation_folder_path=f'test_data/translations'
-      # languages=["es", "fr"] # "ar", "he", "it", "ru", "uk"
-      # models=['gpt-4o','gpt-4o-mini','systran','google'] # 'microsoft','deepl'
-      # translations_dict={}
-      # for lang in languages:
-      #    for model in models:
-      #       translations=translate_dataset(path_to_ds,lang,model)
-      #       tr_name=f'{lang}_{model}.txt'
-      #       translations = pd.read_csv(os.path.join(translation_folder_path,tr_name), header=None, sep=";")[0].tolist()
-      #       translations_dict[f'{lang}_{model}']=translations
-      #       ds.add_translations(lang,translations,f'{lang}_{model}')
-
-      list_of_es_translations = pd.read_csv(f"test_data/translations/es.txt", header=None, sep=";")[0].tolist()
-      list_of_fr_translations = pd.read_csv(f"test_data/translations/fr.txt", header=None, sep=";")[0].tolist()
-      list_of_ar_translations = pd.read_csv(f"test_data/translations/ar.txt", header=None, sep=";")[0].tolist()
-      list_of_he_translations = pd.read_csv(f"test_data/translations/he.txt", header=None, sep=";")[0].tolist()
+      list_of_es_translations = pd.read_csv(f"test_data/test_translations/es_gpt-4o.txt", header=None, sep=";")[0].tolist()
+      list_of_fr_translations = pd.read_csv(f"test_data/test_translations/fr_gpt-4o.txt", header=None, sep=";")[0].tolist()
+      list_of_ar_translations = pd.read_csv(f"test_data/test_translations/ar_gpt-4o.txt", header=None, sep=";")[0].tolist()
+      list_of_he_translations = pd.read_csv(f"test_data/test_translations/he_gpt-4o.txt", header=None, sep=";")[0].tolist()
 
       # Add translations (must match row count)
       ds.add_translations("es", list_of_es_translations, "es")
@@ -147,3 +133,40 @@ EXAMPLE INTERPRETATION:
 → This relationship IS statistically significant (p < 0.05)
 
 """
+
+'''
+Example for error analysis with filter column==sentence_style:
+1. ERROR ANALYSIS
+--------------------------------------------------
+                       0         1         2         3
+language              es        fr        ar        he
+sentence_style         2         2         2         2
+total               1118      1118      1118      1118
+correct             1009       991       692       936
+accuracy        0.902504  0.886404  0.618962  0.837209
+error_count          109       127       426       182
+---
+                       0         1         2         3
+language              es        fr        ar        he
+sentence_style         4         4         4         4
+total               1060      1060      1060      1060
+correct              558       708       873       943
+accuracy        0.526415  0.667925  0.823585  0.889623
+error_count          502       352       187       117
+---
+                       0         1         2         3
+language              es        fr        ar        he
+sentence_style         1         1         1         1
+total               1118      1118      1118      1118
+correct             1005       989       707       911
+accuracy        0.898927  0.884615  0.632379  0.814848
+error_count          113       129       411       207
+---
+                       0         1         2         3
+language              es        fr        ar        he
+sentence_style         3         3         3         3
+total               1060      1060      1060      1060
+correct              555       707       864       925
+accuracy        0.523585  0.666981  0.815094  0.872642
+error_count          505       353       196       135
+'''
