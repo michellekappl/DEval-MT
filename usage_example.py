@@ -68,7 +68,7 @@ def example_data() -> DEvalDataset:
          source_column="text",
          subject_index_column="x_idx",
          output_prefix="x",
-         article_offset=-1,
+         #article_offset=-1,
          use_multiprocessing=False
       )
 
