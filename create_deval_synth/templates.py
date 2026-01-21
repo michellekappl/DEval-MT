@@ -339,7 +339,7 @@ class Template:
             instance = Instance(
                 x,
                 self.sentence_style,
-                None,
+                self.sentence_id,
                 x_group,
                 from_none(x_idx),
                 None,
@@ -532,8 +532,8 @@ class Template:
                 self.sentence_id,
                 x_group,
                 from_none(x_idx),
-                y,
-                y_group,
+                None,
+                None,
                 None,
                 adjective,
                 modified,
@@ -564,6 +564,7 @@ class Template:
         xs = [(x_group, x) for x in x_list]
         matching_names = []
         if self.sentence_style == NAME_SENTENCE:
+            if x_group == "romantic": return []
             name_sentences = []
             # get names that match gender of x
             for x in x_list:
