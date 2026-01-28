@@ -1,6 +1,7 @@
 import csv
 import random
 import sys
+import polars as pl
 
 from adjectives import adjectives
 from groups import groups
@@ -9,9 +10,9 @@ from templates import (
     NAME_SENTENCE,
     NORMAL_SENTENCE,
     ROMANTIC_SENTENCE,
-    Instance,
     Template,
 )
+from Instance import Instance 
 
 # Remove groups that are not needed for the generation
 # del groups["other"]
@@ -21,101 +22,121 @@ from templates import (
 def load_statistics(filepath: str) -> dict[str, dict[str, tuple[int, int]]]:
     """Load job statistics from CSV file."""
     statistics = {}
-    with open(filepath, "r") as statistics_file:
-        statistics_csv = csv.reader(statistics_file, delimiter=";")
-        for row in statistics_csv:
-            if row[0] == "Code":
-                continue  # skip header
-            code = int(row[0])
-            status = row[2]
-            num_m = 0 if row[3] == "x" else (int(row[3].replace(".", "")))
-            num_f = 0 if row[4] == "x" else (int(row[4].replace(".", "")))
+    #read branchen statistic file
+    statistics_csv = pl.read_csv(filepath, separator=";", has_header=True)
+    
+    for row in statistics_csv.iter_rows(named=True):
+        code = row['Code']
+        status = row['Anforderungsniveau']
+        num_m = 0 if row['Männer'] == "x" else (int(row["Männer"]))
+        num_f = 0 if row['Frauen'] == "x" else (int(row['Frauen']))
 
-            statistics.setdefault(code, {})[status] = (num_m, num_f)
+        statistics.setdefault(code, {})[status] = (num_m, num_f)
 
     return statistics
 
 
 # parse command line arguments
-if len(sys.argv) < 2:
-    print("Usage: python main.py <csv_file>")
-    sys.exit(1)
+# if len(sys.argv) < 2:
+#     print("Usage: python main.py <csv_file>")
+#     sys.exit(1)
 
-csv_file = sys.argv[1]
+csv_file = 'dataset.csv'
 
 # these are the adjustable parameters:
 
 # number of templates to be randomly selected for each job
-GEN_TEMPLATES_PER_JOB = 2
+GEN_TEMPLATES_PER_JOB = 1
 # number of additional instances to be generated for each romantic/name template
-GEN_PER_TEMPLATE = 100
+GEN_PER_TEMPLATE = 200
 
 # job statistics
 statistics = load_statistics("job_statistics/utilities/branchen_statistics.csv")
 instances = []
 templates = []
 
+reader = pl.read_csv(csv_file, separator=";", has_header=True)
 
-with open(csv_file, newline="", encoding="utf-8") as f:
-    reader = csv.reader(f, delimiter=";")
-    # delete the header
-    next(reader)
-    for row in reader:
-        # create template for each row
-        r = Template(row, statistics, groups, adjectives, names)
-        # generate all instances
-        templates.append(r)
+for row in reader.iter_rows(named=True):
+    # create template for each row
+    r = Template(row, statistics, groups, adjectives, names)
+    # generate all instances
+    templates.append(r)
 
 print(f"Loaded {len(templates)} templates from {csv_file}.")
 
 # templates that work for any job
-generic_templates = [
-    t for t in templates if t.generic and t.sentence_style == NORMAL_SENTENCE
-]
+generic_templates = [t for t in templates if t.sentence_style == 1 or t.sentence_style == 5]
 
-assert len(templates) >= GEN_TEMPLATES_PER_JOB, (
-    "Not enough templates available. Please check the input file."
-)
+romantic_templates = [t for t in templates if t.sentence_style == 5]
 
+name_templates = [t for t in templates if t.sentence_style == 6]
+
+pronoun_templates = [t for t in templates if t.sentence_style == 2]
+
+assert (len(templates) >= GEN_TEMPLATES_PER_JOB), "Not enough templates available. Please check the input file."
+count = 0
 for key, jobs in groups.items():
-    # select templates based on the group key
-    specific_templates = [t for t in templates if key in t.matching_x_groups]
+    for gender_group in jobs:
+        count += len(gender_group)
+        templates_to_use = random.sample(list(generic_templates), GEN_TEMPLATES_PER_JOB)
+            
+        # get the coresponding Pronoun sentences
+        pronoun_templates_to_use = []
+        for t in templates_to_use:
+            for p in pronoun_templates:
+                if t.sentence_id == p.sentence_id:
+                    pronoun_templates_to_use.append(p)
 
-    # romantic groups are handled separately
-    if key == "romantic" and len(specific_templates) < GEN_TEMPLATES_PER_JOB:
-        continue
-    else:
-        for gender_group in jobs:
-            generic_templates_to_use = (
-                []
-                if len(specific_templates) >= GEN_TEMPLATES_PER_JOB
-                else random.sample(
-                    list(generic_templates),
-                    GEN_TEMPLATES_PER_JOB - len(specific_templates),
-                )
-            )
-            # use all generic templates
-            templates_to_use = list(specific_templates) + generic_templates_to_use
+        romantic_templates_to_use = random.sample(list(romantic_templates), GEN_TEMPLATES_PER_JOB)
+        name_templates_to_use = random.sample(list(name_templates), GEN_TEMPLATES_PER_JOB)
 
-            for template in templates_to_use:
-                instances.extend(template.gen_for_xs(key, gender_group))
-
-for template in filter(
-    lambda t: t.sentence_style in [NAME_SENTENCE, ROMANTIC_SENTENCE], templates
-):
-    # make sure we have generate sentences with names and romantic groups
-    xs = random.sample(template.xs, GEN_PER_TEMPLATE)
-    for x_group, x in xs:
-        instances.extend(template.gen_for_xs(x_group, [x]))
+        templates_to_use  = templates_to_use + pronoun_templates_to_use + romantic_templates_to_use + name_templates_to_use
+        templates_to_use = sorted(templates_to_use, key=lambda template: template.sentence_id)
+        for template in templates_to_use:
+            instances.extend(template.gen_for_xs(key, gender_group))
 
 print(f"Generated {len(instances)} instances from {len(templates)} templates.")
+
+# Print template usage statistics
+print(f"\n{'='*60}")
+print("TEMPLATE USAGE STATISTICS")
+print(f"{'='*60}")
+
+template_counts = {}
+for instance in instances:
+    sid = instance.sentence_id
+    if sid not in template_counts:
+        template_counts[sid] = 0
+    template_counts[sid] += 1
+
+# Sort by usage count (descending)
+sorted_templates = sorted(template_counts.items(), key=lambda x: x[1], reverse=True)
+
+print(f"{'Sentence ID':<12} {'Count':<8} {'Percentage':<12}")
+print("-" * 32)
+
+for sid, count in sorted_templates:
+    percentage = (count / len(instances)) * 100
+    print(f"{sid:<12} {count:<8} {percentage:>6.2f}%")
+
+print(f"\nTotal instances: {len(instances)}")
+print(f"Unique templates used: {len(template_counts)}")
+print(f"Average instances per template: {len(instances) / len(template_counts):.1f}")
+
 with open("output.csv", "w", encoding="utf-8") as f:
     # write output file
     n = len(instances)
 
     f.write(Instance.header + "\n")
-
+    neutral_marker = 0
     for i, instance in enumerate(instances):
+        if neutral_marker == 1 and instance.x.gender == "d":
+            neutral_marker = 0
+            n -= 1
+            continue  # skip every second neutral instance to avoid overrepresentation
+        if instance.x.gender == "d" and neutral_marker == 0:
+            neutral_marker = 1
         f.write(str(instance) + "\n")
         print(f"Generating statistics for {n} instances... ({i} / {n})")
         sys.stdout.write("\033[F\033[K")

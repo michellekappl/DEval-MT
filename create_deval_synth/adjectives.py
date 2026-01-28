@@ -4,10 +4,10 @@ from declensions import Adjective
 # schwarz
 # trans
 adjectives = [
-    Adjective("französisch"),
-    Adjective("polnisch"),
-    Adjective("türkisch"),
-    Adjective("syrisch"),
-    Adjective("schwarz"),
+    # Adjective("französisch"),
+    # Adjective("polnisch"),
+    # Adjective("türkisch"),
+    # Adjective("syrisch"),
+    # Adjective("schwarz"),
     Adjective("trans", undeclinable=True),
 ]

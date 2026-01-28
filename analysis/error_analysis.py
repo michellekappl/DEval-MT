@@ -55,7 +55,11 @@ class ErrorAnalysis:
       self.ds = ds
       self.gold_col = gold_col
 
-   def analyze(self, languages: List[str] | None = None, *, analyze_error_patterns: bool = True) -> pd.DataFrame:
+   def analyze(self, languages: List[str] | None = None, *, analyze_error_patterns: bool = True,filter_col:str|None=None,filter_value=None) -> pd.DataFrame:
+      df=self.ds.df
+      if filter_col is not None:
+         df=df[df[filter_col]==filter_value]
+      
       if languages is None:
          languages = list(self.ds.translation_columns.keys())
 
@@ -122,6 +126,7 @@ class ErrorAnalysis:
          # Create a row for this language
          row_data = {
             'language': lang,
+            f'{filter_col}':filter_value,
             'total': total,
             'correct': correct,
             'accuracy': accuracy,
@@ -130,8 +135,11 @@ class ErrorAnalysis:
          }
 
          # Add error type counts
-         for error_type, count in error_types.items():
-            row_data[f'error_{error_type.name.lower()}'] = count
+         # for error_type, count in error_types.items():
+         #    row_data[f'error_{error_type.name.lower()}'] = count
+         
+         # if filter_col is not None:
+         #    row_data[filter_col]=filter_value
 
          results_data.append(row_data)
 

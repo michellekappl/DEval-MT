@@ -1,5 +1,5 @@
 import spacy
-from typing import List
+from typing import List, Optional
 
 from morphological_analysis.gender import Gender
 from morphological_analysis.base_analyzer import BaseMorphologicalAnalyzer, MorphologicalToken
@@ -9,7 +9,7 @@ class SpaCyMorphAnalyzer(BaseMorphologicalAnalyzer):
     def __init__(self, spacy_model: str) -> None:
         self.spacy_model = spacy_model
         self._loaded = False
-        self.nlp = None
+        self.nlp: Optional[spacy.Language] = None
 
     def load(self) -> None:
         self.nlp = spacy.load(self.spacy_model)
