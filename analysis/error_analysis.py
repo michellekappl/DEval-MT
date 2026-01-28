@@ -67,51 +67,66 @@ class ErrorAnalysis:
       for lang in languages:
          pred_col = self.ds.prediction_columns.get(lang)
 
-         prediction_correct = self.ds.df[self.ds.df[self.gold_col] == self.ds.df[pred_col]]
+         prediction_correct = self.ds.df[
+            ((self.ds.df[self.gold_col] == self.ds.df[pred_col]) & (self.ds.df[pred_col] != 'Gender.UNKNOWN')) |  # Exact matches (excluding UNKNOWN preds)
+            ((self.ds.df[self.gold_col] == 'Gender.DIVERSE') & (self.ds.df[pred_col] == 'Gender.NEUTER'))  # DIVERSE -> NEUTER is correct
+         ]
          total = len(self.ds.df)
          correct = len(prediction_correct)
          accuracy = correct / total if total > 0 else 0.0
+         unknown_count = 0
 
          error_types = {
             ErrorType.M_TO_F: 0,
-            ErrorType.M_TO_N: 0,
             ErrorType.M_TO_U: 0,
-            ErrorType.M_TO_D: 0,
+         #   ErrorType.M_TO_D: 0,
             ErrorType.F_TO_M: 0,
-            ErrorType.F_TO_N: 0,
             ErrorType.F_TO_U: 0,
-            ErrorType.F_TO_D: 0,
-            ErrorType.N_TO_M: 0,
-            ErrorType.N_TO_F: 0,
-            ErrorType.N_TO_U: 0,
-            ErrorType.N_TO_D: 0,
-            ErrorType.U_TO_M: 0,
-            ErrorType.U_TO_F: 0,
-            ErrorType.U_TO_N: 0,
-            ErrorType.U_TO_D: 0,
+         #   ErrorType.F_TO_D: 0,
+         #   ErrorType.N_TO_M: 0,
+         #   ErrorType.N_TO_F: 0,
+         #   ErrorType.N_TO_U: 0,
+         #   ErrorType.N_TO_D: 0,
+         #   ErrorType.U_TO_M: 0,
+         #   ErrorType.U_TO_F: 0,
+         #   ErrorType.U_TO_N: 0,
+         #   ErrorType.U_TO_D: 0,
             ErrorType.D_TO_M: 0,
             ErrorType.D_TO_F: 0,
-            ErrorType.D_TO_N: 0,
+         #   ErrorType.D_TO_N: 0,
             ErrorType.D_TO_U: 0,
+            ErrorType.M_TO_N: 0,
+            ErrorType.F_TO_N: 0,
          }
-
          for _, row in self.ds.df.iterrows():
             gold = row.get(self.gold_col)
             pred = row.get(pred_col)
 
-            if gold == Gender.UNKNOWN or pred == Gender.UNKNOWN:
+            # Skip if gold is UNKNOWN (can't evaluate errors without known gold standard)
+            if gold == "UNKNOWN":
                continue
 
-            if gold is not None and pred is not None and gold != pred:
-               error_types[ErrorType.from_genders(Gender[gold], Gender[pred])] += 1
+            # Skip DIVERSE -> NEUTER as it's considered correct
+            if gold == "DIVERSE" and pred == "NEUTER":
+               #print('DIV NEUTRAL')
+               continue
 
+            # Count any non-exact match as an error, including UNKNOWN predictions
+            if gold is not None and pred is not None and gold != pred:
+               #print(gold)
+               error_types[ErrorType.from_genders(Gender[gold], Gender[pred])] += 1
+               if pred == "UNKNOWN":
+                  #print('unkown')
+                  unknown_count +=1
+               #continue
          # Create a row for this language
          row_data = {
             'language': lang,
             'total': total,
             'correct': correct,
             'accuracy': accuracy,
-            'error_count': total - correct
+            'true_error_count': total - correct - unknown_count,
+            'unknown_count': unknown_count
          }
 
          # Add error type counts

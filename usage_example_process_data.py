@@ -12,7 +12,7 @@ from plots import (
 # -------------------------------
 # Languages to analyze (extended)
 # -------------------------------
-LANGUAGES = ["es", "fr", "it", "no", "ar", "ru", "uk"]
+LANGUAGES = ["es", "fr", "it", "no", "ar", "ru", "uk", "sv", "he"]
 
 # -------------------------------
 # Load processed dataset only, handle missing columns
@@ -105,7 +105,7 @@ if __name__ == "__main__":
         save_dataframes(
             error_df,
             cm_df,
-            lr_results,
+    #        lr_results,
             output_dir=model_output_dir,
         )
 

@@ -32,7 +32,7 @@ def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename:
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), gridspec_kw={'height_ratios': [1, 2]})
 
     # Table
-    table_data = df[['total', 'correct', 'accuracy', 'error_count']].round(3)
+    table_data = df[['total', 'correct', 'accuracy', 'true_error_count', 'unknown_count']].round(3)
     ax1.axis('off')
     table = ax1.table(cellText=table_data.values,
                       rowLabels=table_data.index,
@@ -43,15 +43,20 @@ def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename:
     table.auto_set_font_size(False)
     table.set_fontsize(10)
     table.scale(1, 2)
-    ax1.set_title('Language Metrics Table')
+    #ax1.set_title('Language Metrics Table')
 
     # Error counts
     max_val = np.max(error_data)
     im = ax2.imshow(error_data, cmap='Reds', aspect='auto', vmin=0, vmax=max_val)
 
     for i in range(error_data.shape[0]):
+        error_sum = 0
         for j in range(error_data.shape[1]):
             ax2.text(j, i, int(error_data[i, j]), ha='center', va='center', color='black')
+            error_sum += error_data[i,j]
+            #if j == range(error_data.shape[1]):
+            #    ax2.text(j, i+1, int(error_sum), ha='center', va='center', color='black')
+    
 
     ax2.set_xticks(np.arange(len(languages)))
     ax2.set_xticklabels(languages)
@@ -123,21 +128,34 @@ def plot_confusion_metrics(df: pd.DataFrame, output_dir: str = "outputs", filena
     genders = sorted(set(col.split("_")[0] for col in metric_df.columns if "_precision" in col))
     metrics = ["precision", "recall", "f1_score"]
 
-    fig, axes = plt.subplots(1, 3, figsize=(21, 6), sharey=True)
+    num_langs = len(languages)
+
+    # Taller figure for vertical stacking and readability
+    fig_height = max(4 * len(metrics), num_langs * 1.2)
+    fig, axes = plt.subplots(len(metrics), 1, figsize=(21, fig_height), sharex=False)
+
+    # X positions for each gender group
+    x = np.arange(len(genders))
+    num_bars = len(languages)
+    bar_width = min(0.9 / num_bars, 0.25)
+    group_width = num_bars * bar_width
 
     for ax, metric in zip(axes, metrics):
-        x = np.arange(len(genders))
-        num_bars = len(languages)
-        bar_width = min(0.8 / num_bars, 0.2)  # dynamic width to avoid overlap
-
         for i, lang in enumerate(languages):
-            values = [metric_df.loc[lang, f"{gender}_{metric}"]
-                      if f"{gender}_{metric}" in metric_df.columns else 0
-                      for gender in genders]
-            bars = ax.bar(x + i * bar_width, values, width=bar_width, label=lang)
+            values = [
+                metric_df.loc[lang, f"{gender}_{metric}"]
+                if f"{gender}_{metric}" in metric_df.columns else 0
+                for gender in genders
+            ]
+
+            bars = ax.bar(
+                x - group_width / 2 + i * bar_width + bar_width / 2,
+                values,
+                width=bar_width,
+                label=lang
+            )
 
             for bar, val in zip(bars, values):
-                # Dynamic offset above bar
                 offset = 0.01 + 0.02 * val
                 ax.text(
                     bar.get_x() + bar.get_width() / 2,
@@ -145,31 +163,35 @@ def plot_confusion_metrics(df: pd.DataFrame, output_dir: str = "outputs", filena
                     f"{val:.2f}",
                     ha="center",
                     va="bottom",
-                    fontsize=9,
-                    rotation=0
+                    fontsize=9
                 )
 
-        ax.set_title(metric.title())
-        ax.set_xticks(x + bar_width * (num_bars - 1) / 2)
-        ax.set_xticklabels(genders, rotation=20, ha="right")  # prevent x-label overlap
+        # Gender section separators
+        for i in range(len(genders) - 1):
+            ax.axvline(i + 0.5, color="gray", linestyle="--", alpha=0.3)
+
+        ax.set_title(metric.title(), fontsize=14)
         ax.set_ylim(0, 1.1)
+        ax.grid(axis="y", alpha=0.3)
 
-    axes[0].set_ylabel("Score")
+        # Labels on EVERY subplot
+        ax.set_xticks(x)
+        ax.set_xticklabels(genders, rotation=20, ha="right")
+        ax.set_ylabel("Score")
 
-    # Dynamic legend inside figure
+    # Legend (top-right)
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(
         handles,
         labels,
-        loc="upper center",
-        ncol=min(len(languages), 4),  # max 4 columns for readability
+        loc="upper right",
         frameon=False,
         fontsize=10,
-        bbox_to_anchor=(0.5, 1.02)
+        bbox_to_anchor=(0.98, 0.98)
     )
 
     plt.tight_layout()
-    plt.savefig(filepath, bbox_inches='tight')  # ensures nothing is cut off
+    plt.savefig(filepath, bbox_inches="tight")
     plt.close()
     print("Saved:", filepath)
 
