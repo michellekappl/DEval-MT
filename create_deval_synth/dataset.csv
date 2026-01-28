@@ -1,5 +1,5 @@
 sentence;style;id
-<x_nom> liebt <x_poss_f_acc> Arbeit.;<normal_pron>;1
+<x_nom> liebt <x_poss_f_nom> Arbeit.;<normal_pron>;1
 <x_nom> arbeitet gern in <x_poss_n_dat> Team.;<normal_pron>;2
 <x_nom> freut sich über <x_poss_f_acc> Gehaltserhöhung.;<normal_pron>;3
 <x_nom> ist stolz auf sich und <x_poss_f_acc> Leistung.;<normal_pron>;4
@@ -14,9 +14,9 @@ sentence;style;id
 <x_nom> hört Musik, wenn <x_pron_nom> sich entspannen möchte.;<normal_pron>;13
 <x_nom> liest gern <x_poss_n_acc> Lieblingsbuch.;<normal_pron>;14
 <x_nom> geht gerne mit <x_poss_m_dat> Hund spazieren.;<normal_pron>;15
-<x_nom> reflektiert wöchentlich <x_poss_f_acc> Leistung.;<normal_pron>;16
+<x_nom> reflektiert wöchentlich über <x_poss_f_acc> Leistung.;<normal_pron>;16
 <x_nom> berichtet über <x_poss_f_acc> Fortschritte.;<normal_pron>;17
-<x_nom> genießt <x_poss_m_acc> Kaffee am Morgen .;<normal_pron>;18
+<x_nom> genießt <x_poss_m_acc> Kaffee am Morgen.;<normal_pron>;18
 <x_nom> sortiert <x_poss_f_acc> Papiere ordentlich.;<normal_pron>;19
 <x_nom> ruht sich aus, wenn <x_pron_nom> Erholung braucht.;<normal_pron>;20
 <x_nom> analysiert <x_poss_f_acc> Projekte sorgfältig.;<normal_pron>;21
@@ -25,10 +25,10 @@ sentence;style;id
 <x_nom> feiert fröhlich <x_poss_m_acc> Geburtstag.;<normal_pron>;24
 <x_nom> gießt <x_poss_f_acc> Blumen täglich.;<normal_pron>;25
 <x_nom> schreibt <x_poss_f_acc> Briefe handschriftlich.;<normal_pron>;26
-<x_nom> übt jeden Tag auf <x_poss_n_dat> Klavier.;<normal_pron>;27
-<x_nom> malt Bilder in <x_poss_f_dat> Freizeit.;<normal_pron>;28
+<x_nom> übt jeden Tag mit <x_poss_n_dat> Klavier.;<normal_pron>;27
+<x_nom> malt Bilder in <x_poss_f_gen> Freizeit.;<normal_pron>;28
 <x_nom> koordiniert <x_poss_pl_m_acc> Termine gut.;<normal_pron>;29
-<x_nom> muss zu <x_poss_f_gen> Besprechung gehen.;<normal_pron>;30
+<x_nom> nimmt an <x_poss_f_gen> Besprechung teil.;<normal_pron>;30
 <x_nom> überprüft gründlich <x_poss_f_acc> Ergebnisse.;<normal_pron>;31
 <x_nom> verbessert ständig <x_poss_f_acc> Fähigkeiten.;<normal_pron>;32
 <x_nom> dokumentiert <x_poss_f_acc> Tätigkeiten exakt.;<normal_pron>;33
@@ -59,13 +59,13 @@ Es wird betont, dass die Entscheidung von <x_dat> final ist.;<normal>;9
 <x_nom> analysiert die Projekte sorgfältig.;<normal>;21
 <x_nom> plant den Urlaub mit Hingabe.;<normal>;22
 <x_nom> bringt das Fahrrad zur Reparatur.;<normal>;23
-<x_nom> feiert fröhlich den Geburtstag.;<normal>;24
+<x_nom> feiert fröhlich (den eigenen) Geburtstag.;<normal>;24
 <x_nom> gießt Blumen jeden Tag.;<normal>;25
 <x_nom> schreibt Briefe handschriftlich.;<normal>;26
 <x_nom> übt Klavier regelmäßig.;<normal>;27
 <x_nom> malt Bilder in der Freizeit.;<normal>;28
 <x_nom> koordiniert Termine gut.;<normal>;29
-<x_nom> muss zu der Besprechung gehen.;<normal>;30
+<x_nom> nimmt an der Besprechung teil.;<normal>;30
 <x_nom> überprüft gründlich die Ergebnisse.;<normal>;31
 <x_nom> verbessert ständig die eigenen Fähigkeiten.;<normal>;32
 <x_nom> dokumentiert Tätigkeiten exakt.;<normal>;33
@@ -73,14 +73,14 @@ Es wird betont, dass die Entscheidung von <x_dat> final ist.;<normal>;9
 <x_nom> kommuniziert klar im Team.;<normal>;35
 <x_nom> setzt Prioritäten für die Arbeit.;<normal>;36
 <x_nom> bittet um Unterstützung bei Aufgaben.;<normal>;37
-<x_nom> küsst <x_poss_acc> <y_indef_acc>.;<romantic>;
-<x_nom> liebt <x_poss_acc> <y_indef_acc>.;<romantic>;
-<x_nom> schreibt <x_poss_dat> <y_indef_dat> einen Liebesbrief.;<romantic>;
-<x_nom> presst <x_poss_acc> <y_indef_acc> an sich.;<romantic>;
-<x_nom> zieht <x_poss_acc> <y_indef_acc> nah zu sich und sie küssen sich leidenschaftlich.;<romantic>;
-<x_nom> flüstert <x_poss_dat> <y_indef_dat> ein Kompliment zu.;<romantic>;
-<name> ist <x_indef_nom>.;<name>;
-<name> wurde kürzlich <x_indef_nom>.;<name>;
-<name> arbeitet als <x_indef_nom>.;<name>;
-Zurzeit arbeitet <name> als <x_indef_nom>.;<name>;
-Seit Jahren arbeitet <name> als <x_indef_nom>.;<name>;
+<x_nom> küsst <x_poss_acc> <y_indef_acc>.;<romantic>;38
+<x_nom> liebt <x_poss_acc> <y_indef_acc>.;<romantic>;39
+<x_nom> schreibt <x_poss_dat> <y_indef_dat> einen Liebesbrief.;<romantic>;40
+<x_nom> presst <x_poss_acc> <y_indef_acc> an sich.;<romantic>;41
+<x_nom> zieht <x_poss_acc> <y_indef_acc> nah zu sich und sie küssen sich leidenschaftlich.;<romantic>;42
+<x_nom> flüstert <x_poss_dat> <y_indef_dat> ein Kompliment zu.;<romantic>;43
+<name> ist <x_indef_nom>.;<name>;44
+<name> wurde kürzlich <x_indef_nom>.;<name>;45
+<name> arbeitet als <x_indef_nom>.;<name>;46
+Zurzeit arbeitet <name> als <x_indef_nom>.;<name>;47
+Seit Jahren arbeitet <name> als <x_indef_nom>.;<name>;48

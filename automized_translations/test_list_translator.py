@@ -33,8 +33,8 @@ from list_translator import translate_dataset
 # Multiple languages, multiple providers with custom output directory
 translate_dataset(
     "../DEval_dataset.csv",
-    ["es"],
-    "google",
+    ["it", "fr", "ru", "uk", "he", "ar"],
+    "microsoft",
     overwrite_translation=True,
     output_dir="../translations",
 )

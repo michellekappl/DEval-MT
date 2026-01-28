@@ -1,4 +1,5 @@
 pandas
+polars
 numpy
 simalign
 rich
@@ -6,6 +7,7 @@ spacy
 scipy
 statsmodels
 scikit-learn
+qalsadi
 statsmodels
 openai
 hf_xet
