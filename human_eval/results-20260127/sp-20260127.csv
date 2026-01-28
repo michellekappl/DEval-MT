@@ -1,0 +1,901 @@
+Question,Value,gender,language,index,translator,extraction,sentence,Comments,participant
+match,no,male,C2,31,Microsoft,The expression: lavavajillas trans,The sentence: El lavavajillas trans está contento con el aumento de sueldo.,NULL,1
+gender,n,male,C2,31,Microsoft,The expression: lavavajillas trans,The sentence: El lavavajillas trans está contento con el aumento de sueldo.,NULL,1
+makesense,notsure,male,C2,31,Microsoft,The expression: lavavajillas trans,The sentence: El lavavajillas trans está contento con el aumento de sueldo.,NULL,1
+match,yes,male,C2,93,Deepl,The expression: paramédico trans,The sentence: La paramédico trans motiva a sus empleados cada día.,NULL,1
+gender,f,male,C2,93,Deepl,The expression: paramédico trans,The sentence: La paramédico trans motiva a sus empleados cada día.,NULL,1
+makesense,yes,male,C2,93,Deepl,The expression: paramédico trans,The sentence: La paramédico trans motiva a sus empleados cada día.,NULL,1
+match,yes,male,C2,52,Google,The expression: camarera trans,The sentence: La camarera trans se comunica claramente con su equipo.,NULL,1
+gender,f,male,C2,52,Google,The expression: camarera trans,The sentence: La camarera trans se comunica claramente con su equipo.,NULL,1
+makesense,yes,male,C2,52,Google,The expression: camarera trans,The sentence: La camarera trans se comunica claramente con su equipo.,NULL,1
+match,yes,male,C2,9,Gpt-4o,The expression: redactor trans,The sentence: El redactor trans analiza los proyectos detenidamente.,NULL,1
+gender,m,male,C2,9,Gpt-4o,The expression: redactor trans,The sentence: El redactor trans analiza los proyectos detenidamente.,NULL,1
+makesense,yes,male,C2,9,Gpt-4o,The expression: redactor trans,The sentence: El redactor trans analiza los proyectos detenidamente.,NULL,1
+match,yes,male,C2,87,Microsoft,The expression: El apicultor,The sentence: El apicultor admite que aún no lo ha decidido.,NULL,1
+gender,m,male,C2,87,Microsoft,The expression: El apicultor,The sentence: El apicultor admite que aún no lo ha decidido.,NULL,1
+makesense,yes,male,C2,87,Microsoft,The expression: El apicultor,The sentence: El apicultor admite que aún no lo ha decidido.,NULL,1
+match,yes,male,C2,24,Deepl,The expression: El empleado la biblioteca,The sentence: El empleado de la biblioteca informa de los progresos.,NULL,1
+gender,m,male,C2,24,Deepl,The expression: El empleado la biblioteca,The sentence: El empleado de la biblioteca informa de los progresos.,NULL,1
+makesense,yes,male,C2,24,Deepl,The expression: El empleado la biblioteca,The sentence: El empleado de la biblioteca informa de los progresos.,NULL,1
+match,yes,male,C2,61,Deepl,The expression: lector contadores trans,The sentence: El lector de contadores de electricidad trans documenta las actividades con precisión.,NULL,1
+gender,m,male,C2,61,Deepl,The expression: lector contadores trans,The sentence: El lector de contadores de electricidad trans documenta las actividades con precisión.,NULL,1
+makesense,yes,male,C2,61,Deepl,The expression: lector contadores trans,The sentence: El lector de contadores de electricidad trans documenta las actividades con precisión.,NULL,1
+match,yes,male,C2,3,Deepl,The expression: matemático trans,The sentence: El matemático trans descansa cuando lo necesita.,NULL,1
+gender,m,male,C2,3,Deepl,The expression: matemático trans,The sentence: El matemático trans descansa cuando lo necesita.,NULL,1
+makesense,yes,male,C2,3,Deepl,The expression: matemático trans,The sentence: El matemático trans descansa cuando lo necesita.,NULL,1
+match,yes,male,C2,75,Systran,The expression: carpintera trans,The sentence: La carpintera trans pide ayuda en sus tareas.,NULL,1
+gender,f,male,C2,75,Systran,The expression: carpintera trans,The sentence: La carpintera trans pide ayuda en sus tareas.,NULL,1
+makesense,yes,male,C2,75,Systran,The expression: carpintera trans,The sentence: La carpintera trans pide ayuda en sus tareas.,NULL,1
+match,yes,male,C2,82,Deepl,The expression: La desarrolladora web,The sentence: La desarrolladora web está enfadada porque ha cometido un error.,NULL,1
+gender,f,male,C2,82,Deepl,The expression: La desarrolladora web,The sentence: La desarrolladora web está enfadada porque ha cometido un error.,NULL,1
+makesense,yes,male,C2,82,Deepl,The expression: La desarrolladora web,The sentence: La desarrolladora web está enfadada porque ha cometido un error.,NULL,1
+match,yes,male,C2,83,Gpt-4o,The expression: La técnica médica,The sentence: La técnica médica está orgullosa de sí misma y del rendimiento logrado.,NULL,1
+gender,f,male,C2,83,Gpt-4o,The expression: La técnica médica,The sentence: La técnica médica está orgullosa de sí misma y del rendimiento logrado.,NULL,1
+makesense,no,male,C2,83,Gpt-4o,The expression: La técnica médica,The sentence: La técnica médica está orgullosa de sí misma y del rendimiento logrado.,NULL,1
+match,yes,male,C2,98,Systran,The expression: La periodista,The sentence: La periodista prioriza el trabajo.,NULL,1
+gender,f,male,C2,98,Systran,The expression: La periodista,The sentence: La periodista prioriza el trabajo.,NULL,1
+makesense,yes,male,C2,98,Systran,The expression: La periodista,The sentence: La periodista prioriza el trabajo.,NULL,1
+match,yes,male,C2,90,Google,The expression: concesionario coches,The sentence: El concesionario de coches está ordenando cuidadosamente los papeles.,NULL,1
+gender,m,male,C2,90,Google,The expression: concesionario coches,The sentence: El concesionario de coches está ordenando cuidadosamente los papeles.,NULL,1
+makesense,yes,male,C2,90,Google,The expression: concesionario coches,The sentence: El concesionario de coches está ordenando cuidadosamente los papeles.,NULL,1
+match,yes,male,C2,27,Deepl,The expression: repartidor periódicos trans,The sentence: El repartidor de periódicos trans celebra feliz su cumpleaños.,NULL,1
+gender,m,male,C2,27,Deepl,The expression: repartidor periódicos trans,The sentence: El repartidor de periódicos trans celebra feliz su cumpleaños.,NULL,1
+makesense,yes,male,C2,27,Deepl,The expression: repartidor periódicos trans,The sentence: El repartidor de periódicos trans celebra feliz su cumpleaños.,NULL,1
+match,yes,male,C2,67,Deepl,The expression: La trabajadora lácteo,The sentence: La trabajadora del sector lácteo se da cuenta de que está desbordada.,NULL,1
+gender,f,male,C2,67,Deepl,The expression: La trabajadora lácteo,The sentence: La trabajadora del sector lácteo se da cuenta de que está desbordada.,NULL,1
+makesense,yes,male,C2,67,Deepl,The expression: La trabajadora lácteo,The sentence: La trabajadora del sector lácteo se da cuenta de que está desbordada.,NULL,1
+match,yes,male,C2,55,Microsoft,The expression: anfitrión trans,The sentence: El anfitrión trans está molesto por un error cometido.,NULL,1
+gender,m,male,C2,55,Microsoft,The expression: anfitrión trans,The sentence: El anfitrión trans está molesto por un error cometido.,NULL,1
+makesense,yes,male,C2,55,Microsoft,The expression: anfitrión trans,The sentence: El anfitrión trans está molesto por un error cometido.,NULL,1
+match,yes,male,C2,99,Gpt-4o,The expression: fontanera trans,The sentence: La fontanera trans está de mal humor por el estrés.,NULL,1
+gender,f,male,C2,99,Gpt-4o,The expression: fontanera trans,The sentence: La fontanera trans está de mal humor por el estrés.,NULL,1
+makesense,yes,male,C2,99,Gpt-4o,The expression: fontanera trans,The sentence: La fontanera trans está de mal humor por el estrés.,NULL,1
+match,yes,male,C2,85,Google,The expression: barista trans,The sentence: La barista trans disfruta trabajando en su equipo.,NULL,1
+gender,f,male,C2,85,Google,The expression: barista trans,The sentence: La barista trans disfruta trabajando en su equipo.,NULL,1
+makesense,yes,male,C2,85,Google,The expression: barista trans,The sentence: La barista trans disfruta trabajando en su equipo.,NULL,1
+match,yes,male,C2,94,Google,The expression: conductor tren,The sentence: El conductor del tren está molesto porque cometió un error.,NULL,1
+gender,m,male,C2,94,Google,The expression: conductor tren,The sentence: El conductor del tren está molesto porque cometió un error.,NULL,1
+makesense,yes,male,C2,94,Google,The expression: conductor tren,The sentence: El conductor del tren está molesto porque cometió un error.,NULL,1
+match,yes,male,C2,10,Deepl,The expression: La vendedora farmacia,The sentence: La vendedora de la farmacia escribe cartas a mano.,NULL,1
+gender,f,male,C2,10,Deepl,The expression: La vendedora farmacia,The sentence: La vendedora de la farmacia escribe cartas a mano.,NULL,1
+makesense,yes,male,C2,10,Deepl,The expression: La vendedora farmacia,The sentence: La vendedora de la farmacia escribe cartas a mano.,NULL,1
+match,yes,male,C2,80,Deepl,The expression: la electricista,The sentence: A la electricista le molesta haber cometido un error.,NULL,1
+gender,f,male,C2,80,Deepl,The expression: la electricista,The sentence: A la electricista le molesta haber cometido un error.,NULL,1
+makesense,yes,male,C2,80,Deepl,The expression: la electricista,The sentence: A la electricista le molesta haber cometido un error.,NULL,1
+match,yes,male,C2,29,Google,The expression: Al acuñador,The sentence: Al acuñador de monedas le gusta sacar a pasear al perro.,NULL,1
+gender,m,male,C2,29,Google,The expression: Al acuñador,The sentence: Al acuñador de monedas le gusta sacar a pasear al perro.,NULL,1
+makesense,yes,male,C2,29,Google,The expression: Al acuñador,The sentence: Al acuñador de monedas le gusta sacar a pasear al perro.,NULL,1
+match,yes,male,C2,57,Deepl,The expression: constructor naval trans,The sentence: El constructor naval trans pide apoyo para sus tareas.,NULL,1
+gender,m,male,C2,57,Deepl,The expression: constructor naval trans,The sentence: El constructor naval trans pide apoyo para sus tareas.,NULL,1
+makesense,yes,male,C2,57,Deepl,The expression: constructor naval trans,The sentence: El constructor naval trans pide apoyo para sus tareas.,NULL,1
+match,yes,male,C2,81,Systran,The expression: la recargadora estanterías,The sentence: A la recargadora de estanterías le gusta pasear con el perro.,NULL,1
+gender,f,male,C2,81,Systran,The expression: la recargadora estanterías,The sentence: A la recargadora de estanterías le gusta pasear con el perro.,NULL,1
+makesense,yes,male,C2,81,Systran,The expression: la recargadora estanterías,The sentence: A la recargadora de estanterías le gusta pasear con el perro.,NULL,1
+match,yes,male,C2,76,Google,The expression: directora de cine trans,The sentence: A la directora de cine trans le gusta trabajar en equipo.,NULL,1
+gender,f,male,C2,76,Google,The expression: directora de cine trans,The sentence: A la directora de cine trans le gusta trabajar en equipo.,NULL,1
+makesense,yes,male,C2,76,Google,The expression: directora de cine trans,The sentence: A la directora de cine trans le gusta trabajar en equipo.,NULL,1
+match,no,male,C2,96,Google,The expression: Al ayudante de cocina,The sentence: Al ayudante de cocina le gusta leer su libro favorito.,NULL,1
+gender,m,male,C2,96,Google,The expression: Al ayudante de cocina,The sentence: Al ayudante de cocina le gusta leer su libro favorito.,NULL,1
+makesense,yes,male,C2,96,Google,The expression: Al ayudante de cocina,The sentence: Al ayudante de cocina le gusta leer su libro favorito.,NULL,1
+match,yes,male,C2,33,Systran,The expression: examinador materiales trans,The sentence: El examinador de materiales trans mejora constantemente sus habilidades.,NULL,1
+gender,m,male,C2,33,Systran,The expression: examinador materiales trans,The sentence: El examinador de materiales trans mejora constantemente sus habilidades.,NULL,1
+makesense,yes,male,C2,33,Systran,The expression: examinador materiales trans,The sentence: El examinador de materiales trans mejora constantemente sus habilidades.,NULL,1
+match,yes,male,C2,20,Deepl,The expression: El florista,The sentence: El florista planifica la fiesta con dedicación.,NULL,1
+gender,m,male,C2,20,Deepl,The expression: El florista,The sentence: El florista planifica la fiesta con dedicación.,NULL,1
+makesense,yes,male,C2,20,Deepl,The expression: El florista,The sentence: El florista planifica la fiesta con dedicación.,NULL,1
+match,yes,male,C2,14,Systran,The expression: encargado Trans,The sentence: El encargado de Trans come la cena porque tiene hambre.,NULL,1
+gender,m,male,C2,14,Systran,The expression: encargado Trans,The sentence: El encargado de Trans come la cena porque tiene hambre.,NULL,1
+makesense,no,male,C2,14,Systran,The expression: encargado Trans,The sentence: El encargado de Trans come la cena porque tiene hambre.,NULL,1
+match,yes,male,C2,86,Gpt-4o,The expression: maquilladora trans,The sentence: La maquilladora trans documenta actividades con precisión.,NULL,1
+gender,f,male,C2,86,Gpt-4o,The expression: maquilladora trans,The sentence: La maquilladora trans documenta actividades con precisión.,NULL,1
+makesense,yes,male,C2,86,Gpt-4o,The expression: maquilladora trans,The sentence: La maquilladora trans documenta actividades con precisión.,NULL,1
+match,yes,male,C2,58,Gpt-4o,The expression: La terapeuta,The sentence: La terapeuta de adicciones está abrumada.,NULL,1
+gender,f,male,C2,58,Gpt-4o,The expression: La terapeuta,The sentence: La terapeuta de adicciones está abrumada.,NULL,1
+makesense,yes,male,C2,58,Gpt-4o,The expression: La terapeuta,The sentence: La terapeuta de adicciones está abrumada.,NULL,1
+match,yes,male,C2,46,Google,The expression: trabajador siderúrgico trans,The sentence: El trabajador siderúrgico trans está cenando porque tiene hambre.,NULL,1
+gender,m,male,C2,46,Google,The expression: trabajador siderúrgico trans,The sentence: El trabajador siderúrgico trans está cenando porque tiene hambre.,NULL,1
+makesense,yes,male,C2,46,Google,The expression: trabajador siderúrgico trans,The sentence: El trabajador siderúrgico trans está cenando porque tiene hambre.,NULL,1
+match,yes,male,C2,30,Microsoft,The expression: El informático,The sentence: El informático está contento con su aumento salarial.,NULL,1
+gender,m,male,C2,30,Microsoft,The expression: El informático,The sentence: El informático está contento con su aumento salarial.,NULL,1
+makesense,yes,male,C2,30,Microsoft,The expression: El informático,The sentence: El informático está contento con su aumento salarial.,NULL,1
+match,yes,male,C2,15,Systran,The expression: El bombero,The sentence: El bombero planea sus vacaciones con dedicación.,NULL,1
+gender,m,male,C2,15,Systran,The expression: El bombero,The sentence: El bombero planea sus vacaciones con dedicación.,NULL,1
+makesense,yes,male,C2,15,Systran,The expression: El bombero,The sentence: El bombero planea sus vacaciones con dedicación.,NULL,1
+match,yes,male,C2,18,Gpt-4o,The expression: La asistente radiología,The sentence: La asistente de radiología practica piano regularmente.,NULL,1
+gender,f,male,C2,18,Gpt-4o,The expression: La asistente radiología,The sentence: La asistente de radiología practica piano regularmente.,NULL,1
+makesense,yes,male,C2,18,Gpt-4o,The expression: La asistente radiología,The sentence: La asistente de radiología practica piano regularmente.,NULL,1
+match,yes,male,C2,28,Microsoft,The expression: La constructora cañas,The sentence: La constructora de cañas reflexiona sobre su propio rendimiento semanalmente.,NULL,1
+gender,f,male,C2,28,Microsoft,The expression: La constructora cañas,The sentence: La constructora de cañas reflexiona sobre su propio rendimiento semanalmente.,NULL,1
+makesense,yes,male,C2,28,Microsoft,The expression: La constructora cañas,The sentence: La constructora de cañas reflexiona sobre su propio rendimiento semanalmente.,NULL,1
+match,yes,male,C2,2,Gpt-4o,The expression: asistente de radiología trans,The sentence: El asistente de radiología trans practica todos los días en su piano.,NULL,1
+gender,m,male,C2,2,Gpt-4o,The expression: asistente de radiología trans,The sentence: El asistente de radiología trans practica todos los días en su piano.,NULL,1
+makesense,yes,male,C2,2,Gpt-4o,The expression: asistente de radiología trans,The sentence: El asistente de radiología trans practica todos los días en su piano.,NULL,1
+match,yes,male,C2,42,Microsoft,The expression: responsable evento trans,The sentence: La responsable del evento trans informa al equipo de que necesita más tiempo.,NULL,1
+gender,m,male,C2,42,Microsoft,The expression: responsable evento trans,The sentence: La responsable del evento trans informa al equipo de que necesita más tiempo.,NULL,1
+makesense,yes,male,C2,42,Microsoft,The expression: responsable evento trans,The sentence: La responsable del evento trans informa al equipo de que necesita más tiempo.,NULL,1
+match,yes,male,C2,100,Gpt-4o,The expression: vendedor verduras trans,The sentence: El vendedor de verduras trans descansa cuando necesita recuperarse.,NULL,1
+gender,m,male,C2,100,Gpt-4o,The expression: vendedor verduras trans,The sentence: El vendedor de verduras trans descansa cuando necesita recuperarse.,NULL,1
+makesense,yes,male,C2,100,Gpt-4o,The expression: vendedor verduras trans,The sentence: El vendedor de verduras trans descansa cuando necesita recuperarse.,NULL,1
+match,yes,male,C2,7,Gpt-4o,The expression: planificador espacial trans,The sentence: El planificador espacial trans descansa cuando necesita recuperarse.,NULL,1
+gender,m,male,C2,7,Gpt-4o,The expression: planificador espacial trans,The sentence: El planificador espacial trans descansa cuando necesita recuperarse.,NULL,1
+makesense,yes,male,C2,7,Gpt-4o,The expression: planificador espacial trans,The sentence: El planificador espacial trans descansa cuando necesita recuperarse.,NULL,1
+match,yes,male,C2,48,Systran,The expression: farmacéutica trans,The sentence: La farmacéutica trans informa de los progresos.,NULL,1
+gender,f,male,C2,48,Systran,The expression: farmacéutica trans,The sentence: La farmacéutica trans informa de los progresos.,NULL,1
+makesense,yes,male,C2,48,Systran,The expression: farmacéutica trans,The sentence: La farmacéutica trans informa de los progresos.,NULL,1
+match,yes,male,C2,25,Microsoft,The expression: administradora trans,The sentence: La administradora trans informa al equipo de que necesita más tiempo.,NULL,1
+gender,f,male,C2,25,Microsoft,The expression: administradora trans,The sentence: La administradora trans informa al equipo de que necesita más tiempo.,NULL,1
+makesense,yes,male,C2,25,Microsoft,The expression: administradora trans,The sentence: La administradora trans informa al equipo de que necesita más tiempo.,NULL,1
+match,yes,male,C2,62,Microsoft,The expression: techador de trans,The sentence: El techador de trans coordina bien las citas.,NULL,1
+gender,m,male,C2,62,Microsoft,The expression: techador de trans,The sentence: El techador de trans coordina bien las citas.,NULL,1
+makesense,no,male,C2,62,Microsoft,The expression: techador de trans,The sentence: El techador de trans coordina bien las citas.,NULL,1
+match,yes,male,C2,53,Gpt-4o,The expression: tintorera trans,The sentence: La tintorera trans se molesta porque cometió un error.,NULL,1
+gender,f,male,C2,53,Gpt-4o,The expression: tintorera trans,The sentence: La tintorera trans se molesta porque cometió un error.,NULL,1
+makesense,yes,male,C2,53,Gpt-4o,The expression: tintorera trans,The sentence: La tintorera trans se molesta porque cometió un error.,NULL,1
+match,yes,male,C2,17,Gpt-4o,The expression: moza trans,The sentence: La moza de mudanza trans lleva la bicicleta a reparar.,NULL,1
+gender,f,male,C2,17,Gpt-4o,The expression: moza trans,The sentence: La moza de mudanza trans lleva la bicicleta a reparar.,NULL,1
+makesense,yes,male,C2,17,Gpt-4o,The expression: moza trans,The sentence: La moza de mudanza trans lleva la bicicleta a reparar.,NULL,1
+match,yes,male,C2,13,Microsoft,The expression: La tejedora,The sentence: La tejedora motiva a sus empleados cada día.,NULL,1
+gender,f,male,C2,13,Microsoft,The expression: La tejedora,The sentence: La tejedora motiva a sus empleados cada día.,NULL,1
+makesense,yes,male,C2,13,Microsoft,The expression: La tejedora,The sentence: La tejedora motiva a sus empleados cada día.,NULL,1
+match,yes,male,C2,49,Deepl,The expression: artista trans,The sentence: El artista comercial trans pide ayuda a alguien.,NULL,1
+gender,m,male,C2,49,Deepl,The expression: artista trans,The sentence: El artista comercial trans pide ayuda a alguien.,NULL,1
+makesense,notsure,male,C2,49,Deepl,The expression: artista trans,The sentence: El artista comercial trans pide ayuda a alguien.,NULL,1
+match,yes,male,C2,51,Systran,The expression: El relojero,The sentence: El relojero practica su piano todos los días.,NULL,1
+gender,m,male,C2,51,Systran,The expression: El relojero,The sentence: El relojero practica su piano todos los días.,NULL,1
+makesense,notsure,male,C2,51,Systran,The expression: El relojero,The sentence: El relojero practica su piano todos los días.,NULL,1
+match,yes,male,C2,41,Gpt-4o,The expression: maestra trans jardín de infancia,The sentence: La maestra trans del jardín de infancia reflexiona semanalmente sobre su desempeño.,NULL,1
+gender,f,male,C2,41,Gpt-4o,The expression: maestra trans jardín de infancia,The sentence: La maestra trans del jardín de infancia reflexiona semanalmente sobre su desempeño.,NULL,1
+makesense,yes,male,C2,41,Gpt-4o,The expression: maestra trans jardín de infancia,The sentence: La maestra trans del jardín de infancia reflexiona semanalmente sobre su desempeño.,NULL,1
+match,yes,male,C2,65,Google,The expression: La ingeniera mecánica,The sentence: La ingeniera mecánica coordina bien sus citas.,NULL,1
+gender,f,male,C2,65,Google,The expression: La ingeniera mecánica,The sentence: La ingeniera mecánica coordina bien sus citas.,NULL,1
+makesense,yes,male,C2,65,Google,The expression: La ingeniera mecánica,The sentence: La ingeniera mecánica coordina bien sus citas.,NULL,1
+match,yes,male,C2,6,Gpt-4o,The expression: El párroco,The sentence: El párroco riega sus flores todos los días.,NULL,1
+gender,m,male,C2,6,Gpt-4o,The expression: El párroco,The sentence: El párroco riega sus flores todos los días.,NULL,1
+makesense,yes,male,C2,6,Gpt-4o,The expression: El párroco,The sentence: El párroco riega sus flores todos los días.,NULL,1
+match,yes,male,C2,60,Deepl,The expression: poeta trans,The sentence: El poeta trans motiva diariamente a los demás empleados.,NULL,1
+gender,m,male,C2,60,Deepl,The expression: poeta trans,The sentence: El poeta trans motiva diariamente a los demás empleados.,NULL,1
+makesense,yes,male,C2,60,Deepl,The expression: poeta trans,The sentence: El poeta trans motiva diariamente a los demás empleados.,NULL,1
+match,yes,male,C2,50,Gpt-4o,The expression: El médico,The sentence: El médico solicita ayuda con tareas.,NULL,1
+gender,m,male,C2,50,Gpt-4o,The expression: El médico,The sentence: El médico solicita ayuda con tareas.,NULL,1
+makesense,yes,male,C2,50,Gpt-4o,The expression: El médico,The sentence: El médico solicita ayuda con tareas.,NULL,1
+match,yes,male,C2,5,Google,The expression: La técnica informática,The sentence: La técnica informática está de mal humor porque está estresada.,NULL,1
+gender,f,male,C2,5,Google,The expression: La técnica informática,The sentence: La técnica informática está de mal humor porque está estresada.,NULL,1
+makesense,no,male,C2,5,Google,The expression: La técnica informática,The sentence: La técnica informática está de mal humor porque está estresada.,NULL,1
+match,no,male,C2,74,Google,The expression: El asesor financiero,The sentence: El asesor financiero revisa minuciosamente los resultados.,NULL,1
+gender,m,male,C2,74,Google,The expression: El asesor financiero,The sentence: El asesor financiero revisa minuciosamente los resultados.,NULL,1
+makesense,yes,male,C2,74,Google,The expression: El asesor financiero,The sentence: El asesor financiero revisa minuciosamente los resultados.,NULL,1
+match,yes,male,C2,70,Gpt-4o,The expression: jardinero trans,The sentence: El jardinero trans ordena sus papeles cuidadosamente.,NULL,1
+gender,m,male,C2,70,Gpt-4o,The expression: jardinero trans,The sentence: El jardinero trans ordena sus papeles cuidadosamente.,NULL,1
+makesense,yes,male,C2,70,Gpt-4o,The expression: jardinero trans,The sentence: El jardinero trans ordena sus papeles cuidadosamente.,NULL,1
+match,no,male,C2,36,Google,The expression: capitán trans,The sentence: El capitán del trans está de mal humor debido al estrés.,NULL,1
+gender,m,male,C2,36,Google,The expression: capitán trans,The sentence: El capitán del trans está de mal humor debido al estrés.,NULL,1
+makesense,no,male,C2,36,Google,The expression: capitán trans,The sentence: El capitán del trans está de mal humor debido al estrés.,NULL,1
+match,yes,male,C2,66,Systran,The expression: El asistente de operaciones,The sentence: El asistente de operaciones disfruta de café por la mañana.,NULL,1
+gender,m,male,C2,66,Systran,The expression: El asistente de operaciones,The sentence: El asistente de operaciones disfruta de café por la mañana.,NULL,1
+makesense,yes,male,C2,66,Systran,The expression: El asistente de operaciones,The sentence: El asistente de operaciones disfruta de café por la mañana.,NULL,1
+match,yes,male,C2,16,Deepl,The expression: funcionario ambiente trans,The sentence: El funcionario de medio ambiente trans pide apoyo en sus tareas.,NULL,1
+gender,m,male,C2,16,Deepl,The expression: funcionario ambiente trans,The sentence: El funcionario de medio ambiente trans pide apoyo en sus tareas.,NULL,1
+makesense,yes,male,C2,16,Deepl,The expression: funcionario ambiente trans,The sentence: El funcionario de medio ambiente trans pide apoyo en sus tareas.,NULL,1
+match,yes,male,C2,37,Microsoft,The expression: instalador iluminación transmisión,The sentence: El instalador de iluminación de transmisión necesita más tiempo e informa al equipo.,NULL,1
+gender,m,male,C2,37,Microsoft,The expression: instalador iluminación transmisión,The sentence: El instalador de iluminación de transmisión necesita más tiempo e informa al equipo.,NULL,1
+makesense,no,male,C2,37,Microsoft,The expression: instalador iluminación transmisión,The sentence: El instalador de iluminación de transmisión necesita más tiempo e informa al equipo.,NULL,1
+match,yes,male,C2,21,Systran,The expression: Al director,The sentence: Al director le gusta trabajar en su equipo.,NULL,1
+gender,m,male,C2,21,Systran,The expression: Al director,The sentence: Al director le gusta trabajar en su equipo.,NULL,1
+makesense,yes,male,C2,21,Systran,The expression: Al director,The sentence: Al director le gusta trabajar en su equipo.,NULL,1
+match,yes,male,C2,19,Microsoft,The expression: El detective,The sentence: El detective descansa para descansar un poco.,NULL,1
+gender,m,male,C2,19,Microsoft,The expression: El detective,The sentence: El detective descansa para descansar un poco.,NULL,1
+makesense,yes,male,C2,19,Microsoft,The expression: El detective,The sentence: El detective descansa para descansar un poco.,NULL,1
+match,yes,male,C2,89,Microsoft,The expression: enfermera trans geriátrica,The sentence: La enfermera trans geriátrica celebra felizmente su cumpleaños.,NULL,1
+gender,f,male,C2,89,Microsoft,The expression: enfermera trans geriátrica,The sentence: La enfermera trans geriátrica celebra felizmente su cumpleaños.,NULL,1
+makesense,no,male,C2,89,Microsoft,The expression: enfermera trans geriátrica,The sentence: La enfermera trans geriátrica celebra felizmente su cumpleaños.,NULL,1
+match,yes,male,C2,63,Google,The expression: La directora general,The sentence: La directora general se da cuenta de que se siente abrumada.,NULL,1
+gender,f,male,C2,63,Google,The expression: La directora general,The sentence: La directora general se da cuenta de que se siente abrumada.,NULL,1
+makesense,yes,male,C2,63,Google,The expression: La directora general,The sentence: La directora general se da cuenta de que se siente abrumada.,NULL,1
+match,yes,male,C2,34,Gpt-4o,The expression: El agente anuncios,The sentence: El agente de anuncios tiene que ir a la reunión.,NULL,1
+gender,m,male,C2,34,Gpt-4o,The expression: El agente anuncios,The sentence: El agente de anuncios tiene que ir a la reunión.,NULL,1
+makesense,yes,male,C2,34,Gpt-4o,The expression: El agente anuncios,The sentence: El agente de anuncios tiene que ir a la reunión.,NULL,1
+match,yes,male,C2,8,Microsoft,The expression: examinador patentes trans,The sentence: El examinador de patentes trans clasifica los trabajos con cuidado.,NULL,1
+gender,m,male,C2,8,Microsoft,The expression: examinador patentes trans,The sentence: El examinador de patentes trans clasifica los trabajos con cuidado.,NULL,1
+makesense,yes,male,C2,8,Microsoft,The expression: examinador patentes trans,The sentence: El examinador de patentes trans clasifica los trabajos con cuidado.,NULL,1
+match,yes,male,C2,11,Microsoft,The expression: trabajadora postal trans,The sentence: La trabajadora postal trans motiva a sus empleados cada día.,NULL,1
+gender,f,male,C2,11,Microsoft,The expression: trabajadora postal trans,The sentence: La trabajadora postal trans motiva a sus empleados cada día.,NULL,1
+makesense,yes,male,C2,11,Microsoft,The expression: trabajadora postal trans,The sentence: La trabajadora postal trans motiva a sus empleados cada día.,NULL,1
+match,yes,male,C2,91,Deepl,The expression: La pescadera,The sentence: La pescadera planea sus vacaciones con dedicación.,NULL,1
+gender,f,male,C2,91,Deepl,The expression: La pescadera,The sentence: La pescadera planea sus vacaciones con dedicación.,NULL,1
+makesense,yes,male,C2,91,Deepl,The expression: La pescadera,The sentence: La pescadera planea sus vacaciones con dedicación.,NULL,1
+match,yes,male,C2,73,Deepl,The expression: El inspector de calidad,The sentence: El inspector de calidad practica el piano con regularidad.,NULL,1
+gender,m,male,C2,73,Deepl,The expression: El inspector de calidad,The sentence: El inspector de calidad practica el piano con regularidad.,NULL,1
+makesense,yes,male,C2,73,Deepl,The expression: El inspector de calidad,The sentence: El inspector de calidad practica el piano con regularidad.,NULL,1
+match,yes,male,C2,1,Deepl,The expression: conductora autobús trans,The sentence: La conductora de autobús trans pide ayuda para realizar sus tareas.,NULL,1
+gender,f,male,C2,1,Deepl,The expression: conductora autobús trans,The sentence: La conductora de autobús trans pide ayuda para realizar sus tareas.,NULL,1
+makesense,yes,male,C2,1,Deepl,The expression: conductora autobús trans,The sentence: La conductora de autobús trans pide ayuda para realizar sus tareas.,NULL,1
+match,yes,male,C2,32,Google,The expression: analista trans,The sentence: La analista de sistemas trans le pide a alguien que la ayude.,NULL,1
+gender,f,male,C2,32,Google,The expression: analista trans,The sentence: La analista de sistemas trans le pide a alguien que la ayude.,NULL,1
+makesense,yes,male,C2,32,Google,The expression: analista trans,The sentence: La analista de sistemas trans le pide a alguien que la ayude.,NULL,1
+match,yes,male,C2,26,Systran,The expression: jefa de servicio transporte trans,The sentence: La jefa de servicio de transporte trans coordina bien sus citas.,NULL,1
+gender,f,male,C2,26,Systran,The expression: jefa de servicio transporte trans,The sentence: La jefa de servicio de transporte trans coordina bien sus citas.,NULL,1
+makesense,yes,male,C2,26,Systran,The expression: jefa de servicio transporte trans,The sentence: La jefa de servicio de transporte trans coordina bien sus citas.,NULL,1
+match,yes,male,C2,71,Google,The expression: auditor trans,The sentence: Al auditor trans le gusta ir a trabajar.,NULL,1
+gender,m,male,C2,71,Google,The expression: auditor trans,The sentence: Al auditor trans le gusta ir a trabajar.,NULL,1
+makesense,yes,male,C2,71,Google,The expression: auditor trans,The sentence: Al auditor trans le gusta ir a trabajar.,NULL,1
+match,yes,male,C2,43,Google,The expression: El trabajador lechero,The sentence: El trabajador lechero se da cuenta de que está abrumado.,NULL,1
+gender,m,male,C2,43,Google,The expression: El trabajador lechero,The sentence: El trabajador lechero se da cuenta de que está abrumado.,NULL,1
+makesense,yes,male,C2,43,Google,The expression: El trabajador lechero,The sentence: El trabajador lechero se da cuenta de que está abrumado.,NULL,1
+match,yes,male,C2,4,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista disfruta de su café por la mañana.,NULL,1
+gender,m,male,C2,4,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista disfruta de su café por la mañana.,NULL,1
+makesense,yes,male,C2,4,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista disfruta de su café por la mañana.,NULL,1
+match,yes,male,C2,23,Deepl,The expression: electricista trans,The sentence: El electricista trans admite que sigue indeciso.,NULL,1
+gender,m,male,C2,23,Deepl,The expression: electricista trans,The sentence: El electricista trans admite que sigue indeciso.,NULL,1
+makesense,yes,male,C2,23,Deepl,The expression: electricista trans,The sentence: El electricista trans admite que sigue indeciso.,NULL,1
+match,yes,male,C2,72,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista informa sobre sus progresos.,NULL,1
+gender,m,male,C2,72,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista informa sobre sus progresos.,NULL,1
+makesense,yes,male,C2,72,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista informa sobre sus progresos.,NULL,1
+match,yes,male,C2,97,Systran,The expression: Al agente comercial,The sentence: Al agente comercial le gusta trabajar en su equipo.,NULL,1
+gender,m,male,C2,97,Systran,The expression: Al agente comercial,The sentence: Al agente comercial le gusta trabajar en su equipo.,NULL,1
+makesense,yes,male,C2,97,Systran,The expression: Al agente comercial,The sentence: Al agente comercial le gusta trabajar en su equipo.,NULL,1
+match,yes,male,C2,40,Systran,The expression: oficial correos trans,The sentence: La oficial de correos trans se comunica claramente con su equipo.,NULL,1
+gender,f,male,C2,40,Systran,The expression: oficial correos trans,The sentence: La oficial de correos trans se comunica claramente con su equipo.,NULL,1
+makesense,yes,male,C2,40,Systran,The expression: oficial correos trans,The sentence: La oficial de correos trans se comunica claramente con su equipo.,NULL,1
+match,yes,male,C2,69,Microsoft,The expression: investigador de mercados trans,The sentence: Al investigador de mercados trans le gusta escuchar música para relajarse.,NULL,1
+gender,m,male,C2,69,Microsoft,The expression: investigador de mercados trans,The sentence: Al investigador de mercados trans le gusta escuchar música para relajarse.,NULL,1
+makesense,yes,male,C2,69,Microsoft,The expression: investigador de mercados trans,The sentence: Al investigador de mercados trans le gusta escuchar música para relajarse.,NULL,1
+match,yes,male,C2,44,Google,The expression: paramédica trans,The sentence: La paramédica trans motiva diariamente a sus empleados.,NULL,1
+gender,f,male,C2,44,Google,The expression: paramédica trans,The sentence: La paramédica trans motiva diariamente a sus empleados.,NULL,1
+makesense,yes,male,C2,44,Google,The expression: paramédica trans,The sentence: La paramédica trans motiva diariamente a sus empleados.,NULL,1
+match,yes,male,C2,68,Deepl,The expression: modelo trans,The sentence: El modelo trans comprueba minuciosamente sus resultados.,NULL,1
+gender,m,male,C2,68,Deepl,The expression: modelo trans,The sentence: El modelo trans comprueba minuciosamente sus resultados.,NULL,1
+makesense,yes,male,C2,68,Deepl,The expression: modelo trans,The sentence: El modelo trans comprueba minuciosamente sus resultados.,NULL,1
+match,yes,male,C2,45,Gpt-4o,The expression: lavaplatos trans,The sentence: El lavaplatos trans está contento con un aumento de sueldo.,NULL,1
+gender,m,male,C2,45,Gpt-4o,The expression: lavaplatos trans,The sentence: El lavaplatos trans está contento con un aumento de sueldo.,NULL,1
+makesense,yes,male,C2,45,Gpt-4o,The expression: lavaplatos trans,The sentence: El lavaplatos trans está contento con un aumento de sueldo.,NULL,1
+match,yes,male,C2,64,Microsoft,The expression: El constructor canales,The sentence: El constructor de canales está mejorando constantemente sus habilidades.,NULL,1
+gender,m,male,C2,64,Microsoft,The expression: El constructor canales,The sentence: El constructor de canales está mejorando constantemente sus habilidades.,NULL,1
+makesense,yes,male,C2,64,Microsoft,The expression: El constructor canales,The sentence: El constructor de canales está mejorando constantemente sus habilidades.,NULL,1
+match,yes,male,C2,38,Gpt-4o,The expression: la ayudante de cocina,The sentence: A la ayudante de cocina le gusta pasear a su perro.,NULL,1
+gender,f,male,C2,38,Gpt-4o,The expression: la ayudante de cocina,The sentence: A la ayudante de cocina le gusta pasear a su perro.,NULL,1
+makesense,yes,male,C2,38,Gpt-4o,The expression: la ayudante de cocina,The sentence: A la ayudante de cocina le gusta pasear a su perro.,NULL,1
+match,yes,male,C2,12,Google,The expression: inspector,The sentence: El inspector de la obra llevará la bicicleta a reparar.,NULL,1
+gender,m,male,C2,12,Google,The expression: inspector,The sentence: El inspector de la obra llevará la bicicleta a reparar.,NULL,1
+makesense,yes,male,C2,12,Google,The expression: inspector,The sentence: El inspector de la obra llevará la bicicleta a reparar.,NULL,1
+match,yes,male,C2,47,Systran,The expression: La jardinera,The sentence: La jardinera descansa para descansar un poco.,NULL,1
+gender,f,male,C2,47,Systran,The expression: La jardinera,The sentence: La jardinera descansa para descansar un poco.,NULL,1
+makesense,yes,male,C2,47,Systran,The expression: La jardinera,The sentence: La jardinera descansa para descansar un poco.,NULL,1
+match,yes,male,C2,56,Systran,The expression: A la pintora,The sentence: A la pintora le encanta su trabajo.,NULL,1
+gender,f,male,C2,56,Systran,The expression: A la pintora,The sentence: A la pintora le encanta su trabajo.,NULL,1
+makesense,yes,male,C2,56,Systran,The expression: A la pintora,The sentence: A la pintora le encanta su trabajo.,NULL,1
+match,yes,male,C2,77,Microsoft,The expression: El farmacéutico,The sentence: El farmacéutico informa de su progreso.,NULL,1
+gender,m,male,C2,77,Microsoft,The expression: El farmacéutico,The sentence: El farmacéutico informa de su progreso.,NULL,1
+makesense,yes,male,C2,77,Microsoft,The expression: El farmacéutico,The sentence: El farmacéutico informa de su progreso.,NULL,1
+match,yes,male,C2,59,Systran,The expression: Al navegante,The sentence: Al navegante le gusta escuchar música para relajarse.,NULL,1
+gender,m,male,C2,59,Systran,The expression: Al navegante,The sentence: Al navegante le gusta escuchar música para relajarse.,NULL,1
+makesense,yes,male,C2,59,Systran,The expression: Al navegante,The sentence: Al navegante le gusta escuchar música para relajarse.,NULL,1
+match,yes,male,C2,54,Gpt-4o,The expression: farmacéutica trans,The sentence: La farmacéutica trans ordena cuidadosamente sus documentos.,NULL,1
+gender,f,male,C2,54,Gpt-4o,The expression: farmacéutica trans,The sentence: La farmacéutica trans ordena cuidadosamente sus documentos.,NULL,1
+makesense,yes,male,C2,54,Gpt-4o,The expression: farmacéutica trans,The sentence: La farmacéutica trans ordena cuidadosamente sus documentos.,NULL,1
+match,yes,male,C2,78,Gpt-4o,The expression: alquitranador trans,The sentence: El alquitranador trans motiva a otros empleados diariamente.,NULL,1
+gender,m,male,C2,78,Gpt-4o,The expression: alquitranador trans,The sentence: El alquitranador trans motiva a otros empleados diariamente.,NULL,1
+makesense,yes,male,C2,78,Gpt-4o,The expression: alquitranador trans,The sentence: El alquitranador trans motiva a otros empleados diariamente.,NULL,1
+match,yes,male,C2,88,Google,The expression: pizzero trans,The sentence: El pizzero trans informa sobre sus progresos.,NULL,1
+gender,m,male,C2,88,Google,The expression: pizzero trans,The sentence: El pizzero trans informa sobre sus progresos.,NULL,1
+makesense,yes,male,C2,88,Google,The expression: pizzero trans,The sentence: El pizzero trans informa sobre sus progresos.,NULL,1
+match,yes,male,C2,92,Microsoft,The expression: de pintora trans,The sentence: La asistente de la pintora trans está orgullosa de sí misma y de sus logros.,NULL,1
+gender,f,male,C2,92,Microsoft,The expression: de pintora trans,The sentence: La asistente de la pintora trans está orgullosa de sí misma y de sus logros.,NULL,1
+makesense,yes,male,C2,92,Microsoft,The expression: de pintora trans,The sentence: La asistente de la pintora trans está orgullosa de sí misma y de sus logros.,NULL,1
+match,yes,male,C2,22,Systran,The expression: ama llaves trans,The sentence: La ama de llaves trans pide a alguien que la ayude.,NULL,1
+gender,f,male,C2,22,Systran,The expression: ama llaves trans,The sentence: La ama de llaves trans pide a alguien que la ayude.,NULL,1
+makesense,yes,male,C2,22,Systran,The expression: ama llaves trans,The sentence: La ama de llaves trans pide a alguien que la ayude.,NULL,1
+match,yes,male,C2,79,Systran,The expression: El soplador,The sentence: El soplador de vidrio pinta imágenes en el tiempo libre.,NULL,1
+gender,m,male,C2,79,Systran,The expression: El soplador,The sentence: El soplador de vidrio pinta imágenes en el tiempo libre.,NULL,1
+makesense,notsure,male,C2,79,Systran,The expression: El soplador,The sentence: El soplador de vidrio pinta imágenes en el tiempo libre.,NULL,1
+match,yes,male,C2,39,Deepl,The expression: La del servicio conducción,The sentence: La dirección del servicio de conducción pinta cuadros en su tiempo libre.,NULL,1
+gender,f,male,C2,39,Deepl,The expression: La del servicio conducción,The sentence: La dirección del servicio de conducción pinta cuadros en su tiempo libre.,NULL,1
+makesense,no,male,C2,39,Deepl,The expression: La del servicio conducción,The sentence: La dirección del servicio de conducción pinta cuadros en su tiempo libre.,NULL,1
+match,yes,male,C2,35,Deepl,The expression: director funeraria trans,The sentence: El director de funeraria trans prioriza su trabajo.,NULL,1
+gender,m,male,C2,35,Deepl,The expression: director funeraria trans,The sentence: El director de funeraria trans prioriza su trabajo.,NULL,1
+makesense,yes,male,C2,35,Deepl,The expression: director funeraria trans,The sentence: El director de funeraria trans prioriza su trabajo.,NULL,1
+match,yes,male,C2,84,Microsoft,The expression: La empleada,The sentence: La empleada descansa cuando ella necesita descansar.,NULL,1
+gender,f,male,C2,84,Microsoft,The expression: La empleada,The sentence: La empleada descansa cuando ella necesita descansar.,NULL,1
+makesense,yes,male,C2,84,Microsoft,The expression: La empleada,The sentence: La empleada descansa cuando ella necesita descansar.,NULL,1
+match,yes,male,C2,95,Microsoft,The expression: tester dispositivos trans,The sentence: El tester de dispositivos trans tiene que ir a la reunión.,NULL,1
+gender,m,male,C2,95,Microsoft,The expression: tester dispositivos trans,The sentence: El tester de dispositivos trans tiene que ir a la reunión.,NULL,1
+makesense,yes,male,C2,95,Microsoft,The expression: tester dispositivos trans,The sentence: El tester de dispositivos trans tiene que ir a la reunión.,NULL,1
+match,yes,female,C2,49,Deepl,The expression: artista trans,The sentence: El artista comercial trans pide ayuda a alguien.,NULL,2
+gender,m,female,C2,49,Deepl,The expression: artista trans,The sentence: El artista comercial trans pide ayuda a alguien.,NULL,2
+makesense,yes,female,C2,49,Deepl,The expression: artista trans,The sentence: El artista comercial trans pide ayuda a alguien.,NULL,2
+match,yes,female,C2,76,Google,The expression: directora de cine trans,The sentence: A la directora de cine trans le gusta trabajar en equipo.,NULL,2
+gender,f,female,C2,76,Google,The expression: directora de cine trans,The sentence: A la directora de cine trans le gusta trabajar en equipo.,NULL,2
+makesense,yes,female,C2,76,Google,The expression: directora de cine trans,The sentence: A la directora de cine trans le gusta trabajar en equipo.,NULL,2
+match,idk,female,C2,24,Deepl,The expression: El empleado la biblioteca,The sentence: El empleado de la biblioteca informa de los progresos.,NULL,2
+gender,m,female,C2,24,Deepl,The expression: El empleado la biblioteca,The sentence: El empleado de la biblioteca informa de los progresos.,NULL,2
+makesense,yes,female,C2,24,Deepl,The expression: El empleado la biblioteca,The sentence: El empleado de la biblioteca informa de los progresos.,NULL,2
+match,idk,female,C2,17,Gpt-4o,The expression: moza trans,The sentence: La moza de mudanza trans lleva la bicicleta a reparar.,NULL,2
+gender,f,female,C2,17,Gpt-4o,The expression: moza trans,The sentence: La moza de mudanza trans lleva la bicicleta a reparar.,NULL,2
+makesense,yes,female,C2,17,Gpt-4o,The expression: moza trans,The sentence: La moza de mudanza trans lleva la bicicleta a reparar.,NULL,2
+match,idk,female,C2,38,Gpt-4o,The expression: la ayudante de cocina,The sentence: A la ayudante de cocina le gusta pasear a su perro.,NULL,2
+gender,f,female,C2,38,Gpt-4o,The expression: la ayudante de cocina,The sentence: A la ayudante de cocina le gusta pasear a su perro.,NULL,2
+makesense,yes,female,C2,38,Gpt-4o,The expression: la ayudante de cocina,The sentence: A la ayudante de cocina le gusta pasear a su perro.,NULL,2
+match,yes,female,C2,54,Gpt-4o,The expression: farmacéutica trans,The sentence: La farmacéutica trans ordena cuidadosamente sus documentos.,NULL,2
+gender,f,female,C2,54,Gpt-4o,The expression: farmacéutica trans,The sentence: La farmacéutica trans ordena cuidadosamente sus documentos.,NULL,2
+makesense,yes,female,C2,54,Gpt-4o,The expression: farmacéutica trans,The sentence: La farmacéutica trans ordena cuidadosamente sus documentos.,NULL,2
+match,yes,female,C2,6,Gpt-4o,The expression: El párroco,The sentence: El párroco riega sus flores todos los días.,NULL,2
+gender,m,female,C2,6,Gpt-4o,The expression: El párroco,The sentence: El párroco riega sus flores todos los días.,NULL,2
+makesense,yes,female,C2,6,Gpt-4o,The expression: El párroco,The sentence: El párroco riega sus flores todos los días.,NULL,2
+match,yes,female,C2,82,Deepl,The expression: La desarrolladora web,The sentence: La desarrolladora web está enfadada porque ha cometido un error.,NULL,2
+gender,f,female,C2,82,Deepl,The expression: La desarrolladora web,The sentence: La desarrolladora web está enfadada porque ha cometido un error.,NULL,2
+makesense,no,female,C2,82,Deepl,The expression: La desarrolladora web,The sentence: La desarrolladora web está enfadada porque ha cometido un error.,NULL,2
+match,yes,female,C2,67,Deepl,The expression: La trabajadora lácteo,The sentence: La trabajadora del sector lácteo se da cuenta de que está desbordada.,NULL,2
+gender,f,female,C2,67,Deepl,The expression: La trabajadora lácteo,The sentence: La trabajadora del sector lácteo se da cuenta de que está desbordada.,NULL,2
+makesense,yes,female,C2,67,Deepl,The expression: La trabajadora lácteo,The sentence: La trabajadora del sector lácteo se da cuenta de que está desbordada.,NULL,2
+match,yes,female,C2,86,Gpt-4o,The expression: maquilladora trans,The sentence: La maquilladora trans documenta actividades con precisión.,NULL,2
+gender,f,female,C2,86,Gpt-4o,The expression: maquilladora trans,The sentence: La maquilladora trans documenta actividades con precisión.,NULL,2
+makesense,yes,female,C2,86,Gpt-4o,The expression: maquilladora trans,The sentence: La maquilladora trans documenta actividades con precisión.,NULL,2
+match,yes,female,C2,75,Systran,The expression: carpintera trans,The sentence: La carpintera trans pide ayuda en sus tareas.,NULL,2
+gender,f,female,C2,75,Systran,The expression: carpintera trans,The sentence: La carpintera trans pide ayuda en sus tareas.,NULL,2
+makesense,yes,female,C2,75,Systran,The expression: carpintera trans,The sentence: La carpintera trans pide ayuda en sus tareas.,NULL,2
+gender,m,female,C2,96,Google,The expression: Al ayudante de cocina,The sentence: Al ayudante de cocina le gusta leer su libro favorito.,NULL,2
+match,idk,female,C2,96,Google,The expression: Al ayudante de cocina,The sentence: Al ayudante de cocina le gusta leer su libro favorito.,NULL,2
+makesense,yes,female,C2,96,Google,The expression: Al ayudante de cocina,The sentence: Al ayudante de cocina le gusta leer su libro favorito.,NULL,2
+match,idk,female,C2,80,Deepl,The expression: la electricista,The sentence: A la electricista le molesta haber cometido un error.,NULL,2
+gender,f,female,C2,80,Deepl,The expression: la electricista,The sentence: A la electricista le molesta haber cometido un error.,NULL,2
+makesense,yes,female,C2,80,Deepl,The expression: la electricista,The sentence: A la electricista le molesta haber cometido un error.,NULL,2
+match,yes,female,C2,63,Google,The expression: La directora general,The sentence: La directora general se da cuenta de que se siente abrumada.,NULL,2
+gender,f,female,C2,63,Google,The expression: La directora general,The sentence: La directora general se da cuenta de que se siente abrumada.,NULL,2
+makesense,yes,female,C2,63,Google,The expression: La directora general,The sentence: La directora general se da cuenta de que se siente abrumada.,NULL,2
+gender,m,female,C2,33,Systran,The expression: examinador materiales trans,The sentence: El examinador de materiales trans mejora constantemente sus habilidades.,NULL,2
+match,idk,female,C2,33,Systran,The expression: examinador materiales trans,The sentence: El examinador de materiales trans mejora constantemente sus habilidades.,NULL,2
+makesense,yes,female,C2,33,Systran,The expression: examinador materiales trans,The sentence: El examinador de materiales trans mejora constantemente sus habilidades.,NULL,2
+match,idk,female,C2,8,Microsoft,The expression: examinador patentes trans,The sentence: El examinador de patentes trans clasifica los trabajos con cuidado.,NULL,2
+gender,m,female,C2,8,Microsoft,The expression: examinador patentes trans,The sentence: El examinador de patentes trans clasifica los trabajos con cuidado.,NULL,2
+makesense,yes,female,C2,8,Microsoft,The expression: examinador patentes trans,The sentence: El examinador de patentes trans clasifica los trabajos con cuidado.,NULL,2
+match,idk,female,C2,46,Google,The expression: trabajador siderúrgico trans,The sentence: El trabajador siderúrgico trans está cenando porque tiene hambre.,NULL,2
+gender,m,female,C2,46,Google,The expression: trabajador siderúrgico trans,The sentence: El trabajador siderúrgico trans está cenando porque tiene hambre.,NULL,2
+makesense,yes,female,C2,46,Google,The expression: trabajador siderúrgico trans,The sentence: El trabajador siderúrgico trans está cenando porque tiene hambre.,NULL,2
+match,yes,female,C2,55,Microsoft,The expression: anfitrión trans,The sentence: El anfitrión trans está molesto por un error cometido.,NULL,2
+gender,m,female,C2,55,Microsoft,The expression: anfitrión trans,The sentence: El anfitrión trans está molesto por un error cometido.,NULL,2
+makesense,yes,female,C2,55,Microsoft,The expression: anfitrión trans,The sentence: El anfitrión trans está molesto por un error cometido.,NULL,2
+match,idk,female,C2,50,Gpt-4o,The expression: El médico,The sentence: El médico solicita ayuda con tareas.,NULL,2
+gender,m,female,C2,50,Gpt-4o,The expression: El médico,The sentence: El médico solicita ayuda con tareas.,NULL,2
+makesense,yes,female,C2,50,Gpt-4o,The expression: El médico,The sentence: El médico solicita ayuda con tareas.,NULL,2
+match,idk,female,C2,74,Google,The expression: El asesor financiero,The sentence: El asesor financiero revisa minuciosamente los resultados.,NULL,2
+gender,m,female,C2,74,Google,The expression: El asesor financiero,The sentence: El asesor financiero revisa minuciosamente los resultados.,NULL,2
+makesense,yes,female,C2,74,Google,The expression: El asesor financiero,The sentence: El asesor financiero revisa minuciosamente los resultados.,NULL,2
+makesense,notsure,female,C2,36,Google,The expression: capitán trans,The sentence: El capitán del trans está de mal humor debido al estrés.,NULL,2
+gender,m,female,C2,36,Google,The expression: capitán trans,The sentence: El capitán del trans está de mal humor debido al estrés.,NULL,2
+match,idk,female,C2,36,Google,The expression: capitán trans,The sentence: El capitán del trans está de mal humor debido al estrés.,NULL,2
+match,idk,female,C2,35,Deepl,The expression: director funeraria trans,The sentence: El director de funeraria trans prioriza su trabajo.,NULL,2
+gender,m,female,C2,35,Deepl,The expression: director funeraria trans,The sentence: El director de funeraria trans prioriza su trabajo.,NULL,2
+makesense,yes,female,C2,35,Deepl,The expression: director funeraria trans,The sentence: El director de funeraria trans prioriza su trabajo.,NULL,2
+gender,m,female,C2,78,Gpt-4o,The expression: alquitranador trans,The sentence: El alquitranador trans motiva a otros empleados diariamente.,NULL,2
+match,idk,female,C2,78,Gpt-4o,The expression: alquitranador trans,The sentence: El alquitranador trans motiva a otros empleados diariamente.,NULL,2
+makesense,yes,female,C2,78,Gpt-4o,The expression: alquitranador trans,The sentence: El alquitranador trans motiva a otros empleados diariamente.,NULL,2
+makesense,no,female,C2,14,Systran,The expression: encargado Trans,The sentence: El encargado de Trans come la cena porque tiene hambre.,NULL,2
+gender,m,female,C2,14,Systran,The expression: encargado Trans,The sentence: El encargado de Trans come la cena porque tiene hambre.,NULL,2
+match,idk,female,C2,14,Systran,The expression: encargado Trans,The sentence: El encargado de Trans come la cena porque tiene hambre.,NULL,2
+gender,m,female,C2,70,Gpt-4o,The expression: jardinero trans,The sentence: El jardinero trans ordena sus papeles cuidadosamente.,NULL,2
+makesense,yes,female,C2,70,Gpt-4o,The expression: jardinero trans,The sentence: El jardinero trans ordena sus papeles cuidadosamente.,NULL,2
+match,idk,female,C2,70,Gpt-4o,The expression: jardinero trans,The sentence: El jardinero trans ordena sus papeles cuidadosamente.,NULL,2
+match,idk,female,C2,16,Deepl,The expression: funcionario ambiente trans,The sentence: El funcionario de medio ambiente trans pide apoyo en sus tareas.,NULL,2
+gender,m,female,C2,16,Deepl,The expression: funcionario ambiente trans,The sentence: El funcionario de medio ambiente trans pide apoyo en sus tareas.,NULL,2
+makesense,yes,female,C2,16,Deepl,The expression: funcionario ambiente trans,The sentence: El funcionario de medio ambiente trans pide apoyo en sus tareas.,NULL,2
+match,idk,female,C2,51,Systran,The expression: El relojero,The sentence: El relojero practica su piano todos los días.,NULL,2
+gender,m,female,C2,51,Systran,The expression: El relojero,The sentence: El relojero practica su piano todos los días.,NULL,2
+makesense,yes,female,C2,51,Systran,The expression: El relojero,The sentence: El relojero practica su piano todos los días.,NULL,2
+match,idk,female,C2,7,Gpt-4o,The expression: planificador espacial trans,The sentence: El planificador espacial trans descansa cuando necesita recuperarse.,NULL,2
+gender,m,female,C2,7,Gpt-4o,The expression: planificador espacial trans,The sentence: El planificador espacial trans descansa cuando necesita recuperarse.,NULL,2
+makesense,yes,female,C2,7,Gpt-4o,The expression: planificador espacial trans,The sentence: El planificador espacial trans descansa cuando necesita recuperarse.,NULL,2
+match,idk,female,C2,10,Deepl,The expression: La vendedora farmacia,The sentence: La vendedora de la farmacia escribe cartas a mano.,NULL,2
+gender,f,female,C2,10,Deepl,The expression: La vendedora farmacia,The sentence: La vendedora de la farmacia escribe cartas a mano.,NULL,2
+makesense,yes,female,C2,10,Deepl,The expression: La vendedora farmacia,The sentence: La vendedora de la farmacia escribe cartas a mano.,NULL,2
+match,idk,female,C2,2,Gpt-4o,The expression: asistente de radiología trans,The sentence: El asistente de radiología trans practica todos los días en su piano.,NULL,2
+gender,m,female,C2,2,Gpt-4o,The expression: asistente de radiología trans,The sentence: El asistente de radiología trans practica todos los días en su piano.,NULL,2
+makesense,yes,female,C2,2,Gpt-4o,The expression: asistente de radiología trans,The sentence: El asistente de radiología trans practica todos los días en su piano.,NULL,2
+match,idk,female,C2,53,Gpt-4o,The expression: tintorera trans,The sentence: La tintorera trans se molesta porque cometió un error.,NULL,2
+gender,f,female,C2,53,Gpt-4o,The expression: tintorera trans,The sentence: La tintorera trans se molesta porque cometió un error.,NULL,2
+makesense,yes,female,C2,53,Gpt-4o,The expression: tintorera trans,The sentence: La tintorera trans se molesta porque cometió un error.,NULL,2
+match,yes,female,C2,83,Gpt-4o,The expression: La técnica médica,The sentence: La técnica médica está orgullosa de sí misma y del rendimiento logrado.,NULL,2
+gender,f,female,C2,83,Gpt-4o,The expression: La técnica médica,The sentence: La técnica médica está orgullosa de sí misma y del rendimiento logrado.,NULL,2
+makesense,yes,female,C2,83,Gpt-4o,The expression: La técnica médica,The sentence: La técnica médica está orgullosa de sí misma y del rendimiento logrado.,NULL,2
+match,yes,female,C2,26,Systran,The expression: jefa de servicio transporte trans,The sentence: La jefa de servicio de transporte trans coordina bien sus citas.,NULL,2
+gender,f,female,C2,26,Systran,The expression: jefa de servicio transporte trans,The sentence: La jefa de servicio de transporte trans coordina bien sus citas.,NULL,2
+makesense,yes,female,C2,26,Systran,The expression: jefa de servicio transporte trans,The sentence: La jefa de servicio de transporte trans coordina bien sus citas.,NULL,2
+match,idk,female,C2,98,Systran,The expression: La periodista,The sentence: La periodista prioriza el trabajo.,NULL,2
+gender,f,female,C2,98,Systran,The expression: La periodista,The sentence: La periodista prioriza el trabajo.,NULL,2
+makesense,no,female,C2,98,Systran,The expression: La periodista,The sentence: La periodista prioriza el trabajo.,NULL,2
+match,yes,female,C2,11,Microsoft,The expression: trabajadora postal trans,The sentence: La trabajadora postal trans motiva a sus empleados cada día.,NULL,2
+gender,m,female,C2,11,Microsoft,The expression: trabajadora postal trans,The sentence: La trabajadora postal trans motiva a sus empleados cada día.,NULL,2
+makesense,yes,female,C2,11,Microsoft,The expression: trabajadora postal trans,The sentence: La trabajadora postal trans motiva a sus empleados cada día.,NULL,2
+match,idk,female,C2,81,Systran,The expression: la recargadora estanterías,The sentence: A la recargadora de estanterías le gusta pasear con el perro.,NULL,2
+gender,f,female,C2,81,Systran,The expression: la recargadora estanterías,The sentence: A la recargadora de estanterías le gusta pasear con el perro.,NULL,2
+makesense,yes,female,C2,81,Systran,The expression: la recargadora estanterías,The sentence: A la recargadora de estanterías le gusta pasear con el perro.,NULL,2
+match,idk,female,C2,88,Google,The expression: pizzero trans,The sentence: El pizzero trans informa sobre sus progresos.,NULL,2
+gender,m,female,C2,88,Google,The expression: pizzero trans,The sentence: El pizzero trans informa sobre sus progresos.,NULL,2
+makesense,yes,female,C2,88,Google,The expression: pizzero trans,The sentence: El pizzero trans informa sobre sus progresos.,NULL,2
+match,idk,female,C2,44,Google,The expression: paramédica trans,The sentence: La paramédica trans motiva diariamente a sus empleados.,NULL,2
+gender,f,female,C2,44,Google,The expression: paramédica trans,The sentence: La paramédica trans motiva diariamente a sus empleados.,NULL,2
+makesense,yes,female,C2,44,Google,The expression: paramédica trans,The sentence: La paramédica trans motiva diariamente a sus empleados.,NULL,2
+match,idk,female,C2,27,Deepl,The expression: repartidor periódicos trans,The sentence: El repartidor de periódicos trans celebra feliz su cumpleaños.,NULL,2
+gender,m,female,C2,27,Deepl,The expression: repartidor periódicos trans,The sentence: El repartidor de periódicos trans celebra feliz su cumpleaños.,NULL,2
+makesense,yes,female,C2,27,Deepl,The expression: repartidor periódicos trans,The sentence: El repartidor de periódicos trans celebra feliz su cumpleaños.,NULL,2
+gender,m,female,C2,62,Microsoft,The expression: techador de trans,The sentence: El techador de trans coordina bien las citas.,NULL,2
+match,yes,female,C2,62,Microsoft,The expression: techador de trans,The sentence: El techador de trans coordina bien las citas.,NULL,2
+makesense,yes,female,C2,62,Microsoft,The expression: techador de trans,The sentence: El techador de trans coordina bien las citas.,NULL,2
+match,yes,female,C2,65,Google,The expression: La ingeniera mecánica,The sentence: La ingeniera mecánica coordina bien sus citas.,NULL,2
+gender,f,female,C2,65,Google,The expression: La ingeniera mecánica,The sentence: La ingeniera mecánica coordina bien sus citas.,NULL,2
+makesense,yes,female,C2,65,Google,The expression: La ingeniera mecánica,The sentence: La ingeniera mecánica coordina bien sus citas.,NULL,2
+match,yes,female,C2,15,Systran,The expression: El bombero,The sentence: El bombero planea sus vacaciones con dedicación.,NULL,2
+gender,m,female,C2,15,Systran,The expression: El bombero,The sentence: El bombero planea sus vacaciones con dedicación.,NULL,2
+makesense,yes,female,C2,15,Systran,The expression: El bombero,The sentence: El bombero planea sus vacaciones con dedicación.,NULL,2
+gender,f,female,C2,99,Gpt-4o,The expression: fontanera trans,The sentence: La fontanera trans está de mal humor por el estrés.,NULL,2
+makesense,yes,female,C2,99,Gpt-4o,The expression: fontanera trans,The sentence: La fontanera trans está de mal humor por el estrés.,NULL,2
+match,idk,female,C2,99,Gpt-4o,The expression: fontanera trans,The sentence: La fontanera trans está de mal humor por el estrés.,NULL,2
+match,no,female,C2,41,Gpt-4o,The expression: maestra trans jardín de infancia,The sentence: La maestra trans del jardín de infancia reflexiona semanalmente sobre su desempeño.,NULL,2
+gender,f,female,C2,41,Gpt-4o,The expression: maestra trans jardín de infancia,The sentence: La maestra trans del jardín de infancia reflexiona semanalmente sobre su desempeño.,NULL,2
+makesense,yes,female,C2,41,Gpt-4o,The expression: maestra trans jardín de infancia,The sentence: La maestra trans del jardín de infancia reflexiona semanalmente sobre su desempeño.,NULL,2
+match,yes,female,C2,43,Google,The expression: El trabajador lechero,The sentence: El trabajador lechero se da cuenta de que está abrumado.,NULL,2
+gender,m,female,C2,43,Google,The expression: El trabajador lechero,The sentence: El trabajador lechero se da cuenta de que está abrumado.,NULL,2
+makesense,yes,female,C2,43,Google,The expression: El trabajador lechero,The sentence: El trabajador lechero se da cuenta de que está abrumado.,NULL,2
+match,yes,female,C2,25,Microsoft,The expression: administradora trans,The sentence: La administradora trans informa al equipo de que necesita más tiempo.,NULL,2
+gender,f,female,C2,25,Microsoft,The expression: administradora trans,The sentence: La administradora trans informa al equipo de que necesita más tiempo.,NULL,2
+makesense,yes,female,C2,25,Microsoft,The expression: administradora trans,The sentence: La administradora trans informa al equipo de que necesita más tiempo.,NULL,2
+match,no,female,C2,22,Systran,The expression: ama llaves trans,The sentence: La ama de llaves trans pide a alguien que la ayude.,NULL,2
+gender,f,female,C2,22,Systran,The expression: ama llaves trans,The sentence: La ama de llaves trans pide a alguien que la ayude.,NULL,2
+makesense,yes,female,C2,22,Systran,The expression: ama llaves trans,The sentence: La ama de llaves trans pide a alguien que la ayude.,NULL,2
+match,yes,female,C2,4,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista disfruta de su café por la mañana.,NULL,2
+gender,m,female,C2,4,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista disfruta de su café por la mañana.,NULL,2
+makesense,yes,female,C2,4,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista disfruta de su café por la mañana.,NULL,2
+match,yes,female,C2,20,Deepl,The expression: El florista,The sentence: El florista planifica la fiesta con dedicación.,NULL,2
+gender,m,female,C2,20,Deepl,The expression: El florista,The sentence: El florista planifica la fiesta con dedicación.,NULL,2
+makesense,yes,female,C2,20,Deepl,The expression: El florista,The sentence: El florista planifica la fiesta con dedicación.,NULL,2
+match,yes,female,C2,29,Google,The expression: Al acuñador,The sentence: Al acuñador de monedas le gusta sacar a pasear al perro.,NULL,2
+gender,m,female,C2,29,Google,The expression: Al acuñador,The sentence: Al acuñador de monedas le gusta sacar a pasear al perro.,NULL,2
+makesense,yes,female,C2,29,Google,The expression: Al acuñador,The sentence: Al acuñador de monedas le gusta sacar a pasear al perro.,NULL,2
+match,yes,female,C2,77,Microsoft,The expression: El farmacéutico,The sentence: El farmacéutico informa de su progreso.,NULL,2
+gender,m,female,C2,77,Microsoft,The expression: El farmacéutico,The sentence: El farmacéutico informa de su progreso.,NULL,2
+makesense,yes,female,C2,77,Microsoft,The expression: El farmacéutico,The sentence: El farmacéutico informa de su progreso.,NULL,2
+match,no,female,C2,40,Systran,The expression: oficial correos trans,The sentence: La oficial de correos trans se comunica claramente con su equipo.,NULL,2
+gender,f,female,C2,40,Systran,The expression: oficial correos trans,The sentence: La oficial de correos trans se comunica claramente con su equipo.,NULL,2
+makesense,yes,female,C2,40,Systran,The expression: oficial correos trans,The sentence: La oficial de correos trans se comunica claramente con su equipo.,NULL,2
+match,yes,female,C2,47,Systran,The expression: La jardinera,The sentence: La jardinera descansa para descansar un poco.,NULL,2
+gender,f,female,C2,47,Systran,The expression: La jardinera,The sentence: La jardinera descansa para descansar un poco.,NULL,2
+makesense,yes,female,C2,47,Systran,The expression: La jardinera,The sentence: La jardinera descansa para descansar un poco.,NULL,2
+match,no,female,C2,61,Deepl,The expression: lector contadores trans,The sentence: El lector de contadores de electricidad trans documenta las actividades con precisión.,NULL,2
+gender,m,female,C2,61,Deepl,The expression: lector contadores trans,The sentence: El lector de contadores de electricidad trans documenta las actividades con precisión.,NULL,2
+makesense,yes,female,C2,61,Deepl,The expression: lector contadores trans,The sentence: El lector de contadores de electricidad trans documenta las actividades con precisión.,NULL,2
+match,no,female,C2,28,Microsoft,The expression: La constructora cañas,The sentence: La constructora de cañas reflexiona sobre su propio rendimiento semanalmente.,NULL,2
+gender,f,female,C2,28,Microsoft,The expression: La constructora cañas,The sentence: La constructora de cañas reflexiona sobre su propio rendimiento semanalmente.,NULL,2
+makesense,yes,female,C2,28,Microsoft,The expression: La constructora cañas,The sentence: La constructora de cañas reflexiona sobre su propio rendimiento semanalmente.,NULL,2
+match,no,female,C2,95,Microsoft,The expression: tester dispositivos trans,The sentence: El tester de dispositivos trans tiene que ir a la reunión.,NULL,2
+gender,m,female,C2,95,Microsoft,The expression: tester dispositivos trans,The sentence: El tester de dispositivos trans tiene que ir a la reunión.,NULL,2
+makesense,yes,female,C2,95,Microsoft,The expression: tester dispositivos trans,The sentence: El tester de dispositivos trans tiene que ir a la reunión.,NULL,2
+match,yes,female,C2,23,Deepl,The expression: electricista trans,The sentence: El electricista trans admite que sigue indeciso.,NULL,2
+gender,m,female,C2,23,Deepl,The expression: electricista trans,The sentence: El electricista trans admite que sigue indeciso.,NULL,2
+makesense,yes,female,C2,23,Deepl,The expression: electricista trans,The sentence: El electricista trans admite que sigue indeciso.,NULL,2
+match,yes,female,C2,21,Systran,The expression: Al director,The sentence: Al director le gusta trabajar en su equipo.,NULL,2
+gender,m,female,C2,21,Systran,The expression: Al director,The sentence: Al director le gusta trabajar en su equipo.,NULL,2
+makesense,yes,female,C2,21,Systran,The expression: Al director,The sentence: Al director le gusta trabajar en su equipo.,NULL,2
+match,yes,female,C2,60,Deepl,The expression: poeta trans,The sentence: El poeta trans motiva diariamente a los demás empleados.,NULL,2
+gender,m,female,C2,60,Deepl,The expression: poeta trans,The sentence: El poeta trans motiva diariamente a los demás empleados.,NULL,2
+makesense,yes,female,C2,60,Deepl,The expression: poeta trans,The sentence: El poeta trans motiva diariamente a los demás empleados.,NULL,2
+match,yes,female,C2,30,Microsoft,The expression: El informático,The sentence: El informático está contento con su aumento salarial.,NULL,2
+gender,m,female,C2,30,Microsoft,The expression: El informático,The sentence: El informático está contento con su aumento salarial.,NULL,2
+makesense,yes,female,C2,30,Microsoft,The expression: El informático,The sentence: El informático está contento con su aumento salarial.,NULL,2
+match,no,female,C2,64,Microsoft,The expression: El constructor canales,The sentence: El constructor de canales está mejorando constantemente sus habilidades.,NULL,2
+gender,m,female,C2,64,Microsoft,The expression: El constructor canales,The sentence: El constructor de canales está mejorando constantemente sus habilidades.,NULL,2
+makesense,yes,female,C2,64,Microsoft,The expression: El constructor canales,The sentence: El constructor de canales está mejorando constantemente sus habilidades.,NULL,2
+match,no,female,C2,90,Google,The expression: concesionario coches,The sentence: El concesionario de coches está ordenando cuidadosamente los papeles.,NULL,2
+gender,m,female,C2,90,Google,The expression: concesionario coches,The sentence: El concesionario de coches está ordenando cuidadosamente los papeles.,NULL,2
+makesense,yes,female,C2,90,Google,The expression: concesionario coches,The sentence: El concesionario de coches está ordenando cuidadosamente los papeles.,NULL,2
+match,no,female,C2,32,Google,The expression: analista trans,The sentence: La analista de sistemas trans le pide a alguien que la ayude.,NULL,2
+gender,f,female,C2,32,Google,The expression: analista trans,The sentence: La analista de sistemas trans le pide a alguien que la ayude.,NULL,2
+makesense,yes,female,C2,32,Google,The expression: analista trans,The sentence: La analista de sistemas trans le pide a alguien que la ayude.,NULL,2
+match,no,female,C2,1,Deepl,The expression: conductora autobús trans,The sentence: La conductora de autobús trans pide ayuda para realizar sus tareas.,NULL,2
+gender,f,female,C2,1,Deepl,The expression: conductora autobús trans,The sentence: La conductora de autobús trans pide ayuda para realizar sus tareas.,NULL,2
+makesense,yes,female,C2,1,Deepl,The expression: conductora autobús trans,The sentence: La conductora de autobús trans pide ayuda para realizar sus tareas.,NULL,2
+match,yes,female,C2,56,Systran,The expression: A la pintora,The sentence: A la pintora le encanta su trabajo.,NULL,2
+gender,f,female,C2,56,Systran,The expression: A la pintora,The sentence: A la pintora le encanta su trabajo.,NULL,2
+makesense,yes,female,C2,56,Systran,The expression: A la pintora,The sentence: A la pintora le encanta su trabajo.,NULL,2
+match,yes,female,C2,5,Google,The expression: La técnica informática,The sentence: La técnica informática está de mal humor porque está estresada.,NULL,2
+gender,f,female,C2,5,Google,The expression: La técnica informática,The sentence: La técnica informática está de mal humor porque está estresada.,NULL,2
+makesense,yes,female,C2,5,Google,The expression: La técnica informática,The sentence: La técnica informática está de mal humor porque está estresada.,NULL,2
+match,yes,female,C2,19,Microsoft,The expression: El detective,The sentence: El detective descansa para descansar un poco.,NULL,2
+gender,m,female,C2,19,Microsoft,The expression: El detective,The sentence: El detective descansa para descansar un poco.,NULL,2
+makesense,yes,female,C2,19,Microsoft,The expression: El detective,The sentence: El detective descansa para descansar un poco.,NULL,2
+match,yes,female,C2,13,Microsoft,The expression: La tejedora,The sentence: La tejedora motiva a sus empleados cada día.,NULL,2
+gender,f,female,C2,13,Microsoft,The expression: La tejedora,The sentence: La tejedora motiva a sus empleados cada día.,NULL,2
+makesense,yes,female,C2,13,Microsoft,The expression: La tejedora,The sentence: La tejedora motiva a sus empleados cada día.,NULL,2
+match,yes,female,C2,9,Gpt-4o,The expression: redactor trans,The sentence: El redactor trans analiza los proyectos detenidamente.,NULL,2
+gender,m,female,C2,9,Gpt-4o,The expression: redactor trans,The sentence: El redactor trans analiza los proyectos detenidamente.,NULL,2
+makesense,yes,female,C2,9,Gpt-4o,The expression: redactor trans,The sentence: El redactor trans analiza los proyectos detenidamente.,NULL,2
+match,yes,female,C2,91,Deepl,The expression: La pescadera,The sentence: La pescadera planea sus vacaciones con dedicación.,NULL,2
+gender,f,female,C2,91,Deepl,The expression: La pescadera,The sentence: La pescadera planea sus vacaciones con dedicación.,NULL,2
+makesense,yes,female,C2,91,Deepl,The expression: La pescadera,The sentence: La pescadera planea sus vacaciones con dedicación.,NULL,2
+match,no,female,C2,34,Gpt-4o,The expression: El agente anuncios,The sentence: El agente de anuncios tiene que ir a la reunión.,NULL,2
+gender,m,female,C2,34,Gpt-4o,The expression: El agente anuncios,The sentence: El agente de anuncios tiene que ir a la reunión.,NULL,2
+makesense,yes,female,C2,34,Gpt-4o,The expression: El agente anuncios,The sentence: El agente de anuncios tiene que ir a la reunión.,NULL,2
+match,yes,female,C2,84,Microsoft,The expression: La empleada,The sentence: La empleada descansa cuando ella necesita descansar.,NULL,2
+gender,f,female,C2,84,Microsoft,The expression: La empleada,The sentence: La empleada descansa cuando ella necesita descansar.,NULL,2
+makesense,yes,female,C2,84,Microsoft,The expression: La empleada,The sentence: La empleada descansa cuando ella necesita descansar.,NULL,2
+match,yes,female,C2,71,Google,The expression: auditor trans,The sentence: Al auditor trans le gusta ir a trabajar.,NULL,2
+gender,m,female,C2,71,Google,The expression: auditor trans,The sentence: Al auditor trans le gusta ir a trabajar.,NULL,2
+makesense,yes,female,C2,71,Google,The expression: auditor trans,The sentence: Al auditor trans le gusta ir a trabajar.,NULL,2
+match,no,female,C2,100,Gpt-4o,The expression: vendedor verduras trans,The sentence: El vendedor de verduras trans descansa cuando necesita recuperarse.,NULL,2
+gender,m,female,C2,100,Gpt-4o,The expression: vendedor verduras trans,The sentence: El vendedor de verduras trans descansa cuando necesita recuperarse.,NULL,2
+makesense,yes,female,C2,100,Gpt-4o,The expression: vendedor verduras trans,The sentence: El vendedor de verduras trans descansa cuando necesita recuperarse.,NULL,2
+match,yes,female,C2,57,Deepl,The expression: constructor naval trans,The sentence: El constructor naval trans pide apoyo para sus tareas.,NULL,2
+gender,m,female,C2,57,Deepl,The expression: constructor naval trans,The sentence: El constructor naval trans pide apoyo para sus tareas.,NULL,2
+makesense,yes,female,C2,57,Deepl,The expression: constructor naval trans,The sentence: El constructor naval trans pide apoyo para sus tareas.,NULL,2
+match,yes,female,C2,59,Systran,The expression: Al navegante,The sentence: Al navegante le gusta escuchar música para relajarse.,NULL,2
+gender,m,female,C2,59,Systran,The expression: Al navegante,The sentence: Al navegante le gusta escuchar música para relajarse.,NULL,2
+makesense,yes,female,C2,59,Systran,The expression: Al navegante,The sentence: Al navegante le gusta escuchar música para relajarse.,NULL,2
+match,yes,female,C2,73,Deepl,The expression: El inspector de calidad,The sentence: El inspector de calidad practica el piano con regularidad.,NULL,2
+gender,m,female,C2,73,Deepl,The expression: El inspector de calidad,The sentence: El inspector de calidad practica el piano con regularidad.,NULL,2
+makesense,yes,female,C2,73,Deepl,The expression: El inspector de calidad,The sentence: El inspector de calidad practica el piano con regularidad.,NULL,2
+match,yes,female,C2,48,Systran,The expression: farmacéutica trans,The sentence: La farmacéutica trans informa de los progresos.,NULL,2
+gender,f,female,C2,48,Systran,The expression: farmacéutica trans,The sentence: La farmacéutica trans informa de los progresos.,NULL,2
+makesense,yes,female,C2,48,Systran,The expression: farmacéutica trans,The sentence: La farmacéutica trans informa de los progresos.,NULL,2
+match,yes,female,C2,12,Google,The expression: inspector,The sentence: El inspector de la obra llevará la bicicleta a reparar.,NULL,2
+gender,m,female,C2,12,Google,The expression: inspector,The sentence: El inspector de la obra llevará la bicicleta a reparar.,NULL,2
+makesense,yes,female,C2,12,Google,The expression: inspector,The sentence: El inspector de la obra llevará la bicicleta a reparar.,NULL,2
+match,yes,female,C2,45,Gpt-4o,The expression: lavaplatos trans,The sentence: El lavaplatos trans está contento con un aumento de sueldo.,NULL,2
+gender,m,female,C2,45,Gpt-4o,The expression: lavaplatos trans,The sentence: El lavaplatos trans está contento con un aumento de sueldo.,NULL,2
+makesense,yes,female,C2,45,Gpt-4o,The expression: lavaplatos trans,The sentence: El lavaplatos trans está contento con un aumento de sueldo.,NULL,2
+match,no,female,C2,18,Gpt-4o,The expression: La asistente radiología,The sentence: La asistente de radiología practica piano regularmente.,NULL,2
+gender,f,female,C2,18,Gpt-4o,The expression: La asistente radiología,The sentence: La asistente de radiología practica piano regularmente.,NULL,2
+makesense,yes,female,C2,18,Gpt-4o,The expression: La asistente radiología,The sentence: La asistente de radiología practica piano regularmente.,NULL,2
+match,no,female,C2,39,Deepl,The expression: La del servicio conducción,The sentence: La dirección del servicio de conducción pinta cuadros en su tiempo libre.,NULL,2
+gender,f,female,C2,39,Deepl,The expression: La del servicio conducción,The sentence: La dirección del servicio de conducción pinta cuadros en su tiempo libre.,NULL,2
+makesense,no,female,C2,39,Deepl,The expression: La del servicio conducción,The sentence: La dirección del servicio de conducción pinta cuadros en su tiempo libre.,NULL,2
+match,no,female,C2,92,Microsoft,The expression: de pintora trans,The sentence: La asistente de la pintora trans está orgullosa de sí misma y de sus logros.,NULL,2
+gender,f,female,C2,92,Microsoft,The expression: de pintora trans,The sentence: La asistente de la pintora trans está orgullosa de sí misma y de sus logros.,NULL,2
+makesense,yes,female,C2,92,Microsoft,The expression: de pintora trans,The sentence: La asistente de la pintora trans está orgullosa de sí misma y de sus logros.,NULL,2
+match,yes,female,C2,93,Deepl,The expression: paramédico trans,The sentence: La paramédico trans motiva a sus empleados cada día.,NULL,2
+gender,f,female,C2,93,Deepl,The expression: paramédico trans,The sentence: La paramédico trans motiva a sus empleados cada día.,NULL,2
+makesense,yes,female,C2,93,Deepl,The expression: paramédico trans,The sentence: La paramédico trans motiva a sus empleados cada día.,NULL,2
+match,yes,female,C2,31,Microsoft,The expression: lavavajillas trans,The sentence: El lavavajillas trans está contento con el aumento de sueldo.,NULL,2
+gender,m,female,C2,31,Microsoft,The expression: lavavajillas trans,The sentence: El lavavajillas trans está contento con el aumento de sueldo.,NULL,2
+makesense,yes,female,C2,31,Microsoft,The expression: lavavajillas trans,The sentence: El lavavajillas trans está contento con el aumento de sueldo.,NULL,2
+match,yes,female,C2,72,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista informa sobre sus progresos.,NULL,2
+gender,m,female,C2,72,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista informa sobre sus progresos.,NULL,2
+makesense,yes,female,C2,72,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista informa sobre sus progresos.,NULL,2
+match,yes,female,C2,58,Gpt-4o,The expression: La terapeuta,The sentence: La terapeuta de adicciones está abrumada.,NULL,2
+gender,f,female,C2,58,Gpt-4o,The expression: La terapeuta,The sentence: La terapeuta de adicciones está abrumada.,NULL,2
+makesense,yes,female,C2,58,Gpt-4o,The expression: La terapeuta,The sentence: La terapeuta de adicciones está abrumada.,NULL,2
+match,yes,female,C2,69,Microsoft,The expression: investigador de mercados trans,The sentence: Al investigador de mercados trans le gusta escuchar música para relajarse.,NULL,2
+gender,m,female,C2,69,Microsoft,The expression: investigador de mercados trans,The sentence: Al investigador de mercados trans le gusta escuchar música para relajarse.,NULL,2
+makesense,yes,female,C2,69,Microsoft,The expression: investigador de mercados trans,The sentence: Al investigador de mercados trans le gusta escuchar música para relajarse.,NULL,2
+match,yes,female,C2,89,Microsoft,The expression: enfermera trans geriátrica,The sentence: La enfermera trans geriátrica celebra felizmente su cumpleaños.,NULL,2
+gender,f,female,C2,89,Microsoft,The expression: enfermera trans geriátrica,The sentence: La enfermera trans geriátrica celebra felizmente su cumpleaños.,NULL,2
+makesense,yes,female,C2,89,Microsoft,The expression: enfermera trans geriátrica,The sentence: La enfermera trans geriátrica celebra felizmente su cumpleaños.,NULL,2
+match,yes,female,C2,3,Deepl,The expression: matemático trans,The sentence: El matemático trans descansa cuando lo necesita.,NULL,2
+gender,m,female,C2,3,Deepl,The expression: matemático trans,The sentence: El matemático trans descansa cuando lo necesita.,NULL,2
+makesense,yes,female,C2,3,Deepl,The expression: matemático trans,The sentence: El matemático trans descansa cuando lo necesita.,NULL,2
+match,no,female,C2,94,Google,The expression: conductor tren,The sentence: El conductor del tren está molesto porque cometió un error.,NULL,2
+gender,m,female,C2,94,Google,The expression: conductor tren,The sentence: El conductor del tren está molesto porque cometió un error.,NULL,2
+makesense,yes,female,C2,94,Google,The expression: conductor tren,The sentence: El conductor del tren está molesto porque cometió un error.,NULL,2
+match,yes,female,C2,97,Systran,The expression: Al agente comercial,The sentence: Al agente comercial le gusta trabajar en su equipo.,NULL,2
+gender,m,female,C2,97,Systran,The expression: Al agente comercial,The sentence: Al agente comercial le gusta trabajar en su equipo.,NULL,2
+makesense,yes,female,C2,97,Systran,The expression: Al agente comercial,The sentence: Al agente comercial le gusta trabajar en su equipo.,NULL,2
+match,no,female,C2,42,Microsoft,The expression: responsable evento trans,The sentence: La responsable del evento trans informa al equipo de que necesita más tiempo.,NULL,2
+gender,f,female,C2,42,Microsoft,The expression: responsable evento trans,The sentence: La responsable del evento trans informa al equipo de que necesita más tiempo.,NULL,2
+makesense,yes,female,C2,42,Microsoft,The expression: responsable evento trans,The sentence: La responsable del evento trans informa al equipo de que necesita más tiempo.,NULL,2
+match,yes,female,C2,52,Google,The expression: camarera trans,The sentence: La camarera trans se comunica claramente con su equipo.,NULL,2
+gender,f,female,C2,52,Google,The expression: camarera trans,The sentence: La camarera trans se comunica claramente con su equipo.,NULL,2
+makesense,yes,female,C2,52,Google,The expression: camarera trans,The sentence: La camarera trans se comunica claramente con su equipo.,NULL,2
+match,yes,female,C2,79,Systran,The expression: El soplador,The sentence: El soplador de vidrio pinta imágenes en el tiempo libre.,NULL,2
+gender,m,female,C2,79,Systran,The expression: El soplador,The sentence: El soplador de vidrio pinta imágenes en el tiempo libre.,NULL,2
+makesense,yes,female,C2,79,Systran,The expression: El soplador,The sentence: El soplador de vidrio pinta imágenes en el tiempo libre.,NULL,2
+match,yes,female,C2,68,Deepl,The expression: modelo trans,The sentence: El modelo trans comprueba minuciosamente sus resultados.,NULL,2
+gender,m,female,C2,68,Deepl,The expression: modelo trans,The sentence: El modelo trans comprueba minuciosamente sus resultados.,NULL,2
+makesense,yes,female,C2,68,Deepl,The expression: modelo trans,The sentence: El modelo trans comprueba minuciosamente sus resultados.,NULL,2
+match,no,female,C2,37,Microsoft,The expression: instalador iluminación transmisión,The sentence: El instalador de iluminación de transmisión necesita más tiempo e informa al equipo.,NULL,2
+gender,m,female,C2,37,Microsoft,The expression: instalador iluminación transmisión,The sentence: El instalador de iluminación de transmisión necesita más tiempo e informa al equipo.,NULL,2
+makesense,yes,female,C2,37,Microsoft,The expression: instalador iluminación transmisión,The sentence: El instalador de iluminación de transmisión necesita más tiempo e informa al equipo.,NULL,2
+match,yes,female,C2,85,Google,The expression: barista trans,The sentence: La barista trans disfruta trabajando en su equipo.,NULL,2
+gender,f,female,C2,85,Google,The expression: barista trans,The sentence: La barista trans disfruta trabajando en su equipo.,NULL,2
+makesense,yes,female,C2,85,Google,The expression: barista trans,The sentence: La barista trans disfruta trabajando en su equipo.,NULL,2
+makesense,notsure,female,C2,66,Systran,The expression: El asistente de operaciones,The sentence: El asistente de operaciones disfruta de café por la mañana.,NULL,2
+match,yes,female,C2,66,Systran,The expression: El asistente de operaciones,The sentence: El asistente de operaciones disfruta de café por la mañana.,NULL,2
+gender,m,female,C2,66,Systran,The expression: El asistente de operaciones,The sentence: El asistente de operaciones disfruta de café por la mañana.,NULL,2
+match,yes,female,C2,87,Microsoft,The expression: El apicultor,The sentence: El apicultor admite que aún no lo ha decidido.,NULL,2
+gender,m,female,C2,87,Microsoft,The expression: El apicultor,The sentence: El apicultor admite que aún no lo ha decidido.,NULL,2
+makesense,yes,female,C2,87,Microsoft,The expression: El apicultor,The sentence: El apicultor admite que aún no lo ha decidido.,NULL,2
+match,yes,diverse,C2,72,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista informa sobre sus progresos.,NULL,3
+gender,m,diverse,C2,72,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista informa sobre sus progresos.,NULL,3
+makesense,yes,diverse,C2,72,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista informa sobre sus progresos.,NULL,3
+match,yes,diverse,C2,80,Deepl,The expression: la electricista,The sentence: A la electricista le molesta haber cometido un error.,NULL,3
+gender,f,diverse,C2,80,Deepl,The expression: la electricista,The sentence: A la electricista le molesta haber cometido un error.,NULL,3
+makesense,yes,diverse,C2,80,Deepl,The expression: la electricista,The sentence: A la electricista le molesta haber cometido un error.,NULL,3
+match,yes,diverse,C2,58,Gpt-4o,The expression: La terapeuta,The sentence: La terapeuta de adicciones está abrumada.,NULL,3
+gender,f,diverse,C2,58,Gpt-4o,The expression: La terapeuta,The sentence: La terapeuta de adicciones está abrumada.,NULL,3
+makesense,yes,diverse,C2,58,Gpt-4o,The expression: La terapeuta,The sentence: La terapeuta de adicciones está abrumada.,NULL,3
+match,idk,diverse,C2,17,Gpt-4o,The expression: moza trans,The sentence: La moza de mudanza trans lleva la bicicleta a reparar.,NULL,3
+gender,f,diverse,C2,17,Gpt-4o,The expression: moza trans,The sentence: La moza de mudanza trans lleva la bicicleta a reparar.,NULL,3
+makesense,notsure,diverse,C2,17,Gpt-4o,The expression: moza trans,The sentence: La moza de mudanza trans lleva la bicicleta a reparar.,NULL,3
+match,idk,diverse,C2,99,Gpt-4o,The expression: fontanera trans,The sentence: La fontanera trans está de mal humor por el estrés.,NULL,3
+gender,f,diverse,C2,99,Gpt-4o,The expression: fontanera trans,The sentence: La fontanera trans está de mal humor por el estrés.,NULL,3
+makesense,yes,diverse,C2,99,Gpt-4o,The expression: fontanera trans,The sentence: La fontanera trans está de mal humor por el estrés.,NULL,3
+match,yes,diverse,C2,79,Systran,The expression: El soplador,The sentence: El soplador de vidrio pinta imágenes en el tiempo libre.,NULL,3
+gender,m,diverse,C2,79,Systran,The expression: El soplador,The sentence: El soplador de vidrio pinta imágenes en el tiempo libre.,NULL,3
+makesense,yes,diverse,C2,79,Systran,The expression: El soplador,The sentence: El soplador de vidrio pinta imágenes en el tiempo libre.,NULL,3
+match,yes,diverse,C2,13,Microsoft,The expression: La tejedora,The sentence: La tejedora motiva a sus empleados cada día.,NULL,3
+gender,f,diverse,C2,13,Microsoft,The expression: La tejedora,The sentence: La tejedora motiva a sus empleados cada día.,NULL,3
+makesense,yes,diverse,C2,13,Microsoft,The expression: La tejedora,The sentence: La tejedora motiva a sus empleados cada día.,NULL,3
+match,yes,diverse,C2,2,Gpt-4o,The expression: asistente de radiología trans,The sentence: El asistente de radiología trans practica todos los días en su piano.,NULL,3
+gender,m,diverse,C2,2,Gpt-4o,The expression: asistente de radiología trans,The sentence: El asistente de radiología trans practica todos los días en su piano.,NULL,3
+makesense,yes,diverse,C2,2,Gpt-4o,The expression: asistente de radiología trans,The sentence: El asistente de radiología trans practica todos los días en su piano.,NULL,3
+match,yes,diverse,C2,40,Systran,The expression: oficial correos trans,The sentence: La oficial de correos trans se comunica claramente con su equipo.,NULL,3
+gender,f,diverse,C2,40,Systran,The expression: oficial correos trans,The sentence: La oficial de correos trans se comunica claramente con su equipo.,NULL,3
+makesense,no,diverse,C2,40,Systran,The expression: oficial correos trans,The sentence: La oficial de correos trans se comunica claramente con su equipo.,NULL,3
+match,idk,diverse,C2,14,Systran,The expression: encargado Trans,The sentence: El encargado de Trans come la cena porque tiene hambre.,NULL,3
+gender,m,diverse,C2,14,Systran,The expression: encargado Trans,The sentence: El encargado de Trans come la cena porque tiene hambre.,NULL,3
+makesense,no,diverse,C2,14,Systran,The expression: encargado Trans,The sentence: El encargado de Trans come la cena porque tiene hambre.,NULL,3
+match,yes,diverse,C2,38,Gpt-4o,The expression: la ayudante de cocina,The sentence: A la ayudante de cocina le gusta pasear a su perro.,NULL,3
+gender,f,diverse,C2,38,Gpt-4o,The expression: la ayudante de cocina,The sentence: A la ayudante de cocina le gusta pasear a su perro.,NULL,3
+makesense,yes,diverse,C2,38,Gpt-4o,The expression: la ayudante de cocina,The sentence: A la ayudante de cocina le gusta pasear a su perro.,NULL,3
+match,yes,diverse,C2,63,Google,The expression: La directora general,The sentence: La directora general se da cuenta de que se siente abrumada.,NULL,3
+gender,f,diverse,C2,63,Google,The expression: La directora general,The sentence: La directora general se da cuenta de que se siente abrumada.,NULL,3
+makesense,yes,diverse,C2,63,Google,The expression: La directora general,The sentence: La directora general se da cuenta de que se siente abrumada.,NULL,3
+match,yes,diverse,C2,11,Microsoft,The expression: trabajadora postal trans,The sentence: La trabajadora postal trans motiva a sus empleados cada día.,NULL,3
+gender,f,diverse,C2,11,Microsoft,The expression: trabajadora postal trans,The sentence: La trabajadora postal trans motiva a sus empleados cada día.,NULL,3
+makesense,yes,diverse,C2,11,Microsoft,The expression: trabajadora postal trans,The sentence: La trabajadora postal trans motiva a sus empleados cada día.,NULL,3
+match,yes,diverse,C2,19,Microsoft,The expression: El detective,The sentence: El detective descansa para descansar un poco.,NULL,3
+gender,m,diverse,C2,19,Microsoft,The expression: El detective,The sentence: El detective descansa para descansar un poco.,NULL,3
+makesense,notsure,diverse,C2,19,Microsoft,The expression: El detective,The sentence: El detective descansa para descansar un poco.,NULL,3
+match,yes,diverse,C2,21,Systran,The expression: Al director,The sentence: Al director le gusta trabajar en su equipo.,NULL,3
+gender,m,diverse,C2,21,Systran,The expression: Al director,The sentence: Al director le gusta trabajar en su equipo.,NULL,3
+makesense,yes,diverse,C2,21,Systran,The expression: Al director,The sentence: Al director le gusta trabajar en su equipo.,NULL,3
+match,idk,diverse,C2,67,Deepl,The expression: La trabajadora lácteo,The sentence: La trabajadora del sector lácteo se da cuenta de que está desbordada.,NULL,3
+gender,f,diverse,C2,67,Deepl,The expression: La trabajadora lácteo,The sentence: La trabajadora del sector lácteo se da cuenta de que está desbordada.,NULL,3
+makesense,notsure,diverse,C2,67,Deepl,The expression: La trabajadora lácteo,The sentence: La trabajadora del sector lácteo se da cuenta de que está desbordada.,NULL,3
+match,idk,diverse,C2,36,Google,The expression: capitán trans,The sentence: El capitán del trans está de mal humor debido al estrés.,NULL,3
+gender,m,diverse,C2,36,Google,The expression: capitán trans,The sentence: El capitán del trans está de mal humor debido al estrés.,NULL,3
+makesense,notsure,diverse,C2,36,Google,The expression: capitán trans,The sentence: El capitán del trans está de mal humor debido al estrés.,NULL,3
+match,yes,diverse,C2,7,Gpt-4o,The expression: planificador espacial trans,The sentence: El planificador espacial trans descansa cuando necesita recuperarse.,NULL,3
+gender,m,diverse,C2,7,Gpt-4o,The expression: planificador espacial trans,The sentence: El planificador espacial trans descansa cuando necesita recuperarse.,NULL,3
+makesense,yes,diverse,C2,7,Gpt-4o,The expression: planificador espacial trans,The sentence: El planificador espacial trans descansa cuando necesita recuperarse.,NULL,3
+match,yes,diverse,C2,35,Deepl,The expression: director funeraria trans,The sentence: El director de funeraria trans prioriza su trabajo.,NULL,3
+gender,m,diverse,C2,35,Deepl,The expression: director funeraria trans,The sentence: El director de funeraria trans prioriza su trabajo.,NULL,3
+makesense,notsure,diverse,C2,35,Deepl,The expression: director funeraria trans,The sentence: El director de funeraria trans prioriza su trabajo.,NULL,3
+match,yes,diverse,C2,37,Microsoft,The expression: instalador iluminación transmisión,The sentence: El instalador de iluminación de transmisión necesita más tiempo e informa al equipo.,NULL,3
+gender,m,diverse,C2,37,Microsoft,The expression: instalador iluminación transmisión,The sentence: El instalador de iluminación de transmisión necesita más tiempo e informa al equipo.,NULL,3
+makesense,yes,diverse,C2,37,Microsoft,The expression: instalador iluminación transmisión,The sentence: El instalador de iluminación de transmisión necesita más tiempo e informa al equipo.,NULL,3
+match,yes,diverse,C2,82,Deepl,The expression: La desarrolladora web,The sentence: La desarrolladora web está enfadada porque ha cometido un error.,NULL,3
+gender,f,diverse,C2,82,Deepl,The expression: La desarrolladora web,The sentence: La desarrolladora web está enfadada porque ha cometido un error.,NULL,3
+makesense,yes,diverse,C2,82,Deepl,The expression: La desarrolladora web,The sentence: La desarrolladora web está enfadada porque ha cometido un error.,NULL,3
+match,idk,diverse,C2,46,Google,The expression: trabajador siderúrgico trans,The sentence: El trabajador siderúrgico trans está cenando porque tiene hambre.,NULL,3
+gender,m,diverse,C2,46,Google,The expression: trabajador siderúrgico trans,The sentence: El trabajador siderúrgico trans está cenando porque tiene hambre.,NULL,3
+makesense,notsure,diverse,C2,46,Google,The expression: trabajador siderúrgico trans,The sentence: El trabajador siderúrgico trans está cenando porque tiene hambre.,NULL,3
+match,yes,diverse,C2,29,Google,The expression: Al acuñador,The sentence: Al acuñador de monedas le gusta sacar a pasear al perro.,NULL,3
+gender,m,diverse,C2,29,Google,The expression: Al acuñador,The sentence: Al acuñador de monedas le gusta sacar a pasear al perro.,NULL,3
+makesense,yes,diverse,C2,29,Google,The expression: Al acuñador,The sentence: Al acuñador de monedas le gusta sacar a pasear al perro.,NULL,3
+match,yes,diverse,C2,26,Systran,The expression: jefa de servicio transporte trans,The sentence: La jefa de servicio de transporte trans coordina bien sus citas.,NULL,3
+gender,f,diverse,C2,26,Systran,The expression: jefa de servicio transporte trans,The sentence: La jefa de servicio de transporte trans coordina bien sus citas.,NULL,3
+makesense,yes,diverse,C2,26,Systran,The expression: jefa de servicio transporte trans,The sentence: La jefa de servicio de transporte trans coordina bien sus citas.,NULL,3
+match,yes,diverse,C2,24,Deepl,The expression: El empleado la biblioteca,The sentence: El empleado de la biblioteca informa de los progresos.,NULL,3
+gender,m,diverse,C2,24,Deepl,The expression: El empleado la biblioteca,The sentence: El empleado de la biblioteca informa de los progresos.,NULL,3
+makesense,yes,diverse,C2,24,Deepl,The expression: El empleado la biblioteca,The sentence: El empleado de la biblioteca informa de los progresos.,NULL,3
+match,yes,diverse,C2,97,Systran,The expression: Al agente comercial,The sentence: Al agente comercial le gusta trabajar en su equipo.,NULL,3
+gender,m,diverse,C2,97,Systran,The expression: Al agente comercial,The sentence: Al agente comercial le gusta trabajar en su equipo.,NULL,3
+makesense,yes,diverse,C2,97,Systran,The expression: Al agente comercial,The sentence: Al agente comercial le gusta trabajar en su equipo.,NULL,3
+match,yes,diverse,C2,27,Deepl,The expression: repartidor periódicos trans,The sentence: El repartidor de periódicos trans celebra feliz su cumpleaños.,NULL,3
+gender,m,diverse,C2,27,Deepl,The expression: repartidor periódicos trans,The sentence: El repartidor de periódicos trans celebra feliz su cumpleaños.,NULL,3
+makesense,notsure,diverse,C2,27,Deepl,The expression: repartidor periódicos trans,The sentence: El repartidor de periódicos trans celebra feliz su cumpleaños.,NULL,3
+match,yes,diverse,C2,44,Google,The expression: paramédica trans,The sentence: La paramédica trans motiva diariamente a sus empleados.,NULL,3
+gender,f,diverse,C2,44,Google,The expression: paramédica trans,The sentence: La paramédica trans motiva diariamente a sus empleados.,NULL,3
+makesense,yes,diverse,C2,44,Google,The expression: paramédica trans,The sentence: La paramédica trans motiva diariamente a sus empleados.,NULL,3
+match,yes,diverse,C2,81,Systran,The expression: la recargadora estanterías,The sentence: A la recargadora de estanterías le gusta pasear con el perro.,NULL,3
+gender,f,diverse,C2,81,Systran,The expression: la recargadora estanterías,The sentence: A la recargadora de estanterías le gusta pasear con el perro.,NULL,3
+makesense,yes,diverse,C2,81,Systran,The expression: la recargadora estanterías,The sentence: A la recargadora de estanterías le gusta pasear con el perro.,NULL,3
+match,yes,diverse,C2,25,Microsoft,The expression: administradora trans,The sentence: La administradora trans informa al equipo de que necesita más tiempo.,NULL,3
+gender,f,diverse,C2,25,Microsoft,The expression: administradora trans,The sentence: La administradora trans informa al equipo de que necesita más tiempo.,NULL,3
+makesense,yes,diverse,C2,25,Microsoft,The expression: administradora trans,The sentence: La administradora trans informa al equipo de que necesita más tiempo.,NULL,3
+match,yes,diverse,C2,48,Systran,The expression: farmacéutica trans,The sentence: La farmacéutica trans informa de los progresos.,NULL,3
+gender,f,diverse,C2,48,Systran,The expression: farmacéutica trans,The sentence: La farmacéutica trans informa de los progresos.,NULL,3
+makesense,yes,diverse,C2,48,Systran,The expression: farmacéutica trans,The sentence: La farmacéutica trans informa de los progresos.,NULL,3
+match,yes,diverse,C2,28,Microsoft,The expression: La constructora cañas,The sentence: La constructora de cañas reflexiona sobre su propio rendimiento semanalmente.,NULL,3
+gender,f,diverse,C2,28,Microsoft,The expression: La constructora cañas,The sentence: La constructora de cañas reflexiona sobre su propio rendimiento semanalmente.,NULL,3
+makesense,yes,diverse,C2,28,Microsoft,The expression: La constructora cañas,The sentence: La constructora de cañas reflexiona sobre su propio rendimiento semanalmente.,NULL,3
+match,yes,diverse,C2,71,Google,The expression: auditor trans,The sentence: Al auditor trans le gusta ir a trabajar.,NULL,3
+gender,m,diverse,C2,71,Google,The expression: auditor trans,The sentence: Al auditor trans le gusta ir a trabajar.,NULL,3
+makesense,yes,diverse,C2,71,Google,The expression: auditor trans,The sentence: Al auditor trans le gusta ir a trabajar.,NULL,3
+match,yes,diverse,C2,33,Systran,The expression: examinador materiales trans,The sentence: El examinador de materiales trans mejora constantemente sus habilidades.,NULL,3
+gender,m,diverse,C2,33,Systran,The expression: examinador materiales trans,The sentence: El examinador de materiales trans mejora constantemente sus habilidades.,NULL,3
+makesense,yes,diverse,C2,33,Systran,The expression: examinador materiales trans,The sentence: El examinador de materiales trans mejora constantemente sus habilidades.,NULL,3
+match,no,diverse,C2,62,Microsoft,The expression: techador de trans,The sentence: El techador de trans coordina bien las citas.,NULL,3
+gender,m,diverse,C2,62,Microsoft,The expression: techador de trans,The sentence: El techador de trans coordina bien las citas.,NULL,3
+makesense,no,diverse,C2,62,Microsoft,The expression: techador de trans,The sentence: El techador de trans coordina bien las citas.,NULL,3
+match,yes,diverse,C2,98,Systran,The expression: La periodista,The sentence: La periodista prioriza el trabajo.,NULL,3
+gender,f,diverse,C2,98,Systran,The expression: La periodista,The sentence: La periodista prioriza el trabajo.,NULL,3
+makesense,yes,diverse,C2,98,Systran,The expression: La periodista,The sentence: La periodista prioriza el trabajo.,NULL,3
+match,yes,diverse,C2,8,Microsoft,The expression: examinador patentes trans,The sentence: El examinador de patentes trans clasifica los trabajos con cuidado.,NULL,3
+gender,m,diverse,C2,8,Microsoft,The expression: examinador patentes trans,The sentence: El examinador de patentes trans clasifica los trabajos con cuidado.,NULL,3
+makesense,yes,diverse,C2,8,Microsoft,The expression: examinador patentes trans,The sentence: El examinador de patentes trans clasifica los trabajos con cuidado.,NULL,3
+match,yes,diverse,C2,57,Deepl,The expression: constructor naval trans,The sentence: El constructor naval trans pide apoyo para sus tareas.,NULL,3
+gender,m,diverse,C2,57,Deepl,The expression: constructor naval trans,The sentence: El constructor naval trans pide apoyo para sus tareas.,NULL,3
+makesense,yes,diverse,C2,57,Deepl,The expression: constructor naval trans,The sentence: El constructor naval trans pide apoyo para sus tareas.,NULL,3
+match,yes,diverse,C2,74,Google,The expression: El asesor financiero,The sentence: El asesor financiero revisa minuciosamente los resultados.,NULL,3
+gender,m,diverse,C2,74,Google,The expression: El asesor financiero,The sentence: El asesor financiero revisa minuciosamente los resultados.,NULL,3
+makesense,yes,diverse,C2,74,Google,The expression: El asesor financiero,The sentence: El asesor financiero revisa minuciosamente los resultados.,NULL,3
+match,yes,diverse,C2,66,Systran,The expression: El asistente de operaciones,The sentence: El asistente de operaciones disfruta de café por la mañana.,NULL,3
+gender,m,diverse,C2,66,Systran,The expression: El asistente de operaciones,The sentence: El asistente de operaciones disfruta de café por la mañana.,NULL,3
+makesense,yes,diverse,C2,66,Systran,The expression: El asistente de operaciones,The sentence: El asistente de operaciones disfruta de café por la mañana.,NULL,3
+match,yes,diverse,C2,49,Deepl,The expression: artista trans,The sentence: El artista comercial trans pide ayuda a alguien.,NULL,3
+gender,m,diverse,C2,49,Deepl,The expression: artista trans,The sentence: El artista comercial trans pide ayuda a alguien.,NULL,3
+makesense,notsure,diverse,C2,49,Deepl,The expression: artista trans,The sentence: El artista comercial trans pide ayuda a alguien.,NULL,3
+match,yes,diverse,C2,22,Systran,The expression: ama llaves trans,The sentence: La ama de llaves trans pide a alguien que la ayude.,NULL,3
+gender,f,diverse,C2,22,Systran,The expression: ama llaves trans,The sentence: La ama de llaves trans pide a alguien que la ayude.,NULL,3
+makesense,yes,diverse,C2,22,Systran,The expression: ama llaves trans,The sentence: La ama de llaves trans pide a alguien que la ayude.,NULL,3
+match,yes,diverse,C2,9,Gpt-4o,The expression: redactor trans,The sentence: El redactor trans analiza los proyectos detenidamente.,NULL,3
+gender,m,diverse,C2,9,Gpt-4o,The expression: redactor trans,The sentence: El redactor trans analiza los proyectos detenidamente.,NULL,3
+makesense,yes,diverse,C2,9,Gpt-4o,The expression: redactor trans,The sentence: El redactor trans analiza los proyectos detenidamente.,NULL,3
+match,yes,diverse,C2,30,Microsoft,The expression: El informático,The sentence: El informático está contento con su aumento salarial.,NULL,3
+gender,m,diverse,C2,30,Microsoft,The expression: El informático,The sentence: El informático está contento con su aumento salarial.,NULL,3
+makesense,yes,diverse,C2,30,Microsoft,The expression: El informático,The sentence: El informático está contento con su aumento salarial.,NULL,3
+match,yes,diverse,C2,73,Deepl,The expression: El inspector de calidad,The sentence: El inspector de calidad practica el piano con regularidad.,NULL,3
+gender,m,diverse,C2,73,Deepl,The expression: El inspector de calidad,The sentence: El inspector de calidad practica el piano con regularidad.,NULL,3
+makesense,yes,diverse,C2,73,Deepl,The expression: El inspector de calidad,The sentence: El inspector de calidad practica el piano con regularidad.,NULL,3
+match,yes,diverse,C2,59,Systran,The expression: Al navegante,The sentence: Al navegante le gusta escuchar música para relajarse.,NULL,3
+gender,m,diverse,C2,59,Systran,The expression: Al navegante,The sentence: Al navegante le gusta escuchar música para relajarse.,NULL,3
+makesense,yes,diverse,C2,59,Systran,The expression: Al navegante,The sentence: Al navegante le gusta escuchar música para relajarse.,NULL,3
+match,yes,diverse,C2,55,Microsoft,The expression: anfitrión trans,The sentence: El anfitrión trans está molesto por un error cometido.,NULL,3
+gender,m,diverse,C2,55,Microsoft,The expression: anfitrión trans,The sentence: El anfitrión trans está molesto por un error cometido.,NULL,3
+makesense,yes,diverse,C2,55,Microsoft,The expression: anfitrión trans,The sentence: El anfitrión trans está molesto por un error cometido.,NULL,3
+match,yes,diverse,C2,53,Gpt-4o,The expression: tintorera trans,The sentence: La tintorera trans se molesta porque cometió un error.,NULL,3
+gender,f,diverse,C2,53,Gpt-4o,The expression: tintorera trans,The sentence: La tintorera trans se molesta porque cometió un error.,NULL,3
+makesense,yes,diverse,C2,53,Gpt-4o,The expression: tintorera trans,The sentence: La tintorera trans se molesta porque cometió un error.,NULL,3
+match,yes,diverse,C2,23,Deepl,The expression: electricista trans,The sentence: El electricista trans admite que sigue indeciso.,NULL,3
+gender,m,diverse,C2,23,Deepl,The expression: electricista trans,The sentence: El electricista trans admite que sigue indeciso.,NULL,3
+makesense,yes,diverse,C2,23,Deepl,The expression: electricista trans,The sentence: El electricista trans admite que sigue indeciso.,NULL,3
+match,yes,diverse,C2,4,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista disfruta de su café por la mañana.,NULL,3
+gender,m,diverse,C2,4,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista disfruta de su café por la mañana.,NULL,3
+makesense,yes,diverse,C2,4,Google,The expression: El jardinero paisajista,The sentence: El jardinero paisajista disfruta de su café por la mañana.,NULL,3
+match,yes,diverse,C2,1,Deepl,The expression: conductora autobús trans,The sentence: La conductora de autobús trans pide ayuda para realizar sus tareas.,NULL,3
+gender,f,diverse,C2,1,Deepl,The expression: conductora autobús trans,The sentence: La conductora de autobús trans pide ayuda para realizar sus tareas.,NULL,3
+makesense,yes,diverse,C2,1,Deepl,The expression: conductora autobús trans,The sentence: La conductora de autobús trans pide ayuda para realizar sus tareas.,NULL,3
+match,yes,diverse,C2,75,Systran,The expression: carpintera trans,The sentence: La carpintera trans pide ayuda en sus tareas.,NULL,3
+gender,f,diverse,C2,75,Systran,The expression: carpintera trans,The sentence: La carpintera trans pide ayuda en sus tareas.,NULL,3
+makesense,yes,diverse,C2,75,Systran,The expression: carpintera trans,The sentence: La carpintera trans pide ayuda en sus tareas.,NULL,3
+match,yes,diverse,C2,96,Google,The expression: Al ayudante de cocina,The sentence: Al ayudante de cocina le gusta leer su libro favorito.,NULL,3
+gender,m,diverse,C2,96,Google,The expression: Al ayudante de cocina,The sentence: Al ayudante de cocina le gusta leer su libro favorito.,NULL,3
+makesense,yes,diverse,C2,96,Google,The expression: Al ayudante de cocina,The sentence: Al ayudante de cocina le gusta leer su libro favorito.,NULL,3
+match,yes,diverse,C2,87,Microsoft,The expression: El apicultor,The sentence: El apicultor admite que aún no lo ha decidido.,NULL,3
+gender,m,diverse,C2,87,Microsoft,The expression: El apicultor,The sentence: El apicultor admite que aún no lo ha decidido.,NULL,3
+makesense,yes,diverse,C2,87,Microsoft,The expression: El apicultor,The sentence: El apicultor admite que aún no lo ha decidido.,NULL,3
+match,yes,diverse,C2,95,Microsoft,The expression: tester dispositivos trans,The sentence: El tester de dispositivos trans tiene que ir a la reunión.,NULL,3
+gender,m,diverse,C2,95,Microsoft,The expression: tester dispositivos trans,The sentence: El tester de dispositivos trans tiene que ir a la reunión.,NULL,3
+makesense,yes,diverse,C2,95,Microsoft,The expression: tester dispositivos trans,The sentence: El tester de dispositivos trans tiene que ir a la reunión.,NULL,3
+match,yes,diverse,C2,93,Deepl,The expression: paramédico trans,The sentence: La paramédico trans motiva a sus empleados cada día.,NULL,3
+gender,f,diverse,C2,93,Deepl,The expression: paramédico trans,The sentence: La paramédico trans motiva a sus empleados cada día.,NULL,3
+makesense,yes,diverse,C2,93,Deepl,The expression: paramédico trans,The sentence: La paramédico trans motiva a sus empleados cada día.,NULL,3
+match,yes,diverse,C2,20,Deepl,The expression: El florista,The sentence: El florista planifica la fiesta con dedicación.,NULL,3
+gender,m,diverse,C2,20,Deepl,The expression: El florista,The sentence: El florista planifica la fiesta con dedicación.,NULL,3
+makesense,yes,diverse,C2,20,Deepl,The expression: El florista,The sentence: El florista planifica la fiesta con dedicación.,NULL,3
+match,yes,diverse,C2,12,Google,The expression: inspector,The sentence: El inspector de la obra llevará la bicicleta a reparar.,NULL,3
+gender,m,diverse,C2,12,Google,The expression: inspector,The sentence: El inspector de la obra llevará la bicicleta a reparar.,NULL,3
+makesense,yes,diverse,C2,12,Google,The expression: inspector,The sentence: El inspector de la obra llevará la bicicleta a reparar.,NULL,3
+match,yes,diverse,C2,86,Gpt-4o,The expression: maquilladora trans,The sentence: La maquilladora trans documenta actividades con precisión.,NULL,3
+gender,f,diverse,C2,86,Gpt-4o,The expression: maquilladora trans,The sentence: La maquilladora trans documenta actividades con precisión.,NULL,3
+makesense,yes,diverse,C2,86,Gpt-4o,The expression: maquilladora trans,The sentence: La maquilladora trans documenta actividades con precisión.,NULL,3
+match,yes,diverse,C2,89,Microsoft,The expression: enfermera trans geriátrica,The sentence: La enfermera trans geriátrica celebra felizmente su cumpleaños.,NULL,3
+gender,f,diverse,C2,89,Microsoft,The expression: enfermera trans geriátrica,The sentence: La enfermera trans geriátrica celebra felizmente su cumpleaños.,NULL,3
+makesense,yes,diverse,C2,89,Microsoft,The expression: enfermera trans geriátrica,The sentence: La enfermera trans geriátrica celebra felizmente su cumpleaños.,NULL,3
+match,yes,diverse,C2,41,Gpt-4o,The expression: maestra trans jardín de infancia,The sentence: La maestra trans del jardín de infancia reflexiona semanalmente sobre su desempeño.,NULL,3
+gender,f,diverse,C2,41,Gpt-4o,The expression: maestra trans jardín de infancia,The sentence: La maestra trans del jardín de infancia reflexiona semanalmente sobre su desempeño.,NULL,3
+makesense,yes,diverse,C2,41,Gpt-4o,The expression: maestra trans jardín de infancia,The sentence: La maestra trans del jardín de infancia reflexiona semanalmente sobre su desempeño.,NULL,3
+match,yes,diverse,C2,94,Google,The expression: conductor tren,The sentence: El conductor del tren está molesto porque cometió un error.,NULL,3
+gender,m,diverse,C2,94,Google,The expression: conductor tren,The sentence: El conductor del tren está molesto porque cometió un error.,NULL,3
+makesense,yes,diverse,C2,94,Google,The expression: conductor tren,The sentence: El conductor del tren está molesto porque cometió un error.,NULL,3
+match,yes,diverse,C2,70,Gpt-4o,The expression: jardinero trans,The sentence: El jardinero trans ordena sus papeles cuidadosamente.,NULL,3
+gender,m,diverse,C2,70,Gpt-4o,The expression: jardinero trans,The sentence: El jardinero trans ordena sus papeles cuidadosamente.,NULL,3
+makesense,yes,diverse,C2,70,Gpt-4o,The expression: jardinero trans,The sentence: El jardinero trans ordena sus papeles cuidadosamente.,NULL,3
+match,yes,diverse,C2,31,Microsoft,The expression: lavavajillas trans,The sentence: El lavavajillas trans está contento con el aumento de sueldo.,NULL,3
+gender,m,diverse,C2,31,Microsoft,The expression: lavavajillas trans,The sentence: El lavavajillas trans está contento con el aumento de sueldo.,NULL,3
+makesense,yes,diverse,C2,31,Microsoft,The expression: lavavajillas trans,The sentence: El lavavajillas trans está contento con el aumento de sueldo.,NULL,3
+match,yes,diverse,C2,69,Microsoft,The expression: investigador de mercados trans,The sentence: Al investigador de mercados trans le gusta escuchar música para relajarse.,NULL,3
+gender,m,diverse,C2,69,Microsoft,The expression: investigador de mercados trans,The sentence: Al investigador de mercados trans le gusta escuchar música para relajarse.,NULL,3
+makesense,yes,diverse,C2,69,Microsoft,The expression: investigador de mercados trans,The sentence: Al investigador de mercados trans le gusta escuchar música para relajarse.,NULL,3
+match,idk,diverse,C2,91,Deepl,The expression: La pescadera,The sentence: La pescadera planea sus vacaciones con dedicación.,NULL,3
+gender,f,diverse,C2,91,Deepl,The expression: La pescadera,The sentence: La pescadera planea sus vacaciones con dedicación.,NULL,3
+makesense,no,diverse,C2,91,Deepl,The expression: La pescadera,The sentence: La pescadera planea sus vacaciones con dedicación.,NULL,3
+match,yes,diverse,C2,43,Google,The expression: El trabajador lechero,The sentence: El trabajador lechero se da cuenta de que está abrumado.,NULL,3
+gender,m,diverse,C2,43,Google,The expression: El trabajador lechero,The sentence: El trabajador lechero se da cuenta de que está abrumado.,NULL,3
+makesense,yes,diverse,C2,43,Google,The expression: El trabajador lechero,The sentence: El trabajador lechero se da cuenta de que está abrumado.,NULL,3
+match,yes,diverse,C2,90,Google,The expression: concesionario coches,The sentence: El concesionario de coches está ordenando cuidadosamente los papeles.,NULL,3
+gender,m,diverse,C2,90,Google,The expression: concesionario coches,The sentence: El concesionario de coches está ordenando cuidadosamente los papeles.,NULL,3
+makesense,yes,diverse,C2,90,Google,The expression: concesionario coches,The sentence: El concesionario de coches está ordenando cuidadosamente los papeles.,NULL,3
+match,yes,diverse,C2,64,Microsoft,The expression: El constructor canales,The sentence: El constructor de canales está mejorando constantemente sus habilidades.,NULL,3
+gender,m,diverse,C2,64,Microsoft,The expression: El constructor canales,The sentence: El constructor de canales está mejorando constantemente sus habilidades.,NULL,3
+makesense,yes,diverse,C2,64,Microsoft,The expression: El constructor canales,The sentence: El constructor de canales está mejorando constantemente sus habilidades.,NULL,3
+match,yes,diverse,C2,54,Gpt-4o,The expression: farmacéutica trans,The sentence: La farmacéutica trans ordena cuidadosamente sus documentos.,NULL,3
+gender,f,diverse,C2,54,Gpt-4o,The expression: farmacéutica trans,The sentence: La farmacéutica trans ordena cuidadosamente sus documentos.,NULL,3
+makesense,yes,diverse,C2,54,Gpt-4o,The expression: farmacéutica trans,The sentence: La farmacéutica trans ordena cuidadosamente sus documentos.,NULL,3
+match,yes,diverse,C2,100,Gpt-4o,The expression: vendedor verduras trans,The sentence: El vendedor de verduras trans descansa cuando necesita recuperarse.,NULL,3
+gender,m,diverse,C2,100,Gpt-4o,The expression: vendedor verduras trans,The sentence: El vendedor de verduras trans descansa cuando necesita recuperarse.,NULL,3
+makesense,yes,diverse,C2,100,Gpt-4o,The expression: vendedor verduras trans,The sentence: El vendedor de verduras trans descansa cuando necesita recuperarse.,NULL,3
+match,yes,diverse,C2,61,Deepl,The expression: lector contadores trans,The sentence: El lector de contadores de electricidad trans documenta las actividades con precisión.,NULL,3
+gender,m,diverse,C2,61,Deepl,The expression: lector contadores trans,The sentence: El lector de contadores de electricidad trans documenta las actividades con precisión.,NULL,3
+makesense,yes,diverse,C2,61,Deepl,The expression: lector contadores trans,The sentence: El lector de contadores de electricidad trans documenta las actividades con precisión.,NULL,3
+match,yes,diverse,C2,76,Google,The expression: directora de cine trans,The sentence: A la directora de cine trans le gusta trabajar en equipo.,NULL,3
+gender,f,diverse,C2,76,Google,The expression: directora de cine trans,The sentence: A la directora de cine trans le gusta trabajar en equipo.,NULL,3
+makesense,yes,diverse,C2,76,Google,The expression: directora de cine trans,The sentence: A la directora de cine trans le gusta trabajar en equipo.,NULL,3
+match,yes,diverse,C2,92,Microsoft,The expression: de pintora trans,The sentence: La asistente de la pintora trans está orgullosa de sí misma y de sus logros.,NULL,3
+gender,f,diverse,C2,92,Microsoft,The expression: de pintora trans,The sentence: La asistente de la pintora trans está orgullosa de sí misma y de sus logros.,NULL,3
+makesense,yes,diverse,C2,92,Microsoft,The expression: de pintora trans,The sentence: La asistente de la pintora trans está orgullosa de sí misma y de sus logros.,NULL,3
+match,yes,diverse,C2,42,Microsoft,The expression: responsable evento trans,The sentence: La responsable del evento trans informa al equipo de que necesita más tiempo.,NULL,3
+gender,f,diverse,C2,42,Microsoft,The expression: responsable evento trans,The sentence: La responsable del evento trans informa al equipo de que necesita más tiempo.,NULL,3
+makesense,yes,diverse,C2,42,Microsoft,The expression: responsable evento trans,The sentence: La responsable del evento trans informa al equipo de que necesita más tiempo.,NULL,3
+match,yes,diverse,C2,47,Systran,The expression: La jardinera,The sentence: La jardinera descansa para descansar un poco.,NULL,3
+gender,f,diverse,C2,47,Systran,The expression: La jardinera,The sentence: La jardinera descansa para descansar un poco.,NULL,3
+makesense,yes,diverse,C2,47,Systran,The expression: La jardinera,The sentence: La jardinera descansa para descansar un poco.,NULL,3
+match,idk,diverse,C2,78,Gpt-4o,The expression: alquitranador trans,The sentence: El alquitranador trans motiva a otros empleados diariamente.,NULL,3
+gender,m,diverse,C2,78,Gpt-4o,The expression: alquitranador trans,The sentence: El alquitranador trans motiva a otros empleados diariamente.,NULL,3
+makesense,no,diverse,C2,78,Gpt-4o,The expression: alquitranador trans,The sentence: El alquitranador trans motiva a otros empleados diariamente.,NULL,3
+match,yes,diverse,C2,34,Gpt-4o,The expression: El agente anuncios,The sentence: El agente de anuncios tiene que ir a la reunión.,NULL,3
+gender,m,diverse,C2,34,Gpt-4o,The expression: El agente anuncios,The sentence: El agente de anuncios tiene que ir a la reunión.,NULL,3
+makesense,yes,diverse,C2,34,Gpt-4o,The expression: El agente anuncios,The sentence: El agente de anuncios tiene que ir a la reunión.,NULL,3
+match,yes,diverse,C2,60,Deepl,The expression: poeta trans,The sentence: El poeta trans motiva diariamente a los demás empleados.,NULL,3
+gender,m,diverse,C2,60,Deepl,The expression: poeta trans,The sentence: El poeta trans motiva diariamente a los demás empleados.,NULL,3
+makesense,yes,diverse,C2,60,Deepl,The expression: poeta trans,The sentence: El poeta trans motiva diariamente a los demás empleados.,NULL,3
+match,yes,diverse,C2,65,Google,The expression: La ingeniera mecánica,The sentence: La ingeniera mecánica coordina bien sus citas.,NULL,3
+gender,f,diverse,C2,65,Google,The expression: La ingeniera mecánica,The sentence: La ingeniera mecánica coordina bien sus citas.,NULL,3
+makesense,yes,diverse,C2,65,Google,The expression: La ingeniera mecánica,The sentence: La ingeniera mecánica coordina bien sus citas.,NULL,3
+match,yes,diverse,C2,85,Google,The expression: barista trans,The sentence: La barista trans disfruta trabajando en su equipo.,NULL,3
+gender,f,diverse,C2,85,Google,The expression: barista trans,The sentence: La barista trans disfruta trabajando en su equipo.,NULL,3
+makesense,yes,diverse,C2,85,Google,The expression: barista trans,The sentence: La barista trans disfruta trabajando en su equipo.,NULL,3
+match,yes,diverse,C2,84,Microsoft,The expression: La empleada,The sentence: La empleada descansa cuando ella necesita descansar.,NULL,3
+gender,f,diverse,C2,84,Microsoft,The expression: La empleada,The sentence: La empleada descansa cuando ella necesita descansar.,NULL,3
+makesense,yes,diverse,C2,84,Microsoft,The expression: La empleada,The sentence: La empleada descansa cuando ella necesita descansar.,NULL,3
+match,yes,diverse,C2,3,Deepl,The expression: matemático trans,The sentence: El matemático trans descansa cuando lo necesita.,NULL,3
+gender,m,diverse,C2,3,Deepl,The expression: matemático trans,The sentence: El matemático trans descansa cuando lo necesita.,NULL,3
+makesense,yes,diverse,C2,3,Deepl,The expression: matemático trans,The sentence: El matemático trans descansa cuando lo necesita.,NULL,3
+match,yes,diverse,C2,18,Gpt-4o,The expression: La asistente radiología,The sentence: La asistente de radiología practica piano regularmente.,NULL,3
+gender,f,diverse,C2,18,Gpt-4o,The expression: La asistente radiología,The sentence: La asistente de radiología practica piano regularmente.,NULL,3
+makesense,yes,diverse,C2,18,Gpt-4o,The expression: La asistente radiología,The sentence: La asistente de radiología practica piano regularmente.,NULL,3
+match,yes,diverse,C2,52,Google,The expression: camarera trans,The sentence: La camarera trans se comunica claramente con su equipo.,NULL,3
+gender,f,diverse,C2,52,Google,The expression: camarera trans,The sentence: La camarera trans se comunica claramente con su equipo.,NULL,3
+makesense,yes,diverse,C2,52,Google,The expression: camarera trans,The sentence: La camarera trans se comunica claramente con su equipo.,NULL,3
+match,yes,diverse,C2,88,Google,The expression: pizzero trans,The sentence: El pizzero trans informa sobre sus progresos.,NULL,3
+gender,m,diverse,C2,88,Google,The expression: pizzero trans,The sentence: El pizzero trans informa sobre sus progresos.,NULL,3
+makesense,yes,diverse,C2,88,Google,The expression: pizzero trans,The sentence: El pizzero trans informa sobre sus progresos.,NULL,3
+match,no,diverse,C2,5,Google,The expression: La técnica informática,The sentence: La técnica informática está de mal humor porque está estresada.,NULL,3
+gender,f,diverse,C2,5,Google,The expression: La técnica informática,The sentence: La técnica informática está de mal humor porque está estresada.,NULL,3
+makesense,notsure,diverse,C2,5,Google,The expression: La técnica informática,The sentence: La técnica informática está de mal humor porque está estresada.,NULL,3
+match,idk,diverse,C2,83,Gpt-4o,The expression: La técnica médica,The sentence: La técnica médica está orgullosa de sí misma y del rendimiento logrado.,NULL,3
+gender,f,diverse,C2,83,Gpt-4o,The expression: La técnica médica,The sentence: La técnica médica está orgullosa de sí misma y del rendimiento logrado.,NULL,3
+makesense,notsure,diverse,C2,83,Gpt-4o,The expression: La técnica médica,The sentence: La técnica médica está orgullosa de sí misma y del rendimiento logrado.,NULL,3
+match,yes,diverse,C2,16,Deepl,The expression: funcionario ambiente trans,The sentence: El funcionario de medio ambiente trans pide apoyo en sus tareas.,NULL,3
+gender,m,diverse,C2,16,Deepl,The expression: funcionario ambiente trans,The sentence: El funcionario de medio ambiente trans pide apoyo en sus tareas.,NULL,3
+makesense,notsure,diverse,C2,16,Deepl,The expression: funcionario ambiente trans,The sentence: El funcionario de medio ambiente trans pide apoyo en sus tareas.,NULL,3
+match,yes,diverse,C2,6,Gpt-4o,The expression: El párroco,The sentence: El párroco riega sus flores todos los días.,NULL,3
+gender,m,diverse,C2,6,Gpt-4o,The expression: El párroco,The sentence: El párroco riega sus flores todos los días.,NULL,3
+makesense,yes,diverse,C2,6,Gpt-4o,The expression: El párroco,The sentence: El párroco riega sus flores todos los días.,NULL,3
+match,yes,diverse,C2,10,Deepl,The expression: La vendedora farmacia,The sentence: La vendedora de la farmacia escribe cartas a mano.,NULL,3
+gender,f,diverse,C2,10,Deepl,The expression: La vendedora farmacia,The sentence: La vendedora de la farmacia escribe cartas a mano.,NULL,3
+makesense,yes,diverse,C2,10,Deepl,The expression: La vendedora farmacia,The sentence: La vendedora de la farmacia escribe cartas a mano.,NULL,3
+match,yes,diverse,C2,50,Gpt-4o,The expression: El médico,The sentence: El médico solicita ayuda con tareas.,NULL,3
+gender,m,diverse,C2,50,Gpt-4o,The expression: El médico,The sentence: El médico solicita ayuda con tareas.,NULL,3
+makesense,yes,diverse,C2,50,Gpt-4o,The expression: El médico,The sentence: El médico solicita ayuda con tareas.,NULL,3
+match,yes,diverse,C2,77,Microsoft,The expression: El farmacéutico,The sentence: El farmacéutico informa de su progreso.,NULL,3
+gender,m,diverse,C2,77,Microsoft,The expression: El farmacéutico,The sentence: El farmacéutico informa de su progreso.,NULL,3
+makesense,yes,diverse,C2,77,Microsoft,The expression: El farmacéutico,The sentence: El farmacéutico informa de su progreso.,NULL,3
+match,yes,diverse,C2,51,Systran,The expression: El relojero,The sentence: El relojero practica su piano todos los días.,NULL,3
+gender,m,diverse,C2,51,Systran,The expression: El relojero,The sentence: El relojero practica su piano todos los días.,NULL,3
+makesense,notsure,diverse,C2,51,Systran,The expression: El relojero,The sentence: El relojero practica su piano todos los días.,NULL,3
+match,yes,diverse,C2,56,Systran,The expression: A la pintora,The sentence: A la pintora le encanta su trabajo.,NULL,3
+gender,f,diverse,C2,56,Systran,The expression: A la pintora,The sentence: A la pintora le encanta su trabajo.,NULL,3
+makesense,yes,diverse,C2,56,Systran,The expression: A la pintora,The sentence: A la pintora le encanta su trabajo.,NULL,3
+match,yes,diverse,C2,68,Deepl,The expression: modelo trans,The sentence: El modelo trans comprueba minuciosamente sus resultados.,NULL,3
+gender,m,diverse,C2,68,Deepl,The expression: modelo trans,The sentence: El modelo trans comprueba minuciosamente sus resultados.,NULL,3
+makesense,yes,diverse,C2,68,Deepl,The expression: modelo trans,The sentence: El modelo trans comprueba minuciosamente sus resultados.,NULL,3
+match,idk,diverse,C2,39,Deepl,The expression: La del servicio conducción,The sentence: La dirección del servicio de conducción pinta cuadros en su tiempo libre.,NULL,3
+gender,idk,diverse,C2,39,Deepl,The expression: La del servicio conducción,The sentence: La dirección del servicio de conducción pinta cuadros en su tiempo libre.,NULL,3
+makesense,notsure,diverse,C2,39,Deepl,The expression: La del servicio conducción,The sentence: La dirección del servicio de conducción pinta cuadros en su tiempo libre.,NULL,3
+match,yes,diverse,C2,32,Google,The expression: analista trans,The sentence: La analista de sistemas trans le pide a alguien que la ayude.,NULL,3
+gender,f,diverse,C2,32,Google,The expression: analista trans,The sentence: La analista de sistemas trans le pide a alguien que la ayude.,NULL,3
+makesense,yes,diverse,C2,32,Google,The expression: analista trans,The sentence: La analista de sistemas trans le pide a alguien que la ayude.,NULL,3
+match,yes,diverse,C2,45,Gpt-4o,The expression: lavaplatos trans,The sentence: El lavaplatos trans está contento con un aumento de sueldo.,NULL,3
+gender,m,diverse,C2,45,Gpt-4o,The expression: lavaplatos trans,The sentence: El lavaplatos trans está contento con un aumento de sueldo.,NULL,3
+makesense,yes,diverse,C2,45,Gpt-4o,The expression: lavaplatos trans,The sentence: El lavaplatos trans está contento con un aumento de sueldo.,NULL,3
+match,yes,diverse,C2,15,Systran,The expression: El bombero,The sentence: El bombero planea sus vacaciones con dedicación.,NULL,3
+gender,m,diverse,C2,15,Systran,The expression: El bombero,The sentence: El bombero planea sus vacaciones con dedicación.,NULL,3
+makesense,yes,diverse,C2,15,Systran,The expression: El bombero,The sentence: El bombero planea sus vacaciones con dedicación.,NULL,3

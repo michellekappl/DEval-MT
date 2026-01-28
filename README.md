@@ -86,7 +86,7 @@ This modular design makes it easy to plug in:
 ## Usage
 A full, runnable example can be found in:
 - `usage_example.py`: processes data and runs all analysis methods.
-- `usage_example_2.py`: generate plots of the analysis.
+- `usage_example_2.py`: generates plots of the analysis.
 
 ## Apis/methods/packages/platforms used
 - Word alignment: [Simalign](https://github.com/cisnlp/simalign)

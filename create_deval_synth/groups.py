@@ -49,9 +49,7 @@ groups = {
             Noun("f", "Liebhaberin", nom_pl="Liebhaberinnen"),
         ],
         [
-            Noun("n", "Date", "Dates", nom_pl="Dates", dat_pl="Dates", pronouns="er"),
-            Noun("n", "Date", "Dates", nom_pl="Dates", dat_pl="Dates", pronouns="sie"),
-            Noun("n", "Date", "Dates", nom_pl="Dates", dat_pl="Dates", pronouns="dey"),
+            Noun("n", "Date", "Dates", nom_pl="Dates", dat_pl="Dates"),
         ],
     ],
     # "other": [
