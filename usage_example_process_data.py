@@ -78,16 +78,27 @@ if __name__ == "__main__":
 
         model_output_dir = os.path.join(outputs_root, model_name)
         os.makedirs(model_output_dir, exist_ok=True)
+        
+        # to analyze with a certain column, the following two should be specified
+        # filter_col='sentence_style'
+        # filter_value=1
 
         # -------------------------------
         # 1. Error Analysis
         # -------------------------------
         error_df = ErrorAnalysis(ds, "x_gender").analyze().T
         error_df.attrs["filename"] = f"{model_name}_error_analysis"
+        # for style in ds.df[filter_col].unique():            
+        #     # in this case the results should be saved inside the loop, otherwise only the last one is saved
+        #     error_df=ErrorAnalysis(ds, "x_gender").analyze(filter_col=filter_col,filter_value=style).T
+        #     error_df.attrs["filename"] = f"{model_name}_error_analysis_{filter_col}_{style}"
+
 
         # -------------------------------
         # 2. Confusion Matrix
         # -------------------------------
+        # cm_df = ConfusionMatrix(ds, "x_gender").analyze(filter_col=filter_col,filter_value=filter_value).T
+        # cm_df.attrs["filename"] = f"{model_name}_confusion_metrics_{filter_col}_{filter_value}"
         cm_df = ConfusionMatrix(ds, "x_gender").analyze().T
         cm_df.attrs["filename"] = f"{model_name}_confusion_metrics"
 
@@ -95,7 +106,9 @@ if __name__ == "__main__":
         # 3. Logistic Regression
         # -------------------------------
         lr_results = LogisticRegressionAnalysis(ds, "x_gender").analyze(
-            predictor_col="x_stereotypical"
+            predictor_col="x_stereotypical",
+            # filter_col=filter_col,
+            # filter_value=filter_value
         )
         lr_results.attrs["filename"] = f"{model_name}_logistic_regression"
 
@@ -116,16 +129,21 @@ if __name__ == "__main__":
             error_df.T,
             output_dir=model_output_dir,
             filename=error_df.attrs["filename"],
+            # filter_col=filter_col
         )
         plot_confusion_metrics(
             cm_df.T,
             output_dir=model_output_dir,
             filename=cm_df.attrs["filename"],
+            # filter_col=filter_col,
+            # filter_value=filter_value
         )
         plot_logistic_regression(
             lr_results,
             output_dir=model_output_dir,
             filename=lr_results.attrs["filename"],
+            # filter_col=filter_col,
+            # filter_value=filter_value
         )
 
         print(f"[{model_name}] Analysis complete. Languages processed: {available_languages}")

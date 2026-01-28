@@ -79,7 +79,7 @@ print("=== DEval-MT Analysis Examples ===\n")
 
 # Create sample data
 if __name__ == '__main__':
-   processed_file='systran_processed.csv'
+   processed_file='processed_data/gpt-4o_processed.csv'
    ds1 = example_data()
    ds1.df.to_csv(processed_file, sep=";", index=False)
 
@@ -90,11 +90,11 @@ error_analyzer = ErrorAnalysis(ds1, 'x_gender')
 # example: for sentence_style==1:
 # print(error_analyzer.analyze(filter_col='sentence_style',filter_value=1).T)
 # example: checking all sentence_styles:
-for style in ds1.df['sentence_style'].unique():
-   print("-" * 50)
-   print(ErrorAnalysis(ds1, "x_gender").analyze(filter_col='sentence_style',filter_value=style).T)
+# for style in ds1.df['sentence_style'].unique():
+#    print("-" * 50)
+#    print(ErrorAnalysis(ds1, "x_gender").analyze(filter_col='sentence_style',filter_value=style).T)
 
-# print(error_analyzer.analyze().T)
+print(error_analyzer.analyze().T)
 
 
 # 2. Confusion Matrix

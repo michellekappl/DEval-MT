@@ -40,7 +40,7 @@ class ConfusionMatrix:
             if gold is not None and pred is not None:
                 if gold in all_genders and pred in all_genders:
                     matrix.loc[gold, pred] += 1
-        print(matrix)
+        #print(matrix)
         return matrix
 
     def __calculate_metrics(self, language: str,df:pd.DataFrame) -> Dict[str, Dict[str, float]]:

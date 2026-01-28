@@ -71,11 +71,11 @@ class ErrorAnalysis:
       for lang in languages:
          pred_col = self.ds.prediction_columns.get(lang)
 
-         prediction_correct = self.ds.df[
-            ((self.ds.df[self.gold_col] == self.ds.df[pred_col]) & (self.ds.df[pred_col] != 'Gender.UNKNOWN')) |  # Exact matches (excluding UNKNOWN preds)
-            ((self.ds.df[self.gold_col] == 'Gender.DIVERSE') & (self.ds.df[pred_col] == 'Gender.NEUTER'))  # DIVERSE -> NEUTER is correct
+         prediction_correct = df[
+            ((df[self.gold_col] == df[pred_col]) & (df[pred_col] != 'Gender.UNKNOWN')) |  # Exact matches (excluding UNKNOWN preds)
+            ((df[self.gold_col] == 'Gender.DIVERSE') & (df[pred_col] == 'Gender.NEUTER'))  # DIVERSE -> NEUTER is correct
          ]
-         total = len(self.ds.df)
+         total = len(df)
          correct = len(prediction_correct)
          accuracy = correct / total if total > 0 else 0.0
          unknown_count = 0
@@ -102,7 +102,7 @@ class ErrorAnalysis:
             ErrorType.M_TO_N: 0,
             ErrorType.F_TO_N: 0,
          }
-         for _, row in self.ds.df.iterrows():
+         for _, row in df.iterrows():
             gold = row.get(self.gold_col)
             pred = row.get(pred_col)
 
@@ -135,8 +135,8 @@ class ErrorAnalysis:
          }
 
          # Add error type counts
-         # for error_type, count in error_types.items():
-         #    row_data[f'error_{error_type.name.lower()}'] = count
+         for error_type, count in error_types.items():
+            row_data[f'error_{error_type.name.lower()}'] = count
          
          # if filter_col is not None:
          #    row_data[filter_col]=filter_value

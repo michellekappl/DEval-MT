@@ -6,7 +6,7 @@ import os
 # -------------------------------
 # Error Analysis Plot
 # -------------------------------
-def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename: str = "error_analysis.png"):
+def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename: str = "error_analysis.png",filter_col=None):
     """
     Plots a table of key metrics per language and error counts from a DataFrame
     returned by the analyze() method. Saves the figure to the specified output folder.
@@ -32,7 +32,7 @@ def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename:
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), gridspec_kw={'height_ratios': [1, 2]})
 
     # Table
-    table_data = df[['total', 'correct', 'accuracy', 'true_error_count', 'unknown_count']].round(3)
+    table_data = df[['total', f'{filter_col}','correct', 'accuracy', 'true_error_count', 'unknown_count']].round(3)
     ax1.axis('off')
     table = ax1.table(cellText=table_data.values,
                       rowLabels=table_data.index,
@@ -78,7 +78,7 @@ def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename:
 # -------------------------------
 # Logistic Regression Plot
 # -------------------------------
-def plot_logistic_regression(df: pd.DataFrame, output_dir: str = "outputs", filename: str = "logistic_regression_plot.jpg"):
+def plot_logistic_regression(df: pd.DataFrame, output_dir: str = "outputs", filename: str = "logistic_regression_plot.jpg",filter_col=None,filter_value=None):
     """
     Plots bar charts comparing logistic regression metrics for each language.
 
@@ -102,7 +102,10 @@ def plot_logistic_regression(df: pd.DataFrame, output_dir: str = "outputs", file
         axes[i].set_xticklabels(languages)
         axes[i].grid(True, axis='y')
 
-    plt.suptitle('Logistic Regression Metrics by Language')
+    if filter_col is not None and filter_value is not None:
+        plt.suptitle(f'Logistic Regression Metrics by Language with {filter_col}=={filter_value}')
+    else:
+        plt.suptitle('Logistic Regression Metrics by Language')
     plt.tight_layout()
 
     os.makedirs(output_dir, exist_ok=True)
@@ -115,7 +118,7 @@ def plot_logistic_regression(df: pd.DataFrame, output_dir: str = "outputs", file
 # -------------------------------
 # Confusion Metrics Plot
 # -------------------------------
-def plot_confusion_metrics(df: pd.DataFrame, output_dir: str = "outputs", filename: str = "confusion_metrics.png"):
+def plot_confusion_metrics(df: pd.DataFrame, output_dir: str = "outputs", filename: str = "confusion_metrics.png",filter_col=None,filter_value=None):
     """
     Plots confusion metrics (precision, recall, f1) for each language.
     Handles dynamic legend placement and prevents overlapping numbers on bars.
@@ -170,7 +173,10 @@ def plot_confusion_metrics(df: pd.DataFrame, output_dir: str = "outputs", filena
         for i in range(len(genders) - 1):
             ax.axvline(i + 0.5, color="gray", linestyle="--", alpha=0.3)
 
-        ax.set_title(metric.title(), fontsize=14)
+        if filter_col is not None and filter_value is not None:
+            ax.set_title(f'{metric.title()} with {filter_col}=={filter_value}', fontsize=14)
+        else:
+            ax.set_title(metric.title(), fontsize=14)
         ax.set_ylim(0, 1.1)
         ax.grid(axis="y", alpha=0.3)
 
