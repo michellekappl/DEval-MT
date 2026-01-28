@@ -125,17 +125,6 @@ def example_data(model_name: str) -> DEvalDataset:
 
         return ds
 
-
-   #label the file names on the dataframes, otherwise it will use df_1, df_2 etc.   
-   cm_df.attrs["filename"] = "confusion_matrix"
-   error_df.attrs["filename"] = "error_analysis"
-   lr_results.attrs["filename"] = "logistic_regression"
-
-   save_dataframes(error_df, cm_df, lr_results)
-   
-   plot_error_analysis(error_df.T)
-   plot_confusion_metrics(cm_df.T)
-   plot_logistic_regression(lr_results)
 if __name__ == "__main__":
     for model_name in ["gpt-4o", "google", "systran", "microsoft", "deepl"]:
         ds1 = example_data(model_name)
