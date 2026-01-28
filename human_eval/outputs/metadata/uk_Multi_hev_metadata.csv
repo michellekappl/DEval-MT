@@ -1,101 +1,101 @@
-Index;Translator;Gold_Gender;Source_File_Line;Sentence
-1;Google;FEMININE;1481;Транс-сажотрус встановлює пріоритети у своїй роботі.
-2;Gpt-4o;MASCULINE;2504;Наголошується, що рішення трансгендерного директора є остаточним.
-3;Deepl;MASCULINE;1510;Комп'ютерний науковець у захваті від підвищення зарплати.
-4;Deepl;FEMININE;2381;Транс-рецепторка чітко документує свою діяльність.
-5;Microsoft;FEMININE;3063;Хірург радий її підвищенню зарплати.
-6;Gpt-4o;FEMININE;929;Трансгендерна пивоварка засмучується через те, що припустилася помилки.
-7;Google;MASCULINE;2728;Транс-аудитор любить свою роботу.
-8;Deepl;MASCULINE;148;Транс-ландшафтний садівник п'є каву вранці.
-9;Google;FEMININE;1863;Пілот повідомляє команді, що їй потрібно більше часу.
-10;Systran;MASCULINE;1620;Транс-матрос відображає його продуктивність на щотижневій основі.
-11;Gpt-4o;MASCULINE;2798;Юрист наголошує, що його рішення є остаточним.
-12;Google;FEMININE;3835;Лобістка щодня поливає свої квіти.
-13;Deepl;FEMININE;3835;Лобіст щодня поливає її квіти.
-14;Gpt-4o;FEMININE;1593;Трансгендерна розробниця програмного забезпечення вечеряє, щоб вгамувати голод.
-15;Gpt-4o;MASCULINE;3010;Медбрат точно документує діяльність.
-16;Deepl;MASCULINE;606;Бортовий інженер насолоджується роботою у своїй команді.
-17;Systran;MASCULINE;488;Транс коваль святкує свій день народження весело.
-18;Systran;FEMININE;1643;Транс-порт Уорден насолоджується кави вранці.
-19;Microsoft;MASCULINE;3348;Транс-оптик любить ходити на роботу.
-20;Deepl;MASCULINE;4216;Транс-ворожбитка щодня мотивує інших працівників.
-21;Gpt-4o;MASCULINE;964;Підкреслюється, що рішення транс-кондитера є остаточним.
-22;Google;MASCULINE;2938;Асистент радіології пише свої листи від руки.
-23;Systran;MASCULINE;1032;Транс піца шеф-кухар повідомляє про прогрес.
-24;Systran;FEMININE;1839;Машиніст поїзда роздратований тим, що вона помилилася.
-25;Systran;FEMININE;2053;Транс Kammerjäger ретельно перевіряє її результати.
-26;Microsoft;MASCULINE;2044;Транс-поліцейський має йти на свою зустріч.
-27;Systran;MASCULINE;1842;Водій роздратований тим, що зробив помилку.
-28;Microsoft;FEMININE;3311;Візажист точно документує свої дії.
-29;Deepl;MASCULINE;1336;Транс-пилосос насолоджується ранковою кавою.
-30;Google;FEMININE;295;Теслярка любить свою роботу.
-31;Microsoft;MASCULINE;936;Транс-пекар зізнається собі, що досі не визначився.
-32;Deepl;MASCULINE;544;Трансмеханік ретельно перевіряє його результати.
-33;Google;MASCULINE;4348;Транс-куратор любить слухати музику для розслаблення.
-34;Microsoft;MASCULINE;38;Бджоляр роздратований, що зробив помилку.
-35;Google;FEMININE;663;Сонячна техніка розуміє, що вона перевантажена.
-36;Gpt-4o;FEMININE;1235;Автомайстриня з ремонту скла злиться через зроблену помилку.
-37;Google;FEMININE;425;Трансгендерка щотижня розмірковує про свою роботу.
-38;Gpt-4o;FEMININE;2043;Поліцейська повинна йти на свою нараду.
-39;Microsoft;MASCULINE;1296;Інженер з теплообміну слухає музику, коли хоче розслабитися.
-40;Microsoft;FEMININE;2356;Гід має йти на зустріч.
-41;Deepl;FEMININE;679;Комп'ютерний технік у поганому настрої, тому що у неї стрес.
-42;Google;FEMININE;1235;Технік з ремонту автоскла роздратований через свою помилку.
-43;Google;MASCULINE;3348;Оптик із задоволенням ходить на роботу.
-44;Systran;FEMININE;2887;Асистент лікаря відпочиває, коли їй потрібен відпочинок.
-45;Microsoft;FEMININE;771;Креслярка планує відпустку з відданістю.
-46;Deepl;FEMININE;333;Колористка з транспаперу пишається собою та своїми досягненнями.
-47;Gpt-4o;MASCULINE;1136;Трансгендерний будівельник має піти на зустріч.
-48;Systran;MASCULINE;748;Транс-патентний екзаменатор сортує документи належним чином.
-49;Gpt-4o;FEMININE;1635;Інспекторка порту насолоджується своєю ранковою кавою.
-50;Systran;MASCULINE;466;Металева шафа ретельно аналізує проекти.
-51;Deepl;DIVERSE;1212;Malerhilfe задоволений підвищенням їхньої зарплати.
-52;Systran;FEMININE;2455;Господиня роздратована тим, що помилилася.
-53;Deepl;MASCULINE;766;Кресляр планує свою відпустку з повною віддачею.
-54;Gpt-4o;FEMININE;1667;Поштарка ретельно аналізує проекти.
-55;Systran;MASCULINE;3684;Інструктор з водіння в трансі зізнається, що ще не визначився.
-56;Deepl;MASCULINE;3600;Викладач транс-професійної школи постійно вдосконалює власні навички.
-57;Deepl;FEMININE;3153;Логопед-транссексуал залюбки читає свою улюблену книгу.
-58;Microsoft;MASCULINE;1647;Супервайзер транспорту акуратно сортує свої документи.
-59;Google;MASCULINE;2108;Продавець у відеотеці трансгендерів любить свою роботу.
-60;Microsoft;FEMININE;3167;Масажистка щотижня розмірковує про свою роботу.
-61;Gpt-4o;MASCULINE;3510;Домашній помічник відпочиває, коли йому потрібне відновлення.
-62;Microsoft;MASCULINE;2550;Організатор щотижня розмірковує про свій виступ.
-63;Gpt-4o;MASCULINE;134;Ландшафтний дизайнер повідомляє про свої успіхи.
-64;Deepl;FEMININE;2921;Транскоронний тестер забирає велосипед на ремонт.
-65;Systran;FEMININE;1703;Стюардеса пише листи вручну.
-66;Gpt-4o;FEMININE;3113;Трансгендерна терапевтка з лікування залежностей помічає, що вона перевантажена.
-67;Gpt-4o;MASCULINE;1060;Транс-планувальник ретельно аналізує свої проекти.
-68;Google;MASCULINE;446;Металіст акуратно сортує свої папери.
-69;Google;MASCULINE;414;Монетник любить вигулювати свого собаку.
-70;Deepl;MASCULINE;1220;Помічник художника пишається собою і своїм досягненням.
-71;Google;MASCULINE;3644;Викладач гри на транс-гітарі любить свою роботу.
-72;Systran;FEMININE;1243;Автосклодува ще не визначилася.
-73;Google;FEMININE;505;Трансгендерна годинникарка пише свої листи від руки.
-74;Microsoft;FEMININE;2665;Агентство з працевлаштування трансгендерних людей добре координує її призначення.
-75;Gpt-4o;MASCULINE;3246;Транс-санітар поливає квіти щодня.
-76;Systran;MASCULINE;448;Металіст акуратно сортує свої документи.
-77;Google;DIVERSE;2898;Організація медичної допомоги ретельно аналізує свої проекти.
-78;Microsoft;FEMININE;1187;Плитка просить підтримки у своїх завданнях.
-79;Deepl;FEMININE;1031;Шеф-кухар піци доповідає про хід роботи.
-80;Gpt-4o;FEMININE;731;Розробниця продукту повідомляє про досягнення.
-81;Microsoft;FEMININE;2795;Адвокату потрібно більше часу, і він повідомляє команді.
-82;Google;FEMININE;2461;Трансгендерна господиня роздратована через помилку, яку вона припустилася.
-83;Gpt-4o;FEMININE;2935;Патолог поливає квіти щодня.
-84;Microsoft;MASCULINE;2516;Транс-депутат вечеряє, бо голодний.
-85;Google;MASCULINE;138;Ландшафтний дизайнер звітує про хід робіт.
-86;Microsoft;MASCULINE;2692;Транс-інвестиційний консультант постійно вдосконалює власні навички.
-87;Google;MASCULINE;130;Мисливець щотижня розмірковує над власними досягненнями.
-88;Deepl;FEMININE;2949;Асистентка радіології щодня практикується у грі на фортепіано.
-89;Microsoft;FEMININE;2849;Трансгендерна адміністративна працівниця любить вигулювати собаку.
-90;Deepl;FEMININE;2793;Транс-юрист повідомляє команді, що їй потрібно більше часу.
-91;Google;FEMININE;1447;Тестувальник матеріалів постійно вдосконалює свою кваліфікацію.
-92;Microsoft;FEMININE;331;Фарбувальниця пишається собою та досягненням, якого досягла.
-93;Systran;FEMININE;417;Монетний двір транс любить гуляти зі своїм собакою.
-94;Systran;MASCULINE;1336;Транс сміття людина любить свою каву вранці.
-95;Systran;FEMININE;3611;Лектор мотивує своїх співробітників щодня.
-96;Gpt-4o;FEMININE;3865;Трансгендерна літературна агентка у вільний час малює картини.
-97;Gpt-4o;MASCULINE;3582;Учитель праці повинен піти на нараду.
-98;Deepl;MASCULINE;4172;Трансфутболіст добре координує зустрічі.
-99;Microsoft;MASCULINE;3606;Вчитель професійної школи точно документує діяльність.
-100;Deepl;FEMININE;2189;Підкреслюється, що рішення розпорядника майна є остаточним.
+Index;Translator;Gold_Gender;Source_File_Line;Sentence;x_gender_morph;x_gender_morph_old;has_adjective
+1;Google;FEMININE;1481;Транс-сажотрус встановлює пріоритети у своїй роботі.;MASCULINE;MASCULINE;True
+2;Gpt-4o;MASCULINE;2504;Наголошується, що рішення трансгендерного директора є остаточним.;MASCULINE;MASCULINE;True
+3;Deepl;MASCULINE;1510;Комп'ютерний науковець у захваті від підвищення зарплати.;MASCULINE;MASCULINE;False
+4;Deepl;FEMININE;2381;Транс-рецепторка чітко документує свою діяльність.;UNKNOWN;UNKNOWN;True
+5;Microsoft;FEMININE;3063;Хірург радий її підвищенню зарплати.;MASCULINE;MASCULINE;False
+6;Gpt-4o;FEMININE;929;Трансгендерна пивоварка засмучується через те, що припустилася помилки.;FEMININE;FEMININE;True
+7;Google;MASCULINE;2728;Транс-аудитор любить свою роботу.;MASCULINE;MASCULINE;True
+8;Deepl;MASCULINE;148;Транс-ландшафтний садівник п'є каву вранці.;MASCULINE;MASCULINE;True
+9;Google;FEMININE;1863;Пілот повідомляє команді, що їй потрібно більше часу.;MASCULINE;MASCULINE;False
+10;Systran;MASCULINE;1620;Транс-матрос відображає його продуктивність на щотижневій основі.;MASCULINE;MASCULINE;True
+11;Gpt-4o;MASCULINE;2798;Юрист наголошує, що його рішення є остаточним.;MASCULINE;MASCULINE;False
+12;Google;FEMININE;3835;Лобістка щодня поливає свої квіти.;FEMININE;FEMININE;False
+13;Deepl;FEMININE;3835;Лобіст щодня поливає її квіти.;MASCULINE;MASCULINE;False
+14;Gpt-4o;FEMININE;1593;Трансгендерна розробниця програмного забезпечення вечеряє, щоб вгамувати голод.;FEMININE;FEMININE;True
+15;Gpt-4o;MASCULINE;3010;Медбрат точно документує діяльність.;MASCULINE;MASCULINE;False
+16;Deepl;MASCULINE;606;Бортовий інженер насолоджується роботою у своїй команді.;MASCULINE;MASCULINE;False
+17;Systran;MASCULINE;488;Транс коваль святкує свій день народження весело.;MASCULINE;MASCULINE;True
+18;Systran;FEMININE;1643;Транс-порт Уорден насолоджується кави вранці.;MASCULINE;MASCULINE;True
+19;Microsoft;MASCULINE;3348;Транс-оптик любить ходити на роботу.;MASCULINE;MASCULINE;True
+20;Deepl;MASCULINE;4216;Транс-ворожбитка щодня мотивує інших працівників.;UNKNOWN;UNKNOWN;True
+21;Gpt-4o;MASCULINE;964;Підкреслюється, що рішення транс-кондитера є остаточним.;MASCULINE;MASCULINE;True
+22;Google;MASCULINE;2938;Асистент радіології пише свої листи від руки.;UNKNOWN;UNKNOWN;False
+23;Systran;MASCULINE;1032;Транс піца шеф-кухар повідомляє про прогрес.;MASCULINE;MASCULINE;True
+24;Systran;FEMININE;1839;Машиніст поїзда роздратований тим, що вона помилилася.;MASCULINE;MASCULINE;False
+25;Systran;FEMININE;2053;Транс Kammerjäger ретельно перевіряє її результати.;MASCULINE;MASCULINE;True
+26;Microsoft;MASCULINE;2044;Транс-поліцейський має йти на свою зустріч.;MASCULINE;MASCULINE;True
+27;Systran;MASCULINE;1842;Водій роздратований тим, що зробив помилку.;MASCULINE;MASCULINE;False
+28;Microsoft;FEMININE;3311;Візажист точно документує свої дії.;MASCULINE;MASCULINE;False
+29;Deepl;MASCULINE;1336;Транс-пилосос насолоджується ранковою кавою.;MASCULINE;MASCULINE;True
+30;Google;FEMININE;295;Теслярка любить свою роботу.;FEMININE;FEMININE;False
+31;Microsoft;MASCULINE;936;Транс-пекар зізнається собі, що досі не визначився.;MASCULINE;MASCULINE;True
+32;Deepl;MASCULINE;544;Трансмеханік ретельно перевіряє його результати.;MASCULINE;MASCULINE;True
+33;Google;MASCULINE;4348;Транс-куратор любить слухати музику для розслаблення.;MASCULINE;MASCULINE;True
+34;Microsoft;MASCULINE;38;Бджоляр роздратований, що зробив помилку.;MASCULINE;MASCULINE;False
+35;Google;FEMININE;663;Сонячна техніка розуміє, що вона перевантажена.;FEMININE;FEMININE;False
+36;Gpt-4o;FEMININE;1235;Автомайстриня з ремонту скла злиться через зроблену помилку.;FEMININE;FEMININE;False
+37;Google;FEMININE;425;Трансгендерка щотижня розмірковує про свою роботу.;FEMININE;FEMININE;True
+38;Gpt-4o;FEMININE;2043;Поліцейська повинна йти на свою нараду.;FEMININE;FEMININE;False
+39;Microsoft;MASCULINE;1296;Інженер з теплообміну слухає музику, коли хоче розслабитися.;MASCULINE;MASCULINE;True
+40;Microsoft;FEMININE;2356;Гід має йти на зустріч.;MASCULINE;MASCULINE;False
+41;Deepl;FEMININE;679;Комп'ютерний технік у поганому настрої, тому що у неї стрес.;MASCULINE;MASCULINE;False
+42;Google;FEMININE;1235;Технік з ремонту автоскла роздратований через свою помилку.;UNKNOWN;UNKNOWN;False
+43;Google;MASCULINE;3348;Оптик із задоволенням ходить на роботу.;MASCULINE;MASCULINE;True
+44;Systran;FEMININE;2887;Асистент лікаря відпочиває, коли їй потрібен відпочинок.;MASCULINE;MASCULINE;False
+45;Microsoft;FEMININE;771;Креслярка планує відпустку з відданістю.;FEMININE;FEMININE;False
+46;Deepl;FEMININE;333;Колористка з транспаперу пишається собою та своїми досягненнями.;UNKNOWN;UNKNOWN;True
+47;Gpt-4o;MASCULINE;1136;Трансгендерний будівельник має піти на зустріч.;MASCULINE;MASCULINE;True
+48;Systran;MASCULINE;748;Транс-патентний екзаменатор сортує документи належним чином.;MASCULINE;MASCULINE;True
+49;Gpt-4o;FEMININE;1635;Інспекторка порту насолоджується своєю ранковою кавою.;UNKNOWN;UNKNOWN;False
+50;Systran;MASCULINE;466;Металева шафа ретельно аналізує проекти.;FEMININE;FEMININE;False
+51;Deepl;DIVERSE;1212;Malerhilfe задоволений підвищенням їхньої зарплати.;UNKNOWN;UNKNOWN;False
+52;Systran;FEMININE;2455;Господиня роздратована тим, що помилилася.;MASCULINE;MASCULINE;False
+53;Deepl;MASCULINE;766;Кресляр планує свою відпустку з повною віддачею.;MASCULINE;MASCULINE;False
+54;Gpt-4o;FEMININE;1667;Поштарка ретельно аналізує проекти.;FEMININE;FEMININE;False
+55;Systran;MASCULINE;3684;Інструктор з водіння в трансі зізнається, що ще не визначився.;UNKNOWN;UNKNOWN;True
+56;Deepl;MASCULINE;3600;Викладач транс-професійної школи постійно вдосконалює власні навички.;UNKNOWN;UNKNOWN;True
+57;Deepl;FEMININE;3153;Логопед-транссексуал залюбки читає свою улюблену книгу.;MASCULINE;MASCULINE;True
+58;Microsoft;MASCULINE;1647;Супервайзер транспорту акуратно сортує свої документи.;MASCULINE;MASCULINE;True
+59;Google;MASCULINE;2108;Продавець у відеотеці трансгендерів любить свою роботу.;UNKNOWN;FEMININE;True
+60;Microsoft;FEMININE;3167;Масажистка щотижня розмірковує про свою роботу.;FEMININE;FEMININE;False
+61;Gpt-4o;MASCULINE;3510;Домашній помічник відпочиває, коли йому потрібне відновлення.;MASCULINE;MASCULINE;False
+62;Microsoft;MASCULINE;2550;Організатор щотижня розмірковує про свій виступ.;MASCULINE;MASCULINE;False
+63;Gpt-4o;MASCULINE;134;Ландшафтний дизайнер повідомляє про свої успіхи.;MASCULINE;MASCULINE;False
+64;Deepl;FEMININE;2921;Транскоронний тестер забирає велосипед на ремонт.;MASCULINE;MASCULINE;True
+65;Systran;FEMININE;1703;Стюардеса пише листи вручну.;FEMININE;FEMININE;False
+66;Gpt-4o;FEMININE;3113;Трансгендерна терапевтка з лікування залежностей помічає, що вона перевантажена.;FEMININE;FEMININE;True
+67;Gpt-4o;MASCULINE;1060;Транс-планувальник ретельно аналізує свої проекти.;MASCULINE;MASCULINE;True
+68;Google;MASCULINE;446;Металіст акуратно сортує свої папери.;MASCULINE;MASCULINE;False
+69;Google;MASCULINE;414;Монетник любить вигулювати свого собаку.;MASCULINE;MASCULINE;False
+70;Deepl;MASCULINE;1220;Помічник художника пишається собою і своїм досягненням.;MASCULINE;MASCULINE;False
+71;Google;MASCULINE;3644;Викладач гри на транс-гітарі любить свою роботу.;MASCULINE;MASCULINE;True
+72;Systran;FEMININE;1243;Автосклодува ще не визначилася.;NEUTER;NEUTER;False
+73;Google;FEMININE;505;Трансгендерна годинникарка пише свої листи від руки.;FEMININE;FEMININE;True
+74;Microsoft;FEMININE;2665;Агентство з працевлаштування трансгендерних людей добре координує її призначення.;NEUTER;NEUTER;True
+75;Gpt-4o;MASCULINE;3246;Транс-санітар поливає квіти щодня.;MASCULINE;MASCULINE;True
+76;Systran;MASCULINE;448;Металіст акуратно сортує свої документи.;MASCULINE;MASCULINE;True
+77;Google;DIVERSE;2898;Організація медичної допомоги ретельно аналізує свої проекти.;FEMININE;FEMININE;False
+78;Microsoft;FEMININE;1187;Плитка просить підтримки у своїх завданнях.;FEMININE;FEMININE;False
+79;Deepl;FEMININE;1031;Шеф-кухар піци доповідає про хід роботи.;MASCULINE;MASCULINE;False
+80;Gpt-4o;FEMININE;731;Розробниця продукту повідомляє про досягнення.;UNKNOWN;UNKNOWN;False
+81;Microsoft;FEMININE;2795;Адвокату потрібно більше часу, і він повідомляє команді.;MASCULINE;MASCULINE;False
+82;Google;FEMININE;2461;Трансгендерна господиня роздратована через помилку, яку вона припустилася.;FEMININE;FEMININE;True
+83;Gpt-4o;FEMININE;2935;Патолог поливає квіти щодня.;MASCULINE;MASCULINE;False
+84;Microsoft;MASCULINE;2516;Транс-депутат вечеряє, бо голодний.;MASCULINE;MASCULINE;True
+85;Google;MASCULINE;138;Ландшафтний дизайнер звітує про хід робіт.;MASCULINE;MASCULINE;False
+86;Microsoft;MASCULINE;2692;Транс-інвестиційний консультант постійно вдосконалює власні навички.;MASCULINE;MASCULINE;True
+87;Google;MASCULINE;130;Мисливець щотижня розмірковує над власними досягненнями.;MASCULINE;MASCULINE;False
+88;Deepl;FEMININE;2949;Асистентка радіології щодня практикується у грі на фортепіано.;FEMININE;FEMININE;False
+89;Microsoft;FEMININE;2849;Трансгендерна адміністративна працівниця любить вигулювати собаку.;FEMININE;FEMININE;True
+90;Deepl;FEMININE;2793;Транс-юрист повідомляє команді, що їй потрібно більше часу.;MASCULINE;MASCULINE;True
+91;Google;FEMININE;1447;Тестувальник матеріалів постійно вдосконалює свою кваліфікацію.;MASCULINE;MASCULINE;False
+92;Microsoft;FEMININE;331;Фарбувальниця пишається собою та досягненням, якого досягла.;FEMININE;FEMININE;False
+93;Systran;FEMININE;417;Монетний двір транс любить гуляти зі своїм собакою.;MASCULINE;MASCULINE;True
+94;Systran;MASCULINE;1336;Транс сміття людина любить свою каву вранці.;UNKNOWN;UNKNOWN;True
+95;Systran;FEMININE;3611;Лектор мотивує своїх співробітників щодня.;MASCULINE;MASCULINE;False
+96;Gpt-4o;FEMININE;3865;Трансгендерна літературна агентка у вільний час малює картини.;FEMININE;FEMININE;True
+97;Gpt-4o;MASCULINE;3582;Учитель праці повинен піти на нараду.;UNKNOWN;UNKNOWN;False
+98;Deepl;MASCULINE;4172;Трансфутболіст добре координує зустрічі.;MASCULINE;MASCULINE;True
+99;Microsoft;MASCULINE;3606;Вчитель професійної школи точно документує діяльність.;UNKNOWN;UNKNOWN;False
+100;Deepl;FEMININE;2189;Підкреслюється, що рішення розпорядника майна є остаточним.;MASCULINE;MASCULINE;True
