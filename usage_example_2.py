@@ -127,6 +127,6 @@ def example_data(model_name: str) -> DEvalDataset:
 
 
 if __name__ == "__main__":
-    for model_name in ["microsoft"]:
+    for model_name in ["gpt-4o", "google", "systran", "microsoft", "deepl"]:
         ds1 = example_data(model_name)
         ds1.df.to_csv(f"{model_name}_processed.csv", sep=";", index=False)
