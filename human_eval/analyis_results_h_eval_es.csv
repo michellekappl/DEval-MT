@@ -1,0 +1,42 @@
+Language,es
+Sentences,100
+Participants,3
+Total possible answers,300
+Sentences with adjective,56
+Sentences without adjective,44
+
+Translator,Total,Match Orig,Match New,Expression Match,Makes Sense Yes,With Adj Orig,With Adj New,Without Adj Orig,Without Adj New
+Deepl,63,51,54,51,52,30,33,21,21
+Google,63,54,60,48,57,30,36,24,24
+Gpt-4o,60,60,57,43,56,39,36,21,21
+Microsoft,60,45,52,51,54,24,28,21,24
+Systran,54,54,51,46,45,21,21,33,30
+TOTAL,300,264,274,239,264,144,154,120,120
+%,,88.0%,91.3%,79.7%,88.0%,85.7%,91.7%,90.9%,90.9%
+
+
+MISMATCH ANALYSIS
+
+Total mismatched sentences (at least one participant disagreed with the new alignment),10
+Mismatch indices,"[2, 11, 24, 31, 37, 39, 42, 66, 93, 96]"
+
+Mismatch distribution by original gender
+Gender,Count,Percentage
+DIVERSE,6,23.1%
+FEMININE,10,38.5%
+MASCULINE,10,38.5%
+
+Detailed Mismatches
+CSV Index,Translator,Gender Value,Original,Old,New,Adjective
+2,Gpt-4o,m,MASCULINE,FEMININE,UNKNOWN,Yes
+11,Microsoft,m,FEMININE,FEMININE,FEMININE,Yes
+24,Deepl,m,FEMININE,UNKNOWN,UNKNOWN,No
+31,Microsoft,n,MASCULINE,UNKNOWN,MASCULINE,Yes
+37,Microsoft,m,MASCULINE,FEMININE,UNKNOWN,Yes
+39,Deepl,f,DIVERSE,UNKNOWN,UNKNOWN,No
+39,Deepl,idk,DIVERSE,UNKNOWN,UNKNOWN,No
+42,Microsoft,m,FEMININE,MASCULINE,UNKNOWN,Yes
+42,Microsoft,f,FEMININE,MASCULINE,UNKNOWN,Yes
+66,Systran,m,MASCULINE,UNKNOWN,UNKNOWN,No
+93,Deepl,f,FEMININE,MASCULINE,UNKNOWN,Yes
+96,Google,m,DIVERSE,UNKNOWN,UNKNOWN,No

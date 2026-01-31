@@ -1,0 +1,41 @@
+Language,fr
+Sentences,100
+Participants,2
+Total possible answers,200
+Sentences with adjective,56
+Sentences without adjective,44
+
+Translator,Total,Match Orig,Match New,Expression Match,Makes Sense Yes,With Adj Orig,With Adj New,Without Adj Orig,Without Adj New
+Deepl,42,36,39,27,37,26,28,10,11
+Google,42,33,40,25,36,15,19,18,21
+Gpt-4o,40,38,38,31,37,14,16,24,22
+Microsoft,40,36,34,31,34,26,24,10,10
+Systran,36,35,34,31,33,18,18,17,16
+TOTAL,200,178,185,145,177,99,105,79,80
+%,,89.0%,92.5%,72.5%,88.5%,88.4%,93.8%,89.8%,90.9%
+
+
+MISMATCH ANALYSIS
+
+Total mismatched sentences (at least one participant disagreed with the new alignment),9
+Mismatch indices,"[4, 5, 10, 13, 15, 20, 37, 59, 64]"
+
+Mismatch distribution by original gender
+Gender,Count,Percentage
+DIVERSE,1,6.7%
+FEMININE,10,66.7%
+MASCULINE,4,26.7%
+
+Detailed Mismatches
+CSV Index,Translator,Gender Value,Original,Old,New,Adjective
+4,Deepl,n,FEMININE,FEMININE,FEMININE,Yes
+4,Deepl,idk,FEMININE,FEMININE,FEMININE,Yes
+5,Gpt-4o,m,MASCULINE,UNKNOWN,UNKNOWN,No
+10,Google,idk,FEMININE,MASCULINE,MASCULINE,No
+13,Deepl,idk,DIVERSE,FEMININE,FEMININE,No
+15,Google,idk,FEMININE,MASCULINE,FEMININE,Yes
+20,Microsoft,f,FEMININE,MASCULINE,UNKNOWN,Yes
+37,Systran,f,FEMININE,UNKNOWN,UNKNOWN,No
+37,Systran,m,FEMININE,UNKNOWN,UNKNOWN,No
+59,Microsoft,f,FEMININE,UNKNOWN,UNKNOWN,No
+64,Microsoft,m,MASCULINE,UNKNOWN,UNKNOWN,Yes
