@@ -1,0 +1,301 @@
+Question,Value,gender,language,index,translator,extraction,sentence,Comments,participant
+match,yes,female,C2,2,Deepl,The expression: ميكانيكي السيارات,The sentence: يتواصل ميكانيكي السيارات بوضوح داخل الفريق.,NULL,1
+gender,n,female,C2,2,Deepl,The expression: ميكانيكي السيارات,The sentence: يتواصل ميكانيكي السيارات بوضوح داخل الفريق.,NULL,1
+makesense,no,female,C2,2,Deepl,The expression: ميكانيكي السيارات,The sentence: يتواصل ميكانيكي السيارات بوضوح داخل الفريق.,NULL,1
+match,yes,female,C2,38,Systran,The expression: تعاني المؤرخة,The sentence: تعاني المؤرخة من حالة مزاجية سيئة لأنها تعاني من الضغط النفسي.,NULL,1
+gender,f,female,C2,38,Systran,The expression: تعاني المؤرخة,The sentence: تعاني المؤرخة من حالة مزاجية سيئة لأنها تعاني من الضغط النفسي.,NULL,1
+makesense,notsure,female,C2,38,Systran,The expression: تعاني المؤرخة,The sentence: تعاني المؤرخة من حالة مزاجية سيئة لأنها تعاني من الضغط النفسي.,NULL,1
+match,yes,female,C2,60,Deepl,The expression: مساعد الرسام سعيد,The sentence: مساعد الرسام سعيد بزيادة راتبه.,NULL,1
+gender,m,female,C2,60,Deepl,The expression: مساعد الرسام سعيد,The sentence: مساعد الرسام سعيد بزيادة راتبه.,NULL,1
+makesense,yes,female,C2,60,Deepl,The expression: مساعد الرسام سعيد,The sentence: مساعد الرسام سعيد بزيادة راتبه.,NULL,1
+match,no,female,C2,89,Microsoft,The expression: مندوب المبيعات,The sentence: مندوب المبيعات يحب العمل ضمن فريق.,NULL,1
+gender,m,female,C2,89,Microsoft,The expression: مندوب المبيعات,The sentence: مندوب المبيعات يحب العمل ضمن فريق.,NULL,1
+makesense,yes,female,C2,89,Microsoft,The expression: مندوب المبيعات,The sentence: مندوب المبيعات يحب العمل ضمن فريق.,NULL,1
+match,no,female,C2,61,Gpt-4o,The expression: الصحفية,The sentence: تتحقق الصحفية العابرة بدقة من نتائجها.,NULL,1
+gender,f,female,C2,61,Gpt-4o,The expression: الصحفية,The sentence: تتحقق الصحفية العابرة بدقة من نتائجها.,NULL,1
+makesense,yes,female,C2,61,Gpt-4o,The expression: الصحفية,The sentence: تتحقق الصحفية العابرة بدقة من نتائجها.,NULL,1
+match,no,female,C2,66,Microsoft,The expression: ميكانيكي السيارات المتحولة,The sentence: ميكانيكي السيارات المتحولة يتواصل بوضوح داخل الفريق.,NULL,1
+gender,m,female,C2,66,Microsoft,The expression: ميكانيكي السيارات المتحولة,The sentence: ميكانيكي السيارات المتحولة يتواصل بوضوح داخل الفريق.,NULL,1
+makesense,yes,female,C2,66,Microsoft,The expression: ميكانيكي السيارات المتحولة,The sentence: ميكانيكي السيارات المتحولة يتواصل بوضوح داخل الفريق.,NULL,1
+match,no,female,C2,67,Deepl,The expression: الصندوق المتحولة,The sentence: تستمع أمينة الصندوق المتحولة إلى الموسيقى عندما تريد الاسترخاء.,NULL,1
+gender,f,female,C2,67,Deepl,The expression: الصندوق المتحولة,The sentence: تستمع أمينة الصندوق المتحولة إلى الموسيقى عندما تريد الاسترخاء.,NULL,1
+makesense,no,female,C2,67,Deepl,The expression: الصندوق المتحولة,The sentence: تستمع أمينة الصندوق المتحولة إلى الموسيقى عندما تريد الاسترخاء.,NULL,1
+match,no,female,C2,1,Deepl,The expression: يقوم قارئ عدادات,The sentence: يقوم قارئ عدادات الكهرباء بتوثيق أنشطته بدقة.,NULL,1
+gender,m,female,C2,1,Deepl,The expression: يقوم قارئ عدادات,The sentence: يقوم قارئ عدادات الكهرباء بتوثيق أنشطته بدقة.,NULL,1
+makesense,yes,female,C2,1,Deepl,The expression: يقوم قارئ عدادات,The sentence: يقوم قارئ عدادات الكهرباء بتوثيق أنشطته بدقة.,NULL,1
+match,no,female,C2,98,Microsoft,The expression: الحارس المتحولة,The sentence: الحارس المتحولة يتدرب على البيانو بانتظام.,NULL,1
+gender,n,female,C2,98,Microsoft,The expression: الحارس المتحولة,The sentence: الحارس المتحولة يتدرب على البيانو بانتظام.,NULL,1
+makesense,no,female,C2,98,Microsoft,The expression: الحارس المتحولة,The sentence: الحارس المتحولة يتدرب على البيانو بانتظام.,NULL,1
+match,no,female,C2,59,Systran,The expression: وكيل الإعلانات,The sentence: يجب أن يذهب وكيل الإعلانات إلى الاجتماع.,NULL,1
+gender,n,female,C2,59,Systran,The expression: وكيل الإعلانات,The sentence: يجب أن يذهب وكيل الإعلانات إلى الاجتماع.,NULL,1
+makesense,yes,female,C2,59,Systran,The expression: وكيل الإعلانات,The sentence: يجب أن يذهب وكيل الإعلانات إلى الاجتماع.,NULL,1
+match,yes,female,C2,63,Microsoft,The expression: الصباغة المعدنية المتحولة,The sentence: الصباغة المعدنية المتحولة ترتاح عندما تحتاج إلى الراحة.,NULL,1
+gender,f,female,C2,63,Microsoft,The expression: الصباغة المعدنية المتحولة,The sentence: الصباغة المعدنية المتحولة ترتاح عندما تحتاج إلى الراحة.,NULL,1
+makesense,notsure,female,C2,63,Microsoft,The expression: الصباغة المعدنية المتحولة,The sentence: الصباغة المعدنية المتحولة ترتاح عندما تحتاج إلى الراحة.,NULL,1
+match,yes,female,C2,19,Gpt-4o,The expression: مملئ الرفوف,The sentence: يحب مملئ الرفوف قراءة كتب متنوعة.,NULL,1
+gender,n,female,C2,19,Gpt-4o,The expression: مملئ الرفوف,The sentence: يحب مملئ الرفوف قراءة كتب متنوعة.,NULL,1
+makesense,yes,female,C2,19,Gpt-4o,The expression: مملئ الرفوف,The sentence: يحب مملئ الرفوف قراءة كتب متنوعة.,NULL,1
+match,yes,female,C2,26,Systran,The expression: بنيان القناة,The sentence: توثق بنيان القناة نشاطاتها بالضبط.,NULL,1
+gender,f,female,C2,26,Systran,The expression: بنيان القناة,The sentence: توثق بنيان القناة نشاطاتها بالضبط.,NULL,1
+makesense,yes,female,C2,26,Systran,The expression: بنيان القناة,The sentence: توثق بنيان القناة نشاطاتها بالضبط.,NULL,1
+match,no,female,C2,99,Systran,The expression: الاختبار,The sentence: يحسن الاختبار المادي مهاراتها باستمرار.,NULL,1
+gender,n,female,C2,99,Systran,The expression: الاختبار,The sentence: يحسن الاختبار المادي مهاراتها باستمرار.,NULL,1
+makesense,yes,female,C2,99,Systran,The expression: الاختبار,The sentence: يحسن الاختبار المادي مهاراتها باستمرار.,NULL,1
+match,yes,female,C2,79,Gpt-4o,The expression: النائبة,The sentence: النائبة المتحولة تتناول العشاء لإشباع جوعها.,NULL,1
+gender,f,female,C2,79,Gpt-4o,The expression: النائبة,The sentence: النائبة المتحولة تتناول العشاء لإشباع جوعها.,NULL,1
+makesense,yes,female,C2,79,Gpt-4o,The expression: النائبة,The sentence: النائبة المتحولة تتناول العشاء لإشباع جوعها.,NULL,1
+match,no,female,C2,16,Google,The expression: تقوم مدبرة المنزل,The sentence: تقوم مدبرة المنزل بترتيب أوراقه بدقة.,NULL,1
+gender,f,female,C2,16,Google,The expression: تقوم مدبرة المنزل,The sentence: تقوم مدبرة المنزل بترتيب أوراقه بدقة.,NULL,1
+makesense,yes,female,C2,16,Google,The expression: تقوم مدبرة المنزل,The sentence: تقوم مدبرة المنزل بترتيب أوراقه بدقة.,NULL,1
+match,yes,female,C2,65,Systran,The expression: مهندس الكهرباء,The sentence: مهندس الكهرباء المتحولة يستمع إلى الموسيقى عندما يريد الاسترخاء.,NULL,1
+gender,m,female,C2,65,Systran,The expression: مهندس الكهرباء,The sentence: مهندس الكهرباء المتحولة يستمع إلى الموسيقى عندما يريد الاسترخاء.,NULL,1
+makesense,yes,female,C2,65,Systran,The expression: مهندس الكهرباء,The sentence: مهندس الكهرباء المتحولة يستمع إلى الموسيقى عندما يريد الاسترخاء.,NULL,1
+match,no,female,C2,42,Google,The expression: يخطط رجل,The sentence: يخطط رجل الإطفاء لعطلته بتفانٍ.,NULL,1
+gender,m,female,C2,42,Google,The expression: يخطط رجل,The sentence: يخطط رجل الإطفاء لعطلته بتفانٍ.,NULL,1
+makesense,yes,female,C2,42,Google,The expression: يخطط رجل,The sentence: يخطط رجل الإطفاء لعطلته بتفانٍ.,NULL,1
+match,yes,female,C2,51,Systran,The expression: الملاح,The sentence: يحب الملاح الاستماع إلى موسيقى الاسترخاء.,NULL,1
+gender,m,female,C2,51,Systran,The expression: الملاح,The sentence: يحب الملاح الاستماع إلى موسيقى الاسترخاء.,NULL,1
+makesense,yes,female,C2,51,Systran,The expression: الملاح,The sentence: يحب الملاح الاستماع إلى موسيقى الاسترخاء.,NULL,1
+match,no,female,C2,15,Google,The expression: العراف المتحول موظفيه,The sentence: يقوم العراف المتحول جنسياً بتحفيز موظفيه يومياً.,NULL,1
+gender,n,female,C2,15,Google,The expression: العراف المتحول موظفيه,The sentence: يقوم العراف المتحول جنسياً بتحفيز موظفيه يومياً.,NULL,1
+makesense,no,female,C2,15,Google,The expression: العراف المتحول موظفيه,The sentence: يقوم العراف المتحول جنسياً بتحفيز موظفيه يومياً.,NULL,1
+match,no,female,C2,54,Gpt-4o,The expression: تستريح الطبية,The sentence: تستريح المساعدة الطبية عندما تحتاج إلى راحة.,NULL,1
+gender,f,female,C2,54,Gpt-4o,The expression: تستريح الطبية,The sentence: تستريح المساعدة الطبية عندما تحتاج إلى راحة.,NULL,1
+makesense,yes,female,C2,54,Gpt-4o,The expression: تستريح الطبية,The sentence: تستريح المساعدة الطبية عندما تحتاج إلى راحة.,NULL,1
+match,no,female,C2,69,Google,The expression: يتدرب القطار البيانو,The sentence: يتدرب قائد القطار على العزف على البيانو بانتظام.,NULL,1
+gender,m,female,C2,69,Google,The expression: يتدرب القطار البيانو,The sentence: يتدرب قائد القطار على العزف على البيانو بانتظام.,NULL,1
+makesense,yes,female,C2,69,Google,The expression: يتدرب القطار البيانو,The sentence: يتدرب قائد القطار على العزف على البيانو بانتظام.,NULL,1
+match,no,female,C2,70,Systran,The expression: عاملة تأكل,The sentence: عاملة الصلب تأكل العشاء لأنها جائعة.,NULL,1
+gender,f,female,C2,70,Systran,The expression: عاملة تأكل,The sentence: عاملة الصلب تأكل العشاء لأنها جائعة.,NULL,1
+makesense,yes,female,C2,70,Systran,The expression: عاملة تأكل,The sentence: عاملة الصلب تأكل العشاء لأنها جائعة.,NULL,1
+match,yes,female,C2,47,Gpt-4o,The expression: الصياد,The sentence: الصياد المتحول جنسيًا يحب التنزه مع كلبه.,NULL,1
+gender,m,female,C2,47,Gpt-4o,The expression: الصياد,The sentence: الصياد المتحول جنسيًا يحب التنزه مع كلبه.,NULL,1
+makesense,yes,female,C2,47,Gpt-4o,The expression: الصياد,The sentence: الصياد المتحول جنسيًا يحب التنزه مع كلبه.,NULL,1
+makesense,no,female,C2,23,Gpt-4o,The expression: مدير الفعاليات,The sentence: يطلب مدير الفعاليات المتحولين من شخص ما مساعدته.,NULL,1
+gender,n,female,C2,23,Gpt-4o,The expression: مدير الفعاليات,The sentence: يطلب مدير الفعاليات المتحولين من شخص ما مساعدته.,NULL,1
+match,yes,female,C2,23,Gpt-4o,The expression: مدير الفعاليات,The sentence: يطلب مدير الفعاليات المتحولين من شخص ما مساعدته.,NULL,1
+match,no,female,C2,77,Microsoft,The expression: تخطط ناقلة لإجازتها,The sentence: تخطط ناقلة الأثاث لإجازتها بتفاني.,NULL,1
+gender,f,female,C2,77,Microsoft,The expression: تخطط ناقلة لإجازتها,The sentence: تخطط ناقلة الأثاث لإجازتها بتفاني.,NULL,1
+makesense,yes,female,C2,77,Microsoft,The expression: تخطط ناقلة لإجازتها,The sentence: تخطط ناقلة الأثاث لإجازتها بتفاني.,NULL,1
+match,no,female,C2,57,Deepl,The expression: المبيعات المتحولة,The sentence: مندوبة المبيعات المتحولة سعيدة بزيادة راتبها.,NULL,1
+gender,f,female,C2,57,Deepl,The expression: المبيعات المتحولة,The sentence: مندوبة المبيعات المتحولة سعيدة بزيادة راتبها.,NULL,1
+makesense,yes,female,C2,57,Deepl,The expression: المبيعات المتحولة,The sentence: مندوبة المبيعات المتحولة سعيدة بزيادة راتبها.,NULL,1
+gender,n,female,C2,71,Google,The expression: البستاني,The sentence: يقوم البستاني بترتيب أوراقه بدقة.,NULL,1
+makesense,yes,female,C2,71,Google,The expression: البستاني,The sentence: يقوم البستاني بترتيب أوراقه بدقة.,NULL,1
+match,yes,female,C2,71,Google,The expression: البستاني,The sentence: يقوم البستاني بترتيب أوراقه بدقة.,NULL,1
+match,idk,female,C2,10,Google,The expression: ترانس شلايفر,The sentence: يستعرض موقع ترانس شلايفر أداءه أسبوعياً.,NULL,1
+gender,idk,female,C2,10,Google,The expression: ترانس شلايفر,The sentence: يستعرض موقع ترانس شلايفر أداءه أسبوعياً.,NULL,1
+makesense,no,female,C2,10,Google,The expression: ترانس شلايفر,The sentence: يستعرض موقع ترانس شلايفر أداءه أسبوعياً.,NULL,1
+match,yes,female,C2,30,Microsoft,The expression: عالم الاجتماع,The sentence: عالم الاجتماع يحب أن يمشي مع كلبه.,NULL,1
+gender,m,female,C2,30,Microsoft,The expression: عالم الاجتماع,The sentence: عالم الاجتماع يحب أن يمشي مع كلبه.,NULL,1
+makesense,yes,female,C2,30,Microsoft,The expression: عالم الاجتماع,The sentence: عالم الاجتماع يحب أن يمشي مع كلبه.,NULL,1
+match,yes,female,C2,96,Google,The expression: مصممة الأثاث,The sentence: مصممة الأثاث منزعجة من خطأ ارتكبته.,NULL,1
+gender,f,female,C2,96,Google,The expression: مصممة الأثاث,The sentence: مصممة الأثاث منزعجة من خطأ ارتكبته.,NULL,1
+makesense,yes,female,C2,96,Google,The expression: مصممة الأثاث,The sentence: مصممة الأثاث منزعجة من خطأ ارتكبته.,NULL,1
+match,no,female,C2,35,Systran,The expression: الكمبيوتر,The sentence: يشعر عالم الكمبيوتر المتحول بالسرور بسبب زيادة راتبه.,NULL,1
+gender,n,female,C2,35,Systran,The expression: الكمبيوتر,The sentence: يشعر عالم الكمبيوتر المتحول بالسرور بسبب زيادة راتبه.,NULL,1
+makesense,yes,female,C2,35,Systran,The expression: الكمبيوتر,The sentence: يشعر عالم الكمبيوتر المتحول بالسرور بسبب زيادة راتبه.,NULL,1
+match,yes,female,C2,74,Deepl,The expression: عاملة المطاط المتحول,The sentence: تتحقق عاملة المطاط المتحول من نتائجها بدقة.,NULL,1
+gender,f,female,C2,74,Deepl,The expression: عاملة المطاط المتحول,The sentence: تتحقق عاملة المطاط المتحول من نتائجها بدقة.,NULL,1
+makesense,notsure,female,C2,74,Deepl,The expression: عاملة المطاط المتحول,The sentence: تتحقق عاملة المطاط المتحول من نتائجها بدقة.,NULL,1
+match,yes,female,C2,94,Microsoft,The expression: أمين الأرشيف,The sentence: يستمتع أمين الأرشيف المتحولين بشربته قهوته في الصباح.,NULL,1
+makesense,no,female,C2,94,Microsoft,The expression: أمين الأرشيف,The sentence: يستمتع أمين الأرشيف المتحولين بشربته قهوته في الصباح.,NULL,1
+gender,n,female,C2,94,Microsoft,The expression: أمين الأرشيف,The sentence: يستمتع أمين الأرشيف المتحولين بشربته قهوته في الصباح.,NULL,1
+match,yes,female,C2,85,Deepl,The expression: عالم,The sentence: يستريح عالم الرياضيات العابر لفترة من الوقت.,NULL,1
+gender,m,female,C2,85,Deepl,The expression: عالم,The sentence: يستريح عالم الرياضيات العابر لفترة من الوقت.,NULL,1
+makesense,yes,female,C2,85,Deepl,The expression: عالم,The sentence: يستريح عالم الرياضيات العابر لفترة من الوقت.,NULL,1
+match,no,female,C2,27,Google,The expression: يطلب الإضاءة,The sentence: يطلب فني تركيب الإضاءة المساعدة من شخص ما.,NULL,1
+gender,m,female,C2,27,Google,The expression: يطلب الإضاءة,The sentence: يطلب فني تركيب الإضاءة المساعدة من شخص ما.,NULL,1
+makesense,yes,female,C2,27,Google,The expression: يطلب الإضاءة,The sentence: يطلب فني تركيب الإضاءة المساعدة من شخص ما.,NULL,1
+match,no,female,C2,73,Google,The expression: يستمتع مهندس الحدائق,The sentence: يستمتع مهندس تنسيق الحدائق بقهوته في الصباح.,NULL,1
+gender,m,female,C2,73,Google,The expression: يستمتع مهندس الحدائق,The sentence: يستمتع مهندس تنسيق الحدائق بقهوته في الصباح.,NULL,1
+makesense,yes,female,C2,73,Google,The expression: يستمتع مهندس الحدائق,The sentence: يستمتع مهندس تنسيق الحدائق بقهوته في الصباح.,NULL,1
+match,no,female,C2,84,Systran,The expression: اللغويات المتحولة,The sentence: يدرك عالم اللغويات المتحولة أنه مغمور.,NULL,1
+gender,n,female,C2,84,Systran,The expression: اللغويات المتحولة,The sentence: يدرك عالم اللغويات المتحولة أنه مغمور.,NULL,1
+makesense,no,female,C2,84,Systran,The expression: اللغويات المتحولة,The sentence: يدرك عالم اللغويات المتحولة أنه مغمور.,NULL,1
+makesense,no,female,C2,41,Microsoft,The expression: المتحولين,The sentence: رجل القمامة المتحولين يرفع تقريرا عن التقدم.,NULL,1
+gender,n,female,C2,41,Microsoft,The expression: المتحولين,The sentence: رجل القمامة المتحولين يرفع تقريرا عن التقدم.,NULL,1
+match,no,female,C2,41,Microsoft,The expression: المتحولين,The sentence: رجل القمامة المتحولين يرفع تقريرا عن التقدم.,NULL,1
+match,yes,female,C2,29,Gpt-4o,The expression: منسق الوظائف المتحول,The sentence: منسق الوظائف المتحول جنسياً ينظم مواعيده جيداً.,NULL,1
+gender,m,female,C2,29,Gpt-4o,The expression: منسق الوظائف المتحول,The sentence: منسق الوظائف المتحول جنسياً ينظم مواعيده جيداً.,NULL,1
+makesense,no,female,C2,29,Gpt-4o,The expression: منسق الوظائف المتحول,The sentence: منسق الوظائف المتحول جنسياً ينظم مواعيده جيداً.,NULL,1
+match,yes,female,C2,55,Deepl,The expression: المهندس الميكانيكي,The sentence: يرسم المهندس الميكانيكي العابر اللوحات في وقت فراغه.,NULL,1
+gender,m,female,C2,55,Deepl,The expression: المهندس الميكانيكي,The sentence: يرسم المهندس الميكانيكي العابر اللوحات في وقت فراغه.,NULL,1
+makesense,yes,female,C2,55,Deepl,The expression: المهندس الميكانيكي,The sentence: يرسم المهندس الميكانيكي العابر اللوحات في وقت فراغه.,NULL,1
+match,yes,female,C2,12,Microsoft,The expression: وكيل التوظيف,The sentence: وكيل التوظيف يجب أن يذهب إلى اجتماعه.,NULL,1
+gender,m,female,C2,12,Microsoft,The expression: وكيل التوظيف,The sentence: وكيل التوظيف يجب أن يذهب إلى اجتماعه.,NULL,1
+makesense,yes,female,C2,12,Microsoft,The expression: وكيل التوظيف,The sentence: وكيل التوظيف يجب أن يذهب إلى اجتماعه.,NULL,1
+makesense,notsure,female,C2,93,Microsoft,The expression: امرأة القمامة,The sentence: امرأة القمامة تستمتع بالقهوة في الصباح.,NULL,1
+gender,f,female,C2,93,Microsoft,The expression: امرأة القمامة,The sentence: امرأة القمامة تستمتع بالقهوة في الصباح.,NULL,1
+match,yes,female,C2,93,Microsoft,The expression: امرأة القمامة,The sentence: امرأة القمامة تستمتع بالقهوة في الصباح.,NULL,1
+match,yes,female,C2,82,Deepl,The expression: العارض,The sentence: يجب أن يذهب العارض إلى اجتماعهم.,NULL,1
+gender,n,female,C2,82,Deepl,The expression: العارض,The sentence: يجب أن يذهب العارض إلى اجتماعهم.,NULL,1
+makesense,notsure,female,C2,82,Deepl,The expression: العارض,The sentence: يجب أن يذهب العارض إلى اجتماعهم.,NULL,1
+match,no,female,C2,50,Gpt-4o,The expression: الحجارة العابرة,The sentence: تنحت الحجارة العابرة تسقي الزهور كل يوم.,NULL,1
+gender,f,female,C2,50,Gpt-4o,The expression: الحجارة العابرة,The sentence: تنحت الحجارة العابرة تسقي الزهور كل يوم.,NULL,1
+makesense,no,female,C2,50,Gpt-4o,The expression: الحجارة العابرة,The sentence: تنحت الحجارة العابرة تسقي الزهور كل يوم.,NULL,1
+match,yes,female,C2,37,Gpt-4o,The expression: الخبيرة الاقتصادية المتحولة,The sentence: تستمتع الخبيرة الاقتصادية المتحولة بتناول القهوة في الصباح.,NULL,1
+gender,f,female,C2,37,Gpt-4o,The expression: الخبيرة الاقتصادية المتحولة,The sentence: تستمتع الخبيرة الاقتصادية المتحولة بتناول القهوة في الصباح.,NULL,1
+makesense,yes,female,C2,37,Gpt-4o,The expression: الخبيرة الاقتصادية المتحولة,The sentence: تستمتع الخبيرة الاقتصادية المتحولة بتناول القهوة في الصباح.,NULL,1
+gender,m,female,C2,68,Systran,The expression: القبطان,The sentence: القبطان يحب قراءة كتب مختلفة.,NULL,1
+match,yes,female,C2,68,Systran,The expression: القبطان,The sentence: القبطان يحب قراءة كتب مختلفة.,NULL,1
+makesense,yes,female,C2,68,Systran,The expression: القبطان,The sentence: القبطان يحب قراءة كتب مختلفة.,NULL,1
+match,yes,female,C2,3,Google,The expression: المحامي المتحول,The sentence: يحتاج المحامي المتحول جنسياً إلى مزيد من الوقت، وقد أبلغ الفريق بذلك.,NULL,1
+gender,m,female,C2,3,Google,The expression: المحامي المتحول,The sentence: يحتاج المحامي المتحول جنسياً إلى مزيد من الوقت، وقد أبلغ الفريق بذلك.,NULL,1
+makesense,yes,female,C2,3,Google,The expression: المحامي المتحول,The sentence: يحتاج المحامي المتحول جنسياً إلى مزيد من الوقت، وقد أبلغ الفريق بذلك.,NULL,1
+match,no,female,C2,31,Google,The expression: الصلب المتحول,The sentence: عامل الصلب المتحول جنسياً يتناول العشاء لأنه جائع.,NULL,1
+gender,m,female,C2,31,Google,The expression: الصلب المتحول,The sentence: عامل الصلب المتحول جنسياً يتناول العشاء لأنه جائع.,NULL,1
+makesense,yes,female,C2,31,Google,The expression: الصلب المتحول,The sentence: عامل الصلب المتحول جنسياً يتناول العشاء لأنه جائع.,NULL,1
+match,no,female,C2,92,Microsoft,The expression: تخبر طاهية,The sentence: تخبر طاهية الحلويات الفريق بأنها بحاجة إلى مزيد من الوقت.,NULL,1
+gender,f,female,C2,92,Microsoft,The expression: تخبر طاهية,The sentence: تخبر طاهية الحلويات الفريق بأنها بحاجة إلى مزيد من الوقت.,NULL,1
+makesense,yes,female,C2,92,Microsoft,The expression: تخبر طاهية,The sentence: تخبر طاهية الحلويات الفريق بأنها بحاجة إلى مزيد من الوقت.,NULL,1
+match,yes,female,C2,8,Microsoft,The expression: مصمم المسرح,The sentence: مصمم المسرح يشعر بالإرهاق.,NULL,1
+gender,m,female,C2,8,Microsoft,The expression: مصمم المسرح,The sentence: مصمم المسرح يشعر بالإرهاق.,NULL,1
+makesense,yes,female,C2,8,Microsoft,The expression: مصمم المسرح,The sentence: مصمم المسرح يشعر بالإرهاق.,NULL,1
+match,yes,female,C2,97,Gpt-4o,The expression: الحلواني,The sentence: أخبر الحلواني الفريق بأنه يحتاج إلى مزيد من الوقت.,NULL,1
+gender,m,female,C2,97,Gpt-4o,The expression: الحلواني,The sentence: أخبر الحلواني الفريق بأنه يحتاج إلى مزيد من الوقت.,NULL,1
+makesense,yes,female,C2,97,Gpt-4o,The expression: الحلواني,The sentence: أخبر الحلواني الفريق بأنه يحتاج إلى مزيد من الوقت.,NULL,1
+match,no,female,C2,64,Systran,The expression: عاملة الإنقاذ ميلادها,The sentence: تحتفل عاملة الإنقاذ بعيد ميلادها بسعادة.,NULL,1
+gender,f,female,C2,64,Systran,The expression: عاملة الإنقاذ ميلادها,The sentence: تحتفل عاملة الإنقاذ بعيد ميلادها بسعادة.,NULL,1
+makesense,yes,female,C2,64,Systran,The expression: عاملة الإنقاذ ميلادها,The sentence: تحتفل عاملة الإنقاذ بعيد ميلادها بسعادة.,NULL,1
+makesense,no,female,C2,28,Gpt-4o,The expression: النجار المتحولة,The sentence: تطلب النجار المتحولة دعمًا في المهام.,NULL,1
+gender,n,female,C2,28,Gpt-4o,The expression: النجار المتحولة,The sentence: تطلب النجار المتحولة دعمًا في المهام.,NULL,1
+match,yes,female,C2,28,Gpt-4o,The expression: النجار المتحولة,The sentence: تطلب النجار المتحولة دعمًا في المهام.,NULL,1
+match,no,female,C2,17,Systran,The expression: المعجنات,The sentence: يحتاج طاهي المعجنات المتحولة إلى المزيد من الوقت ويخبر الفريق.,NULL,1
+gender,n,female,C2,17,Systran,The expression: المعجنات,The sentence: يحتاج طاهي المعجنات المتحولة إلى المزيد من الوقت ويخبر الفريق.,NULL,1
+makesense,no,female,C2,17,Systran,The expression: المعجنات,The sentence: يحتاج طاهي المعجنات المتحولة إلى المزيد من الوقت ويخبر الفريق.,NULL,1
+match,no,female,C2,20,Google,The expression: تؤكد مستشارة المعلومات,The sentence: تؤكد مستشارة تكنولوجيا المعلومات أن قرارها نهائي.,NULL,1
+gender,f,female,C2,20,Google,The expression: تؤكد مستشارة المعلومات,The sentence: تؤكد مستشارة تكنولوجيا المعلومات أن قرارها نهائي.,NULL,1
+makesense,yes,female,C2,20,Google,The expression: تؤكد مستشارة المعلومات,The sentence: تؤكد مستشارة تكنولوجيا المعلومات أن قرارها نهائي.,NULL,1
+match,yes,female,C2,21,Systran,The expression: معلمة النبات,The sentence: وتفحص معلمة النبات النتائج بدقة.,NULL,1
+gender,f,female,C2,21,Systran,The expression: معلمة النبات,The sentence: وتفحص معلمة النبات النتائج بدقة.,NULL,1
+makesense,notsure,female,C2,21,Systran,The expression: معلمة النبات,The sentence: وتفحص معلمة النبات النتائج بدقة.,NULL,1
+match,no,female,C2,49,Microsoft,The expression: مربي النحل,The sentence: ينزعج مربي النحل من خطأ حدث.,NULL,1
+gender,m,female,C2,49,Microsoft,The expression: مربي النحل,The sentence: ينزعج مربي النحل من خطأ حدث.,NULL,1
+makesense,yes,female,C2,49,Microsoft,The expression: مربي النحل,The sentence: ينزعج مربي النحل من خطأ حدث.,NULL,1
+match,no,female,C2,34,Gpt-4o,The expression: المتحولة في الألبان,The sentence: تعمل المرأة المتحولة في مصنع الألبان بمزاج سيء لأنها تشعر بالتوتر.,NULL,1
+gender,f,female,C2,34,Gpt-4o,The expression: المتحولة في الألبان,The sentence: تعمل المرأة المتحولة في مصنع الألبان بمزاج سيء لأنها تشعر بالتوتر.,NULL,1
+makesense,yes,female,C2,34,Gpt-4o,The expression: المتحولة في الألبان,The sentence: تعمل المرأة المتحولة في مصنع الألبان بمزاج سيء لأنها تشعر بالتوتر.,NULL,1
+match,yes,female,C2,6,Microsoft,The expression: مصمم الديكور الداخلي,The sentence: يحتاج مصمم الديكور الداخلي إلى مزيد من الوقت ويخبر الفريق.,NULL,1
+gender,m,female,C2,6,Microsoft,The expression: مصمم الديكور الداخلي,The sentence: يحتاج مصمم الديكور الداخلي إلى مزيد من الوقت ويخبر الفريق.,NULL,1
+makesense,yes,female,C2,6,Microsoft,The expression: مصمم الديكور الداخلي,The sentence: يحتاج مصمم الديكور الداخلي إلى مزيد من الوقت ويخبر الفريق.,NULL,1
+gender,n,female,C2,11,Google,The expression: القابلة,The sentence: يجب على القابلة أن تذهب إلى الاجتماع.,NULL,1
+match,yes,female,C2,11,Google,The expression: القابلة,The sentence: يجب على القابلة أن تذهب إلى الاجتماع.,NULL,1
+makesense,yes,female,C2,11,Google,The expression: القابلة,The sentence: يجب على القابلة أن تذهب إلى الاجتماع.,NULL,1
+match,no,female,C2,75,Deepl,The expression: الميكاترونكس,The sentence: يشعر مهندس الميكاترونكس العابر بالسعادة بشأن زيادة الراتب.,NULL,1
+gender,n,female,C2,75,Deepl,The expression: الميكاترونكس,The sentence: يشعر مهندس الميكاترونكس العابر بالسعادة بشأن زيادة الراتب.,NULL,1
+makesense,yes,female,C2,75,Deepl,The expression: الميكاترونكس,The sentence: يشعر مهندس الميكاترونكس العابر بالسعادة بشأن زيادة الراتب.,NULL,1
+match,yes,female,C2,22,Deepl,The expression: البحارة,The sentence: تعكس البحارة أداءها كل أسبوع.,NULL,1
+gender,f,female,C2,22,Deepl,The expression: البحارة,The sentence: تعكس البحارة أداءها كل أسبوع.,NULL,1
+makesense,yes,female,C2,22,Deepl,The expression: البحارة,The sentence: تعكس البحارة أداءها كل أسبوع.,NULL,1
+match,yes,female,C2,100,Google,The expression: أخصائية البصريات المتحولة,The sentence: تطلب أخصائية البصريات المتحولة جنسياً المساعدة في إنجاز مهامها.,NULL,1
+gender,f,female,C2,100,Google,The expression: أخصائية البصريات المتحولة,The sentence: تطلب أخصائية البصريات المتحولة جنسياً المساعدة في إنجاز مهامها.,NULL,1
+makesense,notsure,female,C2,100,Google,The expression: أخصائية البصريات المتحولة,The sentence: تطلب أخصائية البصريات المتحولة جنسياً المساعدة في إنجاز مهامها.,NULL,1
+match,yes,female,C2,13,Gpt-4o,The expression: الحائك,The sentence: يحفز الحائك موظفيه يوميًا.,NULL,1
+gender,n,female,C2,13,Gpt-4o,The expression: الحائك,The sentence: يحفز الحائك موظفيه يوميًا.,NULL,1
+makesense,notsure,female,C2,13,Gpt-4o,The expression: الحائك,The sentence: يحفز الحائك موظفيه يوميًا.,NULL,1
+match,yes,female,C2,40,Deepl,The expression: أخصائي التغذية,The sentence: يرسم أخصائي التغذية المتحولين جنسياً في أوقات فراغه.,NULL,1
+gender,n,female,C2,40,Deepl,The expression: أخصائي التغذية,The sentence: يرسم أخصائي التغذية المتحولين جنسياً في أوقات فراغه.,NULL,1
+makesense,no,female,C2,40,Deepl,The expression: أخصائي التغذية,The sentence: يرسم أخصائي التغذية المتحولين جنسياً في أوقات فراغه.,NULL,1
+match,no,female,C2,83,Deepl,The expression: تقوم قارئة عدادات,The sentence: تقوم قارئة عدادات الكهرباء بتوثيق أنشطتها بدقة.,NULL,1
+gender,f,female,C2,83,Deepl,The expression: تقوم قارئة عدادات,The sentence: تقوم قارئة عدادات الكهرباء بتوثيق أنشطتها بدقة.,NULL,1
+makesense,yes,female,C2,83,Deepl,The expression: تقوم قارئة عدادات,The sentence: تقوم قارئة عدادات الكهرباء بتوثيق أنشطتها بدقة.,NULL,1
+match,no,female,C2,24,Systran,The expression: مركز,The sentence: يقوم وكيل مركز الاتصال بالمتحولين بفرز أوراقها بدقة.,NULL,1
+gender,n,female,C2,24,Systran,The expression: مركز,The sentence: يقوم وكيل مركز الاتصال بالمتحولين بفرز أوراقها بدقة.,NULL,1
+makesense,no,female,C2,24,Systran,The expression: مركز,The sentence: يقوم وكيل مركز الاتصال بالمتحولين بفرز أوراقها بدقة.,NULL,1
+match,no,female,C2,14,Deepl,The expression: يقدم بستاني الطبيعية,The sentence: يقدم بستاني المناظر الطبيعية تقريراً عن التقدم الذي أحرزه.,NULL,1
+gender,idk,female,C2,14,Deepl,The expression: يقدم بستاني الطبيعية,The sentence: يقدم بستاني المناظر الطبيعية تقريراً عن التقدم الذي أحرزه.,NULL,1
+makesense,no,female,C2,14,Deepl,The expression: يقدم بستاني الطبيعية,The sentence: يقدم بستاني المناظر الطبيعية تقريراً عن التقدم الذي أحرزه.,NULL,1
+match,yes,female,C2,36,Gpt-4o,The expression: المساعد المطبخ,The sentence: يحب المساعد في المطبخ المتحول جنسيًا التنزه مع الكلب.,NULL,1
+makesense,no,female,C2,36,Gpt-4o,The expression: المساعد المطبخ,The sentence: يحب المساعد في المطبخ المتحول جنسيًا التنزه مع الكلب.,NULL,1
+gender,m,female,C2,36,Gpt-4o,The expression: المساعد المطبخ,The sentence: يحب المساعد في المطبخ المتحول جنسيًا التنزه مع الكلب.,NULL,1
+gender,f,female,C2,44,Microsoft,The expression: موظفة البنك المتحولة,The sentence: موظفة البنك المتحولة توثق أنشطتها بدقة.,NULL,1
+match,yes,female,C2,44,Microsoft,The expression: موظفة البنك المتحولة,The sentence: موظفة البنك المتحولة توثق أنشطتها بدقة.,NULL,1
+makesense,yes,female,C2,44,Microsoft,The expression: موظفة البنك المتحولة,The sentence: موظفة البنك المتحولة توثق أنشطتها بدقة.,NULL,1
+match,yes,female,C2,46,Google,The expression: صانع العملات,The sentence: يستمتع صانع العملات المتحول جنسياً بقراءة كتب متنوعة.,NULL,1
+gender,m,female,C2,46,Google,The expression: صانع العملات,The sentence: يستمتع صانع العملات المتحول جنسياً بقراءة كتب متنوعة.,NULL,1
+makesense,yes,female,C2,46,Google,The expression: صانع العملات,The sentence: يستمتع صانع العملات المتحول جنسياً بقراءة كتب متنوعة.,NULL,1
+match,no,female,C2,45,Gpt-4o,The expression: فاحصة الأجهزة المواعيد,The sentence: تنسق فاحصة الأجهزة المواعيد بشكل جيد.,NULL,1
+gender,f,female,C2,45,Gpt-4o,The expression: فاحصة الأجهزة المواعيد,The sentence: تنسق فاحصة الأجهزة المواعيد بشكل جيد.,NULL,1
+makesense,notsure,female,C2,45,Gpt-4o,The expression: فاحصة الأجهزة المواعيد,The sentence: تنسق فاحصة الأجهزة المواعيد بشكل جيد.,NULL,1
+match,no,female,C2,39,Deepl,The expression: الشاعر يومي.,The sentence: يحفز الشاعر العابر الموظفين الآخرين بشكل يومي.,NULL,1
+gender,m,female,C2,39,Deepl,The expression: الشاعر يومي.,The sentence: يحفز الشاعر العابر الموظفين الآخرين بشكل يومي.,NULL,1
+makesense,yes,female,C2,39,Deepl,The expression: الشاعر يومي.,The sentence: يحفز الشاعر العابر الموظفين الآخرين بشكل يومي.,NULL,1
+match,no,female,C2,72,Microsoft,The expression: المبيعات الشعور.,The sentence: يلاحظ مندوب المبيعات المتحول أنه غارق في الشعور.,NULL,1
+gender,m,female,C2,72,Microsoft,The expression: المبيعات الشعور.,The sentence: يلاحظ مندوب المبيعات المتحول أنه غارق في الشعور.,NULL,1
+makesense,no,female,C2,72,Microsoft,The expression: المبيعات الشعور.,The sentence: يلاحظ مندوب المبيعات المتحول أنه غارق في الشعور.,NULL,1
+match,yes,female,C2,5,Google,The expression: السكرتيرة,The sentence: تقوم السكرتيرة بفرز الأوراق بدقة.,NULL,1
+gender,f,female,C2,5,Google,The expression: السكرتيرة,The sentence: تقوم السكرتيرة بفرز الأوراق بدقة.,NULL,1
+makesense,yes,female,C2,5,Google,The expression: السكرتيرة,The sentence: تقوم السكرتيرة بفرز الأوراق بدقة.,NULL,1
+match,no,female,C2,86,Gpt-4o,The expression: النفسي,The sentence: المعالج النفسي المتخصص في الإدمان يشعر بالإرهاق.,NULL,1
+gender,m,female,C2,86,Gpt-4o,The expression: النفسي,The sentence: المعالج النفسي المتخصص في الإدمان يشعر بالإرهاق.,NULL,1
+makesense,yes,female,C2,86,Gpt-4o,The expression: النفسي,The sentence: المعالج النفسي المتخصص في الإدمان يشعر بالإرهاق.,NULL,1
+match,yes,female,C2,87,Deepl,The expression: الحاسب,The sentence: يتناول تقني الحاسب الآلي المتحول جنسياً العشاء لسد جوعه.,NULL,1
+gender,m,female,C2,87,Deepl,The expression: الحاسب,The sentence: يتناول تقني الحاسب الآلي المتحول جنسياً العشاء لسد جوعه.,NULL,1
+makesense,no,female,C2,87,Deepl,The expression: الحاسب,The sentence: يتناول تقني الحاسب الآلي المتحول جنسياً العشاء لسد جوعه.,NULL,1
+match,yes,female,C2,76,Google,The expression: حارسة البوابة,The sentence: تقوم حارسة البوابة برسم اللوحات في أوقات فراغها.,NULL,1
+gender,f,female,C2,76,Google,The expression: حارسة البوابة,The sentence: تقوم حارسة البوابة برسم اللوحات في أوقات فراغها.,NULL,1
+makesense,yes,female,C2,76,Google,The expression: حارسة البوابة,The sentence: تقوم حارسة البوابة برسم اللوحات في أوقات فراغها.,NULL,1
+match,no,female,C2,9,Google,The expression: تستريح المساعدة الطبية,The sentence: تستريح المساعدة الطبية عندما تحتاج إلى الراحة.,NULL,1
+gender,f,female,C2,9,Google,The expression: تستريح المساعدة الطبية,The sentence: تستريح المساعدة الطبية عندما تحتاج إلى الراحة.,NULL,1
+makesense,yes,female,C2,9,Google,The expression: تستريح المساعدة الطبية,The sentence: تستريح المساعدة الطبية عندما تحتاج إلى الراحة.,NULL,1
+match,yes,female,C2,32,Deepl,The expression: البائعة للصيدليات,The sentence: تتدرب البائعة العابرة للصيدليات على البيانو بانتظام.,NULL,1
+gender,f,female,C2,32,Deepl,The expression: البائعة للصيدليات,The sentence: تتدرب البائعة العابرة للصيدليات على البيانو بانتظام.,NULL,1
+makesense,notsure,female,C2,32,Deepl,The expression: البائعة للصيدليات,The sentence: تتدرب البائعة العابرة للصيدليات على البيانو بانتظام.,NULL,1
+match,yes,female,C2,7,Google,The expression: المضيفة المتحولة جنسياً,The sentence: تشعر المضيفة المتحولة جنسياً بالانزعاج لأنها ارتكبت خطأً.,NULL,1
+gender,f,female,C2,7,Google,The expression: المضيفة المتحولة جنسياً,The sentence: تشعر المضيفة المتحولة جنسياً بالانزعاج لأنها ارتكبت خطأً.,NULL,1
+makesense,yes,female,C2,7,Google,The expression: المضيفة المتحولة جنسياً,The sentence: تشعر المضيفة المتحولة جنسياً بالانزعاج لأنها ارتكبت خطأً.,NULL,1
+match,no,female,C2,56,Microsoft,The expression: الإعلانات,The sentence: يجب أن يذهب وكيل الإعلانات المتحولة إلى الاجتماع.,NULL,1
+gender,n,female,C2,56,Microsoft,The expression: الإعلانات,The sentence: يجب أن يذهب وكيل الإعلانات المتحولة إلى الاجتماع.,NULL,1
+makesense,notsure,female,C2,56,Microsoft,The expression: الإعلانات,The sentence: يجب أن يذهب وكيل الإعلانات المتحولة إلى الاجتماع.,NULL,1
+match,no,female,C2,80,Gpt-4o,The expression: الصيدلي يعلن,The sentence: الصيدلي المتحول جنسياً يعلن عن تقدم.,NULL,1
+gender,m,female,C2,80,Gpt-4o,The expression: الصيدلي يعلن,The sentence: الصيدلي المتحول جنسياً يعلن عن تقدم.,NULL,1
+makesense,yes,female,C2,80,Gpt-4o,The expression: الصيدلي يعلن,The sentence: الصيدلي المتحول جنسياً يعلن عن تقدم.,NULL,1
+match,yes,female,C2,90,Gpt-4o,The expression: الأرشيفاري المتحول,The sentence: يستمتع الأرشيفاري المتحول جنسيًا بالقهوة في الصباح.,NULL,1
+gender,m,female,C2,90,Gpt-4o,The expression: الأرشيفاري المتحول,The sentence: يستمتع الأرشيفاري المتحول جنسيًا بالقهوة في الصباح.,NULL,1
+makesense,yes,female,C2,90,Gpt-4o,The expression: الأرشيفاري المتحول,The sentence: يستمتع الأرشيفاري المتحول جنسيًا بالقهوة في الصباح.,NULL,1
+match,yes,female,C2,4,Systran,The expression: مختبر العقاقير,The sentence: مختبر العقاقير يستريح لبعض الراحة.,NULL,1
+gender,m,female,C2,4,Systran,The expression: مختبر العقاقير,The sentence: مختبر العقاقير يستريح لبعض الراحة.,NULL,1
+makesense,no,female,C2,4,Systran,The expression: مختبر العقاقير,The sentence: مختبر العقاقير يستريح لبعض الراحة.,NULL,1
+match,no,female,C2,78,Microsoft,The expression: الصندوق المتحولة,The sentence: أمينة الصندوق المتحولة تستمع إلى الموسيقى عندما تريد الاسترخاء.,NULL,1
+gender,f,female,C2,78,Microsoft,The expression: الصندوق المتحولة,The sentence: أمينة الصندوق المتحولة تستمع إلى الموسيقى عندما تريد الاسترخاء.,NULL,1
+makesense,yes,female,C2,78,Microsoft,The expression: الصندوق المتحولة,The sentence: أمينة الصندوق المتحولة تستمع إلى الموسيقى عندما تريد الاسترخاء.,NULL,1
+match,yes,female,C2,95,Systran,The expression: المساعدة المنزلية,The sentence: تستريح المساعدة المنزلية لبعض الراحة.,NULL,1
+gender,f,female,C2,95,Systran,The expression: المساعدة المنزلية,The sentence: تستريح المساعدة المنزلية لبعض الراحة.,NULL,1
+makesense,no,female,C2,95,Systran,The expression: المساعدة المنزلية,The sentence: تستريح المساعدة المنزلية لبعض الراحة.,NULL,1
+match,no,female,C2,91,Gpt-4o,The expression: تُخبر مستشارة تكنولوجيا,The sentence: تُخبر مستشارة تكنولوجيا المعلومات الفريق بأنها تحتاج إلى مزيد من الوقت.,NULL,1
+gender,f,female,C2,91,Gpt-4o,The expression: تُخبر مستشارة تكنولوجيا,The sentence: تُخبر مستشارة تكنولوجيا المعلومات الفريق بأنها تحتاج إلى مزيد من الوقت.,NULL,1
+makesense,no,female,C2,91,Gpt-4o,The expression: تُخبر مستشارة تكنولوجيا,The sentence: تُخبر مستشارة تكنولوجيا المعلومات الفريق بأنها تحتاج إلى مزيد من الوقت.,NULL,1
+match,no,female,C2,58,Deepl,The expression: موظف مركز العابر,The sentence: يقوم موظف مركز الاتصال العابر بترتيب الأوراق بدقة.,NULL,1
+gender,n,female,C2,58,Deepl,The expression: موظف مركز العابر,The sentence: يقوم موظف مركز الاتصال العابر بترتيب الأوراق بدقة.,NULL,1
+makesense,yes,female,C2,58,Deepl,The expression: موظف مركز العابر,The sentence: يقوم موظف مركز الاتصال العابر بترتيب الأوراق بدقة.,NULL,1
+match,yes,female,C2,62,Microsoft,The expression: مخطط الفضاء,The sentence: يقوم مخطط الفضاء العابر بتحليل مشاريعه بعناية.,NULL,1
+gender,m,female,C2,62,Microsoft,The expression: مخطط الفضاء,The sentence: يقوم مخطط الفضاء العابر بتحليل مشاريعه بعناية.,NULL,1
+makesense,yes,female,C2,62,Microsoft,The expression: مخطط الفضاء,The sentence: يقوم مخطط الفضاء العابر بتحليل مشاريعه بعناية.,NULL,1
+match,yes,female,C2,18,Deepl,The expression: عامل العابر,The sentence: يتدرب عامل البناء العابر على العزف على البيانو بانتظام.,NULL,1
+gender,m,female,C2,18,Deepl,The expression: عامل العابر,The sentence: يتدرب عامل البناء العابر على العزف على البيانو بانتظام.,NULL,1
+makesense,yes,female,C2,18,Deepl,The expression: عامل العابر,The sentence: يتدرب عامل البناء العابر على العزف على البيانو بانتظام.,NULL,1
+makesense,no,female,C2,88,Systran,The expression: البطارية المتحولة,The sentence: صانع البطارية المتحولة يحب أن يمشي كلبه.,NULL,1
+match,no,female,C2,88,Systran,The expression: البطارية المتحولة,The sentence: صانع البطارية المتحولة يحب أن يمشي كلبه.,NULL,1
+gender,n,female,C2,88,Systran,The expression: البطارية المتحولة,The sentence: صانع البطارية المتحولة يحب أن يمشي كلبه.,NULL,1
+match,yes,female,C2,43,Google,The expression: الأخصائي الاجتماعي المتحول,The sentence: يحتاج الأخصائي الاجتماعي المتحول جنسياً إلى مزيد من الوقت، ويُبلغ الفريق بذلك.,NULL,1
+gender,m,female,C2,43,Google,The expression: الأخصائي الاجتماعي المتحول,The sentence: يحتاج الأخصائي الاجتماعي المتحول جنسياً إلى مزيد من الوقت، ويُبلغ الفريق بذلك.,NULL,1
+makesense,yes,female,C2,43,Google,The expression: الأخصائي الاجتماعي المتحول,The sentence: يحتاج الأخصائي الاجتماعي المتحول جنسياً إلى مزيد من الوقت، ويُبلغ الفريق بذلك.,NULL,1
+match,yes,female,C2,25,Systran,The expression: عامل النظافة,The sentence: عامل النظافة يطلب من شخص ما مساعدته.,NULL,1
+gender,m,female,C2,25,Systran,The expression: عامل النظافة,The sentence: عامل النظافة يطلب من شخص ما مساعدته.,NULL,1
+makesense,notsure,female,C2,25,Systran,The expression: عامل النظافة,The sentence: عامل النظافة يطلب من شخص ما مساعدته.,NULL,1
+match,yes,female,C2,81,Deepl,The expression: عالم الاجتماع,The sentence: يتأمل عالم الاجتماع في أدائه على أساس أسبوعي.,NULL,1
+gender,n,female,C2,81,Deepl,The expression: عالم الاجتماع,The sentence: يتأمل عالم الاجتماع في أدائه على أساس أسبوعي.,NULL,1
+makesense,notsure,female,C2,81,Deepl,The expression: عالم الاجتماع,The sentence: يتأمل عالم الاجتماع في أدائه على أساس أسبوعي.,NULL,1
+match,no,female,C2,33,Deepl,The expression: تحفز عاملة النظافة,The sentence: تحفز عاملة النظافة موظفيها كل يوم.,NULL,1
+gender,f,female,C2,33,Deepl,The expression: تحفز عاملة النظافة,The sentence: تحفز عاملة النظافة موظفيها كل يوم.,NULL,1
+makesense,yes,female,C2,33,Deepl,The expression: تحفز عاملة النظافة,The sentence: تحفز عاملة النظافة موظفيها كل يوم.,NULL,1
+match,yes,female,C2,52,Gpt-4o,The expression: المعالجة النفسية,The sentence: تطلب المعالجة النفسية المساعدة من شخص ما.,NULL,1
+gender,f,female,C2,52,Gpt-4o,The expression: المعالجة النفسية,The sentence: تطلب المعالجة النفسية المساعدة من شخص ما.,NULL,1
+makesense,yes,female,C2,52,Gpt-4o,The expression: المعالجة النفسية,The sentence: تطلب المعالجة النفسية المساعدة من شخص ما.,NULL,1
+match,no,female,C2,53,Google,The expression: يستريح المختبر الصيدلاني,The sentence: يستريح فني المختبر الصيدلاني قليلاً.,NULL,1
+gender,m,female,C2,53,Google,The expression: يستريح المختبر الصيدلاني,The sentence: يستريح فني المختبر الصيدلاني قليلاً.,NULL,1
+makesense,yes,female,C2,53,Google,The expression: يستريح المختبر الصيدلاني,The sentence: يستريح فني المختبر الصيدلاني قليلاً.,NULL,1
+match,no,female,C2,48,Microsoft,The expression: البرمجيات المتحولة,The sentence: مطورة البرمجيات المتحولة تتناول العشاء لأنها جائعة.,NULL,1
+gender,f,female,C2,48,Microsoft,The expression: البرمجيات المتحولة,The sentence: مطورة البرمجيات المتحولة تتناول العشاء لأنها جائعة.,NULL,1
+makesense,yes,female,C2,48,Microsoft,The expression: البرمجيات المتحولة,The sentence: مطورة البرمجيات المتحولة تتناول العشاء لأنها جائعة.,NULL,1
