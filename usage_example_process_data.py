@@ -80,18 +80,39 @@ if __name__ == "__main__":
         os.makedirs(model_output_dir, exist_ok=True)
         
         # to analyze with a certain column, the following two should be specified
-        # filter_col='sentence_style'
-        # filter_value=1
+        
 
         # -------------------------------
         # 1. Error Analysis
         # -------------------------------
+
         error_df = ErrorAnalysis(ds, "x_gender").analyze().T
         error_df.attrs["filename"] = f"{model_name}_error_analysis"
-        # for style in ds.df[filter_col].unique():            
-        #     # in this case the results should be saved inside the loop, otherwise only the last one is saved
-        #     error_df=ErrorAnalysis(ds, "x_gender").analyze(filter_col=filter_col,filter_value=style).T
-        #     error_df.attrs["filename"] = f"{model_name}_error_analysis_{filter_col}_{style}"
+
+        filter_col='sentence_style'
+        filter_value=1
+
+        plot_error_analysis(
+            error_df.T,
+            output_dir=model_output_dir,
+            filename=error_df.attrs["filename"],
+            )
+
+        for style in ds.df[filter_col].unique():            
+            # in this case the results should be saved inside the loop, otherwise only the last one is saved
+            error_df_sentence=ErrorAnalysis(ds, "x_gender").analyze(filter_col=filter_col,filter_value=style).T
+            error_df_sentence.attrs["filename"] = f"{model_name}_error_analysis_{filter_col}_{style}"
+            plot_error_analysis(
+            error_df_sentence.T,
+            output_dir=model_output_dir,
+            filename=error_df_sentence.attrs["filename"],
+            filter_col=filter_col
+            )
+            save_dataframes(
+            error_df_sentence,
+            output_dir=model_output_dir,
+            )
+            
 
 
         # -------------------------------
@@ -118,19 +139,14 @@ if __name__ == "__main__":
         save_dataframes(
             error_df,
             cm_df,
-    #        lr_results,
+            lr_results,
             output_dir=model_output_dir,
         )
 
         # -------------------------------
         # Save plots
         # -------------------------------
-        plot_error_analysis(
-            error_df.T,
-            output_dir=model_output_dir,
-            filename=error_df.attrs["filename"],
-            # filter_col=filter_col
-        )
+        
         plot_confusion_metrics(
             cm_df.T,
             output_dir=model_output_dir,
