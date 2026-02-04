@@ -12,7 +12,7 @@ def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename:
     returned by the analyze() method. Saves the figure to the specified output folder.
 
     Parameters:
-    df (pd.DataFrame): DataFrame with columns 'language', 'accuracy', 'total', 'correct', 'error_count', and 'error_*'.
+    df (pd.DataFrame): DataFrame with columns 'language','sentence style', 'accuracy', 'total', 'correct', 'error_count', and 'error_*'.
     output_dir (str): Folder to save the plot.
     filename (str): Name of the saved plot file.
     """
