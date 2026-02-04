@@ -130,7 +130,7 @@ class ErrorAnalysis:
          # Create a row for this language
          row_data = {
             "language": lang,
-            "filterValue": filter_value,
+            "sentence_style": filter_value,
             "total": total,
             "correct": correct,
             "accuracy": accuracy,
