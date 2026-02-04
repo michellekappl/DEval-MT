@@ -2,6 +2,71 @@ import pandas as pd
 import json
 from collections import defaultdict
 import csv
+import numpy as np
+import krippendorff
+
+
+def calculate_krippendorff_alpha(df):
+    """
+    Calculate Krippendorff's alpha for inter-annotator agreement on gender annotations.
+    Returns the alpha value and additional statistics.
+    """
+    # Build reliability data matrix: rows = items, columns = annotators
+    # For each sentence, we have multiple annotators giving gender ratings
+    
+    # Extract all gender lists
+    all_items = []
+    for idx, row in df.iterrows():
+        try:
+            gender_list = json.loads(row['gender'].replace("'", '"'))
+            all_items.append(gender_list)
+        except:
+            continue
+    
+    if not all_items:
+        return None, "No valid data found"
+    
+    # Convert to numpy array
+    num_items = len(all_items)
+    num_annotators = len(all_items[0]) if all_items else 0
+    
+    # Create reliability matrix (items x annotators)
+    # Map gender values to numeric codes
+    gender_map = {'m': 1, 'f': 2, 'n': 3, 'u': 4}
+    reverse_map = {1: 'm', 2: 'f', 3: 'n', 4: 'u'}
+    
+    data_matrix = np.zeros((num_items, num_annotators))
+    for i, gender_list in enumerate(all_items):
+        for j, gender in enumerate(gender_list):
+            data_matrix[i, j] = gender_map.get(gender, 4)  # Default to 'u' (unknown)
+    
+    # Calculate Krippendorff's alpha using nominal metric
+    # Transpose because krippendorff library expects (annotators x items)
+    alpha = krippendorff.alpha(reliability_data=data_matrix.T, level_of_measurement='nominal')
+    
+    # Additional statistics
+    total_annotations = num_items * num_annotators
+    agreement_count = 0
+    
+    # Count full agreement (all annotators agree)
+    for i in range(num_items):
+        row = data_matrix[i, :]
+        if len(set(row)) == 1:  # All values are the same
+            agreement_count += 1
+    
+    full_agreement_pct = (agreement_count / num_items * 100) if num_items > 0 else 0
+    
+    stats = {
+        'alpha': alpha,
+        'num_items': num_items,
+        'num_annotators': num_annotators,
+        'total_annotations': total_annotations,
+        'full_agreement_count': agreement_count,
+        'full_agreement_pct': full_agreement_pct
+    }
+    
+    return alpha, stats
+
 
 def analyze_gender_matches(csv_file):
     """
@@ -17,7 +82,6 @@ def analyze_gender_matches(csv_file):
         'match_original': 0,
         'match_old': 0,
         'match_new': 0,
-        'all_match': 0,
         'with_adj_match_original': 0,
         'with_adj_match_new': 0,
         'without_adj_match_original': 0,
@@ -57,7 +121,7 @@ def analyze_gender_matches(csv_file):
         gender_mapping = {
             'MASCULINE': 'm',
             'FEMININE': 'f',
-            'UNKNOWN': 'n',
+            'UNKNOWN': 'u',
             'DIVERSE': 'n',
             'NEUTRAL': 'n',
             'm': 'm',
@@ -100,9 +164,6 @@ def analyze_gender_matches(csv_file):
             if makesense_val == 'yes':
                 summary_by_lang[translator]['makesense_yes'] += 1
             
-            # All three match
-            if matches_original and matches_new and matches_old:
-                summary_by_lang[translator]['all_match'] += 1
             
             # Track mismatches: doesn't match new alignment (then the morphological analysis might be problematic)
             if not matches_new:
@@ -125,6 +186,9 @@ def print_summary_table(summary_by_lang, num_participants, df, language):
     num_sentences = 100
     total_possible_answers = num_sentences * num_participants
     
+    # Calculate inter-annotator agreement
+    alpha, iaa_stats = calculate_krippendorff_alpha(df)
+    
     # Count sentences with adjectives
     sentences_with_adjective = len(df[df['has_adjective'] == True])
     sentences_without_adjective = num_sentences - sentences_with_adjective
@@ -134,7 +198,6 @@ def print_summary_table(summary_by_lang, num_participants, df, language):
     total_match_original = sum(stats['match_original'] for stats in summary_by_lang.values())
     total_match_old = sum(stats['match_old'] for stats in summary_by_lang.values())
     total_match_new = sum(stats['match_new'] for stats in summary_by_lang.values())
-    total_all_match = sum(stats['all_match'] for stats in summary_by_lang.values())
     total_with_adj_match_original = sum(stats['with_adj_match_original'] for stats in summary_by_lang.values())
     total_with_adj_match_new = sum(stats['with_adj_match_new'] for stats in summary_by_lang.values())
     total_without_adj_match_original = sum(stats['without_adj_match_original'] for stats in summary_by_lang.values())
@@ -147,6 +210,9 @@ def print_summary_table(summary_by_lang, num_participants, df, language):
     print("="*160)
     print(f"Dataset info: {num_sentences} sentences × {num_participants} participants = {total_possible_answers} possible answers")
     print(f"Sentences with adjective: {sentences_with_adjective} | Sentences without adjective: {sentences_without_adjective}")
+    print("-"*160)
+    print(f"Inter-Annotator Agreement (Krippendorff's Alpha): {alpha:.4f}")
+    print(f"Full agreement (all annotators agree): {iaa_stats['full_agreement_count']}/{iaa_stats['num_items']} ({iaa_stats['full_agreement_pct']:.1f}%)")
     print("="*160)
     print(f"{'Translator':<15} {'Total':<8} {'Match Orig':<12} {'Match New':<10} {'Expression match':<12} {'Makes Sense Yes':<17} {'With Adj':<10} {'Without Adj':<20}")
     print(f"{'':15} {'':8} {'':12} {'':12} {'':10} {'':21} {'Orig|New':<14} {'Orig|New':<20}")
@@ -191,6 +257,9 @@ def save_summary_to_csv(summary_by_lang, num_participants, df, language, mismatc
     num_sentences = 100
     total_possible_answers = num_sentences * num_participants
     
+    # Calculate inter-annotator agreement
+    alpha, iaa_stats = calculate_krippendorff_alpha(df)
+    
     # Count sentences with adjectives
     sentences_with_adjective = len(df[df['has_adjective'] == True])
     sentences_without_adjective = num_sentences - sentences_with_adjective
@@ -229,6 +298,13 @@ def save_summary_to_csv(summary_by_lang, num_participants, df, language, mismatc
         writer.writerow(['Total possible answers', total_possible_answers])
         writer.writerow(['Sentences with adjective', sentences_with_adjective])
         writer.writerow(['Sentences without adjective', sentences_without_adjective])
+        writer.writerow([])  # Empty row
+        
+        # Write inter-annotator agreement
+        writer.writerow(['Inter-Annotator Agreement'])
+        writer.writerow(['Krippendorff Alpha', f"{alpha:.4f}"])
+        writer.writerow(['Full agreement count', iaa_stats['full_agreement_count']])
+        writer.writerow(['Full agreement percentage', f"{iaa_stats['full_agreement_pct']:.1f}%"])
         writer.writerow([])  # Empty row
         
         # Write column headers
@@ -390,7 +466,7 @@ def print_mismatches(mismatches):
 
 if __name__ == "__main__":
     # Analyze the Spanish results file
-    csv_file = "human_eval_es_results.csv"
+    csv_file = "human_eval_ru_results.csv"
     
     summary_by_lang, df, mismatches = analyze_gender_matches(csv_file)
 
@@ -406,9 +482,9 @@ if __name__ == "__main__":
         except:
             continue
     
-    #print_summary_table(summary_by_lang, num_participants, df, language)
-    #print_mismatches(mismatches)
+    print_summary_table(summary_by_lang, num_participants, df, language)
+    print_mismatches(mismatches)
     
     # Save results to CSV
     output_csv = f"analyis_results_h_eval_{language}.csv"
-    save_summary_to_csv(summary_by_lang, num_participants, df, language, mismatches, output_csv)
+   # save_summary_to_csv(summary_by_lang, num_participants, df, language, mismatches, output_csv)

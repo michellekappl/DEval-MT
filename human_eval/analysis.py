@@ -4,7 +4,7 @@ import regex as re
 
 
 class HumanResults:
-    def __init__(self, lang: str, results_id: str = "20260127"):
+    def __init__(self, lang: str, results_id: str = "20260204"):
         self.language = lang
         self.data = self.load_data(results_id)
         self.participants = self.number_of_participants()
@@ -73,8 +73,8 @@ class HumanResults:
         self.data.to_csv(path, index=False)
 
 
-for lang in ["es", "fr", "it", "uk", "ru"]:
+for lang in ["it", "ru", "fr", "he", "ar"]:
     results = HumanResults(lang)
 
     print(f"Language: {lang}, Participants: {results.participants}")
-    results.data_to_csv(f"human_eval_{lang}_results.csv")
+    results.data_to_csv(f"human_eval_{lang}_results_0204.csv")
