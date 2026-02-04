@@ -71,8 +71,15 @@ def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename:
     
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), gridspec_kw={'height_ratios': [1, 2]})
 
+    df['sentence_style'] = df['sentence_style'].astype("string")
+    df['sentence_style'] = df['sentence_style'].fillna('all')
+    df.loc[df['sentence_style'].astype(str).str.strip() == '', 'sentence_style'] = 'all'
+    
+
     # Table
-    table_data = df[['total', 'correct', 'accuracy', 'true_error_count', 'unknown_count']].round(3)
+    table_data = df[['total','sentence_style', 'correct', 'accuracy', 'true_error_count', 'unknown_count']].round(3)
+    #table_data = df.select_dtypes(include='number').round(3)
+
     ax1.axis('off')
     table = ax1.table(cellText=table_data.values,
                       rowLabels=table_data.index,
