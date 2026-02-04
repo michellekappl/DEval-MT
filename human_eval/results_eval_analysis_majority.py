@@ -1,6 +1,6 @@
 import pandas as pd
 import json
-from collections import defaultdict
+from collections import defaultdict, Counter
 import csv
 import numpy as np
 import krippendorff
@@ -11,9 +11,8 @@ from typing import Dict, List, Tuple
 @dataclass
 class SummaryStatistics:
     """Container for summary statistics."""
-    total_entries: int = 0
+    total_sentences: int = 0
     match_original: int = 0
-    match_old: int = 0
     match_new: int = 0
     with_adj_match_original: int = 0
     with_adj_match_new: int = 0
@@ -21,13 +20,16 @@ class SummaryStatistics:
     without_adj_match_new: int = 0
     match_yes: int = 0
     makesense_yes: int = 0
+    # Track total sentences with/without adjectives for correct percentages
+    total_with_adj: int = 0
+    total_without_adj: int = 0
 
 
-class GenderEvaluationAnalyzer:
-    """Analyzes gender evaluation results from human annotators."""
+class MajorityVoteAnalyzer:
+    """Analyzes gender evaluation results using majority voting."""
     
     GENDER_MAP = {'MASCULINE': 'm', 'FEMININE': 'f', 'UNKNOWN': 'u', 'DIVERSE': 'n', 
-                  'NEUTRAL': 'n', 'm': 'm', 'f': 'f', 'n': 'n'}
+                  'NEUTRAL': 'n', 'm': 'm', 'f': 'f', 'n': 'n', 'u': 'u'}
     
     def __init__(self, csv_file: str, num_sentences: int = 100):
         self.csv_file = csv_file
@@ -35,42 +37,35 @@ class GenderEvaluationAnalyzer:
         self.df = pd.read_csv(csv_file)
         
         # Extract language and date from filename
-        # Expected format: human_eval_{lang}_results_{date}.csv
         import re
         match = re.search(r'human_eval_([a-z]+)_results_([0-9]+)\.csv', csv_file)
         if match:
             self.language = match.group(1)
             self.date = match.group(2)
         else:
-            # Fallback for old format: human_eval_{lang}_results.csv
             self.language = csv_file.replace("human_eval_", "").replace("_results.csv", "")
             self.date = None
         
-        # Compute everything once
+        # Compute majority votes for each sentence
+        self.majority_votes = self._compute_majority_votes()
+        
+        # Get number of participants from first row
         self.num_participants = self._get_num_participants()
-        self.summary_by_lang = self._compute_summary()
-        self.mismatches = self._compute_mismatches()
+        
+        # Calculate inter-annotator agreement
         self.alpha, self.iaa_stats = self._compute_krippendorff_alpha()
         
-        # Compute filtered results (makesense == 'yes' only)
-        self.summary_by_lang_filtered = self._compute_summary(filter_makesense=True)
+        # Compute summary statistics
+        self.summary_by_translator = self._compute_summary()
+        self.summary_by_translator_filtered = self._compute_summary(filter_makesense=True)
+        
+        # Compute mismatches
+        self.mismatches = self._compute_mismatches()
         self.mismatches_filtered = self._compute_mismatches(filter_makesense=True)
-        self.alpha_filtered, self.iaa_stats_filtered = self._compute_krippendorff_alpha(filter_makesense=True)
         
         # Computed properties
         self.sentences_with_adjective = len(self.df[self.df['has_adjective'] == True])
         self.sentences_without_adjective = self.num_sentences - self.sentences_with_adjective
-        self.total_possible_answers = self.num_sentences * self.num_participants
-    
-    def _get_num_participants(self) -> int:
-        """Extract number of participants from first valid gender list."""
-        for _, row in self.df.iterrows():
-            try:
-                gender_list = json.loads(row['gender'].replace("'", '"'))
-                return len(gender_list)
-            except:
-                continue
-        return 0
     
     def _parse_json_list(self, value: str) -> List:
         """Parse JSON string safely."""
@@ -79,28 +74,20 @@ class GenderEvaluationAnalyzer:
         except:
             return []
     
-    def _compute_krippendorff_alpha(self, filter_makesense: bool = False) -> Tuple[float, Dict]:
+    def _get_num_participants(self) -> int:
+        """Extract number of participants from first valid gender list."""
+        for _, row in self.df.iterrows():
+            gender_list = self._parse_json_list(row['gender'])
+            if gender_list:
+                return len(gender_list)
+        return 0
+    
+    def _compute_krippendorff_alpha(self) -> Tuple[float, Dict]:
         """Calculate Krippendorff's alpha for inter-annotator agreement."""
         all_items = []
         for _, row in self.df.iterrows():
             gender_list = self._parse_json_list(row['gender'])
-            if not gender_list:
-                continue
-            
-            if filter_makesense:
-                makesense_list = self._parse_json_list(row['makesense'])
-                # Keep all annotators but set to None if makesense != 'yes'
-                filtered_genders = []
-                for i in range(len(gender_list)):
-                    if i < len(makesense_list) and makesense_list[i] == 'yes':
-                        filtered_genders.append(gender_list[i])
-                    else:
-                        filtered_genders.append(None)  # Mark as missing data
-                
-                # Only include if at least one annotator said 'yes'
-                if any(g is not None for g in filtered_genders):
-                    all_items.append(filtered_genders)
-            else:
+            if gender_list:
                 all_items.append(gender_list)
         
         if not all_items:
@@ -111,119 +98,141 @@ class GenderEvaluationAnalyzer:
         
         # Map to numeric codes
         gender_to_num = {'m': 1, 'f': 2, 'n': 3, 'u': 4}
-        data_matrix = np.full((num_items, num_annotators), np.nan)  # Use NaN for missing
+        data_matrix = np.zeros((num_items, num_annotators))
         for i, gender_list in enumerate(all_items):
             for j, gender in enumerate(gender_list):
-                if gender is not None:  # Only set if not filtered out
-                    data_matrix[i, j] = gender_to_num.get(gender, 4)
+                data_matrix[i, j] = gender_to_num.get(gender, 4)
         
         alpha = krippendorff.alpha(reliability_data=data_matrix.T, level_of_measurement='nominal')
         
-        # Count full agreement (ignoring NaN values)
-        agreement_count = 0
-        for i in range(num_items):
-            row = data_matrix[i, :]
-            valid_values = row[~np.isnan(row)]
-            if len(valid_values) > 1 and len(set(valid_values)) == 1:
-                agreement_count += 1
+        # Count full agreement
+        agreement_count = sum(1 for i in range(num_items) if len(set(data_matrix[i, :])) == 1)
         
         return alpha, {
             'alpha': alpha,
             'num_items': num_items,
             'num_annotators': num_annotators,
-            'total_annotations': num_items * num_annotators,
             'full_agreement_count': agreement_count,
             'full_agreement_pct': (agreement_count / num_items * 100) if num_items > 0 else 0
         }
     
-    def _compute_summary(self, filter_makesense: bool = False) -> Dict[str, SummaryStatistics]:
-        """Compute summary statistics by translator."""
-        summary = defaultdict(SummaryStatistics)
+    def _majority_vote(self, values: List) -> str:
+        """Return the majority value, or 'u' (unknown) if there's a tie."""
+        if not values:
+            return 'u'
+        
+        counter = Counter(values)
+        most_common = counter.most_common(2)
+        
+        # Check for tie
+        if len(most_common) > 1 and most_common[0][1] == most_common[1][1]:
+            return 'u'  # Tie - mark as unknown
+        
+        return most_common[0][0]
+    
+    def _compute_majority_votes(self) -> List[Dict]:
+        """Compute majority vote for each sentence."""
+        majority_data = []
         
         for _, row in self.df.iterrows():
             gender_list = self._parse_json_list(row['gender'])
             match_list = self._parse_json_list(row['match'])
             makesense_list = self._parse_json_list(row['makesense'])
             
-            translator = row['translator']
-            has_adjective = row.get('has_adjective', False)
+            # Get majority votes
+            majority_gender = self._majority_vote(gender_list)
+            majority_match = self._majority_vote(match_list)
+            majority_makesense = self._majority_vote(makesense_list)
             
             # Convert genders to single letter
-            orig_letter = self.GENDER_MAP.get(row['original_gender'], 'unknown')
-            new_letter = self.GENDER_MAP.get(row['gender_new_alignment'], 'unknown')
-            old_letter = self.GENDER_MAP.get(row['gender_old_alignment'], 'unknown')
+            orig_letter = self.GENDER_MAP.get(row['original_gender'], 'u')
+            new_letter = self.GENDER_MAP.get(row['gender_new_alignment'], 'u')
+            old_letter = self.GENDER_MAP.get(row['gender_old_alignment'], 'u')
             
-            for i, gender_val in enumerate(gender_list):
-                # Skip if filtering and makesense != 'yes'
-                if filter_makesense:
-                    if i >= len(makesense_list) or makesense_list[i] != 'yes':
-                        continue
-                
-                stats = summary[translator]
-                stats.total_entries += 1
-                
-                if gender_val == orig_letter:
-                    stats.match_original += 1
-                    if has_adjective:
-                        stats.with_adj_match_original += 1
-                    else:
-                        stats.without_adj_match_original += 1
-                
-                if gender_val == new_letter:
-                    stats.match_new += 1
-                    if has_adjective:
-                        stats.with_adj_match_new += 1
-                    else:
-                        stats.without_adj_match_new += 1
-                
-                if gender_val == old_letter:
-                    stats.match_old += 1
-                
-                if i < len(match_list) and match_list[i] == 'yes':
-                    stats.match_yes += 1
-                
-                if i < len(makesense_list) and makesense_list[i] == 'yes':
-                    stats.makesense_yes += 1
+            majority_data.append({
+                'csv_index': row['index'],
+                'translator': row['translator'],
+                'majority_gender': majority_gender,
+                'majority_match': majority_match,
+                'majority_makesense': majority_makesense,
+                'original_gender': orig_letter,
+                'new_alignment': new_letter,
+                'old_alignment': old_letter,
+                'has_adjective': row.get('has_adjective', False)
+            })
+        
+        return majority_data
+    
+    def _compute_summary(self, filter_makesense: bool = False) -> Dict[str, SummaryStatistics]:
+        """Compute summary statistics by translator using majority votes."""
+        summary = defaultdict(SummaryStatistics)
+        
+        for vote_data in self.majority_votes:
+            # Skip if filtering and majority makesense != 'yes'
+            if filter_makesense and vote_data['majority_makesense'] != 'yes':
+                continue
+            
+            translator = vote_data['translator']
+            stats = summary[translator]
+            
+            stats.total_sentences += 1
+            
+            # Track adjective counts
+            if vote_data['has_adjective']:
+                stats.total_with_adj += 1
+            else:
+                stats.total_without_adj += 1
+            
+            # Check matches
+            if vote_data['majority_gender'] == vote_data['original_gender']:
+                stats.match_original += 1
+                if vote_data['has_adjective']:
+                    stats.with_adj_match_original += 1
+                else:
+                    stats.without_adj_match_original += 1
+            
+            if vote_data['majority_gender'] == vote_data['new_alignment']:
+                stats.match_new += 1
+                if vote_data['has_adjective']:
+                    stats.with_adj_match_new += 1
+                else:
+                    stats.without_adj_match_new += 1
+            
+            if vote_data['majority_match'] == 'yes':
+                stats.match_yes += 1
+            
+            if vote_data['majority_makesense'] == 'yes':
+                stats.makesense_yes += 1
         
         return dict(summary)
     
     def _compute_mismatches(self, filter_makesense: bool = False) -> List[Dict]:
-        """Identify cases where human annotation doesn't match new alignment."""
+        """Identify cases where majority vote doesn't match new alignment."""
         mismatches = []
         
-        for _, row in self.df.iterrows():
-            gender_list = self._parse_json_list(row['gender'])
-            makesense_list = self._parse_json_list(row['makesense'])
-            new_letter = self.GENDER_MAP.get(row['gender_new_alignment'], 'unknown')
+        for vote_data in self.majority_votes:
+            # Skip if filtering and majority makesense != 'yes'
+            if filter_makesense and vote_data['majority_makesense'] != 'yes':
+                continue
             
-            for i, gender_val in enumerate(gender_list):
-                # Skip if filtering and makesense != 'yes'
-                if filter_makesense:
-                    if i >= len(makesense_list) or makesense_list[i] != 'yes':
-                        continue
-                
-                if gender_val != new_letter:
-                    mismatches.append({
-                        'csv_index': row['index'],
-                        'translator': row['translator'],
-                        'human_response': gender_val,
-                        'original': row['original_gender'],
-                        'new_alignment': row['gender_new_alignment'],
-                        'old_alignment': row['gender_old_alignment'],
-                        'has_adjective': row.get('has_adjective', False)
-                    })
+            if vote_data['majority_gender'] != vote_data['new_alignment']:
+                mismatches.append({
+                    'csv_index': vote_data['csv_index'],
+                    'translator': vote_data['translator'],
+                    'majority_gender': vote_data['majority_gender'],
+                    'original': vote_data['original_gender'],
+                    'new_alignment': vote_data['new_alignment'],
+                    'old_alignment': vote_data['old_alignment'],
+                    'has_adjective': vote_data['has_adjective']
+                })
         
         return mismatches
     
-    def _calculate_totals(self, summary_dict=None) -> Dict:
+    def _calculate_totals(self, summary_dict: Dict) -> Dict:
         """Calculate total statistics across all translators."""
-        if summary_dict is None:
-            summary_dict = self.summary_by_lang
-        
         return {
-            'total_entries': sum(s.total_entries for s in summary_dict.values()),
+            'total_sentences': sum(s.total_sentences for s in summary_dict.values()),
             'match_original': sum(s.match_original for s in summary_dict.values()),
-            'match_old': sum(s.match_old for s in summary_dict.values()),
             'match_new': sum(s.match_new for s in summary_dict.values()),
             'with_adj_match_original': sum(s.with_adj_match_original for s in summary_dict.values()),
             'with_adj_match_new': sum(s.with_adj_match_new for s in summary_dict.values()),
@@ -231,71 +240,55 @@ class GenderEvaluationAnalyzer:
             'without_adj_match_new': sum(s.without_adj_match_new for s in summary_dict.values()),
             'match_yes': sum(s.match_yes for s in summary_dict.values()),
             'makesense_yes': sum(s.makesense_yes for s in summary_dict.values()),
+            'total_with_adj': sum(s.total_with_adj for s in summary_dict.values()),
+            'total_without_adj': sum(s.total_without_adj for s in summary_dict.values()),
         }
     
-    def _calculate_percentages(self, totals: Dict, total_possible=None) -> Dict:
+    def _calculate_percentages(self, totals: Dict, total_sentences: int) -> Dict:
         """Calculate percentage values."""
-        if total_possible is None:
-            total_possible = self.total_possible_answers
-            with_adj_poss = self.sentences_with_adjective * self.num_participants
-            without_adj_poss = self.sentences_without_adjective * self.num_participants
-        else:
-            # When using filtered data, calculate adjective denominators proportionally
-            # Use the actual filtered counts for adjectives
-            with_adj_poss = totals['with_adj_match_original'] + totals['with_adj_match_new']
-            without_adj_poss = totals['without_adj_match_original'] + totals['without_adj_match_new']
-            
-            # Alternative: use total_possible as base for all
-            # This makes percentages consistent across the board
-            if with_adj_poss == 0:
-                with_adj_poss = total_possible  # Avoid division by zero
-            if without_adj_poss == 0:
-                without_adj_poss = total_possible
-        
         return {
-            'match_original': (totals['match_original'] / total_possible * 100) if total_possible > 0 else 0,
-            'match_new': (totals['match_new'] / total_possible * 100) if total_possible > 0 else 0,
-            'match_yes': (totals['match_yes'] / total_possible * 100) if total_possible > 0 else 0,
-            'makesense_yes': (totals['makesense_yes'] / total_possible * 100) if total_possible > 0 else 0,
-            'with_adj_orig': (totals['with_adj_match_original'] / with_adj_poss * 100) if with_adj_poss > 0 else 0,
-            'with_adj_new': (totals['with_adj_match_new'] / with_adj_poss * 100) if with_adj_poss > 0 else 0,
-            'without_adj_orig': (totals['without_adj_match_original'] / without_adj_poss * 100) if without_adj_poss > 0 else 0,
-            'without_adj_new': (totals['without_adj_match_new'] / without_adj_poss * 100) if without_adj_poss > 0 else 0,
+            'match_original': (totals['match_original'] / total_sentences * 100) if total_sentences > 0 else 0,
+            'match_new': (totals['match_new'] / total_sentences * 100) if total_sentences > 0 else 0,
+            'match_yes': (totals['match_yes'] / total_sentences * 100) if total_sentences > 0 else 0,
+            'makesense_yes': (totals['makesense_yes'] / total_sentences * 100) if total_sentences > 0 else 0,
+            # Divide by total sentences with adjectives (in this filtered set)
+            'with_adj_orig': (totals['with_adj_match_original'] / totals['total_with_adj'] * 100) if totals['total_with_adj'] > 0 else 0,
+            'with_adj_new': (totals['with_adj_match_new'] / totals['total_with_adj'] * 100) if totals['total_with_adj'] > 0 else 0,
+            # Divide by total sentences without adjectives (in this filtered set)
+            'without_adj_orig': (totals['without_adj_match_original'] / totals['total_without_adj'] * 100) if totals['total_without_adj'] > 0 else 0,
+            'without_adj_new': (totals['without_adj_match_new'] / totals['total_without_adj'] * 100) if totals['total_without_adj'] > 0 else 0,
         }
     
     def print_summary(self):
         """Print comprehensive summary table."""
         # Print all data results
-        self._print_summary_table("ALL DATA", self.summary_by_lang, self.alpha, self.iaa_stats)
+        self._print_summary_table("ALL DATA (Majority Vote)", self.summary_by_translator)
         
-        # Calculate percentages for all data (to use for comparison)
-        totals_all = self._calculate_totals(self.summary_by_lang)
-        percentages_all = self._calculate_percentages(totals_all)
+        # Calculate percentages for all data (for comparison)
+        totals_all = self._calculate_totals(self.summary_by_translator)
+        percentages_all = self._calculate_percentages(totals_all, totals_all['total_sentences'])
         
-        # Print filtered results (makesense == 'yes' only)
+        # Print filtered results
         print("\n\n")
-        totals_filtered = self._calculate_totals(self.summary_by_lang_filtered)
-        self._print_summary_table("FILTERED (makesense='yes' only)", self.summary_by_lang_filtered, 
-                                 self.alpha_filtered, self.iaa_stats_filtered, totals_filtered['total_entries'],
+        totals_filtered = self._calculate_totals(self.summary_by_translator_filtered)
+        self._print_summary_table("FILTERED (Majority makesense='yes')", 
+                                 self.summary_by_translator_filtered,
                                  comparison_percentages=percentages_all)
     
-    def _print_summary_table(self, title: str, summary_dict: Dict, alpha: float, iaa_stats: Dict, total_entries_for_pct=None, comparison_percentages=None):
+    def _print_summary_table(self, title: str, summary_dict: Dict, comparison_percentages=None):
         """Helper method to print a summary table."""
         totals = self._calculate_totals(summary_dict)
-        percentages = self._calculate_percentages(totals, total_entries_for_pct)
+        percentages = self._calculate_percentages(totals, totals['total_sentences'])
         
         print("\n" + "="*160)
         print(f"GENDER MATCH SUMMARY BY TRANSLATOR ({self.language}) - {title}")
         print("="*160)
-        if total_entries_for_pct:
-            print(f"Dataset info: Total entries analyzed: {total_entries_for_pct}")
-        else:
-            print(f"Dataset info: {self.num_sentences} sentences × {self.num_participants} participants = {self.total_possible_answers} possible answers")
-        print(f"Sentences with adjective: {self.sentences_with_adjective} | Sentences without adjective: {self.sentences_without_adjective}")
+        print(f"Total sentences: {totals['total_sentences']} (based on majority vote from {self.num_participants} participants)")
+        print(f"Sentences with adjective: {totals['total_with_adj']} | Sentences without adjective: {totals['total_without_adj']}")
         print("-"*160)
-        if alpha is not None:
-            print(f"Inter-Annotator Agreement (Krippendorff's Alpha): {alpha:.4f}")
-            print(f"Full agreement (all annotators agree): {iaa_stats['full_agreement_count']}/{iaa_stats['num_items']}")
+        if self.alpha is not None:
+            print(f"Inter-Annotator Agreement (Krippendorff's Alpha): {self.alpha:.4f}")
+            print(f"Full agreement (all annotators agree): {self.iaa_stats['full_agreement_count']}/{self.iaa_stats['num_items']}")
         print("="*160)
         print(f"{'Translator':<15} {'Total':<8} {'Match Orig':<12} {'Match New':<10} {'Expression match':<12} {'Makes Sense Yes':<17} {'With Adj':<10} {'Without Adj':<20}")
         print(f"{'':15} {'':8} {'':12} {'':12} {'':10} {'':21} {'Orig|New':<14} {'Orig|New':<20}")
@@ -304,12 +297,12 @@ class GenderEvaluationAnalyzer:
         for translator, stats in sorted(summary_dict.items()):
             with_adj = f"{stats.with_adj_match_original}|{stats.with_adj_match_new}"
             without_adj = f"{stats.without_adj_match_original}|{stats.without_adj_match_new}"
-            print(f"{translator:<18} {stats.total_entries:<10} {stats.match_original:<12} {stats.match_new:<12} {stats.match_yes:<15} {stats.makesense_yes:<12} {with_adj:<14} {without_adj:<20}")
+            print(f"{translator:<18} {stats.total_sentences:<10} {stats.match_original:<12} {stats.match_new:<12} {stats.match_yes:<15} {stats.makesense_yes:<12} {with_adj:<14} {without_adj:<20}")
         
         print("-"*160)
         with_adj_total = f"{totals['with_adj_match_original']}|{totals['with_adj_match_new']}"
         without_adj_total = f"{totals['without_adj_match_original']}|{totals['without_adj_match_new']}"
-        print(f"{'TOTAL':<18} {totals['total_entries']:<10} {totals['match_original']:<12} {totals['match_new']:<12} {totals['match_yes']:<15} {totals['makesense_yes']:<12} {with_adj_total:<14} {without_adj_total:<20}")
+        print(f"{'TOTAL':<18} {totals['total_sentences']:<10} {totals['match_original']:<12} {totals['match_new']:<12} {totals['match_yes']:<15} {totals['makesense_yes']:<12} {with_adj_total:<14} {without_adj_total:<20}")
         
         with_adj_pct = f"{percentages['with_adj_orig']:.1f}%|{percentages['with_adj_new']:.1f}%"
         without_adj_pct = f"{percentages['without_adj_orig']:.1f}%|{percentages['without_adj_new']:.1f}%"
@@ -334,17 +327,14 @@ class GenderEvaluationAnalyzer:
     
     def print_mismatches(self):
         """Print detailed mismatch information."""
-        # Print all data mismatches
         self._print_mismatch_table("ALL DATA", self.mismatches)
-        
-        # Print filtered mismatches
         print("\n\n")
-        self._print_mismatch_table("FILTERED (makesense='yes' only)", self.mismatches_filtered)
+        self._print_mismatch_table("FILTERED (Majority makesense='yes')", self.mismatches_filtered)
     
     def _print_mismatch_table(self, title: str, mismatches: List[Dict]):
         """Helper method to print mismatch information."""
         print("\n" + "="*130)
-        print(f"MISMATCH INDICES - {title} (doesn't match new alignment)")
+        print(f"MISMATCH INDICES - {title} (majority vote doesn't match new alignment)")
         print("="*130)
         
         if not mismatches:
@@ -371,91 +361,94 @@ class GenderEvaluationAnalyzer:
             print(f"{gender:<15} {count:<8} {pct:.1f}%")
         
         print("\n\nDetailed mismatches:")
-        print(f"{'CSV Index':<10} {'Translator':<15} {'Gender Value':<12} {'Original':<12} {'Old':<12} {'New':<12} {'Adjective':<10}")
+        print(f"{'CSV Index':<10} {'Translator':<15} {'Majority Gender':<15} {'Original':<12} {'Old':<12} {'New':<12} {'Adjective':<10}")
         print("-"*130)
         
-        # Deduplicate
-        seen = set()
         for m in sorted(mismatches, key=lambda x: x['csv_index']):
-            key = (m['csv_index'], m['translator'], m['human_response'])
-            if key in seen:
-                continue
-            seen.add(key)
             adj_str = "Yes" if m['has_adjective'] else "No"
-            print(f"{m['csv_index']:<10} {m['translator']:<15} {m['human_response']:<12} {m['original']:<12} {m['old_alignment']:<12} {m['new_alignment']:<12} {adj_str:<10}")
+            print(f"{m['csv_index']:<10} {m['translator']:<15} {m['majority_gender']:<15} {m['original']:<12} {m['old_alignment']:<12} {m['new_alignment']:<12} {adj_str:<10}")
     
     def save_to_csv(self, output_file: str):
         """Save complete analysis to CSV file."""
         with open(output_file, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             
+            # Explanation comment
+            writer.writerow(['EXPLANATION'])
+            writer.writerow(['Match Original: human annotated gender matches the gender in the German sentence'])
+            writer.writerow(['(then the MT translated the gender correctly, participants dont see the German version)'])
+            writer.writerow(['Match New: human annotated gender matches the new alignment machine gender annotation'])
+            writer.writerow(['Expression Match: participants agree that the expression matches the subject in the sentence'])
+            writer.writerow(['Makes Sense Yes: participants agree that the sentence makes sense'])
+            writer.writerow(['With/out Adj: statistics for sentences with/without adjectives for German original gender and new alignment annotation'])
+            writer.writerow([])
+            
             # Header information
             writer.writerow(['Language', self.language])
             writer.writerow(['Date', self.date if self.date else 'N/A'])
-            writer.writerow(['Sentences', self.num_sentences])
-            writer.writerow(['Participants', self.num_participants])
-            writer.writerow(['Total possible answers', self.total_possible_answers])
+            writer.writerow(['Analysis Method', 'Majority Vote'])
+            writer.writerow(['Number of participants', self.num_participants])
+            writer.writerow(['Total sentences', self.num_sentences])
             writer.writerow(['Sentences with adjective', self.sentences_with_adjective])
             writer.writerow(['Sentences without adjective', self.sentences_without_adjective])
             writer.writerow([])
             
+            # Inter-annotator agreement
+            writer.writerow(['Inter-Annotator Agreement'])
+            if self.alpha is not None:
+                writer.writerow(['Krippendorff Alpha', f"{self.alpha:.4f}"])
+                writer.writerow(['Full agreement (out of 100 sentences)', self.iaa_stats['full_agreement_count']])
+            writer.writerow([])
+            
             # === ALL DATA ===
             writer.writerow(['=' * 50])
-            writer.writerow(['ALL DATA'])
+            writer.writerow(['ALL DATA (Majority Vote)'])
             writer.writerow(['=' * 50])
             writer.writerow([])
             
-            self._write_summary_section(writer, self.summary_by_lang, self.alpha, self.iaa_stats)
+            totals_all = self._calculate_totals(self.summary_by_translator)
+            percentages_all = self._calculate_percentages(totals_all, totals_all['total_sentences'])
+            
+            self._write_summary_section(writer, self.summary_by_translator, totals_all, percentages_all)
             self._write_mismatch_section(writer, self.mismatches)
             
-            # Calculate percentages for all data (for comparison)
-            totals_all = self._calculate_totals(self.summary_by_lang)
-            percentages_all = self._calculate_percentages(totals_all)
-            
-            # === FILTERED DATA (makesense='yes') ===
+            # === FILTERED DATA ===
             writer.writerow([])
             writer.writerow([])
             writer.writerow(['=' * 50])
-            writer.writerow(['FILTERED DATA (makesense=yes only)'])
+            writer.writerow(['FILTERED DATA (Majority makesense=yes)'])
             writer.writerow(['=' * 50])
             writer.writerow([])
             
-            totals_filtered = self._calculate_totals(self.summary_by_lang_filtered)
-            writer.writerow(['Total entries analyzed', totals_filtered['total_entries']])
+            totals_filtered = self._calculate_totals(self.summary_by_translator_filtered)
+            percentages_filtered = self._calculate_percentages(totals_filtered, totals_filtered['total_sentences'])
+            
+            writer.writerow(['Total sentences analyzed', totals_filtered['total_sentences']])
             writer.writerow([])
             
-            self._write_summary_section(writer, self.summary_by_lang_filtered, self.alpha_filtered, 
-                                      self.iaa_stats_filtered, totals_filtered['total_entries'], 
+            self._write_summary_section(writer, self.summary_by_translator_filtered, 
+                                      totals_filtered, percentages_filtered,
                                       comparison_percentages=percentages_all)
             self._write_mismatch_section(writer, self.mismatches_filtered)
         
         print(f"\nSummary saved to {output_file}")
     
-    def _write_summary_section(self, writer, summary_dict: Dict, alpha: float, iaa_stats: Dict, total_entries_for_pct=None, comparison_percentages=None):
+    def _write_summary_section(self, writer, summary_dict: Dict, totals: Dict, percentages: Dict, comparison_percentages=None):
         """Helper to write summary statistics section to CSV."""
-        totals = self._calculate_totals(summary_dict)
-        percentages = self._calculate_percentages(totals, total_entries_for_pct)
-        
-        # Inter-annotator agreement
-        writer.writerow(['Inter-Annotator Agreement'])
-        if alpha is not None:
-            writer.writerow(['Krippendorff Alpha', f"{alpha:.4f}"])
-            writer.writerow(['Full agreement (out of 100 sentences)', iaa_stats['full_agreement_count']])
-        writer.writerow([])
-        
         # Summary table
-        writer.writerow(['Translator', 'Total', 'Match Orig', 'Match New', 'Expression Match', 'Makes Sense Yes',
+        writer.writerow(['SUMMARY TABLE'])
+        writer.writerow(['Translator', 'Total Sentences', 'Match Orig', 'Match New', 'Expression Match', 'Makes Sense Yes',
                         'With Adj Orig', 'With Adj New', 'Without Adj Orig', 'Without Adj New'])
         
         for translator, stats in sorted(summary_dict.items()):
             writer.writerow([
-                translator, stats.total_entries, stats.match_original, stats.match_new,
+                translator, stats.total_sentences, stats.match_original, stats.match_new,
                 stats.match_yes, stats.makesense_yes, stats.with_adj_match_original,
                 stats.with_adj_match_new, stats.without_adj_match_original, stats.without_adj_match_new
             ])
         
         writer.writerow([
-            'TOTAL', totals['total_entries'], totals['match_original'], totals['match_new'],
+            'TOTAL', totals['total_sentences'], totals['match_original'], totals['match_new'],
             totals['match_yes'], totals['makesense_yes'], totals['with_adj_match_original'],
             totals['with_adj_match_new'], totals['without_adj_match_original'], totals['without_adj_match_new']
         ])
@@ -513,34 +506,29 @@ class GenderEvaluationAnalyzer:
         
         writer.writerow([])
         writer.writerow(['Detailed Mismatches'])
-        writer.writerow(['CSV Index', 'Translator', 'Gender Value', 'Original', 'Old', 'New', 'Adjective'])
+        writer.writerow(['CSV Index', 'Translator', 'Majority Gender', 'Original', 'Old', 'New', 'Adjective'])
         
-        seen = set()
         for m in sorted(mismatches, key=lambda x: x['csv_index']):
-            key = (m['csv_index'], m['translator'], m['human_response'])
-            if key in seen:
-                continue
-            seen.add(key)
             adj_str = "Yes" if m['has_adjective'] else "No"
             writer.writerow([
-                m['csv_index'], m['translator'], m['human_response'],
+                m['csv_index'], m['translator'], m['majority_gender'],
                 m['original'], m['old_alignment'], m['new_alignment'], adj_str
             ])
         writer.writerow([])
 
 
 if __name__ == "__main__":
-    # Analyze Italian results
-    analyzer = GenderEvaluationAnalyzer("human_eval_it_results_0204.csv")
+    # Analyze with majority voting
+    analyzer = MajorityVoteAnalyzer("human_eval_es_results.csv")
     
     # Print and save results
     analyzer.print_summary()
     #analyzer.print_mismatches()
     
     # Generate output filename with date
-    output_name = f"analysis_results_{analyzer.language}"
+    output_name = f"analysis_majority_{analyzer.language}"
     if analyzer.date:
         output_name += f"_{analyzer.date}"
     output_name += ".csv"
     
-    #analyzer.save_to_csv(output_name)
+    analyzer.save_to_csv(output_name)
