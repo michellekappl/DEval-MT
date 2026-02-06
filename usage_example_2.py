@@ -15,14 +15,6 @@ from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
 from morphological_analysis.hebrew_morph_analyzer import HebrewMorphAnalyzer
 from sdk import run_subject_pipeline
 
-# Import plotting functions from your modular package
-from plots import (
-    plot_error_analysis,
-    plot_confusion_matrix,
-    plot_logistic_regression,
-    save_dataframes,
-)
-
 
 def example_data(model_name: str) -> DEvalDataset:
     if os.path.exists(f"{model_name}_processed.csv"):
@@ -119,13 +111,18 @@ def example_data(model_name: str) -> DEvalDataset:
             source_column="text",
             subject_index_column="x_idx",
             output_prefix="x",
-            article_offset=-1,
             use_multiprocessing=False,
+            num_predictions=3,  # Run morphological analysis 3 times and use majority voting
         )
 
         return ds
 
+
 if __name__ == "__main__":
     for model_name in ["gpt-4o", "google", "systran", "microsoft", "deepl"]:
+        print(f"\n{'='*60}")
+        print(f"Processing model: {model_name}")
+        print(f"{'='*60}")
         ds1 = example_data(model_name)
         ds1.df.to_csv(f"{model_name}_processed.csv", sep=";", index=False)
+        print(f"Completed processing {model_name}")
