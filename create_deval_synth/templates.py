@@ -24,6 +24,7 @@ NAME_SENTENCE = 6
 
 T = TypeVar("T")
 
+
 def from_none(arg: T | None) -> T:
     """
     Only here for type checking and error reporting purposes. Returns an argument unchanged if it is not None.
@@ -31,6 +32,7 @@ def from_none(arg: T | None) -> T:
     if not arg:
         raise ValueError("Argument cannot be None")
     return arg
+
 
 class Template:
     """
@@ -81,7 +83,7 @@ class Template:
         self.xs: list[tuple[str | int, Noun]] = []
 
         self.matching_x_groups: list[str | int] = []
-        sentence_style = row['style'].strip("<>") 
+        sentence_style = row['style'].strip("<>")
 
         if sentence_style == "normal_pron":
             self.sentence_style = NORMAL_SENTENCE_PRONOUN
@@ -109,18 +111,9 @@ class Template:
                     list[Noun],
                 ]
             ] = []
-            y_groups = [""]
-            if y_groups[0] == "":
-                self.ys = groups_list
-                matching_y_groups = list(groups.keys())
-            elif y_groups[0] == "romantic":
-                self.sentence_style = ROMANTIC_SENTENCE
-                matching_y_groups = ["romantic"]
-            else:
-                matching_y_groups = [
-                    int(group) if group != "romantic" else group for group in y_groups
-                ]
 
+            self.ys = groups_list
+            matching_y_groups = list(groups.keys())
             self.ys = [(y_group, y) for y_group, y in groups_list if y_group in matching_y_groups]
             # necessary as we need to make sure that in the function gen_for_x,
             # we can always find an argument of another gender
@@ -197,77 +190,64 @@ class Template:
 
         # find the base noun
         base_noun = x if parts[0] == "x" else y
-
-        if parts[1] in [
-            "nom",
-            "gen",
-            "dat",
-            "acc",
-        ]:
-            # case that this is a simply a definite noun phrase like <x_nom_sg>
-            if adjective and parts[0] == modified:
-                # if we have an adjective and the noun is the modified one, use it
-                return DefinitePhrase(base_noun, adjective).decline(parts[1], "sg")
-            else:
-                return DefinitePhrase(base_noun).decline(parts[1], "sg")
-        elif parts[1] == "rel":
-            # case that this is a relative pronoun like <x_rel_nom>
-            case = parts[2]
-            return Relative(base_noun).decline(case, "sg")
-        elif parts[1] == "pron":
-            # case that this is a pronoun like <x_pron_nom>
-            case = parts[2]
-            return Pronoun(base_noun).decline(case, "sg")
-        elif parts[1] == "poss":
-            # case that this is a possessive pronoun like <x_poss_f_nom> or <x_poss_nom>
-            if len(parts) == 4:
-                # this is the case where we know the gender of the possessed noun (i.e. it doesn't change)
-                # so something like <x_poss_f_nom>
-                gender = parts[2]
-                case = parts[3]
-                return Possessive(base_noun, gender).decline(case, "sg")
-            elif len(parts) == 3:
-                # case where gender is not known, so we need to use the other noun to determine it
-                # something like <x_poss_acc>
-                other_noun = y if parts[0] == "x" else x  # complement to base_noun
+        match parts[1]:
+            case "nom" | "gen" | "dat" | "acc":
+                # case that this is a simply a definite noun phrase like <x_nom_sg>
+                if adjective and parts[0] == modified:
+                    # if we have an adjective and the noun is the modified one, use it
+                    return DefinitePhrase(base_noun, adjective).decline(parts[1], "sg")
+                else:
+                    return DefinitePhrase(base_noun).decline(parts[1], "sg")
+            case "rel":
+                # case that this is a relative pronoun like <x_rel_nom>
                 case = parts[2]
-                # If other_noun is None (no y placeholder), default to base noun's gender
-                gender = (
-                    other_noun.grammatical_gender if other_noun else base_noun.grammatical_gender
-                )
-                return Possessive(
-                    base_noun,
-                    gender,
-                ).decline(case, "sg")
-            elif len(parts) > 0:
-                # case where gender is not known, so we need to use the other noun to determine it
-                # something like <x_poss_acc>
-                other_noun = y if parts[0] == "x" else x  # complement to base_noun
-                case = parts[4]
-                # If other_noun is None (no y placeholder), default to base noun's gender
-                gender = (
-                    other_noun.grammatical_gender if other_noun else base_noun.grammatical_gender
-                )
-                return Possessive(
-                    base_noun,
-                    gender,
-                ).decline(case, "sg")
-            elif(len(parts) > 0):
-                # case where gender is not known, so we need to use the other noun to determine it
-                # something like <x_poss_acc>
-                other_noun = y if parts[0] == "x" else x  # complement to base_noun
-                case = parts[4]
-                return Possessive(
-                    base_noun,
-                    other_noun.grammatical_gender,
-                ).decline(case, "sg")
-        elif parts[1] == "indef":
-            # case that this is an indefinite noun phrase like <x_indef_nom>
-            case = parts[2]
-            return base_noun.decline(case, "sg")
-        else:
-            # throw error
-            raise ValueError(f"Unknown match type: {parts}")
+                return Relative(base_noun).decline(case, "sg")
+            case "pron":
+                # case that this is a pronoun like <x_pron_nom>
+                case = parts[2]
+                return Pronoun(base_noun).decline(case, "sg")
+            case "poss":
+                # case that this is a possessive pronoun like <x_poss_f_nom> or <x_poss_nom>
+                match len(parts):
+                    case 4:
+                        # this is the case where we know the gender of the possessed noun (i.e. it doesn't change)
+                        # so something like <x_poss_f_nom>
+                        gender = parts[2]
+                        case = parts[3]
+                        return Possessive(base_noun, gender).decline(case, "sg")
+                    case 3:
+                        # case where gender is not known, so we need to use the other noun to determine it
+                        # something like <x_poss_acc>
+                        other_noun = y if parts[0] == "x" else x  # complement to base_noun
+                        case = parts[2]
+                        # If other_noun is None (no y placeholder), default to base noun's gender
+                        gender = (
+                            other_noun.grammatical_gender if other_noun else base_noun.grammatical_gender
+                        )
+                        return Possessive(
+                            base_noun,
+                            gender,
+                        ).decline(case, "sg")
+                    case _:
+                        # case where gender is not known, so we need to use the other noun to determine it
+                        # something like <x_poss_acc>
+                        other_noun = y if parts[0] == "x" else x  # complement to base_noun
+                        case = parts[4]
+                        # If other_noun is None (no y placeholder), default to base noun's gender
+                        gender = (
+                            other_noun.grammatical_gender if other_noun else base_noun.grammatical_gender
+                        )
+                        return Possessive(
+                            base_noun,
+                            gender,
+                        ).decline(case, "sg")
+            case "indef":
+                # case that this is an indefinite noun phrase like <x_indef_nom>
+                case = parts[2]
+                return base_noun.decline(case, "sg")
+            case _:
+                # throw error
+                raise ValueError(f"Unknown match type: {parts}")
 
     @staticmethod
     def find_indices(
@@ -338,7 +318,6 @@ class Template:
             (x_group, x, name)
             for x_group, x in xs
             for name in matching_names
-            if name.gender == x.gender or name.gender == "n"
         ):
             # use regex to perform substitutions
             text = re.sub(
@@ -476,7 +455,6 @@ class Template:
             (
                 x_group,
                 x,
-                y_group,
                 y,
                 None,
                 None,
@@ -500,7 +478,6 @@ class Template:
                 (
                     x_group,
                     x,
-                    y_group,
                     y,
                     adjective,
                     modified,
@@ -521,7 +498,6 @@ class Template:
         for (
             x_group,
             x,
-            y_group,
             y,
             adjective,
             modified,
@@ -544,7 +520,7 @@ class Template:
             # capitalize the first letter of the substitution
             text = text[0].upper() + text[1:]
             # find indices of x and y within the sentence
-            x_idx, y_idx = self.find_indices(text, x, y)
+            x_idx, _ = self.find_indices(text, x, y)
             instance = Instance(
                 x,
                 self.sentence_style,
@@ -581,42 +557,110 @@ class Template:
             The noun to generate instances for.
         """
         xs = [(x_group, x) for x in x_list]
-        matching_names = []
         if self.sentence_style == NAME_SENTENCE:
-            if x_group == "romantic": return []
+            if x_group == "romantic":
+                return []
             name_sentences = []
             # get names that match gender of x
-            for x in x_list:
-                if x.gender == "m":
-                    matching_names = [
-                        name for name in self.names if name.gender == x.gender or name.gender == "n"
-                    ]
-                elif x.gender == "f":
-                    matching_names = [
-                        name for name in self.names if name.gender == "f" or name.gender == "n"
-                    ]
-                else:
-                    matching_names = self.names
-                matching_names = [random.choice(matching_names)]
+            male_names = [name for name in self.names if name.gender == "m"]
+            female_names = [name for name in self.names if name.gender == "f"]
+            neutral_names = [name for name in self.names if name.gender == "n"]
+
+            # Get jobs by gender (always have male and female, sometimes neutral)
+            male_jobs = [x for x in x_list if x.gender == "m"]
+            female_jobs = [x for x in x_list if x.gender == "f"]
+            neutral_jobs = [x for x in x_list if x.gender == "d"]
+
+            # Check if we have both male and female jobs
+            if not male_jobs or not female_jobs:
+                # Skip this group if it doesn't have both
+                return []
+
+            male_job = male_jobs[0]
+            female_job = female_jobs[0]
+
+            # Select one name of each type to use across all combinations
+            selected_male_name = random.choice(male_names) if male_names else None
+            selected_neutral_name = random.choice(neutral_names) if neutral_names else None
+            selected_female_name = random.choice(female_names) if female_names else None
+
+            # 1. Male name with male job
+            if selected_male_name:
                 name_sentences.extend(
                     self.gen_name(
-                        xs,
-                        matching_names,
+                        [(x_group, male_job)],
+                        [selected_male_name],
                     )
                 )
-            return name_sentences
-        else:
-            # Handle sentences without <y...> placeholders
-            if self.ys_by_gender:
-                y_group, y_jobs = random.choice(self.ys_by_gender)
-                ys = [(y_group, y) for y in y_jobs]
-            else:
-                # No y placeholder - generate with y=None
-                ys = [(None, None)]
 
-            if self.sentence_style == ROMANTIC_SENTENCE:
-                y_group, y_jobs = random.choice(self.ys_by_gender[:5])
-                ys = [(y_group, y) for y in y_jobs]
-                return self.gen_romantic(xs, ys)
-            else:
-                return self.gen_normal(xs, ys)
+            # 2. Neutral name with male job
+            if selected_neutral_name:
+                name_sentences.extend(
+                    self.gen_name(
+                        [(x_group, male_job)],
+                        [selected_neutral_name],
+                    )
+                )
+            # 3. Neutral name with female job
+                name_sentences.extend(
+                    self.gen_name(
+                        [(x_group, female_job)],
+                        [selected_neutral_name],
+                    )
+                )
+
+            # 4. Female name with female job
+            if selected_female_name:
+                name_sentences.extend(
+                    self.gen_name(
+                        [(x_group, female_job)],
+                        [selected_female_name],
+                    )
+                )
+
+            # If there's a neutral job, add 3 more combinations (total 7)
+            if neutral_jobs:
+                neutral_job = neutral_jobs[0]
+
+                # 5. Male name with neutral job
+                if selected_male_name:
+                    name_sentences.extend(
+                        self.gen_name(
+                            [(x_group, neutral_job)],
+                            [selected_male_name],
+                        )
+                    )
+
+                # 6. Neutral name with neutral job
+                if selected_neutral_name:
+                    name_sentences.extend(
+                        self.gen_name(
+                            [(x_group, neutral_job)],
+                            [selected_neutral_name],
+                        )
+                    )
+
+                # 7. Female name with neutral job
+                if selected_female_name:
+                    name_sentences.extend(
+                        self.gen_name(
+                            [(x_group, neutral_job)],
+                            [selected_female_name],
+                        )
+                    )
+            return name_sentences
+
+        # Handle sentences without <y...> placeholders
+        if self.ys_by_gender:
+            y_group, y_jobs = random.choice(self.ys_by_gender)
+            ys = [(y_group, y) for y in y_jobs]
+        else:
+            # No y placeholder - generate with y=None
+            ys = [(None, None)]
+
+        if self.sentence_style == ROMANTIC_SENTENCE:
+            y_group, y_jobs = random.choice(self.ys_by_gender[:5])
+            ys = [(y_group, y) for y in y_jobs]
+            return self.gen_romantic(xs, ys)
+        else:
+            return self.gen_normal(xs, ys)
