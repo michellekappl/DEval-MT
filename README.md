@@ -46,12 +46,14 @@ The pipeline automatically:
   - `ErrorAnalysis`: accuracy + detailed error types.
   - `ConfusionMatrix`: confusion matrices & precision/recall/F1 per gender.
   - `LogisticRegressionAnalysis`: relates predictors (e.g. stereotypicality) to correctness.
-  - **(NEW)** above three support analysis with a filter column to see the influence of it.
+  - **(NEW)** above three analysis support analysis with a filter column to see the influence of it.
 
 - **(NEW)**`automized_translations/`:
   - `systran_translate.py`, `gpt_translate.py`, `deepl_translate.py`, `google_translate.py`, `microsoft_translate.py`: translates sentences with multiple models.
   - `list_translator.py`: integrates different translation models and languages, multiple inputs possible.
   - use `dataset_translation.py` to translate a proper dataset.
+
+- **(NEW)**`plots.py`: generates plots for analysis results.
 
 This modular design makes it easy to plug in:
 - new languages,
@@ -84,9 +86,10 @@ This modular design makes it easy to plug in:
 - Other than that the installation steps are the same as in the Linux Installation
 
 ## Usage
-A full, runnable example can be found in:
+Usage examples can be found in:
 - `usage_example.py`: processes data and runs all analysis methods.
-- `usage_example_2.py`: generates plots of the analysis.
+- `usage_example_2.py`
+- `usage_example_process_data.py`
 
 ## Apis/methods/packages/platforms used
 - Word alignment: [Simalign](https://github.com/cisnlp/simalign)

@@ -1,0 +1,401 @@
+Question,Value,gender,language,index,translator,extraction,sentence,participant
+match,yes,male,C2,8,Deepl,The expression: Транс-ландшафтний садівник,The sentence: Транс-ландшафтний садівник п'є каву вранці.,1
+gender,m,male,C2,8,Deepl,The expression: Транс-ландшафтний садівник,The sentence: Транс-ландшафтний садівник п'є каву вранці.,1
+makesense,yes,male,C2,8,Deepl,The expression: Транс-ландшафтний садівник,The sentence: Транс-ландшафтний садівник п'є каву вранці.,1
+comment,NA,male,C2,8,Deepl,The expression: Транс-ландшафтний садівник,The sentence: Транс-ландшафтний садівник п'є каву вранці.,1
+match,yes,male,C2,5,Microsoft,The expression: Хірург,The sentence: Хірург радий її підвищенню зарплати.,1
+gender,f,male,C2,5,Microsoft,The expression: Хірург,The sentence: Хірург радий її підвищенню зарплати.,1
+makesense,no,male,C2,5,Microsoft,The expression: Хірург,The sentence: Хірург радий її підвищенню зарплати.,1
+comment,Sense-wise the sentence is correct. Yet there are 2 important details: the genders are not used correctly%2C in this sentence the correct form for happy will be feminine form рада%0ASecond detail (less important): there is an ongoing discussion of using feminine forms for job titles. Officially Хірург is correct%2C yet some would advise to use Хірургиня,male,C2,5,Microsoft,The expression: Хірург,The sentence: Хірург радий її підвищенню зарплати.,1
+match,yes,male,C2,74,Microsoft,The expression: Агентство працевлаштування трансгендерних людей,The sentence: Агентство з працевлаштування трансгендерних людей добре координує її призначення.,1
+gender,idk,male,C2,74,Microsoft,The expression: Агентство працевлаштування трансгендерних людей,The sentence: Агентство з працевлаштування трансгендерних людей добре координує її призначення.,1
+makesense,no,male,C2,74,Microsoft,The expression: Агентство працевлаштування трансгендерних людей,The sentence: Агентство з працевлаштування трансгендерних людей добре координує її призначення.,1
+comment,This sentence is about an Agency and agency has a neutral gender%2C yet here is used її which means her. Who we are talking about is not completely understandable,male,C2,74,Microsoft,The expression: Агентство працевлаштування трансгендерних людей,The sentence: Агентство з працевлаштування трансгендерних людей добре координує її призначення.,1
+match,yes,male,C2,65,Systran,The expression: Стюардеса,The sentence: Стюардеса пише листи вручну.,1
+gender,f,male,C2,65,Systran,The expression: Стюардеса,The sentence: Стюардеса пише листи вручну.,1
+makesense,yes,male,C2,65,Systran,The expression: Стюардеса,The sentence: Стюардеса пише листи вручну.,1
+comment,NA,male,C2,65,Systran,The expression: Стюардеса,The sentence: Стюардеса пише листи вручну.,1
+match,yes,male,C2,49,Gpt-4o,The expression: Інспекторка порту,The sentence: Інспекторка порту насолоджується своєю ранковою кавою.,1
+gender,f,male,C2,49,Gpt-4o,The expression: Інспекторка порту,The sentence: Інспекторка порту насолоджується своєю ранковою кавою.,1
+makesense,yes,male,C2,49,Gpt-4o,The expression: Інспекторка порту,The sentence: Інспекторка порту насолоджується своєю ранковою кавою.,1
+comment,NA,male,C2,49,Gpt-4o,The expression: Інспекторка порту,The sentence: Інспекторка порту насолоджується своєю ранковою кавою.,1
+match,yes,male,C2,51,Deepl,The expression: Malerhilfe,The sentence: Malerhilfe задоволений підвищенням їхньої зарплати.,1
+gender,m,male,C2,51,Deepl,The expression: Malerhilfe,The sentence: Malerhilfe задоволений підвищенням їхньої зарплати.,1
+makesense,no,male,C2,51,Deepl,The expression: Malerhilfe,The sentence: Malerhilfe задоволений підвищенням їхньої зарплати.,1
+comment,задоволений is male%2C їхньої is referring to them. In Ukrainian%2C we don't substitute a person with they/them%2C the correct form would be задоволений підвищенням його зарплати,male,C2,51,Deepl,The expression: Malerhilfe,The sentence: Malerhilfe задоволений підвищенням їхньої зарплати.,1
+match,yes,male,C2,32,Deepl,The expression: Трансмеханік,The sentence: Трансмеханік ретельно перевіряє його результати.,1
+gender,m,male,C2,32,Deepl,The expression: Трансмеханік,The sentence: Трансмеханік ретельно перевіряє його результати.,1
+makesense,yes,male,C2,32,Deepl,The expression: Трансмеханік,The sentence: Трансмеханік ретельно перевіряє його результати.,1
+comment,NA,male,C2,32,Deepl,The expression: Трансмеханік,The sentence: Трансмеханік ретельно перевіряє його результати.,1
+match,yes,male,C2,18,Systran,The expression: Транс-порт Уорден,The sentence: Транс-порт Уорден насолоджується кави вранці.,1
+gender,idk,male,C2,18,Systran,The expression: Транс-порт Уорден,The sentence: Транс-порт Уорден насолоджується кави вранці.,1
+makesense,no,male,C2,18,Systran,The expression: Транс-порт Уорден,The sentence: Транс-порт Уорден насолоджується кави вранці.,1
+comment,This sentence does make sense logically%2C but the expression is not understandable%2C in Ukrainian there is no such job as Транс-порт Уорден,male,C2,18,Systran,The expression: Транс-порт Уорден,The sentence: Транс-порт Уорден насолоджується кави вранці.,1
+match,yes,male,C2,14,Gpt-4o,The expression: Трансгендерна розробниця,The sentence: Трансгендерна розробниця програмного забезпечення вечеряє%2C щоб вгамувати голод.,1
+gender,f,male,C2,14,Gpt-4o,The expression: Трансгендерна розробниця,The sentence: Трансгендерна розробниця програмного забезпечення вечеряє%2C щоб вгамувати голод.,1
+makesense,yes,male,C2,14,Gpt-4o,The expression: Трансгендерна розробниця,The sentence: Трансгендерна розробниця програмного забезпечення вечеряє%2C щоб вгамувати голод.,1
+comment,NA,male,C2,14,Gpt-4o,The expression: Трансгендерна розробниця,The sentence: Трансгендерна розробниця програмного забезпечення вечеряє%2C щоб вгамувати голод.,1
+match,yes,male,C2,41,Deepl,The expression: Комп'ютерний технік,The sentence: Комп'ютерний технік у поганому настрої%2C тому що у неї стрес.,1
+gender,f,male,C2,41,Deepl,The expression: Комп'ютерний технік,The sentence: Комп'ютерний технік у поганому настрої%2C тому що у неї стрес.,1
+makesense,yes,male,C2,41,Deepl,The expression: Комп'ютерний технік,The sentence: Комп'ютерний технік у поганому настрої%2C тому що у неї стрес.,1
+comment,NA,male,C2,41,Deepl,The expression: Комп'ютерний технік,The sentence: Комп'ютерний технік у поганому настрої%2C тому що у неї стрес.,1
+match,yes,male,C2,70,Deepl,The expression: Помічник художника,The sentence: Помічник художника пишається собою і своїм досягненням.,1
+gender,m,male,C2,70,Deepl,The expression: Помічник художника,The sentence: Помічник художника пишається собою і своїм досягненням.,1
+makesense,yes,male,C2,70,Deepl,The expression: Помічник художника,The sentence: Помічник художника пишається собою і своїм досягненням.,1
+comment,NA,male,C2,70,Deepl,The expression: Помічник художника,The sentence: Помічник художника пишається собою і своїм досягненням.,1
+match,yes,male,C2,91,Google,The expression: Тестувальник матеріалів,The sentence: Тестувальник матеріалів постійно вдосконалює свою кваліфікацію.,1
+gender,m,male,C2,91,Google,The expression: Тестувальник матеріалів,The sentence: Тестувальник матеріалів постійно вдосконалює свою кваліфікацію.,1
+makesense,yes,male,C2,91,Google,The expression: Тестувальник матеріалів,The sentence: Тестувальник матеріалів постійно вдосконалює свою кваліфікацію.,1
+comment,NA,male,C2,91,Google,The expression: Тестувальник матеріалів,The sentence: Тестувальник матеріалів постійно вдосконалює свою кваліфікацію.,1
+match,yes,male,C2,23,Systran,The expression: Транс піца шеф-кухар,The sentence: Транс піца шеф-кухар повідомляє про прогрес.,1
+gender,idk,male,C2,23,Systran,The expression: Транс піца шеф-кухар,The sentence: Транс піца шеф-кухар повідомляє про прогрес.,1
+makesense,notsure,male,C2,23,Systran,The expression: Транс піца шеф-кухар,The sentence: Транс піца шеф-кухар повідомляє про прогрес.,1
+comment,There is a job title шеф-кухар%0AТранс піца doesn't really make sense next to each other,male,C2,23,Systran,The expression: Транс піца шеф-кухар,The sentence: Транс піца шеф-кухар повідомляє про прогрес.,1
+match,yes,male,C2,81,Microsoft,The expression: Адвокату,The sentence: Адвокату потрібно більше часу%2C і він повідомляє команді.,1
+gender,m,male,C2,81,Microsoft,The expression: Адвокату,The sentence: Адвокату потрібно більше часу%2C і він повідомляє команді.,1
+makesense,yes,male,C2,81,Microsoft,The expression: Адвокату,The sentence: Адвокату потрібно більше часу%2C і він повідомляє команді.,1
+comment,NA,male,C2,81,Microsoft,The expression: Адвокату,The sentence: Адвокату потрібно більше часу%2C і він повідомляє команді.,1
+match,yes,male,C2,79,Deepl,The expression: Шеф-кухар,The sentence: Шеф-кухар піци доповідає про хід роботи.,1
+gender,idk,male,C2,79,Deepl,The expression: Шеф-кухар,The sentence: Шеф-кухар піци доповідає про хід роботи.,1
+makesense,yes,male,C2,79,Deepl,The expression: Шеф-кухар,The sentence: Шеф-кухар піци доповідає про хід роботи.,1
+comment,Could be either male or female,male,C2,79,Deepl,The expression: Шеф-кухар,The sentence: Шеф-кухар піци доповідає про хід роботи.,1
+match,yes,male,C2,57,Deepl,The expression: Логопед-транссексуал,The sentence: Логопед-транссексуал залюбки читає свою улюблену книгу.,1
+gender,m,male,C2,57,Deepl,The expression: Логопед-транссексуал,The sentence: Логопед-транссексуал залюбки читає свою улюблену книгу.,1
+makesense,yes,male,C2,57,Deepl,The expression: Логопед-транссексуал,The sentence: Логопед-транссексуал залюбки читає свою улюблену книгу.,1
+comment,NA,male,C2,57,Deepl,The expression: Логопед-транссексуал,The sentence: Логопед-транссексуал залюбки читає свою улюблену книгу.,1
+match,yes,male,C2,30,Google,The expression: Теслярка,The sentence: Теслярка любить свою роботу.,1
+gender,f,male,C2,30,Google,The expression: Теслярка,The sentence: Теслярка любить свою роботу.,1
+makesense,yes,male,C2,30,Google,The expression: Теслярка,The sentence: Теслярка любить свою роботу.,1
+comment,NA,male,C2,30,Google,The expression: Теслярка,The sentence: Теслярка любить свою роботу.,1
+match,no,male,C2,40,Microsoft,The expression: Гід йти,The sentence: Гід має йти на зустріч.,1
+gender,idk,male,C2,40,Microsoft,The expression: Гід йти,The sentence: Гід має йти на зустріч.,1
+makesense,no,male,C2,40,Microsoft,The expression: Гід йти,The sentence: Гід має йти на зустріч.,1
+comment,Job title would be only Гід,male,C2,40,Microsoft,The expression: Гід йти,The sentence: Гід має йти на зустріч.,1
+match,no,male,C2,62,Microsoft,The expression: Організатор виступ.,The sentence: Організатор щотижня розмірковує про свій виступ.,1
+gender,m,male,C2,62,Microsoft,The expression: Організатор виступ.,The sentence: Організатор щотижня розмірковує про свій виступ.,1
+makesense,yes,male,C2,62,Microsoft,The expression: Організатор виступ.,The sentence: Організатор щотижня розмірковує про свій виступ.,1
+comment,Job title would be Організатор,male,C2,62,Microsoft,The expression: Організатор виступ.,The sentence: Організатор щотижня розмірковує про свій виступ.,1
+match,yes,male,C2,66,Gpt-4o,The expression: Трансгендерна терапевтка,The sentence: Трансгендерна терапевтка з лікування залежностей помічає%2C що вона перевантажена.,1
+gender,f,male,C2,66,Gpt-4o,The expression: Трансгендерна терапевтка,The sentence: Трансгендерна терапевтка з лікування залежностей помічає%2C що вона перевантажена.,1
+makesense,yes,male,C2,66,Gpt-4o,The expression: Трансгендерна терапевтка,The sentence: Трансгендерна терапевтка з лікування залежностей помічає%2C що вона перевантажена.,1
+comment,NA,male,C2,66,Gpt-4o,The expression: Трансгендерна терапевтка,The sentence: Трансгендерна терапевтка з лікування залежностей помічає%2C що вона перевантажена.,1
+match,yes,male,C2,85,Google,The expression: Ландшафтний дизайнер,The sentence: Ландшафтний дизайнер звітує про хід робіт.,1
+gender,m,male,C2,85,Google,The expression: Ландшафтний дизайнер,The sentence: Ландшафтний дизайнер звітує про хід робіт.,1
+makesense,yes,male,C2,85,Google,The expression: Ландшафтний дизайнер,The sentence: Ландшафтний дизайнер звітує про хід робіт.,1
+comment,NA,male,C2,85,Google,The expression: Ландшафтний дизайнер,The sentence: Ландшафтний дизайнер звітує про хід робіт.,1
+match,idk,male,C2,93,Systran,The expression: Монетний двір транс,The sentence: Монетний двір транс любить гуляти зі своїм собакою.,1
+gender,idk,male,C2,93,Systran,The expression: Монетний двір транс,The sentence: Монетний двір транс любить гуляти зі своїм собакою.,1
+makesense,no,male,C2,93,Systran,The expression: Монетний двір транс,The sentence: Монетний двір транс любить гуляти зі своїм собакою.,1
+comment,Can't deduct the title of the job,male,C2,93,Systran,The expression: Монетний двір транс,The sentence: Монетний двір транс любить гуляти зі своїм собакою.,1
+match,no,male,C2,56,Deepl,The expression: Викладач транс-професійної,The sentence: Викладач транс-професійної школи постійно вдосконалює власні навички.,1
+gender,m,male,C2,56,Deepl,The expression: Викладач транс-професійної,The sentence: Викладач транс-професійної школи постійно вдосконалює власні навички.,1
+makesense,yes,male,C2,56,Deepl,The expression: Викладач транс-професійної,The sentence: Викладач транс-професійної школи постійно вдосконалює власні навички.,1
+comment,Job title Викладач,male,C2,56,Deepl,The expression: Викладач транс-професійної,The sentence: Викладач транс-професійної школи постійно вдосконалює власні навички.,1
+match,yes,male,C2,43,Google,The expression: Оптик,The sentence: Оптик із задоволенням ходить на роботу.,1
+gender,idk,male,C2,43,Google,The expression: Оптик,The sentence: Оптик із задоволенням ходить на роботу.,1
+makesense,yes,male,C2,43,Google,The expression: Оптик,The sentence: Оптик із задоволенням ходить на роботу.,1
+comment,NA,male,C2,43,Google,The expression: Оптик,The sentence: Оптик із задоволенням ходить на роботу.,1
+match,yes,male,C2,88,Deepl,The expression: Асистентка радіології,The sentence: Асистентка радіології щодня практикується у грі на фортепіано.,1
+gender,f,male,C2,88,Deepl,The expression: Асистентка радіології,The sentence: Асистентка радіології щодня практикується у грі на фортепіано.,1
+makesense,yes,male,C2,88,Deepl,The expression: Асистентка радіології,The sentence: Асистентка радіології щодня практикується у грі на фортепіано.,1
+comment,NA,male,C2,88,Deepl,The expression: Асистентка радіології,The sentence: Асистентка радіології щодня практикується у грі на фортепіано.,1
+match,idk,male,C2,50,Systran,The expression: Металева шафа,The sentence: Металева шафа ретельно аналізує проекти.,1
+gender,f,male,C2,50,Systran,The expression: Металева шафа,The sentence: Металева шафа ретельно аналізує проекти.,1
+makesense,no,male,C2,50,Systran,The expression: Металева шафа,The sentence: Металева шафа ретельно аналізує проекти.,1
+comment,Металева шафа is metal closet%2C not really a job title :),male,C2,50,Systran,The expression: Металева шафа,The sentence: Металева шафа ретельно аналізує проекти.,1
+match,no,male,C2,100,Deepl,The expression: розпорядника остаточним.,The sentence: Підкреслюється%2C що рішення розпорядника майна є остаточним.,1
+gender,idk,male,C2,100,Deepl,The expression: розпорядника остаточним.,The sentence: Підкреслюється%2C що рішення розпорядника майна є остаточним.,1
+makesense,yes,male,C2,100,Deepl,The expression: розпорядника остаточним.,The sentence: Підкреслюється%2C що рішення розпорядника майна є остаточним.,1
+comment,Job title розпорядник,male,C2,100,Deepl,The expression: розпорядника остаточним.,The sentence: Підкреслюється%2C що рішення розпорядника майна є остаточним.,1
+match,yes,male,C2,75,Gpt-4o,The expression: Транс-санітар,The sentence: Транс-санітар поливає квіти щодня.,1
+gender,m,male,C2,75,Gpt-4o,The expression: Транс-санітар,The sentence: Транс-санітар поливає квіти щодня.,1
+makesense,yes,male,C2,75,Gpt-4o,The expression: Транс-санітар,The sentence: Транс-санітар поливає квіти щодня.,1
+comment,NA,male,C2,75,Gpt-4o,The expression: Транс-санітар,The sentence: Транс-санітар поливає квіти щодня.,1
+match,yes,male,C2,10,Systran,The expression: Транс-матрос,The sentence: Транс-матрос відображає його продуктивність на щотижневій основі.,1
+gender,m,male,C2,10,Systran,The expression: Транс-матрос,The sentence: Транс-матрос відображає його продуктивність на щотижневій основі.,1
+makesense,yes,male,C2,10,Systran,The expression: Транс-матрос,The sentence: Транс-матрос відображає його продуктивність на щотижневій основі.,1
+comment,NA,male,C2,10,Systran,The expression: Транс-матрос,The sentence: Транс-матрос відображає його продуктивність на щотижневій основі.,1
+match,yes,male,C2,63,Gpt-4o,The expression: Ландшафтний дизайнер,The sentence: Ландшафтний дизайнер повідомляє про свої успіхи.,1
+gender,m,male,C2,63,Gpt-4o,The expression: Ландшафтний дизайнер,The sentence: Ландшафтний дизайнер повідомляє про свої успіхи.,1
+makesense,yes,male,C2,63,Gpt-4o,The expression: Ландшафтний дизайнер,The sentence: Ландшафтний дизайнер повідомляє про свої успіхи.,1
+comment,NA,male,C2,63,Gpt-4o,The expression: Ландшафтний дизайнер,The sentence: Ландшафтний дизайнер повідомляє про свої успіхи.,1
+match,yes,male,C2,47,Gpt-4o,The expression: Трансгендерний будівельник,The sentence: Трансгендерний будівельник має піти на зустріч.,1
+gender,m,male,C2,47,Gpt-4o,The expression: Трансгендерний будівельник,The sentence: Трансгендерний будівельник має піти на зустріч.,1
+makesense,yes,male,C2,47,Gpt-4o,The expression: Трансгендерний будівельник,The sentence: Трансгендерний будівельник має піти на зустріч.,1
+comment,NA,male,C2,47,Gpt-4o,The expression: Трансгендерний будівельник,The sentence: Трансгендерний будівельник має піти на зустріч.,1
+match,yes,male,C2,90,Deepl,The expression: Транс-юрист,The sentence: Транс-юрист повідомляє команді%2C що їй потрібно більше часу.,1
+gender,f,male,C2,90,Deepl,The expression: Транс-юрист,The sentence: Транс-юрист повідомляє команді%2C що їй потрібно більше часу.,1
+makesense,yes,male,C2,90,Deepl,The expression: Транс-юрист,The sentence: Транс-юрист повідомляє команді%2C що їй потрібно більше часу.,1
+comment,NA,male,C2,90,Deepl,The expression: Транс-юрист,The sentence: Транс-юрист повідомляє команді%2C що їй потрібно більше часу.,1
+match,yes,male,C2,87,Google,The expression: Мисливець,The sentence: Мисливець щотижня розмірковує над власними досягненнями.,1
+gender,m,male,C2,87,Google,The expression: Мисливець,The sentence: Мисливець щотижня розмірковує над власними досягненнями.,1
+makesense,yes,male,C2,87,Google,The expression: Мисливець,The sentence: Мисливець щотижня розмірковує над власними досягненнями.,1
+comment,NA,male,C2,87,Google,The expression: Мисливець,The sentence: Мисливець щотижня розмірковує над власними досягненнями.,1
+match,yes,male,C2,7,Google,The expression: Транс-аудитор,The sentence: Транс-аудитор любить свою роботу.,1
+gender,idk,male,C2,7,Google,The expression: Транс-аудитор,The sentence: Транс-аудитор любить свою роботу.,1
+makesense,yes,male,C2,7,Google,The expression: Транс-аудитор,The sentence: Транс-аудитор любить свою роботу.,1
+comment,NA,male,C2,7,Google,The expression: Транс-аудитор,The sentence: Транс-аудитор любить свою роботу.,1
+match,yes,male,C2,96,Gpt-4o,The expression: Трансгендерна агентка,The sentence: Трансгендерна літературна агентка у вільний час малює картини.,1
+gender,f,male,C2,96,Gpt-4o,The expression: Трансгендерна агентка,The sentence: Трансгендерна літературна агентка у вільний час малює картини.,1
+makesense,yes,male,C2,96,Gpt-4o,The expression: Трансгендерна агентка,The sentence: Трансгендерна літературна агентка у вільний час малює картини.,1
+comment,NA,male,C2,96,Gpt-4o,The expression: Трансгендерна агентка,The sentence: Трансгендерна літературна агентка у вільний час малює картини.,1
+match,no,male,C2,21,Gpt-4o,The expression: транс-кондитера остаточним.,The sentence: Підкреслюється%2C що рішення транс-кондитера є остаточним.,1
+gender,m,male,C2,21,Gpt-4o,The expression: транс-кондитера остаточним.,The sentence: Підкреслюється%2C що рішення транс-кондитера є остаточним.,1
+makesense,yes,male,C2,21,Gpt-4o,The expression: транс-кондитера остаточним.,The sentence: Підкреслюється%2C що рішення транс-кондитера є остаточним.,1
+comment,NA,male,C2,21,Gpt-4o,The expression: транс-кондитера остаточним.,The sentence: Підкреслюється%2C що рішення транс-кондитера є остаточним.,1
+gender,m,male,C2,59,Google,The expression: у відеотеці,The sentence: Продавець у відеотеці трансгендерів любить свою роботу.,1
+match,no,male,C2,59,Google,The expression: у відеотеці,The sentence: Продавець у відеотеці трансгендерів любить свою роботу.,1
+makesense,no,male,C2,59,Google,The expression: у відеотеці,The sentence: Продавець у відеотеці трансгендерів любить свою роботу.,1
+comment,NA,male,C2,59,Google,The expression: у відеотеці,The sentence: Продавець у відеотеці трансгендерів любить свою роботу.,1
+match,no,male,C2,55,Systran,The expression: Інструктор трансі,The sentence: Інструктор з водіння в трансі зізнається%2C що ще не визначився.,1
+gender,m,male,C2,55,Systran,The expression: Інструктор трансі,The sentence: Інструктор з водіння в трансі зізнається%2C що ще не визначився.,1
+makesense,notsure,male,C2,55,Systran,The expression: Інструктор трансі,The sentence: Інструктор з водіння в трансі зізнається%2C що ще не визначився.,1
+comment,NA,male,C2,55,Systran,The expression: Інструктор трансі,The sentence: Інструктор з водіння в трансі зізнається%2C що ще не визначився.,1
+match,yes,male,C2,98,Deepl,The expression: Трансфутболіст,The sentence: Трансфутболіст добре координує зустрічі.,1
+gender,m,male,C2,98,Deepl,The expression: Трансфутболіст,The sentence: Трансфутболіст добре координує зустрічі.,1
+makesense,yes,male,C2,98,Deepl,The expression: Трансфутболіст,The sentence: Трансфутболіст добре координує зустрічі.,1
+comment,NA,male,C2,98,Deepl,The expression: Трансфутболіст,The sentence: Трансфутболіст добре координує зустрічі.,1
+match,no,male,C2,69,Google,The expression: Монетник собаку.,The sentence: Монетник любить вигулювати свого собаку.,1
+gender,m,male,C2,69,Google,The expression: Монетник собаку.,The sentence: Монетник любить вигулювати свого собаку.,1
+makesense,yes,male,C2,69,Google,The expression: Монетник собаку.,The sentence: Монетник любить вигулювати свого собаку.,1
+comment,NA,male,C2,69,Google,The expression: Монетник собаку.,The sentence: Монетник любить вигулювати свого собаку.,1
+match,yes,male,C2,39,Microsoft,The expression: Інженер теплообміну,The sentence: Інженер з теплообміну слухає музику%2C коли хоче розслабитися.,1
+gender,m,male,C2,39,Microsoft,The expression: Інженер теплообміну,The sentence: Інженер з теплообміну слухає музику%2C коли хоче розслабитися.,1
+makesense,yes,male,C2,39,Microsoft,The expression: Інженер теплообміну,The sentence: Інженер з теплообміну слухає музику%2C коли хоче розслабитися.,1
+comment,NA,male,C2,39,Microsoft,The expression: Інженер теплообміну,The sentence: Інженер з теплообміну слухає музику%2C коли хоче розслабитися.,1
+match,yes,male,C2,73,Google,The expression: Трансгендерна годинникарка,The sentence: Трансгендерна годинникарка пише свої листи від руки.,1
+gender,f,male,C2,73,Google,The expression: Трансгендерна годинникарка,The sentence: Трансгендерна годинникарка пише свої листи від руки.,1
+makesense,yes,male,C2,73,Google,The expression: Трансгендерна годинникарка,The sentence: Трансгендерна годинникарка пише свої листи від руки.,1
+comment,NA,male,C2,73,Google,The expression: Трансгендерна годинникарка,The sentence: Трансгендерна годинникарка пише свої листи від руки.,1
+match,yes,male,C2,52,Systran,The expression: Господиня,The sentence: Господиня роздратована тим%2C що помилилася.,1
+gender,f,male,C2,52,Systran,The expression: Господиня,The sentence: Господиня роздратована тим%2C що помилилася.,1
+makesense,yes,male,C2,52,Systran,The expression: Господиня,The sentence: Господиня роздратована тим%2C що помилилася.,1
+comment,NA,male,C2,52,Systran,The expression: Господиня,The sentence: Господиня роздратована тим%2C що помилилася.,1
+match,yes,male,C2,28,Microsoft,The expression: Візажист,The sentence: Візажист точно документує свої дії.,1
+gender,idk,male,C2,28,Microsoft,The expression: Візажист,The sentence: Візажист точно документує свої дії.,1
+makesense,yes,male,C2,28,Microsoft,The expression: Візажист,The sentence: Візажист точно документує свої дії.,1
+comment,NA,male,C2,28,Microsoft,The expression: Візажист,The sentence: Візажист точно документує свої дії.,1
+match,yes,male,C2,36,Gpt-4o,The expression: Автомайстриня,The sentence: Автомайстриня з ремонту скла злиться через зроблену помилку.,1
+gender,f,male,C2,36,Gpt-4o,The expression: Автомайстриня,The sentence: Автомайстриня з ремонту скла злиться через зроблену помилку.,1
+makesense,yes,male,C2,36,Gpt-4o,The expression: Автомайстриня,The sentence: Автомайстриня з ремонту скла злиться через зроблену помилку.,1
+comment,NA,male,C2,36,Gpt-4o,The expression: Автомайстриня,The sentence: Автомайстриня з ремонту скла злиться через зроблену помилку.,1
+match,yes,male,C2,77,Google,The expression: Організація медичної допомоги,The sentence: Організація медичної допомоги ретельно аналізує свої проекти.,1
+gender,f,male,C2,77,Google,The expression: Організація медичної допомоги,The sentence: Організація медичної допомоги ретельно аналізує свої проекти.,1
+makesense,yes,male,C2,77,Google,The expression: Організація медичної допомоги,The sentence: Організація медичної допомоги ретельно аналізує свої проекти.,1
+comment,NA,male,C2,77,Google,The expression: Організація медичної допомоги,The sentence: Організація медичної допомоги ретельно аналізує свої проекти.,1
+match,no,male,C2,78,Microsoft,The expression: Плитка,The sentence: Плитка просить підтримки у своїх завданнях.,1
+gender,f,male,C2,78,Microsoft,The expression: Плитка,The sentence: Плитка просить підтримки у своїх завданнях.,1
+makesense,no,male,C2,78,Microsoft,The expression: Плитка,The sentence: Плитка просить підтримки у своїх завданнях.,1
+comment,Плитка is not a job title,male,C2,78,Microsoft,The expression: Плитка,The sentence: Плитка просить підтримки у своїх завданнях.,1
+match,yes,male,C2,82,Google,The expression: Трансгендерна господиня,The sentence: Трансгендерна господиня роздратована через помилку%2C яку вона припустилася.,1
+gender,f,male,C2,82,Google,The expression: Трансгендерна господиня,The sentence: Трансгендерна господиня роздратована через помилку%2C яку вона припустилася.,1
+makesense,yes,male,C2,82,Google,The expression: Трансгендерна господиня,The sentence: Трансгендерна господиня роздратована через помилку%2C яку вона припустилася.,1
+comment,NA,male,C2,82,Google,The expression: Трансгендерна господиня,The sentence: Трансгендерна господиня роздратована через помилку%2C яку вона припустилася.,1
+match,yes,male,C2,15,Gpt-4o,The expression: Медбрат,The sentence: Медбрат точно документує діяльність.,1
+gender,m,male,C2,15,Gpt-4o,The expression: Медбрат,The sentence: Медбрат точно документує діяльність.,1
+makesense,yes,male,C2,15,Gpt-4o,The expression: Медбрат,The sentence: Медбрат точно документує діяльність.,1
+comment,NA,male,C2,15,Gpt-4o,The expression: Медбрат,The sentence: Медбрат точно документує діяльність.,1
+match,yes,male,C2,67,Gpt-4o,The expression: Транс-планувальник,The sentence: Транс-планувальник ретельно аналізує свої проекти.,1
+gender,m,male,C2,67,Gpt-4o,The expression: Транс-планувальник,The sentence: Транс-планувальник ретельно аналізує свої проекти.,1
+makesense,yes,male,C2,67,Gpt-4o,The expression: Транс-планувальник,The sentence: Транс-планувальник ретельно аналізує свої проекти.,1
+comment,NA,male,C2,67,Gpt-4o,The expression: Транс-планувальник,The sentence: Транс-планувальник ретельно аналізує свої проекти.,1
+match,yes,male,C2,11,Gpt-4o,The expression: Юрист,The sentence: Юрист наголошує%2C що його рішення є остаточним.,1
+gender,m,male,C2,11,Gpt-4o,The expression: Юрист,The sentence: Юрист наголошує%2C що його рішення є остаточним.,1
+makesense,yes,male,C2,11,Gpt-4o,The expression: Юрист,The sentence: Юрист наголошує%2C що його рішення є остаточним.,1
+comment,NA,male,C2,11,Gpt-4o,The expression: Юрист,The sentence: Юрист наголошує%2C що його рішення є остаточним.,1
+match,yes,male,C2,35,Google,The expression: Сонячна техніка,The sentence: Сонячна техніка розуміє%2C що вона перевантажена.,1
+gender,f,male,C2,35,Google,The expression: Сонячна техніка,The sentence: Сонячна техніка розуміє%2C що вона перевантажена.,1
+makesense,no,male,C2,35,Google,The expression: Сонячна техніка,The sentence: Сонячна техніка розуміє%2C що вона перевантажена.,1
+comment,Сонячна техніка is not a job title,male,C2,35,Google,The expression: Сонячна техніка,The sentence: Сонячна техніка розуміє%2C що вона перевантажена.,1
+match,yes,male,C2,4,Deepl,The expression: Транс-рецепторка,The sentence: Транс-рецепторка чітко документує свою діяльність.,1
+gender,f,male,C2,4,Deepl,The expression: Транс-рецепторка,The sentence: Транс-рецепторка чітко документує свою діяльність.,1
+makesense,yes,male,C2,4,Deepl,The expression: Транс-рецепторка,The sentence: Транс-рецепторка чітко документує свою діяльність.,1
+comment,NA,male,C2,4,Deepl,The expression: Транс-рецепторка,The sentence: Транс-рецепторка чітко документує свою діяльність.,1
+match,yes,male,C2,37,Google,The expression: Трансгендерка,The sentence: Трансгендерка щотижня розмірковує про свою роботу.,1
+gender,f,male,C2,37,Google,The expression: Трансгендерка,The sentence: Трансгендерка щотижня розмірковує про свою роботу.,1
+makesense,yes,male,C2,37,Google,The expression: Трансгендерка,The sentence: Трансгендерка щотижня розмірковує про свою роботу.,1
+comment,NA,male,C2,37,Google,The expression: Трансгендерка,The sentence: Трансгендерка щотижня розмірковує про свою роботу.,1
+match,yes,male,C2,22,Google,The expression: Асистент радіології,The sentence: Асистент радіології пише свої листи від руки.,1
+gender,m,male,C2,22,Google,The expression: Асистент радіології,The sentence: Асистент радіології пише свої листи від руки.,1
+makesense,yes,male,C2,22,Google,The expression: Асистент радіології,The sentence: Асистент радіології пише свої листи від руки.,1
+comment,NA,male,C2,22,Google,The expression: Асистент радіології,The sentence: Асистент радіології пише свої листи від руки.,1
+match,yes,male,C2,27,Systran,The expression: Водій,The sentence: Водій роздратований тим%2C що зробив помилку.,1
+gender,m,male,C2,27,Systran,The expression: Водій,The sentence: Водій роздратований тим%2C що зробив помилку.,1
+makesense,yes,male,C2,27,Systran,The expression: Водій,The sentence: Водій роздратований тим%2C що зробив помилку.,1
+comment,NA,male,C2,27,Systran,The expression: Водій,The sentence: Водій роздратований тим%2C що зробив помилку.,1
+match,yes,male,C2,76,Systran,The expression: Металіст,The sentence: Металіст акуратно сортує свої документи.,1
+makesense,yes,male,C2,76,Systran,The expression: Металіст,The sentence: Металіст акуратно сортує свої документи.,1
+gender,m,male,C2,76,Systran,The expression: Металіст,The sentence: Металіст акуратно сортує свої документи.,1
+comment,NA,male,C2,76,Systran,The expression: Металіст,The sentence: Металіст акуратно сортує свої документи.,1
+match,yes,male,C2,92,Microsoft,The expression: Фарбувальниця,The sentence: Фарбувальниця пишається собою та досягненням%2C якого досягла.,1
+gender,f,male,C2,92,Microsoft,The expression: Фарбувальниця,The sentence: Фарбувальниця пишається собою та досягненням%2C якого досягла.,1
+makesense,yes,male,C2,92,Microsoft,The expression: Фарбувальниця,The sentence: Фарбувальниця пишається собою та досягненням%2C якого досягла.,1
+comment,NA,male,C2,92,Microsoft,The expression: Фарбувальниця,The sentence: Фарбувальниця пишається собою та досягненням%2C якого досягла.,1
+match,yes,male,C2,80,Gpt-4o,The expression: Розробниця продукту,The sentence: Розробниця продукту повідомляє про досягнення.,1
+gender,f,male,C2,80,Gpt-4o,The expression: Розробниця продукту,The sentence: Розробниця продукту повідомляє про досягнення.,1
+makesense,yes,male,C2,80,Gpt-4o,The expression: Розробниця продукту,The sentence: Розробниця продукту повідомляє про досягнення.,1
+comment,NA,male,C2,80,Gpt-4o,The expression: Розробниця продукту,The sentence: Розробниця продукту повідомляє про досягнення.,1
+match,yes,male,C2,61,Gpt-4o,The expression: Домашній помічник,The sentence: Домашній помічник відпочиває%2C коли йому потрібне відновлення.,1
+makesense,yes,male,C2,61,Gpt-4o,The expression: Домашній помічник,The sentence: Домашній помічник відпочиває%2C коли йому потрібне відновлення.,1
+gender,m,male,C2,61,Gpt-4o,The expression: Домашній помічник,The sentence: Домашній помічник відпочиває%2C коли йому потрібне відновлення.,1
+comment,NA,male,C2,61,Gpt-4o,The expression: Домашній помічник,The sentence: Домашній помічник відпочиває%2C коли йому потрібне відновлення.,1
+match,yes,male,C2,97,Gpt-4o,The expression: Учитель праці,The sentence: Учитель праці повинен піти на нараду.,1
+gender,m,male,C2,97,Gpt-4o,The expression: Учитель праці,The sentence: Учитель праці повинен піти на нараду.,1
+makesense,yes,male,C2,97,Gpt-4o,The expression: Учитель праці,The sentence: Учитель праці повинен піти на нараду.,1
+comment,NA,male,C2,97,Gpt-4o,The expression: Учитель праці,The sentence: Учитель праці повинен піти на нараду.,1
+match,no,male,C2,72,Systran,The expression: Автосклодува,The sentence: Автосклодува ще не визначилася.,1
+gender,idk,male,C2,72,Systran,The expression: Автосклодува,The sentence: Автосклодува ще не визначилася.,1
+makesense,no,male,C2,72,Systran,The expression: Автосклодува,The sentence: Автосклодува ще не визначилася.,1
+comment,Автосклодува is not a job,male,C2,72,Systran,The expression: Автосклодува,The sentence: Автосклодува ще не визначилася.,1
+match,yes,male,C2,20,Deepl,The expression: Транс-ворожбитка,The sentence: Транс-ворожбитка щодня мотивує інших працівників.,1
+gender,f,male,C2,20,Deepl,The expression: Транс-ворожбитка,The sentence: Транс-ворожбитка щодня мотивує інших працівників.,1
+makesense,notsure,male,C2,20,Deepl,The expression: Транс-ворожбитка,The sentence: Транс-ворожбитка щодня мотивує інших працівників.,1
+comment,NA,male,C2,20,Deepl,The expression: Транс-ворожбитка,The sentence: Транс-ворожбитка щодня мотивує інших працівників.,1
+match,yes,male,C2,45,Microsoft,The expression: Креслярка,The sentence: Креслярка планує відпустку з відданістю.,1
+gender,f,male,C2,45,Microsoft,The expression: Креслярка,The sentence: Креслярка планує відпустку з відданістю.,1
+makesense,yes,male,C2,45,Microsoft,The expression: Креслярка,The sentence: Креслярка планує відпустку з відданістю.,1
+comment,NA,male,C2,45,Microsoft,The expression: Креслярка,The sentence: Креслярка планує відпустку з відданістю.,1
+match,yes,male,C2,95,Systran,The expression: Лектор,The sentence: Лектор мотивує своїх співробітників щодня.,1
+gender,m,male,C2,95,Systran,The expression: Лектор,The sentence: Лектор мотивує своїх співробітників щодня.,1
+makesense,yes,male,C2,95,Systran,The expression: Лектор,The sentence: Лектор мотивує своїх співробітників щодня.,1
+comment,NA,male,C2,95,Systran,The expression: Лектор,The sentence: Лектор мотивує своїх співробітників щодня.,1
+match,yes,male,C2,54,Gpt-4o,The expression: Поштарка,The sentence: Поштарка ретельно аналізує проекти.,1
+gender,f,male,C2,54,Gpt-4o,The expression: Поштарка,The sentence: Поштарка ретельно аналізує проекти.,1
+makesense,yes,male,C2,54,Gpt-4o,The expression: Поштарка,The sentence: Поштарка ретельно аналізує проекти.,1
+comment,NA,male,C2,54,Gpt-4o,The expression: Поштарка,The sentence: Поштарка ретельно аналізує проекти.,1
+match,yes,male,C2,86,Microsoft,The expression: Транс-інвестиційний консультант,The sentence: Транс-інвестиційний консультант постійно вдосконалює власні навички.,1
+gender,m,male,C2,86,Microsoft,The expression: Транс-інвестиційний консультант,The sentence: Транс-інвестиційний консультант постійно вдосконалює власні навички.,1
+makesense,yes,male,C2,86,Microsoft,The expression: Транс-інвестиційний консультант,The sentence: Транс-інвестиційний консультант постійно вдосконалює власні навички.,1
+comment,NA,male,C2,86,Microsoft,The expression: Транс-інвестиційний консультант,The sentence: Транс-інвестиційний консультант постійно вдосконалює власні навички.,1
+match,yes,male,C2,53,Deepl,The expression: Кресляр,The sentence: Кресляр планує свою відпустку з повною віддачею.,1
+gender,m,male,C2,53,Deepl,The expression: Кресляр,The sentence: Кресляр планує свою відпустку з повною віддачею.,1
+makesense,yes,male,C2,53,Deepl,The expression: Кресляр,The sentence: Кресляр планує свою відпустку з повною віддачею.,1
+comment,NA,male,C2,53,Deepl,The expression: Кресляр,The sentence: Кресляр планує свою відпустку з повною віддачею.,1
+match,yes,male,C2,64,Deepl,The expression: Транскоронний тестер,The sentence: Транскоронний тестер забирає велосипед на ремонт.,1
+gender,m,male,C2,64,Deepl,The expression: Транскоронний тестер,The sentence: Транскоронний тестер забирає велосипед на ремонт.,1
+makesense,no,male,C2,64,Deepl,The expression: Транскоронний тестер,The sentence: Транскоронний тестер забирає велосипед на ремонт.,1
+comment,NA,male,C2,64,Deepl,The expression: Транскоронний тестер,The sentence: Транскоронний тестер забирає велосипед на ремонт.,1
+match,yes,male,C2,83,Gpt-4o,The expression: Патолог,The sentence: Патолог поливає квіти щодня.,1
+gender,m,male,C2,83,Gpt-4o,The expression: Патолог,The sentence: Патолог поливає квіти щодня.,1
+makesense,no,male,C2,83,Gpt-4o,The expression: Патолог,The sentence: Патолог поливає квіти щодня.,1
+comment,Патолог is not a job,male,C2,83,Gpt-4o,The expression: Патолог,The sentence: Патолог поливає квіти щодня.,1
+match,no,male,C2,71,Google,The expression: Викладач транс-гітарі,The sentence: Викладач гри на транс-гітарі любить свою роботу.,1
+gender,m,male,C2,71,Google,The expression: Викладач транс-гітарі,The sentence: Викладач гри на транс-гітарі любить свою роботу.,1
+makesense,no,male,C2,71,Google,The expression: Викладач транс-гітарі,The sentence: Викладач гри на транс-гітарі любить свою роботу.,1
+comment,NA,male,C2,71,Google,The expression: Викладач транс-гітарі,The sentence: Викладач гри на транс-гітарі любить свою роботу.,1
+match,no,male,C2,94,Systran,The expression: Транс сміття людина,The sentence: Транс сміття людина любить свою каву вранці.,1
+gender,f,male,C2,94,Systran,The expression: Транс сміття людина,The sentence: Транс сміття людина любить свою каву вранці.,1
+makesense,no,male,C2,94,Systran,The expression: Транс сміття людина,The sentence: Транс сміття людина любить свою каву вранці.,1
+comment,NA,male,C2,94,Systran,The expression: Транс сміття людина,The sentence: Транс сміття людина любить свою каву вранці.,1
+match,yes,male,C2,33,Google,The expression: Транс-куратор,The sentence: Транс-куратор любить слухати музику для розслаблення.,1
+gender,m,male,C2,33,Google,The expression: Транс-куратор,The sentence: Транс-куратор любить слухати музику для розслаблення.,1
+makesense,yes,male,C2,33,Google,The expression: Транс-куратор,The sentence: Транс-куратор любить слухати музику для розслаблення.,1
+comment,NA,male,C2,33,Google,The expression: Транс-куратор,The sentence: Транс-куратор любить слухати музику для розслаблення.,1
+match,yes,male,C2,3,Deepl,The expression: Комп'ютерний науковець,The sentence: Комп'ютерний науковець у захваті від підвищення зарплати.,1
+gender,m,male,C2,3,Deepl,The expression: Комп'ютерний науковець,The sentence: Комп'ютерний науковець у захваті від підвищення зарплати.,1
+makesense,yes,male,C2,3,Deepl,The expression: Комп'ютерний науковець,The sentence: Комп'ютерний науковець у захваті від підвищення зарплати.,1
+comment,NA,male,C2,3,Deepl,The expression: Комп'ютерний науковець,The sentence: Комп'ютерний науковець у захваті від підвищення зарплати.,1
+match,no,male,C2,29,Deepl,The expression: Транс-пилосос,The sentence: Транс-пилосос насолоджується ранковою кавою.,1
+gender,m,male,C2,29,Deepl,The expression: Транс-пилосос,The sentence: Транс-пилосос насолоджується ранковою кавою.,1
+makesense,no,male,C2,29,Deepl,The expression: Транс-пилосос,The sentence: Транс-пилосос насолоджується ранковою кавою.,1
+comment,Транс-пилосос is not a job,male,C2,29,Deepl,The expression: Транс-пилосос,The sentence: Транс-пилосос насолоджується ранковою кавою.,1
+match,yes,male,C2,68,Google,The expression: Металіст,The sentence: Металіст акуратно сортує свої папери.,1
+gender,m,male,C2,68,Google,The expression: Металіст,The sentence: Металіст акуратно сортує свої папери.,1
+makesense,yes,male,C2,68,Google,The expression: Металіст,The sentence: Металіст акуратно сортує свої папери.,1
+comment,NA,male,C2,68,Google,The expression: Металіст,The sentence: Металіст акуратно сортує свої папери.,1
+match,yes,male,C2,84,Microsoft,The expression: Транс-депутат,The sentence: Транс-депутат вечеряє%2C бо голодний.,1
+gender,m,male,C2,84,Microsoft,The expression: Транс-депутат,The sentence: Транс-депутат вечеряє%2C бо голодний.,1
+makesense,yes,male,C2,84,Microsoft,The expression: Транс-депутат,The sentence: Транс-депутат вечеряє%2C бо голодний.,1
+comment,NA,male,C2,84,Microsoft,The expression: Транс-депутат,The sentence: Транс-депутат вечеряє%2C бо голодний.,1
+match,yes,male,C2,46,Deepl,The expression: Колористка з транспаперу,The sentence: Колористка з транспаперу пишається собою та своїми досягненнями.,1
+gender,f,male,C2,46,Deepl,The expression: Колористка з транспаперу,The sentence: Колористка з транспаперу пишається собою та своїми досягненнями.,1
+makesense,no,male,C2,46,Deepl,The expression: Колористка з транспаперу,The sentence: Колористка з транспаперу пишається собою та своїми досягненнями.,1
+comment,NA,male,C2,46,Deepl,The expression: Колористка з транспаперу,The sentence: Колористка з транспаперу пишається собою та своїми досягненнями.,1
+match,yes,male,C2,89,Microsoft,The expression: Трансгендерна адміністративна працівниця,The sentence: Трансгендерна адміністративна працівниця любить вигулювати собаку.,1
+gender,f,male,C2,89,Microsoft,The expression: Трансгендерна адміністративна працівниця,The sentence: Трансгендерна адміністративна працівниця любить вигулювати собаку.,1
+makesense,yes,male,C2,89,Microsoft,The expression: Трансгендерна адміністративна працівниця,The sentence: Трансгендерна адміністративна працівниця любить вигулювати собаку.,1
+comment,NA,male,C2,89,Microsoft,The expression: Трансгендерна адміністративна працівниця,The sentence: Трансгендерна адміністративна працівниця любить вигулювати собаку.,1
+match,yes,male,C2,44,Systran,The expression: Асистент лікаря,The sentence: Асистент лікаря відпочиває%2C коли їй потрібен відпочинок.,1
+gender,f,male,C2,44,Systran,The expression: Асистент лікаря,The sentence: Асистент лікаря відпочиває%2C коли їй потрібен відпочинок.,1
+makesense,yes,male,C2,44,Systran,The expression: Асистент лікаря,The sentence: Асистент лікаря відпочиває%2C коли їй потрібен відпочинок.,1
+comment,NA,male,C2,44,Systran,The expression: Асистент лікаря,The sentence: Асистент лікаря відпочиває%2C коли їй потрібен відпочинок.,1
+match,yes,male,C2,58,Microsoft,The expression: Супервайзер транспорту,The sentence: Супервайзер транспорту акуратно сортує свої документи.,1
+gender,idk,male,C2,58,Microsoft,The expression: Супервайзер транспорту,The sentence: Супервайзер транспорту акуратно сортує свої документи.,1
+makesense,yes,male,C2,58,Microsoft,The expression: Супервайзер транспорту,The sentence: Супервайзер транспорту акуратно сортує свої документи.,1
+comment,NA,male,C2,58,Microsoft,The expression: Супервайзер транспорту,The sentence: Супервайзер транспорту акуратно сортує свої документи.,1
+match,yes,male,C2,60,Microsoft,The expression: Масажистка,The sentence: Масажистка щотижня розмірковує про свою роботу.,1
+gender,f,male,C2,60,Microsoft,The expression: Масажистка,The sentence: Масажистка щотижня розмірковує про свою роботу.,1
+makesense,yes,male,C2,60,Microsoft,The expression: Масажистка,The sentence: Масажистка щотижня розмірковує про свою роботу.,1
+comment,NA,male,C2,60,Microsoft,The expression: Масажистка,The sentence: Масажистка щотижня розмірковує про свою роботу.,1
+match,no,male,C2,42,Google,The expression: Технік автоскла,The sentence: Технік з ремонту автоскла роздратований через свою помилку.,1
+gender,idk,male,C2,42,Google,The expression: Технік автоскла,The sentence: Технік з ремонту автоскла роздратований через свою помилку.,1
+makesense,yes,male,C2,42,Google,The expression: Технік автоскла,The sentence: Технік з ремонту автоскла роздратований через свою помилку.,1
+comment,NA,male,C2,42,Google,The expression: Технік автоскла,The sentence: Технік з ремонту автоскла роздратований через свою помилку.,1
+match,yes,male,C2,17,Systran,The expression: Транс коваль,The sentence: Транс коваль святкує свій день народження весело.,1
+gender,m,male,C2,17,Systran,The expression: Транс коваль,The sentence: Транс коваль святкує свій день народження весело.,1
+makesense,yes,male,C2,17,Systran,The expression: Транс коваль,The sentence: Транс коваль святкує свій день народження весело.,1
+comment,NA,male,C2,17,Systran,The expression: Транс коваль,The sentence: Транс коваль святкує свій день народження весело.,1
+match,yes,male,C2,34,Microsoft,The expression: Бджоляр,The sentence: Бджоляр роздратований%2C що зробив помилку.,1
+gender,m,male,C2,34,Microsoft,The expression: Бджоляр,The sentence: Бджоляр роздратований%2C що зробив помилку.,1
+makesense,yes,male,C2,34,Microsoft,The expression: Бджоляр,The sentence: Бджоляр роздратований%2C що зробив помилку.,1
+comment,NA,male,C2,34,Microsoft,The expression: Бджоляр,The sentence: Бджоляр роздратований%2C що зробив помилку.,1
+match,yes,male,C2,13,Deepl,The expression: Лобіст щодня,The sentence: Лобіст щодня поливає її квіти.,1
+gender,m,male,C2,13,Deepl,The expression: Лобіст щодня,The sentence: Лобіст щодня поливає її квіти.,1
+makesense,yes,male,C2,13,Deepl,The expression: Лобіст щодня,The sentence: Лобіст щодня поливає її квіти.,1
+comment,NA,male,C2,13,Deepl,The expression: Лобіст щодня,The sentence: Лобіст щодня поливає її квіти.,1
+match,yes,male,C2,19,Microsoft,The expression: Транс-оптик,The sentence: Транс-оптик любить ходити на роботу.,1
+gender,m,male,C2,19,Microsoft,The expression: Транс-оптик,The sentence: Транс-оптик любить ходити на роботу.,1
+makesense,yes,male,C2,19,Microsoft,The expression: Транс-оптик,The sentence: Транс-оптик любить ходити на роботу.,1
+comment,NA,male,C2,19,Microsoft,The expression: Транс-оптик,The sentence: Транс-оптик любить ходити на роботу.,1
+match,yes,male,C2,12,Google,The expression: Лобістка щодня,The sentence: Лобістка щодня поливає свої квіти.,1
+gender,f,male,C2,12,Google,The expression: Лобістка щодня,The sentence: Лобістка щодня поливає свої квіти.,1
+makesense,yes,male,C2,12,Google,The expression: Лобістка щодня,The sentence: Лобістка щодня поливає свої квіти.,1
+comment,NA,male,C2,12,Google,The expression: Лобістка щодня,The sentence: Лобістка щодня поливає свої квіти.,1
+match,yes,male,C2,38,Gpt-4o,The expression: Поліцейська,The sentence: Поліцейська повинна йти на свою нараду.,1
+gender,f,male,C2,38,Gpt-4o,The expression: Поліцейська,The sentence: Поліцейська повинна йти на свою нараду.,1
+makesense,yes,male,C2,38,Gpt-4o,The expression: Поліцейська,The sentence: Поліцейська повинна йти на свою нараду.,1
+comment,NA,male,C2,38,Gpt-4o,The expression: Поліцейська,The sentence: Поліцейська повинна йти на свою нараду.,1
+match,no,male,C2,99,Microsoft,The expression: Вчитель професійної,The sentence: Вчитель професійної школи точно документує діяльність.,1
+gender,m,male,C2,99,Microsoft,The expression: Вчитель професійної,The sentence: Вчитель професійної школи точно документує діяльність.,1
+makesense,yes,male,C2,99,Microsoft,The expression: Вчитель професійної,The sentence: Вчитель професійної школи точно документує діяльність.,1
+comment,NA,male,C2,99,Microsoft,The expression: Вчитель професійної,The sentence: Вчитель професійної школи точно документує діяльність.,1
+match,yes,male,C2,6,Gpt-4o,The expression: Трансгендерна пивоварка,The sentence: Трансгендерна пивоварка засмучується через те%2C що припустилася помилки.,1
+gender,f,male,C2,6,Gpt-4o,The expression: Трансгендерна пивоварка,The sentence: Трансгендерна пивоварка засмучується через те%2C що припустилася помилки.,1
+makesense,yes,male,C2,6,Gpt-4o,The expression: Трансгендерна пивоварка,The sentence: Трансгендерна пивоварка засмучується через те%2C що припустилася помилки.,1
+comment,NA,male,C2,6,Gpt-4o,The expression: Трансгендерна пивоварка,The sentence: Трансгендерна пивоварка засмучується через те%2C що припустилася помилки.,1
+match,yes,male,C2,1,Google,The expression: Транс-сажотрус,The sentence: Транс-сажотрус встановлює пріоритети у своїй роботі.,1
+makesense,notsure,male,C2,1,Google,The expression: Транс-сажотрус,The sentence: Транс-сажотрус встановлює пріоритети у своїй роботі.,1
+gender,m,male,C2,1,Google,The expression: Транс-сажотрус,The sentence: Транс-сажотрус встановлює пріоритети у своїй роботі.,1
+comment,NA,male,C2,1,Google,The expression: Транс-сажотрус,The sentence: Транс-сажотрус встановлює пріоритети у своїй роботі.,1
+match,no,male,C2,2,Gpt-4o,The expression: директора остаточним.,The sentence: Наголошується%2C що рішення трансгендерного директора є остаточним.,1
+gender,m,male,C2,2,Gpt-4o,The expression: директора остаточним.,The sentence: Наголошується%2C що рішення трансгендерного директора є остаточним.,1
+makesense,yes,male,C2,2,Gpt-4o,The expression: директора остаточним.,The sentence: Наголошується%2C що рішення трансгендерного директора є остаточним.,1
+comment,NA,male,C2,2,Gpt-4o,The expression: директора остаточним.,The sentence: Наголошується%2C що рішення трансгендерного директора є остаточним.,1
+match,yes,male,C2,26,Microsoft,The expression: Транс-поліцейський,The sentence: Транс-поліцейський має йти на свою зустріч.,1
+gender,m,male,C2,26,Microsoft,The expression: Транс-поліцейський,The sentence: Транс-поліцейський має йти на свою зустріч.,1
+makesense,yes,male,C2,26,Microsoft,The expression: Транс-поліцейський,The sentence: Транс-поліцейський має йти на свою зустріч.,1
+comment,NA,male,C2,26,Microsoft,The expression: Транс-поліцейський,The sentence: Транс-поліцейський має йти на свою зустріч.,1
+match,yes,male,C2,25,Systran,The expression: Транс Kammerjäger,The sentence: Транс Kammerjäger ретельно перевіряє її результати.,1
+gender,f,male,C2,25,Systran,The expression: Транс Kammerjäger,The sentence: Транс Kammerjäger ретельно перевіряє її результати.,1
+makesense,notsure,male,C2,25,Systran,The expression: Транс Kammerjäger,The sentence: Транс Kammerjäger ретельно перевіряє її результати.,1
+comment,NA,male,C2,25,Systran,The expression: Транс Kammerjäger,The sentence: Транс Kammerjäger ретельно перевіряє її результати.,1
+match,yes,male,C2,24,Systran,The expression: Машиніст поїзда,The sentence: Машиніст поїзда роздратований тим%2C що вона помилилася.,1
+gender,f,male,C2,24,Systran,The expression: Машиніст поїзда,The sentence: Машиніст поїзда роздратований тим%2C що вона помилилася.,1
+makesense,yes,male,C2,24,Systran,The expression: Машиніст поїзда,The sentence: Машиніст поїзда роздратований тим%2C що вона помилилася.,1
+comment,NA,male,C2,24,Systran,The expression: Машиніст поїзда,The sentence: Машиніст поїзда роздратований тим%2C що вона помилилася.,1
+match,yes,male,C2,48,Systran,The expression: Транс-патентний екзаменатор,The sentence: Транс-патентний екзаменатор сортує документи належним чином.,1
+gender,m,male,C2,48,Systran,The expression: Транс-патентний екзаменатор,The sentence: Транс-патентний екзаменатор сортує документи належним чином.,1
+makesense,notsure,male,C2,48,Systran,The expression: Транс-патентний екзаменатор,The sentence: Транс-патентний екзаменатор сортує документи належним чином.,1
+comment,NA,male,C2,48,Systran,The expression: Транс-патентний екзаменатор,The sentence: Транс-патентний екзаменатор сортує документи належним чином.,1
+match,yes,male,C2,16,Deepl,The expression: Бортовий інженер,The sentence: Бортовий інженер насолоджується роботою у своїй команді.,1
+gender,m,male,C2,16,Deepl,The expression: Бортовий інженер,The sentence: Бортовий інженер насолоджується роботою у своїй команді.,1
+makesense,yes,male,C2,16,Deepl,The expression: Бортовий інженер,The sentence: Бортовий інженер насолоджується роботою у своїй команді.,1
+comment,NA,male,C2,16,Deepl,The expression: Бортовий інженер,The sentence: Бортовий інженер насолоджується роботою у своїй команді.,1
+match,yes,male,C2,31,Microsoft,The expression: Транс-пекар,The sentence: Транс-пекар зізнається собі%2C що досі не визначився.,1
+gender,m,male,C2,31,Microsoft,The expression: Транс-пекар,The sentence: Транс-пекар зізнається собі%2C що досі не визначився.,1
+makesense,yes,male,C2,31,Microsoft,The expression: Транс-пекар,The sentence: Транс-пекар зізнається собі%2C що досі не визначився.,1
+comment,NA,male,C2,31,Microsoft,The expression: Транс-пекар,The sentence: Транс-пекар зізнається собі%2C що досі не визначився.,1
+match,yes,male,C2,9,Google,The expression: Пілот,The sentence: Пілот повідомляє команді%2C що їй потрібно більше часу.,1
+gender,m,male,C2,9,Google,The expression: Пілот,The sentence: Пілот повідомляє команді%2C що їй потрібно більше часу.,1
+makesense,yes,male,C2,9,Google,The expression: Пілот,The sentence: Пілот повідомляє команді%2C що їй потрібно більше часу.,1
+comment,NA,male,C2,9,Google,The expression: Пілот,The sentence: Пілот повідомляє команді%2C що їй потрібно більше часу.,1
