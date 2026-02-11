@@ -14,11 +14,12 @@ from plots import (
 # -------------------------------
 LANGUAGES = ["es", "fr", "it", "no", "ar", "ru", "uk", "sv", "he"]
 
+
 # -------------------------------
 # Load processed dataset only, handle missing columns
 # -------------------------------
 def load_processed_dataset(model_name: str, languages: list[str]) -> DEvalDataset:
-    processed_file = os.path.join("processed_data", f"{model_name}_processed.csv")
+    processed_file = os.path.join("./processed_data/avg_DEval/", f"{model_name}_processed.csv")
 
     if not os.path.exists(processed_file):
         raise FileNotFoundError(
@@ -56,7 +57,7 @@ def load_processed_dataset(model_name: str, languages: list[str]) -> DEvalDatase
 # Main analysis loop
 # -------------------------------
 if __name__ == "__main__":
-    processed_dir = "processed_data"
+    processed_dir = "./processed_data/avg_DEval"
     model_names = [
         f.replace("_processed.csv", "")
         for f in os.listdir(processed_dir)
@@ -64,9 +65,9 @@ if __name__ == "__main__":
     ]
 
     if not model_names:
-        raise RuntimeError("No processed datasets found in 'processed_data/' folder.")
+        raise RuntimeError("No processed datasets found in 'processed_data/avg_DEval/' folder.")
 
-    outputs_root = "outputs"
+    outputs_root = "./outputs"
     os.makedirs(outputs_root, exist_ok=True)
 
     for model_name in model_names:
@@ -78,9 +79,8 @@ if __name__ == "__main__":
 
         model_output_dir = os.path.join(outputs_root, model_name)
         os.makedirs(model_output_dir, exist_ok=True)
-        
+
         # to analyze with a certain column, the following two should be specified
-        
 
         # -------------------------------
         # 1. Error Analysis
@@ -89,31 +89,33 @@ if __name__ == "__main__":
         error_df = ErrorAnalysis(ds, "x_gender").analyze().T
         error_df.attrs["filename"] = f"{model_name}_error_analysis"
 
-        filter_col='sentence_style'
-        filter_value=1
+        filter_col = "sentence_style"
+        filter_value = 1
 
         plot_error_analysis(
             error_df.T,
             output_dir=model_output_dir,
             filename=error_df.attrs["filename"],
-            )
+        )
 
-        for style in ds.df[filter_col].unique():            
+        for style in ds.df[filter_col].unique():
             # in this case the results should be saved inside the loop, otherwise only the last one is saved
-            error_df_sentence=ErrorAnalysis(ds, "x_gender").analyze(filter_col=filter_col,filter_value=style).T
-            error_df_sentence.attrs["filename"] = f"{model_name}_error_analysis_{filter_col}_{style}"
+            error_df_sentence = (
+                ErrorAnalysis(ds, "x_gender").analyze(filter_col=filter_col, filter_value=style).T
+            )
+            error_df_sentence.attrs["filename"] = (
+                f"{model_name}_error_analysis_{filter_col}_{style}"
+            )
             plot_error_analysis(
-            error_df_sentence.T,
-            output_dir=model_output_dir,
-            filename=error_df_sentence.attrs["filename"],
-            filter_col=filter_col
+                error_df_sentence.T,
+                output_dir=model_output_dir,
+                filename=error_df_sentence.attrs["filename"],
+                filter_col=filter_col,
             )
             save_dataframes(
-            error_df_sentence,
-            output_dir=model_output_dir,
+                error_df_sentence,
+                output_dir=model_output_dir,
             )
-            
-
 
         # -------------------------------
         # 2. Confusion Matrix
@@ -146,7 +148,7 @@ if __name__ == "__main__":
         # -------------------------------
         # Save plots
         # -------------------------------
-        
+
         plot_confusion_metrics(
             cm_df.T,
             output_dir=model_output_dir,

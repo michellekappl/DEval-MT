@@ -71,8 +71,8 @@ class Template:
         """
         groups_list = [(x_group, x) for x_group, xs in groups.items() for job in xs for x in job]
 
-        self.sentence = row['sentence']  # the actual sentence template
-        self.sentence_id = row['id']
+        self.sentence = row["sentence"]  # the actual sentence template
+        self.sentence_id = row["id"]
         self.statistics = statistics
         self.adjectives = adjectives  # adjectives to use in template
         self.groups = groups  # groups to use in template
@@ -486,9 +486,7 @@ class Template:
                 for y_group, y in ys
                 # the same logic as in base_generator, but with adjectives
                 if x_group != "romantic" and y_group != "romantic"
-                if x != y
-                and x.gender != y.gender
-                and x.nom_sg != y.nom_sg
+                if x != y and x.gender != y.gender and x.nom_sg != y.nom_sg
                 for adjective in self.adjectives
                 for modified in [
                     "x",
