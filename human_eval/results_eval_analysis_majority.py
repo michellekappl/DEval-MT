@@ -519,7 +519,7 @@ class MajorityVoteAnalyzer:
 
 if __name__ == "__main__":
     # Analyze with majority voting
-    analyzer = MajorityVoteAnalyzer("human_eval_es_results.csv")
+    analyzer = MajorityVoteAnalyzer("human_eval_uk_results_0211.csv")
     
     # Print and save results
     analyzer.print_summary()
