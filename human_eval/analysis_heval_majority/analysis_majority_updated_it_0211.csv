@@ -1,0 +1,133 @@
+EXPLANATION
+Match Original: human annotated gender matches the gender in the German sentence
+" (then the MT translated the gender correctly, participants dont see the German version)"
+Match New: human annotated gender matches the new alignment machine gender annotation
+Expression Match: participants agree that the expression matches the subject in the sentence
+Makes Sense Yes: participants agree that the sentence makes sense
+With/out Adj: statistics for sentences with/without adjectives for German original gender and new alignment annotation
+
+Language,it
+Date,0211
+Analysis Method,Majority Vote
+Number of participants,4
+Total sentences,100
+Sentences with adjective,52
+Sentences without adjective,48
+
+Inter-Annotator Agreement
+Krippendorff Alpha,0.3907
+Full agreement (out of 100 sentences),25
+
+==================================================
+ALL DATA (Majority Vote)
+==================================================
+
+SUMMARY TABLE
+Translator,Total Sentences,Match Orig,Match New,Expression Match,Makes Sense Yes,With Adj Orig,With Adj New,Without Adj Orig,Without Adj New
+Deepl,21,16,17,18,21,7,8,9,9
+Google,21,14,17,20,20,4,8,10,9
+Gpt-4o,20,18,16,15,20,6,5,12,11
+Microsoft,20,9,10,14,15,6,6,3,4
+Systran,18,10,10,15,16,3,3,7,7
+TOTAL,100,67,70,82,92,26,30,41,40
+%,,67.0%,70.0%,82.0%,92.0%,50.0%,57.7%,85.4%,83.3%
+
+MISMATCH ANALYSIS
+
+Total mismatched sentences,30
+Mismatch indices,"[1, 4, 8, 9, 10, 13, 24, 27, 33, 36, 41, 42, 48, 54, 62, 66, 71, 73, 74, 77, 80, 81, 82, 84, 85, 91, 94, 95, 96, 100]"
+
+Mismatch distribution by original gender
+Gender,Count,Percentage
+f,13,43.3%
+m,15,50.0%
+n,2,6.7%
+
+Detailed Mismatches
+CSV Index,Translator,Majority Gender,Original,Old,New,Adjective
+1,Systran,u,m,m,m,Yes
+4,Gpt-4o,idk,m,f,f,Yes
+8,Google,idk,m,m,m,No
+9,Systran,idk,f,m,m,Yes
+10,Gpt-4o,f,f,u,u,No
+13,Microsoft,u,m,u,m,Yes
+24,Microsoft,idk,f,m,m,Yes
+27,Microsoft,m,m,u,f,Yes
+33,Systran,u,m,m,m,Yes
+36,Deepl,m,f,u,u,Yes
+41,Microsoft,n,f,f,f,No
+42,Systran,u,m,u,f,Yes
+48,Google,n,n,m,m,No
+54,Gpt-4o,f,f,m,u,Yes
+62,Systran,n,m,u,u,Yes
+66,Google,u,m,m,m,Yes
+71,Microsoft,idk,f,m,m,Yes
+73,Systran,m,m,u,u,No
+74,Systran,u,f,m,m,Yes
+77,Microsoft,n,f,m,m,No
+80,Microsoft,idk,m,m,m,Yes
+81,Google,m,m,u,u,No
+82,Microsoft,u,m,m,m,Yes
+84,Deepl,idk,f,m,m,Yes
+85,Microsoft,idk,f,m,m,Yes
+91,Gpt-4o,f,f,u,u,Yes
+94,Microsoft,idk,m,m,m,Yes
+95,Deepl,n,f,m,m,Yes
+96,Systran,u,m,m,m,Yes
+100,Deepl,n,n,f,f,No
+
+
+
+==================================================
+FILTERED DATA (Majority makesense=yes)
+==================================================
+
+Total sentences analyzed,92
+
+SUMMARY TABLE
+Translator,Total Sentences,Match Orig,Match New,Expression Match,Makes Sense Yes,With Adj Orig,With Adj New,Without Adj Orig,Without Adj New
+Deepl,21,16,17,18,21,7,8,9,9
+Google,20,14,17,19,20,4,8,10,9
+Gpt-4o,20,18,16,15,20,6,5,12,11
+Microsoft,15,9,10,13,15,6,6,3,4
+Systran,16,10,10,15,16,3,3,7,7
+TOTAL,92,67,70,80,92,26,30,41,40
+%,,72.8%,76.1%,87.0%,100.0%,57.8%,66.7%,87.2%,85.1%
+Δ vs ALL,,+5.8%,+6.1%,+5.0%,+8.0%,+7.8%,+9.0%,+1.8%,+1.8%
+
+MISMATCH ANALYSIS
+
+Total mismatched sentences,22
+Mismatch indices,"[1, 4, 10, 27, 33, 36, 41, 48, 54, 62, 66, 71, 73, 74, 77, 81, 84, 85, 91, 95, 96, 100]"
+
+Mismatch distribution by original gender
+Gender,Count,Percentage
+f,11,50.0%
+m,9,40.9%
+n,2,9.1%
+
+Detailed Mismatches
+CSV Index,Translator,Majority Gender,Original,Old,New,Adjective
+1,Systran,u,m,m,m,Yes
+4,Gpt-4o,idk,m,f,f,Yes
+10,Gpt-4o,f,f,u,u,No
+27,Microsoft,m,m,u,f,Yes
+33,Systran,u,m,m,m,Yes
+36,Deepl,m,f,u,u,Yes
+41,Microsoft,n,f,f,f,No
+48,Google,n,n,m,m,No
+54,Gpt-4o,f,f,m,u,Yes
+62,Systran,n,m,u,u,Yes
+66,Google,u,m,m,m,Yes
+71,Microsoft,idk,f,m,m,Yes
+73,Systran,m,m,u,u,No
+74,Systran,u,f,m,m,Yes
+77,Microsoft,n,f,m,m,No
+81,Google,m,m,u,u,No
+84,Deepl,idk,f,m,m,Yes
+85,Microsoft,idk,f,m,m,Yes
+91,Gpt-4o,f,f,u,u,Yes
+95,Deepl,n,f,m,m,Yes
+96,Systran,u,m,m,m,Yes
+100,Deepl,n,n,f,f,No
+

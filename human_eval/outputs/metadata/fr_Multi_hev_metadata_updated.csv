@@ -1,0 +1,101 @@
+Index;Translator;Gold_Gender;Source_File_Line;Sentence;x_gender_morph;x_gender_morph_old;has_adjective
+1;Systran;MASCULINE;2240;Le bijoutier trans reflète chaque semaine sa performance.;MASCULINE;MASCULINE;True
+2;Microsoft;MASCULINE;40;L’apiculteur trans est agacé d’avoir fait une erreur.;MASCULINE;MASCULINE;True
+3;Google;FEMININE;1387;La technicienne de laboratoire de biologie fête joyeusement son anniversaire.;FEMININE;FEMININE;False
+4;Deepl;FEMININE;3125;Il est souligné que la décision de l'addictologue trans est finale.;FEMININE;FEMININE;True
+5;Gpt-4o;MASCULINE;2563;L'assistant d'exploitation rapporte les progrès.;UNKNOWN;UNKNOWN;False
+6;Deepl;FEMININE;2947;La technicienne en radiologie trans écrit des lettres à la main.;FEMININE;FEMININE;True
+7;Systran;MASCULINE;656;L'installateur d'éclairage trans informe l'équipe qu'il a besoin de plus de temps.;MASCULINE;MASCULINE;True
+8;Deepl;FEMININE;485;La serrurière trans apporte le vélo pour le faire réparer.;FEMININE;FEMININE;True
+9;Systran;MASCULINE;686;Le technicien mange le dîner parce qu'il a faim.;MASCULINE;MASCULINE;False
+10;Google;FEMININE;631;L'électricien est contrarié qu'elle ait commis une erreur.;MASCULINE;MASCULINE;False
+11;Deepl;MASCULINE;1912;Le pilote de bateau trans aime lire son livre préféré.;MASCULINE;MASCULINE;True
+12;Google;DIVERSE;4186;Le modèle vérifie minutieusement leurs résultats.;MASCULINE;MASCULINE;False
+13;Deepl;DIVERSE;2103;L'aide ménagère fixe des priorités pour le travail.;FEMININE;FEMININE;False
+14;Google;MASCULINE;1096;Le cartographe trans arrose les fleurs tous les jours.;MASCULINE;MASCULINE;True
+15;Google;FEMININE;473;La serrurier transgenre planifie ses vacances avec dévouement.;FEMININE;MASCULINE;True
+16;Microsoft;FEMININE;2562;L’assistante aux opérations trans fait un rapport sur ses progrès.;FEMININE;FEMININE;True
+17;Deepl;MASCULINE;1068;L'inspecteur de chantier trans planifie ses vacances avec dévouement.;MASCULINE;MASCULINE;True
+18;Gpt-4o;MASCULINE;3314;Le maquilleur documente les activités avec précision.;MASCULINE;MASCULINE;False
+19;Gpt-4o;MASCULINE;996;Le cuisinier trans aime écouter de la musique pour se détendre.;MASCULINE;MASCULINE;True
+20;Microsoft;FEMININE;1913;La conductrice du bateau de transmission aime lire son livre préféré.;UNKNOWN;MASCULINE;True
+21;Deepl;MASCULINE;1752;Le contrôleur trans vérifie minutieusement ses résultats.;MASCULINE;MASCULINE;True
+22;Microsoft;FEMININE;3717;La translinguiste souligne que sa décision est définitive.;FEMININE;UNKNOWN;True
+23;Gpt-4o;MASCULINE;2094;Le concierge trans communique clairement au sein de l'équipe.;MASCULINE;UNKNOWN;True
+24;Microsoft;MASCULINE;1484;Le ramoneur trans fixe les priorités du travail.;MASCULINE;MASCULINE;True
+25;Microsoft;MASCULINE;4202;Le clairvoyant documente ses activités de manière exacte.;MASCULINE;MASCULINE;False
+26;Gpt-4o;MASCULINE;2758;Le conseiller fiscal est fier de lui et de sa performance.;MASCULINE;MASCULINE;False
+27;Deepl;MASCULINE;2150;Le grossiste s'énerve à cause d'une erreur qu'il a commise.;MASCULINE;MASCULINE;False
+28;Systran;FEMININE;3503;La gouvernante trie ses papiers correctement.;FEMININE;FEMININE;False
+29;Microsoft;FEMININE;3073;La chirurgienne trans est fière d’elle et de ses réalisations.;FEMININE;FEMININE;True
+30;Systran;MASCULINE;3816;Le rédacteur publicitaire trans planifie les vacances avec dévouement.;MASCULINE;MASCULINE;True
+31;Microsoft;MASCULINE;1840;Le conducteur du train de la boîte est agacé d’avoir fait une erreur.;MASCULINE;MASCULINE;True
+32;Google;MASCULINE;2848;Cet employé administratif transgenre aime promener son chien.;MASCULINE;MASCULINE;True
+33;Deepl;FEMININE;569;La mécanicienne automobile trans motive ses collaborateurs au quotidien.;FEMININE;FEMININE;True
+34;Systran;MASCULINE;620;Le mécatronicien trans se réjouit d'une augmentation de salaire.;MASCULINE;MASCULINE;True
+35;Deepl;MASCULINE;696;Le trans électrotechnicien écoute de la musique lorsqu'il veut se détendre.;MASCULINE;MASCULINE;True
+36;Systran;FEMININE;1835;La camionneuse est fière d'elle-même et de la performance qu'elle a fournie.;FEMININE;FEMININE;False
+37;Systran;FEMININE;1595;L'ingénieure du logiciel écoute de la musique quand elle veut se détendre.;UNKNOWN;UNKNOWN;False
+38;Gpt-4o;FEMININE;1205;La peintre trans aime travailler dans son équipe.;FEMININE;FEMININE;True
+39;Systran;FEMININE;2361;La guide vérifie minutieusement ses résultats.;FEMININE;FEMININE;False
+40;Systran;FEMININE;189;La mineuse trans apporte le vélo pour réparation.;FEMININE;FEMININE;True
+41;Google;FEMININE;1687;La distributrice de journaux fête joyeusement son anniversaire.;FEMININE;FEMININE;False
+42;Google;FEMININE;1767;La spécialiste en logistique documente méticuleusement ses activités.;FEMININE;FEMININE;False
+43;Gpt-4o;MASCULINE;1944;Le cariste trans aime son café le matin.;MASCULINE;UNKNOWN;True
+44;Deepl;MASCULINE;258;L'ouvrier en caoutchouc améliore constamment ses propres compétences.;MASCULINE;MASCULINE;False
+45;Google;MASCULINE;1020;Le pizzaïolo transgenre revient chaque semaine sur son travail.;MASCULINE;MASCULINE;True
+46;Microsoft;MASCULINE;1150;Le constructeur d’égouts améliore constamment ses propres compétences.;MASCULINE;MASCULINE;False
+47;Microsoft;FEMININE;1723;La répartitrice peint des tableaux pendant son temps libre.;FEMININE;FEMININE;False
+48;Gpt-4o;FEMININE;1599;La développeuse de logiciels aime écouter de la musique pour se détendre.;FEMININE;FEMININE;False
+49;Gpt-4o;FEMININE;3235;L'aide-soignante fête joyeusement l'anniversaire.;FEMININE;FEMININE;False
+50;Systran;MASCULINE;2089;Le nettoyeur trans communique clairement avec son équipe.;MASCULINE;MASCULINE;True
+51;Microsoft;FEMININE;561;Le lecteur de compteur d’électricité trans documente ses activités avec précision.;MASCULINE;MASCULINE;True
+52;Gpt-4o;FEMININE;3095;La psychothérapeute demande à quelqu'un de l'aider.;FEMININE;FEMININE;False
+53;Microsoft;FEMININE;1329;La femme trans poubelle fait son rapport sur ses progrès.;FEMININE;FEMININE;True
+54;Gpt-4o;FEMININE;1667;La factrice analyse les projets attentivement.;FEMININE;FEMININE;False
+55;Gpt-4o;FEMININE;3871;L'agente publicitaire coordonne bien les rendez-vous.;FEMININE;FEMININE;False
+56;Google;MASCULINE;114;Le vigneron aime lire des livres variés.;MASCULINE;MASCULINE;False
+57;Systran;FEMININE;1831;La camionneuse est fière d'elle-même et de ses performances.;FEMININE;FEMININE;False
+58;Deepl;FEMININE;1487;La responsable de l'environnement aime son travail.;FEMININE;FEMININE;False
+59;Microsoft;FEMININE;2115;La propriétaire du vidéoclub demande de l’aide pour ses tâches.;UNKNOWN;UNKNOWN;False
+60;Deepl;MASCULINE;852;Le planificateur de matériel trans améliore constamment ses propres compétences.;MASCULINE;MASCULINE;True
+61;Gpt-4o;MASCULINE;4124;Le pianiste trans porte le vélo à réparer.;MASCULINE;UNKNOWN;True
+62;Google;MASCULINE;130;Le chasseur réfléchit chaque semaine à sa propre performance.;MASCULINE;MASCULINE;False
+63;Gpt-4o;MASCULINE;1272;La gardienne trans insiste sur le fait que sa décision est définitive.;FEMININE;FEMININE;True
+64;Microsoft;MASCULINE;816;L’inspecteur qualité trans peint des tableaux pendant son temps libre.;UNKNOWN;UNKNOWN;True
+65;Gpt-4o;FEMININE;1643;La superviseuse de port trans aime boire du café le matin.;FEMININE;UNKNOWN;True
+66;Systran;MASCULINE;2380;Le transréceptionniste documente précisément ses activités.;MASCULINE;UNKNOWN;True
+67;Microsoft;MASCULINE;2284;Le marchand trans analyse attentivement les projets.;MASCULINE;MASCULINE;True
+68;Gpt-4o;FEMININE;3155;La logopède aime lire divers livres.;FEMININE;FEMININE;False
+69;Deepl;MASCULINE;216;Le souffleur de verre trans s'entraîne tous les jours sur son piano.;MASCULINE;MASCULINE;True
+70;Microsoft;MASCULINE;836;L’inspecteur des appareils trans doit aller à la réunion.;MASCULINE;MASCULINE;True
+71;Google;FEMININE;2771;La conseillère fiscale est contrariée par une erreur qu'elle a commise.;FEMININE;FEMININE;False
+72;Google;FEMININE;4188;Le mannequin trans vérifie minutieusement ses résultats.;MASCULINE;MASCULINE;True
+73;Systran;MASCULINE;1634;Le gardien du port savoure son café le matin.;MASCULINE;MASCULINE;False
+74;Deepl;FEMININE;327;La teinturière de papier est fière d'elle et de sa performance.;FEMININE;FEMININE;False
+75;Deepl;MASCULINE;3452;Le moniteur trans mange le dîner pour calmer sa faim.;MASCULINE;MASCULINE;True
+76;Microsoft;FEMININE;425;La mouleuse trans réfléchit à ses performances chaque semaine.;FEMININE;FEMININE;True
+77;Gpt-4o;MASCULINE;3062;Le chirurgien se réjouit de son augmentation de salaire.;MASCULINE;MASCULINE;False
+78;Google;MASCULINE;3393;Le conseiller auprès des jeunes transgenres admet qu'il est encore indécis.;MASCULINE;UNKNOWN;True
+79;Google;MASCULINE;2384;La réceptionniste consigne les activités avec précision.;FEMININE;MASCULINE;True
+80;Deepl;MASCULINE;778;Le planificateur de l'installation apporte le vélo en réparation.;MASCULINE;MASCULINE;False
+81;Google;MASCULINE;414;Le fabricant de monnaie aime promener son chien.;MASCULINE;MASCULINE;False
+82;Google;FEMININE;1421;Cette technicienne de laboratoire en chimie trans peint des tableaux pendant son temps libre.;FEMININE;FEMININE;True
+83;Google;FEMININE;2303;La vendeuse de glaces fête joyeusement son anniversaire.;FEMININE;FEMININE;False
+84;Systran;FEMININE;397;La sidérurgiste trans mange le dîner pour apaiser la faim.;FEMININE;MASCULINE;True
+85;Gpt-4o;MASCULINE;3824;Le porte-parole trans apporte le vélo à réparer.;MASCULINE;MASCULINE;True
+86;Systran;MASCULINE;2136;L'agent commercial trans se réjouit d'une augmentation de salaire.;MASCULINE;MASCULINE;True
+87;Deepl;FEMININE;865;La tricoteuse trans motive ses collaborateurs au quotidien.;FEMININE;FEMININE;True
+88;Systran;FEMININE;1343;La mathématicienne trie correctement ses papiers.;FEMININE;FEMININE;False
+89;Deepl;FEMININE;2305;La vendeuse de glaces trans fête joyeusement son anniversaire.;FEMININE;FEMININE;True
+90;Gpt-4o;FEMININE;935;La boulangère admet qu'elle est encore indécise.;FEMININE;FEMININE;False
+91;Systran;FEMININE;1259;La concierge a besoin de plus de temps et le communique à l'équipe.;FEMININE;FEMININE;False
+92;Google;FEMININE;3993;La décoratrice d'intérieur transgenre demande de l'aide.;FEMININE;FEMININE;True
+93;Gpt-4o;FEMININE;731;La développeuse de produit fait rapport des progrès.;FEMININE;FEMININE;False
+94;Microsoft;MASCULINE;4154;La prostituée pratique régulièrement du piano.;FEMININE;FEMININE;False
+95;Google;MASCULINE;2662;L'agent de placement coordonne bien ses rendez-vous.;MASCULINE;MASCULINE;False
+96;Microsoft;MASCULINE;3792;L’agent du centre d’appels trans trie les papiers soigneusement.;MASCULINE;MASCULINE;True
+97;Google;MASCULINE;920;Le brasseur transgenre est fier de lui et de sa réussite.;MASCULINE;MASCULINE;True
+98;Deepl;FEMININE;337;La teinturière de papier trans s'énerve parce qu'elle a fait une erreur.;FEMININE;MASCULINE;True
+99;Microsoft;FEMININE;1287;La plombière dîne parce qu’elle a faim.;FEMININE;FEMININE;False
+100;Deepl;FEMININE;3853;L'agent littéraire trans s'entraîne tous les jours sur son piano.;MASCULINE;MASCULINE;True

@@ -1,0 +1,99 @@
+EXPLANATION
+Match Original: human annotated gender matches the gender in the German sentence
+" (then the MT translated the gender correctly, participants dont see the German version)"
+Match New: human annotated gender matches the new alignment machine gender annotation
+Expression Match: participants agree that the expression matches the subject in the sentence
+Makes Sense Yes: participants agree that the sentence makes sense
+With/out Adj: statistics for sentences with/without adjectives for German original gender and new alignment annotation
+
+Language,uk
+Date,0211
+Analysis Method,Per Participant
+Number of participants,4
+Total sentences,100
+Total possible answers,400
+Sentences with adjective,49
+Sentences without adjective,51
+
+==================================================
+OVERALL SUMMARY (Per Participant)
+==================================================
+
+Inter-Annotator Agreement
+Krippendorff Alpha,0.6757
+Full agreement (out of 100 sentences),71
+
+Translator,Total,Match Orig,Match New,Expression Match,Makes Sense Yes,With Adj Orig,With Adj New,Without Adj Orig,Without Adj New
+Deepl,83,51,59,46,58,29,32,22,27
+Google,82,59,68,55,67,27,30,32,38
+Gpt-4o,79,75,67,63,73,35,35,40,32
+Microsoft,80,60,65,60,68,30,30,30,35
+Systran,72,41,40,39,35,23,22,18,18
+TOTAL,396,286,299,263,301,144,149,142,150
+%,,71.5%,74.8%,65.8%,75.2%,73.5%,76.0%,69.6%,73.5%
+
+MISMATCH ANALYSIS
+
+Total mismatched sentences,38
+Mismatch indices,"[1, 4, 5, 7, 9, 18, 20, 22, 23, 24, 25, 28, 32, 35, 40, 41, 42, 43, 44, 49, 50, 51, 52, 55, 56, 58, 59, 72, 74, 79, 80, 90, 93, 94, 95, 97, 99, 100]"
+
+Mismatch distribution by original gender
+Gender,Count,Percentage
+DIVERSE,4,4.1%
+FEMININE,56,57.7%
+MASCULINE,37,38.1%
+
+Detailed Mismatches
+CSV Index,Translator,Gender Value,Original,Old,New,Adjective
+1,Google,idk,FEMININE,MASCULINE,MASCULINE,Yes
+4,Deepl,f,FEMININE,UNKNOWN,MASCULINE,Yes
+5,Microsoft,f,FEMININE,MASCULINE,MASCULINE,No
+7,Google,idk,MASCULINE,MASCULINE,MASCULINE,Yes
+9,Google,f,FEMININE,MASCULINE,MASCULINE,No
+18,Systran,idk,FEMININE,MASCULINE,MASCULINE,Yes
+18,Systran,n,FEMININE,MASCULINE,MASCULINE,Yes
+20,Deepl,f,MASCULINE,UNKNOWN,MASCULINE,Yes
+20,Deepl,idk,MASCULINE,UNKNOWN,MASCULINE,Yes
+22,Google,m,MASCULINE,UNKNOWN,UNKNOWN,No
+23,Systran,idk,MASCULINE,MASCULINE,MASCULINE,Yes
+23,Systran,f,MASCULINE,MASCULINE,MASCULINE,Yes
+24,Systran,f,FEMININE,MASCULINE,MASCULINE,No
+25,Systran,f,FEMININE,MASCULINE,MASCULINE,Yes
+25,Systran,idk,FEMININE,MASCULINE,MASCULINE,Yes
+28,Microsoft,idk,FEMININE,MASCULINE,MASCULINE,No
+32,Deepl,n,MASCULINE,MASCULINE,MASCULINE,Yes
+35,Google,n,FEMININE,FEMININE,FEMININE,No
+40,Microsoft,idk,FEMININE,MASCULINE,MASCULINE,No
+40,Microsoft,n,FEMININE,MASCULINE,MASCULINE,No
+41,Deepl,f,FEMININE,MASCULINE,MASCULINE,No
+42,Google,idk,FEMININE,UNKNOWN,UNKNOWN,No
+42,Google,m,FEMININE,UNKNOWN,UNKNOWN,No
+43,Google,idk,MASCULINE,MASCULINE,MASCULINE,Yes
+44,Systran,f,FEMININE,MASCULINE,MASCULINE,No
+49,Gpt-4o,f,FEMININE,UNKNOWN,UNKNOWN,No
+50,Systran,n,MASCULINE,FEMININE,FEMININE,No
+51,Deepl,m,DIVERSE,UNKNOWN,UNKNOWN,No
+51,Deepl,idk,DIVERSE,UNKNOWN,UNKNOWN,No
+52,Systran,f,FEMININE,MASCULINE,MASCULINE,No
+55,Systran,m,MASCULINE,UNKNOWN,UNKNOWN,Yes
+56,Deepl,m,MASCULINE,UNKNOWN,UNKNOWN,Yes
+58,Microsoft,idk,MASCULINE,MASCULINE,MASCULINE,Yes
+58,Microsoft,n,MASCULINE,MASCULINE,MASCULINE,Yes
+59,Google,idk,MASCULINE,FEMININE,MASCULINE,Yes
+72,Systran,idk,FEMININE,NEUTER,NEUTER,No
+72,Systran,f,FEMININE,NEUTER,NEUTER,No
+74,Microsoft,idk,FEMININE,NEUTER,NEUTER,Yes
+74,Microsoft,n,FEMININE,NEUTER,NEUTER,Yes
+79,Deepl,idk,FEMININE,MASCULINE,MASCULINE,No
+80,Gpt-4o,f,FEMININE,UNKNOWN,UNKNOWN,No
+90,Deepl,f,FEMININE,MASCULINE,MASCULINE,Yes
+93,Systran,idk,FEMININE,MASCULINE,MASCULINE,Yes
+93,Systran,n,FEMININE,MASCULINE,MASCULINE,Yes
+94,Systran,f,MASCULINE,UNKNOWN,UNKNOWN,Yes
+94,Systran,idk,MASCULINE,UNKNOWN,UNKNOWN,Yes
+94,Systran,n,MASCULINE,UNKNOWN,UNKNOWN,Yes
+95,Systran,n,FEMININE,MASCULINE,MASCULINE,No
+97,Gpt-4o,m,MASCULINE,UNKNOWN,UNKNOWN,No
+99,Microsoft,m,MASCULINE,UNKNOWN,UNKNOWN,No
+100,Deepl,idk,FEMININE,MASCULINE,MASCULINE,Yes
+

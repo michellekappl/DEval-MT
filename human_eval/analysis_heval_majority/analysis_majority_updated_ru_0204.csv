@@ -1,0 +1,150 @@
+EXPLANATION
+Match Original: human annotated gender matches the gender in the German sentence
+" (then the MT translated the gender correctly, participants dont see the German version)"
+Match New: human annotated gender matches the new alignment machine gender annotation
+Expression Match: participants agree that the expression matches the subject in the sentence
+Makes Sense Yes: participants agree that the sentence makes sense
+With/out Adj: statistics for sentences with/without adjectives for German original gender and new alignment annotation
+
+Language,ru
+Date,0204
+Analysis Method,Majority Vote
+Number of participants,5
+Total sentences,100
+Sentences with adjective,47
+Sentences without adjective,53
+
+Inter-Annotator Agreement
+Krippendorff Alpha,0.3850
+Full agreement (out of 100 sentences),29
+
+==================================================
+ALL DATA (Majority Vote)
+==================================================
+
+SUMMARY TABLE
+Translator,Total Sentences,Match Orig,Match New,Expression Match,Makes Sense Yes,With Adj Orig,With Adj New,Without Adj Orig,Without Adj New
+Deepl,21,12,13,16,18,4,6,8,7
+Google,21,11,12,16,19,4,6,7,6
+Gpt-4o,20,12,14,19,19,7,8,5,6
+Microsoft,20,13,10,15,14,5,4,8,6
+Systran,18,11,12,14,13,4,5,7,7
+TOTAL,100,59,61,80,83,24,29,35,32
+%,,59.0%,61.0%,80.0%,83.0%,51.1%,61.7%,66.0%,60.4%
+
+MISMATCH ANALYSIS
+
+Total mismatched sentences,39
+Mismatch indices,"[2, 3, 11, 12, 20, 23, 24, 25, 32, 33, 40, 43, 44, 45, 48, 51, 53, 56, 59, 60, 61, 67, 68, 73, 74, 75, 76, 78, 80, 84, 85, 86, 89, 90, 92, 93, 94, 98, 99]"
+
+Mismatch distribution by original gender
+Gender,Count,Percentage
+f,21,53.8%
+m,16,41.0%
+n,2,5.1%
+
+Detailed Mismatches
+CSV Index,Translator,Majority Gender,Original,Old,New,Adjective
+2,Microsoft,f,f,m,m,No
+3,Microsoft,m,m,f,f,Yes
+11,Gpt-4o,n,m,m,m,Yes
+12,Deepl,m,m,f,f,Yes
+20,Gpt-4o,n,m,u,m,Yes
+23,Microsoft,n,f,m,m,No
+24,Microsoft,m,m,u,u,No
+25,Google,n,f,u,u,No
+32,Google,n,m,m,m,No
+33,Deepl,u,f,f,f,Yes
+40,Google,f,f,m,m,No
+43,Systran,f,f,m,m,No
+44,Microsoft,n,f,m,m,No
+45,Gpt-4o,n,f,m,m,No
+48,Systran,idk,f,m,m,Yes
+51,Deepl,u,f,m,m,Yes
+53,Gpt-4o,f,f,m,m,Yes
+56,Deepl,f,f,u,u,No
+59,Microsoft,n,f,m,m,Yes
+60,Gpt-4o,n,m,m,m,No
+61,Microsoft,u,m,m,m,Yes
+67,Google,n,m,f,f,Yes
+68,Google,u,m,m,m,Yes
+73,Systran,f,f,m,m,No
+74,Gpt-4o,n,m,u,u,No
+75,Systran,u,m,m,m,Yes
+76,Deepl,n,n,f,f,No
+78,Deepl,m,f,u,u,No
+80,Microsoft,u,f,m,m,Yes
+84,Google,u,m,m,m,Yes
+85,Microsoft,m,m,u,u,No
+86,Google,n,m,m,m,Yes
+89,Deepl,u,f,m,m,No
+90,Google,m,f,u,u,Yes
+92,Systran,u,f,m,m,Yes
+93,Google,n,n,u,u,No
+94,Systran,f,f,m,m,No
+98,Microsoft,m,m,u,u,No
+99,Deepl,n,f,u,u,No
+
+
+
+==================================================
+FILTERED DATA (Majority makesense=yes)
+==================================================
+
+Total sentences analyzed,83
+
+SUMMARY TABLE
+Translator,Total Sentences,Match Orig,Match New,Expression Match,Makes Sense Yes,With Adj Orig,With Adj New,Without Adj Orig,Without Adj New
+Deepl,18,10,12,14,18,3,5,7,7
+Google,19,11,11,15,19,4,5,7,6
+Gpt-4o,19,11,14,18,19,6,8,5,6
+Microsoft,14,10,7,13,14,3,3,7,4
+Systran,13,9,9,10,13,4,4,5,5
+TOTAL,83,51,53,70,83,20,25,31,28
+%,,61.4%,63.9%,84.3%,100.0%,57.1%,71.4%,64.6%,58.3%
+Δ vs ALL,,+2.4%,+2.9%,+4.3%,+17.0%,+6.1%,+9.7%,-1.5%,-2.0%
+
+MISMATCH ANALYSIS
+
+Total mismatched sentences,30
+Mismatch indices,"[2, 11, 12, 20, 23, 24, 25, 32, 33, 40, 43, 44, 45, 48, 56, 59, 60, 67, 68, 73, 74, 78, 84, 85, 86, 89, 93, 94, 98, 99]"
+
+Mismatch distribution by original gender
+Gender,Count,Percentage
+f,16,53.3%
+m,13,43.3%
+n,1,3.3%
+
+Detailed Mismatches
+CSV Index,Translator,Majority Gender,Original,Old,New,Adjective
+2,Microsoft,f,f,m,m,No
+11,Gpt-4o,n,m,m,m,Yes
+12,Deepl,m,m,f,f,Yes
+20,Gpt-4o,n,m,u,m,Yes
+23,Microsoft,n,f,m,m,No
+24,Microsoft,m,m,u,u,No
+25,Google,n,f,u,u,No
+32,Google,n,m,m,m,No
+33,Deepl,u,f,f,f,Yes
+40,Google,f,f,m,m,No
+43,Systran,f,f,m,m,No
+44,Microsoft,n,f,m,m,No
+45,Gpt-4o,n,f,m,m,No
+48,Systran,idk,f,m,m,Yes
+56,Deepl,f,f,u,u,No
+59,Microsoft,n,f,m,m,Yes
+60,Gpt-4o,n,m,m,m,No
+67,Google,n,m,f,f,Yes
+68,Google,u,m,m,m,Yes
+73,Systran,f,f,m,m,No
+74,Gpt-4o,n,m,u,u,No
+78,Deepl,m,f,u,u,No
+84,Google,u,m,m,m,Yes
+85,Microsoft,m,m,u,u,No
+86,Google,n,m,m,m,Yes
+89,Deepl,u,f,m,m,No
+93,Google,n,n,u,u,No
+94,Systran,f,f,m,m,No
+98,Microsoft,m,m,u,u,No
+99,Deepl,n,f,u,u,No
+

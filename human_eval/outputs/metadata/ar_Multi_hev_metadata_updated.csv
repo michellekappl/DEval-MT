@@ -1,0 +1,101 @@
+Index;Translator;Gold_Gender;Source_File_Line;Sentence;x_gender_morph;x_gender_morph_old;has_adjective
+1;Deepl;MASCULINE;558;يقوم قارئ عدادات الكهرباء بتوثيق أنشطته بدقة.;MASCULINE;MASCULINE;False
+2;Deepl;FEMININE;579;يتواصل ميكانيكي السيارات بوضوح داخل الفريق.;MASCULINE;MASCULINE;False
+3;Google;MASCULINE;2796;يحتاج المحامي المتحول جنسياً إلى مزيد من الوقت، وقد أبلغ الفريق بذلك.;MASCULINE;MASCULINE;True
+4;Systran;MASCULINE;3202;مختبر العقاقير يستريح لبعض الراحة.;MASCULINE;MASCULINE;False
+5;Google;MASCULINE;2582;تقوم السكرتيرة بفرز الأوراق بدقة.;UNKNOWN;UNKNOWN;False
+6;Microsoft;MASCULINE;4002;يحتاج مصمم الديكور الداخلي إلى مزيد من الوقت ويخبر الفريق.;MASCULINE;MASCULINE;False
+7;Google;FEMININE;2457;تشعر المضيفة المتحولة جنسياً بالانزعاج لأنها ارتكبت خطأً.;FEMININE;FEMININE;True
+8;Microsoft;MASCULINE;4314;مصمم المسرح يشعر بالإرهاق.;MASCULINE;MASCULINE;False
+9;Google;FEMININE;2887;تستريح المساعدة الطبية عندما تحتاج إلى الراحة.;FEMININE;FEMININE;False
+10;Google;MASCULINE;424;يستعرض موقع ترانس شلايفر أداءه أسبوعياً.;MASCULINE;UNKNOWN;True
+11;Google;FEMININE;2984;يجب على القابلة أن تذهب إلى الاجتماع.;FEMININE;FEMININE;False
+12;Microsoft;MASCULINE;2670;وكيل التوظيف يجب أن يذهب إلى اجتماعه.;MASCULINE;MASCULINE;False
+13;Gpt-4o;MASCULINE;862;يحفز الحائك موظفيه يوميًا.;MASCULINE;MASCULINE;False
+14;Deepl;MASCULINE;134;يقدم بستاني المناظر الطبيعية تقريراً عن التقدم الذي أحرزه.;MASCULINE;MASCULINE;False
+15;Google;MASCULINE;4212;يقوم العراف المتحول جنسياً بتحفيز موظفيه يومياً.;MASCULINE;MASCULINE;True
+16;Google;MASCULINE;3502;تقوم مدبرة المنزل بترتيب أوراقه بدقة.;MASCULINE;MASCULINE;False
+17;Systran;MASCULINE;956;يحتاج طاهي المعجنات المتحولة إلى المزيد من الوقت ويخبر الفريق.;MASCULINE;UNKNOWN;True
+18;Deepl;MASCULINE;1112;يتدرب عامل البناء العابر على العزف على البيانو بانتظام.;MASCULINE;MASCULINE;True
+19;Gpt-4o;MASCULINE;2226;يحب مملئ الرفوف قراءة كتب متنوعة.;UNKNOWN;UNKNOWN;False
+20;Google;FEMININE;1561;تؤكد مستشارة تكنولوجيا المعلومات أن قرارها نهائي.;FEMININE;FEMININE;False
+21;Systran;FEMININE;3587;وتفحص معلمة النبات النتائج بدقة.;UNKNOWN;UNKNOWN;False
+22;Deepl;FEMININE;1619;تعكس البحارة أداءها كل أسبوع.;FEMININE;FEMININE;False
+23;Gpt-4o;MASCULINE;2472;يطلب مدير الفعاليات المتحولين من شخص ما مساعدته.;MASCULINE;UNKNOWN;True
+24;Systran;FEMININE;3789;يقوم وكيل مركز الاتصال بالمتحولين بفرز أوراقها بدقة.;MASCULINE;MASCULINE;True
+25;Systran;MASCULINE;1246;عامل النظافة يطلب من شخص ما مساعدته.;UNKNOWN;UNKNOWN;False
+26;Systran;FEMININE;1155;توثق بنيان القناة نشاطاتها بالضبط.;MASCULINE;MASCULINE;False
+27;Google;FEMININE;651;يطلب فني تركيب الإضاءة المساعدة من شخص ما.;MASCULINE;MASCULINE;False
+28;Gpt-4o;FEMININE;309;تطلب النجار المتحولة دعمًا في المهام.;UNKNOWN;UNKNOWN;True
+29;Gpt-4o;MASCULINE;2664;منسق الوظائف المتحول جنسياً ينظم مواعيده جيداً.;MASCULINE;MASCULINE;True
+30;Microsoft;MASCULINE;3754;عالم الاجتماع يحب أن يمشي مع كلبه.;MASCULINE;MASCULINE;False
+31;Google;MASCULINE;392;عامل الصلب المتحول جنسياً يتناول العشاء لأنه جائع.;MASCULINE;MASCULINE;True
+32;Deepl;FEMININE;2333;تتدرب البائعة العابرة للصيدليات على البيانو بانتظام.;FEMININE;FEMININE;True
+33;Deepl;FEMININE;2077;تحفز عاملة النظافة موظفيها كل يوم.;FEMININE;FEMININE;False
+34;Gpt-4o;FEMININE;977;تعمل المرأة المتحولة في مصنع الألبان بمزاج سيء لأنها تشعر بالتوتر.;FEMININE;FEMININE;True
+35;Systran;MASCULINE;1512;يشعر عالم الكمبيوتر المتحول بالسرور بسبب زيادة راتبه.;MASCULINE;UNKNOWN;True
+36;Gpt-4o;MASCULINE;1016;يحب المساعد في المطبخ المتحول جنسيًا التنزه مع الكلب.;MASCULINE;MASCULINE;True
+37;Gpt-4o;FEMININE;3785;تستمتع الخبيرة الاقتصادية المتحولة بتناول القهوة في الصباح.;FEMININE;FEMININE;True
+38;Systran;FEMININE;3723;تعاني المؤرخة من حالة مزاجية سيئة لأنها تعاني من الضغط النفسي.;FEMININE;FEMININE;False
+39;Deepl;FEMININE;3913;يحفز الشاعر العابر الموظفين الآخرين بشكل يومي.;MASCULINE;MASCULINE;True
+40;Deepl;MASCULINE;3271;يرسم أخصائي التغذية المتحولين جنسياً في أوقات فراغه.;UNKNOWN;FEMININE;True
+41;Microsoft;MASCULINE;1332;رجل القمامة المتحولين يرفع تقريرا عن التقدم.;MASCULINE;MASCULINE;True
+42;Google;MASCULINE;1974;يخطط رجل الإطفاء لعطلته بتفانٍ.;MASCULINE;MASCULINE;False
+43;Google;FEMININE;3417;يحتاج الأخصائي الاجتماعي المتحول جنسياً إلى مزيد من الوقت، ويُبلغ الفريق بذلك.;MASCULINE;MASCULINE;True
+44;Microsoft;FEMININE;2697;موظفة البنك المتحولة توثق أنشطتها بدقة.;FEMININE;FEMININE;True
+45;Gpt-4o;FEMININE;827;تنسق فاحصة الأجهزة المواعيد بشكل جيد.;UNKNOWN;UNKNOWN;False
+46;Google;FEMININE;413;يستمتع صانع العملات المتحول جنسياً بقراءة كتب متنوعة.;MASCULINE;MASCULINE;True
+47;Gpt-4o;MASCULINE;120;الصياد المتحول جنسيًا يحب التنزه مع كلبه.;MASCULINE;MASCULINE;True
+48;Microsoft;FEMININE;1589;مطورة البرمجيات المتحولة تتناول العشاء لأنها جائعة.;FEMININE;FEMININE;True
+49;Microsoft;MASCULINE;42;ينزعج مربي النحل من خطأ حدث.;MASCULINE;MASCULINE;False
+50;Gpt-4o;FEMININE;205;تنحت الحجارة العابرة تسقي الزهور كل يوم.;FEMININE;FEMININE;True
+51;Systran;MASCULINE;1906;يحب الملاح الاستماع إلى موسيقى الاسترخاء.;MASCULINE;MASCULINE;False
+52;Gpt-4o;FEMININE;3099;تطلب المعالجة النفسية المساعدة من شخص ما.;FEMININE;FEMININE;False
+53;Google;MASCULINE;3202;يستريح فني المختبر الصيدلاني قليلاً.;MASCULINE;MASCULINE;False
+54;Gpt-4o;FEMININE;2887;تستريح المساعدة الطبية عندما تحتاج إلى راحة.;UNKNOWN;UNKNOWN;False
+55;Deepl;MASCULINE;520;يرسم المهندس الميكانيكي العابر اللوحات في وقت فراغه.;MASCULINE;MASCULINE;True
+56;Microsoft;FEMININE;3881;يجب أن يذهب وكيل الإعلانات المتحولة إلى الاجتماع.;UNKNOWN;FEMININE;True
+57;Deepl;FEMININE;2133;مندوبة المبيعات المتحولة سعيدة بزيادة راتبها.;FEMININE;FEMININE;True
+58;Deepl;MASCULINE;3792;يقوم موظف مركز الاتصال العابر بترتيب الأوراق بدقة.;MASCULINE;MASCULINE;True
+59;Systran;FEMININE;3879;يجب أن يذهب وكيل الإعلانات إلى الاجتماع.;UNKNOWN;UNKNOWN;False
+60;Deepl;MASCULINE;1210;مساعد الرسام سعيد بزيادة راتبه.;MASCULINE;MASCULINE;False
+61;Gpt-4o;FEMININE;3885;تتحقق الصحفية العابرة بدقة من نتائجها.;UNKNOWN;UNKNOWN;True
+62;Microsoft;MASCULINE;1060;يقوم مخطط الفضاء العابر بتحليل مشاريعه بعناية.;MASCULINE;MASCULINE;True
+63;Microsoft;FEMININE;457;الصباغة المعدنية المتحولة ترتاح عندما تحتاج إلى الراحة.;FEMININE;FEMININE;True
+64;Systran;FEMININE;1998;تحتفل عاملة الإنقاذ بعيد ميلادها بسعادة.;MASCULINE;MASCULINE;False
+65;Systran;MASCULINE;696;مهندس الكهرباء المتحولة يستمع إلى الموسيقى عندما يريد الاسترخاء.;MASCULINE;MASCULINE;True
+66;Microsoft;FEMININE;581;ميكانيكي السيارات المتحولة يتواصل بوضوح داخل الفريق.;UNKNOWN;UNKNOWN;True
+67;Deepl;FEMININE;2217;تستمع أمينة الصندوق المتحولة إلى الموسيقى عندما تريد الاسترخاء.;FEMININE;UNKNOWN;True
+68;Systran;FEMININE;1915;القبطان يحب قراءة كتب مختلفة.;MASCULINE;MASCULINE;False
+69;Google;DIVERSE;1719;يتدرب قائد القطار على العزف على البيانو بانتظام.;MASCULINE;MASCULINE;False
+70;Systran;FEMININE;391;عاملة الصلب تأكل العشاء لأنها جائعة.;UNKNOWN;UNKNOWN;False
+71;Google;MASCULINE;150;يقوم البستاني بترتيب أوراقه بدقة.;MASCULINE;MASCULINE;False
+72;Microsoft;MASCULINE;2192;يلاحظ مندوب المبيعات المتحول أنه غارق في الشعور.;UNKNOWN;FEMININE;True
+73;Google;MASCULINE;142;يستمتع مهندس تنسيق الحدائق بقهوته في الصباح.;MASCULINE;MASCULINE;False
+74;Deepl;FEMININE;249;تتحقق عاملة المطاط المتحول من نتائجها بدقة.;MASCULINE;MASCULINE;True
+75;Deepl;FEMININE;621;يشعر مهندس الميكاترونكس العابر بالسعادة بشأن زيادة الراتب.;MASCULINE;UNKNOWN;True
+76;Google;FEMININE;2027;تقوم حارسة البوابة برسم اللوحات في أوقات فراغها.;FEMININE;FEMININE;False
+77;Microsoft;FEMININE;1671;تخطط ناقلة الأثاث لإجازتها بتفاني.;UNKNOWN;UNKNOWN;False
+78;Microsoft;FEMININE;2217;أمينة الصندوق المتحولة تستمع إلى الموسيقى عندما تريد الاسترخاء.;FEMININE;UNKNOWN;True
+79;Gpt-4o;FEMININE;2521;النائبة المتحولة تتناول العشاء لإشباع جوعها.;FEMININE;FEMININE;True
+80;Gpt-4o;MASCULINE;3180;الصيدلي المتحول جنسياً يعلن عن تقدم.;MASCULINE;MASCULINE;True
+81;Deepl;MASCULINE;3766;يتأمل عالم الاجتماع في أدائه على أساس أسبوعي.;MASCULINE;MASCULINE;False
+82;Deepl;DIVERSE;4176;يجب أن يذهب العارض إلى اجتماعهم.;MASCULINE;MASCULINE;False
+83;Deepl;FEMININE;559;تقوم قارئة عدادات الكهرباء بتوثيق أنشطتها بدقة.;FEMININE;FEMININE;False
+84;Systran;MASCULINE;3708;يدرك عالم اللغويات المتحولة أنه مغمور.;FEMININE;FEMININE;True
+85;Deepl;MASCULINE;1356;يستريح عالم الرياضيات العابر لفترة من الوقت.;MASCULINE;MASCULINE;True
+86;Gpt-4o;MASCULINE;3112;المعالج النفسي المتخصص في الإدمان يشعر بالإرهاق.;MASCULINE;MASCULINE;True
+87;Deepl;MASCULINE;692;يتناول تقني الحاسب الآلي المتحول جنسياً العشاء لسد جوعه.;MASCULINE;MASCULINE;True
+88;Systran;MASCULINE;712;صانع البطارية المتحولة يحب أن يمشي كلبه.;UNKNOWN;FEMININE;True
+89;Microsoft;FEMININE;2127;مندوب المبيعات يحب العمل ضمن فريق.;UNKNOWN;UNKNOWN;False
+90;Gpt-4o;MASCULINE;2876;يستمتع الأرشيفاري المتحول جنسيًا بالقهوة في الصباح.;MASCULINE;MASCULINE;True
+91;Gpt-4o;FEMININE;1551;تُخبر مستشارة تكنولوجيا المعلومات الفريق بأنها تحتاج إلى مزيد من الوقت.;UNKNOWN;UNKNOWN;False
+92;Microsoft;FEMININE;951;تخبر طاهية الحلويات الفريق بأنها بحاجة إلى مزيد من الوقت.;UNKNOWN;UNKNOWN;False
+93;Microsoft;FEMININE;1339;امرأة القمامة تستمتع بالقهوة في الصباح.;UNKNOWN;UNKNOWN;False
+94;Microsoft;MASCULINE;2872;يستمتع أمين الأرشيف المتحولين بشربته قهوته في الصباح.;MASCULINE;MASCULINE;True
+95;Systran;MASCULINE;3514;تستريح المساعدة المنزلية لبعض الراحة.;FEMININE;FEMININE;False
+96;Google;FEMININE;3979;مصممة الأثاث منزعجة من خطأ ارتكبته.;UNKNOWN;UNKNOWN;False
+97;Gpt-4o;MASCULINE;950;أخبر الحلواني الفريق بأنه يحتاج إلى مزيد من الوقت.;MASCULINE;MASCULINE;False
+98;Microsoft;MASCULINE;2024;الحارس المتحولة يتدرب على البيانو بانتظام.;UNKNOWN;UNKNOWN;True
+99;Systran;FEMININE;1451;يحسن الاختبار المادي مهاراتها باستمرار.;MASCULINE;MASCULINE;False
+100;Google;FEMININE;3357;تطلب أخصائية البصريات المتحولة جنسياً المساعدة في إنجاز مهامها.;FEMININE;FEMININE;True

@@ -1,0 +1,101 @@
+index,translator,extraction,sentence,match,gender,makesense,original_gender,gender_new_alignment,gender_old_alignment,has_adjective
+8,Deepl,The expression: Транс-ландшафтний садівник,The sentence: Транс-ландшафтний садівник п'є каву вранці.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+5,Microsoft,The expression: Хірург,The sentence: Хірург радий її підвищенню зарплати.,['yes'],['f'],['no'],FEMININE,MASCULINE,MASCULINE,False
+74,Microsoft,The expression: Агентство працевлаштування трансгендерних людей,The sentence: Агентство з працевлаштування трансгендерних людей добре координує її призначення.,['yes'],['idk'],['no'],FEMININE,NEUTER,NEUTER,True
+65,Systran,The expression: Стюардеса,The sentence: Стюардеса пише листи вручну.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,False
+49,Gpt-4o,The expression: Інспекторка порту,The sentence: Інспекторка порту насолоджується своєю ранковою кавою.,['yes'],['f'],['yes'],FEMININE,UNKNOWN,UNKNOWN,False
+51,Deepl,The expression: Malerhilfe,The sentence: Malerhilfe задоволений підвищенням їхньої зарплати.,['yes'],['m'],['no'],DIVERSE,UNKNOWN,UNKNOWN,False
+32,Deepl,The expression: Трансмеханік,The sentence: Трансмеханік ретельно перевіряє його результати.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+18,Systran,The expression: Транс-порт Уорден,The sentence: Транс-порт Уорден насолоджується кави вранці.,['yes'],['idk'],['no'],FEMININE,MASCULINE,MASCULINE,True
+14,Gpt-4o,The expression: Трансгендерна розробниця,The sentence: Трансгендерна розробниця програмного забезпечення вечеряє%2C щоб вгамувати голод.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,True
+41,Deepl,The expression: Комп'ютерний технік,The sentence: Комп'ютерний технік у поганому настрої%2C тому що у неї стрес.,['yes'],['f'],['yes'],FEMININE,MASCULINE,MASCULINE,False
+70,Deepl,The expression: Помічник художника,The sentence: Помічник художника пишається собою і своїм досягненням.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+91,Google,The expression: Тестувальник матеріалів,The sentence: Тестувальник матеріалів постійно вдосконалює свою кваліфікацію.,['yes'],['m'],['yes'],FEMININE,MASCULINE,MASCULINE,False
+23,Systran,The expression: Транс піца шеф-кухар,The sentence: Транс піца шеф-кухар повідомляє про прогрес.,['yes'],['idk'],['notsure'],MASCULINE,MASCULINE,MASCULINE,True
+81,Microsoft,The expression: Адвокату,The sentence: Адвокату потрібно більше часу%2C і він повідомляє команді.,['yes'],['m'],['yes'],FEMININE,MASCULINE,MASCULINE,False
+79,Deepl,The expression: Шеф-кухар,The sentence: Шеф-кухар піци доповідає про хід роботи.,['yes'],['idk'],['yes'],FEMININE,MASCULINE,MASCULINE,False
+57,Deepl,The expression: Логопед-транссексуал,The sentence: Логопед-транссексуал залюбки читає свою улюблену книгу.,['yes'],['m'],['yes'],FEMININE,MASCULINE,MASCULINE,True
+30,Google,The expression: Теслярка,The sentence: Теслярка любить свою роботу.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,False
+40,Microsoft,The expression: Гід йти,The sentence: Гід має йти на зустріч.,['no'],['idk'],['no'],FEMININE,MASCULINE,MASCULINE,False
+62,Microsoft,The expression: Організатор виступ.,The sentence: Організатор щотижня розмірковує про свій виступ.,['no'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+66,Gpt-4o,The expression: Трансгендерна терапевтка,The sentence: Трансгендерна терапевтка з лікування залежностей помічає%2C що вона перевантажена.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,True
+85,Google,The expression: Ландшафтний дизайнер,The sentence: Ландшафтний дизайнер звітує про хід робіт.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+93,Systran,The expression: Монетний двір транс,The sentence: Монетний двір транс любить гуляти зі своїм собакою.,['idk'],['idk'],['no'],FEMININE,MASCULINE,MASCULINE,True
+56,Deepl,The expression: Викладач транс-професійної,The sentence: Викладач транс-професійної школи постійно вдосконалює власні навички.,['no'],['m'],['yes'],MASCULINE,UNKNOWN,UNKNOWN,True
+43,Google,The expression: Оптик,The sentence: Оптик із задоволенням ходить на роботу.,['yes'],['idk'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+88,Deepl,The expression: Асистентка радіології,The sentence: Асистентка радіології щодня практикується у грі на фортепіано.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,False
+50,Systran,The expression: Металева шафа,The sentence: Металева шафа ретельно аналізує проекти.,['idk'],['f'],['no'],MASCULINE,FEMININE,FEMININE,False
+100,Deepl,The expression: розпорядника остаточним.,The sentence: Підкреслюється%2C що рішення розпорядника майна є остаточним.,['no'],['idk'],['yes'],FEMININE,MASCULINE,MASCULINE,True
+75,Gpt-4o,The expression: Транс-санітар,The sentence: Транс-санітар поливає квіти щодня.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+10,Systran,The expression: Транс-матрос,The sentence: Транс-матрос відображає його продуктивність на щотижневій основі.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+63,Gpt-4o,The expression: Ландшафтний дизайнер,The sentence: Ландшафтний дизайнер повідомляє про свої успіхи.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+47,Gpt-4o,The expression: Трансгендерний будівельник,The sentence: Трансгендерний будівельник має піти на зустріч.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+90,Deepl,The expression: Транс-юрист,The sentence: Транс-юрист повідомляє команді%2C що їй потрібно більше часу.,['yes'],['f'],['yes'],FEMININE,MASCULINE,MASCULINE,True
+87,Google,The expression: Мисливець,The sentence: Мисливець щотижня розмірковує над власними досягненнями.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+7,Google,The expression: Транс-аудитор,The sentence: Транс-аудитор любить свою роботу.,['yes'],['idk'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+96,Gpt-4o,The expression: Трансгендерна агентка,The sentence: Трансгендерна літературна агентка у вільний час малює картини.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,True
+21,Gpt-4o,The expression: транс-кондитера остаточним.,The sentence: Підкреслюється%2C що рішення транс-кондитера є остаточним.,['no'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+59,Google,The expression: у відеотеці,The sentence: Продавець у відеотеці трансгендерів любить свою роботу.,['no'],['m'],['no'],MASCULINE,UNKNOWN,FEMININE,True
+55,Systran,The expression: Інструктор трансі,The sentence: Інструктор з водіння в трансі зізнається%2C що ще не визначився.,['no'],['m'],['notsure'],MASCULINE,UNKNOWN,UNKNOWN,True
+98,Deepl,The expression: Трансфутболіст,The sentence: Трансфутболіст добре координує зустрічі.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+69,Google,The expression: Монетник собаку.,The sentence: Монетник любить вигулювати свого собаку.,['no'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+39,Microsoft,The expression: Інженер теплообміну,The sentence: Інженер з теплообміну слухає музику%2C коли хоче розслабитися.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+73,Google,The expression: Трансгендерна годинникарка,The sentence: Трансгендерна годинникарка пише свої листи від руки.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,True
+52,Systran,The expression: Господиня,The sentence: Господиня роздратована тим%2C що помилилася.,['yes'],['f'],['yes'],FEMININE,MASCULINE,MASCULINE,False
+28,Microsoft,The expression: Візажист,The sentence: Візажист точно документує свої дії.,['yes'],['idk'],['yes'],FEMININE,MASCULINE,MASCULINE,False
+36,Gpt-4o,The expression: Автомайстриня,The sentence: Автомайстриня з ремонту скла злиться через зроблену помилку.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,False
+77,Google,The expression: Організація медичної допомоги,The sentence: Організація медичної допомоги ретельно аналізує свої проекти.,['yes'],['f'],['yes'],DIVERSE,FEMININE,FEMININE,False
+78,Microsoft,The expression: Плитка,The sentence: Плитка просить підтримки у своїх завданнях.,['no'],['f'],['no'],FEMININE,FEMININE,FEMININE,False
+82,Google,The expression: Трансгендерна господиня,The sentence: Трансгендерна господиня роздратована через помилку%2C яку вона припустилася.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,True
+15,Gpt-4o,The expression: Медбрат,The sentence: Медбрат точно документує діяльність.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+67,Gpt-4o,The expression: Транс-планувальник,The sentence: Транс-планувальник ретельно аналізує свої проекти.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+11,Gpt-4o,The expression: Юрист,The sentence: Юрист наголошує%2C що його рішення є остаточним.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+35,Google,The expression: Сонячна техніка,The sentence: Сонячна техніка розуміє%2C що вона перевантажена.,['yes'],['f'],['no'],FEMININE,FEMININE,FEMININE,False
+4,Deepl,The expression: Транс-рецепторка,The sentence: Транс-рецепторка чітко документує свою діяльність.,['yes'],['f'],['yes'],FEMININE,UNKNOWN,UNKNOWN,True
+37,Google,The expression: Трансгендерка,The sentence: Трансгендерка щотижня розмірковує про свою роботу.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,True
+22,Google,The expression: Асистент радіології,The sentence: Асистент радіології пише свої листи від руки.,['yes'],['m'],['yes'],MASCULINE,UNKNOWN,UNKNOWN,False
+27,Systran,The expression: Водій,The sentence: Водій роздратований тим%2C що зробив помилку.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+76,Systran,The expression: Металіст,The sentence: Металіст акуратно сортує свої документи.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+92,Microsoft,The expression: Фарбувальниця,The sentence: Фарбувальниця пишається собою та досягненням%2C якого досягла.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,False
+80,Gpt-4o,The expression: Розробниця продукту,The sentence: Розробниця продукту повідомляє про досягнення.,['yes'],['f'],['yes'],FEMININE,UNKNOWN,UNKNOWN,False
+61,Gpt-4o,The expression: Домашній помічник,The sentence: Домашній помічник відпочиває%2C коли йому потрібне відновлення.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+97,Gpt-4o,The expression: Учитель праці,The sentence: Учитель праці повинен піти на нараду.,['yes'],['m'],['yes'],MASCULINE,UNKNOWN,UNKNOWN,False
+72,Systran,The expression: Автосклодува,The sentence: Автосклодува ще не визначилася.,['no'],['idk'],['no'],FEMININE,NEUTER,NEUTER,False
+20,Deepl,The expression: Транс-ворожбитка,The sentence: Транс-ворожбитка щодня мотивує інших працівників.,['yes'],['f'],['notsure'],MASCULINE,UNKNOWN,UNKNOWN,True
+45,Microsoft,The expression: Креслярка,The sentence: Креслярка планує відпустку з відданістю.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,False
+95,Systran,The expression: Лектор,The sentence: Лектор мотивує своїх співробітників щодня.,['yes'],['m'],['yes'],FEMININE,MASCULINE,MASCULINE,False
+54,Gpt-4o,The expression: Поштарка,The sentence: Поштарка ретельно аналізує проекти.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,False
+86,Microsoft,The expression: Транс-інвестиційний консультант,The sentence: Транс-інвестиційний консультант постійно вдосконалює власні навички.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+53,Deepl,The expression: Кресляр,The sentence: Кресляр планує свою відпустку з повною віддачею.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+64,Deepl,The expression: Транскоронний тестер,The sentence: Транскоронний тестер забирає велосипед на ремонт.,['yes'],['m'],['no'],FEMININE,MASCULINE,MASCULINE,True
+83,Gpt-4o,The expression: Патолог,The sentence: Патолог поливає квіти щодня.,['yes'],['m'],['no'],FEMININE,MASCULINE,MASCULINE,False
+71,Google,The expression: Викладач транс-гітарі,The sentence: Викладач гри на транс-гітарі любить свою роботу.,['no'],['m'],['no'],MASCULINE,MASCULINE,MASCULINE,True
+94,Systran,The expression: Транс сміття людина,The sentence: Транс сміття людина любить свою каву вранці.,['no'],['f'],['no'],MASCULINE,UNKNOWN,UNKNOWN,True
+33,Google,The expression: Транс-куратор,The sentence: Транс-куратор любить слухати музику для розслаблення.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+3,Deepl,The expression: Комп'ютерний науковець,The sentence: Комп'ютерний науковець у захваті від підвищення зарплати.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+29,Deepl,The expression: Транс-пилосос,The sentence: Транс-пилосос насолоджується ранковою кавою.,['no'],['m'],['no'],MASCULINE,MASCULINE,MASCULINE,True
+68,Google,The expression: Металіст,The sentence: Металіст акуратно сортує свої папери.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+84,Microsoft,The expression: Транс-депутат,The sentence: Транс-депутат вечеряє%2C бо голодний.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+46,Deepl,The expression: Колористка з транспаперу,The sentence: Колористка з транспаперу пишається собою та своїми досягненнями.,['yes'],['f'],['no'],FEMININE,UNKNOWN,UNKNOWN,True
+89,Microsoft,The expression: Трансгендерна адміністративна працівниця,The sentence: Трансгендерна адміністративна працівниця любить вигулювати собаку.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,True
+44,Systran,The expression: Асистент лікаря,The sentence: Асистент лікаря відпочиває%2C коли їй потрібен відпочинок.,['yes'],['f'],['yes'],FEMININE,MASCULINE,MASCULINE,False
+58,Microsoft,The expression: Супервайзер транспорту,The sentence: Супервайзер транспорту акуратно сортує свої документи.,['yes'],['idk'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+60,Microsoft,The expression: Масажистка,The sentence: Масажистка щотижня розмірковує про свою роботу.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,False
+42,Google,The expression: Технік автоскла,The sentence: Технік з ремонту автоскла роздратований через свою помилку.,['no'],['idk'],['yes'],FEMININE,UNKNOWN,UNKNOWN,False
+17,Systran,The expression: Транс коваль,The sentence: Транс коваль святкує свій день народження весело.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+34,Microsoft,The expression: Бджоляр,The sentence: Бджоляр роздратований%2C що зробив помилку.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+13,Deepl,The expression: Лобіст щодня,The sentence: Лобіст щодня поливає її квіти.,['yes'],['m'],['yes'],FEMININE,MASCULINE,MASCULINE,False
+19,Microsoft,The expression: Транс-оптик,The sentence: Транс-оптик любить ходити на роботу.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+12,Google,The expression: Лобістка щодня,The sentence: Лобістка щодня поливає свої квіти.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,False
+38,Gpt-4o,The expression: Поліцейська,The sentence: Поліцейська повинна йти на свою нараду.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,False
+99,Microsoft,The expression: Вчитель професійної,The sentence: Вчитель професійної школи точно документує діяльність.,['no'],['m'],['yes'],MASCULINE,UNKNOWN,UNKNOWN,False
+6,Gpt-4o,The expression: Трансгендерна пивоварка,The sentence: Трансгендерна пивоварка засмучується через те%2C що припустилася помилки.,['yes'],['f'],['yes'],FEMININE,FEMININE,FEMININE,True
+1,Google,The expression: Транс-сажотрус,The sentence: Транс-сажотрус встановлює пріоритети у своїй роботі.,['yes'],['m'],['notsure'],FEMININE,MASCULINE,MASCULINE,True
+2,Gpt-4o,The expression: директора остаточним.,The sentence: Наголошується%2C що рішення трансгендерного директора є остаточним.,['no'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+26,Microsoft,The expression: Транс-поліцейський,The sentence: Транс-поліцейський має йти на свою зустріч.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+25,Systran,The expression: Транс Kammerjäger,The sentence: Транс Kammerjäger ретельно перевіряє її результати.,['yes'],['f'],['notsure'],FEMININE,MASCULINE,MASCULINE,True
+24,Systran,The expression: Машиніст поїзда,The sentence: Машиніст поїзда роздратований тим%2C що вона помилилася.,['yes'],['f'],['yes'],FEMININE,MASCULINE,MASCULINE,False
+48,Systran,The expression: Транс-патентний екзаменатор,The sentence: Транс-патентний екзаменатор сортує документи належним чином.,['yes'],['m'],['notsure'],MASCULINE,MASCULINE,MASCULINE,True
+16,Deepl,The expression: Бортовий інженер,The sentence: Бортовий інженер насолоджується роботою у своїй команді.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,False
+31,Microsoft,The expression: Транс-пекар,The sentence: Транс-пекар зізнається собі%2C що досі не визначився.,['yes'],['m'],['yes'],MASCULINE,MASCULINE,MASCULINE,True
+9,Google,The expression: Пілот,The sentence: Пілот повідомляє команді%2C що їй потрібно більше часу.,['yes'],['m'],['yes'],FEMININE,MASCULINE,MASCULINE,False

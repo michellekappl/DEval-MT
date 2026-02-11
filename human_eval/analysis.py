@@ -4,7 +4,7 @@ import regex as re
 
 
 class HumanResults:
-    def __init__(self, lang: str, results_id: str = "20260211"):
+    def __init__(self, lang: str, results_id: str = "20260127"):
         self.language = lang
         self.data = self.load_data(results_id)
         self.participants = self.number_of_participants()
@@ -14,7 +14,7 @@ class HumanResults:
 
     def load_data(self, results_id) -> pd.DataFrame:
         og_data = pd.read_csv(f"results-{results_id}/{self.language}-{results_id}.csv")
-        metadata = pd.read_csv(f"outputs/metadata/{self.language}_Multi_hev_metadata.csv", sep=";")
+        metadata = pd.read_csv(f"outputs/metadata/{self.language}_Multi_hev_metadata_updated.csv", sep=";")
 
         data_list = []
         for idx in og_data["index"].unique():
@@ -73,8 +73,8 @@ class HumanResults:
         self.data.to_csv(path, index=False)
 
 
-for lang in ["it", "uk"]:
+for lang in ["es"]:
     results = HumanResults(lang)
 
     print(f"Language: {lang}, Participants: {results.participants}")
-    results.data_to_csv(f"human_eval_{lang}_results_0211.csv")
+    results.data_to_csv(f"heval_updated_{lang}_results_0127.csv")

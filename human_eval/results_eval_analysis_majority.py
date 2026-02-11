@@ -38,13 +38,20 @@ class MajorityVoteAnalyzer:
         
         # Extract language and date from filename
         import re
-        match = re.search(r'human_eval_([a-z]+)_results_([0-9]+)\.csv', csv_file)
+        # Try pattern for heval_updated files first
+        match = re.search(r'heval_updated_([a-z]+)_results_([0-9]+)\.csv', csv_file)
         if match:
             self.language = match.group(1)
             self.date = match.group(2)
         else:
-            self.language = csv_file.replace("human_eval_", "").replace("_results.csv", "")
-            self.date = None
+            # Fall back to original pattern
+            match = re.search(r'human_eval_([a-z]+)_results_([0-9]+)\.csv', csv_file)
+            if match:
+                self.language = match.group(1)
+                self.date = match.group(2)
+            else:
+                self.language = csv_file.replace("human_eval_", "").replace("heval_updated_", "").replace("_results.csv", "")
+                self.date = None
         
         # Compute majority votes for each sentence
         self.majority_votes = self._compute_majority_votes()
@@ -518,17 +525,42 @@ class MajorityVoteAnalyzer:
 
 
 if __name__ == "__main__":
-    # Analyze with majority voting
-    analyzer = MajorityVoteAnalyzer("human_eval_uk_results_0211.csv")
+    import glob
     
-    # Print and save results
-    analyzer.print_summary()
-    #analyzer.print_mismatches()
+    # Find all files starting with heval_updated
+    input_files = glob.glob("heval_updated*.csv")
     
-    # Generate output filename with date
-    output_name = f"analysis_majority_{analyzer.language}"
-    if analyzer.date:
-        output_name += f"_{analyzer.date}"
-    output_name += ".csv"
-    
-    analyzer.save_to_csv(output_name)
+    if not input_files:
+        print("No files found starting with 'heval_updated'")
+    else:
+        print(f"Found {len(input_files)} files to process:\n")
+        for file in input_files:
+            print(f"  - {file}")
+        print("\n" + "="*80 + "\n")
+        
+        # Process each file
+        for csv_file in input_files:
+            print(f"\nProcessing: {csv_file}")
+            print("="*80)
+            
+            try:
+                # Analyze with majority voting
+                analyzer = MajorityVoteAnalyzer(csv_file)
+                
+                # Print and save results
+                analyzer.print_summary()
+                #analyzer.print_mismatches()
+                
+                # Generate output filename with date
+                output_name = f"analysis_majority_updated_{analyzer.language}"
+                if analyzer.date:
+                    output_name += f"_{analyzer.date}"
+                output_name += ".csv"
+                
+                analyzer.save_to_csv(output_name)
+                print(f"\n✓ Successfully processed {csv_file}")
+                
+            except Exception as e:
+                print(f"\n✗ Error processing {csv_file}: {e}")
+            
+            print("\n" + "="*80 + "\n")
