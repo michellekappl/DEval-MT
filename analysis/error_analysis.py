@@ -71,6 +71,10 @@ class ErrorAnalysis:
       for lang in languages:
          pred_col = self.ds.prediction_columns.get(lang)
 
+         if pred_col is None or pred_col not in df.columns:
+            results_data.append({"language": lang, "total": len(df), "correct": 0, "accuracy": 0.0, "true_error_count": len(df), "unknown_count": 0})
+            continue
+
          prediction_correct = df[
             ((df[self.gold_col] == df[pred_col]) & (df[pred_col] != 'Gender.UNKNOWN')) |  # Exact matches (excluding UNKNOWN preds)
             ((df[self.gold_col] == 'Gender.DIVERSE') & (df[pred_col] == 'Gender.NEUTER'))  # DIVERSE -> NEUTER is correct
@@ -125,18 +129,28 @@ class ErrorAnalysis:
                #continue
          # Create a row for this language
          row_data = {
-            'language': lang,
-            f'{filter_col}':filter_value,
-            'total': total,
-            'correct': correct,
-            'accuracy': accuracy,
-            'true_error_count': total - correct - unknown_count,
-            'unknown_count': unknown_count
+            "language": lang,
+            "sentence_style": filter_value,
+            "total": total,
+            "correct": correct,
+            "accuracy": accuracy,
+            "true_error_count": total - correct - unknown_count,
+            "unknown_count": unknown_count,
          }
 
+         # nur wenn gefiltert wurde:
+         if filter_col is not None:
+            row_data[filter_col] = filter_value
+
+         # Error type counts hinzufügen (wichtig!)
+         if analyze_error_patterns:
+            for error_type, count in error_types.items():
+               row_data[f"error_{error_type.name.lower()}"] = count
+
+
          # Add error type counts
-         for error_type, count in error_types.items():
-            row_data[f'error_{error_type.name.lower()}'] = count
+         # for error_type, count in error_types.items():
+         #    row_data[f'error_{error_type.name.lower()}'] = count
          
          # if filter_col is not None:
          #    row_data[filter_col]=filter_value
