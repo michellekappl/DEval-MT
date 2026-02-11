@@ -17,9 +17,9 @@ from sdk import run_subject_pipeline
 
 
 def example_data(model_name: str) -> DEvalDataset:
-    if os.path.exists(f"{model_name}_processed.csv"):
+    if os.path.exists(f"romantic_name_{model_name}_processed.csv"):
         ds = DEvalDataset.from_csv(
-            f"{model_name}_processed.csv",
+            f"romantic_name_{model_name}_processed.csv",
             text_column="text",
             sep=";",
             translation_columns={
@@ -37,18 +37,18 @@ def example_data(model_name: str) -> DEvalDataset:
         )
         return ds
     else:
-        print(f"{model_name}_processed.csv not found, creating from scratch...")
-        df = pd.read_csv("DEval_dataset.csv", sep=";")
+        print(f"romantic_name_{model_name}_processed.csv not found, creating from scratch...")
+        df = pd.read_csv("Name_Romantic.csv", sep=";")
         ds = DEvalDataset(df, text_column="text")
 
         list_of_es_translations = pd.read_csv(
-            f"translations/es_{model_name}.txt", header=None, sep=";"
+            f"translations/romantic_name/es_{model_name}.txt", header=None, sep=";"
         )[0].tolist()
         list_of_fr_translations = pd.read_csv(
-            f"translations/fr_{model_name}.txt", header=None, sep=";"
+            f"translations/romantic_name/fr_{model_name}.txt", header=None, sep=";"
         )[0].tolist()
         list_of_it_translations = pd.read_csv(
-            f"translations/it_{model_name}.txt", header=None, sep=";"
+            f"translations/romantic_name/it_{model_name}.txt", header=None, sep=";"
         )[0].tolist()
         # list_of_no_translations = pd.read_csv(
         #     f"translations/no_{model_name}.txt", header=None, sep=";"
@@ -56,14 +56,13 @@ def example_data(model_name: str) -> DEvalDataset:
         # list_of_sv_translations = pd.read_csv(
         #     f"translations/sv_{model_name}.txt", header=None, sep=";"
         # )[0].tolist()
-        with open(f"translations/ar_{model_name}.txt", "r", encoding="utf-8") as f:
+        with open(f"translations/romantic_name/ar_{model_name}.txt", "r", encoding="utf-8") as f:
             list_of_ar_translations = [line.strip() for line in f.readlines()]
-        #
-        with open(f"translations/ru_{model_name}.txt", "r", encoding="utf-8") as f:
+        with open(f"translations/romantic_name/ru_{model_name}.txt", "r", encoding="utf-8") as f:
             list_of_ru_translations = [line.strip() for line in f.readlines()]
-        with open(f"translations/uk_{model_name}.txt", "r", encoding="utf-8") as f:
+        with open(f"translations/romantic_name/uk_{model_name}.txt", "r", encoding="utf-8") as f:
             list_of_uk_translations = [line.strip() for line in f.readlines()]
-        with open(f"translations/he_{model_name}.txt", "r", encoding="utf-8") as f:
+        with open(f"translations/romantic_name/he_{model_name}.txt", "r", encoding="utf-8") as f:
             list_of_he_translations = [line.strip() for line in f.readlines()]
 
         ds.add_translations("es", list_of_es_translations, "es")
@@ -112,17 +111,17 @@ def example_data(model_name: str) -> DEvalDataset:
             subject_index_column="x_idx",
             output_prefix="x",
             use_multiprocessing=False,
-            num_predictions=3,  # Run morphological analysis 3 times and use majority voting
+            num_predictions=1,  # Morphological analysis is deterministic, so 1 is enough
         )
 
         return ds
 
 
 if __name__ == "__main__":
-    for model_name in ["gpt-4o", "google", "systran", "microsoft", "deepl"]:
+    for model_name in ["google", "google_llm", "systran", "microsoft", "deepl"]:
         print(f"\n{'='*60}")
         print(f"Processing model: {model_name}")
         print(f"{'='*60}")
         ds1 = example_data(model_name)
-        ds1.df.to_csv(f"{model_name}_processed.csv", sep=";", index=False)
+        ds1.df.to_csv(f"romantic_name_{model_name}_processed.csv", sep=";", index=False)
         print(f"Completed processing {model_name}")

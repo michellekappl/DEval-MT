@@ -21,16 +21,6 @@ groups = {
         [
             Noun(
                 "m",
-                "Freund",
-                "Freundes",
-                nom_pl="Freunde",
-                dat_pl="Freunden",
-            ),
-            Noun("f", "Freundin", nom_pl="Freundinnen"),
-        ],
-        [
-            Noun(
-                "m",
                 "Ehemann",
                 "Ehemannes",
                 nom_pl="Ehemänner",
@@ -47,9 +37,6 @@ groups = {
                 dat_pl="Liebhabern",
             ),
             Noun("f", "Liebhaberin", nom_pl="Liebhaberinnen"),
-        ],
-        [
-            Noun("n", "Date", "Dates", nom_pl="Dates", dat_pl="Dates"),
         ],
     ],
     # "other": [

@@ -2,7 +2,7 @@
 
 
 from systran_translate import translate_text_systran
-from google_translate import translate_text_google
+from google_translate import translate_text_google, translate_text_google_llm
 from deepl_translate import translate_text_deepl
 from microsoft_translate import translate_text_microsoft
 from gpt_translate import translate_text_gpt
@@ -15,20 +15,20 @@ def translate_dataset(
     csv_path: str,
     target: Union[str, List[str]],
     provider: Union[str, List[str]],
-    output_dir: str = "../test_data/translations",
+    output_dir: str = "../translations",
     overwrite_translation: bool = False,
     # gpt_model: str = "gpt-4o-mini"
 ):
     """
     Translates a CSV dataset using specified translation provider(s) and target language(s).
-    Writes translations directly to files. (default folder /test_data/translations)
+    Writes translations directly to files. (default folder ../translations)
     Tracks translation progress in 25% increments.
 
     Args:
         csv_path: Path to CSV file with a 'text' column
         target: Target language(s) - string or list of strings (e.g., "es" or ["es", "fr"])
         provider: Translation provider(s) - "systran", "google", "deepl", "microsoft", or list of these
-        output_dir: Directory to save translation files (default: "../test_data/translations")
+        output_dir: Directory to save translation files (default: "../translations")
         overwrite_translation: If False (default), skips translations that already exist
         gpt_model: GPT model to use if provider is "gpt" (default: "gpt-4o-mini"), also allowed gpt-4o
     """
@@ -97,6 +97,12 @@ def translate_dataset(
                         elif prov == "google":
                             translated_sentence = translate_text_google(sentence, lang)
                             translated_sentence = translated_sentence["translatedText"]
+                        elif prov == "google_llm":
+                            translated_sentence = (
+                                translate_text_google_llm(sentence, lang)
+                                .translations[0]
+                                .translated_text
+                            )
                         elif prov == "deepl":
                             translated_sentence = translate_text_deepl(sentence, lang)
                         elif prov == "microsoft":
