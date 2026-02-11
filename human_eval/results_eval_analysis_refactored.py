@@ -52,11 +52,6 @@ class GenderEvaluationAnalyzer:
         self.mismatches = self._compute_mismatches()
         self.alpha, self.iaa_stats = self._compute_krippendorff_alpha()
         
-        # Compute filtered results (makesense == 'yes' only)
-        self.summary_by_lang_filtered = self._compute_summary(filter_makesense=True)
-        self.mismatches_filtered = self._compute_mismatches(filter_makesense=True)
-        self.alpha_filtered, self.iaa_stats_filtered = self._compute_krippendorff_alpha(filter_makesense=True)
-        
         # Computed properties
         self.sentences_with_adjective = len(self.df[self.df['has_adjective'] == True])
         self.sentences_without_adjective = self.num_sentences - self.sentences_with_adjective
@@ -79,7 +74,7 @@ class GenderEvaluationAnalyzer:
         except:
             return []
     
-    def _compute_krippendorff_alpha(self, filter_makesense: bool = False) -> Tuple[float, Dict]:
+    def _compute_krippendorff_alpha(self) -> Tuple[float, Dict]:
         """Calculate Krippendorff's alpha for inter-annotator agreement."""
         all_items = []
         for _, row in self.df.iterrows():
@@ -87,21 +82,7 @@ class GenderEvaluationAnalyzer:
             if not gender_list:
                 continue
             
-            if filter_makesense:
-                makesense_list = self._parse_json_list(row['makesense'])
-                # Keep all annotators but set to None if makesense != 'yes'
-                filtered_genders = []
-                for i in range(len(gender_list)):
-                    if i < len(makesense_list) and makesense_list[i] == 'yes':
-                        filtered_genders.append(gender_list[i])
-                    else:
-                        filtered_genders.append(None)  # Mark as missing data
-                
-                # Only include if at least one annotator said 'yes'
-                if any(g is not None for g in filtered_genders):
-                    all_items.append(filtered_genders)
-            else:
-                all_items.append(gender_list)
+            all_items.append(gender_list)
         
         if not all_items:
             return None, {}
@@ -136,7 +117,7 @@ class GenderEvaluationAnalyzer:
             'full_agreement_pct': (agreement_count / num_items * 100) if num_items > 0 else 0
         }
     
-    def _compute_summary(self, filter_makesense: bool = False) -> Dict[str, SummaryStatistics]:
+    def _compute_summary(self) -> Dict[str, SummaryStatistics]:
         """Compute summary statistics by translator."""
         summary = defaultdict(SummaryStatistics)
         
@@ -154,11 +135,6 @@ class GenderEvaluationAnalyzer:
             old_letter = self.GENDER_MAP.get(row['gender_old_alignment'], 'unknown')
             
             for i, gender_val in enumerate(gender_list):
-                # Skip if filtering and makesense != 'yes'
-                if filter_makesense:
-                    if i >= len(makesense_list) or makesense_list[i] != 'yes':
-                        continue
-                
                 stats = summary[translator]
                 stats.total_entries += 1
                 
@@ -187,7 +163,7 @@ class GenderEvaluationAnalyzer:
         
         return dict(summary)
     
-    def _compute_mismatches(self, filter_makesense: bool = False) -> List[Dict]:
+    def _compute_mismatches(self) -> List[Dict]:
         """Identify cases where human annotation doesn't match new alignment."""
         mismatches = []
         
@@ -197,11 +173,6 @@ class GenderEvaluationAnalyzer:
             new_letter = self.GENDER_MAP.get(row['gender_new_alignment'], 'unknown')
             
             for i, gender_val in enumerate(gender_list):
-                # Skip if filtering and makesense != 'yes'
-                if filter_makesense:
-                    if i >= len(makesense_list) or makesense_list[i] != 'yes':
-                        continue
-                
                 if gender_val != new_letter:
                     mismatches.append({
                         'csv_index': row['index'],
@@ -265,19 +236,7 @@ class GenderEvaluationAnalyzer:
     
     def print_summary(self):
         """Print comprehensive summary table."""
-        # Print all data results
-        self._print_summary_table("ALL DATA", self.summary_by_lang, self.alpha, self.iaa_stats)
-        
-        # Calculate percentages for all data (to use for comparison)
-        totals_all = self._calculate_totals(self.summary_by_lang)
-        percentages_all = self._calculate_percentages(totals_all)
-        
-        # Print filtered results (makesense == 'yes' only)
-        print("\n\n")
-        totals_filtered = self._calculate_totals(self.summary_by_lang_filtered)
-        self._print_summary_table("FILTERED (makesense='yes' only)", self.summary_by_lang_filtered, 
-                                 self.alpha_filtered, self.iaa_stats_filtered, totals_filtered['total_entries'],
-                                 comparison_percentages=percentages_all)
+        self._print_summary_table("OVERALL SUMMARY", self.summary_by_lang, self.alpha, self.iaa_stats)
     
     def _print_summary_table(self, title: str, summary_dict: Dict, alpha: float, iaa_stats: Dict, total_entries_for_pct=None, comparison_percentages=None):
         """Helper method to print a summary table."""
@@ -334,12 +293,7 @@ class GenderEvaluationAnalyzer:
     
     def print_mismatches(self):
         """Print detailed mismatch information."""
-        # Print all data mismatches
-        self._print_mismatch_table("ALL DATA", self.mismatches)
-        
-        # Print filtered mismatches
-        print("\n\n")
-        self._print_mismatch_table("FILTERED (makesense='yes' only)", self.mismatches_filtered)
+        self._print_mismatch_table("OVERALL MISMATCHES", self.mismatches)
     
     def _print_mismatch_table(self, title: str, mismatches: List[Dict]):
         """Helper method to print mismatch information."""
@@ -389,45 +343,35 @@ class GenderEvaluationAnalyzer:
         with open(output_file, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             
+            # Explanation section
+            writer.writerow(['EXPLANATION'])
+            writer.writerow(['Match Original: human annotated gender matches the gender in the German sentence'])
+            writer.writerow([' (then the MT translated the gender correctly, participants dont see the German version)'])
+            writer.writerow(['Match New: human annotated gender matches the new alignment machine gender annotation'])
+            writer.writerow(['Expression Match: participants agree that the expression matches the subject in the sentence'])
+            writer.writerow(['Makes Sense Yes: participants agree that the sentence makes sense'])
+            writer.writerow(['With/out Adj: statistics for sentences with/without adjectives for German original gender and new alignment annotation'])
+            writer.writerow([])
+            
             # Header information
             writer.writerow(['Language', self.language])
             writer.writerow(['Date', self.date if self.date else 'N/A'])
-            writer.writerow(['Sentences', self.num_sentences])
-            writer.writerow(['Participants', self.num_participants])
+            writer.writerow(['Analysis Method', 'Per Participant'])
+            writer.writerow(['Number of participants', self.num_participants])
+            writer.writerow(['Total sentences', self.num_sentences])
             writer.writerow(['Total possible answers', self.total_possible_answers])
             writer.writerow(['Sentences with adjective', self.sentences_with_adjective])
             writer.writerow(['Sentences without adjective', self.sentences_without_adjective])
             writer.writerow([])
             
-            # === ALL DATA ===
+            # === ANALYSIS RESULTS ===
             writer.writerow(['=' * 50])
-            writer.writerow(['ALL DATA'])
+            writer.writerow(['OVERALL SUMMARY (Per Participant)'])
             writer.writerow(['=' * 50])
             writer.writerow([])
             
             self._write_summary_section(writer, self.summary_by_lang, self.alpha, self.iaa_stats)
             self._write_mismatch_section(writer, self.mismatches)
-            
-            # Calculate percentages for all data (for comparison)
-            totals_all = self._calculate_totals(self.summary_by_lang)
-            percentages_all = self._calculate_percentages(totals_all)
-            
-            # === FILTERED DATA (makesense='yes') ===
-            writer.writerow([])
-            writer.writerow([])
-            writer.writerow(['=' * 50])
-            writer.writerow(['FILTERED DATA (makesense=yes only)'])
-            writer.writerow(['=' * 50])
-            writer.writerow([])
-            
-            totals_filtered = self._calculate_totals(self.summary_by_lang_filtered)
-            writer.writerow(['Total entries analyzed', totals_filtered['total_entries']])
-            writer.writerow([])
-            
-            self._write_summary_section(writer, self.summary_by_lang_filtered, self.alpha_filtered, 
-                                      self.iaa_stats_filtered, totals_filtered['total_entries'], 
-                                      comparison_percentages=percentages_all)
-            self._write_mismatch_section(writer, self.mismatches_filtered)
         
         print(f"\nSummary saved to {output_file}")
     
@@ -531,16 +475,16 @@ class GenderEvaluationAnalyzer:
 
 if __name__ == "__main__":
     # Analyze Italian results
-    analyzer = GenderEvaluationAnalyzer("human_eval_it_results_0204.csv")
+    analyzer = GenderEvaluationAnalyzer("human_eval_he_results_0204.csv")
     
     # Print and save results
     analyzer.print_summary()
-    #analyzer.print_mismatches()
+    analyzer.print_mismatches()
     
     # Generate output filename with date
-    output_name = f"analysis_results_{analyzer.language}"
+    output_name = f"analysis_results_p_part_{analyzer.language}"
     if analyzer.date:
         output_name += f"_{analyzer.date}"
     output_name += ".csv"
     
-    #analyzer.save_to_csv(output_name)
+    analyzer.save_to_csv(output_name)

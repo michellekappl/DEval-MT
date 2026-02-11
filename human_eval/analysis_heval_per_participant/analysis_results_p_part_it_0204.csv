@@ -1,10 +1,23 @@
+EXPLANATION
+Match Original: human annotated gender matches the gender in the German sentence
+" (then the MT translated the gender correctly, participants dont see the German version)"
+Match New: human annotated gender matches the new alignment machine gender annotation
+Expression Match: participants agree that the expression matches the subject in the sentence
+Makes Sense Yes: participants agree that the sentence makes sense
+With/out Adj: statistics for sentences with/without adjectives for German original gender and new alignment annotation
+
 Language,it
 Date,0204
-Sentences,100
-Participants,3
+Analysis Method,Per Participant
+Number of participants,3
+Total sentences,100
 Total possible answers,300
 Sentences with adjective,52
 Sentences without adjective,48
+
+==================================================
+OVERALL SUMMARY (Per Participant)
+==================================================
 
 Inter-Annotator Agreement
 Krippendorff Alpha,0.6920
@@ -18,7 +31,6 @@ Microsoft,60,32,40,37,46,23,27,9,13
 Systran,54,37,40,33,43,16,19,21,21
 TOTAL,300,216,225,205,265,93,105,123,120
 %,,72.0%,75.0%,68.3%,88.3%,59.6%,67.3%,85.4%,83.3%
-
 
 MISMATCH ANALYSIS
 
@@ -81,3 +93,4 @@ CSV Index,Translator,Gender Value,Original,Old,New,Adjective
 96,Systran,idk,MASCULINE,MASCULINE,MASCULINE,Yes
 100,Deepl,n,DIVERSE,FEMININE,FEMININE,No
 100,Deepl,m,DIVERSE,FEMININE,FEMININE,No
+

@@ -376,7 +376,7 @@ class MajorityVoteAnalyzer:
             # Explanation comment
             writer.writerow(['EXPLANATION'])
             writer.writerow(['Match Original: human annotated gender matches the gender in the German sentence'])
-            writer.writerow(['(then the MT translated the gender correctly, participants dont see the German version)'])
+            writer.writerow([' (then the MT translated the gender correctly, participants dont see the German version)'])
             writer.writerow(['Match New: human annotated gender matches the new alignment machine gender annotation'])
             writer.writerow(['Expression Match: participants agree that the expression matches the subject in the sentence'])
             writer.writerow(['Makes Sense Yes: participants agree that the sentence makes sense'])
