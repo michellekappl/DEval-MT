@@ -562,14 +562,14 @@ class Template:
                 return []
             name_sentences = []
             # get names that match gender of x
-            male_names = [name for name in self.names if name.gender == "m"]
-            female_names = [name for name in self.names if name.gender == "f"]
-            neutral_names = [name for name in self.names if name.gender == "n"]
+            male_names = [name for name in self.names if name.gender == "MASCULINE"]
+            female_names = [name for name in self.names if name.gender == "FEMININE"]
+            neutral_names = [name for name in self.names if name.gender == "NEUTRAL"]
 
             # Get jobs by gender (always have male and female, sometimes neutral)
-            male_jobs = [x for x in x_list if x.gender == "m"]
-            female_jobs = [x for x in x_list if x.gender == "f"]
-            neutral_jobs = [x for x in x_list if x.gender == "d"]
+            male_jobs = [x for x in x_list if x.gender == "MASCULINE"]
+            female_jobs = [x for x in x_list if x.gender == "FEMININE"]
+            neutral_jobs = [x for x in x_list if x.gender == "DIVERSE"]
 
             # Check if we have both male and female jobs
             if not male_jobs or not female_jobs:
