@@ -29,7 +29,7 @@ def load_statistics(filepath: str) -> dict[str, dict[str, tuple[int, int]]]:
     return statistics
 
 
-csv_file = "dataset.csv"
+csv_file = 'dataset.csv'
 
 # these are the adjustable parameters:
 
@@ -72,6 +72,13 @@ for key, jobs in groups.items():
         continue
     for gender_group in jobs:
         count += len(gender_group)
+        templates_to_use = random.sample(list(generic_templates), GEN_TEMPLATES_PER_JOB)
+        # get the coresponding Pronoun sentences
+        pronoun_templates_to_use = []
+        for t in templates_to_use:
+            for p in pronoun_templates:
+                if t.sentence_id == p.sentence_id:
+                    pronoun_templates_to_use.append(p)
 
         # Sample different templates for each job, but ensure BOTH types are included
         romantic_templates_to_use = random.sample(list(romantic_templates), GEN_TEMPLATES_PER_JOB)
