@@ -1,11 +1,7 @@
 from declensions import (
     Adjective,
-    DefinitePhrase,
     Name,
     Noun,
-    Possessive,
-    Pronoun,
-    Relative,
 )
 # define constants for sentence styles
 NORMAL_SENTENCE = 1
@@ -15,6 +11,7 @@ ADJECTIVE_SENTENCE_PRONOUN = 4
 ROMANTIC_SENTENCE = 5
 NAME_SENTENCE = 6
 
+
 class Instance:
     """
     Represents a single instance of a template sentence.
@@ -23,7 +20,7 @@ class Instance:
 
     x: Noun
     """The first noun in the sentence."""
-    sentence_style: str | int 
+    sentence_style: str | int
     """The style of the sentence"""
     sentence_id: int | None
     """The id of the sentence"""
@@ -77,8 +74,8 @@ class Instance:
         self.y_idx = y_idx  # index of y in the sentence
         self.name = name
         self.statistics = statistics
-        # id adjectives shift sentence_style to adjective 
-        if(adjective):
+        # id adjectives shift sentence_style to adjective
+        if adjective:
             self.sentence_style += 2
 
     header = (

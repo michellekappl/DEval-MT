@@ -4,30 +4,17 @@ import os
 import pandas as pd
 import numpy as np
 from Dataset import DEvalDataset
-from analysis import (
-    ErrorAnalysis,
-    ConfusionMatrix,
-    LogisticRegressionAnalysis,
-)
 from morphological_analysis.base_analyzer import BaseMorphologicalAnalyzer
 from morphological_analysis.qalsadi_morph_analyzer import QalsadiMorphAnalyzer
 from morphological_analysis.spacy_morph_analyzer import SpaCyMorphAnalyzer
 from morphological_analysis.hebrew_morph_analyzer import HebrewMorphAnalyzer
 from sdk import run_subject_pipeline
 
-# Import plotting functions from your modular package
-from plots import (
-    plot_error_analysis,
-    plot_confusion_matrix,
-    plot_logistic_regression,
-    save_dataframes,
-)
-
 
 def example_data(model_name: str) -> DEvalDataset:
-    if os.path.exists(f"{model_name}_processed.csv"):
+    if os.path.exists(f"./processed_data/{model_name}_processed.csv"):
         ds = DEvalDataset.from_csv(
-            f"{model_name}_processed.csv",
+            f"./processed_data/{model_name}_processed.csv",
             text_column="text",
             sep=";",
             translation_columns={
@@ -125,18 +112,7 @@ def example_data(model_name: str) -> DEvalDataset:
 
         return ds
 
-
-   #label the file names on the dataframes, otherwise it will use df_1, df_2 etc.   
-   cm_df.attrs["filename"] = "confusion_matrix"
-   error_df.attrs["filename"] = "error_analysis"
-   lr_results.attrs["filename"] = "logistic_regression"
-
-   save_dataframes(error_df, cm_df, lr_results)
-   
-   plot_error_analysis(error_df.T)
-   plot_confusion_metrics(cm_df.T)
-   plot_logistic_regression(lr_results)
 if __name__ == "__main__":
     for model_name in ["gpt-4o", "google", "systran", "microsoft", "deepl"]:
         ds1 = example_data(model_name)
-        ds1.df.to_csv(f"{model_name}_processed.csv", sep=";", index=False)
+        ds1.df.to_csv(f"./processed_data/{model_name}_processed.csv", sep=";", index=False)

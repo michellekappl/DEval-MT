@@ -11,16 +11,28 @@ requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [ { name = "DEval-MT Team" } ]
 dependencies = [
-   "pandas",
-   "numpy",
-   "simalign",
-   "rich",
-   "spacy",
+    "pandas",
+    "polars",
+    "numpy",
+    "simalign",
+    "rich",
+    "spacy",
+    "scipy",
+    "statsmodels",
+    "matplotlib",
+    "qalsadi",
 ]
 
 [project.optional-dependencies]
-arabic = ["qalsadi"]
+translation = [
+    "google-cloud",
+    "google-cloud-translate",
+    "google-cloud-storage",
+    "deepl",
+    "openai"
+]
 
 [tool.setuptools]
 py-modules = ["sdk", "Dataset", "analysis"]
 packages = ["alignment", "morphological_analysis", "deval_mt"]
+

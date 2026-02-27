@@ -16,6 +16,8 @@ def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename:
     output_dir (str): Folder to save the plot.
     filename (str): Name of the saved plot file.
     """
+
+    '''
     if 'language' in df.columns:
         df = df.set_index('language')
 
@@ -29,10 +31,55 @@ def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename:
     languages = df.index.tolist()
     error_types = [col.replace('error_', '') for col in error_cols]
 
+    '''
+
+    # --- normalize orientation ---
+    # Falls error_* im Index statt in columns liegt -> transpose
+    has_error_cols = any(isinstance(c, str) and c.startswith("error_") for c in df.columns)
+    has_error_idx  = any(isinstance(i, str) and str(i).startswith("error_") for i in df.index)
+
+    if (not has_error_cols) and has_error_idx:
+        df = df.T
+
+    # language als Index (falls vorhanden)
+    if "language" in df.columns:
+        df = df.set_index("language")
+
+    # error_* Spalten sammeln
+    error_cols = [col for col in df.columns if isinstance(col, str) and col.startswith("error_")]
+
+    # --- HARD GUARD: keine error_* Spalten -> skip ---
+    if not error_cols:
+        print(f"[plot_error_analysis] Skip '{filename}': no error_* columns found.")
+        return
+
+    # numeric + NaNs -> 0
+    df[error_cols] = df[error_cols].apply(pd.to_numeric, errors="coerce").fillna(0)
+
+    os.makedirs(output_dir, exist_ok=True)
+    filepath = os.path.join(output_dir, filename)
+
+    error_data = df[error_cols].T.to_numpy()
+
+    # --- HARD GUARD: wirklich leer -> skip ---
+    if error_data.size == 0 or error_data.shape[0] == 0 or error_data.shape[1] == 0:
+        print(f"[plot_error_analysis] Skip '{filename}': empty error_data shape={error_data.shape}")
+        return
+
+    languages = df.index.tolist()
+    error_types = [col.replace("error_", "") for col in error_cols]
+    
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10), gridspec_kw={'height_ratios': [1, 2]})
 
+    df['sentence_style'] = df['sentence_style'].astype("string")
+    df['sentence_style'] = df['sentence_style'].fillna('all')
+    df.loc[df['sentence_style'].astype(str).str.strip() == '', 'sentence_style'] = 'all'
+    
+
     # Table
-    table_data = df[['total', 'correct', 'accuracy', 'true_error_count', 'unknown_count']].round(3)
+    table_data = df[['total','sentence_style', 'correct', 'accuracy', 'true_error_count', 'unknown_count']].round(3)
+    #table_data = df.select_dtypes(include='number').round(3)
+
     ax1.axis('off')
     table = ax1.table(cellText=table_data.values,
                       rowLabels=table_data.index,
@@ -46,7 +93,7 @@ def plot_error_analysis(df: pd.DataFrame, output_dir: str = "outputs", filename:
     #ax1.set_title('Language Metrics Table')
 
     # Error counts
-    max_val = np.max(error_data)
+    max_val = np.nanmax(error_data)
     im = ax2.imshow(error_data, cmap='Reds', aspect='auto', vmin=0, vmax=max_val)
 
     for i in range(error_data.shape[0]):

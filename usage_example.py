@@ -17,8 +17,8 @@ from sdk import run_subject_pipeline
 
 def example_data() -> DEvalDataset:
    # if style_processed file already exists, load it
-   if os.path.exists(f"gpt-4o_processed.csv"):
-      ds = DEvalDataset.from_csv(f"gpt-4o_processed.csv", text_column="text", sep=";", translation_columns={
+   if os.path.exists(processed_file):
+      ds = DEvalDataset.from_csv(processed_file, text_column="text", sep=";", translation_columns={
          "es": "es",
          "fr": "fr",
          "ar": "ar",
@@ -79,8 +79,9 @@ print("=== DEval-MT Analysis Examples ===\n")
 
 # Create sample data
 if __name__ == '__main__':
+   processed_file='processed_data/gpt-4o_processed.csv'
    ds1 = example_data()
-   ds1.df.to_csv("gpt-4o_processed.csv", sep=";", index=False)
+   ds1.df.to_csv(processed_file, sep=";", index=False)
 
 # 1. Error Analysis
 print("1. ERROR ANALYSIS")
@@ -89,11 +90,11 @@ error_analyzer = ErrorAnalysis(ds1, 'x_gender')
 # example: for sentence_style==1:
 # print(error_analyzer.analyze(filter_col='sentence_style',filter_value=1).T)
 # example: checking all sentence_styles:
-for style in ds1.df['sentence_style'].unique():
-   print('---')
-   print(ErrorAnalysis(ds1, "x_gender").analyze(filter_col='sentence_style',filter_value=style).T)
+# for style in ds1.df['sentence_style'].unique():
+#    print("-" * 50)
+#    print(ErrorAnalysis(ds1, "x_gender").analyze(filter_col='sentence_style',filter_value=style).T)
 
-# print(error_analyzer.analyze().T)
+print(error_analyzer.analyze().T)
 
 
 # 2. Confusion Matrix
