@@ -82,7 +82,7 @@ This modular design makes it easy to plug in:
 
 ## Installation with Windows
 - On Windows, you may need to use a version manager such as [pyenv-win](https://github.com/pyenv-win/pyenv-win) to install and switch between Python versions.  
-- **(TBC)** All known working Python versions: 3.11
+- ** All known working Python versions: 3.10, 3.11, 3.12
 - Other than that the installation steps are the same as in the Linux Installation
 
 ## Usage
@@ -90,8 +90,17 @@ Usage examples can be found in:
 - `usage_example.py`: processes data and runs all analysis methods.
 - `usage_example_2.py`
 - `usage_example_process_data.py`
+- `new_usage_example.py`
 
 ## Apis/methods/packages/platforms used
 - Word alignment: [Simalign](https://github.com/cisnlp/simalign)
 - A platform hosting models: [Huggingface](https://huggingface.co/)
-- Morphological analysis model: [spaCy](https://spacy.io/)
+- Morphological analysis models: 
+  - [spaCy](https://spacy.io/)
+  - [Qalsadi](https://github.com/linuxscout/qalsadi)
+- Automized translations:
+  - [DeepL](https://api.deepl.com)
+  - [Google](https://cloud.google.com/translate)
+  - [GPT](https://api.openai.com/v1/chat/completions)
+  - [Microsoft](https://api.cognitive.microsofttranslator.com)
+  - [Systran](https://www.systransoft.com/translation-products/translate-api/)
