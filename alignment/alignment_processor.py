@@ -136,8 +136,6 @@ class AlignmentProcessor:
                         p.join()
                 else:
                     print("Using single-process mode with {} batches".format(num_batches))
-                    if __name__ != '__main__':
-                        print("⚠️ Warning: Multiprocessing disabled because __name__ != '__main__'. This is expected in notebooks or scripts without a __main__ guard and can be fixed by adding a __main__ guard around the main script.")
                     # Single-process fallback (spawn-safe; good for notebooks or scripts without __main__ guard)
                     for i, (orig_batch, trg_batch) in enumerate(batches):
                         def do_alignment_inline():

@@ -83,7 +83,7 @@ class Template:
         self.xs: list[tuple[str | int, Noun]] = []
 
         self.matching_x_groups: list[str | int] = []
-        sentence_style = row["style"].strip("<>")
+        sentence_style = row['style'].strip("<>")
 
         if sentence_style == "normal_pron":
             self.sentence_style = NORMAL_SENTENCE_PRONOUN
@@ -222,9 +222,7 @@ class Template:
                         case = parts[2]
                         # If other_noun is None (no y placeholder), default to base noun's gender
                         gender = (
-                            other_noun.grammatical_gender
-                            if other_noun
-                            else base_noun.grammatical_gender
+                            other_noun.grammatical_gender if other_noun else base_noun.grammatical_gender
                         )
                         return Possessive(
                             base_noun,
@@ -237,9 +235,7 @@ class Template:
                         case = parts[4]
                         # If other_noun is None (no y placeholder), default to base noun's gender
                         gender = (
-                            other_noun.grammatical_gender
-                            if other_noun
-                            else base_noun.grammatical_gender
+                            other_noun.grammatical_gender if other_noun else base_noun.grammatical_gender
                         )
                         return Possessive(
                             base_noun,
@@ -319,7 +315,9 @@ class Template:
         instances = []
         # if this is a name sentence, we only need to generate instances with names
         for x_group, x, name in (
-            (x_group, x, name) for x_group, x in xs for name in matching_names
+            (x_group, x, name)
+            for x_group, x in xs
+            for name in matching_names
         ):
             # use regex to perform substitutions
             text = re.sub(
@@ -562,14 +560,14 @@ class Template:
                 return []
             name_sentences = []
             # get names that match gender of x
-            male_names = [name for name in self.names if name.gender == "m"]
-            female_names = [name for name in self.names if name.gender == "f"]
-            neutral_names = [name for name in self.names if name.gender == "n"]
+            male_names = [name for name in self.names if name.gender == "MASCULINE"]
+            female_names = [name for name in self.names if name.gender == "FEMININE"]
+            neutral_names = [name for name in self.names if name.gender == "NEUTRAL"]
 
             # Get jobs by gender (always have male and female, sometimes neutral)
-            male_jobs = [x for x in x_list if x.gender == "m"]
-            female_jobs = [x for x in x_list if x.gender == "f"]
-            neutral_jobs = [x for x in x_list if x.gender == "d"]
+            male_jobs = [x for x in x_list if x.gender == "MASCULINE"]
+            female_jobs = [x for x in x_list if x.gender == "FEMININE"]
+            neutral_jobs = [x for x in x_list if x.gender == "DIVERSE"]
 
             # Check if we have both male and female jobs
             if not male_jobs or not female_jobs:
@@ -601,7 +599,7 @@ class Template:
                         [selected_neutral_name],
                     )
                 )
-                # 3. Neutral name with female job
+            # 3. Neutral name with female job
                 name_sentences.extend(
                     self.gen_name(
                         [(x_group, female_job)],
@@ -659,11 +657,7 @@ class Template:
             ys = [(None, None)]
 
         if self.sentence_style == ROMANTIC_SENTENCE:
-            # Get all romantic groups and randomly sample one
-            romantic_groups = [
-                (y_group, y_jobs) for y_group, y_jobs in self.ys_by_gender if y_group == "romantic"
-            ]
-            y_group, y_jobs = random.choice(romantic_groups)
+            y_group, y_jobs = random.choice(self.ys_by_gender[:5])
             ys = [(y_group, y) for y in y_jobs]
             return self.gen_romantic(xs, ys)
         else:
