@@ -110,7 +110,6 @@ if __name__ == "__main__":
                 error_df_sentence.T,
                 output_dir=model_output_dir,
                 filename=error_df_sentence.attrs["filename"],
-                filter_col=filter_col,
             )
             save_dataframes(
                 error_df_sentence,

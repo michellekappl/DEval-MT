@@ -1,4 +1,24 @@
-"""Logistic Regression Analysis for gender bias evaluation."""
+"""Logistic Regression Analysis for gender bias evaluation.
+
+How to interpret the results returned by analyze():
+
+- coefficient: raw effect size from the logistic regression model.
+- odds_ratio: multiplicative change in the odds of a correct prediction.
+    > 1.0: higher predictor value increases the odds of a correct prediction.
+    < 1.0: higher predictor value decreases the odds of a correct prediction.
+    = 1.0: no relationship.
+- p_value: statistical significance (probability of observing this result by chance).
+    < 0.05: statistically significant relationship.
+    >= 0.05: not statistically significant.
+- ci_lower / ci_upper: 95% confidence interval for odds_ratio.
+
+Example: "Spanish: odds_ratio=0.57, p_value=0.38" -> higher stereotypicality is
+associated with 43% lower odds of a correct prediction, but this is not
+statistically significant (p > 0.05).
+Example: "Spanish: odds_ratio=1.43, p_value=0.02" -> higher stereotypicality is
+associated with 43% higher odds of a correct prediction, and this IS
+statistically significant (p < 0.05).
+"""
 
 import pandas as pd
 from typing import Dict, List, Any

@@ -87,9 +87,11 @@ This modular design makes it easy to plug in:
 
 ## Usage
 Usage examples can be found in:
-- `usage_example.py`: processes data and runs all analysis methods.
-- `usage_example_2.py`
-- `usage_example_process_data.py`
+- `usage_example_generate_processed_data.py`: builds `processed_data/*.csv` from scratch — loads `DEval_dataset.csv`, adds raw translations from `translations/`, runs `run_subject_pipeline` with real morphological analyzers per language, and saves the result. Start here if you need to regenerate processed data after a translation change.
+- `usage_example_process_data.py`: takes existing `processed_data/*.csv` files and runs all analysis methods (error analysis, confusion matrix, logistic regression) for every model, saving results + plots to `outputs/<model>/`. Does not rebuild datasets.
+- `usage_example_romantic_names.py`: same idea as `usage_example_process_data.py`, but for the romantic-partner and name sentence styles (5 and 6) in `processed_data/romantic_names/`, saving to `outputs/<model>/romantic_names/`.
+
+See `analysis/logistic_regression.py` for how to interpret the logistic regression output (odds ratios, p-values, confidence intervals).
 
 ## Apis/methods/packages/platforms used
 - Word alignment: [Simalign](https://github.com/cisnlp/simalign)

@@ -1,8 +1,5 @@
 from declensions import Adjective
 
-# französisch/polnisch/türkisch/syrisch
-# schwarz
-# trans
 adjectives = [
     # Adjective("französisch"),
     # Adjective("polnisch"),

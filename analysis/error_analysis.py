@@ -76,8 +76,8 @@ class ErrorAnalysis:
             continue
 
          prediction_correct = df[
-            ((df[self.gold_col] == df[pred_col]) & (df[pred_col] != 'Gender.UNKNOWN')) |  # Exact matches (excluding UNKNOWN preds)
-            ((df[self.gold_col] == 'Gender.DIVERSE') & (df[pred_col] == 'Gender.NEUTER'))  # DIVERSE -> NEUTER is correct
+            ((df[self.gold_col] == df[pred_col]) & (df[pred_col] != 'UNKNOWN')) |  # Exact matches (excluding UNKNOWN preds)
+            ((df[self.gold_col] == 'DIVERSE') & (df[pred_col] == 'NEUTER'))  # analyzers can't predict DIVERSE, so NEUTER is the closest achievable signal and counts as correct
          ]
          total = len(df)
          correct = len(prediction_correct)

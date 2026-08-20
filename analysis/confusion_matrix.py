@@ -37,6 +37,12 @@ class ConfusionMatrix:
             gold = row.get(self.gold_col)
             pred = row.get(pred_col)
 
+            # analyzers can't predict DIVERSE, so NEUTER is the closest
+            # achievable signal and counts as a correct DIVERSE prediction
+            # (same equivalence as in ErrorAnalysis.analyze()).
+            if gold == "DIVERSE" and pred == "NEUTER":
+                pred = "DIVERSE"
+
             if gold is not None and pred is not None:
                 if gold in all_genders and pred in all_genders:
                     matrix.loc[gold, pred] += 1
