@@ -83,7 +83,7 @@ class Template:
         self.xs: list[tuple[str | int, Noun]] = []
 
         self.matching_x_groups: list[str | int] = []
-        sentence_style = row['style'].strip("<>")
+        sentence_style = row["style"].strip("<>")
 
         if sentence_style == "normal_pron":
             self.sentence_style = NORMAL_SENTENCE_PRONOUN
@@ -211,7 +211,7 @@ class Template:
                 match len(parts):
                     case 4:
                         # this is the case where we know the gender of the possessed noun (i.e. it doesn't change)
-                        # so something like <x_poss_f_nom>
+                        # so something like <x_poss_FEMININE_nom>
                         gender = parts[2]
                         case = parts[3]
                         return Possessive(base_noun, gender).decline(case, "sg")
@@ -222,7 +222,9 @@ class Template:
                         case = parts[2]
                         # If other_noun is None (no y placeholder), default to base noun's gender
                         gender = (
-                            other_noun.grammatical_gender if other_noun else base_noun.grammatical_gender
+                            other_noun.grammatical_gender
+                            if other_noun
+                            else base_noun.grammatical_gender
                         )
                         return Possessive(
                             base_noun,
@@ -235,7 +237,9 @@ class Template:
                         case = parts[4]
                         # If other_noun is None (no y placeholder), default to base noun's gender
                         gender = (
-                            other_noun.grammatical_gender if other_noun else base_noun.grammatical_gender
+                            other_noun.grammatical_gender
+                            if other_noun
+                            else base_noun.grammatical_gender
                         )
                         return Possessive(
                             base_noun,
@@ -315,9 +319,7 @@ class Template:
         instances = []
         # if this is a name sentence, we only need to generate instances with names
         for x_group, x, name in (
-            (x_group, x, name)
-            for x_group, x in xs
-            for name in matching_names
+            (x_group, x, name) for x_group, x in xs for name in matching_names
         ):
             # use regex to perform substitutions
             text = re.sub(
@@ -599,7 +601,7 @@ class Template:
                         [selected_neutral_name],
                     )
                 )
-            # 3. Neutral name with female job
+                # 3. Neutral name with female job
                 name_sentences.extend(
                     self.gen_name(
                         [(x_group, female_job)],

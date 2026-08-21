@@ -27,7 +27,7 @@ from statsmodels.nonparametric.smoothers_lowess import lowess
 
 from Dataset import DEvalDataset
 from analysis import ErrorAnalysis, LogisticRegressionAnalysis
-from analysis.significance import test_direction_skew, test_group_gap
+from analysis.significance import test_direction_skew, test_group_gap, test_paired_gap
 
 OUTPUT_DIR = "/Users/michellekappl/Work/Wissenschaft/gebnlp_2026/paper/figures"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -560,27 +560,19 @@ def figure_3_context_effects():
         base = _binary_accuracy_by_style(model, 1)
         pron = _binary_accuracy_by_style(model, 2)
         trans = _binary_accuracy_by_style(model, 3)
-        # Compared against the same style-1 baseline as the other two lines
-        # (not against style 2), so all three rows show the marginal effect
-        # of that context combination over the plain baseline sentence.
-        trans_pron = _binary_accuracy_by_style(model, 4)
 
-        ax.plot([base, pron], [i + 0.25, i + 0.25], color="tab:blue", lw=2, zorder=1)
-        ax.plot([base, trans], [i, i], color="tab:orange", lw=2, zorder=1)
-        ax.plot([base, trans_pron], [i - 0.25, i - 0.25], color="tab:green", lw=2, zorder=1)
-        ax.scatter([base], [i + 0.25], color="grey", s=35, zorder=2)
-        ax.scatter([base], [i], color="grey", s=35, zorder=2)
-        ax.scatter([base], [i - 0.25], color="grey", s=35, zorder=2)
-        ax.scatter([pron], [i + 0.25], color="tab:blue", s=35, zorder=2)
-        ax.scatter([trans], [i], color="tab:orange", s=35, zorder=2)
-        ax.scatter([trans_pron], [i - 0.25], color="tab:green", s=35, zorder=2)
+        ax.plot([base, pron], [i + 0.15, i + 0.15], color="tab:blue", lw=2, zorder=1)
+        ax.plot([base, trans], [i - 0.15, i - 0.15], color="tab:orange", lw=2, zorder=1)
+        ax.scatter([base], [i + 0.15], color="grey", s=35, zorder=2)
+        ax.scatter([base], [i - 0.15], color="grey", s=35, zorder=2)
+        ax.scatter([pron], [i + 0.15], color="tab:blue", s=35, zorder=2)
+        ax.scatter([trans], [i - 0.15], color="tab:orange", s=35, zorder=2)
 
         pron_delta = pron - base
         trans_delta = trans - base
-        trans_pron_delta = trans_pron - base
         ax.text(
             max(base, pron) + 1.2,
-            i + 0.25,
+            i + 0.15,
             f"+{pron_delta:.0f}%",
             va="center",
             fontsize=6.5,
@@ -588,19 +580,11 @@ def figure_3_context_effects():
         )
         ax.text(
             max(base, trans) + 1.2,
-            i,
+            i - 0.15,
             f"+{trans_delta:.0f}%",
             va="center",
             fontsize=6.5,
             color="tab:orange",
-        )
-        ax.text(
-            max(base, trans_pron) + 1.2,
-            i - 0.25,
-            f"+{trans_pron_delta:.0f}%",
-            va="center",
-            fontsize=6.5,
-            color="tab:green",
         )
 
     ax.set_yticks(y)
@@ -614,7 +598,6 @@ def figure_3_context_effects():
         plt.Line2D([0], [0], color="grey", marker="o", label="Baseline"),
         plt.Line2D([0], [0], color="tab:blue", marker="o", label="+ pronoun"),
         plt.Line2D([0], [0], color="tab:orange", marker="o", label="+ trans-marking"),
-        plt.Line2D([0], [0], color="tab:green", marker="o", label="+ trans-marking + pronoun"),
     ]
     ax.legend(handles=legend_handles, loc="lower right", fontsize=7.5)
 
@@ -714,9 +697,16 @@ def figure_4_diverging_bias():
 # Writes both a LaTeX table (drop into the paper) and a CSV (for reference).
 # ---------------------------------------------------------------------------
 def table_heteronormativity_gap():
+    # Paired design: every subject sentence is generated with BOTH a same-
+    # gender and a different-gender partner (559/559 (sentence_id, x) groups
+    # checked have both), so this is matched-pairs data, not two independent
+    # samples -- McNemar's test (test_paired_gap) is the correct test here,
+    # and is substantially more powerful than the chi-square-of-independence
+    # test previously used (which discarded the pairing and treated the two
+    # conditions as unrelated samples).
     rows = []
     for lang in LANGUAGES:
-        same_pairs, diff_pairs = [], []
+        correct_diff, correct_same = [], []
         for model in MODELS:
             path = f"processed_data/romantic_names/romantic_name_{model}_processed.csv"
             if not os.path.exists(path):
@@ -729,12 +719,16 @@ def table_heteronormativity_gap():
             binary = sub[
                 sub["x_gender"].isin(["MASCULINE", "FEMININE"])
                 & sub["y_gender"].isin(["MASCULINE", "FEMININE"])
-            ]
-            same = binary[binary["x_gender"] == binary["y_gender"]]
-            diff = binary[binary["x_gender"] != binary["y_gender"]]
-            same_pairs.extend(zip(same["x_gender"], same[col]))
-            diff_pairs.extend(zip(diff["x_gender"], diff[col]))
-        result = test_group_gap(diff_pairs, same_pairs)
+                & sub[col].notna()
+            ].copy()
+            binary["correct"] = binary["x_gender"] == binary[col]
+            binary["pairing"] = np.where(binary["x_gender"] == binary["y_gender"], "same", "diff")
+            piv = binary.pivot_table(
+                index=["sentence_id", "x_nom_sg", "x_gender"], columns="pairing", values="correct", aggfunc="first"
+            ).dropna()
+            correct_diff.extend(piv["diff"].tolist())
+            correct_same.extend(piv["same"].tolist())
+        result = test_paired_gap(correct_diff, correct_same)
         hetero_acc = result["accuracy_a"] * 100
         same_acc = result["accuracy_b"] * 100
         gap = hetero_acc - same_acc
@@ -746,6 +740,8 @@ def table_heteronormativity_gap():
                 "hetero_accuracy": hetero_acc,
                 "same_gender_accuracy": same_acc,
                 "gap": gap,
+                "n": result["n"],
+                "n_discordant": result["n_discordant"],
                 "p_value": p,
                 "significance": stars,
             }
@@ -773,7 +769,9 @@ def table_heteronormativity_gap():
         r"\end{tabular}",
         r"\caption{Heteronormativity gap: accuracy on the occupation noun when the romantic "
         r"partner's gender matches (same-gender-coded) vs.\ differs from (hetero-coded) the "
-        r"subject's gender, pooled over all 6 systems. "
+        r"subject's gender, pooled over all 6 systems. Paired design (every subject sentence "
+        r"is generated with both partner genders); significance via McNemar's test on the "
+        r"matched pairs. "
         r"* $p<0.05$, ** $p<0.01$, *** $p<0.001$.}",
         r"\label{tab:heteronormativity_gap}",
         r"\end{table}",
@@ -1091,33 +1089,54 @@ def figure_2_5_combined(scatter_styles=(1, 2, 3, 4), line_styles=(1, 2, 3, 4)):
 # regression toward "high stereotypicality -> incorrect" for reasons that had
 # nothing to do with stereotypicality.
 # ---------------------------------------------------------------------------
-def table_logistic_regression(model="gpt-4o"):
-    ds = load_binary_dataset(model)
-    lr_df = LogisticRegressionAnalysis(ds, "x_gender").analyze(predictor_col="x_stereotypical")
+def table_logistic_regression(model="gpt-4o", compare_model="google"):
+    # compare_model added to show whether GPT-4o's flatter stereotype-
+    # dependence (smaller odds ratios, see \S\ref{sec:results}.7) is a
+    # GPT-4o-specific property or common to all systems: Google's odds
+    # ratios are 1.4-2x larger than GPT-4o's in every non-Hebrew language,
+    # and Hebrew's reversal (OR<1) turns out to be GPT-4o-specific too --
+    # Google shows no significant relationship in Hebrew at all (p=0.61).
+    def _compute(m):
+        ds = load_binary_dataset(m)
+        lr_df = LogisticRegressionAnalysis(ds, "x_gender").analyze(predictor_col="x_stereotypical")
+        out = {}
+        for lang in LANGUAGES:
+            row = lr_df[lr_df["language"] == lang]
+            if row.empty:
+                continue
+            row = row.iloc[0]
+            out[lang] = {
+                "odds_ratio": row["odds_ratio"],
+                "ci_lower": row["ci_lower"],
+                "ci_upper": row["ci_upper"],
+                "p_value": row["p_value"],
+                "n": int(row["n_observations"]),
+            }
+        return out
+
+    def _stars(p):
+        return "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else ""
+
+    main_vals = _compute(model)
+    cmp_vals = _compute(compare_model)
 
     rows = []
     for lang in LANGUAGES:
-        row = lr_df[lr_df["language"] == lang]
-        if row.empty:
+        if lang not in main_vals or lang not in cmp_vals:
             continue
-        row = row.iloc[0]
-        or_val, lo, hi, p, n = (
-            row["odds_ratio"],
-            row["ci_lower"],
-            row["ci_upper"],
-            row["p_value"],
-            int(row["n_observations"]),
-        )
-        stars = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else ""
+        m, c = main_vals[lang], cmp_vals[lang]
         rows.append(
             {
                 "language": lang,
-                "odds_ratio": or_val,
-                "ci_lower": lo,
-                "ci_upper": hi,
-                "p_value": p,
-                "n": n,
-                "significance": stars,
+                "odds_ratio": m["odds_ratio"],
+                "ci_lower": m["ci_lower"],
+                "ci_upper": m["ci_upper"],
+                "p_value": m["p_value"],
+                "n": m["n"],
+                "significance": _stars(m["p_value"]),
+                f"odds_ratio_{compare_model}": c["odds_ratio"],
+                f"p_value_{compare_model}": c["p_value"],
+                f"significance_{compare_model}": _stars(c["p_value"]),
             }
         )
 
@@ -1128,24 +1147,29 @@ def table_logistic_regression(model="gpt-4o"):
     tex_lines = [
         r"\begin{table}[t]",
         r"\centering",
-        r"\begin{tabular}{lcccc}",
+        r"\begin{tabular}{lcc}",
         r"\toprule",
-        r"\textbf{Lang.} & \textbf{OR} & \textbf{95\% CI} & \textbf{$p$} & \textbf{$n$} \\",
+        rf"\textbf{{Lang.}} & \textbf{{OR ({MODEL_LABELS[model]})}} & \textbf{{OR ({MODEL_LABELS[compare_model]})}} \\",
         r"\midrule",
     ]
     for r in rows:
-        p_str = "$<$0.001" if r["p_value"] < 0.001 else f"{r['p_value']:.3f}"
         tex_lines.append(
             f"{r['language']} & {r['odds_ratio']:.2f}{r['significance']} & "
-            f"[{r['ci_lower']:.2f}, {r['ci_upper']:.2f}] & {p_str} & {r['n']} \\\\"
+            f"{r[f'odds_ratio_{compare_model}']:.2f}{r[f'significance_{compare_model}']} \\\\"
         )
     tex_lines += [
         r"\bottomrule",
         r"\end{tabular}",
-        rf"\caption{{Logistic regression ({MODEL_LABELS[model]}): odds ratio for "
-        r"stereotype-congruence predicting a correct translation, per language. "
-        r"OR $>$1 means more accurate when stereotype-congruent; Hebrew (he) is the "
-        r"only language where it reverses. "
+        rf"\caption{{Logistic regression: odds ratio for stereotype-congruence predicting a "
+        rf"correct translation, per language, {MODEL_LABELS[model]} vs.\ {MODEL_LABELS[compare_model]} "
+        r"(95\% CI and exact $p$ for the full "
+        rf"{MODEL_LABELS[model]} model in \texttt{{table\_logistic\_regression.csv}}). "
+        r"OR $>$1 means more accurate when stereotype-congruent. "
+        rf"{MODEL_LABELS[compare_model]}'s odds ratios are descriptively larger than "
+        rf"{MODEL_LABELS[model]}'s in every non-Hebrew language (not a formally tested "
+        r"interaction -- two separately-fit sets of per-language models); Hebrew's reversal (OR$<$1) is "
+        rf"{MODEL_LABELS[model]}-specific -- {MODEL_LABELS[compare_model]} shows no significant "
+        r"relationship there at all. "
         r"* $p<0.05$, ** $p<0.01$, *** $p<0.001$.}",
         r"\label{tab:logistic_regression}",
         r"\end{table}",
@@ -1312,12 +1336,19 @@ def print_alignment_match_rate():
     by_lang = defaultdict(list)
     for (lang, translator, idx), v in match_votes.items():
         by_lang[lang].append(v)
+    rows = [{"language": "all", "n": n, "yes": yes_n, "match_rate_pct": round(yes_n / n * 100, 1)}]
     for lang in LANGUAGES:
         vals = by_lang.get(lang, [])
         if not vals:
             continue
         yn = sum(1 for v in vals if v == "yes")
         print(f"  {lang}: {yn}/{len(vals)} = {yn / len(vals) * 100:.1f}%")
+        rows.append(
+            {"language": lang, "n": len(vals), "yes": yn, "match_rate_pct": round(yn / len(vals) * 100, 1)}
+        )
+    csv_path = os.path.join(OUTPUT_DIR, "human_eval_alignment_match_rate.csv")
+    pd.DataFrame(rows).to_csv(csv_path, index=False)
+    print("Saved", csv_path)
 
 
 def print_human_eval_reliability_baseline():
@@ -1395,6 +1426,23 @@ def print_human_eval_reliability_baseline():
         f"  leave-one-out: single annotator vs. majority of the rest: "
         f"{loo_agree / loo_total * 100:.1f}% (n={loo_total})"
     )
+
+    out_df = pd.DataFrame(
+        [
+            {
+                "n_multi_judgment_sentences": multi_judgment_sentences,
+                "n_unanimous": unanimous,
+                "unanimous_pct": round(unanimous / multi_judgment_sentences * 100, 1),
+                "n_pairs": total_pairs,
+                "pairwise_agreement_pct": round(agree_pairs / total_pairs * 100, 1),
+                "n_loo": loo_total,
+                "loo_agreement_pct": round(loo_agree / loo_total * 100, 1),
+            }
+        ]
+    )
+    csv_path = os.path.join(OUTPUT_DIR, "human_eval_reliability_baseline.csv")
+    out_df.to_csv(csv_path, index=False)
+    print("Saved", csv_path)
 
 
 def table_human_eval_agreement():
@@ -1545,6 +1593,8 @@ def print_winomt_style_agreement():
     overall = (vdf["human_gender"] == vdf["pipeline_gender"]).mean() * 100
     print(f"Overall direct agreement (human annotation vs. pipeline output): {overall:.1f}%")
 
+    rows = [{"level": "overall", "key": "all", "n": len(vdf), "agreement_pct": round(overall, 1)}]
+
     print("Per system:")
     for model in MODELS:
         g = vdf[vdf["model"] == model]
@@ -1552,6 +1602,7 @@ def print_winomt_style_agreement():
             continue
         a = (g["human_gender"] == g["pipeline_gender"]).mean() * 100
         print(f"  {MODEL_LABELS[model]}: {a:.1f}% (n={len(g)})")
+        rows.append({"level": "system", "key": model, "n": len(g), "agreement_pct": round(a, 1)})
 
     print("Per language:")
     for lang in LANGUAGES:
@@ -1560,6 +1611,7 @@ def print_winomt_style_agreement():
             continue
         a = (g["human_gender"] == g["pipeline_gender"]).mean() * 100
         print(f"  {lang}: {a:.1f}% (n={len(g)})")
+        rows.append({"level": "language", "key": lang, "n": len(g), "agreement_pct": round(a, 1)})
 
     cells = []
     for model in MODELS:
@@ -1567,8 +1619,353 @@ def print_winomt_style_agreement():
             g = vdf[(vdf["model"] == model) & (vdf["lang"] == lang)]
             if g.empty:
                 continue
-            cells.append((g["human_gender"] == g["pipeline_gender"]).mean() * 100)
+            a = (g["human_gender"] == g["pipeline_gender"]).mean() * 100
+            cells.append(a)
+            rows.append(
+                {"level": "system_language", "key": f"{model}/{lang}", "n": len(g), "agreement_pct": round(a, 1)}
+            )
     print(f"Per system-language cell range: {min(cells):.1f}%-{max(cells):.1f}%")
+
+    csv_path = os.path.join(OUTPUT_DIR, "human_eval_winomt_style_agreement.csv")
+    pd.DataFrame(rows).to_csv(csv_path, index=False)
+    print("Saved", csv_path)
+
+
+# ---------------------------------------------------------------------------
+# Figure 7b: "Waehlerwanderung"-style alluvial/flow diagram -- gold gender
+# (left) flowing to predicted outcome (right, including UNKNOWN and the tiny
+# NEUTER remainder folded into it), one small-multiple panel per system.
+# Captures the same statement as figure_7_error_rate_by_gender (how often is
+# each gold gender mistranslated) but makes the UNKNOWN share visible as its
+# own destination instead of hiding it inside an aggregate error rate, and
+# shows the masculine-default direction as ribbon thickness at a glance.
+# ---------------------------------------------------------------------------
+from matplotlib.path import Path
+from matplotlib.patches import PathPatch, Rectangle
+
+
+def _sankey_positions(totals, order, total, avail, gap):
+    pos = {}
+    y = 1.0
+    for k in order:
+        h = totals[k] / total * avail
+        pos[k] = (y - h, y)
+        y -= h + gap
+    return pos
+
+
+def _draw_sankey_panel(ax, flows, gold_order, pred_order, node_colors, box_w=0.05, gap=0.03):
+    total = sum(flows.values())
+    avail = 1 - gap * (len(pred_order) - 1)  # same scale on both sides -> ribbons don't taper
+    left_totals = {g: sum(flows.get((g, p), 0) for p in pred_order) for g in gold_order}
+    right_totals = {p: sum(flows.get((g, p), 0) for g in gold_order) for p in pred_order}
+    left_pos = _sankey_positions(left_totals, gold_order, total, avail, gap)
+    right_pos = _sankey_positions(right_totals, pred_order, total, avail, gap)
+
+    for g in gold_order:
+        b, t = left_pos[g]
+        ax.add_patch(Rectangle((0, b), box_w, t - b, color=node_colors[g], zorder=3))
+    for p in pred_order:
+        b, t = right_pos[p]
+        ax.add_patch(Rectangle((1 - box_w, b), box_w, t - b, color=node_colors[p], zorder=3))
+
+    left_cursor = {g: left_pos[g][1] for g in gold_order}
+    right_cursor = {p: right_pos[p][1] for p in pred_order}
+    for g in gold_order:
+        for p in pred_order:
+            v = flows.get((g, p), 0)
+            if v == 0:
+                continue
+            h = v / total * avail
+            lt, lb = left_cursor[g], left_cursor[g] - h
+            rt, rb = right_cursor[p], right_cursor[p] - h
+            left_cursor[g] -= h
+            right_cursor[p] -= h
+            xm1, xm2 = box_w + (1 - 2 * box_w) * 0.4, box_w + (1 - 2 * box_w) * 0.6
+            verts = [
+                (box_w, lt), (xm1, lt), (xm2, rt), (1 - box_w, rt),
+                (1 - box_w, rb), (xm2, rb), (xm1, lb), (box_w, lb),
+                (box_w, lt),
+            ]
+            codes = [
+                Path.MOVETO, Path.CURVE4, Path.CURVE4, Path.CURVE4,
+                Path.LINETO, Path.CURVE4, Path.CURVE4, Path.CURVE4,
+                Path.CLOSEPOLY,
+            ]
+            ax.add_patch(PathPatch(Path(verts, codes), facecolor=node_colors[g], edgecolor="none", alpha=0.5, zorder=2))
+
+    ax.set_xlim(-0.02, 1.02)
+    ax.set_ylim(-0.02, 1.02)
+    ax.axis("off")
+
+
+def figure_7_gender_flow_sankey():
+    node_colors = {
+        "MASCULINE": GENDER_COLORS["masculine"],
+        "FEMININE": GENDER_COLORS["feminine"],
+        "UNKNOWN": GENDER_COLORS["unknown"],
+    }
+    gold_order = ("MASCULINE", "FEMININE")
+    pred_order = ("MASCULINE", "FEMININE", "UNKNOWN")
+
+    fig, axes = plt.subplots(2, 3, figsize=(9, 6.0))
+    for ax, model in zip(axes.flat, MODELS):
+        df = pd.read_csv(f"processed_data/avg_DEval/{model}_processed.csv", sep=";")
+        sub = df[df["sentence_style"].isin([1, 2, 3, 4]) & df["x_gender"].isin(["MASCULINE", "FEMININE"])]
+        flows = {}
+        # Per-language error rate (1 - recall) for each gold gender, so the
+        # pooled Sankey ribbons can be annotated with mean +/- std across the
+        # 7 languages -- otherwise the diagram can't distinguish "consistent
+        # bias in every language" from "one extreme language driving the
+        # pooled total", which the old bar chart's error bars showed.
+        fem_err_by_lang, masc_err_by_lang = [], []
+        for lang in LANGUAGES:
+            col = f"x_gender_{lang}"
+            s = sub[sub[col].notna()]
+            for gold, pred in zip(s["x_gender"], s[col]):
+                # NEUTER folded into UNKNOWN: both mean "no definite binary
+                # answer", and NEUTER is <1% of predictions here (unlike the
+                # DIVERSE-gold case, where NEUTER is the meaningful proxy).
+                pred_bucket = pred if pred in ("MASCULINE", "FEMININE") else "UNKNOWN"
+                flows[(gold, pred_bucket)] = flows.get((gold, pred_bucket), 0) + 1
+            fem_lang = s[s["x_gender"] == "FEMININE"]
+            masc_lang = s[s["x_gender"] == "MASCULINE"]
+            fem_err_by_lang.append((fem_lang[col] != "FEMININE").mean() * 100)
+            masc_err_by_lang.append((masc_lang[col] != "MASCULINE").mean() * 100)
+        _draw_sankey_panel(ax, flows, gold_order, pred_order, node_colors)
+        ax.set_title(MODEL_LABELS[model], fontsize=10)
+        ax.text(
+            0.5,
+            -0.1,
+            f"error rate: fem {np.mean(fem_err_by_lang):.0f}$\\pm${np.std(fem_err_by_lang):.0f}pp, "
+            f"masc {np.mean(masc_err_by_lang):.0f}$\\pm${np.std(masc_err_by_lang):.0f}pp (across 7 langs)",
+            ha="center",
+            va="top",
+            fontsize=6.5,
+            color="grey",
+            transform=ax.transAxes,
+        )
+
+    axes[0][0].text(-0.05, 1.06, "gold", fontsize=7.5, ha="left", transform=axes[0][0].transAxes, color="grey")
+    axes[0][0].text(1.0, 1.06, "predicted", fontsize=7.5, ha="right", transform=axes[0][0].transAxes, color="grey")
+
+    legend_handles = [
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["masculine"], label="masculine"),
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["feminine"], label="feminine"),
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["unknown"], label="unknown"),
+    ]
+    fig.legend(handles=legend_handles, loc="lower center", ncol=3, fontsize=8.5, bbox_to_anchor=(0.5, -0.02), frameon=False)
+    fig.suptitle(
+        "Where does each gold gender end up? (styles 1--4, masc/fem gold only, pooled over 7 languages)",
+        fontsize=10.5,
+    )
+
+    plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+    path = os.path.join(OUTPUT_DIR, "fig7_gender_flow_sankey.pdf")
+    plt.savefig(path, bbox_inches="tight")
+    plt.close()
+    print("Saved", path)
+
+
+# ---------------------------------------------------------------------------
+# Figure 7 (alternative granularity): same flow diagram as
+# figure_7_gender_flow_sankey, but for ONE model, one panel per LANGUAGE
+# instead of one panel per model pooled over languages. Makes per-language
+# variance directly visible as separate panels instead of a mean+-std
+# annotation on a pooled ribbon -- exploratory, to compare against the
+# pooled 6-model version before deciding which (or whether both) to keep.
+# ---------------------------------------------------------------------------
+def figure_7_gender_flow_sankey_by_language(model: str):
+    node_colors = {
+        "MASCULINE": GENDER_COLORS["masculine"],
+        "FEMININE": GENDER_COLORS["feminine"],
+        "UNKNOWN": GENDER_COLORS["unknown"],
+    }
+    gold_order = ("MASCULINE", "FEMININE")
+    pred_order = ("MASCULINE", "FEMININE", "UNKNOWN")
+
+    df = pd.read_csv(f"processed_data/avg_DEval/{model}_processed.csv", sep=";")
+    sub = df[df["sentence_style"].isin([1, 2, 3, 4]) & df["x_gender"].isin(["MASCULINE", "FEMININE"])]
+
+    fig, axes = plt.subplots(1, len(LANGUAGES), figsize=(2.1 * len(LANGUAGES), 3.4))
+    for ax, lang in zip(axes, LANGUAGES):
+        col = f"x_gender_{lang}"
+        s = sub[sub[col].notna()]
+        flows = {}
+        for gold, pred in zip(s["x_gender"], s[col]):
+            pred_bucket = pred if pred in ("MASCULINE", "FEMININE") else "UNKNOWN"
+            flows[(gold, pred_bucket)] = flows.get((gold, pred_bucket), 0) + 1
+        _draw_sankey_panel(ax, flows, gold_order, pred_order, node_colors)
+        fem_err = (s[s["x_gender"] == "FEMININE"][col] != "FEMININE").mean() * 100
+        masc_err = (s[s["x_gender"] == "MASCULINE"][col] != "MASCULINE").mean() * 100
+        ax.set_title(f"{lang}\nfem {fem_err:.0f}% / masc {masc_err:.0f}%", fontsize=8.5)
+
+    axes[0].text(-0.05, 1.14, "gold", fontsize=7, ha="left", transform=axes[0].transAxes, color="grey")
+    axes[0].text(1.0, 1.14, "pred", fontsize=7, ha="right", transform=axes[0].transAxes, color="grey")
+
+    legend_handles = [
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["masculine"], label="masculine"),
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["feminine"], label="feminine"),
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["unknown"], label="unknown"),
+    ]
+    fig.legend(handles=legend_handles, loc="lower center", ncol=3, fontsize=8.5, bbox_to_anchor=(0.5, -0.05), frameon=False)
+    fig.suptitle(
+        f"{MODEL_LABELS[model]}: where does each gold gender end up, per language? (styles 1--4)",
+        fontsize=10.5,
+    )
+
+    plt.tight_layout(rect=[0, 0.06, 1, 0.92])
+    path = os.path.join(OUTPUT_DIR, f"fig7_gender_flow_sankey_by_language_{model}.pdf")
+    plt.savefig(path, bbox_inches="tight")
+    plt.close()
+    print("Saved", path)
+
+
+# ---------------------------------------------------------------------------
+# Figure 7 (exploratory mega-grid): all 6 models stacked, one row each, same
+# per-language panels as figure_7_gender_flow_sankey_by_language. Exploratory
+# comparison view, not sized for the paper -- lets every model x language
+# cell be inspected at once before deciding which single model's version (if
+# any) is worth the space in the actual paper.
+# ---------------------------------------------------------------------------
+def figure_7_gender_flow_sankey_by_language_all_models():
+    node_colors = {
+        "MASCULINE": GENDER_COLORS["masculine"],
+        "FEMININE": GENDER_COLORS["feminine"],
+        "UNKNOWN": GENDER_COLORS["unknown"],
+    }
+    gold_order = ("MASCULINE", "FEMININE")
+    pred_order = ("MASCULINE", "FEMININE", "UNKNOWN")
+
+    fig, axes = plt.subplots(
+        len(MODELS), len(LANGUAGES), figsize=(2.0 * len(LANGUAGES), 2.6 * len(MODELS))
+    )
+    for row, model in enumerate(MODELS):
+        df = pd.read_csv(f"processed_data/avg_DEval/{model}_processed.csv", sep=";")
+        sub = df[df["sentence_style"].isin([1, 2, 3, 4]) & df["x_gender"].isin(["MASCULINE", "FEMININE"])]
+        for col_i, lang in enumerate(LANGUAGES):
+            ax = axes[row][col_i]
+            col = f"x_gender_{lang}"
+            s = sub[sub[col].notna()]
+            flows = {}
+            for gold, pred in zip(s["x_gender"], s[col]):
+                pred_bucket = pred if pred in ("MASCULINE", "FEMININE") else "UNKNOWN"
+                flows[(gold, pred_bucket)] = flows.get((gold, pred_bucket), 0) + 1
+            _draw_sankey_panel(ax, flows, gold_order, pred_order, node_colors)
+            fem_err = (s[s["x_gender"] == "FEMININE"][col] != "FEMININE").mean() * 100
+            masc_err = (s[s["x_gender"] == "MASCULINE"][col] != "MASCULINE").mean() * 100
+            ax.set_title(f"{lang}: fem {fem_err:.0f}% / masc {masc_err:.0f}%", fontsize=7.5)
+            if col_i == 0:
+                ax.text(
+                    -0.35, 0.5, MODEL_LABELS[model], fontsize=10, rotation=90,
+                    va="center", ha="center", transform=ax.transAxes, fontweight="bold",
+                )
+
+    legend_handles = [
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["masculine"], label="masculine"),
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["feminine"], label="feminine"),
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["unknown"], label="unknown"),
+    ]
+    fig.legend(handles=legend_handles, loc="lower center", ncol=3, fontsize=10, bbox_to_anchor=(0.5, -0.005), frameon=False)
+    fig.suptitle(
+        "All 6 systems x 7 languages: where does each gold gender end up? (styles 1--4)",
+        fontsize=13,
+    )
+
+    plt.tight_layout(rect=[0.02, 0.015, 1, 0.97])
+    path = os.path.join(OUTPUT_DIR, "fig7_gender_flow_sankey_by_language_ALL_MODELS.pdf")
+    plt.savefig(path, bbox_inches="tight")
+    plt.close()
+    print("Saved", path)
+
+
+# Romance (es/fr/it) and Slavic (ru/uk) grouped since they behave similarly
+# throughout the paper; ar and he kept as their own single-language columns
+# rather than merged into one "Semitic" group, since the two behave very
+# differently (ar stays masculine-default, he frequently reverses).
+LANGUAGE_FAMILIES = {
+    "Romance (es/fr/it)": ["es", "fr", "it"],
+    "Slavic (ru/uk)": ["ru", "uk"],
+    "Arabic": ["ar"],
+    "Hebrew": ["he"],
+}
+
+
+# ---------------------------------------------------------------------------
+# Figure 7 (exploratory, language-family grouping): flows pooled by language
+# family instead of individual language, for 3 selected systems (google,
+# gpt-4o, systran) -- a 3x4 grid instead of the 6x7 mega-grid, to see if
+# family-level grouping keeps the per-language story legible in less space.
+# ---------------------------------------------------------------------------
+def figure_7_gender_flow_sankey_by_family():
+    node_colors = {
+        "MASCULINE": GENDER_COLORS["masculine"],
+        "FEMININE": GENDER_COLORS["feminine"],
+        "UNKNOWN": GENDER_COLORS["unknown"],
+    }
+    gold_order = ("MASCULINE", "FEMININE")
+    pred_order = ("MASCULINE", "FEMININE", "UNKNOWN")
+    models = ["google", "gpt-4o", "systran"]
+    families = list(LANGUAGE_FAMILIES.items())
+
+    fig, axes = plt.subplots(len(models), len(families), figsize=(2.3 * len(families), 2.8 * len(models)))
+    for row, model in enumerate(models):
+        df = pd.read_csv(f"processed_data/avg_DEval/{model}_processed.csv", sep=";")
+        sub = df[df["sentence_style"].isin([1, 2, 3, 4]) & df["x_gender"].isin(["MASCULINE", "FEMININE"])]
+        for col_i, (family_name, langs) in enumerate(families):
+            ax = axes[row][col_i]
+            flows = {}
+            fem_correct = fem_total = masc_correct = masc_total = 0
+            fem_err_by_lang, masc_err_by_lang = [], []
+            for lang in langs:
+                col = f"x_gender_{lang}"
+                s = sub[sub[col].notna()]
+                for gold, pred in zip(s["x_gender"], s[col]):
+                    pred_bucket = pred if pred in ("MASCULINE", "FEMININE") else "UNKNOWN"
+                    flows[(gold, pred_bucket)] = flows.get((gold, pred_bucket), 0) + 1
+                fem_s = s[s["x_gender"] == "FEMININE"]
+                masc_s = s[s["x_gender"] == "MASCULINE"]
+                fem_correct += (fem_s[col] == "FEMININE").sum()
+                fem_total += len(fem_s)
+                masc_correct += (masc_s[col] == "MASCULINE").sum()
+                masc_total += len(masc_s)
+                fem_err_by_lang.append((1 - (fem_s[col] == "FEMININE").mean()) * 100)
+                masc_err_by_lang.append((1 - (masc_s[col] == "MASCULINE").mean()) * 100)
+            _draw_sankey_panel(ax, flows, gold_order, pred_order, node_colors)
+            fem_err = (1 - fem_correct / fem_total) * 100
+            masc_err = (1 - masc_correct / masc_total) * 100
+            # Std dev only meaningful for multi-language families (Romance,
+            # Slavic); ar/he are single-language columns, so std is omitted
+            # there rather than shown as a meaningless 0.
+            if len(langs) > 1:
+                fem_label = f"fem {fem_err:.0f}$\\pm${np.std(fem_err_by_lang):.0f}%"
+                masc_label = f"masc {masc_err:.0f}$\\pm${np.std(masc_err_by_lang):.0f}%"
+            else:
+                fem_label = f"fem {fem_err:.0f}%"
+                masc_label = f"masc {masc_err:.0f}%"
+            ax.set_title(f"{family_name}\n{fem_label} / {masc_label}", fontsize=8.5)
+            if col_i == 0:
+                ax.text(
+                    -0.4, 0.5, MODEL_LABELS[model], fontsize=11, rotation=90,
+                    va="center", ha="center", transform=ax.transAxes, fontweight="bold",
+                )
+
+    legend_handles = [
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["masculine"], label="masculine"),
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["feminine"], label="feminine"),
+        plt.Rectangle((0, 0), 1, 1, color=GENDER_COLORS["unknown"], label="unknown"),
+    ]
+    fig.legend(handles=legend_handles, loc="lower center", ncol=3, fontsize=9, bbox_to_anchor=(0.5, -0.01), frameon=False)
+    fig.suptitle(
+        "Google / GPT-4o / SYSTRAN, pooled by language family: where does each gold gender end up?",
+        fontsize=11.5,
+    )
+
+    plt.tight_layout(rect=[0.03, 0.02, 1, 0.95])
+    path = os.path.join(OUTPUT_DIR, "fig7_gender_flow_sankey_by_family.pdf")
+    plt.savefig(path, bbox_inches="tight")
+    plt.close()
+    print("Saved", path)
 
 
 # ---------------------------------------------------------------------------
@@ -2047,12 +2444,315 @@ def figure_10_diverse_romantic_misdirection():
     print("Saved", path)
 
 
+# ---------------------------------------------------------------------------
+# Verification: independently recompute every numeric claim in main.tex
+# directly from processed_data/, deliberately NOT reusing the figure/table
+# helpers above (load_binary_dataset, _binary_accuracy_by_style, etc.) -- the
+# point is a from-scratch cross-check, so a bug shared between the figure
+# code and this code can't silently agree with itself. Each function prints
+# to console and writes a CSV to OUTPUT_DIR so every claim has a paper-trail.
+# ---------------------------------------------------------------------------
+def verify_dataset_counts():
+    rows = []
+    for model in MODELS:
+        df = pd.read_csv(f"processed_data/avg_DEval/{model}_processed.csv", sep=";")
+        rows.append({"model": model, "n_sentences": len(df), "dataset": "main (styles 1-4)"})
+        rdf = pd.read_csv(f"processed_data/romantic_names/romantic_name_{model}_processed.csv", sep=";")
+        rows.append({"model": model, "n_sentences": len(rdf), "dataset": "romantic/names (styles 5-6)"})
+    out = pd.DataFrame(rows)
+    csv_path = os.path.join(OUTPUT_DIR, "verify_dataset_counts.csv")
+    out.to_csv(csv_path, index=False)
+    print(out.to_string(index=False))
+    print("Saved", csv_path)
+    return out
+
+
+def verify_main_evaluation():
+    rows = []
+    for model in MODELS:
+        df = pd.read_csv(f"processed_data/avg_DEval/{model}_processed.csv", sep=";")
+        sub = df[df["sentence_style"].isin([1, 2, 3, 4]) & df["x_gender"].isin(["MASCULINE", "FEMININE"])]
+        for lang in LANGUAGES:
+            col = f"x_gender_{lang}"
+            preds = sub[col].dropna()
+            gold = sub.loc[preds.index, "x_gender"]
+            correct = (preds == gold).sum()
+            total = len(preds)
+            rows.append(
+                {
+                    "model": model,
+                    "language": lang,
+                    "n": total,
+                    "accuracy_pct": round(correct / total * 100, 1) if total else None,
+                }
+            )
+    out = pd.DataFrame(rows)
+    csv_path = os.path.join(OUTPUT_DIR, "verify_main_evaluation_accuracy.csv")
+    out.to_csv(csv_path, index=False)
+
+    gpt4o = out[out["model"] == "gpt-4o"]["accuracy_pct"]
+    trad = out[out["model"] != "gpt-4o"]["accuracy_pct"]
+    print(f"GPT-4o range: {gpt4o.min()}--{gpt4o.max()}")
+    print(f"Traditional systems range: {trad.min()}--{trad.max()}")
+
+    piv = out.pivot(index="language", columns="model", values="accuracy_pct")
+    diff = (piv["google"] - piv["google_llm"]).abs()
+    print(f"Google vs Google-LLM max abs diff: {diff.max():.2f}pp")
+
+    err_rows = []
+    for model in MODELS:
+        df = pd.read_csv(f"processed_data/avg_DEval/{model}_processed.csv", sep=";")
+        sub = df[df["sentence_style"].isin([1, 2, 3, 4]) & df["x_gender"].isin(["MASCULINE", "FEMININE"])]
+        for lang in LANGUAGES:
+            col = f"x_gender_{lang}"
+            errs = sub[sub[col].notna() & (sub[col] != sub["x_gender"]) & sub[col].isin(["MASCULINE", "FEMININE"])]
+            f_to_m = ((errs["x_gender"] == "FEMININE") & (errs[col] == "MASCULINE")).sum()
+            m_to_f = ((errs["x_gender"] == "MASCULINE") & (errs[col] == "FEMININE")).sum()
+            err_rows.append({"model": model, "language": lang, "fem_to_masc": f_to_m, "masc_to_fem": m_to_f})
+    err_out = pd.DataFrame(err_rows)
+    err_csv = os.path.join(OUTPUT_DIR, "verify_error_direction.csv")
+    err_out.to_csv(err_csv, index=False)
+    n_fm_dominant = (err_out["fem_to_masc"] >= err_out["masc_to_fem"]).sum()
+    print(f"fem->masc >= masc->fem in {n_fm_dominant}/{len(err_out)} model-language cells")
+    print("Saved", csv_path, "and", err_csv)
+    return out
+
+
+def verify_trans_identity():
+    def acc(df, style):
+        sub = df[(df["sentence_style"] == style) & df["x_gender"].isin(["MASCULINE", "FEMININE"])]
+        rows = {}
+        for lang in LANGUAGES:
+            col = f"x_gender_{lang}"
+            preds = sub[col].dropna()
+            gold = sub.loc[preds.index, "x_gender"]
+            rows[lang] = round((preds == gold).mean() * 100, 1) if len(preds) else None
+        return rows
+
+    rows = []
+    for model in MODELS:
+        df = pd.read_csv(f"processed_data/avg_DEval/{model}_processed.csv", sep=";")
+        base = acc(df, 1)
+        trans = acc(df, 3)
+        for lang in LANGUAGES:
+            rows.append(
+                {
+                    "model": model,
+                    "language": lang,
+                    "baseline_style1_pct": base[lang],
+                    "trans_style3_pct": trans[lang],
+                    "delta_pp": round(trans[lang] - base[lang], 1) if base[lang] and trans[lang] else None,
+                }
+            )
+    out = pd.DataFrame(rows)
+    csv_path = os.path.join(OUTPUT_DIR, "verify_trans_identity.csv")
+    out.to_csv(csv_path, index=False)
+    n_improved = (out["delta_pp"] > 0).sum()
+    print(f"Trans-marked improves over baseline in {n_improved}/{len(out)} model-language cells")
+    print("Saved", csv_path)
+    return out
+
+
+def verify_pronoun_elaboration():
+    def acc_pooled(df, style):
+        sub = df[(df["sentence_style"] == style) & df["x_gender"].isin(["MASCULINE", "FEMININE"])]
+        correct = total = 0
+        for lang in LANGUAGES:
+            col = f"x_gender_{lang}"
+            preds = sub[col].dropna()
+            gold = sub.loc[preds.index, "x_gender"]
+            correct += (preds == gold).sum()
+            total += len(preds)
+        return round(correct / total * 100, 1) if total else None
+
+    rows = []
+    for model in MODELS:
+        df = pd.read_csv(f"processed_data/avg_DEval/{model}_processed.csv", sep=";")
+        s1 = acc_pooled(df, 1)
+        s2 = acc_pooled(df, 2)
+        rows.append(
+            {
+                "model": model,
+                "style1_baseline_pooled_pct": s1,
+                "style2_pronoun_pooled_pct": s2,
+                "delta_pp": round(s2 - s1, 1),
+            }
+        )
+    out = pd.DataFrame(rows)
+    csv_path = os.path.join(OUTPUT_DIR, "verify_pronoun_elaboration.csv")
+    out.to_csv(csv_path, index=False)
+    print(out.to_string(index=False))
+    print("Saved", csv_path)
+    return out
+
+
+def verify_names():
+    sig_rows = []
+    for lang in LANGUAGES:
+        pooled_errors = []
+        for model in MODELS:
+            df = pd.read_csv(f"processed_data/romantic_names/romantic_name_{model}_processed.csv", sep=";")
+            sub = df[(df["sentence_style"] == 6) & (df["name_gender"] == "n")]
+            col = f"x_gender_{lang}"
+            if col not in sub.columns:
+                continue
+            pooled_errors.extend(
+                (g, p)
+                for g, p in zip(sub["x_gender"], sub[col])
+                if pd.notna(p) and g != p and p in ("MASCULINE", "FEMININE")
+            )
+        result = test_direction_skew(pooled_errors)
+        result["language"] = lang
+        sig_rows.append(result)
+    sig_out = pd.DataFrame(sig_rows)
+    sig_csv = os.path.join(OUTPUT_DIR, "verify_names_error_direction_significance.csv")
+    sig_out.to_csv(sig_csv, index=False)
+    print(sig_out.to_string(index=False))
+
+    def acc(name_gender, job_gender):
+        correct = total = 0
+        for model in MODELS:
+            df = pd.read_csv(f"processed_data/romantic_names/romantic_name_{model}_processed.csv", sep=";")
+            sub = df[
+                (df["sentence_style"] == 6) & (df["name_gender"] == name_gender) & (df["x_gender"] == job_gender)
+            ]
+            for lang in LANGUAGES:
+                col = f"x_gender_{lang}"
+                if col not in sub.columns:
+                    continue
+                preds = sub[col].dropna()
+                total += len(preds)
+                correct += (preds == job_gender).sum()
+        return round(correct / total * 100, 1) if total else None, correct, total
+
+    effect_rows = []
+    for ng, jg, label in [
+        ("MASCULINE", "MASCULINE", "masc_name+masc_job"),
+        ("n", "MASCULINE", "neutral_name+masc_job"),
+        ("FEMININE", "FEMININE", "fem_name+fem_job"),
+        ("n", "FEMININE", "neutral_name+fem_job"),
+    ]:
+        a, c, t = acc(ng, jg)
+        effect_rows.append({"scenario": label, "accuracy_pct": a, "correct": c, "total": t})
+    effect_out = pd.DataFrame(effect_rows)
+    effect_csv = os.path.join(OUTPUT_DIR, "verify_name_gender_effect.csv")
+    effect_out.to_csv(effect_csv, index=False)
+    print(effect_out.to_string(index=False))
+    print("Saved", sig_csv, "and", effect_csv)
+    return sig_out, effect_out
+
+
+def verify_heteronormativity():
+    """Independent cross-check of table_heteronormativity_gap() above -- same
+    computation, written from scratch against raw processed_data/ instead of
+    going through that function, so a shared bug can't agree with itself.
+    Uses test_paired_gap (McNemar), matching the paired design: every
+    subject sentence is generated with both a same-gender and a different-
+    gender partner, so the two conditions are matched pairs, not independent
+    samples."""
+    rows = []
+    for lang in LANGUAGES:
+        correct_diff, correct_same = [], []
+        for model in MODELS:
+            df = pd.read_csv(f"processed_data/romantic_names/romantic_name_{model}_processed.csv", sep=";")
+            sub = df[df["sentence_style"] == 5]
+            col = f"x_gender_{lang}"
+            if col not in sub.columns:
+                continue
+            binary = sub[
+                sub["x_gender"].isin(["MASCULINE", "FEMININE"])
+                & sub["y_gender"].isin(["MASCULINE", "FEMININE"])
+                & sub[col].notna()
+            ].copy()
+            binary["correct"] = binary["x_gender"] == binary[col]
+            binary["pairing"] = np.where(binary["x_gender"] == binary["y_gender"], "same", "diff")
+            piv = binary.pivot_table(
+                index=["sentence_id", "x_nom_sg", "x_gender"], columns="pairing", values="correct", aggfunc="first"
+            ).dropna()
+            correct_diff.extend(piv["diff"].tolist())
+            correct_same.extend(piv["same"].tolist())
+        result = test_paired_gap(correct_diff, correct_same)
+        rows.append(
+            {
+                "language": lang,
+                "n": result["n"],
+                "n_discordant": result["n_discordant"],
+                "hetero_accuracy_pct": round(result["accuracy_a"] * 100, 2),
+                "same_gender_accuracy_pct": round(result["accuracy_b"] * 100, 2),
+                "gap_pp": round((result["accuracy_a"] - result["accuracy_b"]) * 100, 2),
+                "p_value": result["p_value"],
+            }
+        )
+    out = pd.DataFrame(rows)
+    csv_path = os.path.join(OUTPUT_DIR, "verify_heteronormativity_gap.csv")
+    out.to_csv(csv_path, index=False)
+    print(out.to_string(index=False))
+    print("Saved", csv_path, "-- compare against table_heteronormativity_gap.csv")
+    return out
+
+
+def verify_stereotypicality():
+    """Sanity check only: does accuracy trend monotonically with per-instance
+    stereotype-congruence (x_stereotypical), GPT-4o? Not a refit of the
+    logistic regression in table_logistic_regression -- just confirms the
+    direction (and Hebrew's reversal) independently."""
+    df = pd.read_csv("processed_data/avg_DEval/gpt-4o_processed.csv", sep=";")
+    sub = df[
+        df["sentence_style"].isin([1, 2, 3, 4])
+        & df["x_gender"].isin(["MASCULINE", "FEMININE"])
+        & df["x_stereotypical"].notna()
+    ].copy()
+    sub["decile"] = pd.qcut(sub["x_stereotypical"], 10, labels=False, duplicates="drop")
+    rows = []
+    for lang in LANGUAGES:
+        col = f"x_gender_{lang}"
+        for decile, group in sub.groupby("decile"):
+            preds = group[col].dropna()
+            gold = group.loc[preds.index, "x_gender"]
+            rows.append(
+                {
+                    "language": lang,
+                    "stereotypicality_decile": decile,
+                    "n": len(preds),
+                    "accuracy_pct": round((preds == gold).mean() * 100, 1) if len(preds) else None,
+                }
+            )
+    out = pd.DataFrame(rows)
+    csv_path = os.path.join(OUTPUT_DIR, "verify_stereotypicality_by_decile.csv")
+    out.to_csv(csv_path, index=False)
+
+    corr_rows = []
+    for lang in LANGUAGES:
+        lang_df = out[out["language"] == lang].dropna()
+        corr = lang_df["stereotypicality_decile"].corr(lang_df["accuracy_pct"], method="spearman")
+        corr_rows.append({"language": lang, "spearman_corr_decile_vs_accuracy": round(corr, 3)})
+    corr_out = pd.DataFrame(corr_rows)
+    corr_csv = os.path.join(OUTPUT_DIR, "verify_stereotypicality_monotonicity.csv")
+    corr_out.to_csv(corr_csv, index=False)
+    print(corr_out.to_string(index=False))
+    print("Saved", csv_path, "and", corr_csv)
+    return out, corr_out
+
+
 if __name__ == "__main__":
     # Dropped from the default pipeline (still callable manually if needed):
-    # figure_4_diverging_bias (redundant with figure_8), figure_5_stereotypicality_scatter
-    # (table_logistic_regression covers the same finding with exact numbers),
+    # figure_4_diverging_bias (redundant with figure_8_neutral_name_scenarios),
+    # figure_5_stereotypicality_scatter (table_logistic_regression covers the
+    # same finding with exact numbers), figure_7_error_rate_by_gender /
+    # figure_7_gender_flow_sankey (pooled 6-model versions of the fig7 story --
+    # exploratory steps on the way to figure_7_gender_flow_sankey_by_family,
+    # which is the one actually used: fewer systems (google/gpt-4o/systran)
+    # but per-language-family granularity plus std dev, which the pooled
+    # 6-model version couldn't show without a separate mean+-std annotation),
+    # figure_7_gender_flow_sankey_by_language (single-model, single-language
+    # granularity -- superseded by the family-grouped version, which is a
+    # good middle ground), figure_7_gender_flow_sankey_by_language_all_models
+    # (6x7 mega-grid, exploratory only, too dense for the paper),
     # figure_7b_error_rate_by_language (redundant with figure_7, transposed),
-    # figure_10_diverse_romantic_misdirection (interesting but tangential -- cut for space).
+    # figure_8_neutral_name_scenarios (cut for space -- error-direction
+    # significance already reported as text in the Names section),
+    # figure_10_diverse_romantic_misdirection (interesting but tangential --
+    # cut for space).
     figure_1_accuracy_heatmap()
     figure_2_occupation_scatter()
     figure_3_context_effects()
@@ -2063,6 +2763,14 @@ if __name__ == "__main__":
     print_alignment_match_rate()
     print_winomt_style_agreement()
     print_human_eval_reliability_baseline()
-    figure_7_error_rate_by_gender()
-    figure_8_neutral_name_scenarios()
+    figure_7_gender_flow_sankey_by_family()
     figure_9_name_gender_effect()
+
+    # Independent from-scratch verification of every numeric claim in main.tex.
+    verify_dataset_counts()
+    verify_main_evaluation()
+    verify_trans_identity()
+    verify_pronoun_elaboration()
+    verify_names()
+    verify_heteronormativity()
+    verify_stereotypicality()

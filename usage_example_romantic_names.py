@@ -20,7 +20,7 @@ import os
 import pandas as pd
 
 from Dataset import DEvalDataset
-from analysis import ErrorAnalysis, ConfusionMatrix, test_direction_skew, test_group_gap
+from analysis import ErrorAnalysis, ConfusionMatrix, test_direction_skew, test_paired_gap
 from plots import plot_error_analysis, plot_confusion_metrics, save_dataframes
 
 LANGUAGES = ["es", "fr", "it", "ar", "ru", "uk", "he"]
@@ -73,19 +73,24 @@ def significance_neutral_names(df_subset: pd.DataFrame, languages: list[str], mo
 
 
 def significance_heteronormativity(df_subset: pd.DataFrame, languages: list[str], model_name: str) -> pd.DataFrame:
-    """Chi-square test of independence per language: does accuracy differ
-    between same-gender-coded and different-gender-coded romantic pairings?"""
-    same = df_subset[df_subset["pairing"] == "same_gender"]
-    diff = df_subset[df_subset["pairing"] == "diff_gender"]
+    """McNemar's test per language: does accuracy differ between same-gender-
+    coded and different-gender-coded romantic pairings? Paired design: every
+    subject sentence (sentence_id, x_nom_sg, x_gender) is generated with both
+    a same-gender and a different-gender partner, so the two conditions are
+    matched pairs, not independent samples -- test_paired_gap (McNemar) is
+    the correct test, not test_group_gap (chi-square of independence)."""
     rows = []
     for lang in languages:
         pred_col = f"x_gender_{lang}"
         if pred_col not in df_subset.columns:
             continue
-        same_pairs = list(zip(same["x_gender"], same[pred_col]))
-        diff_pairs = list(zip(diff["x_gender"], diff[pred_col]))
-        # group_a = different-gender/hetero-coded, group_b = same-gender-coded
-        result = test_group_gap(diff_pairs, same_pairs)
+        sub = df_subset[df_subset[pred_col].notna()].copy()
+        sub["correct"] = sub["x_gender"] == sub[pred_col]
+        piv = sub.pivot_table(
+            index=["sentence_id", "x_nom_sg", "x_gender"], columns="pairing", values="correct", aggfunc="first"
+        ).dropna()
+        # column a = different-gender/hetero-coded, column b = same-gender-coded
+        result = test_paired_gap(piv["diff_gender"].tolist(), piv["same_gender"].tolist())
         result["language"] = lang
         result["model"] = model_name
         rows.append(result)

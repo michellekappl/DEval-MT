@@ -1,16 +1,25 @@
 """Significance tests for gender bias evaluation.
 
-Two distinct question types, two distinct tests:
+Three question types, three tests:
 - test_direction_skew: does a single sample's error direction deviate from a
   theoretically motivated 50/50 split? -> exact binomial test (not a chi-square
   goodness-of-fit approximation, since some cells are small/extreme, e.g. 3/174).
-- test_group_gap: does accuracy differ between two independent groups on a
-  categorical (correct/incorrect) outcome? -> chi-square test of independence
-  on a 2x2 contingency table (equivalent to a two-proportion test). Not a t-test
-  (outcome isn't continuous) and not McNemar's (groups aren't paired/matched).
+- test_group_gap: does accuracy differ between two INDEPENDENT groups on a
+  categorical (correct/incorrect) outcome, with no natural 1:1 correspondence
+  between an item in group A and an item in group B? -> chi-square test of
+  independence on a 2x2 contingency table (equivalent to a two-proportion
+  test). Not a t-test (outcome isn't continuous).
+- test_paired_gap: does accuracy differ between two PAIRED/matched conditions
+  measured on the same underlying item (e.g. the same subject sentence, once
+  with a same-gender romantic partner and once with a different-gender
+  partner -- the dataset generates both for every subject)? -> McNemar's
+  test, using only the discordant pairs. More powerful than test_group_gap
+  when a natural pairing exists, since it removes item-level noise instead
+  of treating the two conditions as independent samples.
 """
 
 from scipy.stats import binomtest, chi2_contingency
+from statsmodels.stats.contingency_tables import mcnemar
 
 
 def test_direction_skew(
@@ -65,4 +74,37 @@ def test_group_gap(
         "accuracy_b": b_correct / len(group_b) if group_b else None,
         "chi2": chi2,
         "p_value": p_value,
+    }
+
+
+def test_paired_gap(
+    correct_a: list[bool],
+    correct_b: list[bool],
+) -> dict:
+    """McNemar's test (continuity-corrected): does accuracy differ between
+    two paired conditions measured on the same underlying item?
+
+    Parameters
+    ----------
+    correct_a, correct_b : parallel lists of booleans -- correct_a[i] and
+        correct_b[i] must be the two conditions' outcomes for the SAME item i
+        (e.g. the same subject sentence under a same-gender vs. a different-
+        gender partner). Must be the same length and aligned by item.
+    """
+    n = len(correct_a)
+    both_correct = sum(1 for a, b in zip(correct_a, correct_b) if a and b)
+    a_only = sum(1 for a, b in zip(correct_a, correct_b) if a and not b)
+    b_only = sum(1 for a, b in zip(correct_a, correct_b) if not a and b)
+    both_wrong = sum(1 for a, b in zip(correct_a, correct_b) if not a and not b)
+
+    table = [[both_correct, a_only], [b_only, both_wrong]]
+    result = mcnemar(table, exact=False, correction=True)
+
+    return {
+        "n": n,
+        "n_discordant": a_only + b_only,
+        "accuracy_a": sum(correct_a) / n if n else None,
+        "accuracy_b": sum(correct_b) / n if n else None,
+        "statistic": result.statistic,
+        "p_value": result.pvalue,
     }

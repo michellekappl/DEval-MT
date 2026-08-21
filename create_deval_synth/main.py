@@ -85,9 +85,9 @@ for key, jobs in groups.items():
         name_templates_to_use = random.sample(list(name_templates), GEN_TEMPLATES_PER_JOB)
 
         templates_to_use = (
-            # templates_to_use
-            # + pronoun_templates_to_use
-            romantic_templates_to_use
+            templates_to_use
+            + pronoun_templates_to_use
+            + romantic_templates_to_use
             + name_templates_to_use
         )
         templates_to_use = sorted(templates_to_use, key=lambda template: template.sentence_id)
