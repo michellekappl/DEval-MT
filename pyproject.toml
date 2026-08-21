@@ -29,10 +29,16 @@ translation = [
     "google-cloud-translate",
     "google-cloud-storage",
     "deepl",
-    "openai"
+    "openai",
+    "python-dotenv",
+    "requests",
 ]
 
 [tool.setuptools]
-py-modules = ["sdk", "Dataset", "analysis"]
-packages = ["alignment", "morphological_analysis", "deval_mt"]
+packages = [
+    "deval_mt",
+    "deval_mt.alignment",
+    "deval_mt.morphological_analysis",
+    "deval_mt.analysis",
+]
 

@@ -1,0 +1,101 @@
+Index;Translator;Entity;Sentence
+1;Systran;The expression: bijoutier trans;The sentence: Le bijoutier trans reflète chaque semaine sa performance.
+2;Microsoft;The expression: L’apiculteur trans;The sentence: L’apiculteur trans est agacé d’avoir fait une erreur.
+3;Google;The expression: La technicienne biologie;The sentence: La technicienne de laboratoire de biologie fête joyeusement son anniversaire.
+4;Deepl;The expression: l'addictologue finale.;The sentence: Il est souligné que la décision de l'addictologue trans est finale.
+5;Gpt-4o;The expression: L'assistant d'exploitation;The sentence: L'assistant d'exploitation rapporte les progrès.
+6;Deepl;The expression: technicienne en radiologie trans;The sentence: La technicienne en radiologie trans écrit des lettres à la main.
+7;Systran;The expression: L'installateur d'éclairage trans;The sentence: L'installateur d'éclairage trans informe l'équipe qu'il a besoin de plus de temps.
+8;Deepl;The expression: serrurière trans;The sentence: La serrurière trans apporte le vélo pour le faire réparer.
+9;Systran;The expression: Le technicien;The sentence: Le technicien mange le dîner parce qu'il a faim.
+10;Google;The expression: L'électricien;The sentence: L'électricien est contrarié qu'elle ait commis une erreur.
+11;Deepl;The expression: pilote bateau trans;The sentence: Le pilote de bateau trans aime lire son livre préféré.
+12;Google;The expression: Le modèle;The sentence: Le modèle vérifie minutieusement leurs résultats.
+13;Deepl;The expression: L'aide ménagère;The sentence: L'aide ménagère fixe des priorités pour le travail.
+14;Google;The expression: cartographe trans;The sentence: Le cartographe trans arrose les fleurs tous les jours.
+15;Google;The expression: serrurier transgenre;The sentence: La serrurier transgenre planifie ses vacances avec dévouement.
+16;Microsoft;The expression: L’assistante opérations trans;The sentence: L’assistante aux opérations trans fait un rapport sur ses progrès.
+17;Deepl;The expression: L'inspecteur chantier trans;The sentence: L'inspecteur de chantier trans planifie ses vacances avec dévouement.
+18;Gpt-4o;The expression: Le maquilleur;The sentence: Le maquilleur documente les activités avec précision.
+19;Gpt-4o;The expression: cuisinier trans;The sentence: Le cuisinier trans aime écouter de la musique pour se détendre.
+20;Microsoft;The expression: conductrice du bateau;The sentence: La conductrice du bateau de transmission aime lire son livre préféré.
+21;Deepl;The expression: contrôleur trans;The sentence: Le contrôleur trans vérifie minutieusement ses résultats.
+22;Microsoft;The expression: translinguiste;The sentence: La translinguiste souligne que sa décision est définitive.
+23;Gpt-4o;The expression: concierge trans;The sentence: Le concierge trans communique clairement au sein de l'équipe.
+24;Microsoft;The expression: ramoneur trans;The sentence: Le ramoneur trans fixe les priorités du travail.
+25;Microsoft;The expression: Le clairvoyant;The sentence: Le clairvoyant documente ses activités de manière exacte.
+26;Gpt-4o;The expression: Le conseiller fiscal;The sentence: Le conseiller fiscal est fier de lui et de sa performance.
+27;Deepl;The expression: Le grossiste s'énerve;The sentence: Le grossiste s'énerve à cause d'une erreur qu'il a commise.
+28;Systran;The expression: La gouvernante;The sentence: La gouvernante trie ses papiers correctement.
+29;Microsoft;The expression: chirurgienne trans;The sentence: La chirurgienne trans est fière d’elle et de ses réalisations.
+30;Systran;The expression: rédacteur publicitaire trans;The sentence: Le rédacteur publicitaire trans planifie les vacances avec dévouement.
+31;Microsoft;The expression: conducteur du train;The sentence: Le conducteur du train de la boîte est agacé d’avoir fait une erreur.
+32;Google;The expression: administratif transgenre;The sentence: Cet employé administratif transgenre aime promener son chien.
+33;Deepl;The expression: mécanicienne automobile trans;The sentence: La mécanicienne automobile trans motive ses collaborateurs au quotidien.
+34;Systran;The expression: mécatronicien trans;The sentence: Le mécatronicien trans se réjouit d'une augmentation de salaire.
+35;Deepl;The expression: trans électrotechnicien;The sentence: Le trans électrotechnicien écoute de la musique lorsqu'il veut se détendre.
+36;Systran;The expression: La camionneuse;The sentence: La camionneuse est fière d'elle-même et de la performance qu'elle a fournie.
+37;Systran;The expression: L'ingénieure logiciel;The sentence: L'ingénieure du logiciel écoute de la musique quand elle veut se détendre.
+38;Gpt-4o;The expression: La peintre trans;The sentence: La peintre trans aime travailler dans son équipe.
+39;Systran;The expression: La guide;The sentence: La guide vérifie minutieusement ses résultats.
+40;Systran;The expression: mineuse trans;The sentence: La mineuse trans apporte le vélo pour réparation.
+41;Google;The expression: La distributrice journaux;The sentence: La distributrice de journaux fête joyeusement son anniversaire.
+42;Google;The expression: La spécialiste logistique;The sentence: La spécialiste en logistique documente méticuleusement ses activités.
+43;Gpt-4o;The expression: cariste trans;The sentence: Le cariste trans aime son café le matin.
+44;Deepl;The expression: L'ouvrier caoutchouc;The sentence: L'ouvrier en caoutchouc améliore constamment ses propres compétences.
+45;Google;The expression: pizzaïolo transgenre;The sentence: Le pizzaïolo transgenre revient chaque semaine sur son travail.
+46;Microsoft;The expression: Le constructeur;The sentence: Le constructeur d’égouts améliore constamment ses propres compétences.
+47;Microsoft;The expression: La répartitrice;The sentence: La répartitrice peint des tableaux pendant son temps libre.
+48;Gpt-4o;The expression: La développeuse logiciels;The sentence: La développeuse de logiciels aime écouter de la musique pour se détendre.
+49;Gpt-4o;The expression: L'aide-soignante;The sentence: L'aide-soignante fête joyeusement l'anniversaire.
+50;Systran;The expression: nettoyeur trans;The sentence: Le nettoyeur trans communique clairement avec son équipe.
+51;Microsoft;The expression: lecteur compteur d’électricité trans;The sentence: Le lecteur de compteur d’électricité trans documente ses activités avec précision.
+52;Gpt-4o;The expression: La psychothérapeute;The sentence: La psychothérapeute demande à quelqu'un de l'aider.
+53;Microsoft;The expression: femme trans poubelle;The sentence: La femme trans poubelle fait son rapport sur ses progrès.
+54;Gpt-4o;The expression: La factrice;The sentence: La factrice analyse les projets attentivement.
+55;Gpt-4o;The expression: L'agente publicitaire;The sentence: L'agente publicitaire coordonne bien les rendez-vous.
+56;Google;The expression: Le vigneron;The sentence: Le vigneron aime lire des livres variés.
+57;Systran;The expression: La camionneuse;The sentence: La camionneuse est fière d'elle-même et de ses performances.
+58;Deepl;The expression: La responsable de l'environnement;The sentence: La responsable de l'environnement aime son travail.
+59;Microsoft;The expression: La propriétaire du vidéoclub;The sentence: La propriétaire du vidéoclub demande de l’aide pour ses tâches.
+60;Deepl;The expression: planificateur matériel trans;The sentence: Le planificateur de matériel trans améliore constamment ses propres compétences.
+61;Gpt-4o;The expression: pianiste trans;The sentence: Le pianiste trans porte le vélo à réparer.
+62;Google;The expression: Le chasseur;The sentence: Le chasseur réfléchit chaque semaine à sa propre performance.
+63;Gpt-4o;The expression: gardienne trans;The sentence: La gardienne trans insiste sur le fait que sa décision est définitive.
+64;Microsoft;The expression: L’inspecteur qualité trans;The sentence: L’inspecteur qualité trans peint des tableaux pendant son temps libre.
+65;Gpt-4o;The expression: superviseuse port trans;The sentence: La superviseuse de port trans aime boire du café le matin.
+66;Systran;The expression: transréceptionniste;The sentence: Le transréceptionniste documente précisément ses activités.
+67;Microsoft;The expression: marchand trans;The sentence: Le marchand trans analyse attentivement les projets.
+68;Gpt-4o;The expression: La logopède;The sentence: La logopède aime lire divers livres.
+69;Deepl;The expression: souffleur verre trans;The sentence: Le souffleur de verre trans s'entraîne tous les jours sur son piano.
+70;Microsoft;The expression: L’inspecteur des appareils trans;The sentence: L’inspecteur des appareils trans doit aller à la réunion.
+71;Google;The expression: La conseillère fiscale;The sentence: La conseillère fiscale est contrariée par une erreur qu'elle a commise.
+72;Google;The expression: mannequin trans;The sentence: Le mannequin trans vérifie minutieusement ses résultats.
+73;Systran;The expression: Le gardien du port;The sentence: Le gardien du port savoure son café le matin.
+74;Deepl;The expression: La teinturière de papier;The sentence: La teinturière de papier est fière d'elle et de sa performance.
+75;Deepl;The expression: moniteur trans;The sentence: Le moniteur trans mange le dîner pour calmer sa faim.
+76;Microsoft;The expression: mouleuse trans;The sentence: La mouleuse trans réfléchit à ses performances chaque semaine.
+77;Gpt-4o;The expression: Le chirurgien;The sentence: Le chirurgien se réjouit de son augmentation de salaire.
+78;Google;The expression: conseiller auprès jeunes transgenres;The sentence: Le conseiller auprès des jeunes transgenres admet qu'il est encore indécis.
+79;Google;The expression: réceptionniste;The sentence: La réceptionniste consigne les activités avec précision.
+80;Deepl;The expression: Le planificateur l'installation;The sentence: Le planificateur de l'installation apporte le vélo en réparation.
+81;Google;The expression: Le fabricant monnaie;The sentence: Le fabricant de monnaie aime promener son chien.
+82;Google;The expression: technicienne chimie trans;The sentence: Cette technicienne de laboratoire en chimie trans peint des tableaux pendant son temps libre.
+83;Google;The expression: La vendeuse glaces;The sentence: La vendeuse de glaces fête joyeusement son anniversaire.
+84;Systran;The expression: sidérurgiste trans;The sentence: La sidérurgiste trans mange le dîner pour apaiser la faim.
+85;Gpt-4o;The expression: porte-parole trans;The sentence: Le porte-parole trans apporte le vélo à réparer.
+86;Systran;The expression: L'agent commercial trans;The sentence: L'agent commercial trans se réjouit d'une augmentation de salaire.
+87;Deepl;The expression: tricoteuse trans;The sentence: La tricoteuse trans motive ses collaborateurs au quotidien.
+88;Systran;The expression: La mathématicienne;The sentence: La mathématicienne trie correctement ses papiers.
+89;Deepl;The expression: vendeuse glaces trans;The sentence: La vendeuse de glaces trans fête joyeusement son anniversaire.
+90;Gpt-4o;The expression: La boulangère;The sentence: La boulangère admet qu'elle est encore indécise.
+91;Systran;The expression: La concierge;The sentence: La concierge a besoin de plus de temps et le communique à l'équipe.
+92;Google;The expression: décoratrice transgenre;The sentence: La décoratrice d'intérieur transgenre demande de l'aide.
+93;Gpt-4o;The expression: La développeuse produit;The sentence: La développeuse de produit fait rapport des progrès.
+94;Microsoft;The expression: La prostituée;The sentence: La prostituée pratique régulièrement du piano.
+95;Google;The expression: L'agent de placement;The sentence: L'agent de placement coordonne bien ses rendez-vous.
+96;Microsoft;The expression: centre d’appels trans;The sentence: L’agent du centre d’appels trans trie les papiers soigneusement.
+97;Google;The expression: brasseur transgenre;The sentence: Le brasseur transgenre est fier de lui et de sa réussite.
+98;Deepl;The expression: teinturière de papier trans;The sentence: La teinturière de papier trans s'énerve parce qu'elle a fait une erreur.
+99;Microsoft;The expression: La plombière;The sentence: La plombière dîne parce qu’elle a faim.
+100;Deepl;The expression: L'agent trans;The sentence: L'agent littéraire trans s'entraîne tous les jours sur son piano.

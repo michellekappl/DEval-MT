@@ -188,7 +188,13 @@ pyrightconfig.json
 .DS_Store
 .github/
 
-# Dataset specific ignores
-create_deval_synth/sorted_dataset.csv
-create_deval_synth/__pycache__/*
-create_deval_synth/__pycache__/*.pyc
+# create_deval_synth is a tool: output.csv is a generated artifact of running
+# it, not something to ship committed -- dataset.csv (the hand-authored
+# template input) stays tracked.
+tools/create_deval_synth/output.csv
+tools/create_deval_synth/sorted_dataset.csv
+tools/create_deval_synth/__pycache__/*
+tools/create_deval_synth/__pycache__/*.pyc
+
+# deval_mt/usage_example.py writes here when run -- generated, not committed.
+deval_mt_usage_example_output/
