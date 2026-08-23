@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from typing import Optional, List
+from typing import Callable, Optional, List
 
 class DEvalDataset:
     def __init__(self, df: pd.DataFrame, text_column: str):
@@ -66,6 +66,16 @@ class DEvalDataset:
             lambda row: list(range(row[subject_pos_column] + article_offset, row[subject_pos_column]+1)), axis=1
         )
         return subject_indices
+
+    def translate(self, language: str, translation_func: Callable[[str], str], new_column_name: Optional[str] = None) -> None:
+        """
+        Translates the text column (specified by `self.text_column`) into the
+        specified language by applying `translation_func` row by row.
+        If `new_column_name` is not provided, it defaults to 'translation_<language>'.
+        """
+        column_name = new_column_name or f"translation_{language}"
+        self.df[column_name] = self.df[self.text_column].apply(translation_func)
+        self.translation_columns[language] = column_name
 
     def add_translations(self, language: str, translations: pd.Series | List[str], new_column_name: Optional[str] = None) -> None:
         """

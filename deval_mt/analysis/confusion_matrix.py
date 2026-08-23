@@ -102,6 +102,11 @@ class ConfusionMatrix:
                     row_data[f'{gender}_f1_score'] = gender_metrics['f1_score']
                     row_data[f'{gender}_support'] = gender_metrics['support']
 
+                # Gender-based F1-score gap (Delta_G, Stanovsky et al. 2019):
+                # masculine F1 minus feminine F1, zero being unbiased.
+                if 'MASCULINE' in metrics and 'FEMININE' in metrics:
+                    row_data['delta_g'] = metrics['MASCULINE']['f1_score'] - metrics['FEMININE']['f1_score']
+
                 results_data.append(row_data)
 
             except Exception as e:

@@ -56,8 +56,7 @@ def test_group_gap(
     group_b: list[tuple[str, str]],
 ) -> dict:
     """Chi-square test of independence: does accuracy differ between two
-    independent groups of (gold, pred) pairs, e.g. same-gender-pair vs.
-    different-gender-pair sentences?
+    independent groups of (gold, pred) pairs?
     """
     a_correct = sum(1 for g, p in group_a if g == p)
     a_wrong = len(group_a) - a_correct
